@@ -3,9 +3,9 @@ import 'package:travel_list/screens/trip/trip.dart';
 import 'package:travel_list/screens/trip/trip_screen.dart';
 import 'package:travel_list/shared/routing_constants.dart';
 
-void main() => runApp(TravelList());
+void main() => runApp(TravelListApp());
 
-class TravelList extends StatelessWidget {
+class TravelListApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -13,11 +13,11 @@ class TravelList extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.white,
       ),
-      home: MyHomePage(),
+      home: HomePage(),
       onGenerateRoute: (settings) {
         if(settings.name == TripRoute) {
           return MaterialPageRoute(
-              builder: (context) => TripScreen(trip: new Trip(),),
+              builder: (context) => TravelListScreen(trip: new Trip(),),
           );
         }
         return null;
@@ -26,12 +26,12 @@ class TravelList extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatefulWidget {
+class HomePage extends StatefulWidget {
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

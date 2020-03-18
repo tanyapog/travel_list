@@ -2,14 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../trip/trip.dart';
 
-class TripScreen extends StatefulWidget {
+class TravelListScreen extends StatefulWidget {
   final Trip trip;
-  const TripScreen({Key key, this.trip}) : super(key: key);
+  const TravelListScreen({Key key, this.trip}) : super(key: key);
   @override
-  _TripScreenState createState() => _TripScreenState();
+  _TravelListScreenState createState() => _TravelListScreenState();
 }
 
-class _TripScreenState extends State<TripScreen> {
+class _TravelListScreenState extends State<TravelListScreen> {
 
   @override
   Widget build(BuildContext context) {
