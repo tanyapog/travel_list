@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travel_list/screens/trip/trip.dart';
-import 'package:travel_list/screens/trip/trip_screen.dart';
+import 'package:travel_list/screens/trip/travel_list_screen.dart';
 import 'package:travel_list/shared/routing_constants.dart';
 
 void main() => runApp(TravelListApp());
