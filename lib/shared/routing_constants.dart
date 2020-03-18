@@ -1,2 +1,2 @@
 const String RootRoute = "/";
-const String ListRoute = "/list";
+const String TripRoute = "/trip";

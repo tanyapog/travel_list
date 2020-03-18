@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:travel_list/screens/trip/trip.dart';
+import 'package:travel_list/screens/trip/trip_screen.dart';
 import 'package:travel_list/shared/routing_constants.dart';
 
 void main() => runApp(TravelList());
@@ -13,9 +15,9 @@ class TravelList extends StatelessWidget {
       ),
       home: MyHomePage(),
       onGenerateRoute: (settings) {
-        if(settings.name == ListRoute) {
+        if(settings.name == TripRoute) {
           return MaterialPageRoute(
-              builder: (context) => MyHomePage()
+              builder: (context) => TripScreen(trip: new Trip(),),
           );
         }
         return null;
@@ -38,9 +40,9 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         body: Center(
           child: RaisedButton(
-            child: Text('Create list for my next trip'),
+            child: Text('Create list for my next travel'),
             onPressed: () {
-              Navigator.pushNamed(context, '/list/');
+              Navigator.pushNamed(context, TripRoute);
             },
           ),
         )
