@@ -14,20 +14,6 @@ class _TravelListScreenState extends State<TravelListScreen> {
   @override
   Widget build(BuildContext context) {
 
-    Widget name = TextField(
-      decoration: InputDecoration(
-        labelText: widget.trip.isNew() ?  "trip name" : widget.trip.name,
-      ),
-    );
-
-    Widget description = TextField(
-      decoration: InputDecoration(
-        labelText: widget.trip.isNew() ? "trip description" : widget.trip.description,
-      ),
-      keyboardType: TextInputType.multiline,
-      maxLines: 4,
-    );
-
     return Scaffold(
         appBar: AppBar(
           title: Text('new trip 1'),
@@ -36,8 +22,7 @@ class _TravelListScreenState extends State<TravelListScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              name,
-              description,
+              Text('One day travel list for ${widget.trip.name} here'),
             ],
           ),
         )

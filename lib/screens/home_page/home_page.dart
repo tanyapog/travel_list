@@ -15,9 +15,9 @@ class _HomePageState extends State<HomePage> {
     return Container(
       padding: EdgeInsets.fromLTRB(5, 10, 5, 10),
       child: RaisedButton(
-        child: Text('Create list for my next travel'),
+        child: Text('Create list for next travel'),
         onPressed: () {
-          Navigator.of(context).pushNamed(TripRoute, arguments: Trip())
+          Navigator.of(context).pushNamed(TripEditRoute, arguments: Trip())
               .then((value) { // обновление страницы после редактирования
                 setState(() {});
               })
