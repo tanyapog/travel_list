@@ -14,15 +14,26 @@ class TravelListApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.white,
       ),
-      home: HomePage(),
-      onGenerateRoute: (settings) {
-        if(settings.name == TripRoute) {
-          return MaterialPageRoute(
-              builder: (context) => TravelListScreen(trip: Trip(),),
-          );
-        }
-        return null;
-      },
+      home: Navigator(
+        onGenerateRoute: (settings) {
+          if (settings.name == RootRoute) {
+            return MaterialPageRoute(
+                builder: (context) {
+                  return HomePage();
+                }
+            );
+          }
+          if (settings.name == TripRoute) {
+            return MaterialPageRoute(
+                builder: (context) {
+                  return TravelListScreen(trip: settings.arguments,);
+                }
+            );
+          }
+          return null;
+        },
+        initialRoute: RootRoute,
+      )
     );
   }
 }

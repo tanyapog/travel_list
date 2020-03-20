@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:travel_list/screens/trip/trip.dart';
 import 'package:travel_list/shared/routing_constants.dart';
 import 'package:travel_list/shared/db_imitation.dart';
 
@@ -16,7 +17,11 @@ class _HomePageState extends State<HomePage> {
       child: RaisedButton(
         child: Text('Create list for my next travel'),
         onPressed: () {
-          Navigator.pushNamed(context, TripRoute);
+          Navigator.of(context).pushNamed(TripRoute, arguments: Trip())
+              .then((value) { // обновление страницы после редактирования
+                setState(() {});
+              })
+          ;
         },
       ),
     );
@@ -48,7 +53,7 @@ class _HomePageState extends State<HomePage> {
               )
             )
           ],
-        )
+        ),
     );
   }
 }
