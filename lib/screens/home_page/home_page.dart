@@ -20,8 +20,7 @@ class _HomePageState extends State<HomePage> {
           Navigator.of(context).pushNamed(TripEditRoute, arguments: Trip())
               .then((value) { // обновление страницы после редактирования
                 setState(() {});
-              })
-          ;
+              });
         },
       ),
     );
@@ -43,10 +42,18 @@ class _HomePageState extends State<HomePage> {
                 child: ListView.builder(
                   itemCount: DbImitation.trips.length,
                   itemBuilder: (context, i) {
+                    Trip _trip = DbImitation.trips[i];
                     return Container(
                       height: 50,
                       color: Colors.amber[50*(i+1)],
-                      child: Center(child: Text('${DbImitation.trips[i].name}')),
+                      child: Center(
+                        child: InkWell(
+                          child: Text('${_trip.name}'),
+                          onTap: () {
+                            Navigator.of(context).pushNamed(TripRoute, arguments: _trip);
+                          }
+                        )
+                      ),
                     );
                   }
                 )

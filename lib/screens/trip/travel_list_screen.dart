@@ -13,16 +13,16 @@ class _TravelListScreenState extends State<TravelListScreen> {
 
   @override
   Widget build(BuildContext context) {
-
+    Trip _trip = widget.trip;
     return Scaffold(
         appBar: AppBar(
-          title: Text('new trip 1'),
+          title: Text('${_trip.name}'),
         ),
         body: Container (
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text('One day travel list for ${widget.trip.name} here'),
+              Text('Travel list for ${_trip.name}'),
             ],
           ),
         )
