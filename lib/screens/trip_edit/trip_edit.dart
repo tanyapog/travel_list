@@ -25,26 +25,34 @@ class _TripEditState extends State<TripEditScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
-                TextFormField(
-                  validator: (value) {
-                    if (value.isEmpty) {
-                      return "Please, give trip a name";
-                    } else return null;
-                  },
-                  onSaved: (value) {
-                    widget.trip.name = value;
-                  },
-                ),
-                RaisedButton(
-                  child: Text('Save'),
-                  onPressed: () {
-                    _saveTrip(context);
-                  },
-                )
+                _tripNameField(),
+                _saveButton(context)
               ],
             ),
           )
       )
+    );
+  }
+
+  TextFormField _tripNameField() {
+    return TextFormField(
+      validator: (value) {
+        if (value.isEmpty) {
+          return "Please, give trip a name";
+        } else return null;
+      },
+      onSaved: (value) {
+        widget.trip.name = value;
+      },
+    );
+  }
+
+  RaisedButton _saveButton(BuildContext context) {
+    return RaisedButton(
+      child: Text('Save'),
+      onPressed: () {
+        _saveTrip(context);
+      },
     );
   }
 
