@@ -44,6 +44,7 @@ class _TripEditState extends State<TripEditScreen> {
 
   TextFormField _tripNameField() {
     return TextFormField(
+      autofocus: true,
       validator: (value) {
         if (value.isEmpty) {
           return "Please, give trip a name";
