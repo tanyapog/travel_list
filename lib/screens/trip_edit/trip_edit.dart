@@ -9,9 +9,16 @@ class TripEditScreen extends StatefulWidget {
   _TripEditState createState() => _TripEditState();
 }
 
+enum ItemsSource {generator, template, duplicatePreviosTrip, selectFromCatalog}
+
 class _TripEditState extends State<TripEditScreen> {
   final _formKey = GlobalKey<FormState>();
-
+  ItemsSource _itemsSource = ItemsSource.generator;
+  var _itemsSourceLabels = {
+    ItemsSource.generator:'Generator',
+    ItemsSource.template:'Template',
+    ItemsSource.duplicatePreviosTrip:'Duplicate one of the previos trips',
+    ItemsSource.selectFromCatalog:'Select from catalog'};
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -26,7 +33,8 @@ class _TripEditState extends State<TripEditScreen> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 _tripNameField(),
-                _saveButton(context)
+                _itemSourceRadio(),
+                _saveButton(context),
               ],
             ),
           )
@@ -44,6 +52,25 @@ class _TripEditState extends State<TripEditScreen> {
       onSaved: (value) {
         widget.trip.name = value;
       },
+    );
+  }
+
+  Expanded _itemSourceRadio() {
+    return Expanded (
+      child: ListView.builder(
+        itemCount: _itemsSourceLabels.length,
+        itemBuilder: (BuildContext context, int i) {
+          ItemsSource itemsSource = _itemsSourceLabels.keys.elementAt(i);
+          return RadioListTile<ItemsSource>(
+            title: Text('${_itemsSourceLabels[itemsSource]}'),
+            value: itemsSource,
+            groupValue: _itemsSource,
+            onChanged: (ItemsSource value) {
+              setState(() { _itemsSource = value; });
+            },
+          );
+        }
+      ),
     );
   }
 
