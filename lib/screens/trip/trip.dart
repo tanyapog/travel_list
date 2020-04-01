@@ -3,6 +3,8 @@ class Trip {
   String name;
   String description;
   bool complete;
+  DateTime start;
+  DateTime end;
   DateTime created = DateTime.now();
   DateTime updated;
 

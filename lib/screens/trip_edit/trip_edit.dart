@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:flutter/rendering.dart';
+import 'package:date_range_picker/date_range_picker.dart' as DateRangePicker;
 import 'package:travel_list/shared/db_imitation.dart';
 import 'package:travel_list/screens/trip/trip.dart';
 
@@ -19,13 +22,14 @@ class _TripEditState extends State<TripEditScreen> {
     ItemsSource.template:'Template',
     ItemsSource.duplicatePreviosTrip:'Duplicate one of the previos trips',
     ItemsSource.selectFromCatalog:'Select from catalog'};
+
   @override
   Widget build(BuildContext context) {
     return Form(
       key: _formKey,
       child: Scaffold(
           appBar: AppBar(
-            title: Text('new trip 1'),
+            title: Text('new trip'),
           ),
           body: Container (
             padding: EdgeInsets.all(25),
@@ -33,6 +37,7 @@ class _TripEditState extends State<TripEditScreen> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 _tripNameField(),
+                _tripDates(),
                 _itemSourceRadio(),
                 _saveButton(context),
               ],
@@ -52,6 +57,32 @@ class _TripEditState extends State<TripEditScreen> {
       },
       onSaved: (value) {
         widget.trip.name = value;
+      },
+    );
+  }
+
+  final TextEditingController _rangeController = new TextEditingController();
+  final format = DateFormat("yyyy-MM-dd"); // todo more redable format
+  TextFormField _tripDates() {
+    List<DateTime> picked;
+    return TextFormField(
+      controller: _rangeController,
+      onTap: () async {
+        FocusScope.of(context).requestFocus(new FocusNode());
+        picked = await DateRangePicker.showDatePicker(
+            context: context,
+            initialFirstDate: new DateTime.now(),
+            initialLastDate: (new DateTime.now()).add(new Duration(days: 7)),
+            firstDate: new DateTime(2015),
+            lastDate: new DateTime(2040)
+        );
+        if (picked != null && picked.length == 2) {
+          _rangeController.text = '${format.format(picked[0])} - ${format.format(picked[1])}';
+        }
+      },
+      onSaved: (value) {
+        widget.trip.start = picked[0];
+        widget.trip.end = picked[1];
       },
     );
   }
