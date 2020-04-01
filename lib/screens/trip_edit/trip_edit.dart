@@ -63,26 +63,28 @@ class _TripEditState extends State<TripEditScreen> {
 
   final TextEditingController _rangeController = new TextEditingController();
   final format = DateFormat("yyyy-MM-dd"); // todo more redable format
+  List<DateTime> _picked;
   TextFormField _tripDates() {
-    List<DateTime> picked;
     return TextFormField(
       controller: _rangeController,
       onTap: () async {
         FocusScope.of(context).requestFocus(new FocusNode());
-        picked = await DateRangePicker.showDatePicker(
+        _picked = await DateRangePicker.showDatePicker(
             context: context,
             initialFirstDate: new DateTime.now(),
             initialLastDate: (new DateTime.now()).add(new Duration(days: 7)),
             firstDate: new DateTime(2015),
             lastDate: new DateTime(2040)
         );
-        if (picked != null && picked.length == 2) {
-          _rangeController.text = '${format.format(picked[0])} - ${format.format(picked[1])}';
+        if (_picked != null && _picked.length == 2) {
+          _rangeController.text = '${format.format(_picked[0])} - ${format.format(_picked[1])}';
         }
       },
       onSaved: (value) {
-        widget.trip.start = picked[0];
-        widget.trip.end = picked[1];
+        if (_picked != null) {
+          widget.trip.start = _picked[0];
+          widget.trip.end = _picked[1];
+        }
       },
     );
   }
