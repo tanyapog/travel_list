@@ -4,6 +4,7 @@ import 'package:flutter/rendering.dart';
 import 'package:date_range_picker/date_range_picker.dart' as DateRangePicker;
 import 'package:travel_list/shared/db_imitation.dart';
 import 'package:travel_list/screens/luggage_list/trip.dart';
+import 'package:travel_list/shared/routing_constants.dart';
 
 class TripEditScreen extends StatefulWidget {
   final Trip trip;
@@ -110,7 +111,7 @@ class _TripEditScreenState extends State<TripEditScreen> {
 
   RaisedButton _saveButton(BuildContext context) {
     return RaisedButton(
-      child: Text('Save'),
+      child: Text('Next'),
       onPressed: () {
         _saveTrip(context);
       },
@@ -121,7 +122,7 @@ class _TripEditScreenState extends State<TripEditScreen> {
     if (_formKey.currentState.validate()) {
       _formKey.currentState.save();
       DbImitation.trips.add(widget.trip);
-      Navigator.of(context).pop();
+      Navigator.of(context).pushNamed(GeneratorRoute);
     }
   }
 }
