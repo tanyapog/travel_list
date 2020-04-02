@@ -1,15 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../trip/trip.dart';
+import '../luggage_list/trip.dart';
 
-class TravelListScreen extends StatefulWidget {
+class LuggageListScreen extends StatefulWidget {
   final Trip trip;
-  const TravelListScreen({Key key, this.trip}) : super(key: key);
+  const LuggageListScreen({Key key, this.trip}) : super(key: key);
   @override
-  _TravelListScreenState createState() => _TravelListScreenState();
+  _LuggageListScreenState createState() => _LuggageListScreenState();
 }
 
-class _TravelListScreenState extends State<TravelListScreen> {
+class _LuggageListScreenState extends State<LuggageListScreen> {
 
   @override
   Widget build(BuildContext context) {

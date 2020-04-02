@@ -3,18 +3,18 @@ import 'package:intl/intl.dart';
 import 'package:flutter/rendering.dart';
 import 'package:date_range_picker/date_range_picker.dart' as DateRangePicker;
 import 'package:travel_list/shared/db_imitation.dart';
-import 'package:travel_list/screens/trip/trip.dart';
+import 'package:travel_list/screens/luggage_list/trip.dart';
 
 class TripEditScreen extends StatefulWidget {
   final Trip trip;
   const TripEditScreen({Key key, this.trip}) : super(key: key);
   @override
-  _TripEditState createState() => _TripEditState();
+  _TripEditScreenState createState() => _TripEditScreenState();
 }
 
 enum ItemsSource {generator, template, duplicatePreviosTrip, selectFromCatalog}
 
-class _TripEditState extends State<TripEditScreen> {
+class _TripEditScreenState extends State<TripEditScreen> {
   final _formKey = GlobalKey<FormState>();
   ItemsSource _itemsSource = ItemsSource.generator;
   var _itemsSourceLabels = {

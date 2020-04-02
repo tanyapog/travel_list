@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:travel_list/screens/trip/trip.dart';
+import 'package:travel_list/screens/luggage_list/trip.dart';
 import 'package:travel_list/shared/routing_constants.dart';
 import 'package:travel_list/shared/db_imitation.dart';
 
-class HomePage extends StatefulWidget {
+class TripsScreen extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _TripsScreenState createState() => _TripsScreenState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _TripsScreenState extends State<TripsScreen> {
 
   Widget newTravelListBtn(context) {
     return Container(
@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Travel List'),
+          title: Text('Packing Helper'), // todo nice application name
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -50,7 +50,7 @@ class _HomePageState extends State<HomePage> {
                         child: InkWell(
                           child: Text('${_trip.name}'),
                           onTap: () {
-                            Navigator.of(context).pushNamed(TripRoute, arguments: _trip);
+                            Navigator.of(context).pushNamed(LuggageListRoute, arguments: _trip);
                           }
                         )
                       ),

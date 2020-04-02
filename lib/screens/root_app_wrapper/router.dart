@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:travel_list/shared/routing_constants.dart';
-import 'package:travel_list/screens/home_page/home_page.dart';
-import 'package:travel_list/screens/trip_edit/trip_edit.dart';
-import 'package:travel_list/screens/trip/travel_list_screen.dart';
+import 'package:travel_list/screens/trip/trips_screen.dart';
+import 'package:travel_list/screens/trip_edit/trip_edit_screen.dart';
+import 'package:travel_list/screens/luggage_list/luggage_list_screen.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {
     case RootRoute:
       return MaterialPageRoute(
-          builder: (context) {return HomePage();}
+          builder: (context) {return TripsScreen();}
       );
-    case TripRoute:
+    case LuggageListRoute:
       return MaterialPageRoute(
-          builder: (context) {return TravelListScreen(trip: settings.arguments,);}
+          builder: (context) {return LuggageListScreen(trip: settings.arguments,);}
       );
     case TripEditRoute:
       return MaterialPageRoute(
