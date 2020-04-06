@@ -3,7 +3,7 @@ import 'package:intl/intl.dart';
 import 'package:flutter/rendering.dart';
 import 'package:date_range_picker/date_range_picker.dart' as DateRangePicker;
 import 'package:travel_list/shared/db_imitation.dart';
-import 'package:travel_list/screens/luggage_list/trip.dart';
+import 'package:travel_list/models/trip.dart';
 import 'package:travel_list/shared/routing_constants.dart';
 
 class TripEditScreen extends StatefulWidget {

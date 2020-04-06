@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../luggage_list/trip.dart';
+import '../../models/trip.dart';
 
 class LuggageListScreen extends StatefulWidget {
   final Trip trip;

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:travel_list/screens/luggage_list/trip.dart';
+import 'package:travel_list/models/trip.dart';
 import 'package:travel_list/shared/routing_constants.dart';
 import 'package:travel_list/shared/db_imitation.dart';
 

@@ -1,5 +1,5 @@
-import 'package:travel_list/screens/luggage_list/trip.dart';
-import 'package:travel_list/screens/trip_category/trip_category.dart';
+import 'package:travel_list/models/trip.dart';
+import 'package:travel_list/models/trip_category.dart';
 
 class DbImitation {
   static final List<TripCategory> tripCategories = [
