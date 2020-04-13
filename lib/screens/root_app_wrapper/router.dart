@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:travel_list/screens/generator/generator_screen.dart';
 import 'package:travel_list/shared/routing_constants.dart';
+import 'package:travel_list/screens/configurator/configuragor_wrapper.dart';
+import 'package:travel_list/screens/generator/generator_screen.dart';
 import 'package:travel_list/screens/trip/trips_screen.dart';
-import 'package:travel_list/screens/trip_edit/trip_edit_screen.dart';
 import 'package:travel_list/screens/luggage_list/luggage_list_screen.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
@@ -15,9 +15,9 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(
           builder: (context) {return LuggageListScreen(trip: settings.arguments,);}
       );
-    case TripEditRoute:
+    case ConfiguratorRoute:
       return MaterialPageRoute(
-          builder: (context) {return TripEditScreen(trip: settings.arguments,);}
+          builder: (context) {return ConfiguratorWrapper(trip: settings.arguments,);}
       );
     case GeneratorRoute:
       return MaterialPageRoute(

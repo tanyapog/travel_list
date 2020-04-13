@@ -2,53 +2,33 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter/rendering.dart';
 import 'package:date_range_picker/date_range_picker.dart' as DateRangePicker;
-import 'package:travel_list/shared/db_imitation.dart';
+import 'package:travel_list/screens/configurator/Inherited_trip_provider.dart';
 import 'package:travel_list/models/trip.dart';
-import 'package:travel_list/shared/routing_constants.dart';
 
 class TripEditScreen extends StatefulWidget {
-  final Trip trip;
-  const TripEditScreen({Key key, this.trip}) : super(key: key);
   @override
   _TripEditScreenState createState() => _TripEditScreenState();
 }
 
-enum ItemsSource {generator, template, duplicatePreviosTrip, selectFromCatalog}
-
 class _TripEditScreenState extends State<TripEditScreen> {
-  final _formKey = GlobalKey<FormState>();
-  ItemsSource _itemsSource = ItemsSource.generator;
-  var _itemsSourceLabels = {
-    ItemsSource.generator:'Generator',
-    ItemsSource.template:'Template',
-    ItemsSource.duplicatePreviosTrip:'Duplicate one of the previos trips',
-    ItemsSource.selectFromCatalog:'Select from catalog'};
-
   @override
   Widget build(BuildContext context) {
-    return Form(
-      key: _formKey,
-      child: Scaffold(
-          appBar: AppBar(
-            title: Text('new trip'),
-          ),
-          body: Container (
-            padding: EdgeInsets.all(25),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                _tripNameField(),
-                _tripDates(),
-                _itemSourceRadio(),
-                _saveButton(context),
-              ],
-            ),
-          )
+    Trip trip = InheritedTripProvider.of(context).trip;
+    return Flexible (
+      child: Container (
+        padding: EdgeInsets.only(left: 25, right: 25),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            _tripNameField(trip),
+            _tripDates(trip),
+          ],
+        ),
       )
     );
   }
 
-  TextFormField _tripNameField() {
+  TextFormField _tripNameField(Trip trip) {
     return TextFormField(
       autofocus: true,
       validator: (value) {
@@ -57,7 +37,7 @@ class _TripEditScreenState extends State<TripEditScreen> {
         } else return null;
       },
       onSaved: (value) {
-        widget.trip.name = value;
+        trip.name = value;
       },
     );
   }
@@ -65,7 +45,7 @@ class _TripEditScreenState extends State<TripEditScreen> {
   final TextEditingController _rangeController = new TextEditingController();
   final format = DateFormat("yyyy-MM-dd"); // todo more redable format
   List<DateTime> _picked;
-  TextFormField _tripDates() {
+  TextFormField _tripDates(Trip trip) {
     return TextFormField(
       controller: _rangeController,
       onTap: () async {
@@ -83,46 +63,10 @@ class _TripEditScreenState extends State<TripEditScreen> {
       },
       onSaved: (value) {
         if (_picked != null) {
-          widget.trip.start = _picked[0];
-          widget.trip.end = _picked[1];
+          trip.start = _picked[0];
+          trip.end = _picked[1];
         }
       },
     );
-  }
-
-  Expanded _itemSourceRadio() {
-    return Expanded (
-      child: ListView.builder(
-        itemCount: _itemsSourceLabels.length,
-        itemBuilder: (BuildContext context, int i) {
-          ItemsSource itemsSource = _itemsSourceLabels.keys.elementAt(i);
-          return RadioListTile<ItemsSource>(
-            title: Text('${_itemsSourceLabels[itemsSource]}'),
-            value: itemsSource,
-            groupValue: _itemsSource,
-            onChanged: (ItemsSource value) {
-              setState(() { _itemsSource = value; });
-            },
-          );
-        }
-      ),
-    );
-  }
-
-  RaisedButton _saveButton(BuildContext context) {
-    return RaisedButton(
-      child: Text('Next'),
-      onPressed: () {
-        _saveTrip(context);
-      },
-    );
-  }
-
-  void _saveTrip(BuildContext context) {
-    if (_formKey.currentState.validate()) {
-      _formKey.currentState.save();
-      DbImitation.trips.add(widget.trip);
-      Navigator.of(context).pushNamed(GeneratorRoute);
-    }
   }
 }

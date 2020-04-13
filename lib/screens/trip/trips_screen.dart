@@ -17,7 +17,7 @@ class _TripsScreenState extends State<TripsScreen> {
       child: RaisedButton(
         child: Text('Create list for next travel'),
         onPressed: () {
-          Navigator.of(context).pushNamed(TripEditRoute, arguments: Trip())
+          Navigator.of(context).pushNamed(ConfiguratorRoute, arguments: Trip())
               .then((value) { // обновление страницы после редактирования
                 setState(() {});
               });
