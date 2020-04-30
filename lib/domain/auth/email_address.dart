@@ -1,9 +1,11 @@
 import 'package:meta/meta.dart';
 import 'package:dartz/dartz.dart';
 import 'package:travel_list/domain/core/failures.dart';
+import 'package:travel_list/domain/core/value_objects.dart';
 
 @immutable
-class EmailAddress {
+class EmailAddress extends ValueObject<String> {
+  @override
   final Either<ValueFailure<String>, String> value;
 
   factory EmailAddress(String input) {
@@ -12,19 +14,6 @@ class EmailAddress {
   }
 
   const EmailAddress._(this.value);
-
-  @override
-  String toString() => 'EmailAddress($value)';
-
-  @override
-  bool operator == (Object other) {
-    if (identical(this, other)) 
-      return true;
-    return other is EmailAddress && other.value == value;
-  }
-
-  @override
-  int get hashCode => value.hashCode;
 }
 
 Either<ValueFailure<String>, String> validateEmailAddress(String input) {
