@@ -1,18 +1,16 @@
-import 'package:meta/meta.dart';
 import 'package:dartz/dartz.dart';
 import 'package:travel_list/domain/core/failures.dart';
 import 'package:travel_list/domain/core/value_objects.dart';
 import 'package:travel_list/domain/core/value_validatores.dart';
 
-@immutable
-class EmailAddress extends ValueObject<String> {
+class Password extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;
 
-  factory EmailAddress(String input) {
+  factory Password(String input) {
     assert(input != null);
-    return EmailAddress._(validateEmailAddress(input));
+    return Password._(validatePassword(input));
   }
 
-  const EmailAddress._(this.value);
+  const Password._(this.value);
 }
