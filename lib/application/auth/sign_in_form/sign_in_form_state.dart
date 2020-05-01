@@ -9,6 +9,8 @@ abstract class SignInFormState with _$SignInFormState {
     @required Password password,
     @required bool showErrorMessages,
     @required bool isSubmitting,
+    // We have to reset the authFailureOrSuccessOption field whenever we emit a new state.
+    // Because this field holds a "response" from the previous call to sign in/register using IAuthFacade.
     @required Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption,
   }) = _SignInFormState;
 
