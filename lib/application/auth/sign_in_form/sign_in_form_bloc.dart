@@ -40,23 +40,20 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
       registerWithEmailAndPasswordPressed: (e) async* {
         final bool isEmailValid = state.emailAddress.isValid();
         final bool isPasswordValid = state.password.isValid();
-
+        Either<AuthFailure, Unit> failureOrSuccess;
         if (isEmailValid && isPasswordValid) {
           yield state.copyWith(
-            isSubmitting: true,
+            isSubmitting: true, // the form is in the process of being submitted
             authFailureOrSuccessOption: none(),
           );
-          final failureOrSuccess = await _authFacade.registerWithEmailAndPassword(
+          failureOrSuccess = await _authFacade.registerWithEmailAndPassword(
               emailAddress: state.emailAddress,
               password: state.password,
           );
           yield state.copyWith(
             isSubmitting: false,
-            authFailureOrSuccessOption: some(failureOrSuccess),
-          );
-          yield state.copyWith(
-            showErrorMessages: true,  // we'll indicate that the form is in the process of being submitted
-            authFailureOrSuccessOption: none(),
+            showErrorMessages: true,
+            authFailureOrSuccessOption: optionOf(failureOrSuccess), // the optionOf turns null into none()
           );
         }
       },
