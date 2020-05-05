@@ -2,9 +2,9 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:travel_list/domain/auth/i_auth_facade.dart';
 import 'package:travel_list/domain/auth/auth_failure.dart';
 import 'package:travel_list/domain/auth/email_address.dart';
-import 'package:travel_list/domain/auth/i_auth_facade.dart';
 import 'package:travel_list/domain/auth/password.dart';
 
 part 'sign_in_form_event.dart';
@@ -56,13 +56,13 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
       });
   }
 
-  // this bloc cheks email and password for validity,
-  // invoke needed forvardedCall and return corresponding SignInFormState
+  // this bloc checks email and password for validity,
+  // invoke needed forwardedCall and return corresponding SignInFormState
   Stream<SignInFormState> _authAction(
       Future<Either<AuthFailure, Unit>> Function ({
         @required EmailAddress emailAddress,
         @required Password password,
-      }) forvardedCall,
+      }) forwardedCall,
     ) async* {
     final bool isEmailValid = state.emailAddress.isValid();
     final bool isPasswordValid = state.password.isValid();
@@ -72,15 +72,15 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
         isSubmitting: true, // the form is in the process of being submitted
         authFailureOrSuccessOption: none(),
       );
-      failureOrSuccess = await forvardedCall(
+      failureOrSuccess = await forwardedCall(
         emailAddress: state.emailAddress,
         password: state.password,
-      );
-      yield state.copyWith(
-        isSubmitting: false,
-        showErrorMessages: true,
-        authFailureOrSuccessOption: optionOf(failureOrSuccess), // the optionOf turns null into none()
-      );
+        );
     }
+    yield state.copyWith(
+      isSubmitting: false,
+      showErrorMessages: true,
+      authFailureOrSuccessOption: optionOf(failureOrSuccess), // the optionOf turns null into none()
+    );
   }
 }
