@@ -38,26 +38,11 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
         );
       },
       registerWithEmailAndPasswordPressed: (e) async* {
-        final bool isEmailValid = state.emailAddress.isValid();
-        final bool isPasswordValid = state.password.isValid();
-        Either<AuthFailure, Unit> failureOrSuccess;
-        if (isEmailValid && isPasswordValid) {
-          yield state.copyWith(
-            isSubmitting: true, // the form is in the process of being submitted
-            authFailureOrSuccessOption: none(),
-          );
-          failureOrSuccess = await _authFacade.registerWithEmailAndPassword(
-              emailAddress: state.emailAddress,
-              password: state.password,
-          );
-          yield state.copyWith(
-            isSubmitting: false,
-            showErrorMessages: true,
-            authFailureOrSuccessOption: optionOf(failureOrSuccess), // the optionOf turns null into none()
-          );
-        }
+        yield* _authAction(_authFacade.registerWithEmailAndPassword);
       },
-      signInWithEmailAndPasswordPressed: (e) async* {},
+      signInWithEmailAndPasswordPressed: (e) async* {
+        yield* _authAction(_authFacade.signInWithEmailAndPassword);
+      },
       signInWithGooglePressed: (e) async* {
         yield state.copyWith(
           isSubmitting: true,
@@ -69,5 +54,33 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
           authFailureOrSuccessOption: some(failureOrSuccess)
         );
       });
+  }
+
+  // this bloc cheks email and password for validity,
+  // invoke needed forvardedCall and return corresponding SignInFormState
+  Stream<SignInFormState> _authAction(
+      Future<Either<AuthFailure, Unit>> Function ({
+        @required EmailAddress emailAddress,
+        @required Password password,
+      }) forvardedCall,
+    ) async* {
+    final bool isEmailValid = state.emailAddress.isValid();
+    final bool isPasswordValid = state.password.isValid();
+    Either<AuthFailure, Unit> failureOrSuccess;
+    if (isEmailValid && isPasswordValid) {
+      yield state.copyWith(
+        isSubmitting: true, // the form is in the process of being submitted
+        authFailureOrSuccessOption: none(),
+      );
+      failureOrSuccess = await forvardedCall(
+        emailAddress: state.emailAddress,
+        password: state.password,
+      );
+      yield state.copyWith(
+        isSubmitting: false,
+        showErrorMessages: true,
+        authFailureOrSuccessOption: optionOf(failureOrSuccess), // the optionOf turns null into none()
+      );
+    }
   }
 }
