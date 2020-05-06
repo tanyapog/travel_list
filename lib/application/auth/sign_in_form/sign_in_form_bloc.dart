@@ -15,6 +15,7 @@ part 'sign_in_form_bloc.freezed.dart';
 
 class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
   final IAuthFacade _authFacade;
+
   SignInFormBloc(this._authFacade);
 
   @override
@@ -53,17 +54,18 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
           isSubmitting: false,
           authFailureOrSuccessOption: some(failureOrSuccess)
         );
-      });
+      }
+    );
   }
 
   // this bloc checks email and password for validity,
   // invoke needed forwardedCall and return corresponding SignInFormState
   Stream<SignInFormState> _authAction(
-      Future<Either<AuthFailure, Unit>> Function ({
-        @required EmailAddress emailAddress,
-        @required Password password,
-      }) forwardedCall,
-    ) async* {
+    Future<Either<AuthFailure, Unit>> Function({
+      @required EmailAddress emailAddress,
+      @required Password password,
+    }) forwardedCall,
+  ) async* {
     final bool isEmailValid = state.emailAddress.isValid();
     final bool isPasswordValid = state.password.isValid();
     Either<AuthFailure, Unit> failureOrSuccess;
@@ -75,7 +77,7 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
       failureOrSuccess = await forwardedCall(
         emailAddress: state.emailAddress,
         password: state.password,
-        );
+      );
     }
     yield state.copyWith(
       isSubmitting: false,
