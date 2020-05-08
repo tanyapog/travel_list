@@ -1,6 +1,4 @@
-include:
-  package:lint/analysis_options.yaml
-  package:effective_dart/analysis_options.yaml
+include: package:lint/analysis_options.yaml
 
 analyzer:
   errors:
