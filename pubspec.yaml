@@ -30,6 +30,8 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  lint: ^1.1.1
+  effective_dart: ^1.2.0
   build_runner:
   freezed: ^0.10.5
   date_range_picker: ^1.0.6
