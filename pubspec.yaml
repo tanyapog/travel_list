@@ -23,8 +23,10 @@ dependencies:
   freezed_annotation: ^0.7.1
   flutter_bloc: ^3.2.0
   firebase_core: ^0.4.0+9
-  firebase_auth: ^0.15.5+3
-  google_sign_in: ^4.1.1
+  firebase_auth: ^0.16.0
+  google_sign_in: ^4.4.2
+  get_it: ^4.0.2
+  injectable: ^0.3.0
   cupertino_icons: ^0.1.2
 
 dev_dependencies:
@@ -33,6 +35,7 @@ dev_dependencies:
   lint: ^1.1.1
   build_runner:
   freezed: ^0.10.5
+  injectable_generator: ^0.3.2
   date_range_picker: ^1.0.6
   intl: ^0.16.1
 
