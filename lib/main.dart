@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:injectable/injectable.dart';
+import 'package:travel_list/injection.dart';
 import 'package:travel_list/screens/root_app_wrapper/root_app_wrapper.dart';
 
-void main() => runApp(TravelListApp());
+void main() {
+  configureInjection(Environment.prod);
+  runApp(TravelListApp());
+}
 
 class TravelListApp extends StatelessWidget {
   @override

@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 import 'package:travel_list/domain/auth/i_auth_facade.dart';
 import 'package:travel_list/domain/auth/auth_failure.dart';
 import 'package:travel_list/domain/auth/email_address.dart';
@@ -13,6 +14,7 @@ part 'sign_in_form_bloc.freezed.dart';
 
 // https://resocoder.com/2020/03/20/flutter-firebase-ddd-course-4-modeling-the-sign-in-form-events-state/#Bloc
 
+@injectable
 class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
   final IAuthFacade _authFacade;
 
