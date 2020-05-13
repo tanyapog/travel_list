@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:travel_list/screens/root_app_wrapper/root_app_wrapper.dart';
+import 'package:travel_list/presentation/screens/sign_in/sign_in_screen.dart';
 
 class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Travel List',
-      theme: ThemeData(
+      home: SignInScreen(),
+      theme: ThemeData.light().copyWith(
         primaryColor: Colors.white,
+        inputDecorationTheme: InputDecorationTheme(
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+        )
       ),
-      home: RootAppWrapper(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
