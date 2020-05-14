@@ -29,7 +29,7 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
     yield* event.map(
       emailChanged: (e) async* {
         yield state.copyWith(
-          emailAddress: EmailAddress(e.emailStr),
+          email: Email(e.emailStr),
           authFailureOrSuccessOption: none(),
         );
       },
@@ -63,11 +63,11 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
   // invoke needed forwardedCall and return corresponding SignInFormState
   Stream<SignInFormState> _authAction(
     Future<Either<AuthFailure, Unit>> Function({
-      @required EmailAddress emailAddress,
+      @required Email email,
       @required Password password,
     }) forwardedCall,
   ) async* {
-    final bool isEmailValid = state.emailAddress.isValid();
+    final bool isEmailValid = state.email.isValid();
     final bool isPasswordValid = state.password.isValid();
     Either<AuthFailure, Unit> failureOrSuccess;
     if (isEmailValid && isPasswordValid) {
@@ -76,7 +76,7 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
         authFailureOrSuccessOption: none(),
       );
       failureOrSuccess = await forwardedCall(
-        emailAddress: state.emailAddress,
+        email: state.email,
         password: state.password,
       );
     }

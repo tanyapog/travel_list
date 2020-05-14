@@ -3,16 +3,16 @@ import 'package:travel_list/domain/core/failures.dart';
 import 'package:travel_list/domain/core/value_objects.dart';
 import 'package:travel_list/domain/core/value_validatores.dart';
 
-class EmailAddress extends ValueObject<String> {
+class Email extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;
 
-  factory EmailAddress(String input) {
+  factory Email(String input) {
     assert(input != null);
-    return EmailAddress._(validateEmailAddress(input));
+    return Email._(validateEmail(input));
   }
 
-  const EmailAddress._(this.value);
+  const Email._(this.value);
 }
 
 class Password extends ValueObject<String> {

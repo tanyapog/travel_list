@@ -20,10 +20,10 @@ class FirebaseAuthFacade implements IAuthFacade {
 
   @override
   Future<Either<AuthFailure, Unit>> registerWithEmailAndPassword({
-    @required EmailAddress emailAddress,
+    @required Email email,
     @required Password password
   }) async {
-    final emailStr = emailAddress.getOrCrash();
+    final emailStr = email.getOrCrash();
     final passwordStr = password.getOrCrash();
     try {
       await _firebaseAuth.createUserWithEmailAndPassword(
@@ -42,10 +42,10 @@ class FirebaseAuthFacade implements IAuthFacade {
 
   @override
   Future<Either<AuthFailure, Unit>> signInWithEmailAndPassword({
-    @required EmailAddress emailAddress,
+    @required Email email,
     @required Password password
   }) async {
-    final emailStr = emailAddress.getOrCrash();
+    final emailStr = email.getOrCrash();
     final passwordStr = password.getOrCrash();
     try {
       await _firebaseAuth.signInWithEmailAndPassword(

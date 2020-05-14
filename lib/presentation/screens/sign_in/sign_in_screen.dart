@@ -63,7 +63,7 @@ class SignInForm extends StatelessWidget {
                   //  We use directly context.bloc.state instead of state of the builder
                   //  because the state of builder will be always one character older than the last value which was inputed into the bloc.
                   //  That's because the UI did not have yet the chance to rebuild the builder with delayed value of the bloc
-                  validator: (_) => context.bloc<SignInFormBloc>().state.emailAddress.value.fold(
+                  validator: (_) => context.bloc<SignInFormBloc>().state.email.value.fold(
                     (failure) => failure .maybeMap(
                       invalidEmail: (_) => 'Invalid Email',
                       // the only failure of [ValueFailure] we need to process in this field is invalidEmail,
