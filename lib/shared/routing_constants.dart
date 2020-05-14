@@ -1,4 +1,4 @@
-const String RootRoute = "/";
-const String LuggageListRoute = "/luggageList";
-const String ConfiguratorRoute = "/configurator";
-const String GeneratorRoute = "/generator";
+const String rootRoute = "/";
+const String luggageListRoute = "/luggageList";
+const String configuratorRoute = "/configurator";
+const String generatorRoute = "/generator";

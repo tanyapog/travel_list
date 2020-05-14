@@ -12,6 +12,6 @@ class Trip {
   Trip.fromNameAndDescription (this.id, this.name, this.description);
 
   bool isNew() {
-    return this.id == null || this.id == 0;
+    return id == null || id == 0;
   }
 }

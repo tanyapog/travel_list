@@ -5,7 +5,7 @@ import 'package:travel_list/models/trip.dart';
 class InheritedTripProvider extends InheritedWidget {
   final Trip trip;
 
-  InheritedTripProvider({
+  const InheritedTripProvider({
     Widget child,
     this.trip
   }) : super(child: child);

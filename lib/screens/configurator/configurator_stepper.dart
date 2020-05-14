@@ -28,10 +28,10 @@ class _ConfigurationStepperState extends State<ConfigurationStepper>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(50.0),
+        preferredSize: const Size.fromHeight(50.0),
         child: TabBarView(
-          children: widget.steps,
           controller: _tabController,
+          children: widget.steps,
         ),
       ),
       body: Column(
@@ -69,15 +69,15 @@ class _ConfigurationStepperState extends State<ConfigurationStepper>
       child: Row(
         children: <Widget>[
           FlatButton(
+            onPressed: _tabController.index > 0
+              ? () {_tabController.animateTo(_tabController.index - 1);}
+              : null,
             child: Row(
               children: <Widget>[
                 Icon(Icons.chevron_left,),
-                Text('BACK'),
+                const Text('BACK'),
               ],
             ),
-            onPressed: _tabController.index > 0
-                ? () {_tabController.animateTo(_tabController.index - 1);}
-                : null,
           ),
           Expanded(
             child: Center(
@@ -85,14 +85,7 @@ class _ConfigurationStepperState extends State<ConfigurationStepper>
             ),
           ),
           FlatButton(
-            child: Row(
-              children: <Widget>[
-                Text('NEXT'),
-                Icon(Icons.chevron_right,),
-              ],
-            ),
             onPressed: () {
-              print('----- formKey.currentState.validate(): ${_formKey.currentState.validate()}');
               switch (_tabController.index) {
                 case 0: {
                   return _formKey.currentState.validate()
@@ -115,8 +108,13 @@ class _ConfigurationStepperState extends State<ConfigurationStepper>
                 }
                 default: return null;
               }
-            }
-
+            },
+            child: Row(
+              children: <Widget>[
+                const Text('NEXT'),
+                Icon(Icons.chevron_right,),
+              ],
+            ),
           ),
         ],
       ),

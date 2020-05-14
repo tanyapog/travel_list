@@ -7,19 +7,19 @@ import 'package:travel_list/screens/luggage_list/luggage_list_screen.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {
-    case RootRoute:
+    case rootRoute:
       return MaterialPageRoute(
           builder: (context) {return TripsScreen();}
       );
-    case LuggageListRoute:
+    case luggageListRoute:
       return MaterialPageRoute(
           builder: (context) {return LuggageListScreen(trip: settings.arguments,);}
       );
-    case ConfiguratorRoute:
+    case configuratorRoute:
       return MaterialPageRoute(
           builder: (context) {return ConfiguratorWrapper(trip: settings.arguments,);}
       );
-    case GeneratorRoute:
+    case generatorRoute:
       return MaterialPageRoute(
           builder: (context) {return GeneratorScreen();}
       );

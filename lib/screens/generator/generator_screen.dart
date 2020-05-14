@@ -8,10 +8,8 @@ class GeneratorScreen extends StatefulWidget {
 class _GeneratorScreenState extends State<GeneratorScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Text('GENERATOR will be here soon'),
-      ),
+    return const Center(
+      child: Text('GENERATOR will be here soon'),
     );
   }
 }

@@ -7,7 +7,7 @@ class RootAppWrapper extends StatelessWidget {
   Widget build(BuildContext context) {
     return Navigator(
       onGenerateRoute: router.generateRoute,
-      initialRoute: RootRoute,
+      initialRoute: rootRoute,
     );
   }
 }

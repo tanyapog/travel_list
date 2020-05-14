@@ -13,19 +13,17 @@ class _LuggageListScreenState extends State<LuggageListScreen> {
 
   @override
   Widget build(BuildContext context) {
-    Trip _trip = widget.trip;
+    final Trip _trip = widget.trip;
     return Scaffold(
         appBar: AppBar(
           title: Text('${_trip.name}'),
         ),
-        body: Container (
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text('Travel list for ${_trip.name}'),
-            ],
-          ),
-        )
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text('Travel list for ${_trip.name}'),
+          ],
+        ),
     );
   }
 

@@ -14,7 +14,7 @@ class ItemsSourceSettings {
   ItemsSourceSettings(this.radioButtonLabel, this.secondStepTitle, this.route);
 }
 
-var itemsSources = {
+Map<ItemsSource, ItemsSourceSettings> itemsSources = {
   ItemsSource.generator:ItemsSourceSettings('Generator', 'Generator', null),
   ItemsSource.template:ItemsSourceSettings('Template', 'by', null),
   ItemsSource.duplicatePreviosTrip:ItemsSourceSettings('Duplicate one of the previos trips', 'duplicate from', null),
