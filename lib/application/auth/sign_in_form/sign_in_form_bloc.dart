@@ -5,8 +5,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:travel_list/domain/auth/i_auth_facade.dart';
 import 'package:travel_list/domain/auth/auth_failure.dart';
-import 'package:travel_list/domain/auth/email_address.dart';
-import 'package:travel_list/domain/auth/password.dart';
+import 'package:travel_list/domain/auth/value_objects.dart';
 
 part 'sign_in_form_event.dart';
 part 'sign_in_form_state.dart';
