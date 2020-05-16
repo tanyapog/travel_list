@@ -10,6 +10,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:travel_list/infrastructure/auth/firebase_auth_facade.dart';
 import 'package:travel_list/domain/auth/i_auth_facade.dart';
 import 'package:travel_list/application/auth/sign_in_form/sign_in_form_bloc.dart';
+import 'package:travel_list/application/auth/auth_bloc.dart';
 import 'package:get_it/get_it.dart';
 
 void $initGetIt(GetIt g, {String environment}) {
@@ -21,6 +22,7 @@ void $initGetIt(GetIt g, {String environment}) {
   g.registerLazySingleton<IAuthFacade>(
       () => FirebaseAuthFacade(g<FirebaseAuth>(), g<GoogleSignIn>()));
   g.registerFactory<SignInFormBloc>(() => SignInFormBloc(g<IAuthFacade>()));
+  g.registerFactory<AuthBloc>(() => AuthBloc(g<IAuthFacade>()));
 }
 
 class _$FirebaseInjectableModule extends FirebaseInjectableModule {}
