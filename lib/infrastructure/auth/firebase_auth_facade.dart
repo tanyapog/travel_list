@@ -6,7 +6,9 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
 import 'package:travel_list/domain/auth/auth_failure.dart';
 import 'package:travel_list/domain/auth/i_auth_facade.dart';
+import 'package:travel_list/domain/auth/user.dart';
 import 'package:travel_list/domain/auth/value_objects.dart';
+import './firebase_user_mapper.dart';
 
 // lazy mode shifts the creation to the time the object is the first time requested
 // because creating this instance can be time consuming at app start-up
@@ -17,6 +19,12 @@ class FirebaseAuthFacade implements IAuthFacade {
   final GoogleSignIn _googleSignIn;
 
   FirebaseAuthFacade(this._firebaseAuth, this._googleSignIn);
+
+  @override
+  Future<Option<User>> getSignedInUser() =>
+    _firebaseAuth.currentUser().then(
+      (firebaseUser) => optionOf(firebaseUser?.toDomain())
+    );
 
   @override
   Future<Either<AuthFailure, Unit>> registerWithEmailAndPassword({
@@ -82,4 +90,10 @@ class FirebaseAuthFacade implements IAuthFacade {
       return left(const AuthFailure.serverError());
     }
   }
+
+  @override
+  Future<void> signOut() => Future.wait([ // we could use this construction to wait multiple Futures
+    _googleSignIn.signOut(),
+    _firebaseAuth.signOut(),
+  ]);
 }
