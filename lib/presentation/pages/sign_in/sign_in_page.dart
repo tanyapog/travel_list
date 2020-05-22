@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:travel_list/application/auth/sign_in_form/sign_in_form_bloc.dart';
 import 'package:travel_list/injection.dart';
 
-class SignInScreen extends StatelessWidget {
+class SignInPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
