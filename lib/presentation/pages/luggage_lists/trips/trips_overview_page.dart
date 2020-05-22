@@ -4,14 +4,14 @@ import 'package:travel_list/models/trip.dart';
 import 'package:travel_list/shared/routing_constants.dart';
 import 'package:travel_list/shared/db_imitation.dart';
 
-class TripsScreen extends StatefulWidget {
+class TripsOverviewPage extends StatefulWidget {
   @override
-  _TripsScreenState createState() => _TripsScreenState();
+  _TripsOverviewPageState createState() => _TripsOverviewPageState();
 }
 
-class _TripsScreenState extends State<TripsScreen> {
+class _TripsOverviewPageState extends State<TripsOverviewPage> {
 
-  Widget newTravelListBtn(context) {
+  Widget newTravelListBtn(BuildContext context) {
     return Container(
       padding: const EdgeInsets.fromLTRB(5, 10, 5, 10),
       child: RaisedButton(
@@ -50,7 +50,7 @@ class _TripsScreenState extends State<TripsScreen> {
                       onTap: () {
                         Navigator.of(context).pushNamed(luggageListRoute, arguments: _trip);
                       },
-                      child: Text('${_trip.name}'),
+                      child: Text(_trip.name),
                     )
                   ),
                 );
