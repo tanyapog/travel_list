@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:travel_list/models/trip.dart';
-import 'package:travel_list/shared/routing_constants.dart';
 import 'package:travel_list/shared/db_imitation.dart';
 
 class TripsOverviewPage extends StatefulWidget {
@@ -16,10 +15,10 @@ class _TripsOverviewPageState extends State<TripsOverviewPage> {
       padding: const EdgeInsets.fromLTRB(5, 10, 5, 10),
       child: RaisedButton(
         onPressed: () {
-          Navigator.of(context).pushNamed(configuratorRoute, arguments: Trip())
-            .then((value) { // обновление страницы после редактирования
-              setState(() {});
-            });
+//          Navigator.of(context).pushNamed(configuratorRoute, arguments: Trip())
+//            .then((value) { // обновление страницы после редактирования
+//              setState(() {});
+//            });
         },
         child: const Text('Create list for next travel'),
       ),
@@ -48,7 +47,7 @@ class _TripsOverviewPageState extends State<TripsOverviewPage> {
                   child: Center(
                     child: InkWell(
                       onTap: () {
-                        Navigator.of(context).pushNamed(luggageListRoute, arguments: _trip);
+//                        Navigator.of(context).pushNamed(luggageListRoute, arguments: _trip);
                       },
                       child: Text(_trip.name),
                     )

@@ -1,8 +1,10 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:travel_list/application/auth/sign_in_form/sign_in_form_bloc.dart';
 import 'package:travel_list/injection.dart';
+import 'package:travel_list/presentation/routes/router.gr.dart';
 
 class SignInPage extends StatelessWidget {
   @override
@@ -27,7 +29,7 @@ class SignInForm extends StatelessWidget {
         state.authFailureOrSuccessOption.fold(
           () {}, // case of none
           (either) => either.fold(
-            (failure) {
+            (failure) { // Authorisation failed
               FlushbarHelper.createError(message: failure.map(
                 cancelledByUser: (_) => 'Cancelled',
                 serverError: (_) => 'Server Error',
@@ -35,8 +37,8 @@ class SignInForm extends StatelessWidget {
                 invalidEmailAndPasswordCombination: (_) =>
                   'Invalid email and password combination',)).show(context);
             },
-            (r) {
-              // TODO navigate
+            (r) { // Authorisation succeed, show to user the list of trips
+              ExtendedNavigator.of(context).pushReplacementNamed(Routes.tripsOverviewPage);
             }
           ),
         );
