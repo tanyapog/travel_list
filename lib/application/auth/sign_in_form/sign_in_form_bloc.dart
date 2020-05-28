@@ -40,10 +40,10 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
         );
       },
       registerWithEmailAndPasswordPressed: (e) async* {
-        yield* _authAction(_authFacade.registerWithEmailAndPassword);
+        yield* _performAuthAction(_authFacade.registerWithEmailAndPassword);
       },
       signInWithEmailAndPasswordPressed: (e) async* {
-        yield* _authAction(_authFacade.signInWithEmailAndPassword);
+        yield* _performAuthAction(_authFacade.signInWithEmailAndPassword);
       },
       signInWithGooglePressed: (e) async* {
         yield state.copyWith(
@@ -61,7 +61,7 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
 
   // this bloc checks email and password for validity,
   // invoke needed forwardedCall and return corresponding SignInFormState
-  Stream<SignInFormState> _authAction(
+  Stream<SignInFormState> _performAuthAction(
     Future<Either<AuthFailure, Unit>> Function({
       @required Email email,
       @required Password password,
