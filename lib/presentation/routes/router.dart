@@ -1,14 +1,16 @@
 import 'package:auto_route/auto_route_annotations.dart';
 import 'package:travel_list/presentation/pages/luggage_lists/trips/trips_overview_page.dart';
 import 'package:travel_list/presentation/pages/sign_in/sign_in_page.dart';
+import 'package:travel_list/presentation/pages/splash/splash_page.dart';
 
 @MaterialAutoRouter(
   generateNavigationHelperExtension: true,
   generateArgsHolderForSingleParameterRoutes: false
 )
 class $Router {
-  SignInPage signInPage;
   @initial
+  SplashPage splashPage;
+  SignInPage signInPage;
   TripsOverviewPage tripsOverviewPage;
   // ListPage
   // NewLuggageListWizardPage // fill trip form adn offers different ways to create a new LuggageList step by step
