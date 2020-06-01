@@ -39,8 +39,8 @@ class SignInForm extends StatelessWidget {
                   'Invalid email and password combination',)).show(context);
             },
             (_) { // Authorisation succeed, show to user the list of trips
+              context.bloc<AuthBloc>().add(const AuthEvent.authCheckRequested());
               ExtendedNavigator.of(context).pushReplacementNamed(Routes.tripsOverviewPage);
-              context.bloc().add(const AuthEvent.authCheckRequested());
             }
           ),
         );
