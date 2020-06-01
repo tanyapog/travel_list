@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:travel_list/models/trip.dart';
+import 'package:travel_list/presentation/pages/luggage_lists/trips/widgets/sidebar_drawer.dart';
 import 'package:travel_list/shared/db_imitation.dart';
 
-class TripsOverviewPage extends StatefulWidget {
-  @override
-  _TripsOverviewPageState createState() => _TripsOverviewPageState();
-}
-
-class _TripsOverviewPageState extends State<TripsOverviewPage> {
+class TripsOverviewPage extends StatelessWidget {
 
   Widget newTravelListBtn(BuildContext context) {
     return Container(
@@ -28,6 +24,7 @@ class _TripsOverviewPageState extends State<TripsOverviewPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: SidebarDrawer(),
       appBar: AppBar(
         title: const Text('Packing Helper'), // todo nice application name
       ),
@@ -36,8 +33,7 @@ class _TripsOverviewPageState extends State<TripsOverviewPage> {
         children: <Widget>[
           newTravelListBtn(context),
           Expanded(
-            child:
-            ListView.builder(
+            child: ListView.builder(
               itemCount: DbImitation.trips.length,
               itemBuilder: (context, i) {
                 final Trip _trip = DbImitation.trips[i];
@@ -55,7 +51,7 @@ class _TripsOverviewPageState extends State<TripsOverviewPage> {
                 );
               }
             )
-          )
+          ),
         ],
       ),
     );
