@@ -11,7 +11,7 @@ part 'user.freezed.dart';
 abstract class User with _$User implements IEntity {
   const factory User({
     @required UniqueId id,
-    @required String name,
+    @required StringSingleLine name,
     @required Email email,
   }) = _User;
 }

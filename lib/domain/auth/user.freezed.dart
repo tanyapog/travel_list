@@ -13,7 +13,9 @@ class _$UserTearOff {
   const _$UserTearOff();
 
   _User call(
-      {@required UniqueId id, @required String name, @required Email email}) {
+      {@required UniqueId id,
+      @required StringSingleLine name,
+      @required Email email}) {
     return _User(
       id: id,
       name: name,
@@ -27,7 +29,7 @@ const $User = _$UserTearOff();
 
 mixin _$User {
   UniqueId get id;
-  String get name;
+  StringSingleLine get name;
   Email get email;
 
   $UserCopyWith<User> get copyWith;
@@ -36,7 +38,7 @@ mixin _$User {
 abstract class $UserCopyWith<$Res> {
   factory $UserCopyWith(User value, $Res Function(User) then) =
       _$UserCopyWithImpl<$Res>;
-  $Res call({UniqueId id, String name, Email email});
+  $Res call({UniqueId id, StringSingleLine name, Email email});
 }
 
 class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
@@ -54,7 +56,7 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as UniqueId,
-      name: name == freezed ? _value.name : name as String,
+      name: name == freezed ? _value.name : name as StringSingleLine,
       email: email == freezed ? _value.email : email as Email,
     ));
   }
@@ -64,7 +66,7 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
   factory _$UserCopyWith(_User value, $Res Function(_User) then) =
       __$UserCopyWithImpl<$Res>;
   @override
-  $Res call({UniqueId id, String name, Email email});
+  $Res call({UniqueId id, StringSingleLine name, Email email});
 }
 
 class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
@@ -83,7 +85,7 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
   }) {
     return _then(_User(
       id: id == freezed ? _value.id : id as UniqueId,
-      name: name == freezed ? _value.name : name as String,
+      name: name == freezed ? _value.name : name as StringSingleLine,
       email: email == freezed ? _value.email : email as Email,
     ));
   }
@@ -98,7 +100,7 @@ class _$_User with DiagnosticableTreeMixin implements _User {
   @override
   final UniqueId id;
   @override
-  final String name;
+  final StringSingleLine name;
   @override
   final Email email;
 
@@ -144,13 +146,13 @@ class _$_User with DiagnosticableTreeMixin implements _User {
 abstract class _User implements User {
   const factory _User(
       {@required UniqueId id,
-      @required String name,
+      @required StringSingleLine name,
       @required Email email}) = _$_User;
 
   @override
   UniqueId get id;
   @override
-  String get name;
+  StringSingleLine get name;
   @override
   Email get email;
   @override

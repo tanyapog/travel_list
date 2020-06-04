@@ -7,7 +7,7 @@ extension FirebaseUserMapper on FirebaseUser {
   User toDomain() {
     return User(
       id: UniqueId.fromUniqueString(uid),
-      name: displayName,
+      name: StringSingleLine(displayName ?? email.split('@').first),
       email: Email(email),
     );
   }

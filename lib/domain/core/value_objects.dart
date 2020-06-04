@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:meta/meta.dart';
 import 'package:travel_list/domain/core/failures.dart';
+import 'package:travel_list/domain/core/value_validatores.dart';
 import 'package:uuid/uuid.dart';
 import 'errors.dart';
 
@@ -49,4 +50,18 @@ class UniqueId extends ValueObject {
   }
 
   const UniqueId._(this.value);
+}
+
+class StringSingleLine extends ValueObject<String> {
+  @override
+  final Either<ValueFailure<String>, String> value;
+
+  factory StringSingleLine(String input) {
+    assert(input != null);
+    return StringSingleLine._(
+      validateSingleLine(input),
+    );
+  }
+
+  const StringSingleLine._(this.value);
 }
