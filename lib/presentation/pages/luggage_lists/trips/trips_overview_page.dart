@@ -29,9 +29,10 @@ class TripsOverviewPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Provider<User>.value(
+      // The user must be already authenticated, otherwise, throws [NotAuthenticatedError].
       value: context.bloc<AuthBloc>().state.maybeWhen(
         authenticated: (user) => user,
-        orElse: () => throw UnexpectedValueError, // todo access deny terminal error
+        orElse: () => throw NotAuthenticatedError,
       ),
       child: Scaffold(
         drawer: SidebarDrawer(),
