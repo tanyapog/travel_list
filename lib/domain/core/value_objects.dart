@@ -34,7 +34,7 @@ class UniqueId extends ValueObject {
   @override
   final Either<ValueFailure<String>, String> value;
 
-  // TODO(tanya.pog): I'm not shure I'll be use it. Now it seems to me the better way is to use database generated ids.
+  // TODO(tanya.pog): I'm not sure I'll be use it. Now it seems to me the better way is to use database generated ids.
   // Method should be used to generate unique ids for our entities such as [Trip] or something.
   // We cannot let a simple String be passed in. This would allow for possible non-unique IDs.
   factory UniqueId() {

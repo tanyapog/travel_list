@@ -35,8 +35,8 @@ class FirebaseAuthFacade implements IAuthFacade {
     final passwordStr = password.getOrCrash();
     try {
       await _firebaseAuth.createUserWithEmailAndPassword(
-          email: emailStr,
-          password: passwordStr
+        email: emailStr,
+        password: passwordStr
       );
       return right(unit);
     } on PlatformException catch (e) {
@@ -57,8 +57,8 @@ class FirebaseAuthFacade implements IAuthFacade {
     final passwordStr = password.getOrCrash();
     try {
       await _firebaseAuth.signInWithEmailAndPassword(
-          email: emailStr,
-          password: passwordStr
+        email: emailStr,
+        password: passwordStr
       );
       return right(unit);
     } on PlatformException catch (e) {
@@ -80,12 +80,12 @@ class FirebaseAuthFacade implements IAuthFacade {
       }
       final googleAuth = await googleUser.authentication;
       final authCredential = GoogleAuthProvider.getCredential(
-          idToken: googleAuth.idToken,
-          accessToken: googleAuth.accessToken
+        idToken: googleAuth.idToken,
+        accessToken: googleAuth.accessToken
       );
       return _firebaseAuth
-          .signInWithCredential(authCredential)
-          .then((value) => right(unit));
+        .signInWithCredential(authCredential)
+        .then((value) => right(unit));
     } on PlatformException catch (_) { // TODO(tanyapog): check if catch is all right with .then
       return left(const AuthFailure.serverError());
     }
