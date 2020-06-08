@@ -12,8 +12,7 @@ import './firebase_user_mapper.dart';
 
 // lazy mode shifts the creation to the time the object is the first time requested
 // because creating this instance can be time consuming at app start-up
-@lazySingleton
-@RegisterAs(IAuthFacade)
+@LazySingleton(as: IAuthFacade)
 class FirebaseAuthFacade implements IAuthFacade {
   final FirebaseAuth _firebaseAuth;
   final GoogleSignIn _googleSignIn;
