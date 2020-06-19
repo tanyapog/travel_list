@@ -1,3 +1,4 @@
+@Deprecated("Instead use Trip from [travel_list/domain/trip/trip.dart] package")
 class Trip {
   int id;
   String name;

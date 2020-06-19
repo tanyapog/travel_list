@@ -11,9 +11,19 @@ abstract class ValueObject<T> {
   Either<ValueFailure<T>, T> get value;
 
   /// Throws [UnexpectedValueError] containing the [ValueFailure]
+  /// Use when you already made all of the possible checks and are sure a crash is impossible
   T getOrCrash() {
     // id = identity - same as writing (right) => right
     return value.fold((failure) => throw UnexpectedValueError(failure), id);
+  }
+
+  /// get rid of all of the detailed types
+  /// so that return ValueFailure<dynamic> or Unit
+  Either<ValueFailure<dynamic>, Unit> get failureOrUnit {
+    return value.fold(
+      (l) => left(l),
+      (r) => right(unit),
+    );
   }
 
   bool isValid() => value.isRight();
