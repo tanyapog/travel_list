@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:travel_list/domain/trip/trip.dart';
-import 'package:travel_list/domain/trip/trip_failure.dart';
+import 'package:travel_list/domain/trips/trip.dart';
+import 'package:travel_list/domain/trips/trip_failure.dart';
 
 abstract class ITripRepository {
   Stream<Either<TripFailure, List<Trip>>> watchAll();

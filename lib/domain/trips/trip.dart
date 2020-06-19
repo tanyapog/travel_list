@@ -2,7 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:travel_list/domain/core/failures.dart';
 import 'package:travel_list/domain/core/value_objects.dart';
-import 'package:travel_list/domain/trip/value_objects.dart';
+import 'package:travel_list/domain/trips/value_objects.dart';
 
 part 'trip.freezed.dart';
 
