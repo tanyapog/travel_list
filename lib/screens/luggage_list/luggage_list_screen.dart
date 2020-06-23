@@ -16,7 +16,7 @@ class _LuggageListScreenState extends State<LuggageListScreen> {
     final Trip _trip = widget.trip;
     return Scaffold(
         appBar: AppBar(
-          title: Text('${_trip.name}'),
+          title: Text(_trip.name),
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
