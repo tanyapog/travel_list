@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:meta/meta.dart';
+import 'package:uuid/uuid.dart';
 import 'package:travel_list/domain/core/failures.dart';
 import 'package:travel_list/domain/core/value_validatores.dart';
-import 'package:uuid/uuid.dart';
-import 'errors.dart';
+import 'package:travel_list/domain/core/errors.dart';
 
 @immutable
 abstract class ValueObject<T> {
@@ -41,7 +41,7 @@ abstract class ValueObject<T> {
   String toString() => 'Value($value)';
 }
 
-class UniqueId extends ValueObject {
+class UniqueId extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;
 
