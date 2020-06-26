@@ -16,21 +16,58 @@ class TripRepository implements ITripRepository {
   TripRepository(this._firestore);
 
   @override
-  Future<Either<TripFailure, Unit>> create(Trip trip) {
-    // TODO: implement create
-    throw UnimplementedError();
+  Future<Either<TripFailure, Unit>> create(Trip trip) async {
+    try {
+      final userDoc = await _firestore.userDocument();
+      final tripDto = TripDto.fromDomain(trip);
+      await userDoc.tripCollection.document(tripDto.id).setData(tripDto.toJson());
+      return right(unit);
+    } on PlatformException catch (e) {
+      if (e is PlatformException && e.message.contains('PERMISSION_DENIED')) {
+        return left(const TripFailure.insufficientPermission());
+      } else {
+        // TODO: Log these unexpected errors everywhere
+        return left(const TripFailure.unexpected());
+      }
+    }
   }
 
   @override
-  Future<Either<TripFailure, Unit>> delete(Trip trip) {
-    // TODO: implement delete
-    throw UnimplementedError();
+  Future<Either<TripFailure, Unit>> update(Trip trip) async {
+    try {
+      final userDoc = await _firestore.userDocument();
+      final tripDto = TripDto.fromDomain(trip);
+      await userDoc.tripCollection.document(tripDto.id).updateData(tripDto.toJson());
+      return right(unit);
+    } on PlatformException catch (e) {
+      if (e is PlatformException && e.message.contains('PERMISSION_DENIED')) {
+        return left(const TripFailure.insufficientPermission());
+      } else if (e is PlatformException && e.message.contains('NOT_FOUND')) {
+        return left(const TripFailure.unableToUpdate());
+      } else {
+        // TODO: Log these unexpected errors everywhere
+        return left(const TripFailure.unexpected());
+      }
+    }
   }
 
   @override
-  Future<Either<TripFailure, Unit>> update(Trip trip) {
-    // TODO: implement update
-    throw UnimplementedError();
+  Future<Either<TripFailure, Unit>> delete(Trip trip) async {
+    try {
+      final userDoc = await _firestore.userDocument();
+      final tripId = trip.id.getOrCrash();
+      await userDoc.tripCollection.document(tripId).delete();
+      return right(unit);
+    } on PlatformException catch (e) {
+      if (e is PlatformException && e.message.contains('PERMISSION_DENIED')) {
+        return left(const TripFailure.insufficientPermission());
+      } else if (e is PlatformException && e.message.contains('NOT_FOUND')) {
+        return left(const TripFailure.unableToUpdate());
+      } else {
+        // TODO: Log these unexpected errors everywhere
+        return left(const TripFailure.unexpected());
+      }
+    }
   }
 
   @override
