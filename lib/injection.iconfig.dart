@@ -14,6 +14,7 @@ import 'package:travel_list/domain/trips/i_trip_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:travel_list/application/auth/sign_in_form/sign_in_form_bloc.dart';
 import 'package:travel_list/application/trips/trip_actor/trip_actor_bloc.dart';
+import 'package:travel_list/application/trips/trip_form/trip_form_bloc.dart';
 import 'package:travel_list/application/trips/trip_watcher/trip_watcher_bloc.dart';
 import 'package:travel_list/application/auth/auth_bloc.dart';
 import 'package:get_it/get_it.dart';
@@ -30,6 +31,7 @@ void $initGetIt(GetIt g, {String environment}) {
       () => TripRepository(g<Firestore>()));
   g.registerFactory<SignInFormBloc>(() => SignInFormBloc(g<IAuthFacade>()));
   g.registerFactory<TripActorBloc>(() => TripActorBloc(g<ITripRepository>()));
+  g.registerFactory<TripFormBloc>(() => TripFormBloc(g<ITripRepository>()));
   g.registerFactory<TripWatcherBloc>(
       () => TripWatcherBloc(g<ITripRepository>()));
   g.registerFactory<AuthBloc>(() => AuthBloc(g<IAuthFacade>()));

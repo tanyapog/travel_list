@@ -29,6 +29,7 @@ class TripDescription extends ValueObject<String> {
   final Either<ValueFailure<String>, String> value;
 
   factory TripDescription(String input) {
+    assert(input != null);
     return TripDescription._(
       validateMaxStringLength(input, firestoreDocumentSizeLimit)
     );
