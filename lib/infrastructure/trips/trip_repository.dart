@@ -75,7 +75,7 @@ class TripRepository implements ITripRepository {
     final userDoc = await _firestore.userDocument();
     yield* userDoc.tripCollection
         .orderBy('serverTimeStamp', descending: true)
-        .snapshots() // it's optimized and cheaper than .getDocuments
+        .snapshots() // it's optimized and cheaper than .getDocuments which always loads all the documents
         .map((snapshot) => right<TripFailure, List<Trip>>(
           snapshot.documents
               .map((doc) => TripDto.fromFirestore(doc).toDomain())
