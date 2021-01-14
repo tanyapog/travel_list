@@ -5,17 +5,16 @@ import 'package:travel_list/presentation/pages/splash/splash_page.dart';
 
 @MaterialAutoRouter(
   generateNavigationHelperExtension: true,
-  generateArgsHolderForSingleParameterRoutes: false
+  routes: <AutoRoute> [
+    MaterialRoute(page: SplashPage, initial: true),
+    MaterialRoute(page: SignInPage),
+    MaterialRoute(page: TripsOverviewPage),
+    // ListPage
+    // NewLuggageListWizardPage // fill trip form adn offers different ways to create a new LuggageList step by step
+    // GeneratorPage // wizard for creating new LuggageList by choosing different options
+    // TemplatesOverviewPage // creating a new LuggageList base on existing template
+    // duplicatePriviesTrip // another way to create a new LuggageList
+    // selectFromCatalog // choose items from custom catalogue
+  ],
 )
-class $Router {
-  @initial
-  SplashPage splashPage;
-  SignInPage signInPage;
-  TripsOverviewPage tripsOverviewPage;
-  // ListPage
-  // NewLuggageListWizardPage // fill trip form adn offers different ways to create a new LuggageList step by step
-  // GeneratorPage // wizard for creating new LuggageList by choosing different options
-  // TemplatesOverviewPage // creating a new LuggageList base on existing template
-  // duplicatePriviesTrip // another way to create a new LuggageList 
-  // selectFromCatalog // choose items from custom catalogue
-}
+class $Router {}

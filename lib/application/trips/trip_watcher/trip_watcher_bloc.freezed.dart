@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'trip_watcher_bloc.dart';
 
@@ -12,14 +12,17 @@ T _$identity<T>(T value) => value;
 class _$TripWatcherEventTearOff {
   const _$TripWatcherEventTearOff();
 
+// ignore: unused_element
   _WatchAllStarted watchAllStarted() {
     return const _WatchAllStarted();
   }
 
+// ignore: unused_element
   _WatchUncompletedStarted watchUncompletedStarted() {
     return const _WatchUncompletedStarted();
   }
 
+// ignore: unused_element
   _TripsReceived tripsReceived(Either<TripFailure, List<Trip>> failureOrTrips) {
     return _TripsReceived(
       failureOrTrips,
@@ -393,20 +396,24 @@ abstract class _TripsReceived implements TripWatcherEvent {
 class _$TripWatcherStateTearOff {
   const _$TripWatcherStateTearOff();
 
+// ignore: unused_element
   _Initial initial() {
     return const _Initial();
   }
 
+// ignore: unused_element
   _LoadInProgress loadInProgress() {
     return const _LoadInProgress();
   }
 
+// ignore: unused_element
   _LoadSuccess loadSuccess(List<Trip> trips) {
     return _LoadSuccess(
       trips,
     );
   }
 
+// ignore: unused_element
   _LoadFailure loadFailure(TripFailure tripFailure) {
     return _LoadFailure(
       tripFailure,

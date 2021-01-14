@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'trip_form_bloc.dart';
 
@@ -12,28 +12,33 @@ T _$identity<T>(T value) => value;
 class _$TripFormEventTearOff {
   const _$TripFormEventTearOff();
 
+// ignore: unused_element
   _Initialized initialized(Option<Trip> initialTripOption) {
     return _Initialized(
       initialTripOption,
     );
   }
 
+// ignore: unused_element
   _NameChanged nameChanged(String nameStr) {
     return _NameChanged(
       nameStr,
     );
   }
 
+// ignore: unused_element
   _DescriptionChanged descriptionChanged(String descriptionStr) {
     return _DescriptionChanged(
       descriptionStr,
     );
   }
 
+// ignore: unused_element
   _CompletedPressed completedPressed() {
     return const _CompletedPressed();
   }
 
+// ignore: unused_element
   _Saved saved() {
     return const _Saved();
   }
@@ -705,6 +710,7 @@ abstract class _Saved implements TripFormEvent {
 class _$TripFormStateTearOff {
   const _$TripFormStateTearOff();
 
+// ignore: unused_element
   _TripFormState call(
       {@required Trip trip,
       @required bool showErrorMessages,
