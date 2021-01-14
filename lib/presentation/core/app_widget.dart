@@ -16,6 +16,9 @@ class AppWidget extends StatelessWidget {
         builder: ExtendedNavigator<Router>(router: Router(),),
         theme: ThemeData.light().copyWith(
           primaryColor: Colors.lime,
+          floatingActionButtonTheme: FloatingActionButtonThemeData(
+            backgroundColor: Colors.deepOrange
+          ),
           inputDecorationTheme: InputDecorationTheme(
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
           )

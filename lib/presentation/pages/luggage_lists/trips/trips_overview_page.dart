@@ -48,7 +48,6 @@ class TripsOverviewPage extends StatelessWidget {
 //              setState(() {});
 //            });
           },
-          backgroundColor: Colors.deepOrange,
           child: Icon(Icons.add),
         ),
       ),
