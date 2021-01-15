@@ -32,7 +32,6 @@ class TripWatcherBloc extends Bloc<TripWatcherEvent, TripWatcherState> {
     yield* event.map(
       watchAllStarted: (e) async* {
         yield const TripWatcherState.loadInProgress();
-
         await _tripStreamSubscription?.cancel();
         _tripStreamSubscription = _tripRepository
             .watchAll()
