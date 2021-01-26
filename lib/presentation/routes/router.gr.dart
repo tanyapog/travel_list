@@ -9,7 +9,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:travel_list/presentation/pages/splash/splash_page.dart';
 import 'package:travel_list/presentation/pages/sign_in/sign_in_page.dart';
-import 'package:travel_list/presentation/pages/luggage_lists/trips/trips_overview_page.dart';
+import 'package:travel_list/presentation/pages/luggage_lists/trips/trips_overview/trips_overview_page.dart';
 
 class Routes {
   static const String splashPage = '/';
