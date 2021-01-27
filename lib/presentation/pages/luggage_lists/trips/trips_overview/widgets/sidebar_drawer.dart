@@ -13,7 +13,7 @@ class SidebarDrawer extends StatelessWidget {
       listener: (context, state) {
         state.maybeMap(
           unauthenticated: (_) => ExtendedNavigator.of(context)
-              .pushReplacementNamed(Routes.signInPage),
+              .replace(Routes.signInPage),
           orElse: () {},
         );
       },

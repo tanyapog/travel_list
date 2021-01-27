@@ -40,7 +40,7 @@ class SignInForm extends StatelessWidget {
             },
             (_) { // Authorisation succeed, show to user the list of trips
               context.bloc<AuthBloc>().add(const AuthEvent.authCheckRequested());
-              ExtendedNavigator.of(context).pushReplacementNamed(Routes.tripsOverviewPage);
+              ExtendedNavigator.of(context).replace(Routes.tripsOverviewPage);
             }
           ),
         );

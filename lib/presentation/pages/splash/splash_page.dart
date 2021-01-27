@@ -12,9 +12,9 @@ class SplashPage extends StatelessWidget {
         state.map(
           initial: (_) {},
           authenticated: (_) => ExtendedNavigator.of(context)
-              .pushReplacementNamed(Routes.tripsOverviewPage),
+              .replace(Routes.tripsOverviewPage),
           unauthenticated: (_) => ExtendedNavigator.of(context)
-              .pushReplacementNamed(Routes.signInPage),
+              .replace(Routes.signInPage),
         );
       },
       child: const Scaffold(
