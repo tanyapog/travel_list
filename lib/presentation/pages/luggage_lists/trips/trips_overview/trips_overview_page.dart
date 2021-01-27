@@ -6,6 +6,7 @@ import 'package:travel_list/application/trips/trip_watcher/trip_watcher_bloc.dar
 import 'package:travel_list/injection.dart';
 import 'package:travel_list/presentation/pages/luggage_lists/trips/trips_overview/widgets/sidebar_drawer.dart';
 import 'package:travel_list/presentation/pages/luggage_lists/trips/trips_overview/widgets/trips_overview_body.dart';
+import 'package:travel_list/presentation/pages/luggage_lists/trips/trips_overview/widgets/uncompleted_switch.dart';
 
 class TripsOverviewPage extends StatelessWidget {
 
@@ -45,10 +46,7 @@ class TripsOverviewPage extends StatelessWidget {
           appBar: AppBar(
             title: const Text('My trips'),
             actions: <Widget>[
-              IconButton(
-                icon: Icon(Icons.indeterminate_check_box),
-                onPressed: () {},
-              )
+              UncompletedSwitch(),
             ],
           ),
           body: TripsOverviewBody(),
