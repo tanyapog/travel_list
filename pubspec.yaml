@@ -19,6 +19,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_hooks: ^0.12.0
   dartz: ^0.9.1
   freezed_annotation: ^0.11.0
   json_annotation: ^3.0.1
