@@ -16,15 +16,12 @@ part 'trip_watcher_bloc.freezed.dart';
 class TripWatcherBloc extends Bloc<TripWatcherEvent, TripWatcherState> {
   
   final ITripRepository _tripRepository;
-  TripWatcherBloc(this._tripRepository);
+  TripWatcherBloc(this._tripRepository) : super(const TripWatcherState.initial());
   // we could not use yield* for watchAllStarted and watchUncompletedStarted
   // because it will be yielding permanently while the trips page is open (i.e. repository is opened)
   // so we listen to repository instead and add a TripsReceived Event if need
   StreamSubscription<Either<TripFailure, List<Trip>>> _tripStreamSubscription;
   
-  @override
-  TripWatcherState get initialState => const TripWatcherState.initial();
-
   @override
   Stream<TripWatcherState> mapEventToState(
     TripWatcherEvent event,

@@ -15,7 +15,7 @@ part 'trip_form_bloc.freezed.dart';
 class TripFormBloc extends Bloc<TripFormEvent, TripFormState> {
   final ITripRepository _tripRepository;
 
-  TripFormBloc(this._tripRepository);
+  TripFormBloc(this._tripRepository) : super(TripFormState.initial());
 
   @override
   Stream<TripFormState> mapEventToState(TripFormEvent event) async* {
@@ -63,7 +63,4 @@ class TripFormBloc extends Bloc<TripFormEvent, TripFormState> {
       },
     );
   }
-
-  @override
-  TripFormState get initialState => TripFormState.initial();
 }

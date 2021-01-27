@@ -15,10 +15,7 @@ part 'trip_actor_bloc.freezed.dart';
 class TripActorBloc extends Bloc<TripActorEvent, TripActorState> {
   final ITripRepository _tripRepository;
 
-  TripActorBloc(this._tripRepository);
-
-  @override
-  TripActorState get initialState => const TripActorState.initial();
+  TripActorBloc(this._tripRepository) : super(const TripActorState.initial());
 
   @override
   Stream<TripActorState> mapEventToState(
