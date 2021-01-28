@@ -9,9 +9,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
-import '../pages/luggage_lists/trips/trips_overview/trips_overview_page.dart';
 import '../pages/sign_in/sign_in_page.dart';
 import '../pages/splash/splash_page.dart';
+import '../pages/trips/trips_overview/trips_overview_page.dart';
 
 class Routes {
   static const String splashPage = '/';

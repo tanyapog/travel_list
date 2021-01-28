@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:travel_list/application/trips/trip_watcher/trip_watcher_bloc.dart';
-import 'package:travel_list/presentation/pages/luggage_lists/trips/trips_overview/widgets/trip_card.dart';
+import 'package:travel_list/presentation/pages/trips/trips_overview/widgets/trip_card.dart';
 import 'critical_failure_display.dart';
 import 'error_trip_card.dart';
 
