@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:travel_list/application/trips/trip_actor/trip_actor_bloc.dart';
 import 'package:travel_list/application/trips/trip_watcher/trip_watcher_bloc.dart';
 import 'package:travel_list/injection.dart';
-import 'package:travel_list/presentation/pages/luggage_lists/trips/trips_overview/widgets/sidebar_drawer.dart';
+import 'package:travel_list/presentation/pages/sidebar/sidebar_drawer.dart';
 import 'package:travel_list/presentation/pages/luggage_lists/trips/trips_overview/widgets/trips_overview_body.dart';
 import 'package:travel_list/presentation/pages/luggage_lists/trips/trips_overview/widgets/uncompleted_switch.dart';
 
