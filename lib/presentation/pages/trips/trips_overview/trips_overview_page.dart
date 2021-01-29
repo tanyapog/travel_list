@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -7,6 +8,7 @@ import 'package:travel_list/injection.dart';
 import 'package:travel_list/presentation/pages/sidebar/sidebar_drawer.dart';
 import 'package:travel_list/presentation/pages/trips/trips_overview/widgets/trips_overview_body.dart';
 import 'package:travel_list/presentation/pages/trips/trips_overview/widgets/uncompleted_switch.dart';
+import 'package:travel_list/presentation/routes/router.gr.dart';
 
 class TripsOverviewPage extends StatelessWidget {
 
@@ -51,7 +53,7 @@ class TripsOverviewPage extends StatelessWidget {
           ),
           body: TripsOverviewBody(),
           floatingActionButton: FloatingActionButton(onPressed: () {
-            // todo navigate to TripFormPage
+            ExtendedNavigator.of(context).pushTripFormPage(trip: null);
           },
             child: Icon(Icons.add),
           ),
