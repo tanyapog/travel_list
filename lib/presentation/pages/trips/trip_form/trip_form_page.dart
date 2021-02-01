@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:travel_list/application/trips/trip_form/trip_form_bloc.dart';
 import 'package:travel_list/domain/trips/trip.dart';
 import 'package:travel_list/injection.dart';
+import 'package:travel_list/presentation/pages/trips/trip_form/widgets/trip_form_body.dart';
 import 'package:travel_list/presentation/routes/router.gr.dart';
 
 class TripFormPage extends StatelessWidget {
@@ -81,6 +82,20 @@ class TripFormPageScaffold extends StatelessWidget {
             },
           )
         ],
+      ),
+      body: BlocBuilder<TripFormBloc, TripFormState>(
+        buildWhen: (previous, current) => previous.showErrorMessages != current.showErrorMessages,
+        builder: (context, state) {
+         return Form(
+           child: SingleChildScrollView(
+             child: Column(
+               children: const <Widget>[
+                 TripFormBody(),
+               ],
+             ),
+           ),
+         );
+        }
       ),
     );
   }

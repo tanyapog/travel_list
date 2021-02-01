@@ -20,7 +20,7 @@ class AppWidget extends StatelessWidget {
             backgroundColor: Colors.deepOrange
           ),
           inputDecorationTheme: InputDecorationTheme(
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+            border: OutlineInputBorder(borderRadius: BorderRadius.circular(3)),
           )
         ),
         debugShowCheckedModeBanner: false,

@@ -12,10 +12,12 @@ class TripName extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;
 
+  static const maxLength = 70;
+
   factory TripName(String input) {
     assert(input != null);
     return TripName._(
-      validateMaxStringLength(input, 70)
+      validateMaxStringLength(input, maxLength)
       .flatMap(validateStingNotEmpty)
       .flatMap(validateSingleLine)
     );
@@ -27,6 +29,8 @@ class TripName extends ValueObject<String> {
 class TripDescription extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;
+
+  static const maxLength = firestoreDocumentSizeLimit;
 
   factory TripDescription(String input) {
     assert(input != null);
