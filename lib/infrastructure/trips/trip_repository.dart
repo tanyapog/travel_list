@@ -11,7 +11,7 @@ import 'package:travel_list/infrastructure/trips/trip_dtos.dart';
 
 @LazySingleton(as: ITripRepository)
 class TripRepository implements ITripRepository {
-  final Firestore _firestore;
+  final FirebaseFirestore _firestore;
 
   TripRepository(this._firestore);
 
@@ -20,7 +20,7 @@ class TripRepository implements ITripRepository {
     try {
       final userDoc = await _firestore.userDocument();
       final tripDto = TripDto.fromDomain(trip);
-      await userDoc.tripCollection.document(tripDto.id).setData(tripDto.toJson());
+      await userDoc.tripCollection.doc(tripDto.id).set(tripDto.toJson());
       return right(unit);
     } on PlatformException catch (e) {
       if (e is PlatformException && e.message.contains('PERMISSION_DENIED')) {
@@ -37,7 +37,7 @@ class TripRepository implements ITripRepository {
     try {
       final userDoc = await _firestore.userDocument();
       final tripDto = TripDto.fromDomain(trip);
-      await userDoc.tripCollection.document(tripDto.id).updateData(tripDto.toJson());
+      await userDoc.tripCollection.doc(tripDto.id).update(tripDto.toJson());
       return right(unit);
     } on PlatformException catch (e) {
       if (e is PlatformException && e.message.contains('PERMISSION_DENIED')) {
@@ -56,7 +56,7 @@ class TripRepository implements ITripRepository {
     try {
       final userDoc = await _firestore.userDocument();
       final tripId = trip.id.getOrCrash();
-      await userDoc.tripCollection.document(tripId).delete();
+      await userDoc.tripCollection.doc(tripId).delete();
       return right(unit);
     } on PlatformException catch (e) {
       if (e is PlatformException && e.message.contains('PERMISSION_DENIED')) {
@@ -77,7 +77,7 @@ class TripRepository implements ITripRepository {
         .orderBy('serverTimeStamp', descending: true)
         .snapshots() // it's optimized and cheaper than .getDocuments which always loads all the documents
         .map((snapshot) => right<TripFailure, List<Trip>>(
-          snapshot.documents
+          snapshot.docs
               .map((doc) => TripDto.fromFirestore(doc).toDomain())
               .toList(),
         ))
@@ -98,7 +98,7 @@ class TripRepository implements ITripRepository {
         .orderBy('serverTimeStamp', descending: true)
         .snapshots() // it's optimized and cheaper than .getDocuments
         .map((snapshot) =>
-          snapshot.documents
+          snapshot.docs
               .map((doc) => TripDto.fromFirestore(doc).toDomain())
         )
         .map((trips) => right<TripFailure, List<Trip>>(

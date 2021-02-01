@@ -32,11 +32,12 @@ GetIt $initGetIt(
   final gh = GetItHelper(get, environment, environmentFilter);
   final firebaseInjectableModule = _$FirebaseInjectableModule();
   gh.lazySingleton<FirebaseAuth>(() => firebaseInjectableModule.firebaseAuth);
-  gh.lazySingleton<Firestore>(() => firebaseInjectableModule.firestore);
+  gh.lazySingleton<FirebaseFirestore>(() => firebaseInjectableModule.firestore);
   gh.lazySingleton<GoogleSignIn>(() => firebaseInjectableModule.googleSignIn);
   gh.lazySingleton<IAuthFacade>(
       () => FirebaseAuthFacade(get<FirebaseAuth>(), get<GoogleSignIn>()));
-  gh.lazySingleton<ITripRepository>(() => TripRepository(get<Firestore>()));
+  gh.lazySingleton<ITripRepository>(
+      () => TripRepository(get<FirebaseFirestore>()));
   gh.factory<SignInFormBloc>(() => SignInFormBloc(get<IAuthFacade>()));
   gh.factory<TripActorBloc>(() => TripActorBloc(get<ITripRepository>()));
   gh.factory<TripFormBloc>(() => TripFormBloc(get<ITripRepository>()));

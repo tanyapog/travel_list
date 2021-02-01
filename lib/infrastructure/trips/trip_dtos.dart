@@ -43,7 +43,7 @@ abstract class TripDto implements _$TripDto {
       _$TripDtoFromJson(json);
 
   factory TripDto.fromFirestore(DocumentSnapshot doc) {
-    return TripDto.fromJson(doc.data).copyWith(id: doc.documentID);
+    return TripDto.fromJson(doc.data()).copyWith(id: doc.id);
   }
 }
 
