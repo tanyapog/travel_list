@@ -9,6 +9,7 @@ part of 'user.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$UserTearOff {
   const _$UserTearOff();
 
@@ -25,23 +26,28 @@ class _$UserTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $User = _$UserTearOff();
 
+/// @nodoc
 mixin _$User {
   UniqueId get id;
   StringSingleLine get name;
   Email get email;
 
+  @JsonKey(ignore: true)
   $UserCopyWith<User> get copyWith;
 }
 
+/// @nodoc
 abstract class $UserCopyWith<$Res> {
   factory $UserCopyWith(User value, $Res Function(User) then) =
       _$UserCopyWithImpl<$Res>;
   $Res call({UniqueId id, StringSingleLine name, Email email});
 }
 
+/// @nodoc
 class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
   _$UserCopyWithImpl(this._value, this._then);
 
@@ -63,6 +69,7 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
   }
 }
 
+/// @nodoc
 abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
   factory _$UserCopyWith(_User value, $Res Function(_User) then) =
       __$UserCopyWithImpl<$Res>;
@@ -70,6 +77,7 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
   $Res call({UniqueId id, StringSingleLine name, Email email});
 }
 
+/// @nodoc
 class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
     implements _$UserCopyWith<$Res> {
   __$UserCopyWithImpl(_User _value, $Res Function(_User) _then)
@@ -92,6 +100,7 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_User with DiagnosticableTreeMixin implements _User {
   const _$_User({@required this.id, @required this.name, @required this.email})
       : assert(id != null),
@@ -139,6 +148,7 @@ class _$_User with DiagnosticableTreeMixin implements _User {
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(email);
 
+  @JsonKey(ignore: true)
   @override
   _$UserCopyWith<_User> get copyWith =>
       __$UserCopyWithImpl<_User>(this, _$identity);
@@ -157,5 +167,6 @@ abstract class _User implements User {
   @override
   Email get email;
   @override
+  @JsonKey(ignore: true)
   _$UserCopyWith<_User> get copyWith;
 }
