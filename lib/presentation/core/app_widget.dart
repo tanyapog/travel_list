@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:travel_list/application/auth/auth_bloc.dart';
 import 'package:travel_list/injection.dart';
-import 'package:travel_list/presentation/routes/router.gr.dart';
+import 'package:travel_list/presentation/routes/router.gr.dart' as app_router;
 
 class AppWidget extends StatelessWidget {
   @override
@@ -13,10 +13,10 @@ class AppWidget extends StatelessWidget {
         getIt<AuthBloc>()..add(const AuthEvent.authCheckRequested()),
       child: MaterialApp(
         title: 'Travel List',
-        builder: ExtendedNavigator<Router>(router: Router(),),
+        builder: ExtendedNavigator.builder(router: app_router.Router(),),
         theme: ThemeData.light().copyWith(
           primaryColor: Colors.lime,
-          floatingActionButtonTheme: FloatingActionButtonThemeData(
+          floatingActionButtonTheme: const FloatingActionButtonThemeData(
             backgroundColor: Colors.deepOrange
           ),
           inputDecorationTheme: InputDecorationTheme(

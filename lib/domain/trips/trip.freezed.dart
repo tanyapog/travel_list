@@ -9,6 +9,7 @@ part of 'trip.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$TripTearOff {
   const _$TripTearOff();
 
@@ -27,18 +28,22 @@ class _$TripTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $Trip = _$TripTearOff();
 
+/// @nodoc
 mixin _$Trip {
   UniqueId get id;
   TripName get name;
   TripDescription get description;
   bool get complete;
 
+  @JsonKey(ignore: true)
   $TripCopyWith<Trip> get copyWith;
 }
 
+/// @nodoc
 abstract class $TripCopyWith<$Res> {
   factory $TripCopyWith(Trip value, $Res Function(Trip) then) =
       _$TripCopyWithImpl<$Res>;
@@ -46,6 +51,7 @@ abstract class $TripCopyWith<$Res> {
       {UniqueId id, TripName name, TripDescription description, bool complete});
 }
 
+/// @nodoc
 class _$TripCopyWithImpl<$Res> implements $TripCopyWith<$Res> {
   _$TripCopyWithImpl(this._value, this._then);
 
@@ -71,6 +77,7 @@ class _$TripCopyWithImpl<$Res> implements $TripCopyWith<$Res> {
   }
 }
 
+/// @nodoc
 abstract class _$TripCopyWith<$Res> implements $TripCopyWith<$Res> {
   factory _$TripCopyWith(_Trip value, $Res Function(_Trip) then) =
       __$TripCopyWithImpl<$Res>;
@@ -79,6 +86,7 @@ abstract class _$TripCopyWith<$Res> implements $TripCopyWith<$Res> {
       {UniqueId id, TripName name, TripDescription description, bool complete});
 }
 
+/// @nodoc
 class __$TripCopyWithImpl<$Res> extends _$TripCopyWithImpl<$Res>
     implements _$TripCopyWith<$Res> {
   __$TripCopyWithImpl(_Trip _value, $Res Function(_Trip) _then)
@@ -105,6 +113,7 @@ class __$TripCopyWithImpl<$Res> extends _$TripCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_Trip extends _Trip {
   const _$_Trip(
       {@required this.id,
@@ -156,6 +165,7 @@ class _$_Trip extends _Trip {
       const DeepCollectionEquality().hash(description) ^
       const DeepCollectionEquality().hash(complete);
 
+  @JsonKey(ignore: true)
   @override
   _$TripCopyWith<_Trip> get copyWith =>
       __$TripCopyWithImpl<_Trip>(this, _$identity);
@@ -178,5 +188,6 @@ abstract class _Trip extends Trip {
   @override
   bool get complete;
   @override
+  @JsonKey(ignore: true)
   _$TripCopyWith<_Trip> get copyWith;
 }

@@ -9,6 +9,7 @@ part of 'trip_watcher_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$TripWatcherEventTearOff {
   const _$TripWatcherEventTearOff();
 
@@ -30,45 +31,49 @@ class _$TripWatcherEventTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $TripWatcherEvent = _$TripWatcherEventTearOff();
 
+/// @nodoc
 mixin _$TripWatcherEvent {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result watchAllStarted(),
-    @required Result watchUncompletedStarted(),
+  TResult when<TResult extends Object>({
+    @required TResult watchAllStarted(),
+    @required TResult watchUncompletedStarted(),
     @required
-        Result tripsReceived(Either<TripFailure, List<Trip>> failureOrTrips),
+        TResult tripsReceived(Either<TripFailure, List<Trip>> failureOrTrips),
   });
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result watchAllStarted(),
-    Result watchUncompletedStarted(),
-    Result tripsReceived(Either<TripFailure, List<Trip>> failureOrTrips),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult watchAllStarted(),
+    TResult watchUncompletedStarted(),
+    TResult tripsReceived(Either<TripFailure, List<Trip>> failureOrTrips),
+    @required TResult orElse(),
   });
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result watchAllStarted(_WatchAllStarted value),
-    @required Result watchUncompletedStarted(_WatchUncompletedStarted value),
-    @required Result tripsReceived(_TripsReceived value),
+  TResult map<TResult extends Object>({
+    @required TResult watchAllStarted(_WatchAllStarted value),
+    @required TResult watchUncompletedStarted(_WatchUncompletedStarted value),
+    @required TResult tripsReceived(_TripsReceived value),
   });
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result watchAllStarted(_WatchAllStarted value),
-    Result watchUncompletedStarted(_WatchUncompletedStarted value),
-    Result tripsReceived(_TripsReceived value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult watchAllStarted(_WatchAllStarted value),
+    TResult watchUncompletedStarted(_WatchUncompletedStarted value),
+    TResult tripsReceived(_TripsReceived value),
+    @required TResult orElse(),
   });
 }
 
+/// @nodoc
 abstract class $TripWatcherEventCopyWith<$Res> {
   factory $TripWatcherEventCopyWith(
           TripWatcherEvent value, $Res Function(TripWatcherEvent) then) =
       _$TripWatcherEventCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$TripWatcherEventCopyWithImpl<$Res>
     implements $TripWatcherEventCopyWith<$Res> {
   _$TripWatcherEventCopyWithImpl(this._value, this._then);
@@ -78,12 +83,14 @@ class _$TripWatcherEventCopyWithImpl<$Res>
   final $Res Function(TripWatcherEvent) _then;
 }
 
+/// @nodoc
 abstract class _$WatchAllStartedCopyWith<$Res> {
   factory _$WatchAllStartedCopyWith(
           _WatchAllStarted value, $Res Function(_WatchAllStarted) then) =
       __$WatchAllStartedCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$WatchAllStartedCopyWithImpl<$Res>
     extends _$TripWatcherEventCopyWithImpl<$Res>
     implements _$WatchAllStartedCopyWith<$Res> {
@@ -95,6 +102,7 @@ class __$WatchAllStartedCopyWithImpl<$Res>
   _WatchAllStarted get _value => super._value as _WatchAllStarted;
 }
 
+/// @nodoc
 class _$_WatchAllStarted implements _WatchAllStarted {
   const _$_WatchAllStarted();
 
@@ -113,11 +121,11 @@ class _$_WatchAllStarted implements _WatchAllStarted {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result watchAllStarted(),
-    @required Result watchUncompletedStarted(),
+  TResult when<TResult extends Object>({
+    @required TResult watchAllStarted(),
+    @required TResult watchUncompletedStarted(),
     @required
-        Result tripsReceived(Either<TripFailure, List<Trip>> failureOrTrips),
+        TResult tripsReceived(Either<TripFailure, List<Trip>> failureOrTrips),
   }) {
     assert(watchAllStarted != null);
     assert(watchUncompletedStarted != null);
@@ -127,11 +135,11 @@ class _$_WatchAllStarted implements _WatchAllStarted {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result watchAllStarted(),
-    Result watchUncompletedStarted(),
-    Result tripsReceived(Either<TripFailure, List<Trip>> failureOrTrips),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult watchAllStarted(),
+    TResult watchUncompletedStarted(),
+    TResult tripsReceived(Either<TripFailure, List<Trip>> failureOrTrips),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (watchAllStarted != null) {
@@ -142,10 +150,10 @@ class _$_WatchAllStarted implements _WatchAllStarted {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result watchAllStarted(_WatchAllStarted value),
-    @required Result watchUncompletedStarted(_WatchUncompletedStarted value),
-    @required Result tripsReceived(_TripsReceived value),
+  TResult map<TResult extends Object>({
+    @required TResult watchAllStarted(_WatchAllStarted value),
+    @required TResult watchUncompletedStarted(_WatchUncompletedStarted value),
+    @required TResult tripsReceived(_TripsReceived value),
   }) {
     assert(watchAllStarted != null);
     assert(watchUncompletedStarted != null);
@@ -155,11 +163,11 @@ class _$_WatchAllStarted implements _WatchAllStarted {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result watchAllStarted(_WatchAllStarted value),
-    Result watchUncompletedStarted(_WatchUncompletedStarted value),
-    Result tripsReceived(_TripsReceived value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult watchAllStarted(_WatchAllStarted value),
+    TResult watchUncompletedStarted(_WatchUncompletedStarted value),
+    TResult tripsReceived(_TripsReceived value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (watchAllStarted != null) {
@@ -173,12 +181,14 @@ abstract class _WatchAllStarted implements TripWatcherEvent {
   const factory _WatchAllStarted() = _$_WatchAllStarted;
 }
 
+/// @nodoc
 abstract class _$WatchUncompletedStartedCopyWith<$Res> {
   factory _$WatchUncompletedStartedCopyWith(_WatchUncompletedStarted value,
           $Res Function(_WatchUncompletedStarted) then) =
       __$WatchUncompletedStartedCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$WatchUncompletedStartedCopyWithImpl<$Res>
     extends _$TripWatcherEventCopyWithImpl<$Res>
     implements _$WatchUncompletedStartedCopyWith<$Res> {
@@ -191,6 +201,7 @@ class __$WatchUncompletedStartedCopyWithImpl<$Res>
       super._value as _WatchUncompletedStarted;
 }
 
+/// @nodoc
 class _$_WatchUncompletedStarted implements _WatchUncompletedStarted {
   const _$_WatchUncompletedStarted();
 
@@ -209,11 +220,11 @@ class _$_WatchUncompletedStarted implements _WatchUncompletedStarted {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result watchAllStarted(),
-    @required Result watchUncompletedStarted(),
+  TResult when<TResult extends Object>({
+    @required TResult watchAllStarted(),
+    @required TResult watchUncompletedStarted(),
     @required
-        Result tripsReceived(Either<TripFailure, List<Trip>> failureOrTrips),
+        TResult tripsReceived(Either<TripFailure, List<Trip>> failureOrTrips),
   }) {
     assert(watchAllStarted != null);
     assert(watchUncompletedStarted != null);
@@ -223,11 +234,11 @@ class _$_WatchUncompletedStarted implements _WatchUncompletedStarted {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result watchAllStarted(),
-    Result watchUncompletedStarted(),
-    Result tripsReceived(Either<TripFailure, List<Trip>> failureOrTrips),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult watchAllStarted(),
+    TResult watchUncompletedStarted(),
+    TResult tripsReceived(Either<TripFailure, List<Trip>> failureOrTrips),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (watchUncompletedStarted != null) {
@@ -238,10 +249,10 @@ class _$_WatchUncompletedStarted implements _WatchUncompletedStarted {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result watchAllStarted(_WatchAllStarted value),
-    @required Result watchUncompletedStarted(_WatchUncompletedStarted value),
-    @required Result tripsReceived(_TripsReceived value),
+  TResult map<TResult extends Object>({
+    @required TResult watchAllStarted(_WatchAllStarted value),
+    @required TResult watchUncompletedStarted(_WatchUncompletedStarted value),
+    @required TResult tripsReceived(_TripsReceived value),
   }) {
     assert(watchAllStarted != null);
     assert(watchUncompletedStarted != null);
@@ -251,11 +262,11 @@ class _$_WatchUncompletedStarted implements _WatchUncompletedStarted {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result watchAllStarted(_WatchAllStarted value),
-    Result watchUncompletedStarted(_WatchUncompletedStarted value),
-    Result tripsReceived(_TripsReceived value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult watchAllStarted(_WatchAllStarted value),
+    TResult watchUncompletedStarted(_WatchUncompletedStarted value),
+    TResult tripsReceived(_TripsReceived value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (watchUncompletedStarted != null) {
@@ -269,6 +280,7 @@ abstract class _WatchUncompletedStarted implements TripWatcherEvent {
   const factory _WatchUncompletedStarted() = _$_WatchUncompletedStarted;
 }
 
+/// @nodoc
 abstract class _$TripsReceivedCopyWith<$Res> {
   factory _$TripsReceivedCopyWith(
           _TripsReceived value, $Res Function(_TripsReceived) then) =
@@ -276,6 +288,7 @@ abstract class _$TripsReceivedCopyWith<$Res> {
   $Res call({Either<TripFailure, List<Trip>> failureOrTrips});
 }
 
+/// @nodoc
 class __$TripsReceivedCopyWithImpl<$Res>
     extends _$TripWatcherEventCopyWithImpl<$Res>
     implements _$TripsReceivedCopyWith<$Res> {
@@ -298,6 +311,7 @@ class __$TripsReceivedCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_TripsReceived implements _TripsReceived {
   const _$_TripsReceived(this.failureOrTrips) : assert(failureOrTrips != null);
 
@@ -323,17 +337,18 @@ class _$_TripsReceived implements _TripsReceived {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(failureOrTrips);
 
+  @JsonKey(ignore: true)
   @override
   _$TripsReceivedCopyWith<_TripsReceived> get copyWith =>
       __$TripsReceivedCopyWithImpl<_TripsReceived>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result watchAllStarted(),
-    @required Result watchUncompletedStarted(),
+  TResult when<TResult extends Object>({
+    @required TResult watchAllStarted(),
+    @required TResult watchUncompletedStarted(),
     @required
-        Result tripsReceived(Either<TripFailure, List<Trip>> failureOrTrips),
+        TResult tripsReceived(Either<TripFailure, List<Trip>> failureOrTrips),
   }) {
     assert(watchAllStarted != null);
     assert(watchUncompletedStarted != null);
@@ -343,11 +358,11 @@ class _$_TripsReceived implements _TripsReceived {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result watchAllStarted(),
-    Result watchUncompletedStarted(),
-    Result tripsReceived(Either<TripFailure, List<Trip>> failureOrTrips),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult watchAllStarted(),
+    TResult watchUncompletedStarted(),
+    TResult tripsReceived(Either<TripFailure, List<Trip>> failureOrTrips),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (tripsReceived != null) {
@@ -358,10 +373,10 @@ class _$_TripsReceived implements _TripsReceived {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result watchAllStarted(_WatchAllStarted value),
-    @required Result watchUncompletedStarted(_WatchUncompletedStarted value),
-    @required Result tripsReceived(_TripsReceived value),
+  TResult map<TResult extends Object>({
+    @required TResult watchAllStarted(_WatchAllStarted value),
+    @required TResult watchUncompletedStarted(_WatchUncompletedStarted value),
+    @required TResult tripsReceived(_TripsReceived value),
   }) {
     assert(watchAllStarted != null);
     assert(watchUncompletedStarted != null);
@@ -371,11 +386,11 @@ class _$_TripsReceived implements _TripsReceived {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result watchAllStarted(_WatchAllStarted value),
-    Result watchUncompletedStarted(_WatchUncompletedStarted value),
-    Result tripsReceived(_TripsReceived value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult watchAllStarted(_WatchAllStarted value),
+    TResult watchUncompletedStarted(_WatchUncompletedStarted value),
+    TResult tripsReceived(_TripsReceived value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (tripsReceived != null) {
@@ -390,9 +405,11 @@ abstract class _TripsReceived implements TripWatcherEvent {
       _$_TripsReceived;
 
   Either<TripFailure, List<Trip>> get failureOrTrips;
+  @JsonKey(ignore: true)
   _$TripsReceivedCopyWith<_TripsReceived> get copyWith;
 }
 
+/// @nodoc
 class _$TripWatcherStateTearOff {
   const _$TripWatcherStateTearOff();
 
@@ -421,48 +438,52 @@ class _$TripWatcherStateTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $TripWatcherState = _$TripWatcherStateTearOff();
 
+/// @nodoc
 mixin _$TripWatcherState {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loadInProgress(),
-    @required Result loadSuccess(List<Trip> trips),
-    @required Result loadFailure(TripFailure tripFailure),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult loadInProgress(),
+    @required TResult loadSuccess(List<Trip> trips),
+    @required TResult loadFailure(TripFailure tripFailure),
   });
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loadInProgress(),
-    Result loadSuccess(List<Trip> trips),
-    Result loadFailure(TripFailure tripFailure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult loadInProgress(),
+    TResult loadSuccess(List<Trip> trips),
+    TResult loadFailure(TripFailure tripFailure),
+    @required TResult orElse(),
   });
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loadInProgress(_LoadInProgress value),
-    @required Result loadSuccess(_LoadSuccess value),
-    @required Result loadFailure(_LoadFailure value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult loadInProgress(_LoadInProgress value),
+    @required TResult loadSuccess(_LoadSuccess value),
+    @required TResult loadFailure(_LoadFailure value),
   });
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loadInProgress(_LoadInProgress value),
-    Result loadSuccess(_LoadSuccess value),
-    Result loadFailure(_LoadFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult loadInProgress(_LoadInProgress value),
+    TResult loadSuccess(_LoadSuccess value),
+    TResult loadFailure(_LoadFailure value),
+    @required TResult orElse(),
   });
 }
 
+/// @nodoc
 abstract class $TripWatcherStateCopyWith<$Res> {
   factory $TripWatcherStateCopyWith(
           TripWatcherState value, $Res Function(TripWatcherState) then) =
       _$TripWatcherStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$TripWatcherStateCopyWithImpl<$Res>
     implements $TripWatcherStateCopyWith<$Res> {
   _$TripWatcherStateCopyWithImpl(this._value, this._then);
@@ -472,11 +493,13 @@ class _$TripWatcherStateCopyWithImpl<$Res>
   final $Res Function(TripWatcherState) _then;
 }
 
+/// @nodoc
 abstract class _$InitialCopyWith<$Res> {
   factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
       __$InitialCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$InitialCopyWithImpl<$Res> extends _$TripWatcherStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
@@ -486,6 +509,7 @@ class __$InitialCopyWithImpl<$Res> extends _$TripWatcherStateCopyWithImpl<$Res>
   _Initial get _value => super._value as _Initial;
 }
 
+/// @nodoc
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -504,11 +528,11 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loadInProgress(),
-    @required Result loadSuccess(List<Trip> trips),
-    @required Result loadFailure(TripFailure tripFailure),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult loadInProgress(),
+    @required TResult loadSuccess(List<Trip> trips),
+    @required TResult loadFailure(TripFailure tripFailure),
   }) {
     assert(initial != null);
     assert(loadInProgress != null);
@@ -519,12 +543,12 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loadInProgress(),
-    Result loadSuccess(List<Trip> trips),
-    Result loadFailure(TripFailure tripFailure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult loadInProgress(),
+    TResult loadSuccess(List<Trip> trips),
+    TResult loadFailure(TripFailure tripFailure),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initial != null) {
@@ -535,11 +559,11 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loadInProgress(_LoadInProgress value),
-    @required Result loadSuccess(_LoadSuccess value),
-    @required Result loadFailure(_LoadFailure value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult loadInProgress(_LoadInProgress value),
+    @required TResult loadSuccess(_LoadSuccess value),
+    @required TResult loadFailure(_LoadFailure value),
   }) {
     assert(initial != null);
     assert(loadInProgress != null);
@@ -550,12 +574,12 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loadInProgress(_LoadInProgress value),
-    Result loadSuccess(_LoadSuccess value),
-    Result loadFailure(_LoadFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult loadInProgress(_LoadInProgress value),
+    TResult loadSuccess(_LoadSuccess value),
+    TResult loadFailure(_LoadFailure value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initial != null) {
@@ -569,12 +593,14 @@ abstract class _Initial implements TripWatcherState {
   const factory _Initial() = _$_Initial;
 }
 
+/// @nodoc
 abstract class _$LoadInProgressCopyWith<$Res> {
   factory _$LoadInProgressCopyWith(
           _LoadInProgress value, $Res Function(_LoadInProgress) then) =
       __$LoadInProgressCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$LoadInProgressCopyWithImpl<$Res>
     extends _$TripWatcherStateCopyWithImpl<$Res>
     implements _$LoadInProgressCopyWith<$Res> {
@@ -586,6 +612,7 @@ class __$LoadInProgressCopyWithImpl<$Res>
   _LoadInProgress get _value => super._value as _LoadInProgress;
 }
 
+/// @nodoc
 class _$_LoadInProgress implements _LoadInProgress {
   const _$_LoadInProgress();
 
@@ -604,11 +631,11 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loadInProgress(),
-    @required Result loadSuccess(List<Trip> trips),
-    @required Result loadFailure(TripFailure tripFailure),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult loadInProgress(),
+    @required TResult loadSuccess(List<Trip> trips),
+    @required TResult loadFailure(TripFailure tripFailure),
   }) {
     assert(initial != null);
     assert(loadInProgress != null);
@@ -619,12 +646,12 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loadInProgress(),
-    Result loadSuccess(List<Trip> trips),
-    Result loadFailure(TripFailure tripFailure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult loadInProgress(),
+    TResult loadSuccess(List<Trip> trips),
+    TResult loadFailure(TripFailure tripFailure),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (loadInProgress != null) {
@@ -635,11 +662,11 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loadInProgress(_LoadInProgress value),
-    @required Result loadSuccess(_LoadSuccess value),
-    @required Result loadFailure(_LoadFailure value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult loadInProgress(_LoadInProgress value),
+    @required TResult loadSuccess(_LoadSuccess value),
+    @required TResult loadFailure(_LoadFailure value),
   }) {
     assert(initial != null);
     assert(loadInProgress != null);
@@ -650,12 +677,12 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loadInProgress(_LoadInProgress value),
-    Result loadSuccess(_LoadSuccess value),
-    Result loadFailure(_LoadFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult loadInProgress(_LoadInProgress value),
+    TResult loadSuccess(_LoadSuccess value),
+    TResult loadFailure(_LoadFailure value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (loadInProgress != null) {
@@ -669,6 +696,7 @@ abstract class _LoadInProgress implements TripWatcherState {
   const factory _LoadInProgress() = _$_LoadInProgress;
 }
 
+/// @nodoc
 abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(
           _LoadSuccess value, $Res Function(_LoadSuccess) then) =
@@ -676,6 +704,7 @@ abstract class _$LoadSuccessCopyWith<$Res> {
   $Res call({List<Trip> trips});
 }
 
+/// @nodoc
 class __$LoadSuccessCopyWithImpl<$Res>
     extends _$TripWatcherStateCopyWithImpl<$Res>
     implements _$LoadSuccessCopyWith<$Res> {
@@ -696,6 +725,7 @@ class __$LoadSuccessCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_LoadSuccess implements _LoadSuccess {
   const _$_LoadSuccess(this.trips) : assert(trips != null);
 
@@ -719,17 +749,18 @@ class _$_LoadSuccess implements _LoadSuccess {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(trips);
 
+  @JsonKey(ignore: true)
   @override
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
       __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loadInProgress(),
-    @required Result loadSuccess(List<Trip> trips),
-    @required Result loadFailure(TripFailure tripFailure),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult loadInProgress(),
+    @required TResult loadSuccess(List<Trip> trips),
+    @required TResult loadFailure(TripFailure tripFailure),
   }) {
     assert(initial != null);
     assert(loadInProgress != null);
@@ -740,12 +771,12 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loadInProgress(),
-    Result loadSuccess(List<Trip> trips),
-    Result loadFailure(TripFailure tripFailure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult loadInProgress(),
+    TResult loadSuccess(List<Trip> trips),
+    TResult loadFailure(TripFailure tripFailure),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (loadSuccess != null) {
@@ -756,11 +787,11 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loadInProgress(_LoadInProgress value),
-    @required Result loadSuccess(_LoadSuccess value),
-    @required Result loadFailure(_LoadFailure value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult loadInProgress(_LoadInProgress value),
+    @required TResult loadSuccess(_LoadSuccess value),
+    @required TResult loadFailure(_LoadFailure value),
   }) {
     assert(initial != null);
     assert(loadInProgress != null);
@@ -771,12 +802,12 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loadInProgress(_LoadInProgress value),
-    Result loadSuccess(_LoadSuccess value),
-    Result loadFailure(_LoadFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult loadInProgress(_LoadInProgress value),
+    TResult loadSuccess(_LoadSuccess value),
+    TResult loadFailure(_LoadFailure value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (loadSuccess != null) {
@@ -790,9 +821,11 @@ abstract class _LoadSuccess implements TripWatcherState {
   const factory _LoadSuccess(List<Trip> trips) = _$_LoadSuccess;
 
   List<Trip> get trips;
+  @JsonKey(ignore: true)
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }
 
+/// @nodoc
 abstract class _$LoadFailureCopyWith<$Res> {
   factory _$LoadFailureCopyWith(
           _LoadFailure value, $Res Function(_LoadFailure) then) =
@@ -802,6 +835,7 @@ abstract class _$LoadFailureCopyWith<$Res> {
   $TripFailureCopyWith<$Res> get tripFailure;
 }
 
+/// @nodoc
 class __$LoadFailureCopyWithImpl<$Res>
     extends _$TripWatcherStateCopyWithImpl<$Res>
     implements _$LoadFailureCopyWith<$Res> {
@@ -832,6 +866,7 @@ class __$LoadFailureCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_LoadFailure implements _LoadFailure {
   const _$_LoadFailure(this.tripFailure) : assert(tripFailure != null);
 
@@ -856,17 +891,18 @@ class _$_LoadFailure implements _LoadFailure {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(tripFailure);
 
+  @JsonKey(ignore: true)
   @override
   _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
       __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loadInProgress(),
-    @required Result loadSuccess(List<Trip> trips),
-    @required Result loadFailure(TripFailure tripFailure),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult loadInProgress(),
+    @required TResult loadSuccess(List<Trip> trips),
+    @required TResult loadFailure(TripFailure tripFailure),
   }) {
     assert(initial != null);
     assert(loadInProgress != null);
@@ -877,12 +913,12 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loadInProgress(),
-    Result loadSuccess(List<Trip> trips),
-    Result loadFailure(TripFailure tripFailure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult loadInProgress(),
+    TResult loadSuccess(List<Trip> trips),
+    TResult loadFailure(TripFailure tripFailure),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (loadFailure != null) {
@@ -893,11 +929,11 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loadInProgress(_LoadInProgress value),
-    @required Result loadSuccess(_LoadSuccess value),
-    @required Result loadFailure(_LoadFailure value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult loadInProgress(_LoadInProgress value),
+    @required TResult loadSuccess(_LoadSuccess value),
+    @required TResult loadFailure(_LoadFailure value),
   }) {
     assert(initial != null);
     assert(loadInProgress != null);
@@ -908,12 +944,12 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loadInProgress(_LoadInProgress value),
-    Result loadSuccess(_LoadSuccess value),
-    Result loadFailure(_LoadFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult loadInProgress(_LoadInProgress value),
+    TResult loadSuccess(_LoadSuccess value),
+    TResult loadFailure(_LoadFailure value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (loadFailure != null) {
@@ -927,5 +963,6 @@ abstract class _LoadFailure implements TripWatcherState {
   const factory _LoadFailure(TripFailure tripFailure) = _$_LoadFailure;
 
   TripFailure get tripFailure;
+  @JsonKey(ignore: true)
   _$LoadFailureCopyWith<_LoadFailure> get copyWith;
 }

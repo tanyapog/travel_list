@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter/rendering.dart';
-import 'package:date_range_picker/date_range_picker.dart' as date_range_picker;
+// import 'package:date_range_picker/date_range_picker.dart' as date_range_picker;
 import 'package:travel_list/screens/configurator/inherited_trip_provider.dart';
 import 'package:travel_list/models/trip.dart';
 
@@ -52,13 +52,13 @@ class _TripEditScreenState extends State<TripEditScreen> {
       controller: _rangeController,
       onTap: () async {
         FocusScope.of(context).requestFocus(FocusNode());
-        _picked = await date_range_picker.showDatePicker(
-            context: context,
-            initialFirstDate: DateTime.now(),
-            initialLastDate: DateTime.now().add(const Duration(days: 7)),
-            firstDate: DateTime(2015),
-            lastDate: DateTime(2040)
-        );
+        // _picked = await date_range_picker.showDatePicker(
+        //     context: context,
+        //     initialFirstDate: DateTime.now(),
+        //     initialLastDate: DateTime.now().add(const Duration(days: 7)),
+        //     firstDate: DateTime(2015),
+        //     lastDate: DateTime(2040)
+        // );
         if (_picked != null && _picked.length == 2) {
           _rangeController.text = '${format.format(_picked[0])} - ${format.format(_picked[1])}';
         }

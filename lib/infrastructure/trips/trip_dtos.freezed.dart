@@ -12,6 +12,7 @@ TripDto _$TripDtoFromJson(Map<String, dynamic> json) {
   return _TripDto.fromJson(json);
 }
 
+/// @nodoc
 class _$TripDtoTearOff {
   const _$TripDtoTearOff();
 
@@ -30,11 +31,18 @@ class _$TripDtoTearOff {
       serverTimeStamp: serverTimeStamp,
     );
   }
+
+// ignore: unused_element
+  TripDto fromJson(Map<String, Object> json) {
+    return TripDto.fromJson(json);
+  }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $TripDto = _$TripDtoTearOff();
 
+/// @nodoc
 mixin _$TripDto {
   @JsonKey(ignore: true)
   String get id;
@@ -45,9 +53,11 @@ mixin _$TripDto {
   FieldValue get serverTimeStamp;
 
   Map<String, dynamic> toJson();
+  @JsonKey(ignore: true)
   $TripDtoCopyWith<TripDto> get copyWith;
 }
 
+/// @nodoc
 abstract class $TripDtoCopyWith<$Res> {
   factory $TripDtoCopyWith(TripDto value, $Res Function(TripDto) then) =
       _$TripDtoCopyWithImpl<$Res>;
@@ -59,6 +69,7 @@ abstract class $TripDtoCopyWith<$Res> {
       @ServerTimestampConverter() FieldValue serverTimeStamp});
 }
 
+/// @nodoc
 class _$TripDtoCopyWithImpl<$Res> implements $TripDtoCopyWith<$Res> {
   _$TripDtoCopyWithImpl(this._value, this._then);
 
@@ -87,6 +98,7 @@ class _$TripDtoCopyWithImpl<$Res> implements $TripDtoCopyWith<$Res> {
   }
 }
 
+/// @nodoc
 abstract class _$TripDtoCopyWith<$Res> implements $TripDtoCopyWith<$Res> {
   factory _$TripDtoCopyWith(_TripDto value, $Res Function(_TripDto) then) =
       __$TripDtoCopyWithImpl<$Res>;
@@ -99,6 +111,7 @@ abstract class _$TripDtoCopyWith<$Res> implements $TripDtoCopyWith<$Res> {
       @ServerTimestampConverter() FieldValue serverTimeStamp});
 }
 
+/// @nodoc
 class __$TripDtoCopyWithImpl<$Res> extends _$TripDtoCopyWithImpl<$Res>
     implements _$TripDtoCopyWith<$Res> {
   __$TripDtoCopyWithImpl(_TripDto _value, $Res Function(_TripDto) _then)
@@ -129,6 +142,8 @@ class __$TripDtoCopyWithImpl<$Res> extends _$TripDtoCopyWithImpl<$Res>
 }
 
 @JsonSerializable()
+
+/// @nodoc
 class _$_TripDto extends _TripDto {
   const _$_TripDto(
       {@JsonKey(ignore: true) this.id,
@@ -191,6 +206,7 @@ class _$_TripDto extends _TripDto {
       const DeepCollectionEquality().hash(complete) ^
       const DeepCollectionEquality().hash(serverTimeStamp);
 
+  @JsonKey(ignore: true)
   @override
   _$TripDtoCopyWith<_TripDto> get copyWith =>
       __$TripDtoCopyWithImpl<_TripDto>(this, _$identity);
@@ -226,5 +242,6 @@ abstract class _TripDto extends TripDto {
   @ServerTimestampConverter()
   FieldValue get serverTimeStamp;
   @override
+  @JsonKey(ignore: true)
   _$TripDtoCopyWith<_TripDto> get copyWith;
 }
