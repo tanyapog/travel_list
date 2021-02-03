@@ -56,7 +56,7 @@ class SignInForm extends StatelessWidget {
                 const Text('Travel List', textAlign: TextAlign.center, style: TextStyle(fontSize: 30)),
                 const SizedBox(height: 8,),
                 TextFormField(
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     prefixIcon: Icon(Icons.email),
                     labelText: 'Email',
                   ),
@@ -79,7 +79,7 @@ class SignInForm extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 TextFormField(
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     prefixIcon: Icon(Icons.lock),
                     labelText: 'Password',
                   ),
@@ -127,7 +127,7 @@ class SignInForm extends StatelessWidget {
                     );
                   },
                   color: Colors.lightBlue,
-                  child: Text('SIGN IN WITH GOOGLE',
+                  child: const Text('SIGN IN WITH GOOGLE',
                     style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
                   ),
                 ),

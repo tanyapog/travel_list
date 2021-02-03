@@ -25,8 +25,8 @@ class UncompletedSwitch extends HookWidget {
               child: child,),
             child: toggleState.value
             // without keys flutter thinks that icons are identical and animation doesn't work
-                ? Icon(Icons.check_box_outline_blank, key: const Key('outline'),)
-                : Icon(Icons.indeterminate_check_box, key: const Key('indeterminate'))
+                ? const Icon(Icons.check_box_outline_blank, key: Key('outline'),)
+                : const Icon(Icons.indeterminate_check_box, key: Key('indeterminate'))
         ),
       ),
     );

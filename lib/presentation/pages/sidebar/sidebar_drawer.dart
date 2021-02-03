@@ -27,19 +27,19 @@ class SidebarDrawer extends StatelessWidget {
                   padding: EdgeInsets.zero,
                   children: <Widget>[
                     DrawerHeader(
-                      decoration: BoxDecoration(color: Colors.lightGreen,),
+                      decoration: const BoxDecoration(color: Colors.lightGreen,),
                       child: Align(
                         alignment: Alignment.topLeft,
                         child: ListTile(
                           title: Text(user.name.value.fold((l) => null, id),
-                            style: TextStyle(color: Colors.white,
+                            style: const TextStyle(color: Colors.white,
                                 fontSize: 18,
                                 fontWeight: FontWeight.w800),
                           ),
                           subtitle: Text(user.email.value.fold((l) => null, id),
-                            style: TextStyle(color: Colors.black,),
+                            style: const TextStyle(color: Colors.black,),
                           ),
-                          leading: CircleAvatar( // todo show google avatar image if any
+                          leading: const CircleAvatar( // todo show google avatar image if any
                             backgroundColor: Colors.orangeAccent,
                             radius: 25,
                             child: Icon(Icons.perm_identity, color: Colors.white,),
@@ -48,7 +48,7 @@ class SidebarDrawer extends StatelessWidget {
                       ),
                     ),
                     ListTile(
-                        leading: Icon(Icons.exit_to_app),
+                        leading: const Icon(Icons.exit_to_app),
                         title: const Text('Sign out'),
                         onTap: () {
                           context.bloc<AuthBloc>().add(const AuthEvent.signedOut());

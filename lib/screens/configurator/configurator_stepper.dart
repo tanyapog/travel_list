@@ -73,9 +73,9 @@ class _ConfigurationStepperState extends State<ConfigurationStepper>
               ? () {_tabController.animateTo(_tabController.index - 1);}
               : null,
             child: Row(
-              children: <Widget>[
+              children: const <Widget>[
                 Icon(Icons.chevron_left,),
-                const Text('BACK'),
+                Text('BACK'),
               ],
             ),
           ),
@@ -110,8 +110,8 @@ class _ConfigurationStepperState extends State<ConfigurationStepper>
               }
             },
             child: Row(
-              children: <Widget>[
-                const Text('NEXT'),
+              children: const <Widget>[
+                Text('NEXT'),
                 Icon(Icons.chevron_right,),
               ],
             ),

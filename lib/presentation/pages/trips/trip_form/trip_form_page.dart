@@ -76,7 +76,7 @@ class TripFormPageScaffold extends StatelessWidget {
         ),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.check),
+            icon: const Icon(Icons.check),
             onPressed: () {
               context.bloc<TripFormBloc>().add(const TripFormEvent.saved());
             },
