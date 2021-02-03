@@ -18,7 +18,6 @@ class _TripEditScreenState extends State<TripEditScreen> {
       child: Container (
         padding: const EdgeInsets.only(left: 25, right: 25),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             _tripNameField(trip),
             _tripDates(trip),

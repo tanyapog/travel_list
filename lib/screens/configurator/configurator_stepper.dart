@@ -35,7 +35,6 @@ class _ConfigurationStepperState extends State<ConfigurationStepper>
         ),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           TripEditScreen(),
           _itemSourceRadio(),
@@ -52,7 +51,7 @@ class _ConfigurationStepperState extends State<ConfigurationStepper>
           itemBuilder: (BuildContext context, int i) {
             ItemsSource itemsSource = itemsSources.keys.elementAt(i);
             return RadioListTile<ItemsSource>(
-              title: Text('${itemsSources[itemsSource].radioButtonLabel}'),
+              title: Text(itemsSources[itemsSource].radioButtonLabel),
               value: itemsSource,
               groupValue: itemsSource,
               onChanged: (ItemsSource value) {
