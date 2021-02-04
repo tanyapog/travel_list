@@ -87,6 +87,7 @@ class TripFormPageScaffold extends StatelessWidget {
         buildWhen: (previous, current) => previous.showErrorMessages != current.showErrorMessages,
         builder: (context, state) {
          return Form(
+           autovalidate: state.showErrorMessages,
            child: SingleChildScrollView(
              child: Column(
                children: const <Widget>[
