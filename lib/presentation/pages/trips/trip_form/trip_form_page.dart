@@ -88,13 +88,7 @@ class TripFormPageScaffold extends StatelessWidget {
         builder: (context, state) {
          return Form(
            autovalidate: state.showErrorMessages,
-           child: SingleChildScrollView(
-             child: Column(
-               children: const <Widget>[
-                 TripFormBody(),
-               ],
-             ),
-           ),
+           child: const TripFormBody(),
          );
         }
       ),
