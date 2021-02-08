@@ -65,6 +65,7 @@ class TripFormPageScaffold extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _globalTripFormKey = GlobalKey<FormState>();
     return Scaffold(
       appBar: AppBar(
         title: BlocBuilder<TripFormBloc, TripFormState>(
@@ -79,6 +80,7 @@ class TripFormPageScaffold extends StatelessWidget {
             icon: const Icon(Icons.check),
             onPressed: () {
               context.bloc<TripFormBloc>().add(const TripFormEvent.saved());
+              _globalTripFormKey.currentState.validate();
             },
           )
         ],
@@ -87,7 +89,7 @@ class TripFormPageScaffold extends StatelessWidget {
         buildWhen: (previous, current) => previous.showErrorMessages != current.showErrorMessages,
         builder: (context, state) {
          return Form(
-           autovalidate: state.showErrorMessages,
+           key: _globalTripFormKey,
            child: const TripFormBody(),
          );
         }

@@ -23,6 +23,9 @@ class SignInPage extends StatelessWidget {
 }
 
 class SignInForm extends StatelessWidget {
+  // this key should be static, otherwise it makes keyboard disappearing when focusing on TextFormField
+  static final GlobalKey<FormState> _globalSignInFormKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<SignInFormBloc, SignInFormState>(
@@ -47,7 +50,7 @@ class SignInForm extends StatelessWidget {
       },
       builder: (context, state) {
         return Form(
-          autovalidate: state.showErrorMessages,
+          key: _globalSignInFormKey,
           child: Container(
             padding: const EdgeInsets.all(10),
             child: ListView(
@@ -101,6 +104,7 @@ class SignInForm extends StatelessWidget {
                     Expanded(
                       child: FlatButton(
                         onPressed: () {
+                          _globalSignInFormKey.currentState.validate();
                           context.bloc<SignInFormBloc>().add(
                             const SignInFormEvent.signInWithEmailAndPasswordPressed()
                           );
@@ -111,6 +115,7 @@ class SignInForm extends StatelessWidget {
                     Expanded(
                       child: FlatButton(
                         onPressed: () {
+                          _globalSignInFormKey.currentState.validate();
                           context.bloc<SignInFormBloc>().add(
                             const SignInFormEvent.registerWithEmailAndPasswordPressed()
                           );
