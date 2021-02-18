@@ -32,8 +32,8 @@ class TripsOverviewPage extends StatelessWidget {
                   FlushbarHelper.createError(
                     duration: const Duration(seconds: 5),
                     message: state.tripFailure.map(
-                      unexpected: (_) => 'Unexpectec error occured while deleting, pleas contact support',
-                      insufficientPermission: (_) => 'Insuggicient permissions',
+                      unexpected: (_) => 'Unexpected error occurred while deleting, pleas contact support',
+                      insufficientPermission: (_) => 'Insufficient permissions',
                       unableToUpdate: (_) => 'Impossible error',
                     ),
                   ).show(context);
