@@ -31,7 +31,7 @@ class TripFormBody extends HookWidget {
               autofocus: true,
               maxLength: TripName.maxLength,
               onChanged: (value) =>
-                  context.bloc<TripFormBloc>().add(TripFormEvent.nameChanged(value)),
+                  context.read<TripFormBloc>().add(TripFormEvent.nameChanged(value)),
               validator: (_) =>
                   context.bloc<TripFormBloc>().state.trip.name.value.fold(
                         (fai1lure) => fai1lure.maybeMap(
@@ -54,7 +54,7 @@ class TripFormBody extends HookWidget {
               maxLines: 5,
               minLines: 1,
               onChanged: (value) =>
-                  context.bloc<TripFormBloc>().add(TripFormEvent.descriptionChanged(value)),
+                  context.read<TripFormBloc>().add(TripFormEvent.descriptionChanged(value)),
               validator: (_) =>
                   context.bloc<TripFormBloc>().state.trip.name.value.fold(
                         (fai1lure) => fai1lure.maybeMap(

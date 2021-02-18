@@ -51,7 +51,7 @@ class SidebarDrawer extends StatelessWidget {
                         leading: const Icon(Icons.exit_to_app),
                         title: const Text('Sign out'),
                         onTap: () {
-                          context.bloc<AuthBloc>().add(const AuthEvent.signedOut());
+                          context.read<AuthBloc>().add(const AuthEvent.signedOut());
                         }
                     ),
                   ],

@@ -35,7 +35,7 @@ class TripFormPage extends StatelessWidget {
               },
               (_) { // loading trip succeed, show the trip form
                 // todo show trips_overview_page if trip was edited and generator if a new trip was created
-                context.bloc<TripFormBloc>().add(const TripFormEvent.saved());
+                context.read<TripFormBloc>().add(const TripFormEvent.saved());
                 // current route is fullscreenDialog with his oun route so just one pop is not enough
                 ExtendedNavigator.of(context).popUntil(
                   (route) => route.settings.name == Routes.tripsOverviewPage,
@@ -79,7 +79,7 @@ class TripFormPageScaffold extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.check),
             onPressed: () {
-              context.bloc<TripFormBloc>().add(const TripFormEvent.saved());
+              context.read<TripFormBloc>().add(const TripFormEvent.saved());
               _globalTripFormKey.currentState.validate();
             },
           )

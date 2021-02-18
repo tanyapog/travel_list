@@ -42,7 +42,7 @@ class SignInForm extends StatelessWidget {
                   'Invalid email and password combination',)).show(context);
             },
             (_) { // Authorisation succeed, show to user the list of trips
-              context.bloc<AuthBloc>().add(const AuthEvent.authCheckRequested());
+              context.read<AuthBloc>().add(const AuthEvent.authCheckRequested());
               ExtendedNavigator.of(context).replace(Routes.tripsOverviewPage);
             }
           ),
@@ -65,12 +65,12 @@ class SignInForm extends StatelessWidget {
                   ),
                   autocorrect: false,
                   onChanged: (value) => context
-                    .bloc<SignInFormBloc>()
+                    .read<SignInFormBloc>()
                     .add(SignInFormEvent.emailChanged(value)),
                   //  We use directly context.bloc.state instead of state of the builder
                   //  because the state of builder will be always one character older than the last value which was inputed into the bloc.
                   //  That's because the UI did not have yet the chance to rebuild the builder with delayed value of the bloc
-                  validator: (_) => context.bloc<SignInFormBloc>().state.email.value.fold(
+                  validator: (_) => context.read<SignInFormBloc>().state.email.value.fold(
                     (failure) => failure .maybeMap(
                       invalidEmail: (_) => 'Invalid Email',
                       // the only failure of [ValueFailure] we need to process in this field is invalidEmail,
@@ -89,7 +89,7 @@ class SignInForm extends StatelessWidget {
                   autocorrect: false,
                   obscureText: true,
                   onChanged: (value) => context
-                    .bloc<SignInFormBloc>()
+                    .read<SignInFormBloc>()
                     .add(SignInFormEvent.passwordChanged(value)),
                   validator: (_) => context.bloc<SignInFormBloc>().state.password.value.fold(
                     (failure) => failure.maybeMap(
@@ -105,7 +105,7 @@ class SignInForm extends StatelessWidget {
                       child: FlatButton(
                         onPressed: () {
                           _globalSignInFormKey.currentState.validate();
-                          context.bloc<SignInFormBloc>().add(
+                          context.read<SignInFormBloc>().add(
                             const SignInFormEvent.signInWithEmailAndPasswordPressed()
                           );
                         },
@@ -116,7 +116,7 @@ class SignInForm extends StatelessWidget {
                       child: FlatButton(
                         onPressed: () {
                           _globalSignInFormKey.currentState.validate();
-                          context.bloc<SignInFormBloc>().add(
+                          context.read<SignInFormBloc>().add(
                             const SignInFormEvent.registerWithEmailAndPasswordPressed()
                           );
                         },
@@ -127,7 +127,7 @@ class SignInForm extends StatelessWidget {
                 ),
                 RaisedButton(
                   onPressed: () {
-                    context.bloc<SignInFormBloc>().add(
+                    context.read<SignInFormBloc>().add(
                       const SignInFormEvent.signInWithGooglePressed()
                     );
                   },
