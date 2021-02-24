@@ -28,8 +28,7 @@ class TripCard extends StatelessWidget {
             icon: Icons.delete,
             color: Colors.red,
             onTap: () {
-              final tripActorBloc = context.bloc<TripActorBloc>();
-              _showDeletionDialog(context, tripActorBloc);
+              _showDeletionDialog(context);
             },
           )
         ],
@@ -45,7 +44,7 @@ class TripCard extends StatelessWidget {
     );
   }
 
-  void _showDeletionDialog(BuildContext context, TripActorBloc tripActorBloc) {
+  void _showDeletionDialog(BuildContext context) {
     showDialog(
       context: context,
       builder: (BuildContext dialogContext) {
@@ -61,7 +60,7 @@ class TripCard extends StatelessWidget {
             ),
             FlatButton(
               onPressed: () {
-                tripActorBloc.add(TripActorEvent.deleted(trip));
+                context.read<TripActorBloc>().add(TripActorEvent.deleted(trip));
                 Navigator.of(dialogContext).pop();
               },
               child: const Text('DELETE'),
