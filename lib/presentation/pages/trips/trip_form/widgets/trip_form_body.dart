@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:provider/provider.dart';
 import 'package:travel_list/application/trips/trip_form/trip_form_bloc.dart';
 import 'package:travel_list/domain/trips/value_objects.dart';
 
@@ -32,8 +33,8 @@ class TripFormBody extends HookWidget {
               maxLength: TripName.maxLength,
               onChanged: (value) =>
                   context.read<TripFormBloc>().add(TripFormEvent.nameChanged(value)),
-              validator: (_) =>
-                  context.bloc<TripFormBloc>().state.trip.name.value.fold(
+              validator: (_) => Provider.of<TripFormBloc>(context, listen: false)
+                  .state.trip.name.value.fold(
                         (fai1lure) => fai1lure.maybeMap(
                         empty: (f) => 'Cannot be empty',
                         exceedingLength: (f) => 'Exceeding length, max: ${f.max}',
@@ -55,8 +56,8 @@ class TripFormBody extends HookWidget {
               minLines: 1,
               onChanged: (value) =>
                   context.read<TripFormBloc>().add(TripFormEvent.descriptionChanged(value)),
-              validator: (_) =>
-                  context.bloc<TripFormBloc>().state.trip.name.value.fold(
+              validator: (_) => Provider.of<TripFormBloc>(context, listen: false)
+                  .state.trip.name.value.fold(
                         (fai1lure) => fai1lure.maybeMap(
                         exceedingLength: (f) => 'Exceeding length, max: ${f.max}',
                         orElse: () => null

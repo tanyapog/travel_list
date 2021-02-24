@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:provider/provider.dart';
 import 'package:travel_list/application/auth/auth_bloc.dart';
 import 'package:travel_list/application/auth/sign_in_form/sign_in_form_bloc.dart';
 import 'package:travel_list/injection.dart';
@@ -67,10 +68,7 @@ class SignInForm extends StatelessWidget {
                   onChanged: (value) => context.read<SignInFormBloc>().add(
                       SignInFormEvent.emailChanged(value)
                   ),
-                  //  We use directly context.bloc.state instead of state of the builder
-                  //  because the state of builder will be always one character older than the last value which was inputed into the bloc.
-                  //  That's because the UI did not have yet the chance to rebuild the builder with delayed value of the bloc
-                  validator: (_) => context.read<SignInFormBloc>().state.email.value.fold(
+                  validator: (_) => state.email.value.fold(
                     (failure) => failure .maybeMap(
                       invalidEmail: (_) => 'Invalid Email',
                       // the only failure of [ValueFailure] we need to process in this field is invalidEmail,
@@ -91,7 +89,7 @@ class SignInForm extends StatelessWidget {
                   onChanged: (value) => context.read<SignInFormBloc>().add(
                       SignInFormEvent.passwordChanged(value)
                   ),
-                  validator: (_) => context.bloc<SignInFormBloc>().state.password.value.fold(
+                  validator: (_) => state.password.value.fold(
                     (failure) => failure.maybeMap(
                       shortPassword: (_) => 'Short Password',
                       orElse: () => null,
