@@ -64,9 +64,9 @@ class SignInForm extends StatelessWidget {
                     labelText: 'Email',
                   ),
                   autocorrect: false,
-                  onChanged: (value) => context
-                    .read<SignInFormBloc>()
-                    .add(SignInFormEvent.emailChanged(value)),
+                  onChanged: (value) => context.read<SignInFormBloc>().add(
+                      SignInFormEvent.emailChanged(value)
+                  ),
                   //  We use directly context.bloc.state instead of state of the builder
                   //  because the state of builder will be always one character older than the last value which was inputed into the bloc.
                   //  That's because the UI did not have yet the chance to rebuild the builder with delayed value of the bloc
@@ -88,9 +88,9 @@ class SignInForm extends StatelessWidget {
                   ),
                   autocorrect: false,
                   obscureText: true,
-                  onChanged: (value) => context
-                    .read<SignInFormBloc>()
-                    .add(SignInFormEvent.passwordChanged(value)),
+                  onChanged: (value) => context.read<SignInFormBloc>().add(
+                      SignInFormEvent.passwordChanged(value)
+                  ),
                   validator: (_) => context.bloc<SignInFormBloc>().state.password.value.fold(
                     (failure) => failure.maybeMap(
                       shortPassword: (_) => 'Short Password',
