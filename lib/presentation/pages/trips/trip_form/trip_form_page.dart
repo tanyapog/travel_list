@@ -98,6 +98,7 @@ class TripFormPageScaffold extends StatelessWidget {
   }
 }
 
+// todo remove or change for something that could optimize performance
 class SavingInProgressOverlay extends StatelessWidget {
   final bool isSaving;
 
