@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:meta/meta.dart';
-import 'package:travel_list/domain/auth/value_objects.dart';
+import 'package:travel_list/domain/auth/email.dart';
 import 'package:travel_list/domain/core/value_objects.dart';
 
 part 'user.freezed.dart';

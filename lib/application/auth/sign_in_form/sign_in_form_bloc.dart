@@ -3,9 +3,10 @@ import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:travel_list/domain/auth/email.dart';
 import 'package:travel_list/domain/auth/i_auth_facade.dart';
 import 'package:travel_list/domain/auth/auth_failure.dart';
-import 'package:travel_list/domain/auth/value_objects.dart';
+import 'package:travel_list/domain/auth/password.dart';
 
 part 'sign_in_form_event.dart';
 part 'sign_in_form_state.dart';
@@ -26,13 +27,13 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
     yield* event.map(
       emailChanged: (e) async* {
         yield state.copyWith(
-          email: Email(e.emailStr),
+          email: Email.dirty(e.emailStr),
           authFailureOrSuccessOption: none(),
         );
       },
       passwordChanged: (e) async* {
         yield state.copyWith(
-          password: Password(e.passwordStr),
+          password: Password.dirty(e.passwordStr),
           authFailureOrSuccessOption: none(),
         );
       },
@@ -64,8 +65,8 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
       @required Password password,
     }) forwardedCall,
   ) async* {
-    final bool isEmailValid = state.email.isValid();
-    final bool isPasswordValid = state.password.isValid();
+    final bool isEmailValid = state.email.valid;
+    final bool isPasswordValid = state.password.valid;
     Either<AuthFailure, Unit> failureOrSuccess;
     if (isEmailValid && isPasswordValid) {
       yield state.copyWith(

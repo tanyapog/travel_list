@@ -36,7 +36,7 @@ class SidebarDrawer extends StatelessWidget {
                                 fontSize: 18,
                                 fontWeight: FontWeight.w800),
                           ),
-                          subtitle: Text(user.email.value.fold((l) => null, id),
+                          subtitle: Text(user.email.value,
                             style: const TextStyle(color: Colors.black,),
                           ),
                           leading: const CircleAvatar( // todo show google avatar image if any

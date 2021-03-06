@@ -34,6 +34,7 @@ dependencies:
   auto_route: ^0.6.9
   provider: ^4.3.3
   rxdart: ^0.25.0
+  formz: ^0.3.2
   flutter_hooks: ^0.15.0
   flutter_slidable: ^0.5.7
 

@@ -5,9 +5,10 @@ import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
 import 'package:travel_list/domain/auth/auth_failure.dart';
+import 'package:travel_list/domain/auth/email.dart';
 import 'package:travel_list/domain/auth/i_auth_facade.dart';
+import 'package:travel_list/domain/auth/password.dart';
 import 'package:travel_list/domain/auth/user.dart';
-import 'package:travel_list/domain/auth/value_objects.dart';
 import './firebase_user_mapper.dart';
 
 // lazy mode shifts the creation to the time the object is the first time requested
@@ -28,8 +29,8 @@ class FirebaseAuthFacade implements IAuthFacade {
     @required Email email,
     @required Password password
   }) async {
-    final emailStr = email.getOrCrash();
-    final passwordStr = password.getOrCrash();
+    final emailStr = email.value;
+    final passwordStr = password.value;
     try {
       await _firebaseAuth.createUserWithEmailAndPassword(
         email: emailStr,
@@ -50,8 +51,8 @@ class FirebaseAuthFacade implements IAuthFacade {
     @required Email email,
     @required Password password
   }) async {
-    final emailStr = email.getOrCrash();
-    final passwordStr = password.getOrCrash();
+    final emailStr = email.value;
+    final passwordStr = password.value;
     try {
       await _firebaseAuth.signInWithEmailAndPassword(
         email: emailStr,

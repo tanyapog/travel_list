@@ -68,15 +68,9 @@ class SignInForm extends StatelessWidget {
                   onChanged: (value) => context.read<SignInFormBloc>().add(
                       SignInFormEvent.emailChanged(value)
                   ),
-                  validator: (_) => state.email.value.fold(
-                    (failure) => failure .maybeMap(
-                      invalidEmail: (_) => 'Invalid Email',
-                      // the only failure of [ValueFailure] we need to process in this field is invalidEmail,
-                      // so in case of others we do nothing
-                      orElse: () => null,
-                    ),
-                    (_) => null,
-                  ),
+                  validator: (_) => state.email.invalid
+                    ? 'Invalid Email'
+                    : null,
                 ),
                 const SizedBox(height: 8),
                 TextFormField(
@@ -89,13 +83,9 @@ class SignInForm extends StatelessWidget {
                   onChanged: (value) => context.read<SignInFormBloc>().add(
                       SignInFormEvent.passwordChanged(value)
                   ),
-                  validator: (_) => state.password.value.fold(
-                    (failure) => failure.maybeMap(
-                      shortPassword: (_) => 'Short Password',
-                      orElse: () => null,
-                    ),
-                    (_) => null,
-                  ),
+                  validator: (_) => state.password.invalid
+                    ? 'Password must be at least 8 characters and contain at least one letter and number'
+                    : null,
                 ),
                 Row(
                   children: <Widget>[

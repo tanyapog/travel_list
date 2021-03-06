@@ -15,8 +15,8 @@ abstract class SignInFormState with _$SignInFormState {
   }) = _SignInFormState;
 
   factory SignInFormState.initial() => SignInFormState(
-    email: Email(''),
-    password: Password(''),
+    email: const Email.pure(),
+    password: const Password.pure(),
     showErrorMessages: false,
     isSubmitting: false,
     authFailureOrSuccessOption: none(),
