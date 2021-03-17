@@ -27,13 +27,13 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
     yield* event.map(
       emailChanged: (e) async* {
         yield state.copyWith(
-          email: Email.dirty(e.emailStr),
+          email: Email.dirty(e.email),
           authFailureOrSuccessOption: none(),
         );
       },
       passwordChanged: (e) async* {
         yield state.copyWith(
-          password: Password.dirty(e.passwordStr),
+          password: Password.dirty(e.password),
           authFailureOrSuccessOption: none(),
         );
       },
