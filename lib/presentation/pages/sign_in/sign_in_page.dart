@@ -48,82 +48,80 @@ class SignInForm extends StatelessWidget {
         );
       },
       builder: (context, state) {
-        return Container(
+        return ListView(
           padding: const EdgeInsets.all(10),
-          child: ListView(
-            children: <Widget>[
-              const SizedBox(height: 8,),
-              const Text('Travel List', textAlign: TextAlign.center, style: TextStyle(fontSize: 30)),
-              const SizedBox(height: 8,),
-              TextFormField(
-                decoration: const InputDecoration(
-                  prefixIcon: Icon(Icons.email),
-                  labelText: 'Email',
-                ),
-                autocorrect: false,
-                onChanged: (value) => context.read<SignInFormBloc>().add(
-                    SignInFormEvent.emailChanged(value)
-                ),
-                validator: (_) => state.email.invalid
-                  ? 'Invalid Email'
-                  : null,
+          children: <Widget>[
+            const SizedBox(height: 8,),
+            const Text('Travel List', textAlign: TextAlign.center, style: TextStyle(fontSize: 30)),
+            const SizedBox(height: 8,),
+            TextFormField(
+              decoration: const InputDecoration(
+                prefixIcon: Icon(Icons.email),
+                labelText: 'Email',
               ),
-              const SizedBox(height: 8),
-              TextFormField(
-                decoration: const InputDecoration(
-                  prefixIcon: Icon(Icons.lock),
-                  labelText: 'Password',
-                ),
-                autocorrect: false,
-                obscureText: true,
-                onChanged: (value) => context.read<SignInFormBloc>().add(
-                    SignInFormEvent.passwordChanged(value)
-                ),
-                validator: (_) => state.password.invalid
-                  ? 'Password must be at least 8 characters and contain at least one letter and number'
-                  : null,
+              autocorrect: false,
+              onChanged: (value) => context.read<SignInFormBloc>().add(
+                  SignInFormEvent.emailChanged(value)
               ),
-              Row(
-                children: <Widget>[
-                  Expanded(
-                    child: FlatButton(
-                      onPressed: () {
-                        context.read<SignInFormBloc>().add(
-                          const SignInFormEvent.signInWithEmailAndPasswordPressed()
-                        );
-                      },
-                      child: const Text('SIGN IN'),
-                    ),
+              validator: (_) => state.email.invalid
+                ? 'Invalid Email'
+                : null,
+            ),
+            const SizedBox(height: 8),
+            TextFormField(
+              decoration: const InputDecoration(
+                prefixIcon: Icon(Icons.lock),
+                labelText: 'Password',
+              ),
+              autocorrect: false,
+              obscureText: true,
+              onChanged: (value) => context.read<SignInFormBloc>().add(
+                  SignInFormEvent.passwordChanged(value)
+              ),
+              validator: (_) => state.password.invalid
+                ? 'Password must be at least 8 characters and contain at least one letter and number'
+                : null,
+            ),
+            Row(
+              children: <Widget>[
+                Expanded(
+                  child: FlatButton(
+                    onPressed: () {
+                      context.read<SignInFormBloc>().add(
+                        const SignInFormEvent.signInWithEmailAndPasswordPressed()
+                      );
+                    },
+                    child: const Text('SIGN IN'),
                   ),
-                  Expanded(
-                    child: FlatButton(
-                      onPressed: () {
-                        context.read<SignInFormBloc>().add(
-                          const SignInFormEvent.registerWithEmailAndPasswordPressed()
-                        );
-                      },
-                      child: const Text('REGISTER'),
-                    ),
-                  ),
-                ],
-              ),
-              RaisedButton(
-                onPressed: () {
-                  context.read<SignInFormBloc>().add(
-                    const SignInFormEvent.signInWithGooglePressed()
-                  );
-                },
-                color: Colors.lightBlue,
-                child: const Text('SIGN IN WITH GOOGLE',
-                  style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
                 ),
+                Expanded(
+                  child: FlatButton(
+                    onPressed: () {
+                      context.read<SignInFormBloc>().add(
+                        const SignInFormEvent.registerWithEmailAndPasswordPressed()
+                      );
+                    },
+                    child: const Text('REGISTER'),
+                  ),
+                ),
+              ],
+            ),
+            RaisedButton(
+              onPressed: () {
+                context.read<SignInFormBloc>().add(
+                  const SignInFormEvent.signInWithGooglePressed()
+                );
+              },
+              color: Colors.lightBlue,
+              child: const Text('SIGN IN WITH GOOGLE',
+                style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
               ),
-              if (state.isSubmitting) ... [
-                const SizedBox(height: 8,),
-                const LinearProgressIndicator(),
-              ]
-            ],
-          ),
+            ),
+            if (state.isSubmitting) ... [
+              const SizedBox(height: 8,),
+              const LinearProgressIndicator(),
+            ]
+          ],
         );
       },
     );
