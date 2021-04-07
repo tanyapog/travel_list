@@ -21,6 +21,10 @@ import 'application/trips/trip_form/trip_form_bloc.dart';
 import 'infrastructure/trips/trip_repository.dart';
 import 'application/trips/trip_watcher/trip_watcher_bloc.dart';
 
+/// Environment names
+const _prod = 'prod';
+const _test = 'test';
+
 /// adds generated dependencies
 /// to the provided [GetIt] instance
 
@@ -31,9 +35,22 @@ GetIt $initGetIt(
 }) {
   final gh = GetItHelper(get, environment, environmentFilter);
   final firebaseInjectableModule = _$FirebaseInjectableModule();
-  gh.lazySingleton<FirebaseAuth>(() => firebaseInjectableModule.firebaseAuth);
-  gh.lazySingleton<FirebaseFirestore>(() => firebaseInjectableModule.firestore);
-  gh.lazySingleton<GoogleSignIn>(() => firebaseInjectableModule.googleSignIn);
+  final firebaseTestInjectableModule = _$FirebaseTestInjectableModule();
+  gh.lazySingleton<FirebaseAuth>(() => firebaseInjectableModule.firebaseAuth,
+      registerFor: {_prod});
+  gh.lazySingleton<FirebaseAuth>(
+      () => firebaseTestInjectableModule.firebaseAuth,
+      registerFor: {_test});
+  gh.lazySingleton<FirebaseFirestore>(() => firebaseInjectableModule.firestore,
+      registerFor: {_prod});
+  gh.lazySingleton<FirebaseFirestore>(
+      () => firebaseTestInjectableModule.firestore,
+      registerFor: {_test});
+  gh.lazySingleton<GoogleSignIn>(() => firebaseInjectableModule.googleSignIn,
+      registerFor: {_prod});
+  gh.lazySingleton<GoogleSignIn>(
+      () => firebaseTestInjectableModule.googleSignIn,
+      registerFor: {_test});
   gh.lazySingleton<IAuthFacade>(
       () => FirebaseAuthFacade(get<FirebaseAuth>(), get<GoogleSignIn>()));
   gh.lazySingleton<ITripRepository>(
@@ -47,3 +64,5 @@ GetIt $initGetIt(
 }
 
 class _$FirebaseInjectableModule extends FirebaseInjectableModule {}
+
+class _$FirebaseTestInjectableModule extends FirebaseTestInjectableModule {}

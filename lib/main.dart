@@ -8,7 +8,7 @@ import 'package:travel_list/presentation/core/app_widget.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  configureInjection(Environment.prod);
+  configureInjection(Environment.prod, const SimpleEnvironmentFilter());
   await Firebase.initializeApp();
   Bloc.observer = TravelListBlocObserver();
   runApp(AppWidget());
