@@ -15,7 +15,6 @@ void main() {
       )
   );
 
-
   Finder findEmail() => find.bySemanticsLabel('Email');
   Finder findPassword() => find.bySemanticsLabel('Password');
   Finder findSignInButton() => find.text('SIGN IN');
@@ -46,6 +45,16 @@ void main() {
       expect(formKey.currentState.validate(), isFalse);
       expect(find.text('Invalid Email'), findsOneWidget);
       expect(find.text('Short Password'), findsOneWidget);
+    });
+
+    testWidgets('Incorrect email is invalid', (WidgetTester tester) async {
+      WidgetsFlutterBinding.ensureInitialized();
+      await tester.pumpWidget(signInPage);
+
+      await tester.enterText(findEmail(), 'not_email_string');
+      await tester.tap(findSignInButton());
+      await tester.pump();
+      expect(find.text('Invalid Email'), findsOneWidget);
     });
 
   });
