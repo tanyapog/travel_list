@@ -40,7 +40,7 @@ class FirebaseAuthFacade implements IAuthFacade {
       if (e.code == 'ERROR_EMAIL_ALREADY_IN_USE') {
         return left(const AuthFailure.emailAlreadyInUse());
       } else {
-        return left(const AuthFailure.serverError());
+        return left(AuthFailure.serverError("${e.code}: ${e.message}"));
       }
     }
   }
@@ -63,10 +63,10 @@ class FirebaseAuthFacade implements IAuthFacade {
           e.code == 'user-not-found') {
         return left(const AuthFailure.invalidEmailAndPasswordCombination());
       } else {
-        return left(const AuthFailure.serverError());
+        return left(AuthFailure.serverError("${e.code}: ${e.message}"));
       }
     } on Exception catch (e) {
-      return left(const AuthFailure.serverError());
+      return left(AuthFailure.serverError(e.toString()));
     }
   }
 
@@ -85,8 +85,8 @@ class FirebaseAuthFacade implements IAuthFacade {
       return _firebaseAuth
         .signInWithCredential(authCredential)
         .then((value) => right(unit));
-    } on PlatformException catch (_) { // TODO(tanyapog): check if catch is all right with .then
-      return left(const AuthFailure.serverError());
+    } on PlatformException catch (e) { // TODO(tanyapog): check if catch is all right with .then
+      return left(AuthFailure.serverError("${e.code}: ${e.message}"));
     }
   }
 

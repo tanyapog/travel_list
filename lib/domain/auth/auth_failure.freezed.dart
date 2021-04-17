@@ -19,8 +19,10 @@ class _$AuthFailureTearOff {
   }
 
 // ignore: unused_element
-  ServerError serverError() {
-    return const ServerError();
+  ServerError serverError(String message) {
+    return ServerError(
+      message,
+    );
   }
 
 // ignore: unused_element
@@ -43,14 +45,14 @@ mixin _$AuthFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult cancelledByUser(),
-    @required TResult serverError(),
+    @required TResult serverError(String message),
     @required TResult emailAlreadyInUse(),
     @required TResult invalidEmailAndPasswordCombination(),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult cancelledByUser(),
-    TResult serverError(),
+    TResult serverError(String message),
     TResult emailAlreadyInUse(),
     TResult invalidEmailAndPasswordCombination(),
     @required TResult orElse(),
@@ -131,7 +133,7 @@ class _$CancelledByUser implements CancelledByUser {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult cancelledByUser(),
-    @required TResult serverError(),
+    @required TResult serverError(String message),
     @required TResult emailAlreadyInUse(),
     @required TResult invalidEmailAndPasswordCombination(),
   }) {
@@ -146,7 +148,7 @@ class _$CancelledByUser implements CancelledByUser {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult cancelledByUser(),
-    TResult serverError(),
+    TResult serverError(String message),
     TResult emailAlreadyInUse(),
     TResult invalidEmailAndPasswordCombination(),
     @required TResult orElse(),
@@ -202,6 +204,7 @@ abstract class $ServerErrorCopyWith<$Res> {
   factory $ServerErrorCopyWith(
           ServerError value, $Res Function(ServerError) then) =
       _$ServerErrorCopyWithImpl<$Res>;
+  $Res call({String message});
 }
 
 /// @nodoc
@@ -213,30 +216,51 @@ class _$ServerErrorCopyWithImpl<$Res> extends _$AuthFailureCopyWithImpl<$Res>
 
   @override
   ServerError get _value => super._value as ServerError;
+
+  @override
+  $Res call({
+    Object message = freezed,
+  }) {
+    return _then(ServerError(
+      message == freezed ? _value.message : message as String,
+    ));
+  }
 }
 
 /// @nodoc
 class _$ServerError implements ServerError {
-  const _$ServerError();
+  const _$ServerError(this.message) : assert(message != null);
+
+  @override
+  final String message;
 
   @override
   String toString() {
-    return 'AuthFailure.serverError()';
+    return 'AuthFailure.serverError(message: $message)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ServerError);
+    return identical(this, other) ||
+        (other is ServerError &&
+            (identical(other.message, message) ||
+                const DeepCollectionEquality().equals(other.message, message)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(message);
+
+  @JsonKey(ignore: true)
+  @override
+  $ServerErrorCopyWith<ServerError> get copyWith =>
+      _$ServerErrorCopyWithImpl<ServerError>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult cancelledByUser(),
-    @required TResult serverError(),
+    @required TResult serverError(String message),
     @required TResult emailAlreadyInUse(),
     @required TResult invalidEmailAndPasswordCombination(),
   }) {
@@ -244,21 +268,21 @@ class _$ServerError implements ServerError {
     assert(serverError != null);
     assert(emailAlreadyInUse != null);
     assert(invalidEmailAndPasswordCombination != null);
-    return serverError();
+    return serverError(message);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult cancelledByUser(),
-    TResult serverError(),
+    TResult serverError(String message),
     TResult emailAlreadyInUse(),
     TResult invalidEmailAndPasswordCombination(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (serverError != null) {
-      return serverError();
+      return serverError(message);
     }
     return orElse();
   }
@@ -299,7 +323,11 @@ class _$ServerError implements ServerError {
 }
 
 abstract class ServerError implements AuthFailure {
-  const factory ServerError() = _$ServerError;
+  const factory ServerError(String message) = _$ServerError;
+
+  String get message;
+  @JsonKey(ignore: true)
+  $ServerErrorCopyWith<ServerError> get copyWith;
 }
 
 /// @nodoc
@@ -342,7 +370,7 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult cancelledByUser(),
-    @required TResult serverError(),
+    @required TResult serverError(String message),
     @required TResult emailAlreadyInUse(),
     @required TResult invalidEmailAndPasswordCombination(),
   }) {
@@ -357,7 +385,7 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult cancelledByUser(),
-    TResult serverError(),
+    TResult serverError(String message),
     TResult emailAlreadyInUse(),
     TResult invalidEmailAndPasswordCombination(),
     @required TResult orElse(),
@@ -453,7 +481,7 @@ class _$InvalidEmailAndPasswordCombination
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult cancelledByUser(),
-    @required TResult serverError(),
+    @required TResult serverError(String message),
     @required TResult emailAlreadyInUse(),
     @required TResult invalidEmailAndPasswordCombination(),
   }) {
@@ -468,7 +496,7 @@ class _$InvalidEmailAndPasswordCombination
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult cancelledByUser(),
-    TResult serverError(),
+    TResult serverError(String message),
     TResult emailAlreadyInUse(),
     TResult invalidEmailAndPasswordCombination(),
     @required TResult orElse(),

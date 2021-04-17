@@ -37,7 +37,7 @@ class SignInForm extends StatelessWidget {
             (failure) { // Authorisation failed
               FlushbarHelper.createError(message: failure.map(
                 cancelledByUser: (_) => 'Cancelled',
-                serverError: (_) => 'Server Error',
+                serverError: (message) => 'Server Error: $message',
                 emailAlreadyInUse: (_) => 'Email already in use',
                 invalidEmailAndPasswordCombination: (_) =>
                   'Invalid email and password combination',)).show(context);
