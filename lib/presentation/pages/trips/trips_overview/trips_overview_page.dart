@@ -44,7 +44,7 @@ class TripsOverviewPage extends StatelessWidget {
           ),
         ],
         child: Scaffold(
-          drawer: SidebarDrawer(),
+          drawer: NavigationDrawer(),
           appBar: AppBar(
             title: const Text('My trips'),
             actions: <Widget>[
