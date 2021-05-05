@@ -18,9 +18,7 @@ class TripActorBloc extends Bloc<TripActorEvent, TripActorState> {
   TripActorBloc(this._tripRepository) : super(const TripActorState.initial());
 
   @override
-  Stream<TripActorState> mapEventToState(
-    TripActorEvent event,
-  ) async* {
+  Stream<TripActorState> mapEventToState(TripActorEvent event) async* {
     yield const TripActorState.actionInProgress();
     final possibleFailure  = await _tripRepository.delete(event.trip);
     yield possibleFailure.fold(
