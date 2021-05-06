@@ -29,7 +29,6 @@ class TripFormBody extends HookWidget {
                 hintText: 'name',
                 counterText: '',
               ),
-              autofocus: true,
               maxLength: TripName.maxLength,
               onChanged: (value) =>
                   context.read<TripFormBloc>().add(TripFormEvent.nameChanged(value)),
