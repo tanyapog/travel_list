@@ -38,7 +38,7 @@ class NavigationDrawer extends StatelessWidget {
                   print("--- show Catalog");
                   break;
                 case NavItem.categories:
-                  print("--- show Categories");
+                  ExtendedNavigator.of(context).replace(Routes.categoriesOverviewPage);
                   break;
                 case NavItem.templates:
                   print("--- show Templates");

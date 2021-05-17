@@ -10,6 +10,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../../domain/trips/trip.dart';
+import '../pages/categories/categories_overview_page.dart';
 import '../pages/sign_in/sign_in_page.dart';
 import '../pages/splash/splash_page.dart';
 import '../pages/trips/trip_form/trip_form_page.dart';
@@ -20,11 +21,13 @@ class Routes {
   static const String signInPage = '/sign-in-page';
   static const String tripsOverviewPage = '/trips-overview-page';
   static const String tripFormPage = '/trip-form-page';
+  static const String categoriesOverviewPage = '/categories-overview-page';
   static const all = <String>{
     splashPage,
     signInPage,
     tripsOverviewPage,
     tripFormPage,
+    categoriesOverviewPage,
   };
 }
 
@@ -36,6 +39,7 @@ class Router extends RouterBase {
     RouteDef(Routes.signInPage, page: SignInPage),
     RouteDef(Routes.tripsOverviewPage, page: TripsOverviewPage),
     RouteDef(Routes.tripFormPage, page: TripFormPage),
+    RouteDef(Routes.categoriesOverviewPage, page: CategoriesOverviewPage),
   ];
   @override
   Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
@@ -69,6 +73,12 @@ class Router extends RouterBase {
         fullscreenDialog: true,
       );
     },
+    CategoriesOverviewPage: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => CategoriesOverviewPage(),
+        settings: data,
+      );
+    },
   };
 }
 
@@ -92,6 +102,9 @@ extension RouterExtendedNavigatorStateX on ExtendedNavigatorState {
         Routes.tripFormPage,
         arguments: TripFormPageArguments(key: key, trip: trip),
       );
+
+  Future<dynamic> pushCategoriesOverviewPage() =>
+      push<dynamic>(Routes.categoriesOverviewPage);
 }
 
 /// ************************************************************************
