@@ -14,10 +14,12 @@ class _$CategoryTearOff {
   const _$CategoryTearOff();
 
 // ignore: unused_element
-  _Category call({@required UniqueId id, @required String name}) {
+  _Category call(
+      {@required UniqueId id, @required String name, @required int position}) {
     return _Category(
       id: id,
       name: name,
+      position: position,
     );
   }
 }
@@ -30,6 +32,7 @@ const $Category = _$CategoryTearOff();
 mixin _$Category {
   UniqueId get id;
   String get name;
+  int get position;
 
   @JsonKey(ignore: true)
   $CategoryCopyWith<Category> get copyWith;
@@ -39,7 +42,7 @@ mixin _$Category {
 abstract class $CategoryCopyWith<$Res> {
   factory $CategoryCopyWith(Category value, $Res Function(Category) then) =
       _$CategoryCopyWithImpl<$Res>;
-  $Res call({UniqueId id, String name});
+  $Res call({UniqueId id, String name, int position});
 }
 
 /// @nodoc
@@ -54,10 +57,12 @@ class _$CategoryCopyWithImpl<$Res> implements $CategoryCopyWith<$Res> {
   $Res call({
     Object id = freezed,
     Object name = freezed,
+    Object position = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as UniqueId,
       name: name == freezed ? _value.name : name as String,
+      position: position == freezed ? _value.position : position as int,
     ));
   }
 }
@@ -67,7 +72,7 @@ abstract class _$CategoryCopyWith<$Res> implements $CategoryCopyWith<$Res> {
   factory _$CategoryCopyWith(_Category value, $Res Function(_Category) then) =
       __$CategoryCopyWithImpl<$Res>;
   @override
-  $Res call({UniqueId id, String name});
+  $Res call({UniqueId id, String name, int position});
 }
 
 /// @nodoc
@@ -83,29 +88,35 @@ class __$CategoryCopyWithImpl<$Res> extends _$CategoryCopyWithImpl<$Res>
   $Res call({
     Object id = freezed,
     Object name = freezed,
+    Object position = freezed,
   }) {
     return _then(_Category(
       id: id == freezed ? _value.id : id as UniqueId,
       name: name == freezed ? _value.name : name as String,
+      position: position == freezed ? _value.position : position as int,
     ));
   }
 }
 
 /// @nodoc
 class _$_Category extends _Category {
-  const _$_Category({@required this.id, @required this.name})
+  const _$_Category(
+      {@required this.id, @required this.name, @required this.position})
       : assert(id != null),
         assert(name != null),
+        assert(position != null),
         super._();
 
   @override
   final UniqueId id;
   @override
   final String name;
+  @override
+  final int position;
 
   @override
   String toString() {
-    return 'Category(id: $id, name: $name)';
+    return 'Category(id: $id, name: $name, position: $position)';
   }
 
   @override
@@ -115,14 +126,18 @@ class _$_Category extends _Category {
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)));
+                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.position, position) ||
+                const DeepCollectionEquality()
+                    .equals(other.position, position)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(name);
+      const DeepCollectionEquality().hash(name) ^
+      const DeepCollectionEquality().hash(position);
 
   @JsonKey(ignore: true)
   @override
@@ -132,13 +147,17 @@ class _$_Category extends _Category {
 
 abstract class _Category extends Category {
   const _Category._() : super._();
-  const factory _Category({@required UniqueId id, @required String name}) =
-      _$_Category;
+  const factory _Category(
+      {@required UniqueId id,
+      @required String name,
+      @required int position}) = _$_Category;
 
   @override
   UniqueId get id;
   @override
   String get name;
+  @override
+  int get position;
   @override
   @JsonKey(ignore: true)
   _$CategoryCopyWith<_Category> get copyWith;
