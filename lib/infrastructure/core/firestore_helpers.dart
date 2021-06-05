@@ -13,4 +13,5 @@ extension FirestoreX on FirebaseFirestore {
 
 extension DocumentReferenceX on DocumentReference {
    CollectionReference get tripCollection => collection('trips');
+   CollectionReference get categoryCollection => collection('categories');
 }
