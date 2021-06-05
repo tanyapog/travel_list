@@ -17,8 +17,7 @@ class TripsOverviewPage extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider<TripWatcherBloc>(
-          create: (context) =>
-          getIt<TripWatcherBloc>()
+          create: (context) => getIt<TripWatcherBloc>()
             ..add(const TripWatcherEvent.watchAllStarted()),),
         BlocProvider<TripActorBloc>(
           create: (context) => getIt<TripActorBloc>(),),

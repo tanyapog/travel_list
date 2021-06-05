@@ -20,31 +20,26 @@ abstract class TripDto implements _$TripDto {
     @required @ServerTimestampConverter() FieldValue serverTimeStamp, // todo rename to dateUpdated
   }) = _TripDto;
 
-  factory TripDto.fromDomain(Trip trip) {
-    return TripDto(
-      id: trip.id.getOrCrash().toString(),
-      name: trip.name.getOrCrash(),
-      description: trip.description.getOrCrash(),
-      complete: trip.complete,
-      serverTimeStamp: FieldValue.serverTimestamp(),
-    );
-  }
+  factory TripDto.fromDomain(Trip trip) => TripDto(
+    id: trip.id.getOrCrash().toString(),
+    name: trip.name.getOrCrash(),
+    description: trip.description.getOrCrash(),
+    complete: trip.complete,
+    serverTimeStamp: FieldValue.serverTimestamp(),
+  );
 
-  Trip toDomain() {
-    return Trip(
-      id: UniqueId.fromUniqueString(id),
+  Trip toDomain() => Trip(
+    id: UniqueId.fromUniqueString(id),
       name: TripName(name),
       description: TripDescription(description),
       complete: complete,
     );
-  }
 
   factory TripDto.fromJson(Map<String, dynamic> json) =>
-      _$TripDtoFromJson(json);
+    _$TripDtoFromJson(json);
 
-  factory TripDto.fromFirestore(DocumentSnapshot doc) {
-    return TripDto.fromJson(doc.data()).copyWith(id: doc.id);
-  }
+  factory TripDto.fromFirestore(DocumentSnapshot doc) =>
+    TripDto.fromJson(doc.data()).copyWith(id: doc.id);
 }
 
 class ServerTimestampConverter implements JsonConverter<FieldValue, Object> {
@@ -52,9 +47,7 @@ class ServerTimestampConverter implements JsonConverter<FieldValue, Object> {
   const ServerTimestampConverter();
 
   @override
-  FieldValue fromJson(Object json) {
-    return FieldValue.serverTimestamp();
-  }
+  FieldValue fromJson(Object json) => FieldValue.serverTimestamp();
 
   @override
   Object toJson(FieldValue fieldValue) => fieldValue;
