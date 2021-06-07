@@ -457,13 +457,6 @@ class _$CategoryWatcherStateTearOff {
       categoryFailure,
     );
   }
-
-// ignore: unused_element
-  _Reordered reordered(List<Category> categories) {
-    return _Reordered(
-      categories,
-    );
-  }
 }
 
 /// @nodoc
@@ -478,7 +471,6 @@ mixin _$CategoryWatcherState {
     @required TResult loadInProgress(),
     @required TResult loadSuccess(List<Category> categories),
     @required TResult loadFailure(CategoryFailure categoryFailure),
-    @required TResult reordered(List<Category> categories),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
@@ -486,7 +478,6 @@ mixin _$CategoryWatcherState {
     TResult loadInProgress(),
     TResult loadSuccess(List<Category> categories),
     TResult loadFailure(CategoryFailure categoryFailure),
-    TResult reordered(List<Category> categories),
     @required TResult orElse(),
   });
   @optionalTypeArgs
@@ -495,7 +486,6 @@ mixin _$CategoryWatcherState {
     @required TResult loadInProgress(_LoadInProgress value),
     @required TResult loadSuccess(_LoadSuccess value),
     @required TResult loadFailure(_LoadFailure value),
-    @required TResult reordered(_Reordered value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
@@ -503,7 +493,6 @@ mixin _$CategoryWatcherState {
     TResult loadInProgress(_LoadInProgress value),
     TResult loadSuccess(_LoadSuccess value),
     TResult loadFailure(_LoadFailure value),
-    TResult reordered(_Reordered value),
     @required TResult orElse(),
   });
 }
@@ -566,13 +555,11 @@ class _$_Initial implements _Initial {
     @required TResult loadInProgress(),
     @required TResult loadSuccess(List<Category> categories),
     @required TResult loadFailure(CategoryFailure categoryFailure),
-    @required TResult reordered(List<Category> categories),
   }) {
     assert(initial != null);
     assert(loadInProgress != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
-    assert(reordered != null);
     return initial();
   }
 
@@ -583,7 +570,6 @@ class _$_Initial implements _Initial {
     TResult loadInProgress(),
     TResult loadSuccess(List<Category> categories),
     TResult loadFailure(CategoryFailure categoryFailure),
-    TResult reordered(List<Category> categories),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -600,13 +586,11 @@ class _$_Initial implements _Initial {
     @required TResult loadInProgress(_LoadInProgress value),
     @required TResult loadSuccess(_LoadSuccess value),
     @required TResult loadFailure(_LoadFailure value),
-    @required TResult reordered(_Reordered value),
   }) {
     assert(initial != null);
     assert(loadInProgress != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
-    assert(reordered != null);
     return initial(this);
   }
 
@@ -617,7 +601,6 @@ class _$_Initial implements _Initial {
     TResult loadInProgress(_LoadInProgress value),
     TResult loadSuccess(_LoadSuccess value),
     TResult loadFailure(_LoadFailure value),
-    TResult reordered(_Reordered value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -675,13 +658,11 @@ class _$_LoadInProgress implements _LoadInProgress {
     @required TResult loadInProgress(),
     @required TResult loadSuccess(List<Category> categories),
     @required TResult loadFailure(CategoryFailure categoryFailure),
-    @required TResult reordered(List<Category> categories),
   }) {
     assert(initial != null);
     assert(loadInProgress != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
-    assert(reordered != null);
     return loadInProgress();
   }
 
@@ -692,7 +673,6 @@ class _$_LoadInProgress implements _LoadInProgress {
     TResult loadInProgress(),
     TResult loadSuccess(List<Category> categories),
     TResult loadFailure(CategoryFailure categoryFailure),
-    TResult reordered(List<Category> categories),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -709,13 +689,11 @@ class _$_LoadInProgress implements _LoadInProgress {
     @required TResult loadInProgress(_LoadInProgress value),
     @required TResult loadSuccess(_LoadSuccess value),
     @required TResult loadFailure(_LoadFailure value),
-    @required TResult reordered(_Reordered value),
   }) {
     assert(initial != null);
     assert(loadInProgress != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
-    assert(reordered != null);
     return loadInProgress(this);
   }
 
@@ -726,7 +704,6 @@ class _$_LoadInProgress implements _LoadInProgress {
     TResult loadInProgress(_LoadInProgress value),
     TResult loadSuccess(_LoadSuccess value),
     TResult loadFailure(_LoadFailure value),
-    TResult reordered(_Reordered value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -807,13 +784,11 @@ class _$_LoadSuccess implements _LoadSuccess {
     @required TResult loadInProgress(),
     @required TResult loadSuccess(List<Category> categories),
     @required TResult loadFailure(CategoryFailure categoryFailure),
-    @required TResult reordered(List<Category> categories),
   }) {
     assert(initial != null);
     assert(loadInProgress != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
-    assert(reordered != null);
     return loadSuccess(categories);
   }
 
@@ -824,7 +799,6 @@ class _$_LoadSuccess implements _LoadSuccess {
     TResult loadInProgress(),
     TResult loadSuccess(List<Category> categories),
     TResult loadFailure(CategoryFailure categoryFailure),
-    TResult reordered(List<Category> categories),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -841,13 +815,11 @@ class _$_LoadSuccess implements _LoadSuccess {
     @required TResult loadInProgress(_LoadInProgress value),
     @required TResult loadSuccess(_LoadSuccess value),
     @required TResult loadFailure(_LoadFailure value),
-    @required TResult reordered(_Reordered value),
   }) {
     assert(initial != null);
     assert(loadInProgress != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
-    assert(reordered != null);
     return loadSuccess(this);
   }
 
@@ -858,7 +830,6 @@ class _$_LoadSuccess implements _LoadSuccess {
     TResult loadInProgress(_LoadInProgress value),
     TResult loadSuccess(_LoadSuccess value),
     TResult loadFailure(_LoadFailure value),
-    TResult reordered(_Reordered value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -958,13 +929,11 @@ class _$_LoadFailure implements _LoadFailure {
     @required TResult loadInProgress(),
     @required TResult loadSuccess(List<Category> categories),
     @required TResult loadFailure(CategoryFailure categoryFailure),
-    @required TResult reordered(List<Category> categories),
   }) {
     assert(initial != null);
     assert(loadInProgress != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
-    assert(reordered != null);
     return loadFailure(categoryFailure);
   }
 
@@ -975,7 +944,6 @@ class _$_LoadFailure implements _LoadFailure {
     TResult loadInProgress(),
     TResult loadSuccess(List<Category> categories),
     TResult loadFailure(CategoryFailure categoryFailure),
-    TResult reordered(List<Category> categories),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -992,13 +960,11 @@ class _$_LoadFailure implements _LoadFailure {
     @required TResult loadInProgress(_LoadInProgress value),
     @required TResult loadSuccess(_LoadSuccess value),
     @required TResult loadFailure(_LoadFailure value),
-    @required TResult reordered(_Reordered value),
   }) {
     assert(initial != null);
     assert(loadInProgress != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
-    assert(reordered != null);
     return loadFailure(this);
   }
 
@@ -1009,7 +975,6 @@ class _$_LoadFailure implements _LoadFailure {
     TResult loadInProgress(_LoadInProgress value),
     TResult loadSuccess(_LoadSuccess value),
     TResult loadFailure(_LoadFailure value),
-    TResult reordered(_Reordered value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1026,139 +991,4 @@ abstract class _LoadFailure implements CategoryWatcherState {
   CategoryFailure get categoryFailure;
   @JsonKey(ignore: true)
   _$LoadFailureCopyWith<_LoadFailure> get copyWith;
-}
-
-/// @nodoc
-abstract class _$ReorderedCopyWith<$Res> {
-  factory _$ReorderedCopyWith(
-          _Reordered value, $Res Function(_Reordered) then) =
-      __$ReorderedCopyWithImpl<$Res>;
-  $Res call({List<Category> categories});
-}
-
-/// @nodoc
-class __$ReorderedCopyWithImpl<$Res>
-    extends _$CategoryWatcherStateCopyWithImpl<$Res>
-    implements _$ReorderedCopyWith<$Res> {
-  __$ReorderedCopyWithImpl(_Reordered _value, $Res Function(_Reordered) _then)
-      : super(_value, (v) => _then(v as _Reordered));
-
-  @override
-  _Reordered get _value => super._value as _Reordered;
-
-  @override
-  $Res call({
-    Object categories = freezed,
-  }) {
-    return _then(_Reordered(
-      categories == freezed ? _value.categories : categories as List<Category>,
-    ));
-  }
-}
-
-/// @nodoc
-class _$_Reordered implements _Reordered {
-  const _$_Reordered(this.categories) : assert(categories != null);
-
-  @override
-  final List<Category> categories;
-
-  @override
-  String toString() {
-    return 'CategoryWatcherState.reordered(categories: $categories)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _Reordered &&
-            (identical(other.categories, categories) ||
-                const DeepCollectionEquality()
-                    .equals(other.categories, categories)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(categories);
-
-  @JsonKey(ignore: true)
-  @override
-  _$ReorderedCopyWith<_Reordered> get copyWith =>
-      __$ReorderedCopyWithImpl<_Reordered>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loadInProgress(),
-    @required TResult loadSuccess(List<Category> categories),
-    @required TResult loadFailure(CategoryFailure categoryFailure),
-    @required TResult reordered(List<Category> categories),
-  }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
-    assert(reordered != null);
-    return reordered(categories);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loadInProgress(),
-    TResult loadSuccess(List<Category> categories),
-    TResult loadFailure(CategoryFailure categoryFailure),
-    TResult reordered(List<Category> categories),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (reordered != null) {
-      return reordered(categories);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult loadInProgress(_LoadInProgress value),
-    @required TResult loadSuccess(_LoadSuccess value),
-    @required TResult loadFailure(_LoadFailure value),
-    @required TResult reordered(_Reordered value),
-  }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
-    assert(reordered != null);
-    return reordered(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult loadInProgress(_LoadInProgress value),
-    TResult loadSuccess(_LoadSuccess value),
-    TResult loadFailure(_LoadFailure value),
-    TResult reordered(_Reordered value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (reordered != null) {
-      return reordered(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Reordered implements CategoryWatcherState {
-  const factory _Reordered(List<Category> categories) = _$_Reordered;
-
-  List<Category> get categories;
-  @JsonKey(ignore: true)
-  _$ReorderedCopyWith<_Reordered> get copyWith;
 }

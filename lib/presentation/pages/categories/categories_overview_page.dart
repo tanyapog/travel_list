@@ -40,13 +40,7 @@ class CategoriesOverviewPage extends StatelessWidget {
               itemCount: state.categories.length,
             ),
             loadFailure: (state) => CriticalFailureDisplay(failure: state.categoryFailure),
-            reordered: (state) => ListView.builder(
-              itemBuilder: (context, index) {
-                final category = state.categories[index];
-                return Center(child: Text('Reordered category ${category.name}'),);
-              },
-              itemCount: state.categories.length,
-            ),
+
           ),
         ),
       ),
