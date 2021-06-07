@@ -8,14 +8,11 @@ class CategoryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const SizedBox(height: 20),
-        Text(
-          "${category.position}. ${category.name}",
-          style: const TextStyle(fontSize: 16),
-        ),
-      ],
+    return Card(
+      child: ListTile(
+        title: Text(category.name),
+        trailing: const Icon(Icons.drag_handle, color: Colors.grey,),
+      ),
     );
   }
 }
