@@ -19,13 +19,6 @@ class _$CategoryWatcherEventTearOff {
   }
 
 // ignore: unused_element
-  _ReorderStarted reorderStarted(List<Category> categories) {
-    return _ReorderStarted(
-      categories,
-    );
-  }
-
-// ignore: unused_element
   _CategoriesReceived categoriesReceived(List<Category> categories) {
     return _CategoriesReceived(
       categories,
@@ -42,26 +35,22 @@ mixin _$CategoryWatcherEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult watchAllStarted(),
-    @required TResult reorderStarted(List<Category> categories),
     @required TResult categoriesReceived(List<Category> categories),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult watchAllStarted(),
-    TResult reorderStarted(List<Category> categories),
     TResult categoriesReceived(List<Category> categories),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult watchAllStarted(_WatchAllStarted value),
-    @required TResult reorderStarted(_ReorderStarted value),
     @required TResult categoriesReceived(_CategoriesReceived value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult watchAllStarted(_WatchAllStarted value),
-    TResult reorderStarted(_ReorderStarted value),
     TResult categoriesReceived(_CategoriesReceived value),
     @required TResult orElse(),
   });
@@ -124,11 +113,9 @@ class _$_WatchAllStarted implements _WatchAllStarted {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult watchAllStarted(),
-    @required TResult reorderStarted(List<Category> categories),
     @required TResult categoriesReceived(List<Category> categories),
   }) {
     assert(watchAllStarted != null);
-    assert(reorderStarted != null);
     assert(categoriesReceived != null);
     return watchAllStarted();
   }
@@ -137,7 +124,6 @@ class _$_WatchAllStarted implements _WatchAllStarted {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult watchAllStarted(),
-    TResult reorderStarted(List<Category> categories),
     TResult categoriesReceived(List<Category> categories),
     @required TResult orElse(),
   }) {
@@ -152,11 +138,9 @@ class _$_WatchAllStarted implements _WatchAllStarted {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult watchAllStarted(_WatchAllStarted value),
-    @required TResult reorderStarted(_ReorderStarted value),
     @required TResult categoriesReceived(_CategoriesReceived value),
   }) {
     assert(watchAllStarted != null);
-    assert(reorderStarted != null);
     assert(categoriesReceived != null);
     return watchAllStarted(this);
   }
@@ -165,7 +149,6 @@ class _$_WatchAllStarted implements _WatchAllStarted {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult watchAllStarted(_WatchAllStarted value),
-    TResult reorderStarted(_ReorderStarted value),
     TResult categoriesReceived(_CategoriesReceived value),
     @required TResult orElse(),
   }) {
@@ -179,130 +162,6 @@ class _$_WatchAllStarted implements _WatchAllStarted {
 
 abstract class _WatchAllStarted implements CategoryWatcherEvent {
   const factory _WatchAllStarted() = _$_WatchAllStarted;
-}
-
-/// @nodoc
-abstract class _$ReorderStartedCopyWith<$Res> {
-  factory _$ReorderStartedCopyWith(
-          _ReorderStarted value, $Res Function(_ReorderStarted) then) =
-      __$ReorderStartedCopyWithImpl<$Res>;
-  $Res call({List<Category> categories});
-}
-
-/// @nodoc
-class __$ReorderStartedCopyWithImpl<$Res>
-    extends _$CategoryWatcherEventCopyWithImpl<$Res>
-    implements _$ReorderStartedCopyWith<$Res> {
-  __$ReorderStartedCopyWithImpl(
-      _ReorderStarted _value, $Res Function(_ReorderStarted) _then)
-      : super(_value, (v) => _then(v as _ReorderStarted));
-
-  @override
-  _ReorderStarted get _value => super._value as _ReorderStarted;
-
-  @override
-  $Res call({
-    Object categories = freezed,
-  }) {
-    return _then(_ReorderStarted(
-      categories == freezed ? _value.categories : categories as List<Category>,
-    ));
-  }
-}
-
-/// @nodoc
-class _$_ReorderStarted implements _ReorderStarted {
-  const _$_ReorderStarted(this.categories) : assert(categories != null);
-
-  @override
-  final List<Category> categories;
-
-  @override
-  String toString() {
-    return 'CategoryWatcherEvent.reorderStarted(categories: $categories)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _ReorderStarted &&
-            (identical(other.categories, categories) ||
-                const DeepCollectionEquality()
-                    .equals(other.categories, categories)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(categories);
-
-  @JsonKey(ignore: true)
-  @override
-  _$ReorderStartedCopyWith<_ReorderStarted> get copyWith =>
-      __$ReorderStartedCopyWithImpl<_ReorderStarted>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult watchAllStarted(),
-    @required TResult reorderStarted(List<Category> categories),
-    @required TResult categoriesReceived(List<Category> categories),
-  }) {
-    assert(watchAllStarted != null);
-    assert(reorderStarted != null);
-    assert(categoriesReceived != null);
-    return reorderStarted(categories);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult watchAllStarted(),
-    TResult reorderStarted(List<Category> categories),
-    TResult categoriesReceived(List<Category> categories),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (reorderStarted != null) {
-      return reorderStarted(categories);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult watchAllStarted(_WatchAllStarted value),
-    @required TResult reorderStarted(_ReorderStarted value),
-    @required TResult categoriesReceived(_CategoriesReceived value),
-  }) {
-    assert(watchAllStarted != null);
-    assert(reorderStarted != null);
-    assert(categoriesReceived != null);
-    return reorderStarted(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult watchAllStarted(_WatchAllStarted value),
-    TResult reorderStarted(_ReorderStarted value),
-    TResult categoriesReceived(_CategoriesReceived value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (reorderStarted != null) {
-      return reorderStarted(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _ReorderStarted implements CategoryWatcherEvent {
-  const factory _ReorderStarted(List<Category> categories) = _$_ReorderStarted;
-
-  List<Category> get categories;
-  @JsonKey(ignore: true)
-  _$ReorderStartedCopyWith<_ReorderStarted> get copyWith;
 }
 
 /// @nodoc
@@ -368,11 +227,9 @@ class _$_CategoriesReceived implements _CategoriesReceived {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult watchAllStarted(),
-    @required TResult reorderStarted(List<Category> categories),
     @required TResult categoriesReceived(List<Category> categories),
   }) {
     assert(watchAllStarted != null);
-    assert(reorderStarted != null);
     assert(categoriesReceived != null);
     return categoriesReceived(categories);
   }
@@ -381,7 +238,6 @@ class _$_CategoriesReceived implements _CategoriesReceived {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult watchAllStarted(),
-    TResult reorderStarted(List<Category> categories),
     TResult categoriesReceived(List<Category> categories),
     @required TResult orElse(),
   }) {
@@ -396,11 +252,9 @@ class _$_CategoriesReceived implements _CategoriesReceived {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult watchAllStarted(_WatchAllStarted value),
-    @required TResult reorderStarted(_ReorderStarted value),
     @required TResult categoriesReceived(_CategoriesReceived value),
   }) {
     assert(watchAllStarted != null);
-    assert(reorderStarted != null);
     assert(categoriesReceived != null);
     return categoriesReceived(this);
   }
@@ -409,7 +263,6 @@ class _$_CategoriesReceived implements _CategoriesReceived {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult watchAllStarted(_WatchAllStarted value),
-    TResult reorderStarted(_ReorderStarted value),
     TResult categoriesReceived(_CategoriesReceived value),
     @required TResult orElse(),
   }) {

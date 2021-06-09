@@ -34,9 +34,6 @@ class CategoryWatcherBloc extends Bloc<CategoryWatcherEvent, CategoryWatcherStat
           }
         );
       },
-      reorderStarted: (e) async* {
-        yield CategoryWatcherState.loadSuccess(e.categories);
-      },
       categoriesReceived: (e) async* {
         yield CategoryWatcherState.loadSuccess(e.categories);
       },
