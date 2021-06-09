@@ -17,13 +17,6 @@ class _$CategoryWatcherEventTearOff {
   _WatchAllStarted watchAllStarted() {
     return const _WatchAllStarted();
   }
-
-// ignore: unused_element
-  _CategoriesReceived categoriesReceived(List<Category> categories) {
-    return _CategoriesReceived(
-      categories,
-    );
-  }
 }
 
 /// @nodoc
@@ -35,23 +28,19 @@ mixin _$CategoryWatcherEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult watchAllStarted(),
-    @required TResult categoriesReceived(List<Category> categories),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult watchAllStarted(),
-    TResult categoriesReceived(List<Category> categories),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult watchAllStarted(_WatchAllStarted value),
-    @required TResult categoriesReceived(_CategoriesReceived value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult watchAllStarted(_WatchAllStarted value),
-    TResult categoriesReceived(_CategoriesReceived value),
     @required TResult orElse(),
   });
 }
@@ -113,10 +102,8 @@ class _$_WatchAllStarted implements _WatchAllStarted {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult watchAllStarted(),
-    @required TResult categoriesReceived(List<Category> categories),
   }) {
     assert(watchAllStarted != null);
-    assert(categoriesReceived != null);
     return watchAllStarted();
   }
 
@@ -124,7 +111,6 @@ class _$_WatchAllStarted implements _WatchAllStarted {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult watchAllStarted(),
-    TResult categoriesReceived(List<Category> categories),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -138,10 +124,8 @@ class _$_WatchAllStarted implements _WatchAllStarted {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult watchAllStarted(_WatchAllStarted value),
-    @required TResult categoriesReceived(_CategoriesReceived value),
   }) {
     assert(watchAllStarted != null);
-    assert(categoriesReceived != null);
     return watchAllStarted(this);
   }
 
@@ -149,7 +133,6 @@ class _$_WatchAllStarted implements _WatchAllStarted {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult watchAllStarted(_WatchAllStarted value),
-    TResult categoriesReceived(_CategoriesReceived value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -162,125 +145,6 @@ class _$_WatchAllStarted implements _WatchAllStarted {
 
 abstract class _WatchAllStarted implements CategoryWatcherEvent {
   const factory _WatchAllStarted() = _$_WatchAllStarted;
-}
-
-/// @nodoc
-abstract class _$CategoriesReceivedCopyWith<$Res> {
-  factory _$CategoriesReceivedCopyWith(
-          _CategoriesReceived value, $Res Function(_CategoriesReceived) then) =
-      __$CategoriesReceivedCopyWithImpl<$Res>;
-  $Res call({List<Category> categories});
-}
-
-/// @nodoc
-class __$CategoriesReceivedCopyWithImpl<$Res>
-    extends _$CategoryWatcherEventCopyWithImpl<$Res>
-    implements _$CategoriesReceivedCopyWith<$Res> {
-  __$CategoriesReceivedCopyWithImpl(
-      _CategoriesReceived _value, $Res Function(_CategoriesReceived) _then)
-      : super(_value, (v) => _then(v as _CategoriesReceived));
-
-  @override
-  _CategoriesReceived get _value => super._value as _CategoriesReceived;
-
-  @override
-  $Res call({
-    Object categories = freezed,
-  }) {
-    return _then(_CategoriesReceived(
-      categories == freezed ? _value.categories : categories as List<Category>,
-    ));
-  }
-}
-
-/// @nodoc
-class _$_CategoriesReceived implements _CategoriesReceived {
-  const _$_CategoriesReceived(this.categories) : assert(categories != null);
-
-  @override
-  final List<Category> categories;
-
-  @override
-  String toString() {
-    return 'CategoryWatcherEvent.categoriesReceived(categories: $categories)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _CategoriesReceived &&
-            (identical(other.categories, categories) ||
-                const DeepCollectionEquality()
-                    .equals(other.categories, categories)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(categories);
-
-  @JsonKey(ignore: true)
-  @override
-  _$CategoriesReceivedCopyWith<_CategoriesReceived> get copyWith =>
-      __$CategoriesReceivedCopyWithImpl<_CategoriesReceived>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult watchAllStarted(),
-    @required TResult categoriesReceived(List<Category> categories),
-  }) {
-    assert(watchAllStarted != null);
-    assert(categoriesReceived != null);
-    return categoriesReceived(categories);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult watchAllStarted(),
-    TResult categoriesReceived(List<Category> categories),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (categoriesReceived != null) {
-      return categoriesReceived(categories);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult watchAllStarted(_WatchAllStarted value),
-    @required TResult categoriesReceived(_CategoriesReceived value),
-  }) {
-    assert(watchAllStarted != null);
-    assert(categoriesReceived != null);
-    return categoriesReceived(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult watchAllStarted(_WatchAllStarted value),
-    TResult categoriesReceived(_CategoriesReceived value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (categoriesReceived != null) {
-      return categoriesReceived(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _CategoriesReceived implements CategoryWatcherEvent {
-  const factory _CategoriesReceived(List<Category> categories) =
-      _$_CategoriesReceived;
-
-  List<Category> get categories;
-  @JsonKey(ignore: true)
-  _$CategoriesReceivedCopyWith<_CategoriesReceived> get copyWith;
 }
 
 /// @nodoc

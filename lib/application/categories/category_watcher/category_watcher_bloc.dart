@@ -17,7 +17,6 @@ class CategoryWatcherBloc extends Bloc<CategoryWatcherEvent, CategoryWatcherStat
 
   final ICategoryRepository _categoryRepository;
   CategoryWatcherBloc(this._categoryRepository) : super(const CategoryWatcherState.initial());
-  StreamSubscription<List<Category>> _categoryStreamSubscription;
 
   @override
   Stream<CategoryWatcherState> mapEventToState(
@@ -26,23 +25,9 @@ class CategoryWatcherBloc extends Bloc<CategoryWatcherEvent, CategoryWatcherStat
     yield* event.map(
       watchAllStarted: (e) async* {
         yield const CategoryWatcherState.loadInProgress();
-        await _categoryStreamSubscription?.cancel();
-        _categoryStreamSubscription = _categoryRepository
-          .watchAll()
-          .listen((categories) {
-            add(CategoryWatcherEvent.categoriesReceived(categories));
-          }
-        );
-      },
-      categoriesReceived: (e) async* {
-        yield CategoryWatcherState.loadSuccess(e.categories);
+        yield* _categoryRepository.watchAll().map((categories) =>
+            CategoryWatcherState.loadSuccess(categories));
       },
     );
-  }
-
-  @override
-  Future<void> close() async {
-    await _categoryStreamSubscription.cancel();
-    return super.close();
   }
 }
