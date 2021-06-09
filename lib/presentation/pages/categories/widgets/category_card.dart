@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:implicitly_animated_reorderable_list/implicitly_animated_reorderable_list.dart';
 import 'package:travel_list/domain/categories/category.dart';
 
 class CategoryCard extends StatelessWidget {
@@ -11,7 +12,9 @@ class CategoryCard extends StatelessWidget {
     return Card(
       child: ListTile(
         title: Text(category.name),
-        trailing: const Icon(Icons.drag_handle, color: Colors.grey,),
+        trailing: const Handle(
+          child: Icon(Icons.drag_handle, color: Colors.grey,)
+        ),
       ),
     );
   }
