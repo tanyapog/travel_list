@@ -18,6 +18,7 @@ abstract class CategoryDto with _$CategoryDto {
 
   factory CategoryDto.fromDomain(Category category) =>
     CategoryDto(
+      id: category.id.getOrCrash().toString(),
       name: category.name,
       position: category.position,
     );
