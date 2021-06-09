@@ -12,8 +12,9 @@ import 'package:injectable/injectable.dart' as _i2;
 
 import 'application/auth/auth_bloc.dart' as _i17;
 import 'application/auth/sign_in_form/sign_in_form_bloc.dart' as _i13;
+import 'application/categories/category_actor/category_actor_bloc.dart' as _i18;
 import 'application/categories/category_watcher/category_watcher_bloc.dart'
-    as _i18;
+    as _i19;
 import 'application/navigation/nav_bloc.dart' as _i12;
 import 'application/trips/trip_actor/trip_actor_bloc.dart' as _i14;
 import 'application/trips/trip_form/trip_form_bloc.dart' as _i15;
@@ -23,7 +24,7 @@ import 'domain/categories/i_category_repository.dart' as _i8;
 import 'domain/trips/i_trip_repository.dart' as _i10;
 import 'infrastructure/auth/firebase_auth_facade.dart' as _i7;
 import 'infrastructure/categories/category_repository.dart' as _i9;
-import 'infrastructure/core/firebase_injectable_module.dart' as _i19;
+import 'infrastructure/core/firebase_injectable_module.dart' as _i20;
 import 'infrastructure/trips/trip_repository.dart' as _i11;
 
 const String _prod = 'prod';
@@ -70,12 +71,14 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.factory<_i16.TripWatcherBloc>(
       () => _i16.TripWatcherBloc(get<_i10.ITripRepository>()));
   gh.factory<_i17.AuthBloc>(() => _i17.AuthBloc(get<_i6.IAuthFacade>()));
-  gh.factory<_i18.CategoryWatcherBloc>(
-      () => _i18.CategoryWatcherBloc(get<_i8.ICategoryRepository>()));
+  gh.factory<_i18.CategoryActorBloc>(
+      () => _i18.CategoryActorBloc(get<_i8.ICategoryRepository>()));
+  gh.factory<_i19.CategoryWatcherBloc>(
+      () => _i19.CategoryWatcherBloc(get<_i8.ICategoryRepository>()));
   return get;
 }
 
-class _$FirebaseInjectableModule extends _i19.FirebaseInjectableModule {}
+class _$FirebaseInjectableModule extends _i20.FirebaseInjectableModule {}
 
-class _$FirebaseTestInjectableModule extends _i19.FirebaseTestInjectableModule {
+class _$FirebaseTestInjectableModule extends _i20.FirebaseTestInjectableModule {
 }
