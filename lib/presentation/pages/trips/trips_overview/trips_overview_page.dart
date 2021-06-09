@@ -51,9 +51,8 @@ class TripsOverviewPage extends StatelessWidget {
             ],
           ),
           body: TripsOverviewBody(),
-          floatingActionButton: FloatingActionButton(onPressed: () {
-            ExtendedNavigator.of(context).pushTripFormPage(trip: null);
-          },
+          floatingActionButton: FloatingActionButton(
+            onPressed: () => ExtendedNavigator.of(context).pushTripFormPage(trip: null),
             child: const Icon(Icons.add),
           ),
         ),
