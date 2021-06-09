@@ -35,7 +35,13 @@ class CategoriesOverviewPage extends StatelessWidget {
               itemBuilder: (context, itemAnimation, item, index) {
                 return Reorderable(
                   builder: (context, dragAnimation, inDrag) =>
-                      CategoryCard(category: state.categories[index]),
+                    ScaleTransition(
+                      scale: Tween<double>(begin: 1, end: 0.95).animate(dragAnimation),
+                      child: CategoryCard(
+                        category: state.categories[index],
+                        elevation: dragAnimation.value * 4,
+                      ),
+                    ),
                   key: ValueKey(item.id),
                 );
               },
