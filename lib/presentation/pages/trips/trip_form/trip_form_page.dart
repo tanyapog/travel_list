@@ -28,7 +28,7 @@ class TripFormPage extends StatelessWidget {
             (either) => either.fold(
               (failure) { // loading trip is failed
                 FlushbarHelper.createError(message: failure.map(
-                  unexpected: (_) => 'Unexpected error occured',
+                  unexpected: (_) => 'Unexpected error occurred',
                   insufficientPermission: (_) => 'Insufficient Permission',
                   unableToUpdate:  (_) => 'Unable to update trip. Was it deleted from another device?',
                 ),).show(context);
