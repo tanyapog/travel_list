@@ -14,9 +14,7 @@ class TripCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        ExtendedNavigator.of(context).pushTripFormPage(trip: trip);
-      },
+      onTap: () => ExtendedNavigator.of(context).pushTripFormPage(trip: trip),
       child: Slidable(
         actionPane: const SlidableDrawerActionPane(),
         secondaryActions: [
@@ -24,9 +22,7 @@ class TripCard extends StatelessWidget {
             caption: 'Delete',
             icon: Icons.delete,
             color: Colors.red,
-            onTap: () {
-              _showDeletionDialog(context);
-            },
+            onTap: () => _showDeletionDialog(context),
           )
         ],
         child: Card(
@@ -41,7 +37,7 @@ class TripCard extends StatelessWidget {
     );
   }
 
-  void _showDeletionDialog(BuildContext context) {
+  void _showDeletionDialog(BuildContext context) =>
     showDialog(
       context: context,
       builder: (BuildContext dialogContext) {
@@ -50,9 +46,7 @@ class TripCard extends StatelessWidget {
           content: Text(trip.name.getOrCrash()),
           actions: <Widget>[
             FlatButton(
-              onPressed: () {
-                Navigator.of(dialogContext).pop(); // Dismiss alert dialog
-              },
+              onPressed: () => Navigator.of(dialogContext).pop(), // Dismiss alert dialog
               child: const Text('CANCEL'),
             ),
             FlatButton(
@@ -66,5 +60,4 @@ class TripCard extends StatelessWidget {
         );
       },
     );
-  }
 }
