@@ -7,5 +7,4 @@ abstract class TripFormEvent with _$TripFormEvent {
   const factory TripFormEvent.descriptionChanged(String descriptionStr) = _DescriptionChanged;
   const factory TripFormEvent.completedPressed() = _CompletedPressed;
   const factory TripFormEvent.saved() = _Saved;
-
 }
