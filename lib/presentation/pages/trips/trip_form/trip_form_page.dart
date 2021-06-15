@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:travel_list/application/trips/trip_form/trip_form_bloc.dart';
 import 'package:travel_list/domain/trips/trip.dart';
 import 'package:travel_list/injection.dart';
+import 'package:travel_list/presentation/core/common_widgets/saving_in_progress_overlay.dart';
 import 'package:travel_list/presentation/pages/trips/trip_form/widgets/trip_form_body.dart';
 import 'package:travel_list/presentation/routes/router.gr.dart';
 
@@ -37,9 +38,8 @@ class TripFormPage extends StatelessWidget {
                 // todo show trips_overview_page if trip was edited and generator if a new trip was created
                 context.read<TripFormBloc>().add(const TripFormEvent.saved());
                 // current route is fullscreenDialog with his oun route so just one pop is not enough
-                ExtendedNavigator.of(context).popUntil(
-                  (route) => route.settings.name == Routes.tripsOverviewPage,
-                );
+                ExtendedNavigator.of(context)
+                  .popUntil((route) => route.settings.name == Routes.tripsOverviewPage,);
               }
             )
           );
@@ -93,45 +93,6 @@ class TripFormPageScaffold extends StatelessWidget {
            child: const TripFormBody(),
          );
         }
-      ),
-    );
-  }
-}
-
-// todo remove or change for something that could optimize performance
-class SavingInProgressOverlay extends StatelessWidget {
-  final bool isSaving;
-
-  const SavingInProgressOverlay({
-    Key key, @required this.isSaving,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return IgnorePointer(
-      ignoring: !isSaving,
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 150),
-        color: isSaving ? Colors.black.withOpacity(0.8) : Colors.transparent,
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        child: Visibility(
-          visible: isSaving,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              const CircularProgressIndicator(),
-              const SizedBox(height: 8,),
-              Text(
-                'Saving',
-                style: Theme.of(context).textTheme.bodyText2.copyWith(
-                  color: Colors.white,
-                  fontSize: 16,
-                )
-              ),
-            ],
-          ),
-        ),
       ),
     );
   }
