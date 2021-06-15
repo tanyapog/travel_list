@@ -9,8 +9,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
+import '../../domain/categories/category.dart';
 import '../../domain/trips/trip.dart';
 import '../pages/categories/categories_overview_page.dart';
+import '../pages/categories/category_edit_dialog.dart';
 import '../pages/sign_in/sign_in_page.dart';
 import '../pages/splash/splash_page.dart';
 import '../pages/trips/trip_form/trip_form_page.dart';
@@ -22,12 +24,14 @@ class Routes {
   static const String tripsOverviewPage = '/trips-overview-page';
   static const String tripFormPage = '/trip-form-page';
   static const String categoriesOverviewPage = '/categories-overview-page';
+  static const String categoryEditDialog = '/category-edit-dialog';
   static const all = <String>{
     splashPage,
     signInPage,
     tripsOverviewPage,
     tripFormPage,
     categoriesOverviewPage,
+    categoryEditDialog,
   };
 }
 
@@ -40,6 +44,7 @@ class Router extends RouterBase {
     RouteDef(Routes.tripsOverviewPage, page: TripsOverviewPage),
     RouteDef(Routes.tripFormPage, page: TripFormPage),
     RouteDef(Routes.categoriesOverviewPage, page: CategoriesOverviewPage),
+    RouteDef(Routes.categoryEditDialog, page: CategoryEditDialog),
   ];
   @override
   Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
@@ -79,6 +84,18 @@ class Router extends RouterBase {
         settings: data,
       );
     },
+    CategoryEditDialog: (data) {
+      final args = data.getArgs<CategoryEditDialogArguments>(
+        orElse: () => CategoryEditDialogArguments(),
+      );
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => CategoryEditDialog(
+          key: args.key,
+          category: args.category,
+        ),
+        settings: data,
+      );
+    },
   };
 }
 
@@ -105,6 +122,15 @@ extension RouterExtendedNavigatorStateX on ExtendedNavigatorState {
 
   Future<dynamic> pushCategoriesOverviewPage() =>
       push<dynamic>(Routes.categoriesOverviewPage);
+
+  Future<dynamic> pushCategoryEditDialog({
+    Key key,
+    Category category,
+  }) =>
+      push<dynamic>(
+        Routes.categoryEditDialog,
+        arguments: CategoryEditDialogArguments(key: key, category: category),
+      );
 }
 
 /// ************************************************************************
@@ -116,4 +142,11 @@ class TripFormPageArguments {
   final Key key;
   final Trip trip;
   TripFormPageArguments({this.key, @required this.trip});
+}
+
+/// CategoryEditDialog arguments holder class
+class CategoryEditDialogArguments {
+  final Key key;
+  final Category category;
+  CategoryEditDialogArguments({this.key, this.category});
 }

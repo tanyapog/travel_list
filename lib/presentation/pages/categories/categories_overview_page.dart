@@ -5,6 +5,7 @@ import 'package:travel_list/application/categories/category_actor/category_actor
 import 'package:travel_list/application/categories/category_watcher/category_watcher_bloc.dart';
 import 'package:travel_list/domain/categories/category.dart';
 import 'package:travel_list/injection.dart';
+import 'package:travel_list/presentation/pages/categories/category_edit_dialog.dart';
 import 'package:travel_list/presentation/pages/categories/widgets/category_card.dart';
 import 'package:travel_list/presentation/pages/categories/widgets/critical_failure_display.dart';
 import 'package:travel_list/presentation/pages/navigation/navigation_drawer.dart';
@@ -54,6 +55,16 @@ class CategoriesOverviewPage extends StatelessWidget {
             ),
             loadFailure: (state) => CriticalFailureDisplay(failure: state.categoryFailure),
           ),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            showDialog(
+              barrierDismissible: false,
+              context: context,
+              builder: (BuildContext context) => const CategoryEditDialog(),
+            );
+          },
+          child: const Icon(Icons.add),
         ),
       ),
     );
