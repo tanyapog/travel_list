@@ -129,7 +129,7 @@ class SignInForm extends StatelessWidget {
                       const SignInFormEvent.signInWithGooglePressed()
                     );
                   },
-                  color: Colors.lightBlue,
+                  color: Colors.amber,
                   child: const Text('SIGN IN WITH GOOGLE',
                     style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
                   ),

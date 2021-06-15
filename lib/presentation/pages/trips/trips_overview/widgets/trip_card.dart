@@ -50,6 +50,7 @@ class TripCard extends StatelessWidget {
               child: const Text('CANCEL'),
             ),
             FlatButton(
+              color: Colors.amber,
               onPressed: () {
                 context.read<TripActorBloc>().add(TripActorEvent.deleted(trip));
                 Navigator.of(dialogContext).pop();
