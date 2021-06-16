@@ -30,18 +30,18 @@ class TripFormBody extends HookWidget {
                 counterText: '',
               ),
               maxLength: TripName.maxLength,
-              onChanged: (value) =>
-                  context.read<TripFormBloc>().add(TripFormEvent.nameChanged(value)),
+              onChanged: (value) => context.read<TripFormBloc>()
+                  .add(TripFormEvent.nameChanged(value)),
               validator: (_) => Provider.of<TripFormBloc>(context, listen: false)
-                  .state.trip.name.value.fold(
-                        (fai1lure) => fai1lure.maybeMap(
-                        empty: (f) => 'Cannot be empty',
-                        exceedingLength: (f) => 'Exceeding length, max: ${f.max}',
-                        multiline: (f) => 'Cannot be multiline',
-                        orElse: () => null
-                    ),
-                        (r) => null,
+                .state.trip.name.value.fold(
+                  (fai1lure) => fai1lure.maybeMap(
+                    empty: (f) => 'Cannot be empty',
+                    exceedingLength: (f) => 'Exceeding length, max: ${f.max}',
+                    multiline: (f) => 'Cannot be multiline',
+                    orElse: () => null,
                   ),
+                  (r) => null,
+                ),
             ),
             const SizedBox(height: 8,),
             TextFormField(
@@ -53,16 +53,16 @@ class TripFormBody extends HookWidget {
               maxLength: TripDescription.maxLength,
               maxLines: 5,
               minLines: 1,
-              onChanged: (value) =>
-                  context.read<TripFormBloc>().add(TripFormEvent.descriptionChanged(value)),
+              onChanged: (value) => context.read<TripFormBloc>()
+                  .add(TripFormEvent.descriptionChanged(value)),
               validator: (_) => Provider.of<TripFormBloc>(context, listen: false)
-                  .state.trip.name.value.fold(
-                        (fai1lure) => fai1lure.maybeMap(
-                        exceedingLength: (f) => 'Exceeding length, max: ${f.max}',
-                        orElse: () => null
-                    ),
-                        (r) => null,
+                .state.trip.name.value.fold(
+                  (fai1lure) => fai1lure.maybeMap(
+                    exceedingLength: (f) => 'Exceeding length, max: ${f.max}',
+                    orElse: () => null,
                   ),
+                  (r) => null,
+                ),
             ),
           ],
         ),
