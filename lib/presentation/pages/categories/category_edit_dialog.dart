@@ -10,17 +10,7 @@ class CategoryEditDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Dialog(
-      elevation: 0.0,
-      backgroundColor: Colors.transparent,
-      child: dialogContent(context),
-    );
-  }
-
-  Widget dialogContent(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      decoration: dialogBoxDecoration,
+    return customDialog(
       child: Column(
         mainAxisSize: MainAxisSize.min, // To make the card compact
         children: <Widget>[
