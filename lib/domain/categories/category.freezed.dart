@@ -14,8 +14,7 @@ class _$CategoryTearOff {
   const _$CategoryTearOff();
 
 // ignore: unused_element
-  _Category call(
-      {@required UniqueId id, @required String name, @required int position}) {
+  _Category call({@required UniqueId id, @required String name, int position}) {
     return _Category(
       id: id,
       name: name,
@@ -100,11 +99,9 @@ class __$CategoryCopyWithImpl<$Res> extends _$CategoryCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_Category extends _Category {
-  const _$_Category(
-      {@required this.id, @required this.name, @required this.position})
+  const _$_Category({@required this.id, @required this.name, this.position})
       : assert(id != null),
         assert(name != null),
-        assert(position != null),
         super._();
 
   @override
@@ -150,7 +147,7 @@ abstract class _Category extends Category {
   const factory _Category(
       {@required UniqueId id,
       @required String name,
-      @required int position}) = _$_Category;
+      int position}) = _$_Category;
 
   @override
   UniqueId get id;
