@@ -7,6 +7,8 @@ part 'category.freezed.dart';
 abstract class Category with _$Category {
   const Category._();
 
+  static const maxNameLength = 70;
+
   const factory Category({
     @required UniqueId id,
     @required String name,
@@ -17,4 +19,6 @@ abstract class Category with _$Category {
       id: UniqueId(),
       name: '',
   );
+
+  bool isNameValid() => name.isNotEmpty && name.length <= maxNameLength;
 }
