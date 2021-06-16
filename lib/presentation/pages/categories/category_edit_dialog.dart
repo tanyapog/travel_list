@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:travel_list/domain/categories/category.dart';
+import 'package:travel_list/presentation/core/common_widgets/custom_buttons.dart';
+import 'package:travel_list/presentation/core/common_widgets/dialog_box_decoration.dart';
 
 class CategoryEditDialog extends StatelessWidget {
   final Category category;
@@ -18,17 +20,7 @@ class CategoryEditDialog extends StatelessWidget {
   Widget dialogContent(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(8.0),
-        boxShadow: const [
-          BoxShadow(
-            color: Colors.black26,
-            blurRadius: 10.0,
-            offset: Offset(0.0, 10.0),
-          ),
-        ],
-      ),
+      decoration: dialogBoxDecoration,
       child: Column(
         mainAxisSize: MainAxisSize.min, // To make the card compact
         children: <Widget>[
@@ -44,17 +36,9 @@ class CategoryEditDialog extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              FlatButton(
-                color: Colors.blueGrey.shade50,
-                onPressed: () => Navigator.of(context).pop(),
-                child: const Text("CANCEL"),
-              ),
+              greyButton(onPressed: () => Navigator.of(context).pop(), title: "CANCEL"),
               const SizedBox(width: 10),
-              FlatButton(
-                color: Colors.amber,
-                onPressed: () => Navigator.of(context).pop(),
-                child: const Text("SAVE"),
-              ),
+              amberButton(onPressed: () => Navigator.of(context).pop(), title:  "SAVE"),
             ],
           ),
         ],

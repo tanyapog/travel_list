@@ -57,13 +57,11 @@ class CategoriesOverviewPage extends StatelessWidget {
           ),
         ),
         floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            showDialog(
+          onPressed: () => showDialog(
               barrierDismissible: false,
               context: context,
               builder: (BuildContext context) => const CategoryEditDialog(),
-            );
-          },
+            ),
           child: const Icon(Icons.add),
         ),
       ),
