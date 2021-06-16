@@ -13,7 +13,6 @@ part 'category_actor_bloc.freezed.dart';
 
 @injectable
 class CategoryActorBloc extends Bloc<CategoryActorEvent, CategoryActorState> {
-
   final ICategoryRepository _categoryRepository;
 
   CategoryActorBloc(this._categoryRepository) : super(const CategoryActorState.initial());
@@ -23,12 +22,18 @@ class CategoryActorBloc extends Bloc<CategoryActorEvent, CategoryActorState> {
     yield const CategoryActorState.actionInProgress();
     yield* event.map(
       reorderFinished: (e) async* {
-        await _categoryRepository.reorder(e.categories);
-        yield const CategoryActorState.reorderSuccess();
+        final categoryResult = await _categoryRepository.reorder(e.categories);
+        yield categoryResult.when(
+          success: (_, __) => const CategoryActorState.reorderSuccess(),
+          failure: (failure) => CategoryActorState.reorderFailure(failure),
+        );
       },
       deleted: (e) async* {
-        await _categoryRepository.delete(e.category);
-        yield const CategoryActorState.deleteSuccess();
+        final categoryResult = await _categoryRepository.delete(e.category);
+        yield categoryResult.when(
+          success: (_, __) => const CategoryActorState.deleteSuccess(),
+          failure: (failure) => CategoryActorState.deleteFailure(failure),
+        );
       } ,
     );
   }

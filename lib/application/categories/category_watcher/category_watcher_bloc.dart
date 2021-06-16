@@ -1,9 +1,6 @@
-import 'dart:async';
-
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:meta/meta.dart';
 import 'package:travel_list/domain/categories/category.dart';
 import 'package:travel_list/domain/categories/category_failure.dart';
 import 'package:travel_list/domain/categories/i_category_repository.dart';
@@ -25,8 +22,12 @@ class CategoryWatcherBloc extends Bloc<CategoryWatcherEvent, CategoryWatcherStat
     yield* event.map(
       watchAllStarted: (e) async* {
         yield const CategoryWatcherState.loadInProgress();
-        yield* _categoryRepository.watchAll().map((categories) =>
-            CategoryWatcherState.loadSuccess(categories));
+        yield* _categoryRepository.watchAll().map((categoryResult) =>
+          categoryResult.when(
+            success: (_, categories) => CategoryWatcherState.loadSuccess(categories),
+            failure: (failure) => CategoryWatcherState.loadFailure(failure),
+          ),
+        );
       },
     );
   }
