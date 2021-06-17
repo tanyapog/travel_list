@@ -26,7 +26,6 @@ class TripRepository implements ITripRepository {
       if (e is PlatformException && e.message.contains('PERMISSION_DENIED')) {
         return left(const TripFailure.insufficientPermission());
       } else {
-        // TODO: Log these unexpected errors everywhere
         return left(const TripFailure.unexpected());
       }
     }
@@ -45,7 +44,6 @@ class TripRepository implements ITripRepository {
       } else if (e is PlatformException && e.message.contains('NOT_FOUND')) {
         return left(const TripFailure.unableToUpdate());
       } else {
-        // TODO: Log these unexpected errors everywhere
         return left(const TripFailure.unexpected());
       }
     }
@@ -64,7 +62,6 @@ class TripRepository implements ITripRepository {
       } else if (e is PlatformException && e.message.contains('NOT_FOUND')) {
         return left(const TripFailure.unableToUpdate());
       } else {
-        // TODO: Log these unexpected errors everywhere
         return left(const TripFailure.unexpected());
       }
     }
@@ -85,7 +82,6 @@ class TripRepository implements ITripRepository {
           if (e is PlatformException && e.message.contains('PERMISSION_DENIED')) {
             return left(const TripFailure.insufficientPermission());
           } else {
-            // TODO: Log these unexpected errors everywhere
             return left(const TripFailure.unexpected());
           }
         });
@@ -108,7 +104,6 @@ class TripRepository implements ITripRepository {
           if (e is PlatformException && e.message.contains('PERMISSION_DENIED')) {
             return left(const TripFailure.insufficientPermission());
           } else {
-            // TODO: Log these unexpected errors everywhere
             return left(const TripFailure.unexpected());
           }
         });

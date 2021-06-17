@@ -29,7 +29,6 @@ class CategoryRepository implements ICategoryRepository {
       if (e is PlatformException && e.message.contains('PERMISSION_DENIED')) {
         return const CategoryResult.failure(failure: CategoryFailure.insufficientPermission());
       } else {
-        // TODO: Log these unexpected errors everywhere
         return const CategoryResult.failure(failure: CategoryFailure.unexpected());
       }
     });
@@ -46,7 +45,6 @@ class CategoryRepository implements ICategoryRepository {
       if (e is PlatformException && e.message.contains('PERMISSION_DENIED')) {
         return const CategoryResult.failure(failure: CategoryFailure.insufficientPermission());
       } else {
-        // TODO: Log these unexpected errors everywhere
         return const CategoryResult.failure(failure: CategoryFailure.unexpected());
       }
     }
@@ -65,7 +63,6 @@ class CategoryRepository implements ICategoryRepository {
       } else if (e is PlatformException && e.message.contains('NOT_FOUND')) {
         return const CategoryResult.failure(failure: CategoryFailure.unableToUpdate());
       } else {
-        // TODO: Log these unexpected errors everywhere
         return const CategoryResult.failure(failure: CategoryFailure.unexpected());
       }
     }
@@ -82,7 +79,6 @@ class CategoryRepository implements ICategoryRepository {
       if (e is PlatformException && e.message.contains('PERMISSION_DENIED')) {
         return const CategoryResult.failure(failure: CategoryFailure.insufficientPermission());
       } else {
-        // TODO: Log these unexpected errors everywhere
         return const CategoryResult.failure(failure: CategoryFailure.unexpected());
       }
     }
@@ -103,7 +99,6 @@ class CategoryRepository implements ICategoryRepository {
       } else if (e is PlatformException && e.message.contains('NOT_FOUND')) {
         return const CategoryResult.failure(failure: CategoryFailure.unableToUpdate());
       } else {
-        // TODO: Log these unexpected errors everywhere
         return const CategoryResult.failure(failure: CategoryFailure.unexpected());
       }
     }
