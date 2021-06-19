@@ -30,9 +30,8 @@ abstract class Trip implements _$Trip {
 //    created: DateTime.now(), // todo make sure every single trip will have date created
   );
 
-  Option<ValueFailure<dynamic>> get failureOption {
-    return name.failureOrUnit
+  Option<ValueFailure<dynamic>> get failureOption =>
+      name.failureOrUnit
       .andThen(description.failureOrUnit)
       .fold((failure) => some(failure), (_) => none());
-  }
 }
