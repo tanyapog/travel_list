@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
-import 'package:flutter/services.dart';
 import 'package:injectable/injectable.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:travel_list/domain/trips/i_trip_repository.dart';
@@ -22,12 +21,8 @@ class TripRepository implements ITripRepository {
       final tripDto = TripDto.fromDomain(trip);
       await userDoc.tripCollection.doc(tripDto.id).set(tripDto.toJson());
       return right(unit);
-    } on PlatformException catch (e) {
-      if (e is PlatformException && e.message.contains('PERMISSION_DENIED')) {
-        return left(const TripFailure.insufficientPermission());
-      } else {
-        return left(const TripFailure.unexpected());
-      }
+    } catch (e) {
+      return left(TripFailure.fromError(e));
     }
   }
 
@@ -38,14 +33,8 @@ class TripRepository implements ITripRepository {
       final tripDto = TripDto.fromDomain(trip);
       await userDoc.tripCollection.doc(tripDto.id).update(tripDto.toJson());
       return right(unit);
-    } on PlatformException catch (e) {
-      if (e is PlatformException && e.message.contains('PERMISSION_DENIED')) {
-        return left(const TripFailure.insufficientPermission());
-      } else if (e is PlatformException && e.message.contains('NOT_FOUND')) {
-        return left(const TripFailure.unableToUpdate());
-      } else {
-        return left(const TripFailure.unexpected());
-      }
+    } catch (e) {
+      return left(TripFailure.fromError(e));
     }
   }
 
@@ -56,14 +45,8 @@ class TripRepository implements ITripRepository {
       final tripId = trip.id.getOrCrash();
       await userDoc.tripCollection.doc(tripId).delete();
       return right(unit);
-    } on PlatformException catch (e) {
-      if (e is PlatformException && e.message.contains('PERMISSION_DENIED')) {
-        return left(const TripFailure.insufficientPermission());
-      } else if (e is PlatformException && e.message.contains('NOT_FOUND')) {
-        return left(const TripFailure.unableToUpdate());
-      } else {
-        return left(const TripFailure.unexpected());
-      }
+    } catch (e) {
+      return left(TripFailure.fromError(e));
     }
   }
 
@@ -75,16 +58,8 @@ class TripRepository implements ITripRepository {
         .snapshots() // it's optimized and cheaper than .getDocuments which always loads all the documents
         .map((snapshot) => right<TripFailure, List<Trip>>(
           snapshot.docs
-              .map((doc) => TripDto.fromFirestore(doc).toDomain())
-              .toList(),
-        ))
-        .onErrorReturnWith((e) {
-          if (e is PlatformException && e.message.contains('PERMISSION_DENIED')) {
-            return left(const TripFailure.insufficientPermission());
-          } else {
-            return left(const TripFailure.unexpected());
-          }
-        });
+            .map((doc) => TripDto.fromFirestore(doc).toDomain()).toList(),))
+        .onErrorReturnWith((e) => left(TripFailure.fromError(e)));
   }
 
   @override
@@ -95,17 +70,9 @@ class TripRepository implements ITripRepository {
         .snapshots() // it's optimized and cheaper than .getDocuments
         .map((snapshot) =>
           snapshot.docs
-              .map((doc) => TripDto.fromFirestore(doc).toDomain())
-        )
+            .map((doc) => TripDto.fromFirestore(doc).toDomain()))
         .map((trips) => right<TripFailure, List<Trip>>(
-          trips.where((trip) => !trip.complete).toList()
-        ))
-        .onErrorReturnWith((e) {
-          if (e is PlatformException && e.message.contains('PERMISSION_DENIED')) {
-            return left(const TripFailure.insufficientPermission());
-          } else {
-            return left(const TripFailure.unexpected());
-          }
-        });
+          trips.where((trip) => !trip.complete).toList()))
+        .onErrorReturnWith((e) => left(TripFailure.fromError(e)));
   }
 }

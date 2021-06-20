@@ -30,11 +30,7 @@ class TripsOverviewPage extends StatelessWidget {
                 deleteFailure: (state) {
                   FlushbarHelper.createError(
                     duration: const Duration(seconds: 5),
-                    message: state.tripFailure.map(
-                      unexpected: (_) => 'Unexpected error occurred while deleting, pleas contact support',
-                      insufficientPermission: (_) => 'Insufficient permissions',
-                      unableToUpdate: (_) => 'Impossible error',
-                    ),
+                    message: state.tripFailure.message
                   ).show(context);
                 },
                 orElse: () {},
