@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/services.dart';
 import 'package:injectable/injectable.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:travel_list/domain/categories/category.dart';
@@ -23,15 +22,9 @@ class CategoryRepository implements ICategoryRepository {
       .snapshots()
       .map((snapshot) => CategoryResult.success(
         categories: snapshot.docs
-          .map((doc) => CategoryDto.fromFirestore(doc).toDomain())
-          .toList(),)
-    ).onErrorReturnWith((e) {
-      if (e is PlatformException && e.message.contains('PERMISSION_DENIED')) {
-        return const CategoryResult.failure(failure: CategoryFailure.insufficientPermission());
-      } else {
-        return const CategoryResult.failure(failure: CategoryFailure.unexpected());
-      }
-    });
+          .map((doc) => CategoryDto.fromFirestore(doc).toDomain()).toList(),))
+      .onErrorReturnWith((e) => CategoryResult.failure(
+        failure: CategoryFailure.fromError(e)));
   }
 
   @override
@@ -41,12 +34,8 @@ class CategoryRepository implements ICategoryRepository {
       final categoryDto =  CategoryDto.fromDomain(category);
       userDoc.categoryCollection.add(categoryDto.toJson());
       return const CategoryResult.success();
-    } on PlatformException catch (e) {
-      if (e is PlatformException && e.message.contains('PERMISSION_DENIED')) {
-        return const CategoryResult.failure(failure: CategoryFailure.insufficientPermission());
-      } else {
-        return const CategoryResult.failure(failure: CategoryFailure.unexpected());
-      }
+    } catch (e) {
+      return CategoryResult.failure(failure: CategoryFailure.fromError(e));
     }
   }
 
@@ -57,14 +46,8 @@ class CategoryRepository implements ICategoryRepository {
       final categoryDto =  CategoryDto.fromDomain(category);
       await userDoc.categoryCollection.doc(categoryDto.id).update(categoryDto.toJson());
       return const CategoryResult.success();
-    } on PlatformException catch (e) {
-      if (e is PlatformException && e.message.contains('PERMISSION_DENIED')) {
-        return const CategoryResult.failure(failure: CategoryFailure.insufficientPermission());
-      } else if (e is PlatformException && e.message.contains('NOT_FOUND')) {
-        return const CategoryResult.failure(failure: CategoryFailure.unableToUpdate());
-      } else {
-        return const CategoryResult.failure(failure: CategoryFailure.unexpected());
-      }
+    } catch (e) {
+      return CategoryResult.failure(failure: CategoryFailure.fromError(e));
     }
   }
 
@@ -75,12 +58,8 @@ class CategoryRepository implements ICategoryRepository {
       final categoryDto =  CategoryDto.fromDomain(category);
       await userDoc.categoryCollection.doc(categoryDto.id).delete();
       return const CategoryResult.success();
-    } on PlatformException catch (e) {
-      if (e is PlatformException && e.message.contains('PERMISSION_DENIED')) {
-        return const CategoryResult.failure(failure: CategoryFailure.insufficientPermission());
-      } else {
-        return const CategoryResult.failure(failure: CategoryFailure.unexpected());
-      }
+    } catch (e) {
+      return CategoryResult.failure(failure: CategoryFailure.fromError(e));
     }
   }
 
@@ -93,14 +72,8 @@ class CategoryRepository implements ICategoryRepository {
         }
       });
       return const CategoryResult.success();
-    } on Exception catch (e) {
-      if (e is PlatformException && e.message.contains('PERMISSION_DENIED')) {
-        return const CategoryResult.failure(failure: CategoryFailure.insufficientPermission());
-      } else if (e is PlatformException && e.message.contains('NOT_FOUND')) {
-        return const CategoryResult.failure(failure: CategoryFailure.unableToUpdate());
-      } else {
-        return const CategoryResult.failure(failure: CategoryFailure.unexpected());
-      }
+    } catch (e) {
+      return CategoryResult.failure(failure: CategoryFailure.fromError(e));
     }
   }
 }
