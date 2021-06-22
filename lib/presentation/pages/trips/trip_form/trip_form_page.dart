@@ -27,9 +27,7 @@ class TripFormPage extends StatelessWidget {
           state.saveFailureOrSuccessOption.fold(
             () {}, // case of none
             (either) => either.fold(
-              (failure) { // loading trip is failed
-                FlushbarHelper.createError(message: failure.message).show(context);
-              },
+              (failure) => FlushbarHelper.createError(message: failure.message).show(context),
               (_) { // loading trip succeed, show the trip form
                 // todo show trips_overview_page if trip was edited and generator if a new trip was created
                 context.read<TripFormBloc>().add(const TripFormEvent.saved());
@@ -55,9 +53,7 @@ class TripFormPage extends StatelessWidget {
 }
 
 class TripFormPageScaffold extends StatelessWidget {
-  const TripFormPageScaffold({
-    Key key,
-  }) : super(key: key);
+  const TripFormPageScaffold({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -67,8 +63,8 @@ class TripFormPageScaffold extends StatelessWidget {
         title: BlocBuilder<TripFormBloc, TripFormState>(
           buildWhen: (previous, current) => previous.isEditing != current.isEditing,
           builder: (context, state) => Text(state.isEditing
-              ? 'Edit a trip'
-              : 'Create a trip'
+            ? 'Edit a trip'
+            : 'Create a trip'
           ),
         ),
         actions: <Widget>[

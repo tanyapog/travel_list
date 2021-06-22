@@ -50,7 +50,7 @@ class CategoriesOverviewPage extends StatelessWidget {
               areItemsTheSame: (oldItem, newItem) => oldItem.id == newItem.id,
               onReorderFinished: (item, from, to, newItems) {
                 context.read<CategoryActorBloc>()
-                    .add(CategoryActorEvent.reorderFinished(newItems));
+                  .add(CategoryActorEvent.reorderFinished(newItems));
               },
             ),
             loadFailure: (state) => CriticalFailureDisplay(failure: state.categoryFailure),

@@ -14,8 +14,8 @@ class UncompletedSwitch extends HookWidget {
         onTap: () {
           toggleState.value = !toggleState.value;
           context.read<TripWatcherBloc>().add(toggleState.value
-              ? const TripWatcherEvent.watchUncompletedStarted()
-              : const TripWatcherEvent.watchAllStarted(),
+            ? const TripWatcherEvent.watchUncompletedStarted()
+            : const TripWatcherEvent.watchAllStarted(),
           );
         },
         child: AnimatedSwitcher(
@@ -25,8 +25,8 @@ class UncompletedSwitch extends HookWidget {
               child: child,),
             child: toggleState.value
             // without keys flutter thinks that icons are identical and animation doesn't work
-                ? const Icon(Icons.check_box_outline_blank, key: Key('outline'),)
-                : const Icon(Icons.indeterminate_check_box, key: Key('indeterminate'))
+              ? const Icon(Icons.check_box_outline_blank, key: Key('outline'),)
+              : const Icon(Icons.indeterminate_check_box, key: Key('indeterminate'))
         ),
       ),
     );
