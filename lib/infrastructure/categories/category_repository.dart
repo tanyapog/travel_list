@@ -31,7 +31,9 @@ class CategoryRepository implements ICategoryRepository {
   Future<CategoryResult> create(Category category) async {
     try {
       final userDoc = await _firestore.userDocument();
-      final categoryDto =  CategoryDto.fromDomain(category);
+      final int position = await _spotThePosition();
+      final newCategory = category.copyWith(position: position);
+      final categoryDto = CategoryDto.fromDomain(newCategory);
       userDoc.categoryCollection.add(categoryDto.toJson());
       return const CategoryResult.success();
     } catch (e) {
@@ -74,6 +76,31 @@ class CategoryRepository implements ICategoryRepository {
       return const CategoryResult.success();
     } catch (e) {
       return CategoryResult.failure(failure: CategoryFailure.fromError(e));
+    }
+  }
+
+  // - first category will get position 0
+  // - non first category will get position after the last one.
+  // We search the category with max value of position field because it could be
+  // different from count of categories minus 1 after deletion some category
+  // - in case of error method rethrow exception
+  Future<int> _spotThePosition() async {
+    try {
+      int positionForNewCategory = 0;
+      final userDoc = await _firestore.userDocument();
+      final docSnapshots = await userDoc.categoryCollection
+        .orderBy('position', descending: true)
+          .limit(1).get().then((querySnapshot) => querySnapshot.docs);
+      if (docSnapshots.isNotEmpty ) {
+        final DocumentSnapshot snapshot = docSnapshots.elementAt(0);
+        if (snapshot.exists) {
+          positionForNewCategory = CategoryDto.fromFirestore(snapshot).toDomain()
+            .position + 1;
+        }
+      }
+      return positionForNewCategory;
+    } on Exception {
+      rethrow;
     }
   }
 }
