@@ -447,16 +447,16 @@ class _$CategoryFormStateTearOff {
 // ignore: unused_element
   _CategoryFormState call(
       {@required Category category,
-      @required bool showErrorMessages,
       @required bool isEditing,
       @required bool isSaving,
-      CategoryFailure categoryFailure}) {
+      CategoryFailure categoryFailure,
+      bool savedSuccessfully}) {
     return _CategoryFormState(
       category: category,
-      showErrorMessages: showErrorMessages,
       isEditing: isEditing,
       isSaving: isSaving,
       categoryFailure: categoryFailure,
+      savedSuccessfully: savedSuccessfully,
     );
   }
 }
@@ -468,10 +468,11 @@ const $CategoryFormState = _$CategoryFormStateTearOff();
 /// @nodoc
 mixin _$CategoryFormState {
   Category get category;
-  bool get showErrorMessages;
-  bool get isEditing;
+  bool
+      get isEditing; // is this editing an existing category or creating a new one
   bool get isSaving;
   CategoryFailure get categoryFailure;
+  bool get savedSuccessfully;
 
   @JsonKey(ignore: true)
   $CategoryFormStateCopyWith<CategoryFormState> get copyWith;
@@ -484,10 +485,10 @@ abstract class $CategoryFormStateCopyWith<$Res> {
       _$CategoryFormStateCopyWithImpl<$Res>;
   $Res call(
       {Category category,
-      bool showErrorMessages,
       bool isEditing,
       bool isSaving,
-      CategoryFailure categoryFailure});
+      CategoryFailure categoryFailure,
+      bool savedSuccessfully});
 
   $CategoryCopyWith<$Res> get category;
   $CategoryFailureCopyWith<$Res> get categoryFailure;
@@ -505,21 +506,21 @@ class _$CategoryFormStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object category = freezed,
-    Object showErrorMessages = freezed,
     Object isEditing = freezed,
     Object isSaving = freezed,
     Object categoryFailure = freezed,
+    Object savedSuccessfully = freezed,
   }) {
     return _then(_value.copyWith(
       category: category == freezed ? _value.category : category as Category,
-      showErrorMessages: showErrorMessages == freezed
-          ? _value.showErrorMessages
-          : showErrorMessages as bool,
       isEditing: isEditing == freezed ? _value.isEditing : isEditing as bool,
       isSaving: isSaving == freezed ? _value.isSaving : isSaving as bool,
       categoryFailure: categoryFailure == freezed
           ? _value.categoryFailure
           : categoryFailure as CategoryFailure,
+      savedSuccessfully: savedSuccessfully == freezed
+          ? _value.savedSuccessfully
+          : savedSuccessfully as bool,
     ));
   }
 
@@ -553,10 +554,10 @@ abstract class _$CategoryFormStateCopyWith<$Res>
   @override
   $Res call(
       {Category category,
-      bool showErrorMessages,
       bool isEditing,
       bool isSaving,
-      CategoryFailure categoryFailure});
+      CategoryFailure categoryFailure,
+      bool savedSuccessfully});
 
   @override
   $CategoryCopyWith<$Res> get category;
@@ -578,21 +579,21 @@ class __$CategoryFormStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object category = freezed,
-    Object showErrorMessages = freezed,
     Object isEditing = freezed,
     Object isSaving = freezed,
     Object categoryFailure = freezed,
+    Object savedSuccessfully = freezed,
   }) {
     return _then(_CategoryFormState(
       category: category == freezed ? _value.category : category as Category,
-      showErrorMessages: showErrorMessages == freezed
-          ? _value.showErrorMessages
-          : showErrorMessages as bool,
       isEditing: isEditing == freezed ? _value.isEditing : isEditing as bool,
       isSaving: isSaving == freezed ? _value.isSaving : isSaving as bool,
       categoryFailure: categoryFailure == freezed
           ? _value.categoryFailure
           : categoryFailure as CategoryFailure,
+      savedSuccessfully: savedSuccessfully == freezed
+          ? _value.savedSuccessfully
+          : savedSuccessfully as bool,
     ));
   }
 }
@@ -601,29 +602,28 @@ class __$CategoryFormStateCopyWithImpl<$Res>
 class _$_CategoryFormState implements _CategoryFormState {
   const _$_CategoryFormState(
       {@required this.category,
-      @required this.showErrorMessages,
       @required this.isEditing,
       @required this.isSaving,
-      this.categoryFailure})
+      this.categoryFailure,
+      this.savedSuccessfully})
       : assert(category != null),
-        assert(showErrorMessages != null),
         assert(isEditing != null),
         assert(isSaving != null);
 
   @override
   final Category category;
   @override
-  final bool showErrorMessages;
-  @override
   final bool isEditing;
-  @override
+  @override // is this editing an existing category or creating a new one
   final bool isSaving;
   @override
   final CategoryFailure categoryFailure;
+  @override
+  final bool savedSuccessfully;
 
   @override
   String toString() {
-    return 'CategoryFormState(category: $category, showErrorMessages: $showErrorMessages, isEditing: $isEditing, isSaving: $isSaving, categoryFailure: $categoryFailure)';
+    return 'CategoryFormState(category: $category, isEditing: $isEditing, isSaving: $isSaving, categoryFailure: $categoryFailure, savedSuccessfully: $savedSuccessfully)';
   }
 
   @override
@@ -633,9 +633,6 @@ class _$_CategoryFormState implements _CategoryFormState {
             (identical(other.category, category) ||
                 const DeepCollectionEquality()
                     .equals(other.category, category)) &&
-            (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
             (identical(other.isEditing, isEditing) ||
                 const DeepCollectionEquality()
                     .equals(other.isEditing, isEditing)) &&
@@ -644,17 +641,20 @@ class _$_CategoryFormState implements _CategoryFormState {
                     .equals(other.isSaving, isSaving)) &&
             (identical(other.categoryFailure, categoryFailure) ||
                 const DeepCollectionEquality()
-                    .equals(other.categoryFailure, categoryFailure)));
+                    .equals(other.categoryFailure, categoryFailure)) &&
+            (identical(other.savedSuccessfully, savedSuccessfully) ||
+                const DeepCollectionEquality()
+                    .equals(other.savedSuccessfully, savedSuccessfully)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(category) ^
-      const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(isEditing) ^
       const DeepCollectionEquality().hash(isSaving) ^
-      const DeepCollectionEquality().hash(categoryFailure);
+      const DeepCollectionEquality().hash(categoryFailure) ^
+      const DeepCollectionEquality().hash(savedSuccessfully);
 
   @JsonKey(ignore: true)
   @override
@@ -665,21 +665,21 @@ class _$_CategoryFormState implements _CategoryFormState {
 abstract class _CategoryFormState implements CategoryFormState {
   const factory _CategoryFormState(
       {@required Category category,
-      @required bool showErrorMessages,
       @required bool isEditing,
       @required bool isSaving,
-      CategoryFailure categoryFailure}) = _$_CategoryFormState;
+      CategoryFailure categoryFailure,
+      bool savedSuccessfully}) = _$_CategoryFormState;
 
   @override
   Category get category;
   @override
-  bool get showErrorMessages;
-  @override
   bool get isEditing;
-  @override
+  @override // is this editing an existing category or creating a new one
   bool get isSaving;
   @override
   CategoryFailure get categoryFailure;
+  @override
+  bool get savedSuccessfully;
   @override
   @JsonKey(ignore: true)
   _$CategoryFormStateCopyWith<_CategoryFormState> get copyWith;

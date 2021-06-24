@@ -5,15 +5,14 @@ abstract class CategoryFormState with _$CategoryFormState {
 
   const factory CategoryFormState({
     @required Category category,
-    @required bool showErrorMessages,
-    @required bool isEditing,
+    @required bool isEditing, // is this editing an existing category or creating a new one
     @required bool isSaving,
     CategoryFailure categoryFailure,
+    bool savedSuccessfully,
   }) = _CategoryFormState;
 
   factory CategoryFormState.initial() => CategoryFormState(
       category: Category.empty(),
-      showErrorMessages: false,
       isEditing: false,
       isSaving: false,
   );

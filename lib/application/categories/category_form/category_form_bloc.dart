@@ -36,19 +36,21 @@ class CategoryFormBloc extends Bloc<CategoryFormEvent, CategoryFormState> {
         );
       },
       saved: (e) async* {
-        CategoryResult failureOrSuccess;
-        bool showErrorMessages = true;
+        CategoryResult categoryResult;
         yield state.copyWith(isSaving: true);
-        if (state.category.isNameValid()) {
-          showErrorMessages = false;
-          failureOrSuccess = state.isEditing
-              ? await categoryRepository.update(state.category)
-              : await categoryRepository.create(state.category);
-        }
+        categoryResult = state.isEditing
+          ? await categoryRepository.update(state.category)
+          : await categoryRepository.create(state.category);
         yield state.copyWith(
           isSaving: false,
-          showErrorMessages: showErrorMessages,
-          categoryFailure: failureOrSuccess.when(success: null, failure: (failure) => failure,)
+          categoryFailure: categoryResult?.maybeWhen(
+            failure: (failure) => failure,
+            orElse: () => null,
+          ),
+          savedSuccessfully: categoryResult?.maybeWhen(
+            success: (_, __) => true,
+            orElse: () => null,
+          ),
         );
       },
     );

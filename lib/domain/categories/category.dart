@@ -19,6 +19,4 @@ abstract class Category with _$Category {
       id: UniqueId(),
       name: '',
   );
-
-  bool isNameValid() => name.isNotEmpty && name.length <= maxNameLength;
 }
