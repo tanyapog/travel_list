@@ -1,3 +1,4 @@
+import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:implicitly_animated_reorderable_list/implicitly_animated_reorderable_list.dart';
@@ -23,46 +24,58 @@ class CategoriesOverviewPage extends StatelessWidget {
           create: (context) => getIt<CategoryActorBloc>(),
         ),
       ],
-      child: Scaffold(
-        drawer: NavigationDrawer(),
-        appBar: AppBar(
-          title: const Text('Categories'),
-        ),
-        body: BlocBuilder<CategoryWatcherBloc, CategoryWatcherState>(
-          builder: (context, state) => state.map(
-            initial: (_) => Container(),
-            loadInProgress: (_) => const Center(child: CircularProgressIndicator()),
-            loadSuccess: (state) => ImplicitlyAnimatedReorderableList<Category>(
-              itemBuilder: (context, itemAnimation, item, index) {
-                return Reorderable(
-                  builder: (context, dragAnimation, inDrag) =>
-                    ScaleTransition(
-                      scale: Tween<double>(begin: 1, end: 0.95).animate(dragAnimation),
-                      child: CategoryCard(
-                        category: state.categories[index],
-                        elevation: dragAnimation.value * 4,
-                      ),
-                    ),
-                  key: ValueKey(item.id),
-                );
-              },
-              items: state.categories,
-              areItemsTheSame: (oldItem, newItem) => oldItem.id == newItem.id,
-              onReorderFinished: (item, from, to, newItems) {
-                context.read<CategoryActorBloc>()
-                  .add(CategoryActorEvent.reorderFinished(newItems));
-              },
-            ),
-            loadFailure: (state) => CriticalFailureDisplay(failure: state.categoryFailure),
+      child: BlocListener<CategoryActorBloc, CategoryActorState>(
+        listener: (context, state) {
+          state.maybeMap(
+            reorderFailure: (state) =>
+              FlushbarHelper.createError(
+                duration: const Duration(seconds: 5),
+                message: state.categoryFailure.message
+              ).show(context),
+            orElse: () {}
+          );
+        },
+        child: Scaffold(
+          drawer: NavigationDrawer(),
+          appBar: AppBar(
+            title: const Text('Categories'),
           ),
-        ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () => showDialog(
+          body: BlocBuilder<CategoryWatcherBloc, CategoryWatcherState>(
+            builder: (context, state) => state.map(
+              initial: (_) => Container(),
+              loadInProgress: (_) => const Center(child: CircularProgressIndicator()),
+              loadSuccess: (state) => ImplicitlyAnimatedReorderableList<Category>(
+                itemBuilder: (context, itemAnimation, item, index) {
+                  return Reorderable(
+                    builder: (context, dragAnimation, inDrag) =>
+                      ScaleTransition(
+                        scale: Tween<double>(begin: 1, end: 0.95).animate(dragAnimation),
+                        child: CategoryCard(
+                          category: state.categories[index],
+                          elevation: dragAnimation.value * 4,
+                        ),
+                      ),
+                    key: ValueKey(item.id),
+                  );
+                },
+                items: state.categories,
+                areItemsTheSame: (oldItem, newItem) => oldItem.id == newItem.id,
+                onReorderFinished: (item, from, to, newItems) {
+                  context.read<CategoryActorBloc>()
+                    .add(CategoryActorEvent.reorderFinished(newItems));
+                },
+              ),
+              loadFailure: (state) => CriticalFailureDisplay(failure: state.categoryFailure),
+            ),
+          ),
+          floatingActionButton: FloatingActionButton(
+            onPressed: () => showDialog(
               barrierDismissible: false,
               context: context,
               builder: (BuildContext context) => const CategoryEditDialog(),
             ),
-          child: const Icon(Icons.add),
+            child: const Icon(Icons.add),
+          ),
         ),
       ),
     );
