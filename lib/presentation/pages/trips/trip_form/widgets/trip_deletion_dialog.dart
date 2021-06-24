@@ -20,12 +20,11 @@ class TripDeletionDialog extends StatelessWidget {
         child: BlocListener<TripActorBloc, TripActorState>(
           listener: (context, state) {
             state.maybeMap(
-              deleteFailure: (state) {
+              deleteFailure: (state) =>
                 FlushbarHelper.createError(
                   duration: const Duration(seconds: 5),
                   message: state.tripFailure.message,
-                ).show(context);
-              },
+                ).show(context),
               orElse: () {},
             );
           },
