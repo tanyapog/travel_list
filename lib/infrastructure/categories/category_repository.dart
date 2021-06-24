@@ -65,15 +65,32 @@ class CategoryRepository implements ICategoryRepository {
     }
   }
 
+  // In the case of success reorder, watchAll method will refresh categories
+  // as it's a Stream subscribed on categoryCollection
   @override
   Future<CategoryResult> reorder(List<Category> categories) async {
     try {
-      categories.asMap().forEach((i, category) async {
-        if (category.position != i) {
-          await update(category.copyWith(position: i));
-        }
-      });
-      return const CategoryResult.success();
+      final List<CategoryFailure> failures = [];
+      await Future.wait(
+        // map each entry into a Future object
+        // https://stackoverflow.com/questions/59056887/await-an-anonymous-function
+        categories.asMap().entries.map((entry) async {
+          final i = entry.key;
+          final category = entry.value;
+
+          if (category.position != i) {
+            final result = await update(category.copyWith(position: i));
+            result.maybeWhen(
+              failure: (failure) => failures.add(failure),
+              orElse: () {},
+            );
+          }
+        })
+      );
+      return (failures.isEmpty)
+        ? const CategoryResult.success()
+        // only the first failure will shown in UI because it's easy to code. todo log all failures
+        : CategoryResult.failure(failure: failures.first);
     } catch (e) {
       return CategoryResult.failure(failure: CategoryFailure.fromError(e));
     }
