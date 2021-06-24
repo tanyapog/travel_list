@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:travel_list/application/categories/category_form/category_form_bloc.dart';
 import 'package:travel_list/domain/categories/category.dart';
-import 'package:travel_list/presentation/core/common_widgets/custom_buttons.dart';
-import 'package:travel_list/presentation/core/common_widgets/dialog_box_decoration.dart';
+import 'package:travel_list/injection.dart';
+import 'package:travel_list/presentation/core/common_widgets/saving_in_progress_overlay.dart';
+import 'package:travel_list/presentation/pages/categories/widgets/category_dialog_body.dart';
 
 class CategoryEditDialog extends StatelessWidget {
   final Category category;
@@ -10,28 +13,17 @@ class CategoryEditDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return customDialog(
-      child: Column(
-        mainAxisSize: MainAxisSize.min, // To make the card compact
-        children: <Widget>[
-          TextFormField( // name field
-            // controller: nameEditingController,
-            decoration: const InputDecoration(
-              hintText: 'category name',
-              counterText: '',
-            ),
-            autofocus: true,
-          ),
-          const SizedBox(height: 5),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+    return BlocProvider<CategoryFormBloc>(
+      create: (context) => getIt<CategoryFormBloc>(),
+      child: BlocBuilder<CategoryFormBloc, CategoryFormState>(
+        buildWhen: (previous, current) => previous.isSaving != current.isSaving,
+        builder: (context, state) =>
+          Stack(
             children: [
-              greyButton(onPressed: () => Navigator.of(context).pop(), title: "CANCEL"),
-              const SizedBox(width: 10),
-              amberButton(onPressed: () => Navigator.of(context).pop(), title:  "SAVE"),
+              CategoryDialogBody(),
+              SavingInProgressOverlay(isSaving: state.isSaving),
             ],
           ),
-        ],
       ),
     );
   }
