@@ -1,4 +1,3 @@
-import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:implicitly_animated_reorderable_list/implicitly_animated_reorderable_list.dart';
@@ -6,6 +5,7 @@ import 'package:travel_list/application/categories/category_actor/category_actor
 import 'package:travel_list/application/categories/category_watcher/category_watcher_bloc.dart';
 import 'package:travel_list/domain/categories/category.dart';
 import 'package:travel_list/injection.dart';
+import 'package:travel_list/presentation/core/common_widgets/custom_flushbar_helper.dart';
 import 'package:travel_list/presentation/pages/categories/category_edit_dialog.dart';
 import 'package:travel_list/presentation/pages/categories/widgets/category_card.dart';
 import 'package:travel_list/presentation/pages/categories/widgets/critical_failure_display.dart';
@@ -27,11 +27,8 @@ class CategoriesOverviewPage extends StatelessWidget {
       child: BlocListener<CategoryActorBloc, CategoryActorState>(
         listener: (context, state) {
           state.maybeMap(
-            reorderFailure: (state) =>
-              FlushbarHelper.createError(
-                duration: const Duration(seconds: 5),
-                message: state.categoryFailure.message
-              ).show(context),
+            reorderFailure: (state) => customErrorFlushbar(
+              message: state.categoryFailure.message).show(context),
             orElse: () {}
           );
         },

@@ -1,10 +1,10 @@
-import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:travel_list/application/trips/trip_actor/trip_actor_bloc.dart';
 import 'package:travel_list/domain/trips/trip.dart';
 import 'package:travel_list/injection.dart';
 import 'package:travel_list/presentation/core/common_widgets/custom_buttons.dart';
+import 'package:travel_list/presentation/core/common_widgets/custom_flushbar_helper.dart';
 import 'package:travel_list/presentation/core/common_widgets/dialog_box_decoration.dart';
 
 class TripDeletionDialog extends StatelessWidget {
@@ -20,11 +20,8 @@ class TripDeletionDialog extends StatelessWidget {
         child: BlocListener<TripActorBloc, TripActorState>(
           listener: (context, state) {
             state.maybeMap(
-              deleteFailure: (state) =>
-                FlushbarHelper.createError(
-                  duration: const Duration(seconds: 5),
-                  message: state.tripFailure.message,
-                ).show(context),
+              deleteFailure: (state) => customErrorFlushbar(
+                message: state.tripFailure.message).show(context),
               orElse: () {},
             );
           },

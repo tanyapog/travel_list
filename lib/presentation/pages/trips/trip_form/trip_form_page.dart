@@ -1,11 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:dartz/dartz.dart';
-import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:travel_list/application/trips/trip_form/trip_form_bloc.dart';
 import 'package:travel_list/domain/trips/trip.dart';
 import 'package:travel_list/injection.dart';
+import 'package:travel_list/presentation/core/common_widgets/custom_flushbar_helper.dart';
 import 'package:travel_list/presentation/core/common_widgets/saving_in_progress_overlay.dart';
 import 'package:travel_list/presentation/pages/trips/trip_form/widgets/trip_form_body.dart';
 import 'package:travel_list/presentation/routes/router.gr.dart';
@@ -27,7 +27,7 @@ class TripFormPage extends StatelessWidget {
           state.saveFailureOrSuccessOption.fold(
             () {}, // case of none
             (either) => either.fold(
-              (failure) => FlushbarHelper.createError(message: failure.message).show(context),
+              (failure) => customErrorFlushbar(message: failure.message).show(context),
               (_) { // loading trip succeed, show the trip form
                 // todo show trips_overview_page if trip was edited and generator if a new trip was created
                 context.read<TripFormBloc>().add(const TripFormEvent.saved());
