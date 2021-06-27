@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:implicitly_animated_reorderable_list/implicitly_animated_reorderable_list.dart';
 import 'package:travel_list/domain/categories/category.dart';
-import 'package:travel_list/presentation/pages/categories/category_edit_dialog.dart';
+import 'package:travel_list/presentation/pages/categories/widgets/category_edit_dialog.dart';
 
 class CategoryCard extends StatelessWidget {
   final Category category;

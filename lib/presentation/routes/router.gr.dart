@@ -12,7 +12,7 @@ import 'package:flutter/material.dart';
 import '../../domain/categories/category.dart';
 import '../../domain/trips/trip.dart';
 import '../pages/categories/categories_overview_page.dart';
-import '../pages/categories/category_edit_dialog.dart';
+import '../pages/categories/widgets/category_edit_dialog.dart';
 import '../pages/sign_in/sign_in_page.dart';
 import '../pages/splash/splash_page.dart';
 import '../pages/trips/trip_form/trip_form_page.dart';
