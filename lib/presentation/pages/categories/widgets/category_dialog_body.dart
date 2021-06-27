@@ -10,11 +10,12 @@ import 'package:travel_list/presentation/core/common_widgets/dialog_box_decorati
 import 'package:travel_list/presentation/routes/router.gr.dart';
 
 class CategoryDialogBody extends HookWidget {
+  const CategoryDialogBody({Key key,}) : super(key: key);
+  static final GlobalKey<FormState> _globalCategoryFormKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     final nameEditingController = useTextEditingController();
-    final _globalCategoryFormKey = GlobalKey<FormState>();
 
     return MultiBlocListener(
       listeners: [

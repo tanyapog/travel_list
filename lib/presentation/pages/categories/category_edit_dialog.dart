@@ -14,13 +14,15 @@ class CategoryEditDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<CategoryFormBloc>(
-      create: (context) => getIt<CategoryFormBloc>(),
+      create: (context) => (category == null)
+        ? getIt<CategoryFormBloc>()
+        : getIt<CategoryFormBloc>()..add(CategoryFormEvent.initialized(category)),
       child: BlocBuilder<CategoryFormBloc, CategoryFormState>(
         buildWhen: (previous, current) => previous.isSaving != current.isSaving,
         builder: (context, state) =>
           Stack(
             children: [
-              CategoryDialogBody(),
+              const CategoryDialogBody(),
               SavingInProgressOverlay(isSaving: state.isSaving),
             ],
           ),
