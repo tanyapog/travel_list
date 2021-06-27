@@ -5,8 +5,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:travel_list/application/trips/trip_form/trip_form_bloc.dart';
 import 'package:travel_list/domain/trips/trip.dart';
 import 'package:travel_list/injection.dart';
-import 'package:travel_list/presentation/core/common_widgets/custom_flushbar_helper.dart';
-import 'package:travel_list/presentation/core/common_widgets/saving_in_progress_overlay.dart';
+import 'package:travel_list/presentation/core/custom_widgets/custom_flushbar_helper.dart';
+import 'package:travel_list/presentation/core/custom_widgets/saving_in_progress_overlay.dart';
 import 'package:travel_list/presentation/pages/trips/trip_form/widgets/trip_form_body.dart';
 import 'package:travel_list/presentation/routes/router.gr.dart';
 

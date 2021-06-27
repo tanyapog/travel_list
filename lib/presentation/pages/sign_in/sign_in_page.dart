@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:travel_list/application/auth/auth_bloc.dart';
 import 'package:travel_list/application/auth/sign_in_form/sign_in_form_bloc.dart';
 import 'package:travel_list/injection.dart';
-import 'package:travel_list/presentation/core/common_widgets/custom_flushbar_helper.dart';
+import 'package:travel_list/presentation/core/custom_widgets/custom_flushbar_helper.dart';
 import 'package:travel_list/presentation/routes/router.gr.dart';
 
 class SignInPage extends StatelessWidget {

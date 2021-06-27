@@ -5,7 +5,7 @@ import 'package:travel_list/application/categories/category_actor/category_actor
 import 'package:travel_list/application/categories/category_watcher/category_watcher_bloc.dart';
 import 'package:travel_list/domain/categories/category.dart';
 import 'package:travel_list/injection.dart';
-import 'package:travel_list/presentation/core/common_widgets/custom_flushbar_helper.dart';
+import 'package:travel_list/presentation/core/custom_widgets/custom_flushbar_helper.dart';
 import 'package:travel_list/presentation/pages/categories/category_edit_dialog.dart';
 import 'package:travel_list/presentation/pages/categories/widgets/category_card.dart';
 import 'package:travel_list/presentation/pages/categories/widgets/critical_failure_display.dart';

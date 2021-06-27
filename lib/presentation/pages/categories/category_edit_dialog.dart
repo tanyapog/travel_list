@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:travel_list/application/categories/category_form/category_form_bloc.dart';
 import 'package:travel_list/domain/categories/category.dart';
 import 'package:travel_list/injection.dart';
-import 'package:travel_list/presentation/core/common_widgets/saving_in_progress_overlay.dart';
+import 'package:travel_list/presentation/core/custom_widgets/saving_in_progress_overlay.dart';
 import 'package:travel_list/presentation/pages/categories/widgets/category_dialog_body.dart';
 
 class CategoryEditDialog extends StatelessWidget {

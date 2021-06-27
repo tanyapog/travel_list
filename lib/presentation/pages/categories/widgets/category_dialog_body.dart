@@ -4,9 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:travel_list/application/categories/category_form/category_form_bloc.dart';
 import 'package:travel_list/domain/categories/category.dart';
-import 'package:travel_list/presentation/core/common_widgets/custom_buttons.dart';
-import 'package:travel_list/presentation/core/common_widgets/custom_flushbar_helper.dart';
-import 'package:travel_list/presentation/core/common_widgets/dialog_box_decoration.dart';
+import 'package:travel_list/presentation/core/custom_widgets/custom_buttons.dart';
+import 'package:travel_list/presentation/core/custom_widgets/custom_flushbar_helper.dart';
+import 'package:travel_list/presentation/core/custom_widgets/dialog_box_decoration.dart';
 import 'package:travel_list/presentation/routes/router.gr.dart';
 
 class CategoryDialogBody extends HookWidget {
