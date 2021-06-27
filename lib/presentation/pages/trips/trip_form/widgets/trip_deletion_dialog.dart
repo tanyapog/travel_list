@@ -28,7 +28,7 @@ class TripDeletionDialog extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min, // To make the card compact
             children: <Widget>[
-              const Text("Deleting the trip",
+              const Text("Deleting a trip",
                 style: TextStyle(fontWeight: FontWeight.bold),),
               const SizedBox(height: 10),
               ListTile(
