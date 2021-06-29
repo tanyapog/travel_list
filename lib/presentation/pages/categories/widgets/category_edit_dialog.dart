@@ -16,7 +16,7 @@ class CategoryEditDialog extends StatelessWidget {
     return BlocProvider<CategoryFormBloc>(
       create: (context) => (category == null)
         ? getIt<CategoryFormBloc>()
-        : getIt<CategoryFormBloc>()..add(CategoryFormEvent.initialized(category)),
+        : (getIt<CategoryFormBloc>()..add(CategoryFormEvent.initialized(category))),
       child: BlocBuilder<CategoryFormBloc, CategoryFormState>(
         buildWhen: (previous, current) => previous.isSaving != current.isSaving,
         builder: (context, state) =>
