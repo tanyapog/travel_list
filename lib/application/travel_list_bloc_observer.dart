@@ -4,25 +4,37 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class TravelListBlocObserver extends BlocObserver {
   // @override
   // void onEvent(Bloc bloc, Object event) {
-  //   print('------ ${bloc.runtimeType} $event');
+  //   print('------ Event\t\t\t ${bloc.runtimeType} $event');
   //   super.onEvent(bloc, event);
   // }
   //
   // @override
   // void onTransition(Bloc bloc, Transition transition) {
-  //   print('------ ${bloc.runtimeType} $transition');
+  //   print('------ Transition\t ${bloc.runtimeType} $transition');
   //   super.onTransition(bloc, transition);
   // }
 
   @override
   void onChange(Cubit cubit, Change change) {
-    print('------ ${cubit.runtimeType} $change');
+    print('------ Change\t\t ${cubit.runtimeType} $change');
     super.onChange(cubit, change);
   }
 
   @override
   void onError(Cubit cubit, Object error, StackTrace stackTrace) {
-    print('------ ${cubit.runtimeType} $error $stackTrace');
+    print('------ Error\t\t\t ${cubit.runtimeType} $error $stackTrace');
     super.onError(cubit, error, stackTrace);
+  }
+
+  @override
+  void onCreate(Cubit cubit) {
+    print('------ Create\t\t ${cubit.runtimeType}');
+    super.onCreate(cubit);
+  }
+
+  @override
+  void onClose(Cubit cubit) {
+    print('------ Close\t ${cubit.runtimeType}');
+    super.onClose(cubit);
   }
 }
