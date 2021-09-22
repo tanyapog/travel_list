@@ -2,12 +2,24 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 // TODO use in develop mod only
 class TravelListBlocObserver extends BlocObserver {
-  // @override
-  // void onEvent(Bloc bloc, Object event) {
-  //   print('------ Event\t\t\t ${bloc.runtimeType} $event');
-  //   super.onEvent(bloc, event);
-  // }
-  //
+  @override
+  void onCreate(BlocBase bloc) {
+    print('------ Create\t\t ${bloc.runtimeType}');
+    super.onCreate(bloc);
+  }
+
+  @override
+  void onClose(BlocBase bloc) {
+    print('------ Close\t ${bloc.runtimeType}');
+    super.onClose(bloc);
+  }
+
+  @override
+  void onError(BlocBase bloc, Object error, StackTrace stackTrace) {
+    print('------ Error\t\t\t ${bloc.runtimeType} $error $stackTrace');
+    super.onError(bloc, error, stackTrace);
+  }
+
   // @override
   // void onTransition(Bloc bloc, Transition transition) {
   //   print('------ Transition\t ${bloc.runtimeType} $transition');
@@ -15,26 +27,14 @@ class TravelListBlocObserver extends BlocObserver {
   // }
 
   @override
-  void onChange(Cubit cubit, Change change) {
-    print('------ Change\t\t ${cubit.runtimeType} $change');
-    super.onChange(cubit, change);
+  void onChange(BlocBase bloc, Change change) {
+    print('------ Change\t\t ${bloc.runtimeType} $change');
+    super.onChange(bloc, change);
   }
 
-  @override
-  void onError(Cubit cubit, Object error, StackTrace stackTrace) {
-    print('------ Error\t\t\t ${cubit.runtimeType} $error $stackTrace');
-    super.onError(cubit, error, stackTrace);
-  }
-
-  @override
-  void onCreate(Cubit cubit) {
-    print('------ Create\t\t ${cubit.runtimeType}');
-    super.onCreate(cubit);
-  }
-
-  @override
-  void onClose(Cubit cubit) {
-    print('------ Close\t ${cubit.runtimeType}');
-    super.onClose(cubit);
-  }
+// @override
+// void onEvent(Bloc bloc, Object event) {
+//   print('------ Event\t\t\t ${bloc.runtimeType} $event');
+//   super.onEvent(bloc, event);
+// }
 }
