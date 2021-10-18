@@ -13,7 +13,7 @@ class TripDto implements _$TripDto {
   const TripDto._();
 
   const factory TripDto({
-    @JsonKey(ignore: true) String id,
+    @JsonKey(ignore: true) String? id,
     required String name,
     required String description,
     required bool complete,
