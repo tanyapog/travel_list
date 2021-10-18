@@ -7,7 +7,7 @@ part 'category_dtos.freezed.dart';
 part 'category_dtos.g.dart';
 
 @freezed
-abstract class CategoryDto with _$CategoryDto {
+class CategoryDto with _$CategoryDto {
   const CategoryDto._();
 
   const factory CategoryDto({

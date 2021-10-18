@@ -8,7 +8,7 @@ part 'trip_dtos.freezed.dart';
 part 'trip_dtos.g.dart';
 
 @freezed
-abstract class TripDto implements _$TripDto {
+class TripDto implements _$TripDto {
 
   const TripDto._();
 

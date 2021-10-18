@@ -7,7 +7,7 @@ import 'package:travel_list/domain/trips/value_objects.dart';
 part 'trip.freezed.dart';
 
 @freezed
-abstract class Trip implements _$Trip {
+class Trip implements _$Trip {
 
   const Trip._();
 

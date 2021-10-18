@@ -3,7 +3,7 @@ part of 'sign_in_form_bloc.dart';
 // https://resocoder.com/2020/03/20/flutter-firebase-ddd-course-4-modeling-the-sign-in-form-events-state/#State
 
 @freezed
-abstract class SignInFormState with _$SignInFormState {
+class SignInFormState with _$SignInFormState {
   const factory SignInFormState({
     @required Email email,
     @required Password password,

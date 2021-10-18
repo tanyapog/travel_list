@@ -4,7 +4,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'category_failure.freezed.dart';
 
 @freezed
-abstract class CategoryFailure with _$CategoryFailure {
+class CategoryFailure with _$CategoryFailure {
   const factory CategoryFailure.insufficientPermission(PlatformException e, String message) = _InsufficientPermission;
   const factory CategoryFailure.unableToUpdate(PlatformException e, String message) = _UnableToUpdate;
   const factory CategoryFailure.platformSpecific(PlatformException e, String message) = _PlatformSpecific;

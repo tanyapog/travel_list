@@ -4,7 +4,7 @@ import 'package:travel_list/domain/core/value_objects.dart';
 part 'category.freezed.dart';
 
 @freezed
-abstract class Category with _$Category {
+class Category with _$Category {
   const Category._();
 
   static const maxNameLength = 70;

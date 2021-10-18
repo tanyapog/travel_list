@@ -7,7 +7,7 @@ import 'package:travel_list/domain/core/value_objects.dart';
 part 'user.freezed.dart';
 
 @freezed
-abstract class User with _$User {
+class User with _$User {
   const factory User({
     @required UniqueId id,
     @required StringSingleLine name,

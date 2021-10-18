@@ -4,7 +4,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'trip_failure.freezed.dart';
 
 @freezed
-abstract class TripFailure with _$TripFailure {
+class TripFailure with _$TripFailure {
   const factory TripFailure.insufficientPermission(PlatformException e, String message) = _InsufficientPermission;
   const factory TripFailure.unableToUpdate(PlatformException e, String message) = _UnableToUpdate;
   const factory TripFailure.platformSpecific(PlatformException e, String message) = _PlatformSpecific;
