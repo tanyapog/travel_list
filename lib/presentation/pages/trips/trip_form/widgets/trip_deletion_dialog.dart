@@ -10,7 +10,7 @@ import 'package:travel_list/presentation/core/custom_widgets/dialog_box_decorati
 class TripDeletionDialog extends StatelessWidget {
   final Trip trip;
 
-  const TripDeletionDialog({Key key, @required this.trip}) : super(key: key);
+  const TripDeletionDialog({Key key, required this.trip}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

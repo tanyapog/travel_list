@@ -10,8 +10,8 @@ class Category with _$Category {
   static const maxNameLength = 70;
 
   const factory Category({
-    @required UniqueId id,
-    @required String name,
+    required UniqueId id,
+    required String name,
     int position,
   }) = _Category;
 

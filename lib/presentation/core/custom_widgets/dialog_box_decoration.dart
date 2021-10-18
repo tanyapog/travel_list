@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Dialog customDialog({@required Widget child}) =>
+Dialog customDialog({required Widget child}) =>
   Dialog(
     elevation: 0.0,
     backgroundColor: Colors.transparent,

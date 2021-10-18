@@ -14,10 +14,10 @@ class TripDto implements _$TripDto {
 
   const factory TripDto({
     @JsonKey(ignore: true) String id,
-    @required String name,
-    @required String description,
-    @required bool complete,
-    @required @ServerTimestampConverter() FieldValue serverTimeStamp, // todo rename to dateUpdated
+    required String name,
+    required String description,
+    required bool complete,
+    @ServerTimestampConverter() required FieldValue serverTimeStamp, // todo rename to dateUpdated
   }) = _TripDto;
 
   factory TripDto.fromDomain(Trip trip) => TripDto(

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 FlatButton greyButton({
-  @required void Function() onPressed,
-  @required String title})
+  required void Function() onPressed,
+  required String title})
 {
   return FlatButton(
     color: Colors.blueGrey.shade50,
@@ -12,8 +12,8 @@ FlatButton greyButton({
 }
 
 FlatButton amberButton({
-  @required void Function() onPressed,
-  @required String title})
+  required void Function() onPressed,
+  required String title})
 {
   return FlatButton(
     color: Colors.amber,

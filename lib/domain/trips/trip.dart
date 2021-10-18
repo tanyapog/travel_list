@@ -12,9 +12,9 @@ class Trip implements _$Trip {
   const Trip._();
 
   const factory Trip({
-    @required UniqueId id,
-    @required TripName name,
-    @required TripDescription description,
+    required UniqueId id,
+    required TripName name,
+    required TripDescription description,
     @Default(false) bool complete,
 //    todo
 //    DateTime start,

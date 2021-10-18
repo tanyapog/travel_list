@@ -60,8 +60,8 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
   // invoke needed forwardedCall and return corresponding SignInFormState
   Stream<SignInFormState> _performAuthAction(
     Future<Either<AuthFailure, Unit>> Function({
-      @required Email email,
-      @required Password password,
+      required Email email,
+      required Password password,
     }) forwardedCall,
   ) async* {
     final bool isEmailValid = state.email.isValid();

@@ -12,8 +12,8 @@ class CategoryDto with _$CategoryDto {
 
   const factory CategoryDto({
     @JsonKey(ignore: true) String id,
-    @required String name,
-    @required int position,
+    required String name,
+    required int position,
   }) = _CategoryDto;
 
   factory CategoryDto.fromDomain(Category category) =>

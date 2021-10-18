@@ -10,7 +10,7 @@ import 'package:travel_list/presentation/core/custom_widgets/dialog_box_decorati
 class CategoryDeletionDialog extends StatelessWidget {
   final Category category;
 
-  const CategoryDeletionDialog({Key key, @required this.category}) : super(key: key);
+  const CategoryDeletionDialog({Key key, required this.category}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

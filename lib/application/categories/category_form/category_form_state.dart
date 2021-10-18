@@ -4,9 +4,9 @@ part of 'category_form_bloc.dart';
 class CategoryFormState with _$CategoryFormState {
 
   const factory CategoryFormState({
-    @required Category category,
-    @required bool isEditing, // is this editing an existing category or creating a new one
-    @required bool isSaving,
+    required Category category,
+    required bool isEditing, // is this editing an existing category or creating a new one
+    required bool isSaving,
     CategoryFailure categoryFailure,
     bool savedSuccessfully,
   }) = _CategoryFormState;
