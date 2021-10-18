@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'category_result.dart';
 
@@ -9,20 +10,22 @@ part of 'category_result.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$CategoryResultTearOff {
   const _$CategoryResultTearOff();
 
-// ignore: unused_element
-  _Success success({Category category, List<Category> categories}) {
+  _Success success(
+      {required Category category, required List<Category> categories}) {
     return _Success(
       category: category,
       categories: categories,
     );
   }
 
-// ignore: unused_element
-  _Failure failure({@required CategoryFailure failure}) {
+  _Failure failure({required CategoryFailure failure}) {
     return _Failure(
       failure: failure,
     );
@@ -30,33 +33,49 @@ class _$CategoryResultTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $CategoryResult = _$CategoryResultTearOff();
 
 /// @nodoc
 mixin _$CategoryResult {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult success(Category category, List<Category> categories),
-    @required TResult failure(CategoryFailure failure),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(Category category, List<Category> categories)
+        success,
+    required TResult Function(CategoryFailure failure) failure,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult success(Category category, List<Category> categories),
-    TResult failure(CategoryFailure failure),
-    @required TResult orElse(),
-  });
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Category category, List<Category> categories)? success,
+    TResult Function(CategoryFailure failure)? failure,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult success(_Success value),
-    @required TResult failure(_Failure value),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Category category, List<Category> categories)? success,
+    TResult Function(CategoryFailure failure)? failure,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult success(_Success value),
-    TResult failure(_Failure value),
-    @required TResult orElse(),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Success value) success,
+    required TResult Function(_Failure value) failure,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Success value)? success,
+    TResult Function(_Failure value)? failure,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Success value)? success,
+    TResult Function(_Failure value)? failure,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -96,22 +115,23 @@ class __$SuccessCopyWithImpl<$Res> extends _$CategoryResultCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object category = freezed,
-    Object categories = freezed,
+    Object? category = freezed,
+    Object? categories = freezed,
   }) {
     return _then(_Success(
-      category: category == freezed ? _value.category : category as Category,
+      category: category == freezed
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as Category,
       categories: categories == freezed
           ? _value.categories
-          : categories as List<Category>,
+          : categories // ignore: cast_nullable_to_non_nullable
+              as List<Category>,
     ));
   }
 
   @override
   $CategoryCopyWith<$Res> get category {
-    if (_value.category == null) {
-      return null;
-    }
     return $CategoryCopyWith<$Res>(_value.category, (value) {
       return _then(_value.copyWith(category: value));
     });
@@ -119,8 +139,9 @@ class __$SuccessCopyWithImpl<$Res> extends _$CategoryResultCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Success implements _Success {
-  const _$_Success({this.category, this.categories});
+  const _$_Success({required this.category, required this.categories});
 
   @override
   final Category category;
@@ -157,23 +178,30 @@ class _$_Success implements _Success {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult success(Category category, List<Category> categories),
-    @required TResult failure(CategoryFailure failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Category category, List<Category> categories)
+        success,
+    required TResult Function(CategoryFailure failure) failure,
   }) {
-    assert(success != null);
-    assert(failure != null);
     return success(category, categories);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult success(Category category, List<Category> categories),
-    TResult failure(CategoryFailure failure),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Category category, List<Category> categories)? success,
+    TResult Function(CategoryFailure failure)? failure,
   }) {
-    assert(orElse != null);
+    return success?.call(category, categories);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Category category, List<Category> categories)? success,
+    TResult Function(CategoryFailure failure)? failure,
+    required TResult orElse(),
+  }) {
     if (success != null) {
       return success(category, categories);
     }
@@ -182,23 +210,29 @@ class _$_Success implements _Success {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult success(_Success value),
-    @required TResult failure(_Failure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Success value) success,
+    required TResult Function(_Failure value) failure,
   }) {
-    assert(success != null);
-    assert(failure != null);
     return success(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult success(_Success value),
-    TResult failure(_Failure value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Success value)? success,
+    TResult Function(_Failure value)? failure,
   }) {
-    assert(orElse != null);
+    return success?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Success value)? success,
+    TResult Function(_Failure value)? failure,
+    required TResult orElse(),
+  }) {
     if (success != null) {
       return success(this);
     }
@@ -207,13 +241,15 @@ class _$_Success implements _Success {
 }
 
 abstract class _Success implements CategoryResult {
-  const factory _Success({Category category, List<Category> categories}) =
-      _$_Success;
+  const factory _Success(
+      {required Category category,
+      required List<Category> categories}) = _$_Success;
 
-  Category get category;
-  List<Category> get categories;
+  Category get category => throw _privateConstructorUsedError;
+  List<Category> get categories => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$SuccessCopyWith<_Success> get copyWith;
+  _$SuccessCopyWith<_Success> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -236,18 +272,18 @@ class __$FailureCopyWithImpl<$Res> extends _$CategoryResultCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object failure = freezed,
+    Object? failure = freezed,
   }) {
     return _then(_Failure(
-      failure: failure == freezed ? _value.failure : failure as CategoryFailure,
+      failure: failure == freezed
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as CategoryFailure,
     ));
   }
 
   @override
   $CategoryFailureCopyWith<$Res> get failure {
-    if (_value.failure == null) {
-      return null;
-    }
     return $CategoryFailureCopyWith<$Res>(_value.failure, (value) {
       return _then(_value.copyWith(failure: value));
     });
@@ -255,8 +291,9 @@ class __$FailureCopyWithImpl<$Res> extends _$CategoryResultCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Failure implements _Failure {
-  const _$_Failure({@required this.failure}) : assert(failure != null);
+  const _$_Failure({required this.failure});
 
   @override
   final CategoryFailure failure;
@@ -285,23 +322,30 @@ class _$_Failure implements _Failure {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult success(Category category, List<Category> categories),
-    @required TResult failure(CategoryFailure failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Category category, List<Category> categories)
+        success,
+    required TResult Function(CategoryFailure failure) failure,
   }) {
-    assert(success != null);
-    assert(failure != null);
     return failure(this.failure);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult success(Category category, List<Category> categories),
-    TResult failure(CategoryFailure failure),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Category category, List<Category> categories)? success,
+    TResult Function(CategoryFailure failure)? failure,
   }) {
-    assert(orElse != null);
+    return failure?.call(this.failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Category category, List<Category> categories)? success,
+    TResult Function(CategoryFailure failure)? failure,
+    required TResult orElse(),
+  }) {
     if (failure != null) {
       return failure(this.failure);
     }
@@ -310,23 +354,29 @@ class _$_Failure implements _Failure {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult success(_Success value),
-    @required TResult failure(_Failure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Success value) success,
+    required TResult Function(_Failure value) failure,
   }) {
-    assert(success != null);
-    assert(failure != null);
     return failure(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult success(_Success value),
-    TResult failure(_Failure value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Success value)? success,
+    TResult Function(_Failure value)? failure,
   }) {
-    assert(orElse != null);
+    return failure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Success value)? success,
+    TResult Function(_Failure value)? failure,
+    required TResult orElse(),
+  }) {
     if (failure != null) {
       return failure(this);
     }
@@ -335,9 +385,10 @@ class _$_Failure implements _Failure {
 }
 
 abstract class _Failure implements CategoryResult {
-  const factory _Failure({@required CategoryFailure failure}) = _$_Failure;
+  const factory _Failure({required CategoryFailure failure}) = _$_Failure;
 
-  CategoryFailure get failure;
+  CategoryFailure get failure => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$FailureCopyWith<_Failure> get copyWith;
+  _$FailureCopyWith<_Failure> get copyWith =>
+      throw _privateConstructorUsedError;
 }

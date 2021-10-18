@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'trip_form_bloc.dart';
 
@@ -9,82 +10,101 @@ part of 'trip_form_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$TripFormEventTearOff {
   const _$TripFormEventTearOff();
 
-// ignore: unused_element
   _Initialized initialized(Option<Trip> initialTripOption) {
     return _Initialized(
       initialTripOption,
     );
   }
 
-// ignore: unused_element
   _NameChanged nameChanged(String nameStr) {
     return _NameChanged(
       nameStr,
     );
   }
 
-// ignore: unused_element
   _DescriptionChanged descriptionChanged(String descriptionStr) {
     return _DescriptionChanged(
       descriptionStr,
     );
   }
 
-// ignore: unused_element
   _CompletedPressed completedPressed() {
     return const _CompletedPressed();
   }
 
-// ignore: unused_element
   _Saved saved() {
     return const _Saved();
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $TripFormEvent = _$TripFormEventTearOff();
 
 /// @nodoc
 mixin _$TripFormEvent {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(Option<Trip> initialTripOption),
-    @required TResult nameChanged(String nameStr),
-    @required TResult descriptionChanged(String descriptionStr),
-    @required TResult completedPressed(),
-    @required TResult saved(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Trip> initialTripOption) initialized,
+    required TResult Function(String nameStr) nameChanged,
+    required TResult Function(String descriptionStr) descriptionChanged,
+    required TResult Function() completedPressed,
+    required TResult Function() saved,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Option<Trip> initialTripOption),
-    TResult nameChanged(String nameStr),
-    TResult descriptionChanged(String descriptionStr),
-    TResult completedPressed(),
-    TResult saved(),
-    @required TResult orElse(),
-  });
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<Trip> initialTripOption)? initialized,
+    TResult Function(String nameStr)? nameChanged,
+    TResult Function(String descriptionStr)? descriptionChanged,
+    TResult Function()? completedPressed,
+    TResult Function()? saved,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult nameChanged(_NameChanged value),
-    @required TResult descriptionChanged(_DescriptionChanged value),
-    @required TResult completedPressed(_CompletedPressed value),
-    @required TResult saved(_Saved value),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Trip> initialTripOption)? initialized,
+    TResult Function(String nameStr)? nameChanged,
+    TResult Function(String descriptionStr)? descriptionChanged,
+    TResult Function()? completedPressed,
+    TResult Function()? saved,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult nameChanged(_NameChanged value),
-    TResult descriptionChanged(_DescriptionChanged value),
-    TResult completedPressed(_CompletedPressed value),
-    TResult saved(_Saved value),
-    @required TResult orElse(),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_CompletedPressed value) completedPressed,
+    required TResult Function(_Saved value) saved,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_CompletedPressed value)? completedPressed,
+    TResult Function(_Saved value)? saved,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_CompletedPressed value)? completedPressed,
+    TResult Function(_Saved value)? saved,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -124,20 +144,21 @@ class __$InitializedCopyWithImpl<$Res> extends _$TripFormEventCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object initialTripOption = freezed,
+    Object? initialTripOption = freezed,
   }) {
     return _then(_Initialized(
       initialTripOption == freezed
           ? _value.initialTripOption
-          : initialTripOption as Option<Trip>,
+          : initialTripOption // ignore: cast_nullable_to_non_nullable
+              as Option<Trip>,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_Initialized implements _Initialized {
-  const _$_Initialized(this.initialTripOption)
-      : assert(initialTripOption != null);
+  const _$_Initialized(this.initialTripOption);
 
   @override
   final Option<Trip> initialTripOption;
@@ -168,32 +189,38 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(Option<Trip> initialTripOption),
-    @required TResult nameChanged(String nameStr),
-    @required TResult descriptionChanged(String descriptionStr),
-    @required TResult completedPressed(),
-    @required TResult saved(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Trip> initialTripOption) initialized,
+    required TResult Function(String nameStr) nameChanged,
+    required TResult Function(String descriptionStr) descriptionChanged,
+    required TResult Function() completedPressed,
+    required TResult Function() saved,
   }) {
-    assert(initialized != null);
-    assert(nameChanged != null);
-    assert(descriptionChanged != null);
-    assert(completedPressed != null);
-    assert(saved != null);
     return initialized(initialTripOption);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Option<Trip> initialTripOption),
-    TResult nameChanged(String nameStr),
-    TResult descriptionChanged(String descriptionStr),
-    TResult completedPressed(),
-    TResult saved(),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<Trip> initialTripOption)? initialized,
+    TResult Function(String nameStr)? nameChanged,
+    TResult Function(String descriptionStr)? descriptionChanged,
+    TResult Function()? completedPressed,
+    TResult Function()? saved,
   }) {
-    assert(orElse != null);
+    return initialized?.call(initialTripOption);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Trip> initialTripOption)? initialized,
+    TResult Function(String nameStr)? nameChanged,
+    TResult Function(String descriptionStr)? descriptionChanged,
+    TResult Function()? completedPressed,
+    TResult Function()? saved,
+    required TResult orElse(),
+  }) {
     if (initialized != null) {
       return initialized(initialTripOption);
     }
@@ -202,32 +229,38 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult nameChanged(_NameChanged value),
-    @required TResult descriptionChanged(_DescriptionChanged value),
-    @required TResult completedPressed(_CompletedPressed value),
-    @required TResult saved(_Saved value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_CompletedPressed value) completedPressed,
+    required TResult Function(_Saved value) saved,
   }) {
-    assert(initialized != null);
-    assert(nameChanged != null);
-    assert(descriptionChanged != null);
-    assert(completedPressed != null);
-    assert(saved != null);
     return initialized(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult nameChanged(_NameChanged value),
-    TResult descriptionChanged(_DescriptionChanged value),
-    TResult completedPressed(_CompletedPressed value),
-    TResult saved(_Saved value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_CompletedPressed value)? completedPressed,
+    TResult Function(_Saved value)? saved,
   }) {
-    assert(orElse != null);
+    return initialized?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_CompletedPressed value)? completedPressed,
+    TResult Function(_Saved value)? saved,
+    required TResult orElse(),
+  }) {
     if (initialized != null) {
       return initialized(this);
     }
@@ -238,9 +271,10 @@ class _$_Initialized implements _Initialized {
 abstract class _Initialized implements TripFormEvent {
   const factory _Initialized(Option<Trip> initialTripOption) = _$_Initialized;
 
-  Option<Trip> get initialTripOption;
+  Option<Trip> get initialTripOption => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$InitializedCopyWith<_Initialized> get copyWith;
+  _$InitializedCopyWith<_Initialized> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -263,17 +297,21 @@ class __$NameChangedCopyWithImpl<$Res> extends _$TripFormEventCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object nameStr = freezed,
+    Object? nameStr = freezed,
   }) {
     return _then(_NameChanged(
-      nameStr == freezed ? _value.nameStr : nameStr as String,
+      nameStr == freezed
+          ? _value.nameStr
+          : nameStr // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_NameChanged implements _NameChanged {
-  const _$_NameChanged(this.nameStr) : assert(nameStr != null);
+  const _$_NameChanged(this.nameStr);
 
   @override
   final String nameStr;
@@ -302,32 +340,38 @@ class _$_NameChanged implements _NameChanged {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(Option<Trip> initialTripOption),
-    @required TResult nameChanged(String nameStr),
-    @required TResult descriptionChanged(String descriptionStr),
-    @required TResult completedPressed(),
-    @required TResult saved(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Trip> initialTripOption) initialized,
+    required TResult Function(String nameStr) nameChanged,
+    required TResult Function(String descriptionStr) descriptionChanged,
+    required TResult Function() completedPressed,
+    required TResult Function() saved,
   }) {
-    assert(initialized != null);
-    assert(nameChanged != null);
-    assert(descriptionChanged != null);
-    assert(completedPressed != null);
-    assert(saved != null);
     return nameChanged(nameStr);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Option<Trip> initialTripOption),
-    TResult nameChanged(String nameStr),
-    TResult descriptionChanged(String descriptionStr),
-    TResult completedPressed(),
-    TResult saved(),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<Trip> initialTripOption)? initialized,
+    TResult Function(String nameStr)? nameChanged,
+    TResult Function(String descriptionStr)? descriptionChanged,
+    TResult Function()? completedPressed,
+    TResult Function()? saved,
   }) {
-    assert(orElse != null);
+    return nameChanged?.call(nameStr);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Trip> initialTripOption)? initialized,
+    TResult Function(String nameStr)? nameChanged,
+    TResult Function(String descriptionStr)? descriptionChanged,
+    TResult Function()? completedPressed,
+    TResult Function()? saved,
+    required TResult orElse(),
+  }) {
     if (nameChanged != null) {
       return nameChanged(nameStr);
     }
@@ -336,32 +380,38 @@ class _$_NameChanged implements _NameChanged {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult nameChanged(_NameChanged value),
-    @required TResult descriptionChanged(_DescriptionChanged value),
-    @required TResult completedPressed(_CompletedPressed value),
-    @required TResult saved(_Saved value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_CompletedPressed value) completedPressed,
+    required TResult Function(_Saved value) saved,
   }) {
-    assert(initialized != null);
-    assert(nameChanged != null);
-    assert(descriptionChanged != null);
-    assert(completedPressed != null);
-    assert(saved != null);
     return nameChanged(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult nameChanged(_NameChanged value),
-    TResult descriptionChanged(_DescriptionChanged value),
-    TResult completedPressed(_CompletedPressed value),
-    TResult saved(_Saved value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_CompletedPressed value)? completedPressed,
+    TResult Function(_Saved value)? saved,
   }) {
-    assert(orElse != null);
+    return nameChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_CompletedPressed value)? completedPressed,
+    TResult Function(_Saved value)? saved,
+    required TResult orElse(),
+  }) {
     if (nameChanged != null) {
       return nameChanged(this);
     }
@@ -372,9 +422,10 @@ class _$_NameChanged implements _NameChanged {
 abstract class _NameChanged implements TripFormEvent {
   const factory _NameChanged(String nameStr) = _$_NameChanged;
 
-  String get nameStr;
+  String get nameStr => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$NameChangedCopyWith<_NameChanged> get copyWith;
+  _$NameChangedCopyWith<_NameChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -398,20 +449,21 @@ class __$DescriptionChangedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object descriptionStr = freezed,
+    Object? descriptionStr = freezed,
   }) {
     return _then(_DescriptionChanged(
       descriptionStr == freezed
           ? _value.descriptionStr
-          : descriptionStr as String,
+          : descriptionStr // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_DescriptionChanged implements _DescriptionChanged {
-  const _$_DescriptionChanged(this.descriptionStr)
-      : assert(descriptionStr != null);
+  const _$_DescriptionChanged(this.descriptionStr);
 
   @override
   final String descriptionStr;
@@ -442,32 +494,38 @@ class _$_DescriptionChanged implements _DescriptionChanged {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(Option<Trip> initialTripOption),
-    @required TResult nameChanged(String nameStr),
-    @required TResult descriptionChanged(String descriptionStr),
-    @required TResult completedPressed(),
-    @required TResult saved(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Trip> initialTripOption) initialized,
+    required TResult Function(String nameStr) nameChanged,
+    required TResult Function(String descriptionStr) descriptionChanged,
+    required TResult Function() completedPressed,
+    required TResult Function() saved,
   }) {
-    assert(initialized != null);
-    assert(nameChanged != null);
-    assert(descriptionChanged != null);
-    assert(completedPressed != null);
-    assert(saved != null);
     return descriptionChanged(descriptionStr);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Option<Trip> initialTripOption),
-    TResult nameChanged(String nameStr),
-    TResult descriptionChanged(String descriptionStr),
-    TResult completedPressed(),
-    TResult saved(),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<Trip> initialTripOption)? initialized,
+    TResult Function(String nameStr)? nameChanged,
+    TResult Function(String descriptionStr)? descriptionChanged,
+    TResult Function()? completedPressed,
+    TResult Function()? saved,
   }) {
-    assert(orElse != null);
+    return descriptionChanged?.call(descriptionStr);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Trip> initialTripOption)? initialized,
+    TResult Function(String nameStr)? nameChanged,
+    TResult Function(String descriptionStr)? descriptionChanged,
+    TResult Function()? completedPressed,
+    TResult Function()? saved,
+    required TResult orElse(),
+  }) {
     if (descriptionChanged != null) {
       return descriptionChanged(descriptionStr);
     }
@@ -476,32 +534,38 @@ class _$_DescriptionChanged implements _DescriptionChanged {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult nameChanged(_NameChanged value),
-    @required TResult descriptionChanged(_DescriptionChanged value),
-    @required TResult completedPressed(_CompletedPressed value),
-    @required TResult saved(_Saved value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_CompletedPressed value) completedPressed,
+    required TResult Function(_Saved value) saved,
   }) {
-    assert(initialized != null);
-    assert(nameChanged != null);
-    assert(descriptionChanged != null);
-    assert(completedPressed != null);
-    assert(saved != null);
     return descriptionChanged(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult nameChanged(_NameChanged value),
-    TResult descriptionChanged(_DescriptionChanged value),
-    TResult completedPressed(_CompletedPressed value),
-    TResult saved(_Saved value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_CompletedPressed value)? completedPressed,
+    TResult Function(_Saved value)? saved,
   }) {
-    assert(orElse != null);
+    return descriptionChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_CompletedPressed value)? completedPressed,
+    TResult Function(_Saved value)? saved,
+    required TResult orElse(),
+  }) {
     if (descriptionChanged != null) {
       return descriptionChanged(this);
     }
@@ -513,9 +577,10 @@ abstract class _DescriptionChanged implements TripFormEvent {
   const factory _DescriptionChanged(String descriptionStr) =
       _$_DescriptionChanged;
 
-  String get descriptionStr;
+  String get descriptionStr => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith;
+  _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -538,6 +603,7 @@ class __$CompletedPressedCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_CompletedPressed implements _CompletedPressed {
   const _$_CompletedPressed();
 
@@ -556,32 +622,38 @@ class _$_CompletedPressed implements _CompletedPressed {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(Option<Trip> initialTripOption),
-    @required TResult nameChanged(String nameStr),
-    @required TResult descriptionChanged(String descriptionStr),
-    @required TResult completedPressed(),
-    @required TResult saved(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Trip> initialTripOption) initialized,
+    required TResult Function(String nameStr) nameChanged,
+    required TResult Function(String descriptionStr) descriptionChanged,
+    required TResult Function() completedPressed,
+    required TResult Function() saved,
   }) {
-    assert(initialized != null);
-    assert(nameChanged != null);
-    assert(descriptionChanged != null);
-    assert(completedPressed != null);
-    assert(saved != null);
     return completedPressed();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Option<Trip> initialTripOption),
-    TResult nameChanged(String nameStr),
-    TResult descriptionChanged(String descriptionStr),
-    TResult completedPressed(),
-    TResult saved(),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<Trip> initialTripOption)? initialized,
+    TResult Function(String nameStr)? nameChanged,
+    TResult Function(String descriptionStr)? descriptionChanged,
+    TResult Function()? completedPressed,
+    TResult Function()? saved,
   }) {
-    assert(orElse != null);
+    return completedPressed?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Trip> initialTripOption)? initialized,
+    TResult Function(String nameStr)? nameChanged,
+    TResult Function(String descriptionStr)? descriptionChanged,
+    TResult Function()? completedPressed,
+    TResult Function()? saved,
+    required TResult orElse(),
+  }) {
     if (completedPressed != null) {
       return completedPressed();
     }
@@ -590,32 +662,38 @@ class _$_CompletedPressed implements _CompletedPressed {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult nameChanged(_NameChanged value),
-    @required TResult descriptionChanged(_DescriptionChanged value),
-    @required TResult completedPressed(_CompletedPressed value),
-    @required TResult saved(_Saved value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_CompletedPressed value) completedPressed,
+    required TResult Function(_Saved value) saved,
   }) {
-    assert(initialized != null);
-    assert(nameChanged != null);
-    assert(descriptionChanged != null);
-    assert(completedPressed != null);
-    assert(saved != null);
     return completedPressed(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult nameChanged(_NameChanged value),
-    TResult descriptionChanged(_DescriptionChanged value),
-    TResult completedPressed(_CompletedPressed value),
-    TResult saved(_Saved value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_CompletedPressed value)? completedPressed,
+    TResult Function(_Saved value)? saved,
   }) {
-    assert(orElse != null);
+    return completedPressed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_CompletedPressed value)? completedPressed,
+    TResult Function(_Saved value)? saved,
+    required TResult orElse(),
+  }) {
     if (completedPressed != null) {
       return completedPressed(this);
     }
@@ -644,6 +722,7 @@ class __$SavedCopyWithImpl<$Res> extends _$TripFormEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Saved implements _Saved {
   const _$_Saved();
 
@@ -662,32 +741,38 @@ class _$_Saved implements _Saved {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(Option<Trip> initialTripOption),
-    @required TResult nameChanged(String nameStr),
-    @required TResult descriptionChanged(String descriptionStr),
-    @required TResult completedPressed(),
-    @required TResult saved(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Trip> initialTripOption) initialized,
+    required TResult Function(String nameStr) nameChanged,
+    required TResult Function(String descriptionStr) descriptionChanged,
+    required TResult Function() completedPressed,
+    required TResult Function() saved,
   }) {
-    assert(initialized != null);
-    assert(nameChanged != null);
-    assert(descriptionChanged != null);
-    assert(completedPressed != null);
-    assert(saved != null);
     return saved();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Option<Trip> initialTripOption),
-    TResult nameChanged(String nameStr),
-    TResult descriptionChanged(String descriptionStr),
-    TResult completedPressed(),
-    TResult saved(),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<Trip> initialTripOption)? initialized,
+    TResult Function(String nameStr)? nameChanged,
+    TResult Function(String descriptionStr)? descriptionChanged,
+    TResult Function()? completedPressed,
+    TResult Function()? saved,
   }) {
-    assert(orElse != null);
+    return saved?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Trip> initialTripOption)? initialized,
+    TResult Function(String nameStr)? nameChanged,
+    TResult Function(String descriptionStr)? descriptionChanged,
+    TResult Function()? completedPressed,
+    TResult Function()? saved,
+    required TResult orElse(),
+  }) {
     if (saved != null) {
       return saved();
     }
@@ -696,32 +781,38 @@ class _$_Saved implements _Saved {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult nameChanged(_NameChanged value),
-    @required TResult descriptionChanged(_DescriptionChanged value),
-    @required TResult completedPressed(_CompletedPressed value),
-    @required TResult saved(_Saved value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_CompletedPressed value) completedPressed,
+    required TResult Function(_Saved value) saved,
   }) {
-    assert(initialized != null);
-    assert(nameChanged != null);
-    assert(descriptionChanged != null);
-    assert(completedPressed != null);
-    assert(saved != null);
     return saved(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult nameChanged(_NameChanged value),
-    TResult descriptionChanged(_DescriptionChanged value),
-    TResult completedPressed(_CompletedPressed value),
-    TResult saved(_Saved value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_CompletedPressed value)? completedPressed,
+    TResult Function(_Saved value)? saved,
   }) {
-    assert(orElse != null);
+    return saved?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_CompletedPressed value)? completedPressed,
+    TResult Function(_Saved value)? saved,
+    required TResult orElse(),
+  }) {
     if (saved != null) {
       return saved(this);
     }
@@ -737,13 +828,12 @@ abstract class _Saved implements TripFormEvent {
 class _$TripFormStateTearOff {
   const _$TripFormStateTearOff();
 
-// ignore: unused_element
   _TripFormState call(
-      {@required Trip trip,
-      @required bool showErrorMessages,
-      @required bool isEditing,
-      @required bool isSaving,
-      @required Option<Either<TripFailure, Unit>> saveFailureOrSuccessOption}) {
+      {required Trip trip,
+      required bool showErrorMessages,
+      required bool isEditing,
+      required bool isSaving,
+      required Option<Either<TripFailure, Unit>> saveFailureOrSuccessOption}) {
     return _TripFormState(
       trip: trip,
       showErrorMessages: showErrorMessages,
@@ -755,19 +845,20 @@ class _$TripFormStateTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $TripFormState = _$TripFormStateTearOff();
 
 /// @nodoc
 mixin _$TripFormState {
-  Trip get trip;
-  bool get showErrorMessages;
-  bool get isEditing;
-  bool get isSaving;
-  Option<Either<TripFailure, Unit>> get saveFailureOrSuccessOption;
+  Trip get trip => throw _privateConstructorUsedError;
+  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get isEditing => throw _privateConstructorUsedError;
+  bool get isSaving => throw _privateConstructorUsedError;
+  Option<Either<TripFailure, Unit>> get saveFailureOrSuccessOption =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $TripFormStateCopyWith<TripFormState> get copyWith;
+  $TripFormStateCopyWith<TripFormState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -796,30 +887,38 @@ class _$TripFormStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object trip = freezed,
-    Object showErrorMessages = freezed,
-    Object isEditing = freezed,
-    Object isSaving = freezed,
-    Object saveFailureOrSuccessOption = freezed,
+    Object? trip = freezed,
+    Object? showErrorMessages = freezed,
+    Object? isEditing = freezed,
+    Object? isSaving = freezed,
+    Object? saveFailureOrSuccessOption = freezed,
   }) {
     return _then(_value.copyWith(
-      trip: trip == freezed ? _value.trip : trip as Trip,
+      trip: trip == freezed
+          ? _value.trip
+          : trip // ignore: cast_nullable_to_non_nullable
+              as Trip,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
-          : showErrorMessages as bool,
-      isEditing: isEditing == freezed ? _value.isEditing : isEditing as bool,
-      isSaving: isSaving == freezed ? _value.isSaving : isSaving as bool,
+          : showErrorMessages // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isEditing: isEditing == freezed
+          ? _value.isEditing
+          : isEditing // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSaving: isSaving == freezed
+          ? _value.isSaving
+          : isSaving // ignore: cast_nullable_to_non_nullable
+              as bool,
       saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
           ? _value.saveFailureOrSuccessOption
-          : saveFailureOrSuccessOption as Option<Either<TripFailure, Unit>>,
+          : saveFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<TripFailure, Unit>>,
     ));
   }
 
   @override
   $TripCopyWith<$Res> get trip {
-    if (_value.trip == null) {
-      return null;
-    }
     return $TripCopyWith<$Res>(_value.trip, (value) {
       return _then(_value.copyWith(trip: value));
     });
@@ -857,39 +956,46 @@ class __$TripFormStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object trip = freezed,
-    Object showErrorMessages = freezed,
-    Object isEditing = freezed,
-    Object isSaving = freezed,
-    Object saveFailureOrSuccessOption = freezed,
+    Object? trip = freezed,
+    Object? showErrorMessages = freezed,
+    Object? isEditing = freezed,
+    Object? isSaving = freezed,
+    Object? saveFailureOrSuccessOption = freezed,
   }) {
     return _then(_TripFormState(
-      trip: trip == freezed ? _value.trip : trip as Trip,
+      trip: trip == freezed
+          ? _value.trip
+          : trip // ignore: cast_nullable_to_non_nullable
+              as Trip,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
-          : showErrorMessages as bool,
-      isEditing: isEditing == freezed ? _value.isEditing : isEditing as bool,
-      isSaving: isSaving == freezed ? _value.isSaving : isSaving as bool,
+          : showErrorMessages // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isEditing: isEditing == freezed
+          ? _value.isEditing
+          : isEditing // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSaving: isSaving == freezed
+          ? _value.isSaving
+          : isSaving // ignore: cast_nullable_to_non_nullable
+              as bool,
       saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
           ? _value.saveFailureOrSuccessOption
-          : saveFailureOrSuccessOption as Option<Either<TripFailure, Unit>>,
+          : saveFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<TripFailure, Unit>>,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_TripFormState implements _TripFormState {
   const _$_TripFormState(
-      {@required this.trip,
-      @required this.showErrorMessages,
-      @required this.isEditing,
-      @required this.isSaving,
-      @required this.saveFailureOrSuccessOption})
-      : assert(trip != null),
-        assert(showErrorMessages != null),
-        assert(isEditing != null),
-        assert(isSaving != null),
-        assert(saveFailureOrSuccessOption != null);
+      {required this.trip,
+      required this.showErrorMessages,
+      required this.isEditing,
+      required this.isSaving,
+      required this.saveFailureOrSuccessOption});
 
   @override
   final Trip trip;
@@ -946,29 +1052,26 @@ class _$_TripFormState implements _TripFormState {
 
 abstract class _TripFormState implements TripFormState {
   const factory _TripFormState(
-          {@required
-              Trip trip,
-          @required
-              bool showErrorMessages,
-          @required
-              bool isEditing,
-          @required
-              bool isSaving,
-          @required
-              Option<Either<TripFailure, Unit>> saveFailureOrSuccessOption}) =
-      _$_TripFormState;
+      {required Trip trip,
+      required bool showErrorMessages,
+      required bool isEditing,
+      required bool isSaving,
+      required Option<Either<TripFailure, Unit>>
+          saveFailureOrSuccessOption}) = _$_TripFormState;
 
   @override
-  Trip get trip;
+  Trip get trip => throw _privateConstructorUsedError;
   @override
-  bool get showErrorMessages;
+  bool get showErrorMessages => throw _privateConstructorUsedError;
   @override
-  bool get isEditing;
+  bool get isEditing => throw _privateConstructorUsedError;
   @override
-  bool get isSaving;
+  bool get isSaving => throw _privateConstructorUsedError;
   @override
-  Option<Either<TripFailure, Unit>> get saveFailureOrSuccessOption;
+  Option<Either<TripFailure, Unit>> get saveFailureOrSuccessOption =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$TripFormStateCopyWith<_TripFormState> get copyWith;
+  _$TripFormStateCopyWith<_TripFormState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

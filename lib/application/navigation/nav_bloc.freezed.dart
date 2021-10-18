@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'nav_bloc.dart';
 
@@ -9,11 +10,13 @@ part of 'nav_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$NavEventTearOff {
   const _$NavEventTearOff();
 
-// ignore: unused_element
   NavigateTo navigateTo(NavItem destination) {
     return NavigateTo(
       destination,
@@ -22,34 +25,48 @@ class _$NavEventTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $NavEvent = _$NavEventTearOff();
 
 /// @nodoc
 mixin _$NavEvent {
-  NavItem get destination;
+  NavItem get destination => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult navigateTo(NavItem destination),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(NavItem destination) navigateTo,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult navigateTo(NavItem destination),
-    @required TResult orElse(),
-  });
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(NavItem destination)? navigateTo,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult navigateTo(NavigateTo value),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(NavItem destination)? navigateTo,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult navigateTo(NavigateTo value),
-    @required TResult orElse(),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(NavigateTo value) navigateTo,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(NavigateTo value)? navigateTo,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NavigateTo value)? navigateTo,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $NavEventCopyWith<NavEvent> get copyWith;
+  $NavEventCopyWith<NavEvent> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -69,11 +86,13 @@ class _$NavEventCopyWithImpl<$Res> implements $NavEventCopyWith<$Res> {
 
   @override
   $Res call({
-    Object destination = freezed,
+    Object? destination = freezed,
   }) {
     return _then(_value.copyWith(
-      destination:
-          destination == freezed ? _value.destination : destination as NavItem,
+      destination: destination == freezed
+          ? _value.destination
+          : destination // ignore: cast_nullable_to_non_nullable
+              as NavItem,
     ));
   }
 }
@@ -98,17 +117,21 @@ class _$NavigateToCopyWithImpl<$Res> extends _$NavEventCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object destination = freezed,
+    Object? destination = freezed,
   }) {
     return _then(NavigateTo(
-      destination == freezed ? _value.destination : destination as NavItem,
+      destination == freezed
+          ? _value.destination
+          : destination // ignore: cast_nullable_to_non_nullable
+              as NavItem,
     ));
   }
 }
 
 /// @nodoc
+
 class _$NavigateTo implements NavigateTo {
-  const _$NavigateTo(this.destination) : assert(destination != null);
+  const _$NavigateTo(this.destination);
 
   @override
   final NavItem destination;
@@ -138,20 +161,26 @@ class _$NavigateTo implements NavigateTo {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult navigateTo(NavItem destination),
+  TResult when<TResult extends Object?>({
+    required TResult Function(NavItem destination) navigateTo,
   }) {
-    assert(navigateTo != null);
     return navigateTo(destination);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult navigateTo(NavItem destination),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(NavItem destination)? navigateTo,
   }) {
-    assert(orElse != null);
+    return navigateTo?.call(destination);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(NavItem destination)? navigateTo,
+    required TResult orElse(),
+  }) {
     if (navigateTo != null) {
       return navigateTo(destination);
     }
@@ -160,20 +189,26 @@ class _$NavigateTo implements NavigateTo {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult navigateTo(NavigateTo value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(NavigateTo value) navigateTo,
   }) {
-    assert(navigateTo != null);
     return navigateTo(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult navigateTo(NavigateTo value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(NavigateTo value)? navigateTo,
   }) {
-    assert(orElse != null);
+    return navigateTo?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NavigateTo value)? navigateTo,
+    required TResult orElse(),
+  }) {
     if (navigateTo != null) {
       return navigateTo(this);
     }
@@ -185,25 +220,24 @@ abstract class NavigateTo implements NavEvent {
   const factory NavigateTo(NavItem destination) = _$NavigateTo;
 
   @override
-  NavItem get destination;
+  NavItem get destination => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $NavigateToCopyWith<NavigateTo> get copyWith;
+  $NavigateToCopyWith<NavigateTo> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$NavStateTearOff {
   const _$NavStateTearOff();
 
-// ignore: unused_element
-  _NavState call({@required NavItem selectedItem}) {
+  _NavState call({required NavItem selectedItem}) {
     return _NavState(
       selectedItem: selectedItem,
     );
   }
 
-// ignore: unused_element
-  SelectItem selectItem({@required NavItem selectedItem}) {
+  SelectItem selectItem({required NavItem selectedItem}) {
     return SelectItem(
       selectedItem: selectedItem,
     );
@@ -211,38 +245,54 @@ class _$NavStateTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $NavState = _$NavStateTearOff();
 
 /// @nodoc
 mixin _$NavState {
-  NavItem get selectedItem;
+  NavItem get selectedItem => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
-  TResult when<TResult extends Object>(
-    TResult $default(NavItem selectedItem), {
-    @required TResult selectItem(NavItem selectedItem),
-  });
+  TResult when<TResult extends Object?>(
+    TResult Function(NavItem selectedItem) $default, {
+    required TResult Function(NavItem selectedItem) selectItem,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>(
-    TResult $default(NavItem selectedItem), {
-    TResult selectItem(NavItem selectedItem),
-    @required TResult orElse(),
-  });
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(NavItem selectedItem)? $default, {
+    TResult Function(NavItem selectedItem)? selectItem,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>(
-    TResult $default(_NavState value), {
-    @required TResult selectItem(SelectItem value),
-  });
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(NavItem selectedItem)? $default, {
+    TResult Function(NavItem selectedItem)? selectItem,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>(
-    TResult $default(_NavState value), {
-    TResult selectItem(SelectItem value),
-    @required TResult orElse(),
-  });
+  TResult map<TResult extends Object?>(
+    TResult Function(_NavState value) $default, {
+    required TResult Function(SelectItem value) selectItem,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(_NavState value)? $default, {
+    TResult Function(SelectItem value)? selectItem,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_NavState value)? $default, {
+    TResult Function(SelectItem value)? selectItem,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $NavStateCopyWith<NavState> get copyWith;
+  $NavStateCopyWith<NavState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -262,12 +312,13 @@ class _$NavStateCopyWithImpl<$Res> implements $NavStateCopyWith<$Res> {
 
   @override
   $Res call({
-    Object selectedItem = freezed,
+    Object? selectedItem = freezed,
   }) {
     return _then(_value.copyWith(
       selectedItem: selectedItem == freezed
           ? _value.selectedItem
-          : selectedItem as NavItem,
+          : selectedItem // ignore: cast_nullable_to_non_nullable
+              as NavItem,
     ));
   }
 }
@@ -291,20 +342,21 @@ class __$NavStateCopyWithImpl<$Res> extends _$NavStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object selectedItem = freezed,
+    Object? selectedItem = freezed,
   }) {
     return _then(_NavState(
       selectedItem: selectedItem == freezed
           ? _value.selectedItem
-          : selectedItem as NavItem,
+          : selectedItem // ignore: cast_nullable_to_non_nullable
+              as NavItem,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_NavState implements _NavState {
-  const _$_NavState({@required this.selectedItem})
-      : assert(selectedItem != null);
+  const _$_NavState({required this.selectedItem});
 
   @override
   final NavItem selectedItem;
@@ -334,23 +386,29 @@ class _$_NavState implements _NavState {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>(
-    TResult $default(NavItem selectedItem), {
-    @required TResult selectItem(NavItem selectedItem),
+  TResult when<TResult extends Object?>(
+    TResult Function(NavItem selectedItem) $default, {
+    required TResult Function(NavItem selectedItem) selectItem,
   }) {
-    assert($default != null);
-    assert(selectItem != null);
     return $default(selectedItem);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>(
-    TResult $default(NavItem selectedItem), {
-    TResult selectItem(NavItem selectedItem),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(NavItem selectedItem)? $default, {
+    TResult Function(NavItem selectedItem)? selectItem,
   }) {
-    assert(orElse != null);
+    return $default?.call(selectedItem);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(NavItem selectedItem)? $default, {
+    TResult Function(NavItem selectedItem)? selectItem,
+    required TResult orElse(),
+  }) {
     if ($default != null) {
       return $default(selectedItem);
     }
@@ -359,23 +417,29 @@ class _$_NavState implements _NavState {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>(
-    TResult $default(_NavState value), {
-    @required TResult selectItem(SelectItem value),
+  TResult map<TResult extends Object?>(
+    TResult Function(_NavState value) $default, {
+    required TResult Function(SelectItem value) selectItem,
   }) {
-    assert($default != null);
-    assert(selectItem != null);
     return $default(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>(
-    TResult $default(_NavState value), {
-    TResult selectItem(SelectItem value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(_NavState value)? $default, {
+    TResult Function(SelectItem value)? selectItem,
   }) {
-    assert(orElse != null);
+    return $default?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_NavState value)? $default, {
+    TResult Function(SelectItem value)? selectItem,
+    required TResult orElse(),
+  }) {
     if ($default != null) {
       return $default(this);
     }
@@ -384,13 +448,14 @@ class _$_NavState implements _NavState {
 }
 
 abstract class _NavState implements NavState {
-  const factory _NavState({@required NavItem selectedItem}) = _$_NavState;
+  const factory _NavState({required NavItem selectedItem}) = _$_NavState;
 
   @override
-  NavItem get selectedItem;
+  NavItem get selectedItem => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$NavStateCopyWith<_NavState> get copyWith;
+  _$NavStateCopyWith<_NavState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -413,20 +478,21 @@ class _$SelectItemCopyWithImpl<$Res> extends _$NavStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object selectedItem = freezed,
+    Object? selectedItem = freezed,
   }) {
     return _then(SelectItem(
       selectedItem: selectedItem == freezed
           ? _value.selectedItem
-          : selectedItem as NavItem,
+          : selectedItem // ignore: cast_nullable_to_non_nullable
+              as NavItem,
     ));
   }
 }
 
 /// @nodoc
+
 class _$SelectItem implements SelectItem {
-  const _$SelectItem({@required this.selectedItem})
-      : assert(selectedItem != null);
+  const _$SelectItem({required this.selectedItem});
 
   @override
   final NavItem selectedItem;
@@ -456,23 +522,29 @@ class _$SelectItem implements SelectItem {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>(
-    TResult $default(NavItem selectedItem), {
-    @required TResult selectItem(NavItem selectedItem),
+  TResult when<TResult extends Object?>(
+    TResult Function(NavItem selectedItem) $default, {
+    required TResult Function(NavItem selectedItem) selectItem,
   }) {
-    assert($default != null);
-    assert(selectItem != null);
     return selectItem(selectedItem);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>(
-    TResult $default(NavItem selectedItem), {
-    TResult selectItem(NavItem selectedItem),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(NavItem selectedItem)? $default, {
+    TResult Function(NavItem selectedItem)? selectItem,
   }) {
-    assert(orElse != null);
+    return selectItem?.call(selectedItem);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(NavItem selectedItem)? $default, {
+    TResult Function(NavItem selectedItem)? selectItem,
+    required TResult orElse(),
+  }) {
     if (selectItem != null) {
       return selectItem(selectedItem);
     }
@@ -481,23 +553,29 @@ class _$SelectItem implements SelectItem {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>(
-    TResult $default(_NavState value), {
-    @required TResult selectItem(SelectItem value),
+  TResult map<TResult extends Object?>(
+    TResult Function(_NavState value) $default, {
+    required TResult Function(SelectItem value) selectItem,
   }) {
-    assert($default != null);
-    assert(selectItem != null);
     return selectItem(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>(
-    TResult $default(_NavState value), {
-    TResult selectItem(SelectItem value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(_NavState value)? $default, {
+    TResult Function(SelectItem value)? selectItem,
   }) {
-    assert(orElse != null);
+    return selectItem?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_NavState value)? $default, {
+    TResult Function(SelectItem value)? selectItem,
+    required TResult orElse(),
+  }) {
     if (selectItem != null) {
       return selectItem(this);
     }
@@ -506,11 +584,12 @@ class _$SelectItem implements SelectItem {
 }
 
 abstract class SelectItem implements NavState {
-  const factory SelectItem({@required NavItem selectedItem}) = _$SelectItem;
+  const factory SelectItem({required NavItem selectedItem}) = _$SelectItem;
 
   @override
-  NavItem get selectedItem;
+  NavItem get selectedItem => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $SelectItemCopyWith<SelectItem> get copyWith;
+  $SelectItemCopyWith<SelectItem> get copyWith =>
+      throw _privateConstructorUsedError;
 }

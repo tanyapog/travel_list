@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'trip_watcher_bloc.dart';
 
@@ -9,21 +10,21 @@ part of 'trip_watcher_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$TripWatcherEventTearOff {
   const _$TripWatcherEventTearOff();
 
-// ignore: unused_element
   _WatchAllStarted watchAllStarted() {
     return const _WatchAllStarted();
   }
 
-// ignore: unused_element
   _WatchUncompletedStarted watchUncompletedStarted() {
     return const _WatchUncompletedStarted();
   }
 
-// ignore: unused_element
   _TripsReceived tripsReceived(Either<TripFailure, List<Trip>> failureOrTrips) {
     return _TripsReceived(
       failureOrTrips,
@@ -32,38 +33,58 @@ class _$TripWatcherEventTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $TripWatcherEvent = _$TripWatcherEventTearOff();
 
 /// @nodoc
 mixin _$TripWatcherEvent {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult watchAllStarted(),
-    @required TResult watchUncompletedStarted(),
-    @required
-        TResult tripsReceived(Either<TripFailure, List<Trip>> failureOrTrips),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() watchAllStarted,
+    required TResult Function() watchUncompletedStarted,
+    required TResult Function(Either<TripFailure, List<Trip>> failureOrTrips)
+        tripsReceived,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult watchAllStarted(),
-    TResult watchUncompletedStarted(),
-    TResult tripsReceived(Either<TripFailure, List<Trip>> failureOrTrips),
-    @required TResult orElse(),
-  });
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? watchAllStarted,
+    TResult Function()? watchUncompletedStarted,
+    TResult Function(Either<TripFailure, List<Trip>> failureOrTrips)?
+        tripsReceived,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult watchAllStarted(_WatchAllStarted value),
-    @required TResult watchUncompletedStarted(_WatchUncompletedStarted value),
-    @required TResult tripsReceived(_TripsReceived value),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? watchAllStarted,
+    TResult Function()? watchUncompletedStarted,
+    TResult Function(Either<TripFailure, List<Trip>> failureOrTrips)?
+        tripsReceived,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult watchAllStarted(_WatchAllStarted value),
-    TResult watchUncompletedStarted(_WatchUncompletedStarted value),
-    TResult tripsReceived(_TripsReceived value),
-    @required TResult orElse(),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_WatchAllStarted value) watchAllStarted,
+    required TResult Function(_WatchUncompletedStarted value)
+        watchUncompletedStarted,
+    required TResult Function(_TripsReceived value) tripsReceived,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_WatchAllStarted value)? watchAllStarted,
+    TResult Function(_WatchUncompletedStarted value)? watchUncompletedStarted,
+    TResult Function(_TripsReceived value)? tripsReceived,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_WatchAllStarted value)? watchAllStarted,
+    TResult Function(_WatchUncompletedStarted value)? watchUncompletedStarted,
+    TResult Function(_TripsReceived value)? tripsReceived,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -103,6 +124,7 @@ class __$WatchAllStartedCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_WatchAllStarted implements _WatchAllStarted {
   const _$_WatchAllStarted();
 
@@ -121,27 +143,35 @@ class _$_WatchAllStarted implements _WatchAllStarted {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult watchAllStarted(),
-    @required TResult watchUncompletedStarted(),
-    @required
-        TResult tripsReceived(Either<TripFailure, List<Trip>> failureOrTrips),
+  TResult when<TResult extends Object?>({
+    required TResult Function() watchAllStarted,
+    required TResult Function() watchUncompletedStarted,
+    required TResult Function(Either<TripFailure, List<Trip>> failureOrTrips)
+        tripsReceived,
   }) {
-    assert(watchAllStarted != null);
-    assert(watchUncompletedStarted != null);
-    assert(tripsReceived != null);
     return watchAllStarted();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult watchAllStarted(),
-    TResult watchUncompletedStarted(),
-    TResult tripsReceived(Either<TripFailure, List<Trip>> failureOrTrips),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? watchAllStarted,
+    TResult Function()? watchUncompletedStarted,
+    TResult Function(Either<TripFailure, List<Trip>> failureOrTrips)?
+        tripsReceived,
   }) {
-    assert(orElse != null);
+    return watchAllStarted?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? watchAllStarted,
+    TResult Function()? watchUncompletedStarted,
+    TResult Function(Either<TripFailure, List<Trip>> failureOrTrips)?
+        tripsReceived,
+    required TResult orElse(),
+  }) {
     if (watchAllStarted != null) {
       return watchAllStarted();
     }
@@ -150,26 +180,33 @@ class _$_WatchAllStarted implements _WatchAllStarted {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult watchAllStarted(_WatchAllStarted value),
-    @required TResult watchUncompletedStarted(_WatchUncompletedStarted value),
-    @required TResult tripsReceived(_TripsReceived value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_WatchAllStarted value) watchAllStarted,
+    required TResult Function(_WatchUncompletedStarted value)
+        watchUncompletedStarted,
+    required TResult Function(_TripsReceived value) tripsReceived,
   }) {
-    assert(watchAllStarted != null);
-    assert(watchUncompletedStarted != null);
-    assert(tripsReceived != null);
     return watchAllStarted(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult watchAllStarted(_WatchAllStarted value),
-    TResult watchUncompletedStarted(_WatchUncompletedStarted value),
-    TResult tripsReceived(_TripsReceived value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_WatchAllStarted value)? watchAllStarted,
+    TResult Function(_WatchUncompletedStarted value)? watchUncompletedStarted,
+    TResult Function(_TripsReceived value)? tripsReceived,
   }) {
-    assert(orElse != null);
+    return watchAllStarted?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_WatchAllStarted value)? watchAllStarted,
+    TResult Function(_WatchUncompletedStarted value)? watchUncompletedStarted,
+    TResult Function(_TripsReceived value)? tripsReceived,
+    required TResult orElse(),
+  }) {
     if (watchAllStarted != null) {
       return watchAllStarted(this);
     }
@@ -202,6 +239,7 @@ class __$WatchUncompletedStartedCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_WatchUncompletedStarted implements _WatchUncompletedStarted {
   const _$_WatchUncompletedStarted();
 
@@ -220,27 +258,35 @@ class _$_WatchUncompletedStarted implements _WatchUncompletedStarted {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult watchAllStarted(),
-    @required TResult watchUncompletedStarted(),
-    @required
-        TResult tripsReceived(Either<TripFailure, List<Trip>> failureOrTrips),
+  TResult when<TResult extends Object?>({
+    required TResult Function() watchAllStarted,
+    required TResult Function() watchUncompletedStarted,
+    required TResult Function(Either<TripFailure, List<Trip>> failureOrTrips)
+        tripsReceived,
   }) {
-    assert(watchAllStarted != null);
-    assert(watchUncompletedStarted != null);
-    assert(tripsReceived != null);
     return watchUncompletedStarted();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult watchAllStarted(),
-    TResult watchUncompletedStarted(),
-    TResult tripsReceived(Either<TripFailure, List<Trip>> failureOrTrips),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? watchAllStarted,
+    TResult Function()? watchUncompletedStarted,
+    TResult Function(Either<TripFailure, List<Trip>> failureOrTrips)?
+        tripsReceived,
   }) {
-    assert(orElse != null);
+    return watchUncompletedStarted?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? watchAllStarted,
+    TResult Function()? watchUncompletedStarted,
+    TResult Function(Either<TripFailure, List<Trip>> failureOrTrips)?
+        tripsReceived,
+    required TResult orElse(),
+  }) {
     if (watchUncompletedStarted != null) {
       return watchUncompletedStarted();
     }
@@ -249,26 +295,33 @@ class _$_WatchUncompletedStarted implements _WatchUncompletedStarted {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult watchAllStarted(_WatchAllStarted value),
-    @required TResult watchUncompletedStarted(_WatchUncompletedStarted value),
-    @required TResult tripsReceived(_TripsReceived value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_WatchAllStarted value) watchAllStarted,
+    required TResult Function(_WatchUncompletedStarted value)
+        watchUncompletedStarted,
+    required TResult Function(_TripsReceived value) tripsReceived,
   }) {
-    assert(watchAllStarted != null);
-    assert(watchUncompletedStarted != null);
-    assert(tripsReceived != null);
     return watchUncompletedStarted(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult watchAllStarted(_WatchAllStarted value),
-    TResult watchUncompletedStarted(_WatchUncompletedStarted value),
-    TResult tripsReceived(_TripsReceived value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_WatchAllStarted value)? watchAllStarted,
+    TResult Function(_WatchUncompletedStarted value)? watchUncompletedStarted,
+    TResult Function(_TripsReceived value)? tripsReceived,
   }) {
-    assert(orElse != null);
+    return watchUncompletedStarted?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_WatchAllStarted value)? watchAllStarted,
+    TResult Function(_WatchUncompletedStarted value)? watchUncompletedStarted,
+    TResult Function(_TripsReceived value)? tripsReceived,
+    required TResult orElse(),
+  }) {
     if (watchUncompletedStarted != null) {
       return watchUncompletedStarted(this);
     }
@@ -301,19 +354,21 @@ class __$TripsReceivedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object failureOrTrips = freezed,
+    Object? failureOrTrips = freezed,
   }) {
     return _then(_TripsReceived(
       failureOrTrips == freezed
           ? _value.failureOrTrips
-          : failureOrTrips as Either<TripFailure, List<Trip>>,
+          : failureOrTrips // ignore: cast_nullable_to_non_nullable
+              as Either<TripFailure, List<Trip>>,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_TripsReceived implements _TripsReceived {
-  const _$_TripsReceived(this.failureOrTrips) : assert(failureOrTrips != null);
+  const _$_TripsReceived(this.failureOrTrips);
 
   @override
   final Either<TripFailure, List<Trip>> failureOrTrips;
@@ -344,27 +399,35 @@ class _$_TripsReceived implements _TripsReceived {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult watchAllStarted(),
-    @required TResult watchUncompletedStarted(),
-    @required
-        TResult tripsReceived(Either<TripFailure, List<Trip>> failureOrTrips),
+  TResult when<TResult extends Object?>({
+    required TResult Function() watchAllStarted,
+    required TResult Function() watchUncompletedStarted,
+    required TResult Function(Either<TripFailure, List<Trip>> failureOrTrips)
+        tripsReceived,
   }) {
-    assert(watchAllStarted != null);
-    assert(watchUncompletedStarted != null);
-    assert(tripsReceived != null);
     return tripsReceived(failureOrTrips);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult watchAllStarted(),
-    TResult watchUncompletedStarted(),
-    TResult tripsReceived(Either<TripFailure, List<Trip>> failureOrTrips),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? watchAllStarted,
+    TResult Function()? watchUncompletedStarted,
+    TResult Function(Either<TripFailure, List<Trip>> failureOrTrips)?
+        tripsReceived,
   }) {
-    assert(orElse != null);
+    return tripsReceived?.call(failureOrTrips);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? watchAllStarted,
+    TResult Function()? watchUncompletedStarted,
+    TResult Function(Either<TripFailure, List<Trip>> failureOrTrips)?
+        tripsReceived,
+    required TResult orElse(),
+  }) {
     if (tripsReceived != null) {
       return tripsReceived(failureOrTrips);
     }
@@ -373,26 +436,33 @@ class _$_TripsReceived implements _TripsReceived {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult watchAllStarted(_WatchAllStarted value),
-    @required TResult watchUncompletedStarted(_WatchUncompletedStarted value),
-    @required TResult tripsReceived(_TripsReceived value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_WatchAllStarted value) watchAllStarted,
+    required TResult Function(_WatchUncompletedStarted value)
+        watchUncompletedStarted,
+    required TResult Function(_TripsReceived value) tripsReceived,
   }) {
-    assert(watchAllStarted != null);
-    assert(watchUncompletedStarted != null);
-    assert(tripsReceived != null);
     return tripsReceived(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult watchAllStarted(_WatchAllStarted value),
-    TResult watchUncompletedStarted(_WatchUncompletedStarted value),
-    TResult tripsReceived(_TripsReceived value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_WatchAllStarted value)? watchAllStarted,
+    TResult Function(_WatchUncompletedStarted value)? watchUncompletedStarted,
+    TResult Function(_TripsReceived value)? tripsReceived,
   }) {
-    assert(orElse != null);
+    return tripsReceived?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_WatchAllStarted value)? watchAllStarted,
+    TResult Function(_WatchUncompletedStarted value)? watchUncompletedStarted,
+    TResult Function(_TripsReceived value)? tripsReceived,
+    required TResult orElse(),
+  }) {
     if (tripsReceived != null) {
       return tripsReceived(this);
     }
@@ -404,33 +474,31 @@ abstract class _TripsReceived implements TripWatcherEvent {
   const factory _TripsReceived(Either<TripFailure, List<Trip>> failureOrTrips) =
       _$_TripsReceived;
 
-  Either<TripFailure, List<Trip>> get failureOrTrips;
+  Either<TripFailure, List<Trip>> get failureOrTrips =>
+      throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$TripsReceivedCopyWith<_TripsReceived> get copyWith;
+  _$TripsReceivedCopyWith<_TripsReceived> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$TripWatcherStateTearOff {
   const _$TripWatcherStateTearOff();
 
-// ignore: unused_element
   _Initial initial() {
     return const _Initial();
   }
 
-// ignore: unused_element
   _LoadInProgress loadInProgress() {
     return const _LoadInProgress();
   }
 
-// ignore: unused_element
   _LoadSuccess loadSuccess(List<Trip> trips) {
     return _LoadSuccess(
       trips,
     );
   }
 
-// ignore: unused_element
   _LoadFailure loadFailure(TripFailure tripFailure) {
     return _LoadFailure(
       tripFailure,
@@ -439,41 +507,60 @@ class _$TripWatcherStateTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $TripWatcherState = _$TripWatcherStateTearOff();
 
 /// @nodoc
 mixin _$TripWatcherState {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loadInProgress(),
-    @required TResult loadSuccess(List<Trip> trips),
-    @required TResult loadFailure(TripFailure tripFailure),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadInProgress,
+    required TResult Function(List<Trip> trips) loadSuccess,
+    required TResult Function(TripFailure tripFailure) loadFailure,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loadInProgress(),
-    TResult loadSuccess(List<Trip> trips),
-    TResult loadFailure(TripFailure tripFailure),
-    @required TResult orElse(),
-  });
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(List<Trip> trips)? loadSuccess,
+    TResult Function(TripFailure tripFailure)? loadFailure,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult loadInProgress(_LoadInProgress value),
-    @required TResult loadSuccess(_LoadSuccess value),
-    @required TResult loadFailure(_LoadFailure value),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(List<Trip> trips)? loadSuccess,
+    TResult Function(TripFailure tripFailure)? loadFailure,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult loadInProgress(_LoadInProgress value),
-    TResult loadSuccess(_LoadSuccess value),
-    TResult loadFailure(_LoadFailure value),
-    @required TResult orElse(),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_LoadFailure value) loadFailure,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -510,6 +597,7 @@ class __$InitialCopyWithImpl<$Res> extends _$TripWatcherStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -528,29 +616,35 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loadInProgress(),
-    @required TResult loadSuccess(List<Trip> trips),
-    @required TResult loadFailure(TripFailure tripFailure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadInProgress,
+    required TResult Function(List<Trip> trips) loadSuccess,
+    required TResult Function(TripFailure tripFailure) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return initial();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loadInProgress(),
-    TResult loadSuccess(List<Trip> trips),
-    TResult loadFailure(TripFailure tripFailure),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(List<Trip> trips)? loadSuccess,
+    TResult Function(TripFailure tripFailure)? loadFailure,
   }) {
-    assert(orElse != null);
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(List<Trip> trips)? loadSuccess,
+    TResult Function(TripFailure tripFailure)? loadFailure,
+    required TResult orElse(),
+  }) {
     if (initial != null) {
       return initial();
     }
@@ -559,29 +653,35 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult loadInProgress(_LoadInProgress value),
-    @required TResult loadSuccess(_LoadSuccess value),
-    @required TResult loadFailure(_LoadFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_LoadFailure value) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return initial(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult loadInProgress(_LoadInProgress value),
-    TResult loadSuccess(_LoadSuccess value),
-    TResult loadFailure(_LoadFailure value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
   }) {
-    assert(orElse != null);
+    return initial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+    required TResult orElse(),
+  }) {
     if (initial != null) {
       return initial(this);
     }
@@ -613,6 +713,7 @@ class __$LoadInProgressCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_LoadInProgress implements _LoadInProgress {
   const _$_LoadInProgress();
 
@@ -631,29 +732,35 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loadInProgress(),
-    @required TResult loadSuccess(List<Trip> trips),
-    @required TResult loadFailure(TripFailure tripFailure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadInProgress,
+    required TResult Function(List<Trip> trips) loadSuccess,
+    required TResult Function(TripFailure tripFailure) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return loadInProgress();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loadInProgress(),
-    TResult loadSuccess(List<Trip> trips),
-    TResult loadFailure(TripFailure tripFailure),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(List<Trip> trips)? loadSuccess,
+    TResult Function(TripFailure tripFailure)? loadFailure,
   }) {
-    assert(orElse != null);
+    return loadInProgress?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(List<Trip> trips)? loadSuccess,
+    TResult Function(TripFailure tripFailure)? loadFailure,
+    required TResult orElse(),
+  }) {
     if (loadInProgress != null) {
       return loadInProgress();
     }
@@ -662,29 +769,35 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult loadInProgress(_LoadInProgress value),
-    @required TResult loadSuccess(_LoadSuccess value),
-    @required TResult loadFailure(_LoadFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_LoadFailure value) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return loadInProgress(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult loadInProgress(_LoadInProgress value),
-    TResult loadSuccess(_LoadSuccess value),
-    TResult loadFailure(_LoadFailure value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
   }) {
-    assert(orElse != null);
+    return loadInProgress?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+    required TResult orElse(),
+  }) {
     if (loadInProgress != null) {
       return loadInProgress(this);
     }
@@ -717,17 +830,21 @@ class __$LoadSuccessCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object trips = freezed,
+    Object? trips = freezed,
   }) {
     return _then(_LoadSuccess(
-      trips == freezed ? _value.trips : trips as List<Trip>,
+      trips == freezed
+          ? _value.trips
+          : trips // ignore: cast_nullable_to_non_nullable
+              as List<Trip>,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_LoadSuccess implements _LoadSuccess {
-  const _$_LoadSuccess(this.trips) : assert(trips != null);
+  const _$_LoadSuccess(this.trips);
 
   @override
   final List<Trip> trips;
@@ -756,29 +873,35 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loadInProgress(),
-    @required TResult loadSuccess(List<Trip> trips),
-    @required TResult loadFailure(TripFailure tripFailure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadInProgress,
+    required TResult Function(List<Trip> trips) loadSuccess,
+    required TResult Function(TripFailure tripFailure) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return loadSuccess(trips);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loadInProgress(),
-    TResult loadSuccess(List<Trip> trips),
-    TResult loadFailure(TripFailure tripFailure),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(List<Trip> trips)? loadSuccess,
+    TResult Function(TripFailure tripFailure)? loadFailure,
   }) {
-    assert(orElse != null);
+    return loadSuccess?.call(trips);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(List<Trip> trips)? loadSuccess,
+    TResult Function(TripFailure tripFailure)? loadFailure,
+    required TResult orElse(),
+  }) {
     if (loadSuccess != null) {
       return loadSuccess(trips);
     }
@@ -787,29 +910,35 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult loadInProgress(_LoadInProgress value),
-    @required TResult loadSuccess(_LoadSuccess value),
-    @required TResult loadFailure(_LoadFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_LoadFailure value) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return loadSuccess(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult loadInProgress(_LoadInProgress value),
-    TResult loadSuccess(_LoadSuccess value),
-    TResult loadFailure(_LoadFailure value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
   }) {
-    assert(orElse != null);
+    return loadSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+    required TResult orElse(),
+  }) {
     if (loadSuccess != null) {
       return loadSuccess(this);
     }
@@ -820,9 +949,10 @@ class _$_LoadSuccess implements _LoadSuccess {
 abstract class _LoadSuccess implements TripWatcherState {
   const factory _LoadSuccess(List<Trip> trips) = _$_LoadSuccess;
 
-  List<Trip> get trips;
+  List<Trip> get trips => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
+  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -848,18 +978,18 @@ class __$LoadFailureCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object tripFailure = freezed,
+    Object? tripFailure = freezed,
   }) {
     return _then(_LoadFailure(
-      tripFailure == freezed ? _value.tripFailure : tripFailure as TripFailure,
+      tripFailure == freezed
+          ? _value.tripFailure
+          : tripFailure // ignore: cast_nullable_to_non_nullable
+              as TripFailure,
     ));
   }
 
   @override
   $TripFailureCopyWith<$Res> get tripFailure {
-    if (_value.tripFailure == null) {
-      return null;
-    }
     return $TripFailureCopyWith<$Res>(_value.tripFailure, (value) {
       return _then(_value.copyWith(tripFailure: value));
     });
@@ -867,8 +997,9 @@ class __$LoadFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_LoadFailure implements _LoadFailure {
-  const _$_LoadFailure(this.tripFailure) : assert(tripFailure != null);
+  const _$_LoadFailure(this.tripFailure);
 
   @override
   final TripFailure tripFailure;
@@ -898,29 +1029,35 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loadInProgress(),
-    @required TResult loadSuccess(List<Trip> trips),
-    @required TResult loadFailure(TripFailure tripFailure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadInProgress,
+    required TResult Function(List<Trip> trips) loadSuccess,
+    required TResult Function(TripFailure tripFailure) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return loadFailure(tripFailure);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loadInProgress(),
-    TResult loadSuccess(List<Trip> trips),
-    TResult loadFailure(TripFailure tripFailure),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(List<Trip> trips)? loadSuccess,
+    TResult Function(TripFailure tripFailure)? loadFailure,
   }) {
-    assert(orElse != null);
+    return loadFailure?.call(tripFailure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(List<Trip> trips)? loadSuccess,
+    TResult Function(TripFailure tripFailure)? loadFailure,
+    required TResult orElse(),
+  }) {
     if (loadFailure != null) {
       return loadFailure(tripFailure);
     }
@@ -929,29 +1066,35 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult loadInProgress(_LoadInProgress value),
-    @required TResult loadSuccess(_LoadSuccess value),
-    @required TResult loadFailure(_LoadFailure value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadSuccess value) loadSuccess,
+    required TResult Function(_LoadFailure value) loadFailure,
   }) {
-    assert(initial != null);
-    assert(loadInProgress != null);
-    assert(loadSuccess != null);
-    assert(loadFailure != null);
     return loadFailure(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult loadInProgress(_LoadInProgress value),
-    TResult loadSuccess(_LoadSuccess value),
-    TResult loadFailure(_LoadFailure value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
   }) {
-    assert(orElse != null);
+    return loadFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+    required TResult orElse(),
+  }) {
     if (loadFailure != null) {
       return loadFailure(this);
     }
@@ -962,7 +1105,8 @@ class _$_LoadFailure implements _LoadFailure {
 abstract class _LoadFailure implements TripWatcherState {
   const factory _LoadFailure(TripFailure tripFailure) = _$_LoadFailure;
 
-  TripFailure get tripFailure;
+  TripFailure get tripFailure => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$LoadFailureCopyWith<_LoadFailure> get copyWith;
+  _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
+      throw _privateConstructorUsedError;
 }

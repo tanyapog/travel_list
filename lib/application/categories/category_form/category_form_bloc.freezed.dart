@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'category_form_bloc.dart';
 
@@ -9,62 +10,79 @@ part of 'category_form_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$CategoryFormEventTearOff {
   const _$CategoryFormEventTearOff();
 
-// ignore: unused_element
   _Initialized initialized(Category initialCategory) {
     return _Initialized(
       initialCategory,
     );
   }
 
-// ignore: unused_element
   _NameChanged nameChanged(String nameStr) {
     return _NameChanged(
       nameStr,
     );
   }
 
-// ignore: unused_element
   _Saved saved() {
     return const _Saved();
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $CategoryFormEvent = _$CategoryFormEventTearOff();
 
 /// @nodoc
 mixin _$CategoryFormEvent {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(Category initialCategory),
-    @required TResult nameChanged(String nameStr),
-    @required TResult saved(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(Category initialCategory) initialized,
+    required TResult Function(String nameStr) nameChanged,
+    required TResult Function() saved,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Category initialCategory),
-    TResult nameChanged(String nameStr),
-    TResult saved(),
-    @required TResult orElse(),
-  });
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Category initialCategory)? initialized,
+    TResult Function(String nameStr)? nameChanged,
+    TResult Function()? saved,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult nameChanged(_NameChanged value),
-    @required TResult saved(_Saved value),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Category initialCategory)? initialized,
+    TResult Function(String nameStr)? nameChanged,
+    TResult Function()? saved,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult nameChanged(_NameChanged value),
-    TResult saved(_Saved value),
-    @required TResult orElse(),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_Saved value) saved,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_Saved value)? saved,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_Saved value)? saved,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -107,20 +125,18 @@ class __$InitializedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object initialCategory = freezed,
+    Object? initialCategory = freezed,
   }) {
     return _then(_Initialized(
       initialCategory == freezed
           ? _value.initialCategory
-          : initialCategory as Category,
+          : initialCategory // ignore: cast_nullable_to_non_nullable
+              as Category,
     ));
   }
 
   @override
   $CategoryCopyWith<$Res> get initialCategory {
-    if (_value.initialCategory == null) {
-      return null;
-    }
     return $CategoryCopyWith<$Res>(_value.initialCategory, (value) {
       return _then(_value.copyWith(initialCategory: value));
     });
@@ -128,8 +144,9 @@ class __$InitializedCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Initialized implements _Initialized {
-  const _$_Initialized(this.initialCategory) : assert(initialCategory != null);
+  const _$_Initialized(this.initialCategory);
 
   @override
   final Category initialCategory;
@@ -160,26 +177,32 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(Category initialCategory),
-    @required TResult nameChanged(String nameStr),
-    @required TResult saved(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Category initialCategory) initialized,
+    required TResult Function(String nameStr) nameChanged,
+    required TResult Function() saved,
   }) {
-    assert(initialized != null);
-    assert(nameChanged != null);
-    assert(saved != null);
     return initialized(initialCategory);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Category initialCategory),
-    TResult nameChanged(String nameStr),
-    TResult saved(),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Category initialCategory)? initialized,
+    TResult Function(String nameStr)? nameChanged,
+    TResult Function()? saved,
   }) {
-    assert(orElse != null);
+    return initialized?.call(initialCategory);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Category initialCategory)? initialized,
+    TResult Function(String nameStr)? nameChanged,
+    TResult Function()? saved,
+    required TResult orElse(),
+  }) {
     if (initialized != null) {
       return initialized(initialCategory);
     }
@@ -188,26 +211,32 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult nameChanged(_NameChanged value),
-    @required TResult saved(_Saved value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_Saved value) saved,
   }) {
-    assert(initialized != null);
-    assert(nameChanged != null);
-    assert(saved != null);
     return initialized(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult nameChanged(_NameChanged value),
-    TResult saved(_Saved value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_Saved value)? saved,
   }) {
-    assert(orElse != null);
+    return initialized?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_Saved value)? saved,
+    required TResult orElse(),
+  }) {
     if (initialized != null) {
       return initialized(this);
     }
@@ -218,9 +247,10 @@ class _$_Initialized implements _Initialized {
 abstract class _Initialized implements CategoryFormEvent {
   const factory _Initialized(Category initialCategory) = _$_Initialized;
 
-  Category get initialCategory;
+  Category get initialCategory => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$InitializedCopyWith<_Initialized> get copyWith;
+  _$InitializedCopyWith<_Initialized> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -244,17 +274,21 @@ class __$NameChangedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object nameStr = freezed,
+    Object? nameStr = freezed,
   }) {
     return _then(_NameChanged(
-      nameStr == freezed ? _value.nameStr : nameStr as String,
+      nameStr == freezed
+          ? _value.nameStr
+          : nameStr // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_NameChanged implements _NameChanged {
-  const _$_NameChanged(this.nameStr) : assert(nameStr != null);
+  const _$_NameChanged(this.nameStr);
 
   @override
   final String nameStr;
@@ -283,26 +317,32 @@ class _$_NameChanged implements _NameChanged {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(Category initialCategory),
-    @required TResult nameChanged(String nameStr),
-    @required TResult saved(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Category initialCategory) initialized,
+    required TResult Function(String nameStr) nameChanged,
+    required TResult Function() saved,
   }) {
-    assert(initialized != null);
-    assert(nameChanged != null);
-    assert(saved != null);
     return nameChanged(nameStr);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Category initialCategory),
-    TResult nameChanged(String nameStr),
-    TResult saved(),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Category initialCategory)? initialized,
+    TResult Function(String nameStr)? nameChanged,
+    TResult Function()? saved,
   }) {
-    assert(orElse != null);
+    return nameChanged?.call(nameStr);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Category initialCategory)? initialized,
+    TResult Function(String nameStr)? nameChanged,
+    TResult Function()? saved,
+    required TResult orElse(),
+  }) {
     if (nameChanged != null) {
       return nameChanged(nameStr);
     }
@@ -311,26 +351,32 @@ class _$_NameChanged implements _NameChanged {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult nameChanged(_NameChanged value),
-    @required TResult saved(_Saved value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_Saved value) saved,
   }) {
-    assert(initialized != null);
-    assert(nameChanged != null);
-    assert(saved != null);
     return nameChanged(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult nameChanged(_NameChanged value),
-    TResult saved(_Saved value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_Saved value)? saved,
   }) {
-    assert(orElse != null);
+    return nameChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_Saved value)? saved,
+    required TResult orElse(),
+  }) {
     if (nameChanged != null) {
       return nameChanged(this);
     }
@@ -341,9 +387,10 @@ class _$_NameChanged implements _NameChanged {
 abstract class _NameChanged implements CategoryFormEvent {
   const factory _NameChanged(String nameStr) = _$_NameChanged;
 
-  String get nameStr;
+  String get nameStr => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$NameChangedCopyWith<_NameChanged> get copyWith;
+  _$NameChangedCopyWith<_NameChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -363,6 +410,7 @@ class __$SavedCopyWithImpl<$Res> extends _$CategoryFormEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Saved implements _Saved {
   const _$_Saved();
 
@@ -381,26 +429,32 @@ class _$_Saved implements _Saved {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(Category initialCategory),
-    @required TResult nameChanged(String nameStr),
-    @required TResult saved(),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Category initialCategory) initialized,
+    required TResult Function(String nameStr) nameChanged,
+    required TResult Function() saved,
   }) {
-    assert(initialized != null);
-    assert(nameChanged != null);
-    assert(saved != null);
     return saved();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Category initialCategory),
-    TResult nameChanged(String nameStr),
-    TResult saved(),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Category initialCategory)? initialized,
+    TResult Function(String nameStr)? nameChanged,
+    TResult Function()? saved,
   }) {
-    assert(orElse != null);
+    return saved?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Category initialCategory)? initialized,
+    TResult Function(String nameStr)? nameChanged,
+    TResult Function()? saved,
+    required TResult orElse(),
+  }) {
     if (saved != null) {
       return saved();
     }
@@ -409,26 +463,32 @@ class _$_Saved implements _Saved {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult nameChanged(_NameChanged value),
-    @required TResult saved(_Saved value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_Saved value) saved,
   }) {
-    assert(initialized != null);
-    assert(nameChanged != null);
-    assert(saved != null);
     return saved(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult nameChanged(_NameChanged value),
-    TResult saved(_Saved value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_Saved value)? saved,
   }) {
-    assert(orElse != null);
+    return saved?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_Saved value)? saved,
+    required TResult orElse(),
+  }) {
     if (saved != null) {
       return saved(this);
     }
@@ -444,13 +504,12 @@ abstract class _Saved implements CategoryFormEvent {
 class _$CategoryFormStateTearOff {
   const _$CategoryFormStateTearOff();
 
-// ignore: unused_element
   _CategoryFormState call(
-      {@required Category category,
-      @required bool isEditing,
-      @required bool isSaving,
-      CategoryFailure categoryFailure,
-      bool savedSuccessfully}) {
+      {required Category category,
+      required bool isEditing,
+      required bool isSaving,
+      CategoryFailure? categoryFailure,
+      bool? savedSuccessfully}) {
     return _CategoryFormState(
       category: category,
       isEditing: isEditing,
@@ -462,20 +521,20 @@ class _$CategoryFormStateTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $CategoryFormState = _$CategoryFormStateTearOff();
 
 /// @nodoc
 mixin _$CategoryFormState {
-  Category get category;
-  bool
-      get isEditing; // is this editing an existing category or creating a new one
-  bool get isSaving;
-  CategoryFailure get categoryFailure;
-  bool get savedSuccessfully;
+  Category get category => throw _privateConstructorUsedError;
+  bool get isEditing =>
+      throw _privateConstructorUsedError; // is this editing an existing category or creating a new one
+  bool get isSaving => throw _privateConstructorUsedError;
+  CategoryFailure? get categoryFailure => throw _privateConstructorUsedError;
+  bool? get savedSuccessfully => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $CategoryFormStateCopyWith<CategoryFormState> get copyWith;
+  $CategoryFormStateCopyWith<CategoryFormState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -487,11 +546,11 @@ abstract class $CategoryFormStateCopyWith<$Res> {
       {Category category,
       bool isEditing,
       bool isSaving,
-      CategoryFailure categoryFailure,
-      bool savedSuccessfully});
+      CategoryFailure? categoryFailure,
+      bool? savedSuccessfully});
 
   $CategoryCopyWith<$Res> get category;
-  $CategoryFailureCopyWith<$Res> get categoryFailure;
+  $CategoryFailureCopyWith<$Res>? get categoryFailure;
 }
 
 /// @nodoc
@@ -505,41 +564,50 @@ class _$CategoryFormStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object category = freezed,
-    Object isEditing = freezed,
-    Object isSaving = freezed,
-    Object categoryFailure = freezed,
-    Object savedSuccessfully = freezed,
+    Object? category = freezed,
+    Object? isEditing = freezed,
+    Object? isSaving = freezed,
+    Object? categoryFailure = freezed,
+    Object? savedSuccessfully = freezed,
   }) {
     return _then(_value.copyWith(
-      category: category == freezed ? _value.category : category as Category,
-      isEditing: isEditing == freezed ? _value.isEditing : isEditing as bool,
-      isSaving: isSaving == freezed ? _value.isSaving : isSaving as bool,
+      category: category == freezed
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as Category,
+      isEditing: isEditing == freezed
+          ? _value.isEditing
+          : isEditing // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSaving: isSaving == freezed
+          ? _value.isSaving
+          : isSaving // ignore: cast_nullable_to_non_nullable
+              as bool,
       categoryFailure: categoryFailure == freezed
           ? _value.categoryFailure
-          : categoryFailure as CategoryFailure,
+          : categoryFailure // ignore: cast_nullable_to_non_nullable
+              as CategoryFailure?,
       savedSuccessfully: savedSuccessfully == freezed
           ? _value.savedSuccessfully
-          : savedSuccessfully as bool,
+          : savedSuccessfully // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 
   @override
   $CategoryCopyWith<$Res> get category {
-    if (_value.category == null) {
-      return null;
-    }
     return $CategoryCopyWith<$Res>(_value.category, (value) {
       return _then(_value.copyWith(category: value));
     });
   }
 
   @override
-  $CategoryFailureCopyWith<$Res> get categoryFailure {
+  $CategoryFailureCopyWith<$Res>? get categoryFailure {
     if (_value.categoryFailure == null) {
       return null;
     }
-    return $CategoryFailureCopyWith<$Res>(_value.categoryFailure, (value) {
+
+    return $CategoryFailureCopyWith<$Res>(_value.categoryFailure!, (value) {
       return _then(_value.copyWith(categoryFailure: value));
     });
   }
@@ -556,13 +624,13 @@ abstract class _$CategoryFormStateCopyWith<$Res>
       {Category category,
       bool isEditing,
       bool isSaving,
-      CategoryFailure categoryFailure,
-      bool savedSuccessfully});
+      CategoryFailure? categoryFailure,
+      bool? savedSuccessfully});
 
   @override
   $CategoryCopyWith<$Res> get category;
   @override
-  $CategoryFailureCopyWith<$Res> get categoryFailure;
+  $CategoryFailureCopyWith<$Res>? get categoryFailure;
 }
 
 /// @nodoc
@@ -578,37 +646,46 @@ class __$CategoryFormStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object category = freezed,
-    Object isEditing = freezed,
-    Object isSaving = freezed,
-    Object categoryFailure = freezed,
-    Object savedSuccessfully = freezed,
+    Object? category = freezed,
+    Object? isEditing = freezed,
+    Object? isSaving = freezed,
+    Object? categoryFailure = freezed,
+    Object? savedSuccessfully = freezed,
   }) {
     return _then(_CategoryFormState(
-      category: category == freezed ? _value.category : category as Category,
-      isEditing: isEditing == freezed ? _value.isEditing : isEditing as bool,
-      isSaving: isSaving == freezed ? _value.isSaving : isSaving as bool,
+      category: category == freezed
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as Category,
+      isEditing: isEditing == freezed
+          ? _value.isEditing
+          : isEditing // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSaving: isSaving == freezed
+          ? _value.isSaving
+          : isSaving // ignore: cast_nullable_to_non_nullable
+              as bool,
       categoryFailure: categoryFailure == freezed
           ? _value.categoryFailure
-          : categoryFailure as CategoryFailure,
+          : categoryFailure // ignore: cast_nullable_to_non_nullable
+              as CategoryFailure?,
       savedSuccessfully: savedSuccessfully == freezed
           ? _value.savedSuccessfully
-          : savedSuccessfully as bool,
+          : savedSuccessfully // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_CategoryFormState implements _CategoryFormState {
   const _$_CategoryFormState(
-      {@required this.category,
-      @required this.isEditing,
-      @required this.isSaving,
+      {required this.category,
+      required this.isEditing,
+      required this.isSaving,
       this.categoryFailure,
-      this.savedSuccessfully})
-      : assert(category != null),
-        assert(isEditing != null),
-        assert(isSaving != null);
+      this.savedSuccessfully});
 
   @override
   final Category category;
@@ -617,9 +694,9 @@ class _$_CategoryFormState implements _CategoryFormState {
   @override // is this editing an existing category or creating a new one
   final bool isSaving;
   @override
-  final CategoryFailure categoryFailure;
+  final CategoryFailure? categoryFailure;
   @override
-  final bool savedSuccessfully;
+  final bool? savedSuccessfully;
 
   @override
   String toString() {
@@ -664,23 +741,24 @@ class _$_CategoryFormState implements _CategoryFormState {
 
 abstract class _CategoryFormState implements CategoryFormState {
   const factory _CategoryFormState(
-      {@required Category category,
-      @required bool isEditing,
-      @required bool isSaving,
-      CategoryFailure categoryFailure,
-      bool savedSuccessfully}) = _$_CategoryFormState;
+      {required Category category,
+      required bool isEditing,
+      required bool isSaving,
+      CategoryFailure? categoryFailure,
+      bool? savedSuccessfully}) = _$_CategoryFormState;
 
   @override
-  Category get category;
+  Category get category => throw _privateConstructorUsedError;
   @override
-  bool get isEditing;
+  bool get isEditing => throw _privateConstructorUsedError;
   @override // is this editing an existing category or creating a new one
-  bool get isSaving;
+  bool get isSaving => throw _privateConstructorUsedError;
   @override
-  CategoryFailure get categoryFailure;
+  CategoryFailure? get categoryFailure => throw _privateConstructorUsedError;
   @override
-  bool get savedSuccessfully;
+  bool? get savedSuccessfully => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$CategoryFormStateCopyWith<_CategoryFormState> get copyWith;
+  _$CategoryFormStateCopyWith<_CategoryFormState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

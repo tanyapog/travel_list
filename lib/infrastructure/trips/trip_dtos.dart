@@ -21,7 +21,7 @@ class TripDto implements _$TripDto {
   }) = _TripDto;
 
   factory TripDto.fromDomain(Trip trip) => TripDto(
-    id: trip.id.getOrCrash().toString(),
+    id: trip.id.getOrCrash(),
     name: trip.name.getOrCrash(),
     description: trip.description.getOrCrash(),
     complete: trip.complete,

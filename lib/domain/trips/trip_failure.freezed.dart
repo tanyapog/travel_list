@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'trip_failure.dart';
 
@@ -9,11 +10,13 @@ part of 'trip_failure.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$TripFailureTearOff {
   const _$TripFailureTearOff();
 
-// ignore: unused_element
   _InsufficientPermission insufficientPermission(
       PlatformException e, String message) {
     return _InsufficientPermission(
@@ -22,7 +25,6 @@ class _$TripFailureTearOff {
     );
   }
 
-// ignore: unused_element
   _UnableToUpdate unableToUpdate(PlatformException e, String message) {
     return _UnableToUpdate(
       e,
@@ -30,7 +32,6 @@ class _$TripFailureTearOff {
     );
   }
 
-// ignore: unused_element
   _PlatformSpecific platformSpecific(PlatformException e, String message) {
     return _PlatformSpecific(
       e,
@@ -38,7 +39,6 @@ class _$TripFailureTearOff {
     );
   }
 
-// ignore: unused_element
   _Unexpected unexpected(Exception e, String message) {
     return _Unexpected(
       e,
@@ -46,7 +46,6 @@ class _$TripFailureTearOff {
     );
   }
 
-// ignore: unused_element
   _UnableToProcess unableToProcess(dynamic obj, String message) {
     return _UnableToProcess(
       obj,
@@ -56,51 +55,78 @@ class _$TripFailureTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $TripFailure = _$TripFailureTearOff();
 
 /// @nodoc
 mixin _$TripFailure {
-  String get message;
+  String get message => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required
-        TResult insufficientPermission(PlatformException e, String message),
-    @required TResult unableToUpdate(PlatformException e, String message),
-    @required TResult platformSpecific(PlatformException e, String message),
-    @required TResult unexpected(Exception e, String message),
-    @required TResult unableToProcess(dynamic obj, String message),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(PlatformException e, String message)
+        insufficientPermission,
+    required TResult Function(PlatformException e, String message)
+        unableToUpdate,
+    required TResult Function(PlatformException e, String message)
+        platformSpecific,
+    required TResult Function(Exception e, String message) unexpected,
+    required TResult Function(dynamic obj, String message) unableToProcess,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult insufficientPermission(PlatformException e, String message),
-    TResult unableToUpdate(PlatformException e, String message),
-    TResult platformSpecific(PlatformException e, String message),
-    TResult unexpected(Exception e, String message),
-    TResult unableToProcess(dynamic obj, String message),
-    @required TResult orElse(),
-  });
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(PlatformException e, String message)?
+        insufficientPermission,
+    TResult Function(PlatformException e, String message)? unableToUpdate,
+    TResult Function(PlatformException e, String message)? platformSpecific,
+    TResult Function(Exception e, String message)? unexpected,
+    TResult Function(dynamic obj, String message)? unableToProcess,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult insufficientPermission(_InsufficientPermission value),
-    @required TResult unableToUpdate(_UnableToUpdate value),
-    @required TResult platformSpecific(_PlatformSpecific value),
-    @required TResult unexpected(_Unexpected value),
-    @required TResult unableToProcess(_UnableToProcess value),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(PlatformException e, String message)?
+        insufficientPermission,
+    TResult Function(PlatformException e, String message)? unableToUpdate,
+    TResult Function(PlatformException e, String message)? platformSpecific,
+    TResult Function(Exception e, String message)? unexpected,
+    TResult Function(dynamic obj, String message)? unableToProcess,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult insufficientPermission(_InsufficientPermission value),
-    TResult unableToUpdate(_UnableToUpdate value),
-    TResult platformSpecific(_PlatformSpecific value),
-    TResult unexpected(_Unexpected value),
-    TResult unableToProcess(_UnableToProcess value),
-    @required TResult orElse(),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InsufficientPermission value)
+        insufficientPermission,
+    required TResult Function(_UnableToUpdate value) unableToUpdate,
+    required TResult Function(_PlatformSpecific value) platformSpecific,
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_UnableToProcess value) unableToProcess,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_InsufficientPermission value)? insufficientPermission,
+    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_PlatformSpecific value)? platformSpecific,
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_UnableToProcess value)? unableToProcess,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InsufficientPermission value)? insufficientPermission,
+    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_PlatformSpecific value)? platformSpecific,
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_UnableToProcess value)? unableToProcess,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $TripFailureCopyWith<TripFailure> get copyWith;
+  $TripFailureCopyWith<TripFailure> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -121,10 +147,13 @@ class _$TripFailureCopyWithImpl<$Res> implements $TripFailureCopyWith<$Res> {
 
   @override
   $Res call({
-    Object message = freezed,
+    Object? message = freezed,
   }) {
     return _then(_value.copyWith(
-      message: message == freezed ? _value.message : message as String,
+      message: message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -152,21 +181,26 @@ class __$InsufficientPermissionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object e = freezed,
-    Object message = freezed,
+    Object? e = freezed,
+    Object? message = freezed,
   }) {
     return _then(_InsufficientPermission(
-      e == freezed ? _value.e : e as PlatformException,
-      message == freezed ? _value.message : message as String,
+      e == freezed
+          ? _value.e
+          : e // ignore: cast_nullable_to_non_nullable
+              as PlatformException,
+      message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_InsufficientPermission implements _InsufficientPermission {
-  const _$_InsufficientPermission(this.e, this.message)
-      : assert(e != null),
-        assert(message != null);
+  const _$_InsufficientPermission(this.e, this.message);
 
   @override
   final PlatformException e;
@@ -202,33 +236,43 @@ class _$_InsufficientPermission implements _InsufficientPermission {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required
-        TResult insufficientPermission(PlatformException e, String message),
-    @required TResult unableToUpdate(PlatformException e, String message),
-    @required TResult platformSpecific(PlatformException e, String message),
-    @required TResult unexpected(Exception e, String message),
-    @required TResult unableToProcess(dynamic obj, String message),
+  TResult when<TResult extends Object?>({
+    required TResult Function(PlatformException e, String message)
+        insufficientPermission,
+    required TResult Function(PlatformException e, String message)
+        unableToUpdate,
+    required TResult Function(PlatformException e, String message)
+        platformSpecific,
+    required TResult Function(Exception e, String message) unexpected,
+    required TResult Function(dynamic obj, String message) unableToProcess,
   }) {
-    assert(insufficientPermission != null);
-    assert(unableToUpdate != null);
-    assert(platformSpecific != null);
-    assert(unexpected != null);
-    assert(unableToProcess != null);
     return insufficientPermission(e, message);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult insufficientPermission(PlatformException e, String message),
-    TResult unableToUpdate(PlatformException e, String message),
-    TResult platformSpecific(PlatformException e, String message),
-    TResult unexpected(Exception e, String message),
-    TResult unableToProcess(dynamic obj, String message),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(PlatformException e, String message)?
+        insufficientPermission,
+    TResult Function(PlatformException e, String message)? unableToUpdate,
+    TResult Function(PlatformException e, String message)? platformSpecific,
+    TResult Function(Exception e, String message)? unexpected,
+    TResult Function(dynamic obj, String message)? unableToProcess,
   }) {
-    assert(orElse != null);
+    return insufficientPermission?.call(e, message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(PlatformException e, String message)?
+        insufficientPermission,
+    TResult Function(PlatformException e, String message)? unableToUpdate,
+    TResult Function(PlatformException e, String message)? platformSpecific,
+    TResult Function(Exception e, String message)? unexpected,
+    TResult Function(dynamic obj, String message)? unableToProcess,
+    required TResult orElse(),
+  }) {
     if (insufficientPermission != null) {
       return insufficientPermission(e, message);
     }
@@ -237,32 +281,39 @@ class _$_InsufficientPermission implements _InsufficientPermission {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult insufficientPermission(_InsufficientPermission value),
-    @required TResult unableToUpdate(_UnableToUpdate value),
-    @required TResult platformSpecific(_PlatformSpecific value),
-    @required TResult unexpected(_Unexpected value),
-    @required TResult unableToProcess(_UnableToProcess value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InsufficientPermission value)
+        insufficientPermission,
+    required TResult Function(_UnableToUpdate value) unableToUpdate,
+    required TResult Function(_PlatformSpecific value) platformSpecific,
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_UnableToProcess value) unableToProcess,
   }) {
-    assert(insufficientPermission != null);
-    assert(unableToUpdate != null);
-    assert(platformSpecific != null);
-    assert(unexpected != null);
-    assert(unableToProcess != null);
     return insufficientPermission(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult insufficientPermission(_InsufficientPermission value),
-    TResult unableToUpdate(_UnableToUpdate value),
-    TResult platformSpecific(_PlatformSpecific value),
-    TResult unexpected(_Unexpected value),
-    TResult unableToProcess(_UnableToProcess value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_InsufficientPermission value)? insufficientPermission,
+    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_PlatformSpecific value)? platformSpecific,
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_UnableToProcess value)? unableToProcess,
   }) {
-    assert(orElse != null);
+    return insufficientPermission?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InsufficientPermission value)? insufficientPermission,
+    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_PlatformSpecific value)? platformSpecific,
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_UnableToProcess value)? unableToProcess,
+    required TResult orElse(),
+  }) {
     if (insufficientPermission != null) {
       return insufficientPermission(this);
     }
@@ -274,12 +325,13 @@ abstract class _InsufficientPermission implements TripFailure {
   const factory _InsufficientPermission(PlatformException e, String message) =
       _$_InsufficientPermission;
 
-  PlatformException get e;
+  PlatformException get e => throw _privateConstructorUsedError;
   @override
-  String get message;
+  String get message => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$InsufficientPermissionCopyWith<_InsufficientPermission> get copyWith;
+  _$InsufficientPermissionCopyWith<_InsufficientPermission> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -305,21 +357,26 @@ class __$UnableToUpdateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object e = freezed,
-    Object message = freezed,
+    Object? e = freezed,
+    Object? message = freezed,
   }) {
     return _then(_UnableToUpdate(
-      e == freezed ? _value.e : e as PlatformException,
-      message == freezed ? _value.message : message as String,
+      e == freezed
+          ? _value.e
+          : e // ignore: cast_nullable_to_non_nullable
+              as PlatformException,
+      message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_UnableToUpdate implements _UnableToUpdate {
-  const _$_UnableToUpdate(this.e, this.message)
-      : assert(e != null),
-        assert(message != null);
+  const _$_UnableToUpdate(this.e, this.message);
 
   @override
   final PlatformException e;
@@ -354,33 +411,43 @@ class _$_UnableToUpdate implements _UnableToUpdate {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required
-        TResult insufficientPermission(PlatformException e, String message),
-    @required TResult unableToUpdate(PlatformException e, String message),
-    @required TResult platformSpecific(PlatformException e, String message),
-    @required TResult unexpected(Exception e, String message),
-    @required TResult unableToProcess(dynamic obj, String message),
+  TResult when<TResult extends Object?>({
+    required TResult Function(PlatformException e, String message)
+        insufficientPermission,
+    required TResult Function(PlatformException e, String message)
+        unableToUpdate,
+    required TResult Function(PlatformException e, String message)
+        platformSpecific,
+    required TResult Function(Exception e, String message) unexpected,
+    required TResult Function(dynamic obj, String message) unableToProcess,
   }) {
-    assert(insufficientPermission != null);
-    assert(unableToUpdate != null);
-    assert(platformSpecific != null);
-    assert(unexpected != null);
-    assert(unableToProcess != null);
     return unableToUpdate(e, message);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult insufficientPermission(PlatformException e, String message),
-    TResult unableToUpdate(PlatformException e, String message),
-    TResult platformSpecific(PlatformException e, String message),
-    TResult unexpected(Exception e, String message),
-    TResult unableToProcess(dynamic obj, String message),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(PlatformException e, String message)?
+        insufficientPermission,
+    TResult Function(PlatformException e, String message)? unableToUpdate,
+    TResult Function(PlatformException e, String message)? platformSpecific,
+    TResult Function(Exception e, String message)? unexpected,
+    TResult Function(dynamic obj, String message)? unableToProcess,
   }) {
-    assert(orElse != null);
+    return unableToUpdate?.call(e, message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(PlatformException e, String message)?
+        insufficientPermission,
+    TResult Function(PlatformException e, String message)? unableToUpdate,
+    TResult Function(PlatformException e, String message)? platformSpecific,
+    TResult Function(Exception e, String message)? unexpected,
+    TResult Function(dynamic obj, String message)? unableToProcess,
+    required TResult orElse(),
+  }) {
     if (unableToUpdate != null) {
       return unableToUpdate(e, message);
     }
@@ -389,32 +456,39 @@ class _$_UnableToUpdate implements _UnableToUpdate {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult insufficientPermission(_InsufficientPermission value),
-    @required TResult unableToUpdate(_UnableToUpdate value),
-    @required TResult platformSpecific(_PlatformSpecific value),
-    @required TResult unexpected(_Unexpected value),
-    @required TResult unableToProcess(_UnableToProcess value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InsufficientPermission value)
+        insufficientPermission,
+    required TResult Function(_UnableToUpdate value) unableToUpdate,
+    required TResult Function(_PlatformSpecific value) platformSpecific,
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_UnableToProcess value) unableToProcess,
   }) {
-    assert(insufficientPermission != null);
-    assert(unableToUpdate != null);
-    assert(platformSpecific != null);
-    assert(unexpected != null);
-    assert(unableToProcess != null);
     return unableToUpdate(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult insufficientPermission(_InsufficientPermission value),
-    TResult unableToUpdate(_UnableToUpdate value),
-    TResult platformSpecific(_PlatformSpecific value),
-    TResult unexpected(_Unexpected value),
-    TResult unableToProcess(_UnableToProcess value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_InsufficientPermission value)? insufficientPermission,
+    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_PlatformSpecific value)? platformSpecific,
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_UnableToProcess value)? unableToProcess,
   }) {
-    assert(orElse != null);
+    return unableToUpdate?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InsufficientPermission value)? insufficientPermission,
+    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_PlatformSpecific value)? platformSpecific,
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_UnableToProcess value)? unableToProcess,
+    required TResult orElse(),
+  }) {
     if (unableToUpdate != null) {
       return unableToUpdate(this);
     }
@@ -426,12 +500,13 @@ abstract class _UnableToUpdate implements TripFailure {
   const factory _UnableToUpdate(PlatformException e, String message) =
       _$_UnableToUpdate;
 
-  PlatformException get e;
+  PlatformException get e => throw _privateConstructorUsedError;
   @override
-  String get message;
+  String get message => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$UnableToUpdateCopyWith<_UnableToUpdate> get copyWith;
+  _$UnableToUpdateCopyWith<_UnableToUpdate> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -457,21 +532,26 @@ class __$PlatformSpecificCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object e = freezed,
-    Object message = freezed,
+    Object? e = freezed,
+    Object? message = freezed,
   }) {
     return _then(_PlatformSpecific(
-      e == freezed ? _value.e : e as PlatformException,
-      message == freezed ? _value.message : message as String,
+      e == freezed
+          ? _value.e
+          : e // ignore: cast_nullable_to_non_nullable
+              as PlatformException,
+      message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_PlatformSpecific implements _PlatformSpecific {
-  const _$_PlatformSpecific(this.e, this.message)
-      : assert(e != null),
-        assert(message != null);
+  const _$_PlatformSpecific(this.e, this.message);
 
   @override
   final PlatformException e;
@@ -506,33 +586,43 @@ class _$_PlatformSpecific implements _PlatformSpecific {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required
-        TResult insufficientPermission(PlatformException e, String message),
-    @required TResult unableToUpdate(PlatformException e, String message),
-    @required TResult platformSpecific(PlatformException e, String message),
-    @required TResult unexpected(Exception e, String message),
-    @required TResult unableToProcess(dynamic obj, String message),
+  TResult when<TResult extends Object?>({
+    required TResult Function(PlatformException e, String message)
+        insufficientPermission,
+    required TResult Function(PlatformException e, String message)
+        unableToUpdate,
+    required TResult Function(PlatformException e, String message)
+        platformSpecific,
+    required TResult Function(Exception e, String message) unexpected,
+    required TResult Function(dynamic obj, String message) unableToProcess,
   }) {
-    assert(insufficientPermission != null);
-    assert(unableToUpdate != null);
-    assert(platformSpecific != null);
-    assert(unexpected != null);
-    assert(unableToProcess != null);
     return platformSpecific(e, message);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult insufficientPermission(PlatformException e, String message),
-    TResult unableToUpdate(PlatformException e, String message),
-    TResult platformSpecific(PlatformException e, String message),
-    TResult unexpected(Exception e, String message),
-    TResult unableToProcess(dynamic obj, String message),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(PlatformException e, String message)?
+        insufficientPermission,
+    TResult Function(PlatformException e, String message)? unableToUpdate,
+    TResult Function(PlatformException e, String message)? platformSpecific,
+    TResult Function(Exception e, String message)? unexpected,
+    TResult Function(dynamic obj, String message)? unableToProcess,
   }) {
-    assert(orElse != null);
+    return platformSpecific?.call(e, message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(PlatformException e, String message)?
+        insufficientPermission,
+    TResult Function(PlatformException e, String message)? unableToUpdate,
+    TResult Function(PlatformException e, String message)? platformSpecific,
+    TResult Function(Exception e, String message)? unexpected,
+    TResult Function(dynamic obj, String message)? unableToProcess,
+    required TResult orElse(),
+  }) {
     if (platformSpecific != null) {
       return platformSpecific(e, message);
     }
@@ -541,32 +631,39 @@ class _$_PlatformSpecific implements _PlatformSpecific {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult insufficientPermission(_InsufficientPermission value),
-    @required TResult unableToUpdate(_UnableToUpdate value),
-    @required TResult platformSpecific(_PlatformSpecific value),
-    @required TResult unexpected(_Unexpected value),
-    @required TResult unableToProcess(_UnableToProcess value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InsufficientPermission value)
+        insufficientPermission,
+    required TResult Function(_UnableToUpdate value) unableToUpdate,
+    required TResult Function(_PlatformSpecific value) platformSpecific,
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_UnableToProcess value) unableToProcess,
   }) {
-    assert(insufficientPermission != null);
-    assert(unableToUpdate != null);
-    assert(platformSpecific != null);
-    assert(unexpected != null);
-    assert(unableToProcess != null);
     return platformSpecific(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult insufficientPermission(_InsufficientPermission value),
-    TResult unableToUpdate(_UnableToUpdate value),
-    TResult platformSpecific(_PlatformSpecific value),
-    TResult unexpected(_Unexpected value),
-    TResult unableToProcess(_UnableToProcess value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_InsufficientPermission value)? insufficientPermission,
+    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_PlatformSpecific value)? platformSpecific,
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_UnableToProcess value)? unableToProcess,
   }) {
-    assert(orElse != null);
+    return platformSpecific?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InsufficientPermission value)? insufficientPermission,
+    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_PlatformSpecific value)? platformSpecific,
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_UnableToProcess value)? unableToProcess,
+    required TResult orElse(),
+  }) {
     if (platformSpecific != null) {
       return platformSpecific(this);
     }
@@ -578,12 +675,13 @@ abstract class _PlatformSpecific implements TripFailure {
   const factory _PlatformSpecific(PlatformException e, String message) =
       _$_PlatformSpecific;
 
-  PlatformException get e;
+  PlatformException get e => throw _privateConstructorUsedError;
   @override
-  String get message;
+  String get message => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$PlatformSpecificCopyWith<_PlatformSpecific> get copyWith;
+  _$PlatformSpecificCopyWith<_PlatformSpecific> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -608,21 +706,26 @@ class __$UnexpectedCopyWithImpl<$Res> extends _$TripFailureCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object e = freezed,
-    Object message = freezed,
+    Object? e = freezed,
+    Object? message = freezed,
   }) {
     return _then(_Unexpected(
-      e == freezed ? _value.e : e as Exception,
-      message == freezed ? _value.message : message as String,
+      e == freezed
+          ? _value.e
+          : e // ignore: cast_nullable_to_non_nullable
+              as Exception,
+      message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_Unexpected implements _Unexpected {
-  const _$_Unexpected(this.e, this.message)
-      : assert(e != null),
-        assert(message != null);
+  const _$_Unexpected(this.e, this.message);
 
   @override
   final Exception e;
@@ -657,33 +760,43 @@ class _$_Unexpected implements _Unexpected {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required
-        TResult insufficientPermission(PlatformException e, String message),
-    @required TResult unableToUpdate(PlatformException e, String message),
-    @required TResult platformSpecific(PlatformException e, String message),
-    @required TResult unexpected(Exception e, String message),
-    @required TResult unableToProcess(dynamic obj, String message),
+  TResult when<TResult extends Object?>({
+    required TResult Function(PlatformException e, String message)
+        insufficientPermission,
+    required TResult Function(PlatformException e, String message)
+        unableToUpdate,
+    required TResult Function(PlatformException e, String message)
+        platformSpecific,
+    required TResult Function(Exception e, String message) unexpected,
+    required TResult Function(dynamic obj, String message) unableToProcess,
   }) {
-    assert(insufficientPermission != null);
-    assert(unableToUpdate != null);
-    assert(platformSpecific != null);
-    assert(unexpected != null);
-    assert(unableToProcess != null);
     return unexpected(e, message);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult insufficientPermission(PlatformException e, String message),
-    TResult unableToUpdate(PlatformException e, String message),
-    TResult platformSpecific(PlatformException e, String message),
-    TResult unexpected(Exception e, String message),
-    TResult unableToProcess(dynamic obj, String message),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(PlatformException e, String message)?
+        insufficientPermission,
+    TResult Function(PlatformException e, String message)? unableToUpdate,
+    TResult Function(PlatformException e, String message)? platformSpecific,
+    TResult Function(Exception e, String message)? unexpected,
+    TResult Function(dynamic obj, String message)? unableToProcess,
   }) {
-    assert(orElse != null);
+    return unexpected?.call(e, message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(PlatformException e, String message)?
+        insufficientPermission,
+    TResult Function(PlatformException e, String message)? unableToUpdate,
+    TResult Function(PlatformException e, String message)? platformSpecific,
+    TResult Function(Exception e, String message)? unexpected,
+    TResult Function(dynamic obj, String message)? unableToProcess,
+    required TResult orElse(),
+  }) {
     if (unexpected != null) {
       return unexpected(e, message);
     }
@@ -692,32 +805,39 @@ class _$_Unexpected implements _Unexpected {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult insufficientPermission(_InsufficientPermission value),
-    @required TResult unableToUpdate(_UnableToUpdate value),
-    @required TResult platformSpecific(_PlatformSpecific value),
-    @required TResult unexpected(_Unexpected value),
-    @required TResult unableToProcess(_UnableToProcess value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InsufficientPermission value)
+        insufficientPermission,
+    required TResult Function(_UnableToUpdate value) unableToUpdate,
+    required TResult Function(_PlatformSpecific value) platformSpecific,
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_UnableToProcess value) unableToProcess,
   }) {
-    assert(insufficientPermission != null);
-    assert(unableToUpdate != null);
-    assert(platformSpecific != null);
-    assert(unexpected != null);
-    assert(unableToProcess != null);
     return unexpected(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult insufficientPermission(_InsufficientPermission value),
-    TResult unableToUpdate(_UnableToUpdate value),
-    TResult platformSpecific(_PlatformSpecific value),
-    TResult unexpected(_Unexpected value),
-    TResult unableToProcess(_UnableToProcess value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_InsufficientPermission value)? insufficientPermission,
+    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_PlatformSpecific value)? platformSpecific,
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_UnableToProcess value)? unableToProcess,
   }) {
-    assert(orElse != null);
+    return unexpected?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InsufficientPermission value)? insufficientPermission,
+    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_PlatformSpecific value)? platformSpecific,
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_UnableToProcess value)? unableToProcess,
+    required TResult orElse(),
+  }) {
     if (unexpected != null) {
       return unexpected(this);
     }
@@ -728,12 +848,13 @@ class _$_Unexpected implements _Unexpected {
 abstract class _Unexpected implements TripFailure {
   const factory _Unexpected(Exception e, String message) = _$_Unexpected;
 
-  Exception get e;
+  Exception get e => throw _privateConstructorUsedError;
   @override
-  String get message;
+  String get message => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$UnexpectedCopyWith<_Unexpected> get copyWith;
+  _$UnexpectedCopyWith<_Unexpected> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -759,21 +880,26 @@ class __$UnableToProcessCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object obj = freezed,
-    Object message = freezed,
+    Object? obj = freezed,
+    Object? message = freezed,
   }) {
     return _then(_UnableToProcess(
-      obj == freezed ? _value.obj : obj as dynamic,
-      message == freezed ? _value.message : message as String,
+      obj == freezed
+          ? _value.obj
+          : obj // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_UnableToProcess implements _UnableToProcess {
-  const _$_UnableToProcess(this.obj, this.message)
-      : assert(obj != null),
-        assert(message != null);
+  const _$_UnableToProcess(this.obj, this.message);
 
   @override
   final dynamic obj;
@@ -808,33 +934,43 @@ class _$_UnableToProcess implements _UnableToProcess {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required
-        TResult insufficientPermission(PlatformException e, String message),
-    @required TResult unableToUpdate(PlatformException e, String message),
-    @required TResult platformSpecific(PlatformException e, String message),
-    @required TResult unexpected(Exception e, String message),
-    @required TResult unableToProcess(dynamic obj, String message),
+  TResult when<TResult extends Object?>({
+    required TResult Function(PlatformException e, String message)
+        insufficientPermission,
+    required TResult Function(PlatformException e, String message)
+        unableToUpdate,
+    required TResult Function(PlatformException e, String message)
+        platformSpecific,
+    required TResult Function(Exception e, String message) unexpected,
+    required TResult Function(dynamic obj, String message) unableToProcess,
   }) {
-    assert(insufficientPermission != null);
-    assert(unableToUpdate != null);
-    assert(platformSpecific != null);
-    assert(unexpected != null);
-    assert(unableToProcess != null);
     return unableToProcess(obj, message);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult insufficientPermission(PlatformException e, String message),
-    TResult unableToUpdate(PlatformException e, String message),
-    TResult platformSpecific(PlatformException e, String message),
-    TResult unexpected(Exception e, String message),
-    TResult unableToProcess(dynamic obj, String message),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(PlatformException e, String message)?
+        insufficientPermission,
+    TResult Function(PlatformException e, String message)? unableToUpdate,
+    TResult Function(PlatformException e, String message)? platformSpecific,
+    TResult Function(Exception e, String message)? unexpected,
+    TResult Function(dynamic obj, String message)? unableToProcess,
   }) {
-    assert(orElse != null);
+    return unableToProcess?.call(obj, message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(PlatformException e, String message)?
+        insufficientPermission,
+    TResult Function(PlatformException e, String message)? unableToUpdate,
+    TResult Function(PlatformException e, String message)? platformSpecific,
+    TResult Function(Exception e, String message)? unexpected,
+    TResult Function(dynamic obj, String message)? unableToProcess,
+    required TResult orElse(),
+  }) {
     if (unableToProcess != null) {
       return unableToProcess(obj, message);
     }
@@ -843,32 +979,39 @@ class _$_UnableToProcess implements _UnableToProcess {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult insufficientPermission(_InsufficientPermission value),
-    @required TResult unableToUpdate(_UnableToUpdate value),
-    @required TResult platformSpecific(_PlatformSpecific value),
-    @required TResult unexpected(_Unexpected value),
-    @required TResult unableToProcess(_UnableToProcess value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InsufficientPermission value)
+        insufficientPermission,
+    required TResult Function(_UnableToUpdate value) unableToUpdate,
+    required TResult Function(_PlatformSpecific value) platformSpecific,
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_UnableToProcess value) unableToProcess,
   }) {
-    assert(insufficientPermission != null);
-    assert(unableToUpdate != null);
-    assert(platformSpecific != null);
-    assert(unexpected != null);
-    assert(unableToProcess != null);
     return unableToProcess(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult insufficientPermission(_InsufficientPermission value),
-    TResult unableToUpdate(_UnableToUpdate value),
-    TResult platformSpecific(_PlatformSpecific value),
-    TResult unexpected(_Unexpected value),
-    TResult unableToProcess(_UnableToProcess value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_InsufficientPermission value)? insufficientPermission,
+    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_PlatformSpecific value)? platformSpecific,
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_UnableToProcess value)? unableToProcess,
   }) {
-    assert(orElse != null);
+    return unableToProcess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InsufficientPermission value)? insufficientPermission,
+    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_PlatformSpecific value)? platformSpecific,
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_UnableToProcess value)? unableToProcess,
+    required TResult orElse(),
+  }) {
     if (unableToProcess != null) {
       return unableToProcess(this);
     }
@@ -880,10 +1023,11 @@ abstract class _UnableToProcess implements TripFailure {
   const factory _UnableToProcess(dynamic obj, String message) =
       _$_UnableToProcess;
 
-  dynamic get obj;
+  dynamic get obj => throw _privateConstructorUsedError;
   @override
-  String get message;
+  String get message => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$UnableToProcessCopyWith<_UnableToProcess> get copyWith;
+  _$UnableToProcessCopyWith<_UnableToProcess> get copyWith =>
+      throw _privateConstructorUsedError;
 }

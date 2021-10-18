@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'category_dtos.dart';
 
@@ -8,6 +9,10 @@ part of 'category_dtos.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 CategoryDto _$CategoryDtoFromJson(Map<String, dynamic> json) {
   return _CategoryDto.fromJson(json);
 }
@@ -16,11 +21,10 @@ CategoryDto _$CategoryDtoFromJson(Map<String, dynamic> json) {
 class _$CategoryDtoTearOff {
   const _$CategoryDtoTearOff();
 
-// ignore: unused_element
   _CategoryDto call(
-      {@JsonKey(ignore: true) String id,
-      @required String name,
-      @required int position}) {
+      {@JsonKey(ignore: true) String? id,
+      required String name,
+      required int position}) {
     return _CategoryDto(
       id: id,
       name: name,
@@ -28,26 +32,25 @@ class _$CategoryDtoTearOff {
     );
   }
 
-// ignore: unused_element
   CategoryDto fromJson(Map<String, Object> json) {
     return CategoryDto.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $CategoryDto = _$CategoryDtoTearOff();
 
 /// @nodoc
 mixin _$CategoryDto {
   @JsonKey(ignore: true)
-  String get id;
-  String get name;
-  int get position;
+  String? get id => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  int get position => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CategoryDtoCopyWith<CategoryDto> get copyWith;
+  $CategoryDtoCopyWith<CategoryDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -55,7 +58,7 @@ abstract class $CategoryDtoCopyWith<$Res> {
   factory $CategoryDtoCopyWith(
           CategoryDto value, $Res Function(CategoryDto) then) =
       _$CategoryDtoCopyWithImpl<$Res>;
-  $Res call({@JsonKey(ignore: true) String id, String name, int position});
+  $Res call({@JsonKey(ignore: true) String? id, String name, int position});
 }
 
 /// @nodoc
@@ -68,14 +71,23 @@ class _$CategoryDtoCopyWithImpl<$Res> implements $CategoryDtoCopyWith<$Res> {
 
   @override
   $Res call({
-    Object id = freezed,
-    Object name = freezed,
-    Object position = freezed,
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? position = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as String,
-      name: name == freezed ? _value.name : name as String,
-      position: position == freezed ? _value.position : position as int,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      position: position == freezed
+          ? _value.position
+          : position // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -87,7 +99,7 @@ abstract class _$CategoryDtoCopyWith<$Res>
           _CategoryDto value, $Res Function(_CategoryDto) then) =
       __$CategoryDtoCopyWithImpl<$Res>;
   @override
-  $Res call({@JsonKey(ignore: true) String id, String name, int position});
+  $Res call({@JsonKey(ignore: true) String? id, String name, int position});
 }
 
 /// @nodoc
@@ -102,36 +114,42 @@ class __$CategoryDtoCopyWithImpl<$Res> extends _$CategoryDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object id = freezed,
-    Object name = freezed,
-    Object position = freezed,
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? position = freezed,
   }) {
     return _then(_CategoryDto(
-      id: id == freezed ? _value.id : id as String,
-      name: name == freezed ? _value.name : name as String,
-      position: position == freezed ? _value.position : position as int,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      position: position == freezed
+          ? _value.position
+          : position // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_CategoryDto extends _CategoryDto {
   const _$_CategoryDto(
       {@JsonKey(ignore: true) this.id,
-      @required this.name,
-      @required this.position})
-      : assert(name != null),
-        assert(position != null),
-        super._();
+      required this.name,
+      required this.position})
+      : super._();
 
   factory _$_CategoryDto.fromJson(Map<String, dynamic> json) =>
-      _$_$_CategoryDtoFromJson(json);
+      _$$_CategoryDtoFromJson(json);
 
   @override
   @JsonKey(ignore: true)
-  final String id;
+  final String? id;
   @override
   final String name;
   @override
@@ -169,28 +187,29 @@ class _$_CategoryDto extends _CategoryDto {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_CategoryDtoToJson(this);
+    return _$$_CategoryDtoToJson(this);
   }
 }
 
 abstract class _CategoryDto extends CategoryDto {
-  const _CategoryDto._() : super._();
   const factory _CategoryDto(
-      {@JsonKey(ignore: true) String id,
-      @required String name,
-      @required int position}) = _$_CategoryDto;
+      {@JsonKey(ignore: true) String? id,
+      required String name,
+      required int position}) = _$_CategoryDto;
+  const _CategoryDto._() : super._();
 
   factory _CategoryDto.fromJson(Map<String, dynamic> json) =
       _$_CategoryDto.fromJson;
 
   @override
   @JsonKey(ignore: true)
-  String get id;
+  String? get id => throw _privateConstructorUsedError;
   @override
-  String get name;
+  String get name => throw _privateConstructorUsedError;
   @override
-  int get position;
+  int get position => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$CategoryDtoCopyWith<_CategoryDto> get copyWith;
+  _$CategoryDtoCopyWith<_CategoryDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }

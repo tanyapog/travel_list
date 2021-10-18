@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'auth_failure.dart';
 
@@ -9,72 +10,90 @@ part of 'auth_failure.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$AuthFailureTearOff {
   const _$AuthFailureTearOff();
 
-// ignore: unused_element
   CancelledByUser cancelledByUser() {
     return const CancelledByUser();
   }
 
-// ignore: unused_element
   ServerError serverError(String message) {
     return ServerError(
       message,
     );
   }
 
-// ignore: unused_element
   EmailAlreadyInUse emailAlreadyInUse() {
     return const EmailAlreadyInUse();
   }
 
-// ignore: unused_element
   InvalidEmailAndPasswordCombination invalidEmailAndPasswordCombination() {
     return const InvalidEmailAndPasswordCombination();
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $AuthFailure = _$AuthFailureTearOff();
 
 /// @nodoc
 mixin _$AuthFailure {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult cancelledByUser(),
-    @required TResult serverError(String message),
-    @required TResult emailAlreadyInUse(),
-    @required TResult invalidEmailAndPasswordCombination(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() cancelledByUser,
+    required TResult Function(String message) serverError,
+    required TResult Function() emailAlreadyInUse,
+    required TResult Function() invalidEmailAndPasswordCombination,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult cancelledByUser(),
-    TResult serverError(String message),
-    TResult emailAlreadyInUse(),
-    TResult invalidEmailAndPasswordCombination(),
-    @required TResult orElse(),
-  });
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? cancelledByUser,
+    TResult Function(String message)? serverError,
+    TResult Function()? emailAlreadyInUse,
+    TResult Function()? invalidEmailAndPasswordCombination,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult cancelledByUser(CancelledByUser value),
-    @required TResult serverError(ServerError value),
-    @required TResult emailAlreadyInUse(EmailAlreadyInUse value),
-    @required
-        TResult invalidEmailAndPasswordCombination(
-            InvalidEmailAndPasswordCombination value),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? cancelledByUser,
+    TResult Function(String message)? serverError,
+    TResult Function()? emailAlreadyInUse,
+    TResult Function()? invalidEmailAndPasswordCombination,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult cancelledByUser(CancelledByUser value),
-    TResult serverError(ServerError value),
-    TResult emailAlreadyInUse(EmailAlreadyInUse value),
-    TResult invalidEmailAndPasswordCombination(
-        InvalidEmailAndPasswordCombination value),
-    @required TResult orElse(),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(CancelledByUser value) cancelledByUser,
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(EmailAlreadyInUse value) emailAlreadyInUse,
+    required TResult Function(InvalidEmailAndPasswordCombination value)
+        invalidEmailAndPasswordCombination,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CancelledByUser value)? cancelledByUser,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult Function(InvalidEmailAndPasswordCombination value)?
+        invalidEmailAndPasswordCombination,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CancelledByUser value)? cancelledByUser,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult Function(InvalidEmailAndPasswordCombination value)?
+        invalidEmailAndPasswordCombination,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -113,6 +132,7 @@ class _$CancelledByUserCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$CancelledByUser implements CancelledByUser {
   const _$CancelledByUser();
 
@@ -131,29 +151,35 @@ class _$CancelledByUser implements CancelledByUser {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult cancelledByUser(),
-    @required TResult serverError(String message),
-    @required TResult emailAlreadyInUse(),
-    @required TResult invalidEmailAndPasswordCombination(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() cancelledByUser,
+    required TResult Function(String message) serverError,
+    required TResult Function() emailAlreadyInUse,
+    required TResult Function() invalidEmailAndPasswordCombination,
   }) {
-    assert(cancelledByUser != null);
-    assert(serverError != null);
-    assert(emailAlreadyInUse != null);
-    assert(invalidEmailAndPasswordCombination != null);
     return cancelledByUser();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult cancelledByUser(),
-    TResult serverError(String message),
-    TResult emailAlreadyInUse(),
-    TResult invalidEmailAndPasswordCombination(),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? cancelledByUser,
+    TResult Function(String message)? serverError,
+    TResult Function()? emailAlreadyInUse,
+    TResult Function()? invalidEmailAndPasswordCombination,
   }) {
-    assert(orElse != null);
+    return cancelledByUser?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? cancelledByUser,
+    TResult Function(String message)? serverError,
+    TResult Function()? emailAlreadyInUse,
+    TResult Function()? invalidEmailAndPasswordCombination,
+    required TResult orElse(),
+  }) {
     if (cancelledByUser != null) {
       return cancelledByUser();
     }
@@ -162,32 +188,38 @@ class _$CancelledByUser implements CancelledByUser {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult cancelledByUser(CancelledByUser value),
-    @required TResult serverError(ServerError value),
-    @required TResult emailAlreadyInUse(EmailAlreadyInUse value),
-    @required
-        TResult invalidEmailAndPasswordCombination(
-            InvalidEmailAndPasswordCombination value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(CancelledByUser value) cancelledByUser,
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(EmailAlreadyInUse value) emailAlreadyInUse,
+    required TResult Function(InvalidEmailAndPasswordCombination value)
+        invalidEmailAndPasswordCombination,
   }) {
-    assert(cancelledByUser != null);
-    assert(serverError != null);
-    assert(emailAlreadyInUse != null);
-    assert(invalidEmailAndPasswordCombination != null);
     return cancelledByUser(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult cancelledByUser(CancelledByUser value),
-    TResult serverError(ServerError value),
-    TResult emailAlreadyInUse(EmailAlreadyInUse value),
-    TResult invalidEmailAndPasswordCombination(
-        InvalidEmailAndPasswordCombination value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CancelledByUser value)? cancelledByUser,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult Function(InvalidEmailAndPasswordCombination value)?
+        invalidEmailAndPasswordCombination,
   }) {
-    assert(orElse != null);
+    return cancelledByUser?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CancelledByUser value)? cancelledByUser,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult Function(InvalidEmailAndPasswordCombination value)?
+        invalidEmailAndPasswordCombination,
+    required TResult orElse(),
+  }) {
     if (cancelledByUser != null) {
       return cancelledByUser(this);
     }
@@ -219,17 +251,21 @@ class _$ServerErrorCopyWithImpl<$Res> extends _$AuthFailureCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object message = freezed,
+    Object? message = freezed,
   }) {
     return _then(ServerError(
-      message == freezed ? _value.message : message as String,
+      message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
+
 class _$ServerError implements ServerError {
-  const _$ServerError(this.message) : assert(message != null);
+  const _$ServerError(this.message);
 
   @override
   final String message;
@@ -258,29 +294,35 @@ class _$ServerError implements ServerError {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult cancelledByUser(),
-    @required TResult serverError(String message),
-    @required TResult emailAlreadyInUse(),
-    @required TResult invalidEmailAndPasswordCombination(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() cancelledByUser,
+    required TResult Function(String message) serverError,
+    required TResult Function() emailAlreadyInUse,
+    required TResult Function() invalidEmailAndPasswordCombination,
   }) {
-    assert(cancelledByUser != null);
-    assert(serverError != null);
-    assert(emailAlreadyInUse != null);
-    assert(invalidEmailAndPasswordCombination != null);
     return serverError(message);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult cancelledByUser(),
-    TResult serverError(String message),
-    TResult emailAlreadyInUse(),
-    TResult invalidEmailAndPasswordCombination(),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? cancelledByUser,
+    TResult Function(String message)? serverError,
+    TResult Function()? emailAlreadyInUse,
+    TResult Function()? invalidEmailAndPasswordCombination,
   }) {
-    assert(orElse != null);
+    return serverError?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? cancelledByUser,
+    TResult Function(String message)? serverError,
+    TResult Function()? emailAlreadyInUse,
+    TResult Function()? invalidEmailAndPasswordCombination,
+    required TResult orElse(),
+  }) {
     if (serverError != null) {
       return serverError(message);
     }
@@ -289,32 +331,38 @@ class _$ServerError implements ServerError {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult cancelledByUser(CancelledByUser value),
-    @required TResult serverError(ServerError value),
-    @required TResult emailAlreadyInUse(EmailAlreadyInUse value),
-    @required
-        TResult invalidEmailAndPasswordCombination(
-            InvalidEmailAndPasswordCombination value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(CancelledByUser value) cancelledByUser,
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(EmailAlreadyInUse value) emailAlreadyInUse,
+    required TResult Function(InvalidEmailAndPasswordCombination value)
+        invalidEmailAndPasswordCombination,
   }) {
-    assert(cancelledByUser != null);
-    assert(serverError != null);
-    assert(emailAlreadyInUse != null);
-    assert(invalidEmailAndPasswordCombination != null);
     return serverError(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult cancelledByUser(CancelledByUser value),
-    TResult serverError(ServerError value),
-    TResult emailAlreadyInUse(EmailAlreadyInUse value),
-    TResult invalidEmailAndPasswordCombination(
-        InvalidEmailAndPasswordCombination value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CancelledByUser value)? cancelledByUser,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult Function(InvalidEmailAndPasswordCombination value)?
+        invalidEmailAndPasswordCombination,
   }) {
-    assert(orElse != null);
+    return serverError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CancelledByUser value)? cancelledByUser,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult Function(InvalidEmailAndPasswordCombination value)?
+        invalidEmailAndPasswordCombination,
+    required TResult orElse(),
+  }) {
     if (serverError != null) {
       return serverError(this);
     }
@@ -325,9 +373,10 @@ class _$ServerError implements ServerError {
 abstract class ServerError implements AuthFailure {
   const factory ServerError(String message) = _$ServerError;
 
-  String get message;
+  String get message => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ServerErrorCopyWith<ServerError> get copyWith;
+  $ServerErrorCopyWith<ServerError> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -350,6 +399,7 @@ class _$EmailAlreadyInUseCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$EmailAlreadyInUse implements EmailAlreadyInUse {
   const _$EmailAlreadyInUse();
 
@@ -368,29 +418,35 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult cancelledByUser(),
-    @required TResult serverError(String message),
-    @required TResult emailAlreadyInUse(),
-    @required TResult invalidEmailAndPasswordCombination(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() cancelledByUser,
+    required TResult Function(String message) serverError,
+    required TResult Function() emailAlreadyInUse,
+    required TResult Function() invalidEmailAndPasswordCombination,
   }) {
-    assert(cancelledByUser != null);
-    assert(serverError != null);
-    assert(emailAlreadyInUse != null);
-    assert(invalidEmailAndPasswordCombination != null);
     return emailAlreadyInUse();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult cancelledByUser(),
-    TResult serverError(String message),
-    TResult emailAlreadyInUse(),
-    TResult invalidEmailAndPasswordCombination(),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? cancelledByUser,
+    TResult Function(String message)? serverError,
+    TResult Function()? emailAlreadyInUse,
+    TResult Function()? invalidEmailAndPasswordCombination,
   }) {
-    assert(orElse != null);
+    return emailAlreadyInUse?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? cancelledByUser,
+    TResult Function(String message)? serverError,
+    TResult Function()? emailAlreadyInUse,
+    TResult Function()? invalidEmailAndPasswordCombination,
+    required TResult orElse(),
+  }) {
     if (emailAlreadyInUse != null) {
       return emailAlreadyInUse();
     }
@@ -399,32 +455,38 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult cancelledByUser(CancelledByUser value),
-    @required TResult serverError(ServerError value),
-    @required TResult emailAlreadyInUse(EmailAlreadyInUse value),
-    @required
-        TResult invalidEmailAndPasswordCombination(
-            InvalidEmailAndPasswordCombination value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(CancelledByUser value) cancelledByUser,
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(EmailAlreadyInUse value) emailAlreadyInUse,
+    required TResult Function(InvalidEmailAndPasswordCombination value)
+        invalidEmailAndPasswordCombination,
   }) {
-    assert(cancelledByUser != null);
-    assert(serverError != null);
-    assert(emailAlreadyInUse != null);
-    assert(invalidEmailAndPasswordCombination != null);
     return emailAlreadyInUse(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult cancelledByUser(CancelledByUser value),
-    TResult serverError(ServerError value),
-    TResult emailAlreadyInUse(EmailAlreadyInUse value),
-    TResult invalidEmailAndPasswordCombination(
-        InvalidEmailAndPasswordCombination value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CancelledByUser value)? cancelledByUser,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult Function(InvalidEmailAndPasswordCombination value)?
+        invalidEmailAndPasswordCombination,
   }) {
-    assert(orElse != null);
+    return emailAlreadyInUse?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CancelledByUser value)? cancelledByUser,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult Function(InvalidEmailAndPasswordCombination value)?
+        invalidEmailAndPasswordCombination,
+    required TResult orElse(),
+  }) {
     if (emailAlreadyInUse != null) {
       return emailAlreadyInUse(this);
     }
@@ -459,6 +521,7 @@ class _$InvalidEmailAndPasswordCombinationCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$InvalidEmailAndPasswordCombination
     implements InvalidEmailAndPasswordCombination {
   const _$InvalidEmailAndPasswordCombination();
@@ -479,29 +542,35 @@ class _$InvalidEmailAndPasswordCombination
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult cancelledByUser(),
-    @required TResult serverError(String message),
-    @required TResult emailAlreadyInUse(),
-    @required TResult invalidEmailAndPasswordCombination(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() cancelledByUser,
+    required TResult Function(String message) serverError,
+    required TResult Function() emailAlreadyInUse,
+    required TResult Function() invalidEmailAndPasswordCombination,
   }) {
-    assert(cancelledByUser != null);
-    assert(serverError != null);
-    assert(emailAlreadyInUse != null);
-    assert(invalidEmailAndPasswordCombination != null);
     return invalidEmailAndPasswordCombination();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult cancelledByUser(),
-    TResult serverError(String message),
-    TResult emailAlreadyInUse(),
-    TResult invalidEmailAndPasswordCombination(),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? cancelledByUser,
+    TResult Function(String message)? serverError,
+    TResult Function()? emailAlreadyInUse,
+    TResult Function()? invalidEmailAndPasswordCombination,
   }) {
-    assert(orElse != null);
+    return invalidEmailAndPasswordCombination?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? cancelledByUser,
+    TResult Function(String message)? serverError,
+    TResult Function()? emailAlreadyInUse,
+    TResult Function()? invalidEmailAndPasswordCombination,
+    required TResult orElse(),
+  }) {
     if (invalidEmailAndPasswordCombination != null) {
       return invalidEmailAndPasswordCombination();
     }
@@ -510,32 +579,38 @@ class _$InvalidEmailAndPasswordCombination
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult cancelledByUser(CancelledByUser value),
-    @required TResult serverError(ServerError value),
-    @required TResult emailAlreadyInUse(EmailAlreadyInUse value),
-    @required
-        TResult invalidEmailAndPasswordCombination(
-            InvalidEmailAndPasswordCombination value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(CancelledByUser value) cancelledByUser,
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(EmailAlreadyInUse value) emailAlreadyInUse,
+    required TResult Function(InvalidEmailAndPasswordCombination value)
+        invalidEmailAndPasswordCombination,
   }) {
-    assert(cancelledByUser != null);
-    assert(serverError != null);
-    assert(emailAlreadyInUse != null);
-    assert(invalidEmailAndPasswordCombination != null);
     return invalidEmailAndPasswordCombination(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult cancelledByUser(CancelledByUser value),
-    TResult serverError(ServerError value),
-    TResult emailAlreadyInUse(EmailAlreadyInUse value),
-    TResult invalidEmailAndPasswordCombination(
-        InvalidEmailAndPasswordCombination value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CancelledByUser value)? cancelledByUser,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult Function(InvalidEmailAndPasswordCombination value)?
+        invalidEmailAndPasswordCombination,
   }) {
-    assert(orElse != null);
+    return invalidEmailAndPasswordCombination?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CancelledByUser value)? cancelledByUser,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult Function(InvalidEmailAndPasswordCombination value)?
+        invalidEmailAndPasswordCombination,
+    required TResult orElse(),
+  }) {
     if (invalidEmailAndPasswordCombination != null) {
       return invalidEmailAndPasswordCombination(this);
     }

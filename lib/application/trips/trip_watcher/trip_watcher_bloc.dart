@@ -29,7 +29,7 @@ class TripWatcherBloc extends Bloc<TripWatcherEvent, TripWatcherState> {
     yield* event.map(
       watchAllStarted: (e) async* {
         yield const TripWatcherState.loadInProgress();
-        await _tripStreamSubscription?.cancel();
+        await _tripStreamSubscription.cancel();
         _tripStreamSubscription = _tripRepository
             .watchAll()
             .listen((failureOrTrips) =>
@@ -38,7 +38,7 @@ class TripWatcherBloc extends Bloc<TripWatcherEvent, TripWatcherState> {
       },
       watchUncompletedStarted: (e) async* {
         yield const TripWatcherState.loadInProgress();
-        await _tripStreamSubscription?.cancel();
+        await _tripStreamSubscription.cancel();
         _tripStreamSubscription = _tripRepository
             .watchUncompleted()
             .listen((failureOrTrips) =>
@@ -56,7 +56,7 @@ class TripWatcherBloc extends Bloc<TripWatcherEvent, TripWatcherState> {
 
   @override
   Future<void> close() async {
-    await _tripStreamSubscription?.cancel();
+    await _tripStreamSubscription.cancel();
     return super.close();
   }
 }

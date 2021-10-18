@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'category_actor_bloc.dart';
 
@@ -9,18 +10,19 @@ part of 'category_actor_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$CategoryActorEventTearOff {
   const _$CategoryActorEventTearOff();
 
-// ignore: unused_element
   _ReorderFinished reorderFinished(List<Category> categories) {
     return _ReorderFinished(
       categories,
     );
   }
 
-// ignore: unused_element
   _Deleted deleted(Category category) {
     return _Deleted(
       category,
@@ -29,33 +31,48 @@ class _$CategoryActorEventTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $CategoryActorEvent = _$CategoryActorEventTearOff();
 
 /// @nodoc
 mixin _$CategoryActorEvent {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult reorderFinished(List<Category> categories),
-    @required TResult deleted(Category category),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<Category> categories) reorderFinished,
+    required TResult Function(Category category) deleted,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult reorderFinished(List<Category> categories),
-    TResult deleted(Category category),
-    @required TResult orElse(),
-  });
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<Category> categories)? reorderFinished,
+    TResult Function(Category category)? deleted,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult reorderFinished(_ReorderFinished value),
-    @required TResult deleted(_Deleted value),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<Category> categories)? reorderFinished,
+    TResult Function(Category category)? deleted,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult reorderFinished(_ReorderFinished value),
-    TResult deleted(_Deleted value),
-    @required TResult orElse(),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ReorderFinished value) reorderFinished,
+    required TResult Function(_Deleted value) deleted,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_ReorderFinished value)? reorderFinished,
+    TResult Function(_Deleted value)? deleted,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ReorderFinished value)? reorderFinished,
+    TResult Function(_Deleted value)? deleted,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -96,17 +113,21 @@ class __$ReorderFinishedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object categories = freezed,
+    Object? categories = freezed,
   }) {
     return _then(_ReorderFinished(
-      categories == freezed ? _value.categories : categories as List<Category>,
+      categories == freezed
+          ? _value.categories
+          : categories // ignore: cast_nullable_to_non_nullable
+              as List<Category>,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_ReorderFinished implements _ReorderFinished {
-  const _$_ReorderFinished(this.categories) : assert(categories != null);
+  const _$_ReorderFinished(this.categories);
 
   @override
   final List<Category> categories;
@@ -136,23 +157,29 @@ class _$_ReorderFinished implements _ReorderFinished {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult reorderFinished(List<Category> categories),
-    @required TResult deleted(Category category),
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<Category> categories) reorderFinished,
+    required TResult Function(Category category) deleted,
   }) {
-    assert(reorderFinished != null);
-    assert(deleted != null);
     return reorderFinished(categories);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult reorderFinished(List<Category> categories),
-    TResult deleted(Category category),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<Category> categories)? reorderFinished,
+    TResult Function(Category category)? deleted,
   }) {
-    assert(orElse != null);
+    return reorderFinished?.call(categories);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<Category> categories)? reorderFinished,
+    TResult Function(Category category)? deleted,
+    required TResult orElse(),
+  }) {
     if (reorderFinished != null) {
       return reorderFinished(categories);
     }
@@ -161,23 +188,29 @@ class _$_ReorderFinished implements _ReorderFinished {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult reorderFinished(_ReorderFinished value),
-    @required TResult deleted(_Deleted value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ReorderFinished value) reorderFinished,
+    required TResult Function(_Deleted value) deleted,
   }) {
-    assert(reorderFinished != null);
-    assert(deleted != null);
     return reorderFinished(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult reorderFinished(_ReorderFinished value),
-    TResult deleted(_Deleted value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_ReorderFinished value)? reorderFinished,
+    TResult Function(_Deleted value)? deleted,
   }) {
-    assert(orElse != null);
+    return reorderFinished?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ReorderFinished value)? reorderFinished,
+    TResult Function(_Deleted value)? deleted,
+    required TResult orElse(),
+  }) {
     if (reorderFinished != null) {
       return reorderFinished(this);
     }
@@ -189,9 +222,10 @@ abstract class _ReorderFinished implements CategoryActorEvent {
   const factory _ReorderFinished(List<Category> categories) =
       _$_ReorderFinished;
 
-  List<Category> get categories;
+  List<Category> get categories => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$ReorderFinishedCopyWith<_ReorderFinished> get copyWith;
+  _$ReorderFinishedCopyWith<_ReorderFinished> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -215,18 +249,18 @@ class __$DeletedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object category = freezed,
+    Object? category = freezed,
   }) {
     return _then(_Deleted(
-      category == freezed ? _value.category : category as Category,
+      category == freezed
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as Category,
     ));
   }
 
   @override
   $CategoryCopyWith<$Res> get category {
-    if (_value.category == null) {
-      return null;
-    }
     return $CategoryCopyWith<$Res>(_value.category, (value) {
       return _then(_value.copyWith(category: value));
     });
@@ -234,8 +268,9 @@ class __$DeletedCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Deleted implements _Deleted {
-  const _$_Deleted(this.category) : assert(category != null);
+  const _$_Deleted(this.category);
 
   @override
   final Category category;
@@ -265,23 +300,29 @@ class _$_Deleted implements _Deleted {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult reorderFinished(List<Category> categories),
-    @required TResult deleted(Category category),
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<Category> categories) reorderFinished,
+    required TResult Function(Category category) deleted,
   }) {
-    assert(reorderFinished != null);
-    assert(deleted != null);
     return deleted(category);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult reorderFinished(List<Category> categories),
-    TResult deleted(Category category),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<Category> categories)? reorderFinished,
+    TResult Function(Category category)? deleted,
   }) {
-    assert(orElse != null);
+    return deleted?.call(category);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<Category> categories)? reorderFinished,
+    TResult Function(Category category)? deleted,
+    required TResult orElse(),
+  }) {
     if (deleted != null) {
       return deleted(category);
     }
@@ -290,23 +331,29 @@ class _$_Deleted implements _Deleted {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult reorderFinished(_ReorderFinished value),
-    @required TResult deleted(_Deleted value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ReorderFinished value) reorderFinished,
+    required TResult Function(_Deleted value) deleted,
   }) {
-    assert(reorderFinished != null);
-    assert(deleted != null);
     return deleted(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult reorderFinished(_ReorderFinished value),
-    TResult deleted(_Deleted value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_ReorderFinished value)? reorderFinished,
+    TResult Function(_Deleted value)? deleted,
   }) {
-    assert(orElse != null);
+    return deleted?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ReorderFinished value)? reorderFinished,
+    TResult Function(_Deleted value)? deleted,
+    required TResult orElse(),
+  }) {
     if (deleted != null) {
       return deleted(this);
     }
@@ -317,94 +364,112 @@ class _$_Deleted implements _Deleted {
 abstract class _Deleted implements CategoryActorEvent {
   const factory _Deleted(Category category) = _$_Deleted;
 
-  Category get category;
+  Category get category => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$DeletedCopyWith<_Deleted> get copyWith;
+  _$DeletedCopyWith<_Deleted> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$CategoryActorStateTearOff {
   const _$CategoryActorStateTearOff();
 
-// ignore: unused_element
   _Initial initial() {
     return const _Initial();
   }
 
-// ignore: unused_element
   _ActionInProgress actionInProgress() {
     return const _ActionInProgress();
   }
 
-// ignore: unused_element
   _ReorderFailure reorderFailure(CategoryFailure categoryFailure) {
     return _ReorderFailure(
       categoryFailure,
     );
   }
 
-// ignore: unused_element
   _ReorderSuccess reorderSuccess() {
     return const _ReorderSuccess();
   }
 
-// ignore: unused_element
   _DeleteFailure deleteFailure(CategoryFailure categoryFailure) {
     return _DeleteFailure(
       categoryFailure,
     );
   }
 
-// ignore: unused_element
   _DeleteSuccess deleteSuccess() {
     return const _DeleteSuccess();
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $CategoryActorState = _$CategoryActorStateTearOff();
 
 /// @nodoc
 mixin _$CategoryActorState {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult actionInProgress(),
-    @required TResult reorderFailure(CategoryFailure categoryFailure),
-    @required TResult reorderSuccess(),
-    @required TResult deleteFailure(CategoryFailure categoryFailure),
-    @required TResult deleteSuccess(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() actionInProgress,
+    required TResult Function(CategoryFailure categoryFailure) reorderFailure,
+    required TResult Function() reorderSuccess,
+    required TResult Function(CategoryFailure categoryFailure) deleteFailure,
+    required TResult Function() deleteSuccess,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult actionInProgress(),
-    TResult reorderFailure(CategoryFailure categoryFailure),
-    TResult reorderSuccess(),
-    TResult deleteFailure(CategoryFailure categoryFailure),
-    TResult deleteSuccess(),
-    @required TResult orElse(),
-  });
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function(CategoryFailure categoryFailure)? reorderFailure,
+    TResult Function()? reorderSuccess,
+    TResult Function(CategoryFailure categoryFailure)? deleteFailure,
+    TResult Function()? deleteSuccess,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult actionInProgress(_ActionInProgress value),
-    @required TResult reorderFailure(_ReorderFailure value),
-    @required TResult reorderSuccess(_ReorderSuccess value),
-    @required TResult deleteFailure(_DeleteFailure value),
-    @required TResult deleteSuccess(_DeleteSuccess value),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function(CategoryFailure categoryFailure)? reorderFailure,
+    TResult Function()? reorderSuccess,
+    TResult Function(CategoryFailure categoryFailure)? deleteFailure,
+    TResult Function()? deleteSuccess,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult actionInProgress(_ActionInProgress value),
-    TResult reorderFailure(_ReorderFailure value),
-    TResult reorderSuccess(_ReorderSuccess value),
-    TResult deleteFailure(_DeleteFailure value),
-    TResult deleteSuccess(_DeleteSuccess value),
-    @required TResult orElse(),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_ReorderFailure value) reorderFailure,
+    required TResult Function(_ReorderSuccess value) reorderSuccess,
+    required TResult Function(_DeleteFailure value) deleteFailure,
+    required TResult Function(_DeleteSuccess value) deleteSuccess,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_ReorderFailure value)? reorderFailure,
+    TResult Function(_ReorderSuccess value)? reorderSuccess,
+    TResult Function(_DeleteFailure value)? deleteFailure,
+    TResult Function(_DeleteSuccess value)? deleteSuccess,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_ReorderFailure value)? reorderFailure,
+    TResult Function(_ReorderSuccess value)? reorderSuccess,
+    TResult Function(_DeleteFailure value)? deleteFailure,
+    TResult Function(_DeleteSuccess value)? deleteSuccess,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -442,6 +507,7 @@ class __$InitialCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -460,35 +526,41 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult actionInProgress(),
-    @required TResult reorderFailure(CategoryFailure categoryFailure),
-    @required TResult reorderSuccess(),
-    @required TResult deleteFailure(CategoryFailure categoryFailure),
-    @required TResult deleteSuccess(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() actionInProgress,
+    required TResult Function(CategoryFailure categoryFailure) reorderFailure,
+    required TResult Function() reorderSuccess,
+    required TResult Function(CategoryFailure categoryFailure) deleteFailure,
+    required TResult Function() deleteSuccess,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(reorderFailure != null);
-    assert(reorderSuccess != null);
-    assert(deleteFailure != null);
-    assert(deleteSuccess != null);
     return initial();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult actionInProgress(),
-    TResult reorderFailure(CategoryFailure categoryFailure),
-    TResult reorderSuccess(),
-    TResult deleteFailure(CategoryFailure categoryFailure),
-    TResult deleteSuccess(),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function(CategoryFailure categoryFailure)? reorderFailure,
+    TResult Function()? reorderSuccess,
+    TResult Function(CategoryFailure categoryFailure)? deleteFailure,
+    TResult Function()? deleteSuccess,
   }) {
-    assert(orElse != null);
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function(CategoryFailure categoryFailure)? reorderFailure,
+    TResult Function()? reorderSuccess,
+    TResult Function(CategoryFailure categoryFailure)? deleteFailure,
+    TResult Function()? deleteSuccess,
+    required TResult orElse(),
+  }) {
     if (initial != null) {
       return initial();
     }
@@ -497,35 +569,41 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult actionInProgress(_ActionInProgress value),
-    @required TResult reorderFailure(_ReorderFailure value),
-    @required TResult reorderSuccess(_ReorderSuccess value),
-    @required TResult deleteFailure(_DeleteFailure value),
-    @required TResult deleteSuccess(_DeleteSuccess value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_ReorderFailure value) reorderFailure,
+    required TResult Function(_ReorderSuccess value) reorderSuccess,
+    required TResult Function(_DeleteFailure value) deleteFailure,
+    required TResult Function(_DeleteSuccess value) deleteSuccess,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(reorderFailure != null);
-    assert(reorderSuccess != null);
-    assert(deleteFailure != null);
-    assert(deleteSuccess != null);
     return initial(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult actionInProgress(_ActionInProgress value),
-    TResult reorderFailure(_ReorderFailure value),
-    TResult reorderSuccess(_ReorderSuccess value),
-    TResult deleteFailure(_DeleteFailure value),
-    TResult deleteSuccess(_DeleteSuccess value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_ReorderFailure value)? reorderFailure,
+    TResult Function(_ReorderSuccess value)? reorderSuccess,
+    TResult Function(_DeleteFailure value)? deleteFailure,
+    TResult Function(_DeleteSuccess value)? deleteSuccess,
   }) {
-    assert(orElse != null);
+    return initial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_ReorderFailure value)? reorderFailure,
+    TResult Function(_ReorderSuccess value)? reorderSuccess,
+    TResult Function(_DeleteFailure value)? deleteFailure,
+    TResult Function(_DeleteSuccess value)? deleteSuccess,
+    required TResult orElse(),
+  }) {
     if (initial != null) {
       return initial(this);
     }
@@ -557,6 +635,7 @@ class __$ActionInProgressCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_ActionInProgress implements _ActionInProgress {
   const _$_ActionInProgress();
 
@@ -575,35 +654,41 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult actionInProgress(),
-    @required TResult reorderFailure(CategoryFailure categoryFailure),
-    @required TResult reorderSuccess(),
-    @required TResult deleteFailure(CategoryFailure categoryFailure),
-    @required TResult deleteSuccess(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() actionInProgress,
+    required TResult Function(CategoryFailure categoryFailure) reorderFailure,
+    required TResult Function() reorderSuccess,
+    required TResult Function(CategoryFailure categoryFailure) deleteFailure,
+    required TResult Function() deleteSuccess,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(reorderFailure != null);
-    assert(reorderSuccess != null);
-    assert(deleteFailure != null);
-    assert(deleteSuccess != null);
     return actionInProgress();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult actionInProgress(),
-    TResult reorderFailure(CategoryFailure categoryFailure),
-    TResult reorderSuccess(),
-    TResult deleteFailure(CategoryFailure categoryFailure),
-    TResult deleteSuccess(),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function(CategoryFailure categoryFailure)? reorderFailure,
+    TResult Function()? reorderSuccess,
+    TResult Function(CategoryFailure categoryFailure)? deleteFailure,
+    TResult Function()? deleteSuccess,
   }) {
-    assert(orElse != null);
+    return actionInProgress?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function(CategoryFailure categoryFailure)? reorderFailure,
+    TResult Function()? reorderSuccess,
+    TResult Function(CategoryFailure categoryFailure)? deleteFailure,
+    TResult Function()? deleteSuccess,
+    required TResult orElse(),
+  }) {
     if (actionInProgress != null) {
       return actionInProgress();
     }
@@ -612,35 +697,41 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult actionInProgress(_ActionInProgress value),
-    @required TResult reorderFailure(_ReorderFailure value),
-    @required TResult reorderSuccess(_ReorderSuccess value),
-    @required TResult deleteFailure(_DeleteFailure value),
-    @required TResult deleteSuccess(_DeleteSuccess value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_ReorderFailure value) reorderFailure,
+    required TResult Function(_ReorderSuccess value) reorderSuccess,
+    required TResult Function(_DeleteFailure value) deleteFailure,
+    required TResult Function(_DeleteSuccess value) deleteSuccess,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(reorderFailure != null);
-    assert(reorderSuccess != null);
-    assert(deleteFailure != null);
-    assert(deleteSuccess != null);
     return actionInProgress(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult actionInProgress(_ActionInProgress value),
-    TResult reorderFailure(_ReorderFailure value),
-    TResult reorderSuccess(_ReorderSuccess value),
-    TResult deleteFailure(_DeleteFailure value),
-    TResult deleteSuccess(_DeleteSuccess value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_ReorderFailure value)? reorderFailure,
+    TResult Function(_ReorderSuccess value)? reorderSuccess,
+    TResult Function(_DeleteFailure value)? deleteFailure,
+    TResult Function(_DeleteSuccess value)? deleteSuccess,
   }) {
-    assert(orElse != null);
+    return actionInProgress?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_ReorderFailure value)? reorderFailure,
+    TResult Function(_ReorderSuccess value)? reorderSuccess,
+    TResult Function(_DeleteFailure value)? deleteFailure,
+    TResult Function(_DeleteSuccess value)? deleteSuccess,
+    required TResult orElse(),
+  }) {
     if (actionInProgress != null) {
       return actionInProgress(this);
     }
@@ -675,20 +766,18 @@ class __$ReorderFailureCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object categoryFailure = freezed,
+    Object? categoryFailure = freezed,
   }) {
     return _then(_ReorderFailure(
       categoryFailure == freezed
           ? _value.categoryFailure
-          : categoryFailure as CategoryFailure,
+          : categoryFailure // ignore: cast_nullable_to_non_nullable
+              as CategoryFailure,
     ));
   }
 
   @override
   $CategoryFailureCopyWith<$Res> get categoryFailure {
-    if (_value.categoryFailure == null) {
-      return null;
-    }
     return $CategoryFailureCopyWith<$Res>(_value.categoryFailure, (value) {
       return _then(_value.copyWith(categoryFailure: value));
     });
@@ -696,9 +785,9 @@ class __$ReorderFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_ReorderFailure implements _ReorderFailure {
-  const _$_ReorderFailure(this.categoryFailure)
-      : assert(categoryFailure != null);
+  const _$_ReorderFailure(this.categoryFailure);
 
   @override
   final CategoryFailure categoryFailure;
@@ -729,35 +818,41 @@ class _$_ReorderFailure implements _ReorderFailure {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult actionInProgress(),
-    @required TResult reorderFailure(CategoryFailure categoryFailure),
-    @required TResult reorderSuccess(),
-    @required TResult deleteFailure(CategoryFailure categoryFailure),
-    @required TResult deleteSuccess(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() actionInProgress,
+    required TResult Function(CategoryFailure categoryFailure) reorderFailure,
+    required TResult Function() reorderSuccess,
+    required TResult Function(CategoryFailure categoryFailure) deleteFailure,
+    required TResult Function() deleteSuccess,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(reorderFailure != null);
-    assert(reorderSuccess != null);
-    assert(deleteFailure != null);
-    assert(deleteSuccess != null);
     return reorderFailure(categoryFailure);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult actionInProgress(),
-    TResult reorderFailure(CategoryFailure categoryFailure),
-    TResult reorderSuccess(),
-    TResult deleteFailure(CategoryFailure categoryFailure),
-    TResult deleteSuccess(),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function(CategoryFailure categoryFailure)? reorderFailure,
+    TResult Function()? reorderSuccess,
+    TResult Function(CategoryFailure categoryFailure)? deleteFailure,
+    TResult Function()? deleteSuccess,
   }) {
-    assert(orElse != null);
+    return reorderFailure?.call(categoryFailure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function(CategoryFailure categoryFailure)? reorderFailure,
+    TResult Function()? reorderSuccess,
+    TResult Function(CategoryFailure categoryFailure)? deleteFailure,
+    TResult Function()? deleteSuccess,
+    required TResult orElse(),
+  }) {
     if (reorderFailure != null) {
       return reorderFailure(categoryFailure);
     }
@@ -766,35 +861,41 @@ class _$_ReorderFailure implements _ReorderFailure {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult actionInProgress(_ActionInProgress value),
-    @required TResult reorderFailure(_ReorderFailure value),
-    @required TResult reorderSuccess(_ReorderSuccess value),
-    @required TResult deleteFailure(_DeleteFailure value),
-    @required TResult deleteSuccess(_DeleteSuccess value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_ReorderFailure value) reorderFailure,
+    required TResult Function(_ReorderSuccess value) reorderSuccess,
+    required TResult Function(_DeleteFailure value) deleteFailure,
+    required TResult Function(_DeleteSuccess value) deleteSuccess,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(reorderFailure != null);
-    assert(reorderSuccess != null);
-    assert(deleteFailure != null);
-    assert(deleteSuccess != null);
     return reorderFailure(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult actionInProgress(_ActionInProgress value),
-    TResult reorderFailure(_ReorderFailure value),
-    TResult reorderSuccess(_ReorderSuccess value),
-    TResult deleteFailure(_DeleteFailure value),
-    TResult deleteSuccess(_DeleteSuccess value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_ReorderFailure value)? reorderFailure,
+    TResult Function(_ReorderSuccess value)? reorderSuccess,
+    TResult Function(_DeleteFailure value)? deleteFailure,
+    TResult Function(_DeleteSuccess value)? deleteSuccess,
   }) {
-    assert(orElse != null);
+    return reorderFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_ReorderFailure value)? reorderFailure,
+    TResult Function(_ReorderSuccess value)? reorderSuccess,
+    TResult Function(_DeleteFailure value)? deleteFailure,
+    TResult Function(_DeleteSuccess value)? deleteSuccess,
+    required TResult orElse(),
+  }) {
     if (reorderFailure != null) {
       return reorderFailure(this);
     }
@@ -806,9 +907,10 @@ abstract class _ReorderFailure implements CategoryActorState {
   const factory _ReorderFailure(CategoryFailure categoryFailure) =
       _$_ReorderFailure;
 
-  CategoryFailure get categoryFailure;
+  CategoryFailure get categoryFailure => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$ReorderFailureCopyWith<_ReorderFailure> get copyWith;
+  _$ReorderFailureCopyWith<_ReorderFailure> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -831,6 +933,7 @@ class __$ReorderSuccessCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_ReorderSuccess implements _ReorderSuccess {
   const _$_ReorderSuccess();
 
@@ -849,35 +952,41 @@ class _$_ReorderSuccess implements _ReorderSuccess {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult actionInProgress(),
-    @required TResult reorderFailure(CategoryFailure categoryFailure),
-    @required TResult reorderSuccess(),
-    @required TResult deleteFailure(CategoryFailure categoryFailure),
-    @required TResult deleteSuccess(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() actionInProgress,
+    required TResult Function(CategoryFailure categoryFailure) reorderFailure,
+    required TResult Function() reorderSuccess,
+    required TResult Function(CategoryFailure categoryFailure) deleteFailure,
+    required TResult Function() deleteSuccess,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(reorderFailure != null);
-    assert(reorderSuccess != null);
-    assert(deleteFailure != null);
-    assert(deleteSuccess != null);
     return reorderSuccess();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult actionInProgress(),
-    TResult reorderFailure(CategoryFailure categoryFailure),
-    TResult reorderSuccess(),
-    TResult deleteFailure(CategoryFailure categoryFailure),
-    TResult deleteSuccess(),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function(CategoryFailure categoryFailure)? reorderFailure,
+    TResult Function()? reorderSuccess,
+    TResult Function(CategoryFailure categoryFailure)? deleteFailure,
+    TResult Function()? deleteSuccess,
   }) {
-    assert(orElse != null);
+    return reorderSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function(CategoryFailure categoryFailure)? reorderFailure,
+    TResult Function()? reorderSuccess,
+    TResult Function(CategoryFailure categoryFailure)? deleteFailure,
+    TResult Function()? deleteSuccess,
+    required TResult orElse(),
+  }) {
     if (reorderSuccess != null) {
       return reorderSuccess();
     }
@@ -886,35 +995,41 @@ class _$_ReorderSuccess implements _ReorderSuccess {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult actionInProgress(_ActionInProgress value),
-    @required TResult reorderFailure(_ReorderFailure value),
-    @required TResult reorderSuccess(_ReorderSuccess value),
-    @required TResult deleteFailure(_DeleteFailure value),
-    @required TResult deleteSuccess(_DeleteSuccess value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_ReorderFailure value) reorderFailure,
+    required TResult Function(_ReorderSuccess value) reorderSuccess,
+    required TResult Function(_DeleteFailure value) deleteFailure,
+    required TResult Function(_DeleteSuccess value) deleteSuccess,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(reorderFailure != null);
-    assert(reorderSuccess != null);
-    assert(deleteFailure != null);
-    assert(deleteSuccess != null);
     return reorderSuccess(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult actionInProgress(_ActionInProgress value),
-    TResult reorderFailure(_ReorderFailure value),
-    TResult reorderSuccess(_ReorderSuccess value),
-    TResult deleteFailure(_DeleteFailure value),
-    TResult deleteSuccess(_DeleteSuccess value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_ReorderFailure value)? reorderFailure,
+    TResult Function(_ReorderSuccess value)? reorderSuccess,
+    TResult Function(_DeleteFailure value)? deleteFailure,
+    TResult Function(_DeleteSuccess value)? deleteSuccess,
   }) {
-    assert(orElse != null);
+    return reorderSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_ReorderFailure value)? reorderFailure,
+    TResult Function(_ReorderSuccess value)? reorderSuccess,
+    TResult Function(_DeleteFailure value)? deleteFailure,
+    TResult Function(_DeleteSuccess value)? deleteSuccess,
+    required TResult orElse(),
+  }) {
     if (reorderSuccess != null) {
       return reorderSuccess(this);
     }
@@ -949,20 +1064,18 @@ class __$DeleteFailureCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object categoryFailure = freezed,
+    Object? categoryFailure = freezed,
   }) {
     return _then(_DeleteFailure(
       categoryFailure == freezed
           ? _value.categoryFailure
-          : categoryFailure as CategoryFailure,
+          : categoryFailure // ignore: cast_nullable_to_non_nullable
+              as CategoryFailure,
     ));
   }
 
   @override
   $CategoryFailureCopyWith<$Res> get categoryFailure {
-    if (_value.categoryFailure == null) {
-      return null;
-    }
     return $CategoryFailureCopyWith<$Res>(_value.categoryFailure, (value) {
       return _then(_value.copyWith(categoryFailure: value));
     });
@@ -970,9 +1083,9 @@ class __$DeleteFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_DeleteFailure implements _DeleteFailure {
-  const _$_DeleteFailure(this.categoryFailure)
-      : assert(categoryFailure != null);
+  const _$_DeleteFailure(this.categoryFailure);
 
   @override
   final CategoryFailure categoryFailure;
@@ -1003,35 +1116,41 @@ class _$_DeleteFailure implements _DeleteFailure {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult actionInProgress(),
-    @required TResult reorderFailure(CategoryFailure categoryFailure),
-    @required TResult reorderSuccess(),
-    @required TResult deleteFailure(CategoryFailure categoryFailure),
-    @required TResult deleteSuccess(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() actionInProgress,
+    required TResult Function(CategoryFailure categoryFailure) reorderFailure,
+    required TResult Function() reorderSuccess,
+    required TResult Function(CategoryFailure categoryFailure) deleteFailure,
+    required TResult Function() deleteSuccess,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(reorderFailure != null);
-    assert(reorderSuccess != null);
-    assert(deleteFailure != null);
-    assert(deleteSuccess != null);
     return deleteFailure(categoryFailure);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult actionInProgress(),
-    TResult reorderFailure(CategoryFailure categoryFailure),
-    TResult reorderSuccess(),
-    TResult deleteFailure(CategoryFailure categoryFailure),
-    TResult deleteSuccess(),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function(CategoryFailure categoryFailure)? reorderFailure,
+    TResult Function()? reorderSuccess,
+    TResult Function(CategoryFailure categoryFailure)? deleteFailure,
+    TResult Function()? deleteSuccess,
   }) {
-    assert(orElse != null);
+    return deleteFailure?.call(categoryFailure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function(CategoryFailure categoryFailure)? reorderFailure,
+    TResult Function()? reorderSuccess,
+    TResult Function(CategoryFailure categoryFailure)? deleteFailure,
+    TResult Function()? deleteSuccess,
+    required TResult orElse(),
+  }) {
     if (deleteFailure != null) {
       return deleteFailure(categoryFailure);
     }
@@ -1040,35 +1159,41 @@ class _$_DeleteFailure implements _DeleteFailure {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult actionInProgress(_ActionInProgress value),
-    @required TResult reorderFailure(_ReorderFailure value),
-    @required TResult reorderSuccess(_ReorderSuccess value),
-    @required TResult deleteFailure(_DeleteFailure value),
-    @required TResult deleteSuccess(_DeleteSuccess value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_ReorderFailure value) reorderFailure,
+    required TResult Function(_ReorderSuccess value) reorderSuccess,
+    required TResult Function(_DeleteFailure value) deleteFailure,
+    required TResult Function(_DeleteSuccess value) deleteSuccess,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(reorderFailure != null);
-    assert(reorderSuccess != null);
-    assert(deleteFailure != null);
-    assert(deleteSuccess != null);
     return deleteFailure(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult actionInProgress(_ActionInProgress value),
-    TResult reorderFailure(_ReorderFailure value),
-    TResult reorderSuccess(_ReorderSuccess value),
-    TResult deleteFailure(_DeleteFailure value),
-    TResult deleteSuccess(_DeleteSuccess value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_ReorderFailure value)? reorderFailure,
+    TResult Function(_ReorderSuccess value)? reorderSuccess,
+    TResult Function(_DeleteFailure value)? deleteFailure,
+    TResult Function(_DeleteSuccess value)? deleteSuccess,
   }) {
-    assert(orElse != null);
+    return deleteFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_ReorderFailure value)? reorderFailure,
+    TResult Function(_ReorderSuccess value)? reorderSuccess,
+    TResult Function(_DeleteFailure value)? deleteFailure,
+    TResult Function(_DeleteSuccess value)? deleteSuccess,
+    required TResult orElse(),
+  }) {
     if (deleteFailure != null) {
       return deleteFailure(this);
     }
@@ -1080,9 +1205,10 @@ abstract class _DeleteFailure implements CategoryActorState {
   const factory _DeleteFailure(CategoryFailure categoryFailure) =
       _$_DeleteFailure;
 
-  CategoryFailure get categoryFailure;
+  CategoryFailure get categoryFailure => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$DeleteFailureCopyWith<_DeleteFailure> get copyWith;
+  _$DeleteFailureCopyWith<_DeleteFailure> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1105,6 +1231,7 @@ class __$DeleteSuccessCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_DeleteSuccess implements _DeleteSuccess {
   const _$_DeleteSuccess();
 
@@ -1123,35 +1250,41 @@ class _$_DeleteSuccess implements _DeleteSuccess {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult actionInProgress(),
-    @required TResult reorderFailure(CategoryFailure categoryFailure),
-    @required TResult reorderSuccess(),
-    @required TResult deleteFailure(CategoryFailure categoryFailure),
-    @required TResult deleteSuccess(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() actionInProgress,
+    required TResult Function(CategoryFailure categoryFailure) reorderFailure,
+    required TResult Function() reorderSuccess,
+    required TResult Function(CategoryFailure categoryFailure) deleteFailure,
+    required TResult Function() deleteSuccess,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(reorderFailure != null);
-    assert(reorderSuccess != null);
-    assert(deleteFailure != null);
-    assert(deleteSuccess != null);
     return deleteSuccess();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult actionInProgress(),
-    TResult reorderFailure(CategoryFailure categoryFailure),
-    TResult reorderSuccess(),
-    TResult deleteFailure(CategoryFailure categoryFailure),
-    TResult deleteSuccess(),
-    @required TResult orElse(),
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function(CategoryFailure categoryFailure)? reorderFailure,
+    TResult Function()? reorderSuccess,
+    TResult Function(CategoryFailure categoryFailure)? deleteFailure,
+    TResult Function()? deleteSuccess,
   }) {
-    assert(orElse != null);
+    return deleteSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function(CategoryFailure categoryFailure)? reorderFailure,
+    TResult Function()? reorderSuccess,
+    TResult Function(CategoryFailure categoryFailure)? deleteFailure,
+    TResult Function()? deleteSuccess,
+    required TResult orElse(),
+  }) {
     if (deleteSuccess != null) {
       return deleteSuccess();
     }
@@ -1160,35 +1293,41 @@ class _$_DeleteSuccess implements _DeleteSuccess {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult actionInProgress(_ActionInProgress value),
-    @required TResult reorderFailure(_ReorderFailure value),
-    @required TResult reorderSuccess(_ReorderSuccess value),
-    @required TResult deleteFailure(_DeleteFailure value),
-    @required TResult deleteSuccess(_DeleteSuccess value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ActionInProgress value) actionInProgress,
+    required TResult Function(_ReorderFailure value) reorderFailure,
+    required TResult Function(_ReorderSuccess value) reorderSuccess,
+    required TResult Function(_DeleteFailure value) deleteFailure,
+    required TResult Function(_DeleteSuccess value) deleteSuccess,
   }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(reorderFailure != null);
-    assert(reorderSuccess != null);
-    assert(deleteFailure != null);
-    assert(deleteSuccess != null);
     return deleteSuccess(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult actionInProgress(_ActionInProgress value),
-    TResult reorderFailure(_ReorderFailure value),
-    TResult reorderSuccess(_ReorderSuccess value),
-    TResult deleteFailure(_DeleteFailure value),
-    TResult deleteSuccess(_DeleteSuccess value),
-    @required TResult orElse(),
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_ReorderFailure value)? reorderFailure,
+    TResult Function(_ReorderSuccess value)? reorderSuccess,
+    TResult Function(_DeleteFailure value)? deleteFailure,
+    TResult Function(_DeleteSuccess value)? deleteSuccess,
   }) {
-    assert(orElse != null);
+    return deleteSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_ReorderFailure value)? reorderFailure,
+    TResult Function(_ReorderSuccess value)? reorderSuccess,
+    TResult Function(_DeleteFailure value)? deleteFailure,
+    TResult Function(_DeleteSuccess value)? deleteSuccess,
+    required TResult orElse(),
+  }) {
     if (deleteSuccess != null) {
       return deleteSuccess(this);
     }
