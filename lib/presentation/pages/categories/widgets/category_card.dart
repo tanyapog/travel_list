@@ -42,7 +42,7 @@ class CategoryCard extends StatelessWidget {
           child: ListTile(
             title: Text(category.name),
             trailing: const Handle(
-              child: Icon(Icons.drag_handle, color: Colors.grey,)
+              child: Icon(Icons.drag_handle, color: Colors.grey,),
             ),
           ),
         ),

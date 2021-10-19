@@ -11,7 +11,7 @@ void main() {
       data: const MediaQueryData(),
       child: MaterialApp(
         home: SignInPage(),
-      )
+      ),
   );
 
   Finder findEmail() => find.bySemanticsLabel('Email');

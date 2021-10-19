@@ -35,7 +35,7 @@ class TripFormPage extends StatelessWidget {
                 ExtendedNavigator.of(context)
                   .popUntil((route) => route.settings.name == Routes.tripsOverviewPage,);
               }
-            )
+            ),
           );
         },
         buildWhen: (previous, current) => previous.isSaving != current.isSaving,
@@ -64,7 +64,7 @@ class TripFormPageScaffold extends StatelessWidget {
           buildWhen: (previous, current) => previous.isEditing != current.isEditing,
           builder: (context, state) => Text(state.isEditing
             ? 'Edit a trip'
-            : 'Create a trip'
+            : 'Create a trip',
           ),
         ),
         actions: <Widget>[
@@ -84,7 +84,7 @@ class TripFormPageScaffold extends StatelessWidget {
            key: _globalTripFormKey,
            child: const TripFormBody(),
          );
-        }
+        },
       ),
     );
   }

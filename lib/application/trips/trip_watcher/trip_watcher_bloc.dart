@@ -33,7 +33,7 @@ class TripWatcherBloc extends Bloc<TripWatcherEvent, TripWatcherState> {
         _tripStreamSubscription = _tripRepository
             .watchAll()
             .listen((failureOrTrips) =>
-          add(TripWatcherEvent.tripsReceived(failureOrTrips))
+          add(TripWatcherEvent.tripsReceived(failureOrTrips)),
         );
       },
       watchUncompletedStarted: (e) async* {
@@ -42,7 +42,7 @@ class TripWatcherBloc extends Bloc<TripWatcherEvent, TripWatcherState> {
         _tripStreamSubscription = _tripRepository
             .watchUncompleted()
             .listen((failureOrTrips) =>
-            add(TripWatcherEvent.tripsReceived(failureOrTrips))
+            add(TripWatcherEvent.tripsReceived(failureOrTrips)),
         );
       },
       tripsReceived: (e) async* {
@@ -50,7 +50,7 @@ class TripWatcherBloc extends Bloc<TripWatcherEvent, TripWatcherState> {
           (failure) => TripWatcherState.loadFailure(failure),
           (trips) => TripWatcherState.loadSuccess(trips),
         );
-      }
+      },
     );
   }
 

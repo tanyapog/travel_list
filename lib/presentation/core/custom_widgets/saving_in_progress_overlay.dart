@@ -27,7 +27,7 @@ class SavingInProgressOverlay extends StatelessWidget {
                   style: Theme.of(context).textTheme.bodyText2.copyWith(
                     color: Colors.white,
                     fontSize: 16,
-                  )
+                  ),
               ),
             ],
           ),

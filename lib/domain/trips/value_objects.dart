@@ -19,7 +19,7 @@ class TripName extends ValueObject<String> {
     return TripName._(
       validateMaxStringLength(input, maxLength)
       .flatMap(validateStingNotEmpty)
-      .flatMap(validateSingleLine)
+      .flatMap(validateSingleLine),
     );
   }
 
@@ -35,7 +35,7 @@ class TripDescription extends ValueObject<String> {
   factory TripDescription(String input) {
     assert(input != null);
     return TripDescription._(
-      validateMaxStringLength(input, firestoreDocumentSizeLimit)
+      validateMaxStringLength(input, firestoreDocumentSizeLimit),
     );
   }
 

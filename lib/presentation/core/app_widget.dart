@@ -17,11 +17,11 @@ class AppWidget extends StatelessWidget {
         theme: ThemeData.light().copyWith(
           primaryColor: Colors.lime,
           floatingActionButtonTheme: const FloatingActionButtonThemeData(
-            backgroundColor: Colors.deepOrange
+            backgroundColor: Colors.deepOrange,
           ),
           inputDecorationTheme: InputDecorationTheme(
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(3)),
-          )
+          ),
         ),
         debugShowCheckedModeBanner: false,
       ),

@@ -7,7 +7,7 @@ Dialog customDialog({required Widget child}) =>
     child: Container(
         padding: const EdgeInsets.all(16),
         decoration: dialogBoxDecoration,
-        child: child
+        child: child,
     ),
   );
 

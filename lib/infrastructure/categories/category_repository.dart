@@ -22,9 +22,9 @@ class CategoryRepository implements ICategoryRepository {
       .snapshots()
       .map((snapshot) => CategoryResult.success(
         categories: snapshot.docs
-          .map((doc) => CategoryDto.fromFirestore(doc).toDomain()).toList(),))
+          .map((doc) => CategoryDto.fromFirestore(doc).toDomain()).toList(),),)
       .onErrorReturnWith((e) => CategoryResult.failure(
-        failure: CategoryFailure.fromError(e)));
+        failure: CategoryFailure.fromError(e),),);
   }
 
   @override
@@ -85,7 +85,7 @@ class CategoryRepository implements ICategoryRepository {
               orElse: () {},
             );
           }
-        })
+        }),
       );
       return (failures.isEmpty)
         ? const CategoryResult.success()

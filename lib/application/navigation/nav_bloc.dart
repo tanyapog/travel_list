@@ -16,7 +16,7 @@ class NavBloc extends Bloc<NavEvent, NavState> {
     yield* event.map(
       navigateTo: (e) async* {
         yield NavState.selectItem(selectedItem: e.destination);
-      }
+      },
     );
   }
 }

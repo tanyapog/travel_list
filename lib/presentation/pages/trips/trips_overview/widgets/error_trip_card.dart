@@ -16,7 +16,7 @@ class ErrorTripCard extends StatelessWidget {
           title: const Text('Invalid trip, please contact support',),
           subtitle: Text(trip.failureOption.fold(() => '', (failure) => failure.toString())),
         ),
-      )
+      ),
     );
   }
 }

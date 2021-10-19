@@ -50,7 +50,7 @@ class NavigationDrawer extends StatelessWidget {
                   context.read<AuthBloc>().add(const AuthEvent.signedOut());
                   break;
               }
-            }
+            },
           ),
         ],
         child: BlocBuilder<AuthBloc, AuthState>(
@@ -76,7 +76,7 @@ class NavigationDrawer extends StatelessWidget {
               ),
             ),
             orElse: () => Container(),
-          )
+          ),
         ),
       ),
     );
@@ -86,11 +86,11 @@ class NavigationDrawer extends StatelessWidget {
       UserAccountsDrawerHeader(
         accountName: Text(
           user.name.value.fold((l) => null, id),
-          style: const TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w800)
+          style: const TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w800),
         ),
         accountEmail: Text(
           user.email.value.fold((l) => null, id),
-          style: const TextStyle(color: Colors.black)
+          style: const TextStyle(color: Colors.black),
         ),
         decoration: const BoxDecoration(color: Colors.lightGreen),
         currentAccountPicture: const CircleAvatar(
@@ -106,7 +106,7 @@ class NavigationDrawer extends StatelessWidget {
       String title,
       IconData icon,
       BuildContext navContext,
-      NavState navState) {
+      NavState navState,) {
 
     final bool isSelected = item == navState.selectedItem;
     return Card(

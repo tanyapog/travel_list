@@ -10,5 +10,5 @@ void main() {
     expect: [isA<NavState>()],
     verify: (bloc) async {
       expect(bloc.state.selectedItem, NavItem.catalog);
-  });
+  },);
 }

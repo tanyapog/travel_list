@@ -40,7 +40,7 @@ class SignInForm extends StatelessWidget {
                 serverError: (message) => 'Server Error: $message',
                 emailAlreadyInUse: (_) => 'Email already in use',
                 invalidEmailAndPasswordCombination: (_) =>
-                  'Invalid email and password combination',)).show(context);
+                  'Invalid email and password combination',),).show(context);
             },
             (_) { // Authorisation succeed, show to user the list of trips
               context.read<AuthBloc>().add(const AuthEvent.authCheckRequested());

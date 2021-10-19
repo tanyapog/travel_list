@@ -26,14 +26,14 @@ class FirebaseAuthFacade implements IAuthFacade {
   @override
   Future<Either<AuthFailure, Unit>> registerWithEmailAndPassword({
     required Email email,
-    required Password password
+    required Password password,
   }) async {
     final emailStr = email.getOrCrash();
     final passwordStr = password.getOrCrash();
     try {
       await _firebaseAuth.createUserWithEmailAndPassword(
         email: emailStr,
-        password: passwordStr
+        password: passwordStr,
       );
       return right(unit);
     } on PlatformException catch (e) {
@@ -48,14 +48,14 @@ class FirebaseAuthFacade implements IAuthFacade {
   @override
   Future<Either<AuthFailure, Unit>> signInWithEmailAndPassword({
     required Email email,
-    required Password password
+    required Password password,
   }) async {
     final emailStr = email.getOrCrash();
     final passwordStr = password.getOrCrash();
     try {
       await _firebaseAuth.signInWithEmailAndPassword(
         email: emailStr,
-        password: passwordStr
+        password: passwordStr,
       );
       return right(unit);
     } on FirebaseAuthException catch (e) {
@@ -80,7 +80,7 @@ class FirebaseAuthFacade implements IAuthFacade {
       final googleAuth = await googleUser.authentication;
       final authCredential = GoogleAuthProvider.credential(
         idToken: googleAuth.idToken,
-        accessToken: googleAuth.accessToken
+        accessToken: googleAuth.accessToken,
       );
       return _firebaseAuth
         .signInWithCredential(authCredential)

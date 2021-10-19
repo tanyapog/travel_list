@@ -58,7 +58,7 @@ class TripRepository implements ITripRepository {
         .snapshots() // it's optimized and cheaper than .getDocuments which always loads all the documents
         .map((snapshot) => right<TripFailure, List<Trip>>(
           snapshot.docs
-            .map((doc) => TripDto.fromFirestore(doc).toDomain()).toList(),))
+            .map((doc) => TripDto.fromFirestore(doc).toDomain()).toList(),),)
         .onErrorReturnWith((e) => left(TripFailure.fromError(e)));
   }
 
@@ -70,9 +70,9 @@ class TripRepository implements ITripRepository {
         .snapshots() // it's optimized and cheaper than .getDocuments
         .map((snapshot) =>
           snapshot.docs
-            .map((doc) => TripDto.fromFirestore(doc).toDomain()))
+            .map((doc) => TripDto.fromFirestore(doc).toDomain()),)
         .map((trips) => right<TripFailure, List<Trip>>(
-          trips.where((trip) => !trip.complete).toList()))
+          trips.where((trip) => !trip.complete).toList(),),)
         .onErrorReturnWith((e) => left(TripFailure.fromError(e)));
   }
 }

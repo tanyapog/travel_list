@@ -28,8 +28,8 @@ class CategoriesOverviewPage extends StatelessWidget {
         listener: (context, state) {
           state.maybeMap(
             reorderFailure: (state) => customErrorFlushbar(
-              message: state.categoryFailure.message).show(context),
-            orElse: () {}
+              message: state.categoryFailure.message,).show(context),
+            orElse: () {},
           );
         },
         child: Scaffold(
