@@ -6,4 +6,3 @@ class NavState with _$NavState {
   factory NavState.initial() => const NavState(selectedItem: NavItem.trips);
   const factory NavState.selectItem({required NavItem selectedItem}) = SelectItem;
 }
-

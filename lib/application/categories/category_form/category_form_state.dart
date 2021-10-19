@@ -17,6 +17,3 @@ class CategoryFormState with _$CategoryFormState {
       isSaving: false,
   );
 }
-
-
-

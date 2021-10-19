@@ -7,4 +7,3 @@ class TripActorState with _$TripActorState {
   const factory TripActorState.deleteFailure(TripFailure tripFailure) = _DeleteFailure;
   const factory TripActorState.deleteSuccess() = _DeleteSuccess;
 }
-
