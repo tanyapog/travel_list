@@ -1,6 +1,6 @@
+import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:travel_list/application/navigation/nav_bloc.dart';
-import 'package:bloc_test/bloc_test.dart';
 
 void main() {
   blocTest<NavBloc, NavState>(

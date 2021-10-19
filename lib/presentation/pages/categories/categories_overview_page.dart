@@ -6,8 +6,8 @@ import 'package:travel_list/application/categories/category_watcher/category_wat
 import 'package:travel_list/domain/categories/category.dart';
 import 'package:travel_list/injection.dart';
 import 'package:travel_list/presentation/core/custom_widgets/custom_flushbar_helper.dart';
-import 'package:travel_list/presentation/pages/categories/widgets/category_editing_dialog.dart';
 import 'package:travel_list/presentation/pages/categories/widgets/category_card.dart';
+import 'package:travel_list/presentation/pages/categories/widgets/category_editing_dialog.dart';
 import 'package:travel_list/presentation/pages/categories/widgets/critical_failure_display.dart';
 import 'package:travel_list/presentation/pages/navigation/navigation_drawer.dart';
 

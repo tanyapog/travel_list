@@ -5,8 +5,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:travel_list/application/auth/auth_bloc.dart';
 import 'package:travel_list/application/navigation/nav_bloc.dart';
 import 'package:travel_list/domain/auth/user.dart';
-import 'package:travel_list/presentation/routes/router.gr.dart';
 import 'package:travel_list/injection.dart';
+import 'package:travel_list/presentation/routes/router.gr.dart';
 
 class NavigationDrawer extends StatelessWidget {
 

@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:meta/meta.dart';
-import 'package:uuid/uuid.dart';
+import 'package:travel_list/domain/core/errors.dart';
 import 'package:travel_list/domain/core/failures.dart';
 import 'package:travel_list/domain/core/value_validatores.dart';
-import 'package:travel_list/domain/core/errors.dart';
+import 'package:uuid/uuid.dart';
 
 @immutable
 abstract class ValueObject<T> {
