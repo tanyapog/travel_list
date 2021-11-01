@@ -53,7 +53,7 @@ class TripFormPage extends StatelessWidget {
 }
 
 class TripFormPageScaffold extends StatelessWidget {
-  const TripFormPageScaffold({Key key}) : super(key: key);
+  const TripFormPageScaffold({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
