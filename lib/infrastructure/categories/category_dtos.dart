@@ -18,7 +18,7 @@ class CategoryDto with _$CategoryDto {
 
   factory CategoryDto.fromDomain(Category category) =>
     CategoryDto(
-      id: category.id.getOrCrash().toString(),
+      id: category.id.getOrCrash(),
       name: category.name,
       position: category.position,
     );
