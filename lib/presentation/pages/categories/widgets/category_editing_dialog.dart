@@ -9,7 +9,7 @@ import 'package:travel_list/presentation/pages/categories/widgets/category_editi
 class CategoryEditDialog extends StatelessWidget {
   final Category category;
 
-  const CategoryEditDialog({Key key, this.category}) : super(key: key);
+  const CategoryEditDialog({Key? key, this.category}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -6,7 +6,7 @@ import 'package:travel_list/application/trips/trip_form/trip_form_bloc.dart';
 import 'package:travel_list/domain/trips/value_objects.dart';
 
 class TripFormBody extends HookWidget {
-  const TripFormBody({Key key,}) : super(key: key);
+  const TripFormBody({Key? key,}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

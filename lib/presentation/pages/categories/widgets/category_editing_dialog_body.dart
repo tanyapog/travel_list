@@ -10,7 +10,7 @@ import 'package:travel_list/presentation/core/custom_widgets/dialog_box_decorati
 import 'package:travel_list/presentation/routes/router.gr.dart';
 
 class CategoryDialogBody extends HookWidget {
-  const CategoryDialogBody({Key key,}) : super(key: key);
+  const CategoryDialogBody({Key? key,}) : super(key: key);
   static final GlobalKey<FormState> _globalCategoryFormKey = GlobalKey<FormState>();
 
   @override

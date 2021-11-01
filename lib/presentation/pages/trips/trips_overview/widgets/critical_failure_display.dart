@@ -5,7 +5,7 @@ import 'package:travel_list/domain/trips/trip_failure.dart';
 class CriticalFailureDisplay extends StatelessWidget {
   final TripFailure failure;
 
-  const CriticalFailureDisplay({Key key, required this.failure}) : super(key: key);
+  const CriticalFailureDisplay({Key? key, required this.failure}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

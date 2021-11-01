@@ -4,7 +4,7 @@ import 'package:travel_list/domain/trips/trip.dart';
 class ErrorTripCard extends StatelessWidget {
   final Trip trip;
 
-  const ErrorTripCard({Key key, required this.trip}) : super(key: key);
+  const ErrorTripCard({Key? key, required this.trip}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

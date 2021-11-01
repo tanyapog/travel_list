@@ -12,7 +12,7 @@ class CategoryCard extends StatelessWidget {
   final double elevation;
 
   const CategoryCard({
-    Key key,
+    Key? key,
     required this.category,
     double elevation,
   }) : elevation = elevation ?? 0,

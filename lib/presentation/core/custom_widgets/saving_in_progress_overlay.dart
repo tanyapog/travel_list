@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class SavingInProgressOverlay extends StatelessWidget {
   final bool isSaving;
 
-  const SavingInProgressOverlay({Key key, required this.isSaving,}) : super(key: key);
+  const SavingInProgressOverlay({Key? key, required this.isSaving,}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
