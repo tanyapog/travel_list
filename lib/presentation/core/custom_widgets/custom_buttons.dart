@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 
-FlatButton greyButton({
+TextButton greyButton({
   required void Function() onPressed,
   required String title,})
 {
-  return FlatButton(
-    color: Colors.blueGrey.shade50,
+  return TextButton(
+    style: TextButton.styleFrom(backgroundColor: Colors.blueGrey.shade50,),
     onPressed: onPressed,
     child: Text(title),
   );
 }
 
-FlatButton amberButton({
+TextButton amberButton({
   required void Function() onPressed,
   required String title,})
 {
-  return FlatButton(
-    color: Colors.amber,
+  return TextButton(
+    style: TextButton.styleFrom(backgroundColor: Colors.amber,),
     onPressed: onPressed,
     child: Text(title),
   );

@@ -98,7 +98,7 @@ class SignInForm extends StatelessWidget {
                 Row(
                   children: <Widget>[
                     Expanded(
-                      child: FlatButton(
+                      child: TextButton(
                         onPressed: () {
                           _globalSignInFormKey.currentState.validate();
                           context.read<SignInFormBloc>()
@@ -108,7 +108,7 @@ class SignInForm extends StatelessWidget {
                       ),
                     ),
                     Expanded(
-                      child: FlatButton(
+                      child: TextButton(
                         onPressed: () {
                           _globalSignInFormKey.currentState.validate();
                           context.read<SignInFormBloc>()
@@ -119,13 +119,13 @@ class SignInForm extends StatelessWidget {
                     ),
                   ],
                 ),
-                RaisedButton(
+                ElevatedButton(
                   onPressed: () => context.read<SignInFormBloc>()
                     .add(const SignInFormEvent.signInWithGooglePressed()),
-                  color: Colors.amber,
-                  child: const Text('SIGN IN WITH GOOGLE',
-                    style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-                  ),
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.amber,
+                    textStyle: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+                  child: const Text('SIGN IN WITH GOOGLE',),
                 ),
                 if (state.isSubmitting) ... [
                   const SizedBox(height: 8,),
