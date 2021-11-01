@@ -6,7 +6,7 @@ import 'package:travel_list/application/auth/auth_bloc.dart';
 import 'package:travel_list/application/auth/sign_in_form/sign_in_form_bloc.dart';
 import 'package:travel_list/injection.dart';
 import 'package:travel_list/presentation/core/custom_widgets/custom_flushbar_helper.dart';
-import 'package:travel_list/presentation/routes/router.gr.dart';
+import 'package:travel_list/presentation/routes/router.gr.dart' as app_router;
 
 class SignInPage extends StatelessWidget {
   @override
@@ -44,7 +44,7 @@ class SignInForm extends StatelessWidget {
             },
             (_) { // Authorisation succeed, show to user the list of trips
               context.read<AuthBloc>().add(const AuthEvent.authCheckRequested());
-              ExtendedNavigator.of(context).replace(Routes.tripsOverviewPage);
+              AutoRouter.of(context).replace(const app_router.TripsOverviewRoute());
             }
           ),
         );

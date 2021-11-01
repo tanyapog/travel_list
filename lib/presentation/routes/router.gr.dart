@@ -1,3 +1,7 @@
+// **************************************************************************
+// AutoRouteGenerator
+// **************************************************************************
+
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
@@ -20,26 +24,26 @@ class Router extends _i6.RootStackRouter {
 
   @override
   final Map<String, _i6.PageFactory> pagesMap = {
-    SplashPageRoute.name: (routeData) {
+    SplashRoute.name: (routeData) {
       return _i6.MaterialPageX<dynamic>(
           routeData: routeData, child: _i1.SplashPage());
     },
-    SignInPageRoute.name: (routeData) {
+    SignInRoute.name: (routeData) {
       return _i6.MaterialPageX<dynamic>(
           routeData: routeData, child: _i2.SignInPage());
     },
-    TripsOverviewPageRoute.name: (routeData) {
+    TripsOverviewRoute.name: (routeData) {
       return _i6.MaterialPageX<dynamic>(
           routeData: routeData, child: _i3.TripsOverviewPage());
     },
-    TripFormPageRoute.name: (routeData) {
-      final args = routeData.argsAs<TripFormPageRouteArgs>();
+    TripFormRoute.name: (routeData) {
+      final args = routeData.argsAs<TripFormRouteArgs>();
       return _i6.MaterialPageX<dynamic>(
           routeData: routeData,
           child: _i4.TripFormPage(key: args.key, trip: args.trip),
           fullscreenDialog: true);
     },
-    CategoriesOverviewPageRoute.name: (routeData) {
+    CategoriesOverviewRoute.name: (routeData) {
       return _i6.MaterialPageX<dynamic>(
           routeData: routeData, child: _i5.CategoriesOverviewPage());
     }
@@ -47,59 +51,58 @@ class Router extends _i6.RootStackRouter {
 
   @override
   List<_i6.RouteConfig> get routes => [
-        _i6.RouteConfig(SplashPageRoute.name, path: '/'),
-        _i6.RouteConfig(SignInPageRoute.name, path: '/sign-in-page'),
-        _i6.RouteConfig(TripsOverviewPageRoute.name,
-            path: '/trips-overview-page'),
-        _i6.RouteConfig(TripFormPageRoute.name, path: '/trip-form-page'),
-        _i6.RouteConfig(CategoriesOverviewPageRoute.name,
+        _i6.RouteConfig(SplashRoute.name, path: '/'),
+        _i6.RouteConfig(SignInRoute.name, path: '/sign-in-page'),
+        _i6.RouteConfig(TripsOverviewRoute.name, path: '/trips-overview-page'),
+        _i6.RouteConfig(TripFormRoute.name, path: '/trip-form-page'),
+        _i6.RouteConfig(CategoriesOverviewRoute.name,
             path: '/categories-overview-page')
       ];
 }
 
 /// generated route for [_i1.SplashPage]
-class SplashPageRoute extends _i6.PageRouteInfo<void> {
-  const SplashPageRoute() : super(name, path: '/');
+class SplashRoute extends _i6.PageRouteInfo<void> {
+  const SplashRoute() : super(name, path: '/');
 
-  static const String name = 'SplashPageRoute';
+  static const String name = 'SplashRoute';
 }
 
 /// generated route for [_i2.SignInPage]
-class SignInPageRoute extends _i6.PageRouteInfo<void> {
-  const SignInPageRoute() : super(name, path: '/sign-in-page');
+class SignInRoute extends _i6.PageRouteInfo<void> {
+  const SignInRoute() : super(name, path: '/sign-in-page');
 
-  static const String name = 'SignInPageRoute';
+  static const String name = 'SignInRoute';
 }
 
 /// generated route for [_i3.TripsOverviewPage]
-class TripsOverviewPageRoute extends _i6.PageRouteInfo<void> {
-  const TripsOverviewPageRoute() : super(name, path: '/trips-overview-page');
+class TripsOverviewRoute extends _i6.PageRouteInfo<void> {
+  const TripsOverviewRoute() : super(name, path: '/trips-overview-page');
 
-  static const String name = 'TripsOverviewPageRoute';
+  static const String name = 'TripsOverviewRoute';
 }
 
 /// generated route for [_i4.TripFormPage]
-class TripFormPageRoute extends _i6.PageRouteInfo<TripFormPageRouteArgs> {
-  TripFormPageRoute({_i7.Key key, required _i8.Trip trip})
+class TripFormRoute extends _i6.PageRouteInfo<TripFormRouteArgs> {
+  TripFormRoute({_i7.Key? key, required _i8.Trip? trip})
       : super(name,
             path: '/trip-form-page',
-            args: TripFormPageRouteArgs(key: key, trip: trip));
+            args: TripFormRouteArgs(key: key, trip: trip));
 
-  static const String name = 'TripFormPageRoute';
+  static const String name = 'TripFormRoute';
 }
 
-class TripFormPageRouteArgs {
-  const TripFormPageRouteArgs({this.key, required this.trip});
+class TripFormRouteArgs {
+  const TripFormRouteArgs({this.key, required this.trip});
 
-  final _i7.Key key;
+  final _i7.Key? key;
 
-  final _i8.Trip trip;
+  final _i8.Trip? trip;
 }
 
 /// generated route for [_i5.CategoriesOverviewPage]
-class CategoriesOverviewPageRoute extends _i6.PageRouteInfo<void> {
-  const CategoriesOverviewPageRoute()
+class CategoriesOverviewRoute extends _i6.PageRouteInfo<void> {
+  const CategoriesOverviewRoute()
       : super(name, path: '/categories-overview-page');
 
-  static const String name = 'CategoriesOverviewPageRoute';
+  static const String name = 'CategoriesOverviewRoute';
 }

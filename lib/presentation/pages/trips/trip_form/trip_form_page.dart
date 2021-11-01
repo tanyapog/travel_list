@@ -8,7 +8,7 @@ import 'package:travel_list/injection.dart';
 import 'package:travel_list/presentation/core/custom_widgets/custom_flushbar_helper.dart';
 import 'package:travel_list/presentation/core/custom_widgets/saving_in_progress_overlay.dart';
 import 'package:travel_list/presentation/pages/trips/trip_form/widgets/trip_form_body.dart';
-import 'package:travel_list/presentation/routes/router.gr.dart';
+import 'package:travel_list/presentation/routes/router.gr.dart' as app_router;
 
 class TripFormPage extends StatelessWidget {
   final Trip trip;
@@ -32,8 +32,8 @@ class TripFormPage extends StatelessWidget {
                 // todo show trips_overview_page if trip was edited and generator if a new trip was created
                 context.read<TripFormBloc>().add(const TripFormEvent.saved());
                 // current route is fullscreenDialog with his oun route so just one pop is not enough
-                ExtendedNavigator.of(context)
-                  .popUntil((route) => route.settings.name == Routes.tripsOverviewPage,);
+                AutoRouter.of(context).popUntil((route) =>
+                  route.settings.name == app_router.TripsOverviewRoute.name,);
               }
             ),
           );

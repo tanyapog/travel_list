@@ -7,6 +7,7 @@ import 'package:travel_list/presentation/pages/trips/trips_overview/trips_overvi
 
 @MaterialAutoRouter(
   // generateNavigationHelperExtension: true,
+  replaceInRouteName: 'Page,Route',
   routes: <AutoRoute> [
     MaterialRoute(page: SplashPage, initial: true),
     MaterialRoute(page: SignInPage),
