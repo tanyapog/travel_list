@@ -61,7 +61,7 @@ class CategoryDialogBody extends HookWidget {
                   maxLength: Category.maxNameLength,
                   onChanged: (value) => context.read<CategoryFormBloc>()
                     .add(CategoryFormEvent.nameChanged(value)),
-                  validator: (value) => value.isEmpty
+                  validator: (value) => (value == null || value.isEmpty)
                     ? "Cannot be empty"
                     : null,
                 ),
