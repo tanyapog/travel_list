@@ -1,5 +1,4 @@
 import 'package:dartz/dartz.dart';
-import 'package:meta/meta.dart';
 import 'package:travel_list/domain/auth/auth_failure.dart';
 import 'package:travel_list/domain/auth/user.dart';
 import 'package:travel_list/domain/auth/value_objects.dart';
