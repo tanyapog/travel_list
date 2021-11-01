@@ -55,7 +55,6 @@ class UniqueId extends ValueObject<String> {
 
   /// Used with strings we trust are unique, such as database IDs.
   factory UniqueId.fromUniqueString(String uniqueIdStr) {
-    assert (uniqueIdStr != null);
     return UniqueId._(right(uniqueIdStr));
   }
 
@@ -67,7 +66,6 @@ class StringSingleLine extends ValueObject<String> {
   final Either<ValueFailure<String>, String> value;
 
   factory StringSingleLine(String input) {
-    assert(input != null);
     return StringSingleLine._(
       validateSingleLine(input),
     );

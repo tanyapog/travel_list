@@ -15,7 +15,6 @@ class TripName extends ValueObject<String> {
   static const maxLength = 70;
 
   factory TripName(String input) {
-    assert(input != null);
     return TripName._(
       validateMaxStringLength(input, maxLength)
       .flatMap(validateStingNotEmpty)
@@ -33,7 +32,6 @@ class TripDescription extends ValueObject<String> {
   static const maxLength = firestoreDocumentSizeLimit;
 
   factory TripDescription(String input) {
-    assert(input != null);
     return TripDescription._(
       validateMaxStringLength(input, firestoreDocumentSizeLimit),
     );

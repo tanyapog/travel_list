@@ -8,7 +8,6 @@ class Email extends ValueObject<String> {
   final Either<ValueFailure<String>, String> value;
 
   factory Email(String input) {
-    assert(input != null);
     return Email._(validateEmail(input));
   }
 
@@ -20,7 +19,6 @@ class Password extends ValueObject<String> {
   final Either<ValueFailure<String>, String> value;
 
   factory Password(String input) {
-    assert(input != null);
     return Password._(validatePassword(input));
   }
 
