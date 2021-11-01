@@ -13,9 +13,8 @@ class CategoryCard extends StatelessWidget {
   const CategoryCard({
     Key? key,
     required this.category,
-    double elevation,
-  }) : elevation = elevation ?? 0,
-        super(key: key);
+    required this.elevation,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
