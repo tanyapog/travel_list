@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:bloc/bloc.dart';
 import 'package:injectable/injectable.dart';
 import 'package:travel_list/domain/trips/i_trip_repository.dart';
 import 'package:travel_list/domain/trips/trip.dart';
