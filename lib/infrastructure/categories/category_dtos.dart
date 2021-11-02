@@ -20,7 +20,7 @@ class CategoryDto with _$CategoryDto {
     CategoryDto(
       id: category.id.getOrCrash(),
       name: category.name,
-      position: category.position,
+      position: category.position ?? -1, // -1 position must never appear. If it is, error occurred
     );
 
   Category toDomain() => Category(

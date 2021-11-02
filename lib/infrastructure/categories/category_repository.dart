@@ -112,7 +112,7 @@ class CategoryRepository implements ICategoryRepository {
         final DocumentSnapshot snapshot = docSnapshots.elementAt(0);
         if (snapshot.exists) {
           positionForNewCategory = CategoryDto.fromFirestore(snapshot).toDomain()
-            .position + 1;
+              .position! + 1;
         }
       }
       return positionForNewCategory;

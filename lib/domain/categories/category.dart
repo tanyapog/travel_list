@@ -12,7 +12,7 @@ class Category with _$Category {
   const factory Category({
     required UniqueId id,
     required String name,
-    int? position,
+    int? position, // initial position will be define base on total amount of categories
   }) = _Category;
 
   factory Category.empty() => Category(
