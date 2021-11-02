@@ -215,18 +215,14 @@ class _$_InsufficientPermission implements _InsufficientPermission {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _InsufficientPermission &&
-            (identical(other.e, e) ||
-                const DeepCollectionEquality().equals(other.e, e)) &&
-            (identical(other.message, message) ||
-                const DeepCollectionEquality().equals(other.message, message)));
+        (other.runtimeType == runtimeType &&
+            other is _InsufficientPermission &&
+            (identical(other.e, e) || other.e == e) &&
+            (identical(other.message, message) || other.message == message));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(e) ^
-      const DeepCollectionEquality().hash(message);
+  int get hashCode => Object.hash(runtimeType, e, message);
 
   @JsonKey(ignore: true)
   @override
@@ -325,9 +321,9 @@ abstract class _InsufficientPermission implements TripFailure {
   const factory _InsufficientPermission(PlatformException e, String message) =
       _$_InsufficientPermission;
 
-  PlatformException get e => throw _privateConstructorUsedError;
+  PlatformException get e;
   @override
-  String get message => throw _privateConstructorUsedError;
+  String get message;
   @override
   @JsonKey(ignore: true)
   _$InsufficientPermissionCopyWith<_InsufficientPermission> get copyWith =>
@@ -391,18 +387,14 @@ class _$_UnableToUpdate implements _UnableToUpdate {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _UnableToUpdate &&
-            (identical(other.e, e) ||
-                const DeepCollectionEquality().equals(other.e, e)) &&
-            (identical(other.message, message) ||
-                const DeepCollectionEquality().equals(other.message, message)));
+        (other.runtimeType == runtimeType &&
+            other is _UnableToUpdate &&
+            (identical(other.e, e) || other.e == e) &&
+            (identical(other.message, message) || other.message == message));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(e) ^
-      const DeepCollectionEquality().hash(message);
+  int get hashCode => Object.hash(runtimeType, e, message);
 
   @JsonKey(ignore: true)
   @override
@@ -500,9 +492,9 @@ abstract class _UnableToUpdate implements TripFailure {
   const factory _UnableToUpdate(PlatformException e, String message) =
       _$_UnableToUpdate;
 
-  PlatformException get e => throw _privateConstructorUsedError;
+  PlatformException get e;
   @override
-  String get message => throw _privateConstructorUsedError;
+  String get message;
   @override
   @JsonKey(ignore: true)
   _$UnableToUpdateCopyWith<_UnableToUpdate> get copyWith =>
@@ -566,18 +558,14 @@ class _$_PlatformSpecific implements _PlatformSpecific {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _PlatformSpecific &&
-            (identical(other.e, e) ||
-                const DeepCollectionEquality().equals(other.e, e)) &&
-            (identical(other.message, message) ||
-                const DeepCollectionEquality().equals(other.message, message)));
+        (other.runtimeType == runtimeType &&
+            other is _PlatformSpecific &&
+            (identical(other.e, e) || other.e == e) &&
+            (identical(other.message, message) || other.message == message));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(e) ^
-      const DeepCollectionEquality().hash(message);
+  int get hashCode => Object.hash(runtimeType, e, message);
 
   @JsonKey(ignore: true)
   @override
@@ -675,9 +663,9 @@ abstract class _PlatformSpecific implements TripFailure {
   const factory _PlatformSpecific(PlatformException e, String message) =
       _$_PlatformSpecific;
 
-  PlatformException get e => throw _privateConstructorUsedError;
+  PlatformException get e;
   @override
-  String get message => throw _privateConstructorUsedError;
+  String get message;
   @override
   @JsonKey(ignore: true)
   _$PlatformSpecificCopyWith<_PlatformSpecific> get copyWith =>
@@ -740,18 +728,14 @@ class _$_Unexpected implements _Unexpected {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Unexpected &&
-            (identical(other.e, e) ||
-                const DeepCollectionEquality().equals(other.e, e)) &&
-            (identical(other.message, message) ||
-                const DeepCollectionEquality().equals(other.message, message)));
+        (other.runtimeType == runtimeType &&
+            other is _Unexpected &&
+            (identical(other.e, e) || other.e == e) &&
+            (identical(other.message, message) || other.message == message));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(e) ^
-      const DeepCollectionEquality().hash(message);
+  int get hashCode => Object.hash(runtimeType, e, message);
 
   @JsonKey(ignore: true)
   @override
@@ -848,9 +832,9 @@ class _$_Unexpected implements _Unexpected {
 abstract class _Unexpected implements TripFailure {
   const factory _Unexpected(Exception e, String message) = _$_Unexpected;
 
-  Exception get e => throw _privateConstructorUsedError;
+  Exception get e;
   @override
-  String get message => throw _privateConstructorUsedError;
+  String get message;
   @override
   @JsonKey(ignore: true)
   _$UnexpectedCopyWith<_Unexpected> get copyWith =>
@@ -914,18 +898,15 @@ class _$_UnableToProcess implements _UnableToProcess {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _UnableToProcess &&
-            (identical(other.obj, obj) ||
-                const DeepCollectionEquality().equals(other.obj, obj)) &&
-            (identical(other.message, message) ||
-                const DeepCollectionEquality().equals(other.message, message)));
+        (other.runtimeType == runtimeType &&
+            other is _UnableToProcess &&
+            const DeepCollectionEquality().equals(other.obj, obj) &&
+            (identical(other.message, message) || other.message == message));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(obj) ^
-      const DeepCollectionEquality().hash(message);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(obj), message);
 
   @JsonKey(ignore: true)
   @override
@@ -1023,9 +1004,9 @@ abstract class _UnableToProcess implements TripFailure {
   const factory _UnableToProcess(dynamic obj, String message) =
       _$_UnableToProcess;
 
-  dynamic get obj => throw _privateConstructorUsedError;
+  dynamic get obj;
   @override
-  String get message => throw _privateConstructorUsedError;
+  String get message;
   @override
   @JsonKey(ignore: true)
   _$UnableToProcessCopyWith<_UnableToProcess> get copyWith =>

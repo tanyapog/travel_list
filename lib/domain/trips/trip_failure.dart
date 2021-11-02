@@ -14,12 +14,13 @@ class TripFailure with _$TripFailure {
   factory TripFailure.fromError(e) {
     if (e is Exception) {
       if (e is PlatformException) {
-        if (e.message.contains('PERMISSION_DENIED')) { return TripFailure
+        final String eMessage = e.message?? 'no message';
+        if (eMessage.contains('PERMISSION_DENIED')) { return TripFailure
           .insufficientPermission(e, "Insufficient Permission");
-        } else if (e.message.contains('NOT_FOUND')) { return TripFailure
+        } else if (eMessage.contains('NOT_FOUND')) { return TripFailure
           .unableToUpdate(e, "Unable to update trip. Was it deleted from another device?");
         } else { return TripFailure
-          .unexpected(e, "Unexpected platform error: \n${e.message}");
+          .unexpected(e, "Unexpected platform error: \n$eMessage");
         }
       } else { return TripFailure
         .unexpected(e, "Unexpected error: \n$e");

@@ -14,18 +14,22 @@ class CategoryFailure with _$CategoryFailure {
   factory CategoryFailure.fromError(e) {
     if (e is Exception) {
       if (e is PlatformException) {
-        if (e.message.contains('PERMISSION_DENIED')) { return CategoryFailure
+        final String eMessage = e.message?? 'no message';
+        if (eMessage.contains('PERMISSION_DENIED')) {
+          return CategoryFailure
             .insufficientPermission(e, "Insufficient Permission");
-        } else if (e.message.contains('NOT_FOUND')) { return CategoryFailure
-            .unableToUpdate(e, "Unable to update category. Was it deleted from another device?");
-        } else { return CategoryFailure
-            .unexpected(e, "Unexpected platform error: \n${e.message}");
+        } else if (eMessage.contains('NOT_FOUND')) {
+          return CategoryFailure
+            .unableToUpdate(e, "Unable to update category. Was it deleted from another device?",);
+        } else {
+          return CategoryFailure
+            .unexpected(e, "Unexpected platform error: \n$eMessage");
         }
       } else { return CategoryFailure
-          .unexpected(e, "Unexpected error: \n$e");
+        .unexpected(e, "Unexpected error: \n$e");
       }
     } else { return CategoryFailure
-        .unableToProcess(e, "Not acceptable: \n $e");
+      .unableToProcess(e, "Not acceptable: \n $e");
     }
   }
 }
