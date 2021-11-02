@@ -47,7 +47,7 @@ class CategoryFormBloc extends Bloc<CategoryFormEvent, CategoryFormState> {
             orElse: () => null,
           ),
           savedSuccessfully: categoryResult?.maybeWhen(
-            success: (_, __) => true,
+            success: (_) => true,
             orElse: () => null,
           ),
         );

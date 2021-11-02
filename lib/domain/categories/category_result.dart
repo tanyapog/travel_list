@@ -6,6 +6,7 @@ part 'category_result.freezed.dart';
 
 @freezed
 class CategoryResult with _$CategoryResult {
-    const factory CategoryResult.success({required Category category, required List<Category> categories}) = _Success;
+    // Parameter categories is nullable to make success constructor usable for all kind of success CRUD operations on Category
+    const factory CategoryResult.success({List<Category>? categories}) = _Success;
     const factory CategoryResult.failure({required CategoryFailure failure}) = _Failure;
 }

@@ -24,14 +24,14 @@ class CategoryActorBloc extends Bloc<CategoryActorEvent, CategoryActorState> {
       reorderFinished: (e) async* {
         final categoryResult = await _categoryRepository.reorder(e.categories);
         yield categoryResult.when(
-          success: (_, __) => const CategoryActorState.reorderSuccess(),
+          success: (_) => const CategoryActorState.reorderSuccess(),
           failure: (failure) => CategoryActorState.reorderFailure(failure),
         );
       },
       deleted: (e) async* {
         final categoryResult = await _categoryRepository.delete(e.category);
         yield categoryResult.when(
-          success: (_, __) => const CategoryActorState.deleteSuccess(),
+          success: (_) => const CategoryActorState.deleteSuccess(),
           failure: (failure) => CategoryActorState.deleteFailure(failure),
         );
       } ,
