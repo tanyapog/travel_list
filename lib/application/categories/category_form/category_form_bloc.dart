@@ -23,11 +23,7 @@ class CategoryFormBloc extends Bloc<CategoryFormEvent, CategoryFormState> {
   Stream<CategoryFormState> mapEventToState(CategoryFormEvent event) async* {
     yield* event.map(
       initialized: (e) async* {
-        if (e.initialCategory != null) {
-          yield state.copyWith(category: e.initialCategory, isEditing: true);
-        } else {
-          yield state;
-        }
+        yield state.copyWith(category: e.initialCategory, isEditing: true);
       },
       nameChanged: (e) async* {
         yield state.copyWith(
@@ -42,11 +38,11 @@ class CategoryFormBloc extends Bloc<CategoryFormEvent, CategoryFormState> {
           : await categoryRepository.create(state.category);
         yield state.copyWith(
           isSaving: false,
-          categoryFailure: categoryResult?.maybeWhen(
+          categoryFailure: categoryResult.maybeWhen(
             failure: (failure) => failure,
             orElse: () => null,
           ),
-          savedSuccessfully: categoryResult?.maybeWhen(
+          savedSuccessfully: categoryResult.maybeWhen(
             success: (_) => true,
             orElse: () => null,
           ),
