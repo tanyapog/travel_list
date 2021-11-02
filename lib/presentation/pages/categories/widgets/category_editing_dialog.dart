@@ -7,7 +7,7 @@ import 'package:travel_list/presentation/core/custom_widgets/saving_in_progress_
 import 'package:travel_list/presentation/pages/categories/widgets/category_editing_dialog_body.dart';
 
 class CategoryEditDialog extends StatelessWidget {
-  final Category category;
+  final Category? category;
 
   const CategoryEditDialog({Key? key, this.category}) : super(key: key);
 
@@ -16,7 +16,7 @@ class CategoryEditDialog extends StatelessWidget {
     return BlocProvider<CategoryFormBloc>(
       create: (context) => (category == null)
         ? getIt<CategoryFormBloc>()
-        : (getIt<CategoryFormBloc>()..add(CategoryFormEvent.initialized(category))),
+        : (getIt<CategoryFormBloc>()..add(CategoryFormEvent.initialized(category!))),
       child: BlocBuilder<CategoryFormBloc, CategoryFormState>(
         buildWhen: (previous, current) => previous.isSaving != current.isSaving,
         builder: (context, state) =>

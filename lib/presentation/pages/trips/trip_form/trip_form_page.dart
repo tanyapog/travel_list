@@ -11,7 +11,7 @@ import 'package:travel_list/presentation/pages/trips/trip_form/widgets/trip_form
 import 'package:travel_list/presentation/routes/router.gr.dart' as app_router;
 
 class TripFormPage extends StatelessWidget {
-  final Trip trip;
+  final Trip? trip;
 
   const TripFormPage({Key? key, required this.trip}) : super(key: key);
 
