@@ -100,7 +100,7 @@ class SignInForm extends StatelessWidget {
                     Expanded(
                       child: TextButton(
                         onPressed: () {
-                          _globalSignInFormKey.currentState.validate();
+                          _globalSignInFormKey.currentState?.validate();
                           context.read<SignInFormBloc>()
                             .add(const SignInFormEvent.signInWithEmailAndPasswordPressed());
                         },
@@ -110,7 +110,7 @@ class SignInForm extends StatelessWidget {
                     Expanded(
                       child: TextButton(
                         onPressed: () {
-                          _globalSignInFormKey.currentState.validate();
+                          _globalSignInFormKey.currentState?.validate();
                           context.read<SignInFormBloc>()
                             .add(const SignInFormEvent.registerWithEmailAndPasswordPressed());
                         },

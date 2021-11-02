@@ -76,7 +76,7 @@ class CategoryDialogBody extends HookWidget {
                     const SizedBox(width: 10),
                     amberButton(
                       onPressed: () {
-                        if (_globalCategoryFormKey.currentState.validate()) {
+                        if (_globalCategoryFormKey.currentState?.validate() ?? false) {
                           context.read<CategoryFormBloc>()
                             .add(const CategoryFormEvent.saved());
                         }
