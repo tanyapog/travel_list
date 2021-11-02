@@ -42,9 +42,9 @@ const $CategoryDto = _$CategoryDtoTearOff();
 
 /// @nodoc
 mixin _$CategoryDto {
+// I ignore id because of firestore structure. And ignoring field in freezed class should be nullable.
   @JsonKey(ignore: true)
-  String? get id =>
-      throw _privateConstructorUsedError; // ignoring because of firestore structure
+  String? get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   int get position => throw _privateConstructorUsedError;
 
@@ -148,10 +148,10 @@ class _$_CategoryDto extends _CategoryDto {
   factory _$_CategoryDto.fromJson(Map<String, dynamic> json) =>
       _$$_CategoryDtoFromJson(json);
 
-  @override
+  @override // I ignore id because of firestore structure. And ignoring field in freezed class should be nullable.
   @JsonKey(ignore: true)
   final String? id;
-  @override // ignoring because of firestore structure
+  @override
   final String name;
   @override
   final int position;
@@ -196,10 +196,10 @@ abstract class _CategoryDto extends CategoryDto {
   factory _CategoryDto.fromJson(Map<String, dynamic> json) =
       _$_CategoryDto.fromJson;
 
-  @override
+  @override // I ignore id because of firestore structure. And ignoring field in freezed class should be nullable.
   @JsonKey(ignore: true)
   String? get id;
-  @override // ignoring because of firestore structure
+  @override
   String get name;
   @override
   int get position;

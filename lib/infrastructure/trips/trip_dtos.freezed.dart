@@ -46,6 +46,7 @@ const $TripDto = _$TripDtoTearOff();
 
 /// @nodoc
 mixin _$TripDto {
+// I ignore id because of firestore structure. And ignoring field in freezed class should be nullable.
   @JsonKey(ignore: true)
   String? get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
@@ -181,7 +182,7 @@ class _$_TripDto extends _TripDto {
   factory _$_TripDto.fromJson(Map<String, dynamic> json) =>
       _$$_TripDtoFromJson(json);
 
-  @override
+  @override // I ignore id because of firestore structure. And ignoring field in freezed class should be nullable.
   @JsonKey(ignore: true)
   final String? id;
   @override
@@ -241,7 +242,7 @@ abstract class _TripDto extends TripDto {
 
   factory _TripDto.fromJson(Map<String, dynamic> json) = _$_TripDto.fromJson;
 
-  @override
+  @override // I ignore id because of firestore structure. And ignoring field in freezed class should be nullable.
   @JsonKey(ignore: true)
   String? get id;
   @override
