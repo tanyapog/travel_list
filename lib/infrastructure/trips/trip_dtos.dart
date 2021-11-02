@@ -13,6 +13,7 @@ class TripDto implements _$TripDto {
   const TripDto._();
 
   const factory TripDto({
+    // I ignore id because of firestore structure. And ignoring field in freezed class should be nullable.
     @JsonKey(ignore: true) String? id,
     required String name,
     required String description,
@@ -29,7 +30,7 @@ class TripDto implements _$TripDto {
   );
 
   Trip toDomain() => Trip(
-    id: UniqueId.fromUniqueString(id),
+    id: UniqueId.fromUniqueString(id!), // I believe id is never null
       name: TripName(name),
       description: TripDescription(description),
       complete: complete,

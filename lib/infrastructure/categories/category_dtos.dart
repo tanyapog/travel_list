@@ -11,6 +11,7 @@ class CategoryDto with _$CategoryDto {
   const CategoryDto._();
 
   const factory CategoryDto({
+    // I ignore id because of firestore structure. And ignoring field in freezed class should be nullable.
     @JsonKey(ignore: true) String? id,
     required String name,
     required int position,
@@ -24,7 +25,7 @@ class CategoryDto with _$CategoryDto {
     );
 
   Category toDomain() => Category(
-    id: UniqueId.fromUniqueString(id),
+    id: UniqueId.fromUniqueString(id!), // I believe id is never null
     name: name,
     position: position,
   );
