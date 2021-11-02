@@ -67,7 +67,7 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
   ) async* {
     final bool isEmailValid = state.email.isValid();
     final bool isPasswordValid = state.password.isValid();
-    Either<AuthFailure, Unit> failureOrSuccess;
+    Either<AuthFailure, Unit>? failureOrSuccess;
     if (isEmailValid && isPasswordValid) {
       yield state.copyWith(
         isSubmitting: true, // the form is in the process of being submitted

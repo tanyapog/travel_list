@@ -45,7 +45,7 @@ class TripFormBloc extends Bloc<TripFormEvent, TripFormState> {
         );
       },
       saved: (e) async* {
-        Either<TripFailure, Unit> failureOrSuccess;
+        Either<TripFailure, Unit>? failureOrSuccess;
         bool showErrorMessages = true;
         yield state.copyWith(
           isSaving: true,
