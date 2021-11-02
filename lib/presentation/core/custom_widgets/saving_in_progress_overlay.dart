@@ -23,11 +23,11 @@ class SavingInProgressOverlay extends StatelessWidget {
               const CircularProgressIndicator(),
               const SizedBox(height: 8,),
               Text(
-                  'Saving',
-                  style: Theme.of(context).textTheme.bodyText2.copyWith(
-                    color: Colors.white,
-                    fontSize: 16,
-                  ),
+                'Saving',
+                style: Theme.of(context).textTheme.bodyText2?.copyWith(
+                  color: Colors.white,
+                  fontSize: 16,
+                ),
               ),
             ],
           ),
