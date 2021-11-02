@@ -50,7 +50,7 @@ class UniqueId extends ValueObject<String> {
   // We cannot let a simple String be passed in. This would allow for possible non-unique IDs.
   factory UniqueId() {
     // Generate and return a RFC4122 v1 (timestamp-based) UUID
-    return UniqueId._(right(Uuid().v1()));
+    return UniqueId._(right(const Uuid().v1()));
   }
 
   /// Used with strings we trust are unique, such as database IDs.
