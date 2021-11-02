@@ -32,7 +32,7 @@ class _$CategoryDtoTearOff {
     );
   }
 
-  CategoryDto fromJson(Map<String, Object> json) {
+  CategoryDto fromJson(Map<String, Object?> json) {
     return CategoryDto.fromJson(json);
   }
 }
@@ -43,7 +43,8 @@ const $CategoryDto = _$CategoryDtoTearOff();
 /// @nodoc
 mixin _$CategoryDto {
   @JsonKey(ignore: true)
-  String? get id => throw _privateConstructorUsedError;
+  String? get id =>
+      throw _privateConstructorUsedError; // ignoring because of firestore structure
   String get name => throw _privateConstructorUsedError;
   int get position => throw _privateConstructorUsedError;
 
@@ -150,7 +151,7 @@ class _$_CategoryDto extends _CategoryDto {
   @override
   @JsonKey(ignore: true)
   final String? id;
-  @override
+  @override // ignoring because of firestore structure
   final String name;
   @override
   final int position;
@@ -163,22 +164,16 @@ class _$_CategoryDto extends _CategoryDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _CategoryDto &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
+        (other.runtimeType == runtimeType &&
+            other is _CategoryDto &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
             (identical(other.position, position) ||
-                const DeepCollectionEquality()
-                    .equals(other.position, position)));
+                other.position == position));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(position);
+  int get hashCode => Object.hash(runtimeType, id, name, position);
 
   @JsonKey(ignore: true)
   @override
@@ -203,11 +198,11 @@ abstract class _CategoryDto extends CategoryDto {
 
   @override
   @JsonKey(ignore: true)
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
+  @override // ignoring because of firestore structure
+  String get name;
   @override
-  String get name => throw _privateConstructorUsedError;
-  @override
-  int get position => throw _privateConstructorUsedError;
+  int get position;
   @override
   @JsonKey(ignore: true)
   _$CategoryDtoCopyWith<_CategoryDto> get copyWith =>

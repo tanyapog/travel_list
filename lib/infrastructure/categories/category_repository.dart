@@ -14,16 +14,22 @@ class CategoryRepository implements ICategoryRepository {
 
   CategoryRepository(this._firestore);
 
+  CollectionReference<CategoryDto> getCategoryCollectionRef(DocumentReference userDoc) =>
+    userDoc.categoryCollection
+      .withConverter<CategoryDto>(
+        fromFirestore: (snapshot, _) => CategoryDto.fromFirestore(snapshot),
+        toFirestore: (categoryDto, _) => categoryDto.toJson(),
+      );
+
   @override
   Stream<CategoryResult> watchAll() async* {
-    final userDoc = await _firestore.userDocument();
-    yield* userDoc.categoryCollection
-      .orderBy('position')
-      .snapshots()
+    final categoryCollection = getCategoryCollectionRef(await _firestore.userDocument());
+    yield* categoryCollection
+      .orderBy('position').snapshots()
       .map((snapshot) => CategoryResult.success(
-        categories: snapshot.docs
-          .map((doc) => CategoryDto.fromFirestore(doc).toDomain()).toList(),),)
-      .onErrorReturnWith((e) => CategoryResult.failure(
+        categories: snapshot.docs.map((doc) =>
+          doc.data().toDomain(),).toList(),),)
+      .onErrorReturnWith((e, stackTrace) => CategoryResult.failure(
         failure: CategoryFailure.fromError(e),),);
   }
 
@@ -31,10 +37,9 @@ class CategoryRepository implements ICategoryRepository {
   Future<CategoryResult> create(Category category) async {
     try {
       final userDoc = await _firestore.userDocument();
-      final int position = await _spotThePosition();
-      final newCategory = category.copyWith(position: position);
-      final categoryDto = CategoryDto.fromDomain(newCategory);
-      userDoc.categoryCollection.add(categoryDto.toJson());
+      final newCategory = category.copyWith(position: await _spotThePosition());
+      getCategoryCollectionRef(userDoc)
+          .add(CategoryDto.fromDomain(newCategory));
       return const CategoryResult.success();
     } catch (e) {
       return CategoryResult.failure(failure: CategoryFailure.fromError(e));
@@ -104,15 +109,13 @@ class CategoryRepository implements ICategoryRepository {
   Future<int> _spotThePosition() async {
     try {
       int positionForNewCategory = 0;
-      final userDoc = await _firestore.userDocument();
-      final docSnapshots = await userDoc.categoryCollection
-        .orderBy('position', descending: true)
-          .limit(1).get().then((querySnapshot) => querySnapshot.docs);
-      if (docSnapshots.isNotEmpty ) {
-        final DocumentSnapshot snapshot = docSnapshots.elementAt(0);
-        if (snapshot.exists) {
-          positionForNewCategory = CategoryDto.fromFirestore(snapshot).toDomain()
-              .position! + 1;
+      final categories = await getCategoryCollectionRef(await _firestore.userDocument())
+          .orderBy('position', descending: true)
+          .get().then((querySnapshot) => querySnapshot.docs);
+      if (categories.isNotEmpty) {
+        final lastCategory = categories.elementAt(0);
+        if (lastCategory.exists) {
+          positionForNewCategory = lastCategory.data().toDomain().position! + 1;
         }
       }
       return positionForNewCategory;

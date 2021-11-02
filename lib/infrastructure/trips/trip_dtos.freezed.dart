@@ -36,7 +36,7 @@ class _$TripDtoTearOff {
     );
   }
 
-  TripDto fromJson(Map<String, Object> json) {
+  TripDto fromJson(Map<String, Object?> json) {
     return TripDto.fromJson(json);
   }
 }
@@ -202,30 +202,21 @@ class _$_TripDto extends _TripDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _TripDto &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
+        (other.runtimeType == runtimeType &&
+            other is _TripDto &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
             (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)) &&
+                other.description == description) &&
             (identical(other.complete, complete) ||
-                const DeepCollectionEquality()
-                    .equals(other.complete, complete)) &&
+                other.complete == complete) &&
             (identical(other.serverTimeStamp, serverTimeStamp) ||
-                const DeepCollectionEquality()
-                    .equals(other.serverTimeStamp, serverTimeStamp)));
+                other.serverTimeStamp == serverTimeStamp));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(complete) ^
-      const DeepCollectionEquality().hash(serverTimeStamp);
+  int get hashCode => Object.hash(
+      runtimeType, id, name, description, complete, serverTimeStamp);
 
   @JsonKey(ignore: true)
   @override
@@ -252,16 +243,16 @@ abstract class _TripDto extends TripDto {
 
   @override
   @JsonKey(ignore: true)
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
   @override
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @override
-  String get description => throw _privateConstructorUsedError;
+  String get description;
   @override
-  bool get complete => throw _privateConstructorUsedError;
+  bool get complete;
   @override
   @ServerTimestampConverter()
-  FieldValue get serverTimeStamp => throw _privateConstructorUsedError;
+  FieldValue get serverTimeStamp;
   @override
   @JsonKey(ignore: true)
   _$TripDtoCopyWith<_TripDto> get copyWith =>

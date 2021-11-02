@@ -33,6 +33,6 @@ class CategoryDto with _$CategoryDto {
   factory CategoryDto.fromJson(Map<String, dynamic> json) =>
     _$CategoryDtoFromJson(json);
 
-  factory CategoryDto.fromFirestore(DocumentSnapshot doc) =>
-    CategoryDto.fromJson(doc.data()).copyWith(id: doc.id);
+  factory CategoryDto.fromFirestore(DocumentSnapshot<Map<String, dynamic>> doc) =>
+    CategoryDto.fromJson(doc.data()!).copyWith(id: doc.id);
 }

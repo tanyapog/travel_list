@@ -39,8 +39,8 @@ class TripDto implements _$TripDto {
   factory TripDto.fromJson(Map<String, dynamic> json) =>
     _$TripDtoFromJson(json);
 
-  factory TripDto.fromFirestore(DocumentSnapshot doc) =>
-    TripDto.fromJson(doc.data()).copyWith(id: doc.id);
+  factory TripDto.fromFirestore(DocumentSnapshot<Map<String, dynamic>> doc) =>
+    TripDto.fromJson(doc.data()!).copyWith(id: doc.id);
 }
 
 class ServerTimestampConverter implements JsonConverter<FieldValue, Object> {

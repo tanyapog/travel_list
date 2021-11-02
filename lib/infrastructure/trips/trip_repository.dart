@@ -14,6 +14,13 @@ class TripRepository implements ITripRepository {
 
   TripRepository(this._firestore);
 
+  CollectionReference<TripDto> getTripCollectionRef(DocumentReference userDoc) =>
+    userDoc.tripCollection
+      .withConverter(
+        fromFirestore: (snapshot, _) => TripDto.fromFirestore(snapshot),
+        toFirestore: (tripDto, _) => tripDto.toJson(),
+      );
+
   @override
   Future<Either<TripFailure, Unit>> create(Trip trip) async {
     try {
@@ -52,27 +59,27 @@ class TripRepository implements ITripRepository {
 
   @override
   Stream<Either<TripFailure, List<Trip>>> watchAll() async* {
-    final userDoc = await _firestore.userDocument();
-    yield* userDoc.tripCollection
-        .orderBy('serverTimeStamp', descending: true)
-        .snapshots() // it's optimized and cheaper than .getDocuments which always loads all the documents
-        .map((snapshot) => right<TripFailure, List<Trip>>(
-          snapshot.docs
-            .map((doc) => TripDto.fromFirestore(doc).toDomain()).toList(),),)
-        .onErrorReturnWith((e) => left(TripFailure.fromError(e)));
+    final tripCollection = getTripCollectionRef(await _firestore.userDocument());
+    yield* tripCollection
+      .orderBy('serverTimeStamp', descending: true)
+      .snapshots() // it's optimized and cheaper than .getDocuments which always loads all the documents
+      .map((snapshot) => right<TripFailure, List<Trip>>(
+        snapshot.docs.map((doc) =>
+          doc.data().toDomain(),).toList(),),)
+      .onErrorReturnWith((e, stackTrace) => left(TripFailure.fromError(e)));
   }
 
   @override
   Stream<Either<TripFailure, List<Trip>>> watchUncompleted() async* {
-    final userDoc = await _firestore.userDocument();
-    yield* userDoc.tripCollection
-        .orderBy('serverTimeStamp', descending: true)
-        .snapshots() // it's optimized and cheaper than .getDocuments
-        .map((snapshot) =>
-          snapshot.docs
-            .map((doc) => TripDto.fromFirestore(doc).toDomain()),)
-        .map((trips) => right<TripFailure, List<Trip>>(
-          trips.where((trip) => !trip.complete).toList(),),)
-        .onErrorReturnWith((e) => left(TripFailure.fromError(e)));
+    final tripCollection = getTripCollectionRef(await _firestore.userDocument());
+    yield* tripCollection
+      .orderBy('serverTimeStamp', descending: true)
+      .snapshots() // it's optimized and cheaper than .getDocuments
+      .map((snapshot) =>
+        snapshot.docs.map((doc) =>
+          doc.data().toDomain(),),)
+      .map((trips) => right<TripFailure, List<Trip>>(
+        trips.where((trip) => !trip.complete).toList(),),)
+      .onErrorReturnWith((e, stackTrace) => left(TripFailure.fromError(e)));
   }
 }
