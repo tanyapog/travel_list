@@ -158,14 +158,13 @@ class _$_Deleted implements _Deleted {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Deleted &&
-            (identical(other.trip, trip) ||
-                const DeepCollectionEquality().equals(other.trip, trip)));
+        (other.runtimeType == runtimeType &&
+            other is _Deleted &&
+            (identical(other.trip, trip) || other.trip == trip));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(trip);
+  int get hashCode => Object.hash(runtimeType, trip);
 
   @JsonKey(ignore: true)
   @override
@@ -233,7 +232,7 @@ abstract class _Deleted implements TripActorEvent {
   const factory _Deleted(Trip trip) = _$_Deleted;
 
   @override
-  Trip get trip => throw _privateConstructorUsedError;
+  Trip get trip;
   @override
   @JsonKey(ignore: true)
   _$DeletedCopyWith<_Deleted> get copyWith =>
@@ -365,7 +364,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -481,7 +481,8 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ActionInProgress);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ActionInProgress);
   }
 
   @override
@@ -623,15 +624,14 @@ class _$_DeleteFailure implements _DeleteFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DeleteFailure &&
+        (other.runtimeType == runtimeType &&
+            other is _DeleteFailure &&
             (identical(other.tripFailure, tripFailure) ||
-                const DeepCollectionEquality()
-                    .equals(other.tripFailure, tripFailure)));
+                other.tripFailure == tripFailure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(tripFailure);
+  int get hashCode => Object.hash(runtimeType, tripFailure);
 
   @JsonKey(ignore: true)
   @override
@@ -716,7 +716,7 @@ class _$_DeleteFailure implements _DeleteFailure {
 abstract class _DeleteFailure implements TripActorState {
   const factory _DeleteFailure(TripFailure tripFailure) = _$_DeleteFailure;
 
-  TripFailure get tripFailure => throw _privateConstructorUsedError;
+  TripFailure get tripFailure;
   @JsonKey(ignore: true)
   _$DeleteFailureCopyWith<_DeleteFailure> get copyWith =>
       throw _privateConstructorUsedError;
@@ -753,7 +753,8 @@ class _$_DeleteSuccess implements _DeleteSuccess {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _DeleteSuccess);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _DeleteSuccess);
   }
 
   @override

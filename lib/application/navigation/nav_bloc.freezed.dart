@@ -144,15 +144,14 @@ class _$NavigateTo implements NavigateTo {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is NavigateTo &&
+        (other.runtimeType == runtimeType &&
+            other is NavigateTo &&
             (identical(other.destination, destination) ||
-                const DeepCollectionEquality()
-                    .equals(other.destination, destination)));
+                other.destination == destination));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(destination);
+  int get hashCode => Object.hash(runtimeType, destination);
 
   @JsonKey(ignore: true)
   @override
@@ -220,7 +219,7 @@ abstract class NavigateTo implements NavEvent {
   const factory NavigateTo(NavItem destination) = _$NavigateTo;
 
   @override
-  NavItem get destination => throw _privateConstructorUsedError;
+  NavItem get destination;
   @override
   @JsonKey(ignore: true)
   $NavigateToCopyWith<NavigateTo> get copyWith =>
@@ -369,15 +368,14 @@ class _$_NavState implements _NavState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _NavState &&
+        (other.runtimeType == runtimeType &&
+            other is _NavState &&
             (identical(other.selectedItem, selectedItem) ||
-                const DeepCollectionEquality()
-                    .equals(other.selectedItem, selectedItem)));
+                other.selectedItem == selectedItem));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(selectedItem);
+  int get hashCode => Object.hash(runtimeType, selectedItem);
 
   @JsonKey(ignore: true)
   @override
@@ -451,7 +449,7 @@ abstract class _NavState implements NavState {
   const factory _NavState({required NavItem selectedItem}) = _$_NavState;
 
   @override
-  NavItem get selectedItem => throw _privateConstructorUsedError;
+  NavItem get selectedItem;
   @override
   @JsonKey(ignore: true)
   _$NavStateCopyWith<_NavState> get copyWith =>
@@ -505,15 +503,14 @@ class _$SelectItem implements SelectItem {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is SelectItem &&
+        (other.runtimeType == runtimeType &&
+            other is SelectItem &&
             (identical(other.selectedItem, selectedItem) ||
-                const DeepCollectionEquality()
-                    .equals(other.selectedItem, selectedItem)));
+                other.selectedItem == selectedItem));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(selectedItem);
+  int get hashCode => Object.hash(runtimeType, selectedItem);
 
   @JsonKey(ignore: true)
   @override
@@ -587,7 +584,7 @@ abstract class SelectItem implements NavState {
   const factory SelectItem({required NavItem selectedItem}) = _$SelectItem;
 
   @override
-  NavItem get selectedItem => throw _privateConstructorUsedError;
+  NavItem get selectedItem;
   @override
   @JsonKey(ignore: true)
   $SelectItemCopyWith<SelectItem> get copyWith =>

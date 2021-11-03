@@ -159,16 +159,14 @@ class _$_Initialized implements _Initialized {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Initialized &&
+        (other.runtimeType == runtimeType &&
+            other is _Initialized &&
             (identical(other.initialCategory, initialCategory) ||
-                const DeepCollectionEquality()
-                    .equals(other.initialCategory, initialCategory)));
+                other.initialCategory == initialCategory));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(initialCategory);
+  int get hashCode => Object.hash(runtimeType, initialCategory);
 
   @JsonKey(ignore: true)
   @override
@@ -247,7 +245,7 @@ class _$_Initialized implements _Initialized {
 abstract class _Initialized implements CategoryFormEvent {
   const factory _Initialized(Category initialCategory) = _$_Initialized;
 
-  Category get initialCategory => throw _privateConstructorUsedError;
+  Category get initialCategory;
   @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith =>
       throw _privateConstructorUsedError;
@@ -301,14 +299,13 @@ class _$_NameChanged implements _NameChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _NameChanged &&
-            (identical(other.nameStr, nameStr) ||
-                const DeepCollectionEquality().equals(other.nameStr, nameStr)));
+        (other.runtimeType == runtimeType &&
+            other is _NameChanged &&
+            (identical(other.nameStr, nameStr) || other.nameStr == nameStr));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(nameStr);
+  int get hashCode => Object.hash(runtimeType, nameStr);
 
   @JsonKey(ignore: true)
   @override
@@ -387,7 +384,7 @@ class _$_NameChanged implements _NameChanged {
 abstract class _NameChanged implements CategoryFormEvent {
   const factory _NameChanged(String nameStr) = _$_NameChanged;
 
-  String get nameStr => throw _privateConstructorUsedError;
+  String get nameStr;
   @JsonKey(ignore: true)
   _$NameChangedCopyWith<_NameChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -421,7 +418,8 @@ class _$_Saved implements _Saved {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Saved);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Saved);
   }
 
   @override
@@ -706,32 +704,23 @@ class _$_CategoryFormState implements _CategoryFormState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _CategoryFormState &&
+        (other.runtimeType == runtimeType &&
+            other is _CategoryFormState &&
             (identical(other.category, category) ||
-                const DeepCollectionEquality()
-                    .equals(other.category, category)) &&
+                other.category == category) &&
             (identical(other.isEditing, isEditing) ||
-                const DeepCollectionEquality()
-                    .equals(other.isEditing, isEditing)) &&
+                other.isEditing == isEditing) &&
             (identical(other.isSaving, isSaving) ||
-                const DeepCollectionEquality()
-                    .equals(other.isSaving, isSaving)) &&
+                other.isSaving == isSaving) &&
             (identical(other.categoryFailure, categoryFailure) ||
-                const DeepCollectionEquality()
-                    .equals(other.categoryFailure, categoryFailure)) &&
+                other.categoryFailure == categoryFailure) &&
             (identical(other.savedSuccessfully, savedSuccessfully) ||
-                const DeepCollectionEquality()
-                    .equals(other.savedSuccessfully, savedSuccessfully)));
+                other.savedSuccessfully == savedSuccessfully));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(category) ^
-      const DeepCollectionEquality().hash(isEditing) ^
-      const DeepCollectionEquality().hash(isSaving) ^
-      const DeepCollectionEquality().hash(categoryFailure) ^
-      const DeepCollectionEquality().hash(savedSuccessfully);
+  int get hashCode => Object.hash(runtimeType, category, isEditing, isSaving,
+      categoryFailure, savedSuccessfully);
 
   @JsonKey(ignore: true)
   @override
@@ -748,15 +737,15 @@ abstract class _CategoryFormState implements CategoryFormState {
       bool? savedSuccessfully}) = _$_CategoryFormState;
 
   @override
-  Category get category => throw _privateConstructorUsedError;
+  Category get category;
   @override
-  bool get isEditing => throw _privateConstructorUsedError;
+  bool get isEditing;
   @override // is this editing an existing category or creating a new one
-  bool get isSaving => throw _privateConstructorUsedError;
+  bool get isSaving;
   @override
-  CategoryFailure? get categoryFailure => throw _privateConstructorUsedError;
+  CategoryFailure? get categoryFailure;
   @override
-  bool? get savedSuccessfully => throw _privateConstructorUsedError;
+  bool? get savedSuccessfully;
   @override
   @JsonKey(ignore: true)
   _$CategoryFormStateCopyWith<_CategoryFormState> get copyWith =>

@@ -140,15 +140,15 @@ class _$_ReorderFinished implements _ReorderFinished {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ReorderFinished &&
-            (identical(other.categories, categories) ||
-                const DeepCollectionEquality()
-                    .equals(other.categories, categories)));
+        (other.runtimeType == runtimeType &&
+            other is _ReorderFinished &&
+            const DeepCollectionEquality()
+                .equals(other.categories, categories));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(categories);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(categories));
 
   @JsonKey(ignore: true)
   @override
@@ -222,7 +222,7 @@ abstract class _ReorderFinished implements CategoryActorEvent {
   const factory _ReorderFinished(List<Category> categories) =
       _$_ReorderFinished;
 
-  List<Category> get categories => throw _privateConstructorUsedError;
+  List<Category> get categories;
   @JsonKey(ignore: true)
   _$ReorderFinishedCopyWith<_ReorderFinished> get copyWith =>
       throw _privateConstructorUsedError;
@@ -283,15 +283,14 @@ class _$_Deleted implements _Deleted {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Deleted &&
+        (other.runtimeType == runtimeType &&
+            other is _Deleted &&
             (identical(other.category, category) ||
-                const DeepCollectionEquality()
-                    .equals(other.category, category)));
+                other.category == category));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(category);
+  int get hashCode => Object.hash(runtimeType, category);
 
   @JsonKey(ignore: true)
   @override
@@ -364,7 +363,7 @@ class _$_Deleted implements _Deleted {
 abstract class _Deleted implements CategoryActorEvent {
   const factory _Deleted(Category category) = _$_Deleted;
 
-  Category get category => throw _privateConstructorUsedError;
+  Category get category;
   @JsonKey(ignore: true)
   _$DeletedCopyWith<_Deleted> get copyWith =>
       throw _privateConstructorUsedError;
@@ -518,7 +517,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -646,7 +646,8 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ActionInProgress);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ActionInProgress);
   }
 
   @override
@@ -800,16 +801,14 @@ class _$_ReorderFailure implements _ReorderFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ReorderFailure &&
+        (other.runtimeType == runtimeType &&
+            other is _ReorderFailure &&
             (identical(other.categoryFailure, categoryFailure) ||
-                const DeepCollectionEquality()
-                    .equals(other.categoryFailure, categoryFailure)));
+                other.categoryFailure == categoryFailure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(categoryFailure);
+  int get hashCode => Object.hash(runtimeType, categoryFailure);
 
   @JsonKey(ignore: true)
   @override
@@ -907,7 +906,7 @@ abstract class _ReorderFailure implements CategoryActorState {
   const factory _ReorderFailure(CategoryFailure categoryFailure) =
       _$_ReorderFailure;
 
-  CategoryFailure get categoryFailure => throw _privateConstructorUsedError;
+  CategoryFailure get categoryFailure;
   @JsonKey(ignore: true)
   _$ReorderFailureCopyWith<_ReorderFailure> get copyWith =>
       throw _privateConstructorUsedError;
@@ -944,7 +943,8 @@ class _$_ReorderSuccess implements _ReorderSuccess {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ReorderSuccess);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ReorderSuccess);
   }
 
   @override
@@ -1098,16 +1098,14 @@ class _$_DeleteFailure implements _DeleteFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DeleteFailure &&
+        (other.runtimeType == runtimeType &&
+            other is _DeleteFailure &&
             (identical(other.categoryFailure, categoryFailure) ||
-                const DeepCollectionEquality()
-                    .equals(other.categoryFailure, categoryFailure)));
+                other.categoryFailure == categoryFailure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(categoryFailure);
+  int get hashCode => Object.hash(runtimeType, categoryFailure);
 
   @JsonKey(ignore: true)
   @override
@@ -1205,7 +1203,7 @@ abstract class _DeleteFailure implements CategoryActorState {
   const factory _DeleteFailure(CategoryFailure categoryFailure) =
       _$_DeleteFailure;
 
-  CategoryFailure get categoryFailure => throw _privateConstructorUsedError;
+  CategoryFailure get categoryFailure;
   @JsonKey(ignore: true)
   _$DeleteFailureCopyWith<_DeleteFailure> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1242,7 +1240,8 @@ class _$_DeleteSuccess implements _DeleteSuccess {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _DeleteSuccess);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _DeleteSuccess);
   }
 
   @override

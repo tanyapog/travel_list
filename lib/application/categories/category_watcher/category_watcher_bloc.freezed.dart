@@ -109,7 +109,8 @@ class _$_WatchAllStarted implements _WatchAllStarted {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _WatchAllStarted);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _WatchAllStarted);
   }
 
   @override
@@ -304,7 +305,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -420,7 +422,8 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadInProgress);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _LoadInProgress);
   }
 
   @override
@@ -553,15 +556,15 @@ class _$_LoadSuccess implements _LoadSuccess {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LoadSuccess &&
-            (identical(other.categories, categories) ||
-                const DeepCollectionEquality()
-                    .equals(other.categories, categories)));
+        (other.runtimeType == runtimeType &&
+            other is _LoadSuccess &&
+            const DeepCollectionEquality()
+                .equals(other.categories, categories));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(categories);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(categories));
 
   @JsonKey(ignore: true)
   @override
@@ -646,7 +649,7 @@ class _$_LoadSuccess implements _LoadSuccess {
 abstract class _LoadSuccess implements CategoryWatcherState {
   const factory _LoadSuccess(List<Category> categories) = _$_LoadSuccess;
 
-  List<Category> get categories => throw _privateConstructorUsedError;
+  List<Category> get categories;
   @JsonKey(ignore: true)
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -709,16 +712,14 @@ class _$_LoadFailure implements _LoadFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LoadFailure &&
+        (other.runtimeType == runtimeType &&
+            other is _LoadFailure &&
             (identical(other.categoryFailure, categoryFailure) ||
-                const DeepCollectionEquality()
-                    .equals(other.categoryFailure, categoryFailure)));
+                other.categoryFailure == categoryFailure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(categoryFailure);
+  int get hashCode => Object.hash(runtimeType, categoryFailure);
 
   @JsonKey(ignore: true)
   @override
@@ -803,7 +804,7 @@ class _$_LoadFailure implements _LoadFailure {
 abstract class _LoadFailure implements CategoryWatcherState {
   const factory _LoadFailure(CategoryFailure categoryFailure) = _$_LoadFailure;
 
-  CategoryFailure get categoryFailure => throw _privateConstructorUsedError;
+  CategoryFailure get categoryFailure;
   @JsonKey(ignore: true)
   _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
       throw _privateConstructorUsedError;

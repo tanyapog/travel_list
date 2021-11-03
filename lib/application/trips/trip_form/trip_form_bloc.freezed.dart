@@ -171,16 +171,14 @@ class _$_Initialized implements _Initialized {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Initialized &&
+        (other.runtimeType == runtimeType &&
+            other is _Initialized &&
             (identical(other.initialTripOption, initialTripOption) ||
-                const DeepCollectionEquality()
-                    .equals(other.initialTripOption, initialTripOption)));
+                other.initialTripOption == initialTripOption));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(initialTripOption);
+  int get hashCode => Object.hash(runtimeType, initialTripOption);
 
   @JsonKey(ignore: true)
   @override
@@ -271,7 +269,7 @@ class _$_Initialized implements _Initialized {
 abstract class _Initialized implements TripFormEvent {
   const factory _Initialized(Option<Trip> initialTripOption) = _$_Initialized;
 
-  Option<Trip> get initialTripOption => throw _privateConstructorUsedError;
+  Option<Trip> get initialTripOption;
   @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith =>
       throw _privateConstructorUsedError;
@@ -324,14 +322,13 @@ class _$_NameChanged implements _NameChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _NameChanged &&
-            (identical(other.nameStr, nameStr) ||
-                const DeepCollectionEquality().equals(other.nameStr, nameStr)));
+        (other.runtimeType == runtimeType &&
+            other is _NameChanged &&
+            (identical(other.nameStr, nameStr) || other.nameStr == nameStr));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(nameStr);
+  int get hashCode => Object.hash(runtimeType, nameStr);
 
   @JsonKey(ignore: true)
   @override
@@ -422,7 +419,7 @@ class _$_NameChanged implements _NameChanged {
 abstract class _NameChanged implements TripFormEvent {
   const factory _NameChanged(String nameStr) = _$_NameChanged;
 
-  String get nameStr => throw _privateConstructorUsedError;
+  String get nameStr;
   @JsonKey(ignore: true)
   _$NameChangedCopyWith<_NameChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -476,16 +473,14 @@ class _$_DescriptionChanged implements _DescriptionChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DescriptionChanged &&
+        (other.runtimeType == runtimeType &&
+            other is _DescriptionChanged &&
             (identical(other.descriptionStr, descriptionStr) ||
-                const DeepCollectionEquality()
-                    .equals(other.descriptionStr, descriptionStr)));
+                other.descriptionStr == descriptionStr));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(descriptionStr);
+  int get hashCode => Object.hash(runtimeType, descriptionStr);
 
   @JsonKey(ignore: true)
   @override
@@ -577,7 +572,7 @@ abstract class _DescriptionChanged implements TripFormEvent {
   const factory _DescriptionChanged(String descriptionStr) =
       _$_DescriptionChanged;
 
-  String get descriptionStr => throw _privateConstructorUsedError;
+  String get descriptionStr;
   @JsonKey(ignore: true)
   _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -614,7 +609,8 @@ class _$_CompletedPressed implements _CompletedPressed {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _CompletedPressed);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _CompletedPressed);
   }
 
   @override
@@ -733,7 +729,8 @@ class _$_Saved implements _Saved {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Saved);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Saved);
   }
 
   @override
@@ -1016,33 +1013,24 @@ class _$_TripFormState implements _TripFormState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _TripFormState &&
-            (identical(other.trip, trip) ||
-                const DeepCollectionEquality().equals(other.trip, trip)) &&
+        (other.runtimeType == runtimeType &&
+            other is _TripFormState &&
+            (identical(other.trip, trip) || other.trip == trip) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
+                other.showErrorMessages == showErrorMessages) &&
             (identical(other.isEditing, isEditing) ||
-                const DeepCollectionEquality()
-                    .equals(other.isEditing, isEditing)) &&
+                other.isEditing == isEditing) &&
             (identical(other.isSaving, isSaving) ||
-                const DeepCollectionEquality()
-                    .equals(other.isSaving, isSaving)) &&
+                other.isSaving == isSaving) &&
             (identical(other.saveFailureOrSuccessOption,
                     saveFailureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(
-                    other.saveFailureOrSuccessOption,
-                    saveFailureOrSuccessOption)));
+                other.saveFailureOrSuccessOption ==
+                    saveFailureOrSuccessOption));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(trip) ^
-      const DeepCollectionEquality().hash(showErrorMessages) ^
-      const DeepCollectionEquality().hash(isEditing) ^
-      const DeepCollectionEquality().hash(isSaving) ^
-      const DeepCollectionEquality().hash(saveFailureOrSuccessOption);
+  int get hashCode => Object.hash(runtimeType, trip, showErrorMessages,
+      isEditing, isSaving, saveFailureOrSuccessOption);
 
   @JsonKey(ignore: true)
   @override
@@ -1060,16 +1048,15 @@ abstract class _TripFormState implements TripFormState {
           saveFailureOrSuccessOption}) = _$_TripFormState;
 
   @override
-  Trip get trip => throw _privateConstructorUsedError;
+  Trip get trip;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  bool get isEditing => throw _privateConstructorUsedError;
+  bool get isEditing;
   @override
-  bool get isSaving => throw _privateConstructorUsedError;
+  bool get isSaving;
   @override
-  Option<Either<TripFailure, Unit>> get saveFailureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<TripFailure, Unit>> get saveFailureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$TripFormStateCopyWith<_TripFormState> get copyWith =>
