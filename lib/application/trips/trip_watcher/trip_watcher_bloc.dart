@@ -19,8 +19,8 @@ class TripWatcherBloc extends Bloc<TripWatcherEvent, TripWatcherState> {
   // we could not use yield* for watchAllStarted and watchUncompletedStarted
   // because it will be yielding permanently while the trips page is open (i.e. repository is opened)
   // so we listen to repository instead and add a TripsReceived Event if need
-  StreamSubscription<Either<TripFailure, List<Trip>>> _tripStreamSubscription;
-  
+  StreamSubscription<Either<TripFailure, List<Trip>>>? _tripStreamSubscription;
+
   @override
   Stream<TripWatcherState> mapEventToState(
     TripWatcherEvent event,
@@ -28,7 +28,7 @@ class TripWatcherBloc extends Bloc<TripWatcherEvent, TripWatcherState> {
     yield* event.map(
       watchAllStarted: (e) async* {
         yield const TripWatcherState.loadInProgress();
-        await _tripStreamSubscription.cancel();
+        await _tripStreamSubscription?.cancel();
         _tripStreamSubscription = _tripRepository
             .watchAll()
             .listen((failureOrTrips) =>
@@ -37,7 +37,7 @@ class TripWatcherBloc extends Bloc<TripWatcherEvent, TripWatcherState> {
       },
       watchUncompletedStarted: (e) async* {
         yield const TripWatcherState.loadInProgress();
-        await _tripStreamSubscription.cancel();
+        await _tripStreamSubscription?.cancel();
         _tripStreamSubscription = _tripRepository
             .watchUncompleted()
             .listen((failureOrTrips) =>
@@ -55,7 +55,7 @@ class TripWatcherBloc extends Bloc<TripWatcherEvent, TripWatcherState> {
 
   @override
   Future<void> close() async {
-    await _tripStreamSubscription.cancel();
+    await _tripStreamSubscription?.cancel();
     return super.close();
   }
 }

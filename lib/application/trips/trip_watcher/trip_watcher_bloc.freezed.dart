@@ -135,7 +135,8 @@ class _$_WatchAllStarted implements _WatchAllStarted {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _WatchAllStarted);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _WatchAllStarted);
   }
 
   @override
@@ -250,7 +251,8 @@ class _$_WatchUncompletedStarted implements _WatchUncompletedStarted {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _WatchUncompletedStarted);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _WatchUncompletedStarted);
   }
 
   @override
@@ -381,16 +383,14 @@ class _$_TripsReceived implements _TripsReceived {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _TripsReceived &&
+        (other.runtimeType == runtimeType &&
+            other is _TripsReceived &&
             (identical(other.failureOrTrips, failureOrTrips) ||
-                const DeepCollectionEquality()
-                    .equals(other.failureOrTrips, failureOrTrips)));
+                other.failureOrTrips == failureOrTrips));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(failureOrTrips);
+  int get hashCode => Object.hash(runtimeType, failureOrTrips);
 
   @JsonKey(ignore: true)
   @override
@@ -474,8 +474,7 @@ abstract class _TripsReceived implements TripWatcherEvent {
   const factory _TripsReceived(Either<TripFailure, List<Trip>> failureOrTrips) =
       _$_TripsReceived;
 
-  Either<TripFailure, List<Trip>> get failureOrTrips =>
-      throw _privateConstructorUsedError;
+  Either<TripFailure, List<Trip>> get failureOrTrips;
   @JsonKey(ignore: true)
   _$TripsReceivedCopyWith<_TripsReceived> get copyWith =>
       throw _privateConstructorUsedError;
@@ -608,7 +607,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -724,7 +724,8 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadInProgress);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _LoadInProgress);
   }
 
   @override
@@ -857,14 +858,14 @@ class _$_LoadSuccess implements _LoadSuccess {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LoadSuccess &&
-            (identical(other.trips, trips) ||
-                const DeepCollectionEquality().equals(other.trips, trips)));
+        (other.runtimeType == runtimeType &&
+            other is _LoadSuccess &&
+            const DeepCollectionEquality().equals(other.trips, trips));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(trips);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(trips));
 
   @JsonKey(ignore: true)
   @override
@@ -949,7 +950,7 @@ class _$_LoadSuccess implements _LoadSuccess {
 abstract class _LoadSuccess implements TripWatcherState {
   const factory _LoadSuccess(List<Trip> trips) = _$_LoadSuccess;
 
-  List<Trip> get trips => throw _privateConstructorUsedError;
+  List<Trip> get trips;
   @JsonKey(ignore: true)
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1012,15 +1013,14 @@ class _$_LoadFailure implements _LoadFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LoadFailure &&
+        (other.runtimeType == runtimeType &&
+            other is _LoadFailure &&
             (identical(other.tripFailure, tripFailure) ||
-                const DeepCollectionEquality()
-                    .equals(other.tripFailure, tripFailure)));
+                other.tripFailure == tripFailure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(tripFailure);
+  int get hashCode => Object.hash(runtimeType, tripFailure);
 
   @JsonKey(ignore: true)
   @override
@@ -1105,7 +1105,7 @@ class _$_LoadFailure implements _LoadFailure {
 abstract class _LoadFailure implements TripWatcherState {
   const factory _LoadFailure(TripFailure tripFailure) = _$_LoadFailure;
 
-  TripFailure get tripFailure => throw _privateConstructorUsedError;
+  TripFailure get tripFailure;
   @JsonKey(ignore: true)
   _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
       throw _privateConstructorUsedError;
