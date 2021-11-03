@@ -7,8 +7,9 @@ extension FirebaseUserMapper on firebase.User {
   User toDomain() {
     return User(
       id: UniqueId.fromUniqueString(uid),
-      name: StringSingleLine(displayName ?? email.split('@').first),
-      email: Email(email),
+      // TravelList doesn't permit incorrect email while Firebase do, so ! is ok here
+      name: StringSingleLine(displayName ?? email!.split('@').first),
+      email: Email(email!),
     );
   }
 }

@@ -84,12 +84,13 @@ class NavigationDrawer extends StatelessWidget {
 
   Widget _createDrawerHeader(User user) =>
       UserAccountsDrawerHeader(
+        // empty email or name is impossible situation in TravelList, but ValueObjects made it unclear. I going to get rid of them in #17
         accountName: Text(
-          user.name.value.fold((l) => null, id),
+          user.name.value.fold((l) => "noName", id),
           style: const TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w800),
         ),
         accountEmail: Text(
-          user.email.value.fold((l) => null, id),
+          user.email.value.fold((l) => "noEmail", id),
           style: const TextStyle(color: Colors.black),
         ),
         decoration: const BoxDecoration(color: Colors.lightGreen),
