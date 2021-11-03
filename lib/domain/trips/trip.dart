@@ -7,8 +7,7 @@ import 'package:travel_list/domain/trips/value_objects.dart';
 part 'trip.freezed.dart';
 
 @freezed
-class Trip implements _$Trip {
-
+class Trip with _$Trip {
   const Trip._();
 
   const factory Trip({
@@ -31,7 +30,7 @@ class Trip implements _$Trip {
   );
 
   Option<ValueFailure<dynamic>> get failureOption =>
-      name.failureOrUnit
-      .andThen(description.failureOrUnit)
-      .fold((failure) => some(failure), (_) => none());
+    name.failureOrUnit
+    .andThen(description.failureOrUnit)
+    .fold((failure) => some(failure), (_) => none());
 }

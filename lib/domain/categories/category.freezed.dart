@@ -120,9 +120,8 @@ class __$CategoryCopyWithImpl<$Res> extends _$CategoryCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Category extends _Category {
-  const _$_Category({required this.id, required this.name, this.position})
-      : super._();
+class _$_Category implements _Category {
+  const _$_Category({required this.id, required this.name, this.position});
 
   @override
   final UniqueId id;
@@ -139,22 +138,16 @@ class _$_Category extends _Category {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Category &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
+        (other.runtimeType == runtimeType &&
+            other is _Category &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
             (identical(other.position, position) ||
-                const DeepCollectionEquality()
-                    .equals(other.position, position)));
+                other.position == position));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(position);
+  int get hashCode => Object.hash(runtimeType, id, name, position);
 
   @JsonKey(ignore: true)
   @override
@@ -162,19 +155,18 @@ class _$_Category extends _Category {
       __$CategoryCopyWithImpl<_Category>(this, _$identity);
 }
 
-abstract class _Category extends Category {
+abstract class _Category implements Category {
   const factory _Category(
       {required UniqueId id,
       required String name,
       int? position}) = _$_Category;
-  const _Category._() : super._();
 
   @override
-  UniqueId get id => throw _privateConstructorUsedError;
+  UniqueId get id;
   @override
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @override
-  int? get position => throw _privateConstructorUsedError;
+  int? get position;
   @override
   @JsonKey(ignore: true)
   _$CategoryCopyWith<_Category> get copyWith =>

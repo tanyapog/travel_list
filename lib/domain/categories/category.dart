@@ -5,7 +5,6 @@ part 'category.freezed.dart';
 
 @freezed
 class Category with _$Category {
-  const Category._();
 
   static const maxNameLength = 70;
 

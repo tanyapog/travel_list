@@ -8,8 +8,7 @@ part 'trip_dtos.freezed.dart';
 part 'trip_dtos.g.dart';
 
 @freezed
-class TripDto implements _$TripDto {
-
+class TripDto with _$TripDto {
   const TripDto._();
 
   const factory TripDto({

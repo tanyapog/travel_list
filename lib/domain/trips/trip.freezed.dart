@@ -163,26 +163,18 @@ class _$_Trip extends _Trip {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Trip &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
+        (other.runtimeType == runtimeType &&
+            other is _Trip &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
             (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)) &&
+                other.description == description) &&
             (identical(other.complete, complete) ||
-                const DeepCollectionEquality()
-                    .equals(other.complete, complete)));
+                other.complete == complete));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(complete);
+  int get hashCode => Object.hash(runtimeType, id, name, description, complete);
 
   @JsonKey(ignore: true)
   @override
@@ -199,13 +191,13 @@ abstract class _Trip extends Trip {
   const _Trip._() : super._();
 
   @override
-  UniqueId get id => throw _privateConstructorUsedError;
+  UniqueId get id;
   @override
-  TripName get name => throw _privateConstructorUsedError;
+  TripName get name;
   @override
-  TripDescription get description => throw _privateConstructorUsedError;
+  TripDescription get description;
   @override
-  bool get complete => throw _privateConstructorUsedError;
+  bool get complete;
   @override
   @JsonKey(ignore: true)
   _$TripCopyWith<_Trip> get copyWith => throw _privateConstructorUsedError;
