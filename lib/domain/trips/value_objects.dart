@@ -17,7 +17,7 @@ class TripName extends ValueObject<String> {
   factory TripName(String input) {
     return TripName._(
       validateMaxStringLength(input, maxLength)
-      .flatMap(validateStingNotEmpty)
+      .flatMap(validateStringNotEmpty)
       .flatMap(validateSingleLine),
     );
   }
