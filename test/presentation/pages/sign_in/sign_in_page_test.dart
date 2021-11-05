@@ -6,7 +6,7 @@ import 'package:travel_list/presentation/pages/sign_in/sign_in_page.dart';
 
 void main() {
   // initialising test environment
-  configureInjection(Environment.test, const SimpleEnvironmentFilter());
+  configureInjection(Environment.test, NoEnvOrContains(Environment.test));
   final signInPage = MediaQuery(
       data: const MediaQueryData(),
       child: MaterialApp(

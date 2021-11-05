@@ -12,7 +12,7 @@ void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
   WidgetsFlutterBinding.ensureInitialized();
-  configureInjection(Environment.prod, const SimpleEnvironmentFilter());
+  configureInjection(Environment.prod, NoEnvOrContains(Environment.prod));
 
   Finder findEmail() => find.bySemanticsLabel('Email');
   Finder findPassword() => find.bySemanticsLabel('Password');
