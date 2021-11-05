@@ -7,7 +7,7 @@ void main() {
     'Emits [NavState(selectedItem: NavItem.catalog)] when NavigateTo(NavItem.catalog) is added',
     build: () => NavBloc(),
     act: (bloc) async => bloc.add(const NavigateTo(NavItem.catalog)),
-    expect: [isA<NavState>()],
+    expect: () => [isA<NavState>()],
     verify: (bloc) async {
       expect(bloc.state.selectedItem, NavItem.catalog);
   },);
