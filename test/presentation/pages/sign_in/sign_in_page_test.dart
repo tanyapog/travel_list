@@ -41,7 +41,7 @@ void main() {
 
       await tester.tap(findSignInButton());
       await tester.pump();
-      expect(formKey.currentState.validate(), isFalse);
+      expect(formKey.currentState?.validate(), isFalse);
       expect(find.text('Invalid Email'), findsOneWidget);
       expect(find.text('Short Password'), findsOneWidget);
     });
