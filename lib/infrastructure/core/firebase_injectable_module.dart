@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:cloud_firestore_mocks/cloud_firestore_mocks.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_auth_mocks/firebase_auth_mocks.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -29,7 +28,7 @@ abstract class FirebaseTestInjectableModule {
   @test
   @lazySingleton
   FirebaseAuth get firebaseAuth => MockFirebaseAuth();
-  @test
-  @lazySingleton
-  FirebaseFirestore get firestore => MockFirestoreInstance();
+  // @test
+  // @lazySingleton
+  // FirebaseFirestore get firestore => MockFirestoreInstance();
 }

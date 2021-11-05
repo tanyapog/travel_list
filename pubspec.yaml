@@ -17,15 +17,15 @@ environment:
   sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
-  another_flushbar: ^1.10.24
+  another_flushbar: ^1.10.25
   auto_route: ^3.0.4
-  cloud_firestore: ^2.5.4
+  cloud_firestore: ^3.0.0
   dartz: ^0.10.0
-  firebase_auth: ^3.1.4
-  firebase_core: ^1.8.0
+  firebase_auth: ^3.1.5
+  firebase_core: ^1.9.0
   flutter:
     sdk: flutter
-  flutter_bloc: ^7.3.1
+  flutter_bloc: ^7.3.2
   flutter_hooks: ^0.18.0
   flutter_slidable: ^0.6.0
   freezed_annotation: ^0.15.0
@@ -40,9 +40,8 @@ dependencies:
 
 dev_dependencies:
   auto_route_generator: ^3.0.1
-  bloc_test: ^8.4.0
+  bloc_test: ^8.5.0
   build_runner: ^2.1.4
-  cloud_firestore_mocks: ^0.9.0+1
   firebase_auth_mocks: ^0.8.1
   flutter_test:
     sdk: flutter
