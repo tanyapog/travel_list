@@ -37,7 +37,7 @@ void main() {
       await tester.pumpWidget(signInPage);
 
       final Form signInForm = tester.widget(find.byType(Form)) as Form;
-      final GlobalKey<FormState> formKey = signInForm.key as GlobalKey<FormState>;
+      final GlobalKey<FormState> formKey = signInForm.key! as GlobalKey<FormState>;
 
       await tester.tap(findSignInButton());
       await tester.pump();
