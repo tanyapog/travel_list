@@ -1,7 +1,11 @@
-import 'package:another_flushbar/flushbar_helper.dart';
+import 'package:another_flushbar/flushbar.dart';
+import 'package:flutter/material.dart';
 
 dynamic customErrorFlushbar({required String message}) =>
-  FlushbarHelper.createError(
+  Flushbar(
     message: message,
+    icon: Icon(Icons.warning, size: 28.0, color: Colors.red[300],),
+    shouldIconPulse: false, // it's nice animation but it breaks tests
+    leftBarIndicatorColor: Colors.red[300],
     duration: const Duration(seconds: 5),
   );

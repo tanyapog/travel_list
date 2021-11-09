@@ -48,7 +48,8 @@ dev_dependencies:
   freezed: ^0.15.0+1
   google_sign_in_mocks: ^0.2.1
   injectable_generator: ^1.5.2
-#  integration_test: ^1.0.2+3
+  integration_test:
+    sdk: flutter
   json_serializable: ^6.0.1
   lint: ^1.7.2
 
