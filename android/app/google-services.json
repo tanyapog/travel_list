@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "16023612489",
+    "firebase_url": "https://travel-list-dee6b.firebaseio.com",
+    "project_id": "travel-list-dee6b",
+    "storage_bucket": "travel-list-dee6b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:16023612489:android:3c05c26ec6d9225837e398",
+        "android_client_info": {
+          "package_name": "com.example.travel_list"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "16023612489-09sdkfdqqboutpb0fpkdreussdgp5qgs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.travel_list",
+            "certificate_hash": "0144ae10fe4a6d0af4e4e99aa3114c0bda0e51a6"
+          }
+        },
+        {
+          "client_id": "16023612489-pulcb1bhdhu7p43nleckqrs539p986ug.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaHXcqGuHyUMuafg6QTP4Alq79toPrX28"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "16023612489-pulcb1bhdhu7p43nleckqrs539p986ug.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
