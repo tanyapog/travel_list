@@ -97,6 +97,11 @@ class TripFormRouteArgs {
   final _i7.Key? key;
 
   final _i8.Trip? trip;
+
+  @override
+  String toString() {
+    return 'TripFormRouteArgs{key: $key, trip: $trip}';
+  }
 }
 
 /// generated route for [_i5.CategoriesOverviewPage]
