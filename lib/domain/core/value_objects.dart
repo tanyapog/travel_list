@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:travel_list/domain/core/errors.dart';
 import 'package:travel_list/domain/core/failures.dart';
 import 'package:travel_list/domain/core/value_validatores.dart';
