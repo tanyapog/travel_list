@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -19,6 +20,8 @@ void main() {
   const itEmail = "tl_i_tester@itest.com";
   const itPassword = "tlItPwd032";
 
+  deleteTestUserIfNeed(itEmail, itPassword);
+
   Finder findEmail() => find.bySemanticsLabel('Email');
   Finder findPassword() => find.bySemanticsLabel('Password');
   Finder findRegisterButton() => find.text('REGISTER');
@@ -32,8 +35,6 @@ void main() {
       'First we trying to log in with non existing user and should get red message that we can not. '
       'Then we press "Registration" button and should get into empty trip list page',
       (WidgetTester tester) async {
-        await Firebase.initializeApp();
-
         await tester.pumpWidget(AppWidget());
         await tester.pumpAndSettle();
 
@@ -100,4 +101,28 @@ void main() {
       }
     );
   });
+}
+
+Future <void> deleteTestUserIfNeed(String email, String password) async {
+  await Firebase.initializeApp();
+  final FirebaseAuth _firebaseAuth = getIt<FirebaseAuth>();
+  try {
+    await _firebaseAuth
+        .signInWithEmailAndPassword(
+      email: email,
+      password: password,
+    );
+  } on FirebaseAuthException catch (e) {
+    if (e.code == 'user-not-found') {
+      // nothing to do
+      return;
+    } else {print("Can't  login: $e");}
+  } on Exception catch (e) {print("Can't  login: $e");}
+
+  final User? testUser = _firebaseAuth.currentUser;
+  if (testUser != null) {
+    testUser.delete()
+      .then((value) => print("test user deleted"))
+      .catchError((error) => print("Can't  delete test user: $error"));
+  }
 }
