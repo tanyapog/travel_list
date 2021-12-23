@@ -124,5 +124,6 @@ Future <void> deleteTestUserIfNeed(String email, String password) async {
     testUser.delete()
       .then((value) => print("test user deleted"))
       .catchError((error) => print("Can't  delete test user: $error"));
+    _firebaseAuth.signOut();
   }
 }
