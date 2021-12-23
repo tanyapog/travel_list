@@ -7,6 +7,7 @@ import 'package:integration_test/integration_test.dart';
 import 'package:travel_list/injection.dart';
 
 import 'presentation/pages/sign_in/sign_in_page_i_test.dart';
+import 'presentation/pages/trips/trips_i_test.dart';
 import 'test_globals.dart';
 
 void main() {
@@ -18,9 +19,10 @@ void main() {
   deleteTestUserIfNeed(itEmail, itPassword);
 
   signInPageTest();
+  tripsTest();
 }
 
-Future <void> deleteTestUserIfNeed(String email, String password) async {
+Future<void> deleteTestUserIfNeed(String email, String password) async {
   await Firebase.initializeApp();
   final FirebaseAuth _firebaseAuth = getIt<FirebaseAuth>();
   try {
