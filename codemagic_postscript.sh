@@ -8,7 +8,7 @@ pushd android
 flutter build apk
 ./gradlew app:assembleAndroidTest
 # Build a debug APK, passing in the integration test file
-./gradlew app:assembleDebug -Ptarget="$FCI_BUILD_DIR/integration_test/presentation/pages/sign_in/sign_in_page_i_test.dart"
+./gradlew app:assembleDebug -Ptarget="$FCI_BUILD_DIR/integration_test/app_i_test.dart"
 # Go back to the root of the project
 popd
 
