@@ -28,8 +28,6 @@ void main() {
   Finder findSignInButton() => find.text('SIGN IN');
   Finder findAccessDeniedMessage() => find.text('Invalid email and password combination', skipOffstage: false);
 
-  // todo automatically delete test user before run integration test.
-  // Until it´s done test user should be deleted manually in firebase console
   group('Registration, signIn and signOut tests', () {
     testWidgets(
       'First we trying to log in with non existing user and should get red message that we can not. '
