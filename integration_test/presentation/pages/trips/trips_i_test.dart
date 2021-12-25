@@ -39,6 +39,7 @@ void tripsTest() {
           await tester.pumpAndSettle(const Duration(seconds: 1));
           expect(find.byType(TripsOverviewPage), findsOneWidget);
           expect(find.text('Norway 2021'), findsOneWidget);
+          expect(find.byKey(const Key('TripDescription')), findsOneWidget);
         }
     );
   });

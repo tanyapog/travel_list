@@ -28,8 +28,8 @@ class TripCard extends StatelessWidget {
         ],
         child: Card(
           child: ListTile(
-            title: Text(trip.name.getOrCrash()),
-            subtitle: Text('${trip.description.getOrCrash()} \nдек. 2020'),
+            title: Text(trip.name.getOrCrash(), key: const Key('TripName')),
+            subtitle: Text('${trip.description.getOrCrash()} \nдек. 2020', key: const Key('TripDescription')),
             trailing: const Icon(Icons.more_vert),
             isThreeLine: true,
           ),
