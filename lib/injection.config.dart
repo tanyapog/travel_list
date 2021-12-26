@@ -47,6 +47,9 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.lazySingleton<_i4.FirebaseFirestore>(
       () => firebaseInjectableModule.firestore,
       registerFor: {_prod});
+  gh.lazySingleton<_i4.FirebaseFirestore>(
+      () => firebaseTestInjectableModule.firestore,
+      registerFor: {_test});
   gh.lazySingleton<_i5.GoogleSignIn>(
       () => firebaseInjectableModule.googleSignIn,
       registerFor: {_prod});

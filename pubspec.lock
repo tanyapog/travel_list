@@ -267,6 +267,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.0"
+  fake_cloud_firestore:
+    dependency: "direct main"
+    description:
+      name: fake_cloud_firestore
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.2.0"
   file:
     dependency: transitive
     description:
@@ -282,7 +289,7 @@ packages:
     source: hosted
     version: "3.2.0"
   firebase_auth_mocks:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: firebase_auth_mocks
       url: "https://pub.dartlang.org"
@@ -315,14 +322,14 @@ packages:
       name: firebase_core_platform_interface
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.1.0"
+    version: "4.2.3"
   firebase_core_web:
     dependency: transitive
     description:
       name: firebase_core_web
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.2.0"
+    version: "1.5.3"
   fixnum:
     dependency: transitive
     description:
@@ -419,7 +426,7 @@ packages:
     source: hosted
     version: "5.2.1"
   google_sign_in_mocks:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: google_sign_in_mocks
       url: "https://pub.dartlang.org"
@@ -571,7 +578,7 @@ packages:
     source: hosted
     version: "5.0.16"
   mocktail:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: mocktail
       url: "https://pub.dartlang.org"
