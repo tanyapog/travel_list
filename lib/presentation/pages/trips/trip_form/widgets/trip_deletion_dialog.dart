@@ -32,8 +32,8 @@ class TripDeletionDialog extends StatelessWidget {
                 style: TextStyle(fontWeight: FontWeight.bold),),
               const SizedBox(height: 10),
               ListTile(
-                title: Text(trip.name.getOrCrash()),
-                subtitle: Text('${trip.description.getOrCrash()} \nдек. 2020'),
+                title: Text(trip.name.getOrCrash(), key: const Key('tripName'),),
+                subtitle: Text('${trip.description.getOrCrash()} \nдек. 2020', key: const Key('tripDescription')),
                 isThreeLine: true,
               ),
               const SizedBox(height: 10),
