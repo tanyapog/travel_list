@@ -34,8 +34,8 @@ void tripsTest() {
           expect(find.byType(TripFormPage), findsOneWidget);
           expect(find.text('Create a trip'), findsOneWidget);
 
-          final Form signInForm = tester.widget(find.byType(Form)) as Form;
-          final GlobalKey<FormState> formKey = signInForm.key! as GlobalKey<FormState>;
+          final Form tripForm = tester.widget(find.byType(Form)) as Form;
+          final GlobalKey<FormState> formKey = tripForm.key! as GlobalKey<FormState>;
 
           await tester.tap(find.byIcon(Icons.check));
           await tester.pumpAndSettle(const Duration(seconds: 1));
@@ -55,8 +55,7 @@ void tripsTest() {
     );
 
     testWidgets(
-        'Creating a trip with empty name is prohibited. '
-        'After creating trip "Norway 2021" it should appear in list',
+        'Trip is editable',
         (WidgetTester tester) async {
           await tester.pumpWidget(AppWidget());
           await tester.pumpAndSettle();
