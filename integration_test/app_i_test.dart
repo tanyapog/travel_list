@@ -7,6 +7,7 @@ import 'package:injectable/injectable.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:travel_list/injection.dart';
 
+import 'presentation/pages/categories/categories_i_test.dart';
 import 'presentation/pages/sign_in/sign_in_page_i_test.dart';
 import 'presentation/pages/trips/trips_i_test.dart';
 import 'test_globals.dart';
@@ -21,6 +22,7 @@ Future<void> main() async {
 
   signInPageTest();
   tripsTest();
+  categoriesTest();
 }
 
 Future<void> deleteTestUserIfNeed(String email, String password) async {
@@ -29,8 +31,7 @@ Future<void> deleteTestUserIfNeed(String email, String password) async {
   final _firestore = getIt<FirebaseFirestore>();
 
   try {
-    await _firebaseAuth
-        .signInWithEmailAndPassword(
+    await _firebaseAuth.signInWithEmailAndPassword(
       email: email,
       password: password,
     );

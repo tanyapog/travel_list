@@ -32,7 +32,7 @@ class CategoryDeletionDialog extends StatelessWidget {
                 style: TextStyle(fontWeight: FontWeight.bold),),
               const SizedBox(height: 10),
               ListTile(
-                title: Text(category.name),
+                title: Text(category.name, key: const Key('categoryName')),
               ),
               const SizedBox(height: 10),
               Row(
