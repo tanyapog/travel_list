@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -10,13 +11,13 @@ import 'presentation/pages/sign_in/sign_in_page_i_test.dart';
 import 'presentation/pages/trips/trips_i_test.dart';
 import 'test_globals.dart';
 
-void main() {
+Future<void> main() async {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
   WidgetsFlutterBinding.ensureInitialized();
   configureInjection(Environment.prod, NoEnvOrContains(Environment.prod));
 
-  deleteTestUserIfNeed(itEmail, itPassword);
+  await deleteTestUserIfNeed(itEmail, itPassword);
 
   signInPageTest();
   tripsTest();
@@ -24,7 +25,9 @@ void main() {
 
 Future<void> deleteTestUserIfNeed(String email, String password) async {
   await Firebase.initializeApp();
-  final FirebaseAuth _firebaseAuth = getIt<FirebaseAuth>();
+  final _firebaseAuth = getIt<FirebaseAuth>();
+  final _firestore = getIt<FirebaseFirestore>();
+
   try {
     await _firebaseAuth
         .signInWithEmailAndPassword(
@@ -40,8 +43,32 @@ Future<void> deleteTestUserIfNeed(String email, String password) async {
 
   final User? testUser = _firebaseAuth.currentUser;
   if (testUser != null) {
-    testUser.delete()
-      .catchError((error) => print("Can't  delete test user: $error"));
-    _firebaseAuth.signOut();
+    try {
+      final testUserDoc = _firestore.collection('users').doc(testUser.uid);
+      // delete sub collections
+      await _deleteCollection(testUserDoc.collection('trips'));
+      await _deleteCollection(testUserDoc.collection('categories'));
+      // delete test user
+      await testUserDoc.delete();
+      testUser.delete()
+        .catchError((error) => print("Can't  delete test user: $error"));
+      _firebaseAuth.signOut();
+    } on Exception catch (e) {
+      print("!!! Error: $e");
+    }
+  }
+}
+
+Future<void> _deleteCollection(CollectionReference collection) async {
+  try {
+    // todo retrieve a small batch of documents to avoid out-of-memory errors
+    final documents = await collection.get().then((querySnapshot) => querySnapshot.docs);
+    if (documents.isNotEmpty) {
+      for(final document in documents) {
+        await document.reference.delete();
+      };
+    }
+  } on Exception catch (e) {
+    print("Error deleting collection : $e");
   }
 }
