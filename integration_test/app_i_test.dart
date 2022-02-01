@@ -21,8 +21,8 @@ Future<void> main() async {
   await deleteTestUserIfNeed(itEmail, itPassword);
 
   signInPageTest();
-  tripsTest();
   categoriesTest();
+  tripsTest();
 }
 
 Future<void> deleteTestUserIfNeed(String email, String password) async {

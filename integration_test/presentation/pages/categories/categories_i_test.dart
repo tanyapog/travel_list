@@ -39,6 +39,7 @@ void categoriesTest() {
           expect(find.text('Cannot be empty'), findsOneWidget);
 
           await tester.enterText(findCategoryNameField(), _categoryName);
+          await tester.testTextInput.receiveAction(TextInputAction.done);
           await tester.pumpAndSettle();
 
           await tester.tap(findSaveButton());
@@ -58,10 +59,13 @@ void categoriesTest() {
           expect(findCategoryEditDialog(), findsOneWidget);
           expect(find.text('Edit category'), findsOneWidget);
 
+          // this bloc faces problems when categoriesTest() doesn't run before
+          // other tests (tripsTest(), for example). I use imitation of pressing
+          // submitting button and double pumpAndSettle to fix it,
+          // but maybe there is a better way
           await tester.enterText(findCategoryNameField(), _categoryEditedName);
-          // entered text doesn't apply without this imitation of pressing some
-          // submitting button https://stackoverflow.com/questions/55101120/submit-textfield-in-flutter-integration-test
-          await tester.testTextInput.receiveAction(TextInputAction.done);
+          await tester.testTextInput.receiveAction(TextInputAction.done); // https://stackoverflow.com/questions/55101120/submit-textfield-in-flutter-integration-test
+          await tester.pumpAndSettle(const Duration(seconds: 1));
           await tester.pumpAndSettle(const Duration(seconds: 1));
 
           await tester.tap(findSaveButton());
