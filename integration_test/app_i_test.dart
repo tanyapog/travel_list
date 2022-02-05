@@ -6,6 +6,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:injectable/injectable.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:travel_list/injection.dart';
+import 'package:travel_list/logger.dart';
 
 import 'presentation/pages/categories/categories_i_test.dart';
 import 'presentation/pages/sign_in/sign_in_page_i_test.dart';
@@ -39,8 +40,8 @@ Future<void> deleteTestUserIfNeed(String email, String password) async {
     if (e.code == 'user-not-found') {
       // nothing to do
       return;
-    } else {print("Can't  login: $e");}
-  } on Exception catch (e) {print("Can't  login: $e");}
+    } else {debugLog("Can't  login: $e");}
+  } on Exception catch (e) {debugLog("Can't  login: $e");}
 
   final User? testUser = _firebaseAuth.currentUser;
   if (testUser != null) {
@@ -52,10 +53,10 @@ Future<void> deleteTestUserIfNeed(String email, String password) async {
       // delete test user
       await testUserDoc.delete();
       testUser.delete()
-        .catchError((error) => print("Can't  delete test user: $error"));
+        .catchError((error) => debugLog("Can't  delete test user: $error"));
       _firebaseAuth.signOut();
     } on Exception catch (e) {
-      print("!!! Error: $e");
+      debugLog("!!! Error: $e");
     }
   }
 }
@@ -67,9 +68,9 @@ Future<void> _deleteCollection(CollectionReference collection) async {
     if (documents.isNotEmpty) {
       for(final document in documents) {
         await document.reference.delete();
-      };
+      }
     }
   } on Exception catch (e) {
-    print("Error deleting collection : $e");
+    debugLog("Error deleting collection : $e");
   }
 }
