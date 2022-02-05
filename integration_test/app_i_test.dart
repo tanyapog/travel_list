@@ -54,7 +54,7 @@ Future<void> deleteTestUserIfNeed(String email, String password) async {
       await testUserDoc.delete();
       await testUser.delete()
         .catchError((error) => debugLog("Can't  delete test user: $error"));
-      _firebaseAuth.signOut();
+      await _firebaseAuth.signOut();
     } on Exception catch (e) {
       debugLog("!!! Error: $e");
     }
