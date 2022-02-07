@@ -13,13 +13,15 @@ import 'presentation/pages/sign_in/sign_in_page_i_test.dart';
 import 'presentation/pages/trips/trips_i_test.dart';
 import 'test_globals.dart';
 
-Future<void> main() async {
+void main() async {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
   WidgetsFlutterBinding.ensureInitialized();
   configureInjection(Environment.prod, NoEnvOrContains(Environment.prod));
+  await Firebase.initializeApp();
 
-  await deleteTestUserIfNeed(itEmail, itPassword);
+  await deleteTestUserIfNeed(itEmail, itPassword)
+      .whenComplete(() => debugPrintSynchronously('tanya.pog log:: deleting complete'));
   debugPrintSynchronously('tanya.pog log:: there is no test user now');
   signInPageTest();
   categoriesTest();
@@ -27,7 +29,6 @@ Future<void> main() async {
 }
 
 Future<void> deleteTestUserIfNeed(String email, String password) async {
-  await Firebase.initializeApp();
   final _firebaseAuth = getIt<FirebaseAuth>();
   final _firestore = getIt<FirebaseFirestore>();
 
@@ -61,9 +62,9 @@ Future<void> deleteTestUserIfNeed(String email, String password) async {
       await _deleteCollection(testUserDoc.collection('categories'));
       debugPrintSynchronously('tanya.pog log:: categories are deleted');
       // delete test user
-      await testUserDoc.delete()
-        .catchError((error) => debugPrintSynchronously('tanya.pog log:: can not delete test user document'));
-      debugPrintSynchronously('tanya.pog log:: user doc deleted');
+      // await testUserDoc.delete()
+      //   .catchError((error) => debugPrintSynchronously('tanya.pog log:: can not delete test user document'));
+      // debugPrintSynchronously('tanya.pog log:: user doc deleted');
       await testUser.delete()
         .catchError((error) => debugPrintSynchronously("tanya.pog log:: Can't  delete test user: $error"));
       debugPrintSynchronously('tanya.pog log:: test user deleted');
