@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:travel_list/presentation/core/app_widget.dart';
@@ -19,6 +20,7 @@ void signInPageTest() {
       'First we trying to log in with non existing user and should get red message that we can not. '
       'Then we press "Registration" button and should get into empty trip list page',
       (WidgetTester tester) async {
+        debugPrintSynchronously('tanya.pog log:: starting sign_in_page_i_test');
         await tester.pumpWidget(AppWidget());
         await tester.pumpAndSettle();
 

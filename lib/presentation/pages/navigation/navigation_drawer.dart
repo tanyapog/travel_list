@@ -6,7 +6,6 @@ import 'package:travel_list/application/auth/auth_bloc.dart';
 import 'package:travel_list/application/navigation/nav_bloc.dart';
 import 'package:travel_list/domain/auth/user.dart';
 import 'package:travel_list/injection.dart';
-import 'package:travel_list/logger.dart';
 import 'package:travel_list/presentation/routes/router.gr.dart' as app_router;
 
 class NavigationDrawer extends StatelessWidget {
@@ -27,7 +26,7 @@ class NavigationDrawer extends StatelessWidget {
             listener: (navContext, navState) {
               switch(navState.selectedItem) {
                 case NavItem.currentTrip:
-                  debugLog("--- show Current trip");
+                  debugPrint("--- show Current trip");
                   break;
                 case NavItem.newTrip:
                   AutoRouter.of(context).push(app_router.TripFormRoute(trip: null));
@@ -36,16 +35,16 @@ class NavigationDrawer extends StatelessWidget {
                   AutoRouter.of(context).replace(const app_router.TripsOverviewRoute());
                   break;
                 case NavItem.catalog:
-                  debugLog("--- show Catalog");
+                  debugPrint("--- show Catalog");
                   break;
                 case NavItem.categories:
                   AutoRouter.of(context).replace(const app_router.CategoriesOverviewRoute());
                   break;
                 case NavItem.templates:
-                  debugLog("--- show Templates");
+                  debugPrint("--- show Templates");
                   break;
                 case NavItem.settings:
-                  debugLog("--- show Settings");
+                  debugPrint("--- show Settings");
                   break;
                 case NavItem.signOut:
                   context.read<AuthBloc>().add(const AuthEvent.signedOut());
