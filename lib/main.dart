@@ -5,11 +5,15 @@ import 'package:injectable/injectable.dart';
 import 'package:travel_list/application/travel_list_bloc_observer.dart';
 import 'package:travel_list/injection.dart';
 import 'package:travel_list/presentation/core/app_widget.dart';
+import 'global.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   configureInjection(Environment.prod, NoEnvOrContains(Environment.prod),);
   await Firebase.initializeApp();
+  if (useFirebaseEmulator) {
+    await connectToEmulator();
+  }
   Bloc.observer = TravelListBlocObserver();
   runApp(AppWidget());
 }

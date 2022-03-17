@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:injectable/injectable.dart';
 import 'package:integration_test/integration_test.dart';
+import 'package:travel_list/global.dart';
 import 'package:travel_list/injection.dart';
 
 import 'presentation/pages/categories/categories_i_test.dart';
@@ -18,6 +19,9 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   configureInjection(Environment.prod, NoEnvOrContains(Environment.prod));
   await Firebase.initializeApp();
+  if (useFirebaseEmulator) {
+    await connectToEmulator();
+  }
 
   await deleteTestUserIfNeed(itEmail, itPassword);
 
