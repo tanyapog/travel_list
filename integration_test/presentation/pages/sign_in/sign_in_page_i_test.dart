@@ -8,7 +8,7 @@ import 'package:travel_list/presentation/pages/trips/trips_overview/widgets/trip
 
 import '../../../test_globals.dart';
 
-void signInPageTest() {
+Future<void> signInPageTest() async {
   Finder findEmail() => find.bySemanticsLabel('Email');
   Finder findPassword() => find.bySemanticsLabel('Password');
   Finder findRegisterButton() => find.text('REGISTER');

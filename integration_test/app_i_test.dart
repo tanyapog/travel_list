@@ -25,9 +25,9 @@ Future<void> main() async {
 
   debugPrintSynchronously("::: deleteTestUser result = ${await deleteTestUserIfNeed(itEmail, itPassword)}");
 
-  signInPageTest();
-  categoriesTest();
-  tripsTest();
+  await signInPageTest();
+  await categoriesTest();
+  await tripsTest();
 }
 
 Future<String> deleteTestUserIfNeed(String email, String password) async {

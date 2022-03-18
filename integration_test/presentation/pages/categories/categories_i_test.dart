@@ -8,7 +8,7 @@ import 'package:travel_list/presentation/pages/categories/widgets/category_editi
 
 Finder _findCategoriesOverviewPage() => find.byType(CategoriesOverviewPage);
 
-void categoriesTest() {
+Future<void> categoriesTest() async {
   const _categoryName = 'Documents';
   const _categoryEditedName = 'Clothes';
 

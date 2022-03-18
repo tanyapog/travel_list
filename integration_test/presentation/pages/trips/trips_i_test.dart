@@ -7,7 +7,7 @@ import 'package:travel_list/presentation/pages/trips/trips_overview/trips_overvi
 import 'package:travel_list/presentation/pages/trips/trips_overview/widgets/trip_card.dart';
 
 // this test tests both tipsOverviewPage and TripFormPage
-void tripsTest() {
+Future<void> tripsTest() async {
   const _tripName = 'Norway 2021';
   const _tripEditedName = 'Norway jun, 2021';
 
