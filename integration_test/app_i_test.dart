@@ -23,14 +23,14 @@ Future<void> main() async {
     await connectToEmulator();
   }
 
-  await deleteTestUserIfNeed(itEmail, itPassword);
+  debugPrintSynchronously("::: deleteTestUser result = ${await deleteTestUserIfNeed(itEmail, itPassword)}");
 
   signInPageTest();
-  // categoriesTest();
+  categoriesTest();
   tripsTest();
 }
 
-Future<void> deleteTestUserIfNeed(String email, String password) async {
+Future<String> deleteTestUserIfNeed(String email, String password) async {
   final _firebaseAuth = getIt<FirebaseAuth>();
   final _firestore = getIt<FirebaseFirestore>();
 
@@ -41,10 +41,9 @@ Future<void> deleteTestUserIfNeed(String email, String password) async {
     );
   } on FirebaseAuthException catch (e) {
     if (e.code == 'user-not-found') {
-      // nothing to do
-      return;
-    } else {debugPrintSynchronously("Can't  login: $e");}
-  } on Exception catch (e) {debugPrintSynchronously("Can't  login: $e");}
+      return "nothing to do";
+    } else {return "Can't  login: $e";}
+  } on Exception catch (e) {return "Can't  login: $e";}
 
   final User? testUser = _firebaseAuth.currentUser;
   if (testUser != null) {
@@ -59,9 +58,12 @@ Future<void> deleteTestUserIfNeed(String email, String password) async {
       await testUser.delete()
         .catchError((e) => debugPrintSynchronously("Can't delete test user: $e"));
       await _firebaseAuth.signOut().catchError((e) => debugPrintSynchronously("Can't sign out: $e"));
+      return "user ${testUser.uid} deleted";
     } on Exception catch (e) {
-      debugPrintSynchronously("Error while deleting test user: $e");
+      return "Error while deleting test user: $e";
     }
+  } else {
+    return "user = $testUser";
   }
 }
 
