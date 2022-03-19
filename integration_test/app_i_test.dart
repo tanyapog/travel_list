@@ -50,11 +50,11 @@ Future<String> deleteTestUserIfNeed(String email, String password) async {
     try {
       final testUserDoc = _firestore.collection('users').doc(testUser.uid);
       // delete sub collections
-      await _deleteCollection(testUserDoc.collection('trips'));
-      await _deleteCollection(testUserDoc.collection('categories'));
-      // delete test user
-      await testUserDoc.delete()
-        .catchError((e) => debugPrintSynchronously("Can't delete test user document: $e"));
+      // await _deleteCollection(testUserDoc.collection('trips'));
+      // await _deleteCollection(testUserDoc.collection('categories'));
+      // // delete test user
+      // await testUserDoc.delete()
+      //   .catchError((e) => debugPrintSynchronously("Can't delete test user document: $e"));
       await testUser.delete()
         .catchError((e) => debugPrintSynchronously("Can't delete test user: $e"));
       await _firebaseAuth.signOut().catchError((e) => debugPrintSynchronously("Can't sign out: $e"));
