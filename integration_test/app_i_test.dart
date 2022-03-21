@@ -51,8 +51,8 @@ Future<void> deleteTestUserIfNeed(String email, String password) async {
     try {
       final testUserDoc = _firestore.collection('users').doc(testUser.uid);
       // delete sub collections
-      await _deleteCollection(testUserDoc.collection('trips'));
-      await _deleteCollection(testUserDoc.collection('categories'));
+      // await _deleteCollection(testUserDoc.collection('trips'));
+      // await _deleteCollection(testUserDoc.collection('categories'));
       // delete test user
       await testUser.delete();
       await _firebaseAuth.signOut();
