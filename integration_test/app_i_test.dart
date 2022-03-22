@@ -49,7 +49,7 @@ Future<void> deleteTestUserIfNeed(String email, String password) async {
   final User? testUser = _firebaseAuth.currentUser;
   if (testUser != null) {
     try {
-      final testUserDoc = _firestore.collection('users').doc(testUser.uid);
+      // final testUserDoc = _firestore.collection('users').doc(testUser.uid);
       // delete sub collections
       // await _deleteCollection(testUserDoc.collection('trips'));
       // await _deleteCollection(testUserDoc.collection('categories'));
