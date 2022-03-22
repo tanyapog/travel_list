@@ -32,7 +32,7 @@ Future<void> main() async {
 
 Future<void> deleteTestUserIfNeed(String email, String password) async {
   final _firebaseAuth = getIt<FirebaseAuth>();
-  final _firestore = getIt<FirebaseFirestore>();
+  // final _firestore = getIt<FirebaseFirestore>();
 
   try {
     await _firebaseAuth.signInWithEmailAndPassword(
