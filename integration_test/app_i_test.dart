@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:injectable/injectable.dart';
@@ -18,6 +17,7 @@ Future<void> main() async {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
   WidgetsFlutterBinding.ensureInitialized();
   configureInjection(Environment.prod, NoEnvOrContains(Environment.prod));
+  await Firebase.initializeApp();
   if (useFirebaseEmulator) {
     await connectToEmulator();
   }
@@ -30,9 +30,8 @@ Future<void> main() async {
 }
 
 Future<void> deleteTestUserIfNeed(String email, String password) async {
-  await Firebase.initializeApp();
   final _firebaseAuth = getIt<FirebaseAuth>();
-  // final _firestore = getIt<FirebaseFirestore>();
+  final _firestore = getIt<FirebaseFirestore>();
 
   try {
     await _firebaseAuth.signInWithEmailAndPassword(
@@ -48,17 +47,17 @@ Future<void> deleteTestUserIfNeed(String email, String password) async {
 
   final User? testUser = _firebaseAuth.currentUser;
   if (testUser != null) {
-    // try {
-      // final testUserDoc = _firestore.collection('users').doc(testUser.uid);
+    try {
+      final testUserDoc = _firestore.collection('users').doc(testUser.uid);
       // delete sub collections
-      // await _deleteCollection(testUserDoc.collection('trips'));
-      // await _deleteCollection(testUserDoc.collection('categories'));
+      await _deleteCollection(testUserDoc.collection('trips'));
+      await _deleteCollection(testUserDoc.collection('categories'));
       // delete test user
-      testUser.delete();
-      _firebaseAuth.signOut();
-    // } on Exception catch (e) {
-    //   debugPrint("Error while deleting test user: $e");
-    // }
+      await testUser.delete();
+      await _firebaseAuth.signOut();
+    } on Exception catch (e) {
+      debugPrint("Error while deleting test user: $e");
+    }
   }
 }
 
