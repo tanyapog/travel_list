@@ -22,7 +22,7 @@ Future<void> main() async {
     await connectToEmulator();
   }
 
-  await deleteTestUserIfNeed(itEmail, itPassword);
+  deleteTestUserIfNeed(itEmail, itPassword);
 
   await signInPageTest();
   await categoriesTest();
