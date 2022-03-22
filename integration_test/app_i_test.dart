@@ -18,7 +18,6 @@ Future<void> main() async {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
   WidgetsFlutterBinding.ensureInitialized();
   configureInjection(Environment.prod, NoEnvOrContains(Environment.prod));
-  await Firebase.initializeApp();
   if (useFirebaseEmulator) {
     await connectToEmulator();
   }
@@ -31,6 +30,7 @@ Future<void> main() async {
 }
 
 Future<void> deleteTestUserIfNeed(String email, String password) async {
+  await Firebase.initializeApp();
   final _firebaseAuth = getIt<FirebaseAuth>();
   // final _firestore = getIt<FirebaseFirestore>();
 
