@@ -48,7 +48,7 @@ Future<void> deleteTestUserIfNeed(String email, String password) async {
 
   final User? testUser = _firebaseAuth.currentUser;
   if (testUser != null) {
-    try {
+    // try {
       // final testUserDoc = _firestore.collection('users').doc(testUser.uid);
       // delete sub collections
       // await _deleteCollection(testUserDoc.collection('trips'));
@@ -56,9 +56,9 @@ Future<void> deleteTestUserIfNeed(String email, String password) async {
       // delete test user
       await testUser.delete();
       await _firebaseAuth.signOut();
-    } on Exception catch (e) {
-      debugPrint("Error while deleting test user: $e");
-    }
+    // } on Exception catch (e) {
+    //   debugPrint("Error while deleting test user: $e");
+    // }
   }
 }
 
