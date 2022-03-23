@@ -14,15 +14,16 @@ import 'presentation/pages/trips/trips_i_test.dart';
 import 'test_globals.dart';
 
 Future<void> main() async {
-  IntegrationTestWidgetsFlutterBinding.ensureInitialized();
-  WidgetsFlutterBinding.ensureInitialized();
-  configureInjection(Environment.prod, NoEnvOrContains(Environment.prod));
-  await Firebase.initializeApp();
-  if (useFirebaseEmulator) {
-    await connectToEmulator();
-  }
-
-  deleteTestUserIfNeed(itEmail, itPassword);
+  setUpAll(() async {
+    IntegrationTestWidgetsFlutterBinding.ensureInitialized();
+    WidgetsFlutterBinding.ensureInitialized();
+    configureInjection(Environment.prod, NoEnvOrContains(Environment.prod));
+    await Firebase.initializeApp();
+    if (useFirebaseEmulator) {
+      await connectToEmulator();
+    }
+    await deleteTestUserIfNeed(itEmail, itPassword);
+  });
 
   await signInPageTest();
   await categoriesTest();
