@@ -14,9 +14,9 @@ import 'presentation/pages/trips/trips_i_test.dart';
 import 'test_globals.dart';
 
 Future<void> main() async {
+  IntegrationTestWidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();
   setUpAll(() async {
-    IntegrationTestWidgetsFlutterBinding.ensureInitialized();
-    WidgetsFlutterBinding.ensureInitialized();
     configureInjection(Environment.prod, NoEnvOrContains(Environment.prod));
     await Firebase.initializeApp();
     if (useFirebaseEmulator) {
