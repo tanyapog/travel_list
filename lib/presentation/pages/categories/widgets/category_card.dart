@@ -25,16 +25,18 @@ class CategoryCard extends StatelessWidget {
         builder: (BuildContext context) => CategoryEditDialog(category: category),
       ),
       child: Slidable(
-        actionPane: const SlidableDrawerActionPane(),
-        secondaryActions: [
-          customDeleteSlideAction(
-            onTap: () => showDialog(
-              barrierDismissible: false,
-              context: context,
-              builder: (context) => CategoryDeletionDialog(category: category),
+        endActionPane: ActionPane(
+          motion: const DrawerMotion(),
+          children: [
+            customDeleteSlideAction(
+              onPressed: (context) => showDialog(
+                barrierDismissible: false,
+                context: context,
+                builder: (context) => CategoryDeletionDialog(category: category,),
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
         child: Card(
           elevation: elevation,
           child: ListTile(

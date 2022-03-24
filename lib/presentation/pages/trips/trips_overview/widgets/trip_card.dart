@@ -16,16 +16,18 @@ class TripCard extends StatelessWidget {
     return InkWell(
       onTap: () => AutoRouter.of(context).push(app_router.TripFormRoute(trip: trip)),
       child: Slidable(
-        actionPane: const SlidableDrawerActionPane(),
-        secondaryActions: [
-          customDeleteSlideAction(
-            onTap: () => showDialog(
-              barrierDismissible: false,
-              context: context,
-              builder: (BuildContext context) => TripDeletionDialog(trip: trip,),
+        endActionPane: ActionPane(
+          motion: const DrawerMotion(),
+          children: [
+            customDeleteSlideAction(
+              onPressed: (context) => showDialog(
+                barrierDismissible: false,
+                context: context,
+                builder: (context) => TripDeletionDialog(trip: trip,),
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
         child: Card(
           child: ListTile(
             title: Text(trip.name.getOrCrash(), key: const Key('TripName')),

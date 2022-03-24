@@ -19,7 +19,7 @@ dependencies:
     sdk: flutter
   flutter_bloc: ^7.3.3
   flutter_hooks: ^0.18.2+1
-  flutter_slidable: ^0.6.0
+  flutter_slidable: ^1.2.0
   freezed_annotation: ^1.1.0
   get_it: ^7.2.0
   google_sign_in: ^5.2.4

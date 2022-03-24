@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
-IconSlideAction customDeleteSlideAction({required void Function() onTap}) {
-  return IconSlideAction(
-    caption: 'Delete',
+SlidableAction customDeleteSlideAction({required void Function(BuildContext) onPressed}) {
+  return SlidableAction(
+    onPressed: onPressed,
+    backgroundColor: Colors.red,
+    foregroundColor: Colors.white,
     icon: Icons.delete,
-    color: Colors.red,
-    onTap: onTap,
+    label: 'Delete',
   );
 }
