@@ -7,6 +7,8 @@
 // **************************************************************************
 // AutoRouteGenerator
 // **************************************************************************
+//
+// ignore_for_file: type=lint
 
 import 'package:auto_route/auto_route.dart' as _i6;
 import 'package:flutter/material.dart' as _i7;
@@ -60,31 +62,36 @@ class Router extends _i6.RootStackRouter {
       ];
 }
 
-/// generated route for [_i1.SplashPage]
+/// generated route for
+/// [_i1.SplashPage]
 class SplashRoute extends _i6.PageRouteInfo<void> {
-  const SplashRoute() : super(name, path: '/');
+  const SplashRoute() : super(SplashRoute.name, path: '/');
 
   static const String name = 'SplashRoute';
 }
 
-/// generated route for [_i2.SignInPage]
+/// generated route for
+/// [_i2.SignInPage]
 class SignInRoute extends _i6.PageRouteInfo<void> {
-  const SignInRoute() : super(name, path: '/sign-in-page');
+  const SignInRoute() : super(SignInRoute.name, path: '/sign-in-page');
 
   static const String name = 'SignInRoute';
 }
 
-/// generated route for [_i3.TripsOverviewPage]
+/// generated route for
+/// [_i3.TripsOverviewPage]
 class TripsOverviewRoute extends _i6.PageRouteInfo<void> {
-  const TripsOverviewRoute() : super(name, path: '/trips-overview-page');
+  const TripsOverviewRoute()
+      : super(TripsOverviewRoute.name, path: '/trips-overview-page');
 
   static const String name = 'TripsOverviewRoute';
 }
 
-/// generated route for [_i4.TripFormPage]
+/// generated route for
+/// [_i4.TripFormPage]
 class TripFormRoute extends _i6.PageRouteInfo<TripFormRouteArgs> {
   TripFormRoute({_i7.Key? key, required _i8.Trip? trip})
-      : super(name,
+      : super(TripFormRoute.name,
             path: '/trip-form-page',
             args: TripFormRouteArgs(key: key, trip: trip));
 
@@ -104,10 +111,11 @@ class TripFormRouteArgs {
   }
 }
 
-/// generated route for [_i5.CategoriesOverviewPage]
+/// generated route for
+/// [_i5.CategoriesOverviewPage]
 class CategoriesOverviewRoute extends _i6.PageRouteInfo<void> {
   const CategoriesOverviewRoute()
-      : super(name, path: '/categories-overview-page');
+      : super(CategoriesOverviewRoute.name, path: '/categories-overview-page');
 
   static const String name = 'CategoriesOverviewRoute';
 }
