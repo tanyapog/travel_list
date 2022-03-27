@@ -1,4 +1,4 @@
-import 'dart:async';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -14,15 +14,19 @@ part 'trip_actor_bloc.freezed.dart';
 class TripActorBloc extends Bloc<TripActorEvent, TripActorState> {
   final ITripRepository _tripRepository;
 
-  TripActorBloc(this._tripRepository) : super(const TripActorState.initial());
-
-  @override
-  Stream<TripActorState> mapEventToState(TripActorEvent event) async* {
-    yield const TripActorState.actionInProgress();
-    final possibleFailure  = await _tripRepository.delete(event.trip);
-    yield possibleFailure.fold(
-      (failure) => TripActorState.deleteFailure(failure),
-      (_) => const TripActorState.deleteSuccess(),
+  TripActorBloc(this._tripRepository) : super(const TripActorState.initial()){
+    on<TripActorEvent>(
+      (event, emit) => event.map(
+        deleted: (event) async {
+          emit(const TripActorState.actionInProgress());
+          final possibleFailure  = await _tripRepository.delete(event.trip);
+          emit(possibleFailure.fold(
+            (failure) => TripActorState.deleteFailure(failure),
+            (_) => const TripActorState.deleteSuccess(),
+          ),);
+        },
+      ),
+      transformer: sequential(),
     );
   }
 }

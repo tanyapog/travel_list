@@ -1,5 +1,4 @@
-import 'dart:async';
-
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -15,26 +14,25 @@ part 'category_actor_bloc.freezed.dart';
 class CategoryActorBloc extends Bloc<CategoryActorEvent, CategoryActorState> {
   final ICategoryRepository _categoryRepository;
 
-  CategoryActorBloc(this._categoryRepository) : super(const CategoryActorState.initial());
-
-  @override
-  Stream<CategoryActorState> mapEventToState(CategoryActorEvent event) async* {
-    yield const CategoryActorState.actionInProgress();
-    yield* event.map(
-      reorderFinished: (e) async* {
-        final categoryResult = await _categoryRepository.reorder(e.categories);
-        yield categoryResult.when(
-          success: (_) => const CategoryActorState.reorderSuccess(),
-          failure: (failure) => CategoryActorState.reorderFailure(failure),
-        );
-      },
-      deleted: (e) async* {
-        final categoryResult = await _categoryRepository.delete(e.category);
-        yield categoryResult.when(
-          success: (_) => const CategoryActorState.deleteSuccess(),
-          failure: (failure) => CategoryActorState.deleteFailure(failure),
-        );
-      } ,
+  CategoryActorBloc(this._categoryRepository) : super(const CategoryActorState.initial()) {
+    on<CategoryActorEvent>(
+      (event, emit) => event.map(
+        reorderFinished: (event) async {
+          final categoryResult = await _categoryRepository.reorder(event.categories);
+          emit(categoryResult.when(
+            success: (_) => const CategoryActorState.reorderSuccess(),
+            failure: (failure) => CategoryActorState.reorderFailure(failure),
+          ),);
+        },
+        deleted: (event) async {
+          final categoryResult = await _categoryRepository.delete(event.category);
+          emit(categoryResult.when(
+            success: (_) => const CategoryActorState.deleteSuccess(),
+            failure: (failure) => CategoryActorState.deleteFailure(failure),
+          ),);
+        },
+      ),
+      transformer: sequential(),
     );
   }
 }

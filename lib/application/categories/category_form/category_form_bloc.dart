@@ -1,5 +1,4 @@
-import 'dart:async';
-
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -17,37 +16,33 @@ class CategoryFormBloc extends Bloc<CategoryFormEvent, CategoryFormState> {
 
   final ICategoryRepository categoryRepository;
 
-  CategoryFormBloc(this.categoryRepository) : super(CategoryFormState.initial());
-
-  @override
-  Stream<CategoryFormState> mapEventToState(CategoryFormEvent event) async* {
-    yield* event.map(
-      initialized: (e) async* {
-        yield state.copyWith(category: e.initialCategory, isEditing: true);
-      },
-      nameChanged: (e) async* {
-        yield state.copyWith(
-          category: state.category.copyWith(name: e.nameStr),
-        );
-      },
-      saved: (e) async* {
-        CategoryResult categoryResult;
-        yield state.copyWith(isSaving: true);
-        categoryResult = state.isEditing
-          ? await categoryRepository.update(state.category)
-          : await categoryRepository.create(state.category);
-        yield state.copyWith(
-          isSaving: false,
-          categoryFailure: categoryResult.maybeWhen(
-            failure: (failure) => failure,
-            orElse: () => null,
-          ),
-          savedSuccessfully: categoryResult.maybeWhen(
-            success: (_) => true,
-            orElse: () => null,
-          ),
-        );
-      },
+  CategoryFormBloc(this.categoryRepository) : super(CategoryFormState.initial()) {
+    on<CategoryFormEvent>(
+      (event, emit) => event.map(
+        initialized: (event) =>
+          emit(state.copyWith(category: event.initialCategory, isEditing: true),),
+        nameChanged: (event) =>
+          emit(state.copyWith(category: state.category.copyWith(name: event.nameStr),),),
+        saved: (event) async {
+          CategoryResult categoryResult;
+          emit(state.copyWith(isSaving: true));
+          categoryResult = state.isEditing
+            ? await categoryRepository.update(state.category)
+            : await categoryRepository.create(state.category);
+          emit(state.copyWith(
+            isSaving: false,
+            categoryFailure: categoryResult.maybeWhen(
+              failure: (failure) => failure,
+              orElse: () => null,
+            ),
+            savedSuccessfully: categoryResult.maybeWhen(
+              success: (_) => true,
+              orElse: () => null,
+            ),
+          ),);
+        },
+      ),
+      transformer: sequential(),
     );
   }
 }

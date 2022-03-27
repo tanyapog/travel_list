@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 import 'package:travel_list/application/travel_list_bloc_observer.dart';
+import 'package:travel_list/global.dart';
 import 'package:travel_list/injection.dart';
 import 'package:travel_list/presentation/core/app_widget.dart';
-import 'global.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,6 +14,6 @@ Future<void> main() async {
   if (useFirebaseEmulator) {
     await connectToEmulator();
   }
-  Bloc.observer = TravelListBlocObserver();
+  BlocOverrides.runZoned(() {}, blocObserver: TravelListBlocObserver(),);
   runApp(AppWidget());
 }
