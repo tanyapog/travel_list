@@ -835,12 +835,14 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
             other is ExceedingLength<T> &&
             const DeepCollectionEquality()
                 .equals(other.failedValue, failedValue) &&
-            (identical(other.max, max) || other.max == max));
+            const DeepCollectionEquality().equals(other.max, max));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(failedValue), max);
+      runtimeType,
+      const DeepCollectionEquality().hash(failedValue),
+      const DeepCollectionEquality().hash(max));
 
   @JsonKey(ignore: true)
   @override

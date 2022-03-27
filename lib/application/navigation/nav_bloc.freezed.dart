@@ -146,12 +146,13 @@ class _$NavigateTo implements NavigateTo {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is NavigateTo &&
-            (identical(other.destination, destination) ||
-                other.destination == destination));
+            const DeepCollectionEquality()
+                .equals(other.destination, destination));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, destination);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(destination));
 
   @JsonKey(ignore: true)
   @override
@@ -370,12 +371,13 @@ class _$_NavState implements _NavState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _NavState &&
-            (identical(other.selectedItem, selectedItem) ||
-                other.selectedItem == selectedItem));
+            const DeepCollectionEquality()
+                .equals(other.selectedItem, selectedItem));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, selectedItem);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(selectedItem));
 
   @JsonKey(ignore: true)
   @override
@@ -505,12 +507,13 @@ class _$SelectItem implements SelectItem {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is SelectItem &&
-            (identical(other.selectedItem, selectedItem) ||
-                other.selectedItem == selectedItem));
+            const DeepCollectionEquality()
+                .equals(other.selectedItem, selectedItem));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, selectedItem);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(selectedItem));
 
   @JsonKey(ignore: true)
   @override

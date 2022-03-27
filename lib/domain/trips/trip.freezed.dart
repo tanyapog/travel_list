@@ -151,7 +151,7 @@ class _$_Trip extends _Trip {
   final TripName name;
   @override
   final TripDescription description;
-  @JsonKey(defaultValue: false)
+  @JsonKey()
   @override
   final bool complete;
 
@@ -165,16 +165,20 @@ class _$_Trip extends _Trip {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Trip &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            (identical(other.complete, complete) ||
-                other.complete == complete));
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality()
+                .equals(other.description, description) &&
+            const DeepCollectionEquality().equals(other.complete, complete));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, description, complete);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(description),
+      const DeepCollectionEquality().hash(complete));
 
   @JsonKey(ignore: true)
   @override

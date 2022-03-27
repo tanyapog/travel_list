@@ -218,12 +218,15 @@ class _$_InsufficientPermission implements _InsufficientPermission {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _InsufficientPermission &&
-            (identical(other.e, e) || other.e == e) &&
-            (identical(other.message, message) || other.message == message));
+            const DeepCollectionEquality().equals(other.e, e) &&
+            const DeepCollectionEquality().equals(other.message, message));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, e, message);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(e),
+      const DeepCollectionEquality().hash(message));
 
   @JsonKey(ignore: true)
   @override
@@ -390,12 +393,15 @@ class _$_UnableToUpdate implements _UnableToUpdate {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _UnableToUpdate &&
-            (identical(other.e, e) || other.e == e) &&
-            (identical(other.message, message) || other.message == message));
+            const DeepCollectionEquality().equals(other.e, e) &&
+            const DeepCollectionEquality().equals(other.message, message));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, e, message);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(e),
+      const DeepCollectionEquality().hash(message));
 
   @JsonKey(ignore: true)
   @override
@@ -561,12 +567,15 @@ class _$_PlatformSpecific implements _PlatformSpecific {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _PlatformSpecific &&
-            (identical(other.e, e) || other.e == e) &&
-            (identical(other.message, message) || other.message == message));
+            const DeepCollectionEquality().equals(other.e, e) &&
+            const DeepCollectionEquality().equals(other.message, message));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, e, message);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(e),
+      const DeepCollectionEquality().hash(message));
 
   @JsonKey(ignore: true)
   @override
@@ -732,12 +741,15 @@ class _$_Unexpected implements _Unexpected {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Unexpected &&
-            (identical(other.e, e) || other.e == e) &&
-            (identical(other.message, message) || other.message == message));
+            const DeepCollectionEquality().equals(other.e, e) &&
+            const DeepCollectionEquality().equals(other.message, message));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, e, message);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(e),
+      const DeepCollectionEquality().hash(message));
 
   @JsonKey(ignore: true)
   @override
@@ -903,12 +915,14 @@ class _$_UnableToProcess implements _UnableToProcess {
         (other.runtimeType == runtimeType &&
             other is _UnableToProcess &&
             const DeepCollectionEquality().equals(other.obj, obj) &&
-            (identical(other.message, message) || other.message == message));
+            const DeepCollectionEquality().equals(other.message, message));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(obj), message);
+      runtimeType,
+      const DeepCollectionEquality().hash(obj),
+      const DeepCollectionEquality().hash(message));
 
   @JsonKey(ignore: true)
   @override

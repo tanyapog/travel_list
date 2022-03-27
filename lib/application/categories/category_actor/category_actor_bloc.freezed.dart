@@ -285,12 +285,12 @@ class _$_Deleted implements _Deleted {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Deleted &&
-            (identical(other.category, category) ||
-                other.category == category));
+            const DeepCollectionEquality().equals(other.category, category));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, category);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(category));
 
   @JsonKey(ignore: true)
   @override
@@ -803,12 +803,13 @@ class _$_ReorderFailure implements _ReorderFailure {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _ReorderFailure &&
-            (identical(other.categoryFailure, categoryFailure) ||
-                other.categoryFailure == categoryFailure));
+            const DeepCollectionEquality()
+                .equals(other.categoryFailure, categoryFailure));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, categoryFailure);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(categoryFailure));
 
   @JsonKey(ignore: true)
   @override
@@ -1100,12 +1101,13 @@ class _$_DeleteFailure implements _DeleteFailure {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _DeleteFailure &&
-            (identical(other.categoryFailure, categoryFailure) ||
-                other.categoryFailure == categoryFailure));
+            const DeepCollectionEquality()
+                .equals(other.categoryFailure, categoryFailure));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, categoryFailure);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(categoryFailure));
 
   @JsonKey(ignore: true)
   @override

@@ -160,11 +160,12 @@ class _$_Deleted implements _Deleted {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Deleted &&
-            (identical(other.trip, trip) || other.trip == trip));
+            const DeepCollectionEquality().equals(other.trip, trip));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, trip);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(trip));
 
   @JsonKey(ignore: true)
   @override
@@ -626,12 +627,13 @@ class _$_DeleteFailure implements _DeleteFailure {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _DeleteFailure &&
-            (identical(other.tripFailure, tripFailure) ||
-                other.tripFailure == tripFailure));
+            const DeepCollectionEquality()
+                .equals(other.tripFailure, tripFailure));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, tripFailure);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(tripFailure));
 
   @JsonKey(ignore: true)
   @override

@@ -205,19 +205,23 @@ class _$_TripDto extends _TripDto {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _TripDto &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            (identical(other.complete, complete) ||
-                other.complete == complete) &&
-            (identical(other.serverTimeStamp, serverTimeStamp) ||
-                other.serverTimeStamp == serverTimeStamp));
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality()
+                .equals(other.description, description) &&
+            const DeepCollectionEquality().equals(other.complete, complete) &&
+            const DeepCollectionEquality()
+                .equals(other.serverTimeStamp, serverTimeStamp));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, id, name, description, complete, serverTimeStamp);
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(description),
+      const DeepCollectionEquality().hash(complete),
+      const DeepCollectionEquality().hash(serverTimeStamp));
 
   @JsonKey(ignore: true)
   @override

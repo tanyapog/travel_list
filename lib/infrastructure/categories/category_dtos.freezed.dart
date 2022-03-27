@@ -166,14 +166,17 @@ class _$_CategoryDto extends _CategoryDto {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _CategoryDto &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.position, position) ||
-                other.position == position));
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality().equals(other.position, position));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, position);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(position));
 
   @JsonKey(ignore: true)
   @override

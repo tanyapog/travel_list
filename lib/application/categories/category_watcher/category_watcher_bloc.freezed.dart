@@ -254,12 +254,13 @@ class _$_CategoriesReceived implements _CategoriesReceived {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _CategoriesReceived &&
-            (identical(other.categoryResult, categoryResult) ||
-                other.categoryResult == categoryResult));
+            const DeepCollectionEquality()
+                .equals(other.categoryResult, categoryResult));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, categoryResult);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(categoryResult));
 
   @JsonKey(ignore: true)
   @override
@@ -876,12 +877,13 @@ class _$_LoadFailure implements _LoadFailure {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _LoadFailure &&
-            (identical(other.categoryFailure, categoryFailure) ||
-                other.categoryFailure == categoryFailure));
+            const DeepCollectionEquality()
+                .equals(other.categoryFailure, categoryFailure));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, categoryFailure);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(categoryFailure));
 
   @JsonKey(ignore: true)
   @override

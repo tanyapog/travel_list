@@ -161,12 +161,13 @@ class _$_Initialized implements _Initialized {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Initialized &&
-            (identical(other.initialCategory, initialCategory) ||
-                other.initialCategory == initialCategory));
+            const DeepCollectionEquality()
+                .equals(other.initialCategory, initialCategory));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, initialCategory);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(initialCategory));
 
   @JsonKey(ignore: true)
   @override
@@ -301,11 +302,12 @@ class _$_NameChanged implements _NameChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _NameChanged &&
-            (identical(other.nameStr, nameStr) || other.nameStr == nameStr));
+            const DeepCollectionEquality().equals(other.nameStr, nameStr));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, nameStr);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(nameStr));
 
   @JsonKey(ignore: true)
   @override
@@ -706,21 +708,23 @@ class _$_CategoryFormState implements _CategoryFormState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _CategoryFormState &&
-            (identical(other.category, category) ||
-                other.category == category) &&
-            (identical(other.isEditing, isEditing) ||
-                other.isEditing == isEditing) &&
-            (identical(other.isSaving, isSaving) ||
-                other.isSaving == isSaving) &&
-            (identical(other.categoryFailure, categoryFailure) ||
-                other.categoryFailure == categoryFailure) &&
-            (identical(other.savedSuccessfully, savedSuccessfully) ||
-                other.savedSuccessfully == savedSuccessfully));
+            const DeepCollectionEquality().equals(other.category, category) &&
+            const DeepCollectionEquality().equals(other.isEditing, isEditing) &&
+            const DeepCollectionEquality().equals(other.isSaving, isSaving) &&
+            const DeepCollectionEquality()
+                .equals(other.categoryFailure, categoryFailure) &&
+            const DeepCollectionEquality()
+                .equals(other.savedSuccessfully, savedSuccessfully));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, category, isEditing, isSaving,
-      categoryFailure, savedSuccessfully);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(category),
+      const DeepCollectionEquality().hash(isEditing),
+      const DeepCollectionEquality().hash(isSaving),
+      const DeepCollectionEquality().hash(categoryFailure),
+      const DeepCollectionEquality().hash(savedSuccessfully));
 
   @JsonKey(ignore: true)
   @override

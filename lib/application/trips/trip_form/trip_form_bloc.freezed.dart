@@ -173,12 +173,13 @@ class _$_Initialized implements _Initialized {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Initialized &&
-            (identical(other.initialTripOption, initialTripOption) ||
-                other.initialTripOption == initialTripOption));
+            const DeepCollectionEquality()
+                .equals(other.initialTripOption, initialTripOption));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, initialTripOption);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(initialTripOption));
 
   @JsonKey(ignore: true)
   @override
@@ -324,11 +325,12 @@ class _$_NameChanged implements _NameChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _NameChanged &&
-            (identical(other.nameStr, nameStr) || other.nameStr == nameStr));
+            const DeepCollectionEquality().equals(other.nameStr, nameStr));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, nameStr);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(nameStr));
 
   @JsonKey(ignore: true)
   @override
@@ -475,12 +477,13 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _DescriptionChanged &&
-            (identical(other.descriptionStr, descriptionStr) ||
-                other.descriptionStr == descriptionStr));
+            const DeepCollectionEquality()
+                .equals(other.descriptionStr, descriptionStr));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, descriptionStr);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(descriptionStr));
 
   @JsonKey(ignore: true)
   @override
@@ -1015,22 +1018,23 @@ class _$_TripFormState implements _TripFormState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _TripFormState &&
-            (identical(other.trip, trip) || other.trip == trip) &&
-            (identical(other.showErrorMessages, showErrorMessages) ||
-                other.showErrorMessages == showErrorMessages) &&
-            (identical(other.isEditing, isEditing) ||
-                other.isEditing == isEditing) &&
-            (identical(other.isSaving, isSaving) ||
-                other.isSaving == isSaving) &&
-            (identical(other.saveFailureOrSuccessOption,
-                    saveFailureOrSuccessOption) ||
-                other.saveFailureOrSuccessOption ==
-                    saveFailureOrSuccessOption));
+            const DeepCollectionEquality().equals(other.trip, trip) &&
+            const DeepCollectionEquality()
+                .equals(other.showErrorMessages, showErrorMessages) &&
+            const DeepCollectionEquality().equals(other.isEditing, isEditing) &&
+            const DeepCollectionEquality().equals(other.isSaving, isSaving) &&
+            const DeepCollectionEquality().equals(
+                other.saveFailureOrSuccessOption, saveFailureOrSuccessOption));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, trip, showErrorMessages,
-      isEditing, isSaving, saveFailureOrSuccessOption);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(trip),
+      const DeepCollectionEquality().hash(showErrorMessages),
+      const DeepCollectionEquality().hash(isEditing),
+      const DeepCollectionEquality().hash(isSaving),
+      const DeepCollectionEquality().hash(saveFailureOrSuccessOption));
 
   @JsonKey(ignore: true)
   @override
