@@ -18,5 +18,4 @@ Future<void> main() async {
     () => runApp(AppWidget()),
     blocObserver: TravelListBlocObserver(),
   );
-
 }
