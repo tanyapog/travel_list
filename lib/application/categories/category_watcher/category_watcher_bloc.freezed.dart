@@ -20,12 +20,6 @@ class _$CategoryWatcherEventTearOff {
   _WatchAllStarted watchAllStarted() {
     return const _WatchAllStarted();
   }
-
-  _CategoriesReceived categoriesReceived(CategoryResult categoryResult) {
-    return _CategoriesReceived(
-      categoryResult,
-    );
-  }
 }
 
 /// @nodoc
@@ -36,38 +30,32 @@ mixin _$CategoryWatcherEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() watchAllStarted,
-    required TResult Function(CategoryResult categoryResult) categoriesReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? watchAllStarted,
-    TResult Function(CategoryResult categoryResult)? categoriesReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? watchAllStarted,
-    TResult Function(CategoryResult categoryResult)? categoriesReceived,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_WatchAllStarted value) watchAllStarted,
-    required TResult Function(_CategoriesReceived value) categoriesReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_WatchAllStarted value)? watchAllStarted,
-    TResult Function(_CategoriesReceived value)? categoriesReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_WatchAllStarted value)? watchAllStarted,
-    TResult Function(_CategoriesReceived value)? categoriesReceived,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -132,7 +120,6 @@ class _$_WatchAllStarted implements _WatchAllStarted {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() watchAllStarted,
-    required TResult Function(CategoryResult categoryResult) categoriesReceived,
   }) {
     return watchAllStarted();
   }
@@ -141,7 +128,6 @@ class _$_WatchAllStarted implements _WatchAllStarted {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? watchAllStarted,
-    TResult Function(CategoryResult categoryResult)? categoriesReceived,
   }) {
     return watchAllStarted?.call();
   }
@@ -150,7 +136,6 @@ class _$_WatchAllStarted implements _WatchAllStarted {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? watchAllStarted,
-    TResult Function(CategoryResult categoryResult)? categoriesReceived,
     required TResult orElse(),
   }) {
     if (watchAllStarted != null) {
@@ -163,7 +148,6 @@ class _$_WatchAllStarted implements _WatchAllStarted {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_WatchAllStarted value) watchAllStarted,
-    required TResult Function(_CategoriesReceived value) categoriesReceived,
   }) {
     return watchAllStarted(this);
   }
@@ -172,7 +156,6 @@ class _$_WatchAllStarted implements _WatchAllStarted {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_WatchAllStarted value)? watchAllStarted,
-    TResult Function(_CategoriesReceived value)? categoriesReceived,
   }) {
     return watchAllStarted?.call(this);
   }
@@ -181,7 +164,6 @@ class _$_WatchAllStarted implements _WatchAllStarted {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_WatchAllStarted value)? watchAllStarted,
-    TResult Function(_CategoriesReceived value)? categoriesReceived,
     required TResult orElse(),
   }) {
     if (watchAllStarted != null) {
@@ -193,151 +175,6 @@ class _$_WatchAllStarted implements _WatchAllStarted {
 
 abstract class _WatchAllStarted implements CategoryWatcherEvent {
   const factory _WatchAllStarted() = _$_WatchAllStarted;
-}
-
-/// @nodoc
-abstract class _$CategoriesReceivedCopyWith<$Res> {
-  factory _$CategoriesReceivedCopyWith(
-          _CategoriesReceived value, $Res Function(_CategoriesReceived) then) =
-      __$CategoriesReceivedCopyWithImpl<$Res>;
-  $Res call({CategoryResult categoryResult});
-
-  $CategoryResultCopyWith<$Res> get categoryResult;
-}
-
-/// @nodoc
-class __$CategoriesReceivedCopyWithImpl<$Res>
-    extends _$CategoryWatcherEventCopyWithImpl<$Res>
-    implements _$CategoriesReceivedCopyWith<$Res> {
-  __$CategoriesReceivedCopyWithImpl(
-      _CategoriesReceived _value, $Res Function(_CategoriesReceived) _then)
-      : super(_value, (v) => _then(v as _CategoriesReceived));
-
-  @override
-  _CategoriesReceived get _value => super._value as _CategoriesReceived;
-
-  @override
-  $Res call({
-    Object? categoryResult = freezed,
-  }) {
-    return _then(_CategoriesReceived(
-      categoryResult == freezed
-          ? _value.categoryResult
-          : categoryResult // ignore: cast_nullable_to_non_nullable
-              as CategoryResult,
-    ));
-  }
-
-  @override
-  $CategoryResultCopyWith<$Res> get categoryResult {
-    return $CategoryResultCopyWith<$Res>(_value.categoryResult, (value) {
-      return _then(_value.copyWith(categoryResult: value));
-    });
-  }
-}
-
-/// @nodoc
-
-class _$_CategoriesReceived implements _CategoriesReceived {
-  const _$_CategoriesReceived(this.categoryResult);
-
-  @override
-  final CategoryResult categoryResult;
-
-  @override
-  String toString() {
-    return 'CategoryWatcherEvent.categoriesReceived(categoryResult: $categoryResult)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _CategoriesReceived &&
-            const DeepCollectionEquality()
-                .equals(other.categoryResult, categoryResult));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(categoryResult));
-
-  @JsonKey(ignore: true)
-  @override
-  _$CategoriesReceivedCopyWith<_CategoriesReceived> get copyWith =>
-      __$CategoriesReceivedCopyWithImpl<_CategoriesReceived>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() watchAllStarted,
-    required TResult Function(CategoryResult categoryResult) categoriesReceived,
-  }) {
-    return categoriesReceived(categoryResult);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? watchAllStarted,
-    TResult Function(CategoryResult categoryResult)? categoriesReceived,
-  }) {
-    return categoriesReceived?.call(categoryResult);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? watchAllStarted,
-    TResult Function(CategoryResult categoryResult)? categoriesReceived,
-    required TResult orElse(),
-  }) {
-    if (categoriesReceived != null) {
-      return categoriesReceived(categoryResult);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_WatchAllStarted value) watchAllStarted,
-    required TResult Function(_CategoriesReceived value) categoriesReceived,
-  }) {
-    return categoriesReceived(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_WatchAllStarted value)? watchAllStarted,
-    TResult Function(_CategoriesReceived value)? categoriesReceived,
-  }) {
-    return categoriesReceived?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_WatchAllStarted value)? watchAllStarted,
-    TResult Function(_CategoriesReceived value)? categoriesReceived,
-    required TResult orElse(),
-  }) {
-    if (categoriesReceived != null) {
-      return categoriesReceived(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _CategoriesReceived implements CategoryWatcherEvent {
-  const factory _CategoriesReceived(CategoryResult categoryResult) =
-      _$_CategoriesReceived;
-
-  CategoryResult get categoryResult;
-  @JsonKey(ignore: true)
-  _$CategoriesReceivedCopyWith<_CategoriesReceived> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

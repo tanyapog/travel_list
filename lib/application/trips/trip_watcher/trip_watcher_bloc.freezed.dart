@@ -24,12 +24,6 @@ class _$TripWatcherEventTearOff {
   _WatchUncompletedStarted watchUncompletedStarted() {
     return const _WatchUncompletedStarted();
   }
-
-  _TripsReceived tripsReceived(Either<TripFailure, List<Trip>> failureOrTrips) {
-    return _TripsReceived(
-      failureOrTrips,
-    );
-  }
 }
 
 /// @nodoc
@@ -41,24 +35,18 @@ mixin _$TripWatcherEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() watchAllStarted,
     required TResult Function() watchUncompletedStarted,
-    required TResult Function(Either<TripFailure, List<Trip>> failureOrTrips)
-        tripsReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? watchAllStarted,
     TResult Function()? watchUncompletedStarted,
-    TResult Function(Either<TripFailure, List<Trip>> failureOrTrips)?
-        tripsReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? watchAllStarted,
     TResult Function()? watchUncompletedStarted,
-    TResult Function(Either<TripFailure, List<Trip>> failureOrTrips)?
-        tripsReceived,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -67,21 +55,18 @@ mixin _$TripWatcherEvent {
     required TResult Function(_WatchAllStarted value) watchAllStarted,
     required TResult Function(_WatchUncompletedStarted value)
         watchUncompletedStarted,
-    required TResult Function(_TripsReceived value) tripsReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_WatchAllStarted value)? watchAllStarted,
     TResult Function(_WatchUncompletedStarted value)? watchUncompletedStarted,
-    TResult Function(_TripsReceived value)? tripsReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_WatchAllStarted value)? watchAllStarted,
     TResult Function(_WatchUncompletedStarted value)? watchUncompletedStarted,
-    TResult Function(_TripsReceived value)? tripsReceived,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -147,8 +132,6 @@ class _$_WatchAllStarted implements _WatchAllStarted {
   TResult when<TResult extends Object?>({
     required TResult Function() watchAllStarted,
     required TResult Function() watchUncompletedStarted,
-    required TResult Function(Either<TripFailure, List<Trip>> failureOrTrips)
-        tripsReceived,
   }) {
     return watchAllStarted();
   }
@@ -158,8 +141,6 @@ class _$_WatchAllStarted implements _WatchAllStarted {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? watchAllStarted,
     TResult Function()? watchUncompletedStarted,
-    TResult Function(Either<TripFailure, List<Trip>> failureOrTrips)?
-        tripsReceived,
   }) {
     return watchAllStarted?.call();
   }
@@ -169,8 +150,6 @@ class _$_WatchAllStarted implements _WatchAllStarted {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? watchAllStarted,
     TResult Function()? watchUncompletedStarted,
-    TResult Function(Either<TripFailure, List<Trip>> failureOrTrips)?
-        tripsReceived,
     required TResult orElse(),
   }) {
     if (watchAllStarted != null) {
@@ -185,7 +164,6 @@ class _$_WatchAllStarted implements _WatchAllStarted {
     required TResult Function(_WatchAllStarted value) watchAllStarted,
     required TResult Function(_WatchUncompletedStarted value)
         watchUncompletedStarted,
-    required TResult Function(_TripsReceived value) tripsReceived,
   }) {
     return watchAllStarted(this);
   }
@@ -195,7 +173,6 @@ class _$_WatchAllStarted implements _WatchAllStarted {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_WatchAllStarted value)? watchAllStarted,
     TResult Function(_WatchUncompletedStarted value)? watchUncompletedStarted,
-    TResult Function(_TripsReceived value)? tripsReceived,
   }) {
     return watchAllStarted?.call(this);
   }
@@ -205,7 +182,6 @@ class _$_WatchAllStarted implements _WatchAllStarted {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_WatchAllStarted value)? watchAllStarted,
     TResult Function(_WatchUncompletedStarted value)? watchUncompletedStarted,
-    TResult Function(_TripsReceived value)? tripsReceived,
     required TResult orElse(),
   }) {
     if (watchAllStarted != null) {
@@ -263,8 +239,6 @@ class _$_WatchUncompletedStarted implements _WatchUncompletedStarted {
   TResult when<TResult extends Object?>({
     required TResult Function() watchAllStarted,
     required TResult Function() watchUncompletedStarted,
-    required TResult Function(Either<TripFailure, List<Trip>> failureOrTrips)
-        tripsReceived,
   }) {
     return watchUncompletedStarted();
   }
@@ -274,8 +248,6 @@ class _$_WatchUncompletedStarted implements _WatchUncompletedStarted {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? watchAllStarted,
     TResult Function()? watchUncompletedStarted,
-    TResult Function(Either<TripFailure, List<Trip>> failureOrTrips)?
-        tripsReceived,
   }) {
     return watchUncompletedStarted?.call();
   }
@@ -285,8 +257,6 @@ class _$_WatchUncompletedStarted implements _WatchUncompletedStarted {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? watchAllStarted,
     TResult Function()? watchUncompletedStarted,
-    TResult Function(Either<TripFailure, List<Trip>> failureOrTrips)?
-        tripsReceived,
     required TResult orElse(),
   }) {
     if (watchUncompletedStarted != null) {
@@ -301,7 +271,6 @@ class _$_WatchUncompletedStarted implements _WatchUncompletedStarted {
     required TResult Function(_WatchAllStarted value) watchAllStarted,
     required TResult Function(_WatchUncompletedStarted value)
         watchUncompletedStarted,
-    required TResult Function(_TripsReceived value) tripsReceived,
   }) {
     return watchUncompletedStarted(this);
   }
@@ -311,7 +280,6 @@ class _$_WatchUncompletedStarted implements _WatchUncompletedStarted {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_WatchAllStarted value)? watchAllStarted,
     TResult Function(_WatchUncompletedStarted value)? watchUncompletedStarted,
-    TResult Function(_TripsReceived value)? tripsReceived,
   }) {
     return watchUncompletedStarted?.call(this);
   }
@@ -321,7 +289,6 @@ class _$_WatchUncompletedStarted implements _WatchUncompletedStarted {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_WatchAllStarted value)? watchAllStarted,
     TResult Function(_WatchUncompletedStarted value)? watchUncompletedStarted,
-    TResult Function(_TripsReceived value)? tripsReceived,
     required TResult orElse(),
   }) {
     if (watchUncompletedStarted != null) {
@@ -333,152 +300,6 @@ class _$_WatchUncompletedStarted implements _WatchUncompletedStarted {
 
 abstract class _WatchUncompletedStarted implements TripWatcherEvent {
   const factory _WatchUncompletedStarted() = _$_WatchUncompletedStarted;
-}
-
-/// @nodoc
-abstract class _$TripsReceivedCopyWith<$Res> {
-  factory _$TripsReceivedCopyWith(
-          _TripsReceived value, $Res Function(_TripsReceived) then) =
-      __$TripsReceivedCopyWithImpl<$Res>;
-  $Res call({Either<TripFailure, List<Trip>> failureOrTrips});
-}
-
-/// @nodoc
-class __$TripsReceivedCopyWithImpl<$Res>
-    extends _$TripWatcherEventCopyWithImpl<$Res>
-    implements _$TripsReceivedCopyWith<$Res> {
-  __$TripsReceivedCopyWithImpl(
-      _TripsReceived _value, $Res Function(_TripsReceived) _then)
-      : super(_value, (v) => _then(v as _TripsReceived));
-
-  @override
-  _TripsReceived get _value => super._value as _TripsReceived;
-
-  @override
-  $Res call({
-    Object? failureOrTrips = freezed,
-  }) {
-    return _then(_TripsReceived(
-      failureOrTrips == freezed
-          ? _value.failureOrTrips
-          : failureOrTrips // ignore: cast_nullable_to_non_nullable
-              as Either<TripFailure, List<Trip>>,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_TripsReceived implements _TripsReceived {
-  const _$_TripsReceived(this.failureOrTrips);
-
-  @override
-  final Either<TripFailure, List<Trip>> failureOrTrips;
-
-  @override
-  String toString() {
-    return 'TripWatcherEvent.tripsReceived(failureOrTrips: $failureOrTrips)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _TripsReceived &&
-            const DeepCollectionEquality()
-                .equals(other.failureOrTrips, failureOrTrips));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(failureOrTrips));
-
-  @JsonKey(ignore: true)
-  @override
-  _$TripsReceivedCopyWith<_TripsReceived> get copyWith =>
-      __$TripsReceivedCopyWithImpl<_TripsReceived>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() watchAllStarted,
-    required TResult Function() watchUncompletedStarted,
-    required TResult Function(Either<TripFailure, List<Trip>> failureOrTrips)
-        tripsReceived,
-  }) {
-    return tripsReceived(failureOrTrips);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? watchAllStarted,
-    TResult Function()? watchUncompletedStarted,
-    TResult Function(Either<TripFailure, List<Trip>> failureOrTrips)?
-        tripsReceived,
-  }) {
-    return tripsReceived?.call(failureOrTrips);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? watchAllStarted,
-    TResult Function()? watchUncompletedStarted,
-    TResult Function(Either<TripFailure, List<Trip>> failureOrTrips)?
-        tripsReceived,
-    required TResult orElse(),
-  }) {
-    if (tripsReceived != null) {
-      return tripsReceived(failureOrTrips);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_WatchAllStarted value) watchAllStarted,
-    required TResult Function(_WatchUncompletedStarted value)
-        watchUncompletedStarted,
-    required TResult Function(_TripsReceived value) tripsReceived,
-  }) {
-    return tripsReceived(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_WatchAllStarted value)? watchAllStarted,
-    TResult Function(_WatchUncompletedStarted value)? watchUncompletedStarted,
-    TResult Function(_TripsReceived value)? tripsReceived,
-  }) {
-    return tripsReceived?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_WatchAllStarted value)? watchAllStarted,
-    TResult Function(_WatchUncompletedStarted value)? watchUncompletedStarted,
-    TResult Function(_TripsReceived value)? tripsReceived,
-    required TResult orElse(),
-  }) {
-    if (tripsReceived != null) {
-      return tripsReceived(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _TripsReceived implements TripWatcherEvent {
-  const factory _TripsReceived(Either<TripFailure, List<Trip>> failureOrTrips) =
-      _$_TripsReceived;
-
-  Either<TripFailure, List<Trip>> get failureOrTrips;
-  @JsonKey(ignore: true)
-  _$TripsReceivedCopyWith<_TripsReceived> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
