@@ -14,6 +14,9 @@ Future<void> main() async {
   if (useFirebaseEmulator) {
     await connectToEmulator();
   }
-  BlocOverrides.runZoned(() {}, blocObserver: TravelListBlocObserver(),);
-  runApp(AppWidget());
+  BlocOverrides.runZoned(
+    () => runApp(AppWidget()),
+    blocObserver: TravelListBlocObserver(),
+  );
+
 }
