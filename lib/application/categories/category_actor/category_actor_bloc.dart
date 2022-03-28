@@ -15,24 +15,25 @@ class CategoryActorBloc extends Bloc<CategoryActorEvent, CategoryActorState> {
   final ICategoryRepository _categoryRepository;
 
   CategoryActorBloc(this._categoryRepository) : super(const CategoryActorState.initial()) {
-    on<CategoryActorEvent>(
-      (event, emit) => event.map(
-        reorderFinished: (event) async {
-          final categoryResult = await _categoryRepository.reorder(event.categories);
-          emit(categoryResult.when(
-            success: (_) => const CategoryActorState.reorderSuccess(),
-            failure: (failure) => CategoryActorState.reorderFailure(failure),
-          ),);
-        },
-        deleted: (event) async {
-          final categoryResult = await _categoryRepository.delete(event.category);
-          emit(categoryResult.when(
-            success: (_) => const CategoryActorState.deleteSuccess(),
-            failure: (failure) => CategoryActorState.deleteFailure(failure),
-          ),);
-        },
-      ),
+    on<_ReorderFinished>(
+      (event, emit) async {
+        final categoryResult = await _categoryRepository.reorder(event.categories);
+        emit(categoryResult.when(
+          success: (_) => const CategoryActorState.reorderSuccess(),
+          failure: (failure) => CategoryActorState.reorderFailure(failure),
+        ),);
+      },
       transformer: sequential(),
+    );
+    on<_Deleted>(
+      (event, emit) async {
+        final categoryResult = await _categoryRepository.delete(event.category);
+        emit(categoryResult.when(
+          success: (_) => const CategoryActorState.deleteSuccess(),
+          failure: (failure) => CategoryActorState.deleteFailure(failure),
+        ),);
+      },
+      transformer: concurrent(),
     );
   }
 }

@@ -15,18 +15,16 @@ class TripActorBloc extends Bloc<TripActorEvent, TripActorState> {
   final ITripRepository _tripRepository;
 
   TripActorBloc(this._tripRepository) : super(const TripActorState.initial()){
-    on<TripActorEvent>(
-      (event, emit) => event.map(
-        deleted: (event) async {
-          emit(const TripActorState.actionInProgress());
-          final possibleFailure  = await _tripRepository.delete(event.trip);
-          emit(possibleFailure.fold(
-            (failure) => TripActorState.deleteFailure(failure),
-            (_) => const TripActorState.deleteSuccess(),
-          ),);
-        },
-      ),
-      transformer: sequential(),
+    on<_Deleted>(
+      (event, emit)  async {
+        emit(const TripActorState.actionInProgress());
+        final possibleFailure  = await _tripRepository.delete(event.trip);
+        emit(possibleFailure.fold(
+          (failure) => TripActorState.deleteFailure(failure),
+          (_) => const TripActorState.deleteSuccess(),
+        ),);
+      },
+      transformer: concurrent(),
     );
   }
 }
