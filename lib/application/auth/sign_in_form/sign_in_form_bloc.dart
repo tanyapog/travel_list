@@ -8,6 +8,7 @@ import 'package:injectable/injectable.dart';
 import 'package:travel_list/domain/auth/auth_failure.dart';
 import 'package:travel_list/domain/auth/i_auth_facade.dart';
 import 'package:travel_list/domain/auth/value_objects.dart';
+import 'package:travel_list/global.dart';
 
 part 'sign_in_form_bloc.freezed.dart';
 part 'sign_in_form_event.dart';
@@ -18,36 +19,52 @@ part 'sign_in_form_state.dart';
 @injectable
 class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
   final IAuthFacade _authFacade;
+  // How long to wait after the last key press event before checking value availability
+  static const debounceDuration = Duration(milliseconds: 100);
 
   SignInFormBloc(this._authFacade) : super(SignInFormState.initial()) {
-    on<SignInFormEvent>(
-      (event, emit) => event.map(
-        emailChanged: (event) =>
-          emit(state.copyWith(
-            email: Email(event.emailStr),
-            authFailureOrSuccessOption: none(),
-          ),),
-        passwordChanged: (event) =>
-          emit(state.copyWith(
-            password: Password(event.passwordStr),
-            authFailureOrSuccessOption: none(),
-          ),),
-        registerWithEmailAndPasswordPressed: (event) async =>
-          _performAuthAction(_authFacade.registerWithEmailAndPassword, emit),
-        signInWithEmailAndPasswordPressed: (event) async =>
-          _performAuthAction(_authFacade.signInWithEmailAndPassword, emit),
-        signInWithGooglePressed: (event) async {
-          emit(state.copyWith(
-            isSubmitting: true,
-            authFailureOrSuccessOption: none(),
-          ),);
-          final failureOrSuccess = await _authFacade.signInWithGoogle();
-          emit(state.copyWith(
-            isSubmitting: false,
-            authFailureOrSuccessOption: some(failureOrSuccess),
-          ),);
-        },
-      ),
+    on<EmailChanged>(
+      (event, emit) =>
+        emit(state.copyWith(
+          email: Email(event.emailStr),
+          authFailureOrSuccessOption: none(),
+        ),),
+      transformer: debounceRestartable(debounceDuration),
+    );
+
+    on<PasswordChanged>(
+      (event, emit) =>
+        emit(state.copyWith(
+          password: Password(event.passwordStr),
+          authFailureOrSuccessOption: none(),
+        ),),
+      transformer: debounceRestartable(debounceDuration),
+    );
+
+    on<RegisterWithEmailAndPasswordPressed>(
+      (event, emit) =>
+        _performAuthAction(_authFacade.registerWithEmailAndPassword, emit),
+      transformer: sequential(),
+    );
+
+    on<SignInWithEmailAndPasswordPressed>(
+      (event, emit) =>
+        _performAuthAction(_authFacade.signInWithEmailAndPassword, emit),
+      transformer: sequential(),
+    );
+
+    on<SignInWithGooglePressed>(
+      (event, emit) async {
+        emit(state.copyWith(
+          isSubmitting: true,
+          authFailureOrSuccessOption: none(),
+        ),);
+        final failureOrSuccess = await _authFacade.signInWithGoogle();
+        emit(state.copyWith(
+          isSubmitting: false,
+          authFailureOrSuccessOption: some(failureOrSuccess),
+        ),);
+      },
       transformer: sequential(),
     );
   }
