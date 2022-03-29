@@ -49,31 +49,31 @@ Future<void> categoriesTest() async {
         }
     );
 
-    // testWidgets(
-    //     'Category is editable',
-    //     (WidgetTester tester) async {
-    //       await _navigateToCategoriesOverviewPage(tester);
-    //
-    //       await tester.tap(find.text(_categoryName));
-    //       await tester.pumpAndSettle();
-    //       expect(findCategoryEditDialog(), findsOneWidget);
-    //       expect(find.text('Edit category'), findsOneWidget);
-    //
-    //       // this bloc faces problems when categoriesTest() doesn't run before
-    //       // other tests (tripsTest(), for example). I use imitation of pressing
-    //       // submitting button and double pumpAndSettle to fix it,
-    //       // but maybe there is a better way
-    //       await tester.enterText(findCategoryNameField(), _categoryEditedName);
-    //       await tester.testTextInput.receiveAction(TextInputAction.done); // https://stackoverflow.com/questions/55101120/submit-textfield-in-flutter-integration-test
-    //       await tester.pumpAndSettle(const Duration(seconds: 1));
-    //       await tester.pumpAndSettle(const Duration(seconds: 1));
-    //
-    //       await tester.tap(findSaveButton());
-    //       await tester.pumpAndSettle(const Duration(seconds: 1));
-    //       expect(_findCategoriesOverviewPage(), findsOneWidget);
-    //       expect(find.text(_categoryEditedName), findsOneWidget);
-    //     }
-    // );
+    testWidgets(
+        'Category is editable',
+        (WidgetTester tester) async {
+          await _navigateToCategoriesOverviewPage(tester);
+
+          await tester.tap(find.text(_categoryName));
+          await tester.pumpAndSettle();
+          expect(findCategoryEditDialog(), findsOneWidget);
+          expect(find.text('Edit category'), findsOneWidget);
+
+          // this bloc faces problems when categoriesTest() doesn't run before
+          // other tests (tripsTest(), for example). I use imitation of pressing
+          // submitting button and double pumpAndSettle to fix it,
+          // but maybe there is a better way
+          await tester.enterText(findCategoryNameField(), _categoryEditedName);
+          await tester.testTextInput.receiveAction(TextInputAction.done); // https://stackoverflow.com/questions/55101120/submit-textfield-in-flutter-integration-test
+          await tester.pumpAndSettle(const Duration(seconds: 1));
+          await tester.pumpAndSettle(const Duration(seconds: 1));
+
+          await tester.tap(findSaveButton());
+          await tester.pumpAndSettle(const Duration(seconds: 1));
+          expect(_findCategoriesOverviewPage(), findsOneWidget);
+          expect(find.text(_categoryEditedName), findsOneWidget);
+        }
+    );
 
     // testWidgets(
     //     'After deleting the category the list of categories should be empty again',
