@@ -1,7 +1,7 @@
 import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 
-dynamic customErrorFlushbar({required String message}) =>
+Flushbar customErrorFlushbar({required String message}) =>
   Flushbar(
     message: message,
     icon: Icon(Icons.warning, size: 28.0, color: Colors.red[300],),
