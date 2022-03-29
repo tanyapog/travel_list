@@ -30,14 +30,21 @@ Future<void> main() async {
   await tripsTest();
 }
 
-Future<void> deleteTestUserIfNeed(String email, String password) async {
+Future<void> deleteTestUserIfNeed(String itEmail, String itPassword) async {
   final _firebaseAuth = getIt<FirebaseAuth>();
   final _firestore = getIt<FirebaseFirestore>();
 
+  // preventing deletion data of another test user
+  // that could be currently signed in while developing on the emulator
+  final currentUser = _firebaseAuth.currentUser;
+  if(currentUser != null && currentUser.email != itEmail) {
+    await _firebaseAuth.signOut();
+  }
+
   try {
     await _firebaseAuth.signInWithEmailAndPassword(
-      email: email,
-      password: password,
+      email: itEmail,
+      password: itPassword,
     );
   } on FirebaseAuthException catch (e) {
     if (e.code == 'user-not-found') {
