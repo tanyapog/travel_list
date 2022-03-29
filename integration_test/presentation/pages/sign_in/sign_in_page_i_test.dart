@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:travel_list/presentation/core/app_widget.dart';
@@ -86,4 +85,45 @@ Future<void> signInPageTest() async {
       }
     );
   });
+
+  // !!! Do not commit uncommented !!! start <<
+  // group('quick authentication actions for the needs of developing', () {
+  //   // testWidgets('fake test', (WidgetTester tester) async {
+  //   //   await tester.pumpWidget(AppWidget());
+  //   //   await tester.pumpAndSettle();
+  //   //   expect(find.byType(SignInPage), findsOneWidget);
+  //   //   // expect(find.byType(SignInPage), findsNothing);
+  //   // });
+  //
+  //   testWidgets(
+  //       'quick register',
+  //           (WidgetTester tester) async {
+  //         await tester.pumpWidget(AppWidget());
+  //         await tester.pumpAndSettle();
+  //
+  //         await tester.enterText(findEmail(), itEmail);
+  //         await tester.enterText(findPassword(), itPassword);
+  //         await tester.pumpAndSettle();
+  //
+  //         await tester.tap(findRegisterButton());
+  //         await tester.pumpAndSettle(const Duration(seconds: 1));
+  //       }
+  //   );
+  //
+  //   // testWidgets(
+  //   //   'quick login',
+  //   //   (WidgetTester tester) async {
+  //   //     await tester.pumpWidget(AppWidget());
+  //   //     await tester.pumpAndSettle();
+  //   //
+  //   //     await tester.enterText(findEmail(), itEmail);
+  //   //     await tester.enterText(findPassword(), itPassword);
+  //   //     await tester.pumpAndSettle();
+  //   //
+  //   //     await tester.tap(findSignInButton());
+  //   //     await tester.pumpAndSettle(const Duration(seconds: 1));
+  //   //   }
+  //   // );
+  // });
+  // end >>
 }
