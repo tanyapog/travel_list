@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 // import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:travel_list/presentation/core/app_widget.dart';
 import 'package:travel_list/presentation/pages/categories/categories_overview_page.dart';
+import 'package:travel_list/presentation/pages/categories/widgets/category_card.dart';
 // import 'package:travel_list/presentation/pages/categories/widgets/category_card.dart';
 import 'package:travel_list/presentation/pages/categories/widgets/category_editing_dialog.dart';
 
@@ -75,35 +77,35 @@ Future<void> categoriesTest() async {
         }
     );
 
-    // testWidgets(
-    //     'After deleting the category the list of categories should be empty again',
-    //     (WidgetTester tester) async {
-    //       await _navigateToCategoriesOverviewPage(tester);
-    //
-    //       final _categoryCard = find.byType(Slidable);
-    //       final _deleteButton = find.byIcon(Icons.delete);
-    //
-    //       await tester.dragUntilVisible(_deleteButton, _categoryCard, const Offset(-100, 0));
-    //       await tester.pump(const Duration(seconds: 1));
-    //
-    //       await tester.tap(_deleteButton);
-    //       await tester.pumpAndSettle(const Duration(seconds: 1));
-    //       expect(find.text('Deleting a category'), findsOneWidget);
-    //
-    //       final _categoryNameOnDeletionDialog = find.byWidgetPredicate(
-    //             (widget) => widget is Text &&
-    //             widget.key == const Key('categoryName') &&
-    //             widget.data == _categoryName,
-    //         description: 'category name on deletion dialog',
-    //       );
-    //       expect(_categoryNameOnDeletionDialog, findsOneWidget);
-    //       await tester.tap(find.text('DELETE'));
-    //       await tester.pumpAndSettle(const Duration(seconds: 1));
-    //
-    //       expect(_findCategoriesOverviewPage(), findsOneWidget);
-    //       expect(find.byType(CategoryCard), findsNothing);
-    //     }
-    // );
+    testWidgets(
+        'After deleting the category the list of categories should be empty again',
+        (WidgetTester tester) async {
+          await _navigateToCategoriesOverviewPage(tester);
+
+          final _categoryCard = find.byType(Slidable);
+          final _deleteButton = find.byIcon(Icons.delete);
+
+          await tester.dragUntilVisible(_deleteButton, _categoryCard, const Offset(-100, 0));
+          await tester.pump(const Duration(seconds: 1));
+
+          await tester.tap(_deleteButton);
+          await tester.pumpAndSettle(const Duration(seconds: 1));
+          expect(find.text('Deleting a category'), findsOneWidget);
+
+          final _categoryNameOnDeletionDialog = find.byWidgetPredicate(
+                (widget) => widget is Text &&
+                widget.key == const Key('categoryName') &&
+                widget.data == _categoryName,
+            description: 'category name on deletion dialog',
+          );
+          expect(_categoryNameOnDeletionDialog, findsOneWidget);
+          await tester.tap(find.text('DELETE'));
+          await tester.pumpAndSettle(const Duration(seconds: 1));
+
+          expect(_findCategoriesOverviewPage(), findsOneWidget);
+          expect(find.byType(CategoryCard), findsNothing);
+        }
+    );
   });
 }
 
