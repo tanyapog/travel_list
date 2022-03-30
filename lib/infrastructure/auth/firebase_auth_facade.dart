@@ -35,12 +35,14 @@ class FirebaseAuthFacade implements IAuthFacade {
         password: passwordStr,
       );
       return right(unit);
-    } on PlatformException catch (e) {
-      if (e.code == 'ERROR_EMAIL_ALREADY_IN_USE') {
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'email-already-in-use') {
         return left(const AuthFailure.emailAlreadyInUse());
       } else {
         return left(AuthFailure.serverError("${e.code}: ${e.message}"));
       }
+    } on Exception catch (e) {
+      return left(AuthFailure.serverError("Unknown exception: $e"));
     }
   }
 
@@ -84,8 +86,10 @@ class FirebaseAuthFacade implements IAuthFacade {
       return _firebaseAuth
         .signInWithCredential(authCredential)
         .then((value) => right(unit));
-    } on PlatformException catch (e) { // TODO(tanyapog): check if catch is all right with .then
+    } on FirebaseAuthException catch (e) {
       return left(AuthFailure.serverError("${e.code}: ${e.message}"));
+    } catch (e) {
+      return left(AuthFailure.serverError(e.toString()));
     }
   }
 
