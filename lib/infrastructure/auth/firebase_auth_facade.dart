@@ -1,13 +1,12 @@
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart' hide User;
-import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
 import 'package:travel_list/domain/auth/auth_failure.dart';
 import 'package:travel_list/domain/auth/i_auth_facade.dart';
 import 'package:travel_list/domain/auth/user.dart';
 import 'package:travel_list/domain/auth/value_objects.dart';
-import './firebase_user_mapper.dart';
+import 'package:travel_list/infrastructure/auth/firebase_user_mapper.dart';
 
 // lazy mode shifts the creation to the time the object is the first time requested
 // because creating this instance can be time consuming at app start-up
