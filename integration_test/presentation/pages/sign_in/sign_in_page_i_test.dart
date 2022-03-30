@@ -13,6 +13,7 @@ Future<void> signInPageTest() async {
   Finder findRegisterButton() => find.text('REGISTER');
   Finder findSignInButton() => find.text('SIGN IN');
   Finder findAccessDeniedMessage() => find.text('Invalid email and password combination', skipOffstage: false);
+  Finder findEmailInUseMessage() => find.text('Email already in use', skipOffstage: false);
 
   group('Registration, signIn and signOut tests', () {
     testWidgets(
@@ -60,6 +61,27 @@ Future<void> signInPageTest() async {
 
         expect(find.byType(SignInPage), findsOneWidget);
       }
+    );
+
+    testWidgets(
+        'The test of email-already-in-use error handling: '
+        'we try to register user with email equals to user email from the '
+        'registration user test. As a result we should get an error message',
+        (WidgetTester tester) async {
+          await tester.pumpWidget(AppWidget());
+          await tester.pumpAndSettle();
+
+          await tester.enterText(findEmail(), itEmail);
+          await tester.enterText(findPassword(), itPassword);
+          await tester.pumpAndSettle();
+
+          await tester.tap(findRegisterButton());
+          await tester.pumpAndSettle();
+
+          expect(find.byType(SignInPage), findsOneWidget);
+          expect(findEmailInUseMessage(), findsOneWidget);
+          await tester.pumpAndSettle(const Duration(seconds: 3));
+        }
     );
 
     testWidgets(
