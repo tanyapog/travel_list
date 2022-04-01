@@ -8,15 +8,14 @@ class SplashPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocListener<AuthBloc, AuthState>(
-      listener: (context, state) {
+      listener: (context, state) =>
         state.map(
-          initial: (_) {},
+          initial: (_) => null,
           authenticated: (_) => AutoRouter.of(context)
             .replace(const app_router.TripsOverviewRoute()),
           unauthenticated: (_) => AutoRouter.of(context)
             .replace(const app_router.SignInRoute()),
-        );
-      },
+        ),
       child: const Scaffold(
         body: Center(
           child: CircularProgressIndicator(),

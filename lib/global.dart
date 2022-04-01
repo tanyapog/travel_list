@@ -15,7 +15,6 @@ Future<void> connectToEmulator() async {
   await getIt<FirebaseAuth>().useAuthEmulator(host, 9099);
 }
 
-EventTransformer<Event> debounceRestartable<Event>(Duration duration,) {
-  return (events, mapper) => restartable<Event>()
+EventTransformer<Event> debounceRestartable<Event>(Duration duration,) =>
+  (events, mapper) => restartable<Event>()
     .call(events.debounceTime(duration), mapper);
-}

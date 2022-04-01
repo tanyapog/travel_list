@@ -25,13 +25,12 @@ class CategoriesOverviewPage extends StatelessWidget {
         ),
       ],
       child: BlocListener<CategoryActorBloc, CategoryActorState>(
-        listener: (context, state) {
+        listener: (context, state) =>
           state.maybeMap(
             reorderFailure: (state) => customErrorFlushbar(
               message: state.categoryFailure.message,).show(context),
-            orElse: () {},
-          );
-        },
+            orElse: () => null,
+          ),
         child: Scaffold(
           drawer: NavigationDrawer(),
           appBar: AppBar(
@@ -64,10 +63,9 @@ class CategoriesOverviewPage extends StatelessWidget {
                       child: Container(),),
                 items: state.categories,
                 areItemsTheSame: (oldItem, newItem) => oldItem.id == newItem.id,
-                onReorderFinished: (item, from, to, newItems) {
+                onReorderFinished: (item, from, to, newItems) =>
                   context.read<CategoryActorBloc>()
-                    .add(CategoryActorEvent.reorderFinished(newItems));
-                },
+                    .add(CategoryActorEvent.reorderFinished(newItems)),
               ),
               loadFailure: (state) => CriticalFailureDisplay(failure: state.categoryFailure),
             ),

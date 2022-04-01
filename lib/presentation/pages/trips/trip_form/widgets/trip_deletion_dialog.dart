@@ -18,13 +18,12 @@ class TripDeletionDialog extends StatelessWidget {
       create: (context) => getIt<TripActorBloc>(),
       child: customDialog(
         child: BlocListener<TripActorBloc, TripActorState>(
-          listener: (context, state) {
+          listener: (context, state) =>
             state.maybeMap(
               deleteFailure: (state) => customErrorFlushbar(
                 message: state.tripFailure.message,).show(context),
-              orElse: () {},
-            );
-          },
+              orElse: () => null,
+            ),
           child: Column(
             mainAxisSize: MainAxisSize.min, // To make the card compact
             children: <Widget>[

@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:provider/provider.dart';
 import 'package:travel_list/application/auth/auth_bloc.dart';
 import 'package:travel_list/application/auth/sign_in_form/sign_in_form_bloc.dart';
 import 'package:travel_list/injection.dart';
@@ -30,27 +29,24 @@ class SignInForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<SignInFormBloc, SignInFormState>(
-      listener: (context, state) {
+      listener: (context, state) =>
         state.authFailureOrSuccessOption.fold(
           () {}, // case of none
           (either) => either.fold(
-            (failure) { // Authorisation failed
-              customErrorFlushbar(message: failure.map(
+            (failure) => customErrorFlushbar(message: failure.map(
                 cancelledByUser: (_) => 'Cancelled',
                 serverError: (message) => 'Server Error: $message',
                 emailAlreadyInUse: (_) => 'Email already in use',
                 invalidEmailAndPasswordCombination: (_) =>
-                  'Invalid email and password combination',),).show(context);
-            },
+                  'Invalid email and password combination',),).show(context),
             (_) { // Authorisation succeed, show to user the list of trips
               context.read<AuthBloc>().add(const AuthEvent.authCheckRequested());
               AutoRouter.of(context).replace(const app_router.TripsOverviewRoute());
             }
           ),
-        );
-      },
-      builder: (context, state) {
-        return Form(
+        ),
+      builder: (context, state) =>
+        Form(
           key: _globalSignInFormKey,
           child: Container(
             padding: const EdgeInsets.all(10),
@@ -134,8 +130,7 @@ class SignInForm extends StatelessWidget {
               ],
             ),
           ),
-        );
-      },
+        ),
     );
   }
 }

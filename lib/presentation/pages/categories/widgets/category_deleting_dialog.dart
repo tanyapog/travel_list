@@ -18,13 +18,11 @@ class CategoryDeletionDialog extends StatelessWidget {
       create: (context) => getIt<CategoryActorBloc>(),
       child: customDialog(
         child: BlocListener<CategoryActorBloc, CategoryActorState>(
-          listener: (context, state) {
+          listener: (context, state) =>
             state.maybeMap(
               deleteFailure: (state) => customErrorFlushbar(
                   message: state.categoryFailure.message,).show(context),
-              orElse: () {},
-            );
-          },
+              orElse: () => null,),
           child: Column(
             mainAxisSize: MainAxisSize.min, // To make the card compact
             children: <Widget>[

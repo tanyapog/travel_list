@@ -8,7 +8,6 @@ void main() {
     build: () => NavBloc(),
     act: (bloc) async => bloc.add(const NavigateTo(NavItem.catalog)),
     expect: () => [isA<NavState>()],
-    verify: (bloc) async {
-      expect(bloc.state.selectedItem, NavItem.catalog);
-  },);
+    verify: (bloc) async =>
+      expect(bloc.state.selectedItem, NavItem.catalog),);
 }

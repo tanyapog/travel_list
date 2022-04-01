@@ -7,9 +7,8 @@ class Email extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;
 
-  factory Email(String input) {
-    return Email._(validateEmail(input));
-  }
+  factory Email(String input) =>
+    Email._(validateEmail(input));
 
   const Email._(this.value);
 }
@@ -18,9 +17,8 @@ class Password extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;
 
-  factory Password(String input) {
-    return Password._(validatePassword(input));
-  }
+  factory Password(String input) =>
+    Password._(validatePassword(input));
 
   const Password._(this.value);
 }

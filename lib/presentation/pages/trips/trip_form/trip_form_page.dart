@@ -23,7 +23,7 @@ class TripFormPage extends StatelessWidget {
       child: BlocConsumer<TripFormBloc, TripFormState>(
         listenWhen: (previous, current) =>
           previous.saveFailureOrSuccessOption != current.saveFailureOrSuccessOption,
-        listener: (context, state) {
+        listener: (context, state) =>
           state.saveFailureOrSuccessOption.fold(
             () {}, // case of none
             (either) => either.fold(
@@ -36,17 +36,15 @@ class TripFormPage extends StatelessWidget {
                   route.settings.name == app_router.TripsOverviewRoute.name,);
               }
             ),
-          );
-        },
+          ),
         buildWhen: (previous, current) => previous.isSaving != current.isSaving,
-        builder: (context, state) {
-          return Stack(
+        builder: (context, state) =>
+          Stack(
             children: <Widget>[
               const TripFormPageScaffold(),
               SavingInProgressOverlay(isSaving: state.isSaving),
             ],
-          );
-        },
+          ),
       ),
     );
   }
@@ -79,12 +77,11 @@ class TripFormPageScaffold extends StatelessWidget {
       ),
       body: BlocBuilder<TripFormBloc, TripFormState>(
         buildWhen: (previous, current) => previous.showErrorMessages != current.showErrorMessages,
-        builder: (context, state) {
-         return Form(
+        builder: (context, state) =>
+          Form(
            key: _globalTripFormKey,
            child: const TripFormBody(),
-         );
-        },
+         ),
       ),
     );
   }

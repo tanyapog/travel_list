@@ -14,13 +14,12 @@ class TripName extends ValueObject<String> {
 
   static const maxLength = 70;
 
-  factory TripName(String input) {
-    return TripName._(
+  factory TripName(String input) =>
+    TripName._(
       validateMaxStringLength(input, maxLength)
       .flatMap(validateStringNotEmpty)
       .flatMap(validateSingleLine),
     );
-  }
 
   const TripName._(this.value);
 }
@@ -31,11 +30,10 @@ class TripDescription extends ValueObject<String> {
 
   static const maxLength = firestoreDocumentSizeLimit;
 
-  factory TripDescription(String input) {
-    return TripDescription._(
+  factory TripDescription(String input) =>
+    TripDescription._(
       validateMaxStringLength(input, firestoreDocumentSizeLimit),
     );
-  }
 
   const TripDescription._(this.value);
 }

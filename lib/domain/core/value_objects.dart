@@ -19,12 +19,11 @@ abstract class ValueObject<T> {
 
   /// get rid of all of the detailed types
   /// so that return ValueFailure<dynamic> or Unit
-  Either<ValueFailure<dynamic>, Unit> get failureOrUnit {
-    return value.fold(
+  Either<ValueFailure<dynamic>, Unit> get failureOrUnit =>
+    value.fold(
       (l) => left(l),
       (r) => right(unit),
     );
-  }
 
   bool isValid() => value.isRight();
 
@@ -46,17 +45,15 @@ class UniqueId extends ValueObject<String> {
   final Either<ValueFailure<String>, String> value;
 
   // TODO(tanya.pog): I'm not sure I'll be use it. Now it seems to me the better way is to use database generated ids.
+  // Generate and return a RFC4122 v1 (timestamp-based) UUID
   // Method should be used to generate unique ids for our entities such as [Trip] or something.
   // We cannot let a simple String be passed in. This would allow for possible non-unique IDs.
-  factory UniqueId() {
-    // Generate and return a RFC4122 v1 (timestamp-based) UUID
-    return UniqueId._(right(const Uuid().v1()));
-  }
+  factory UniqueId() =>
+    UniqueId._(right(const Uuid().v1()));
 
   /// Used with strings we trust are unique, such as database IDs.
-  factory UniqueId.fromUniqueString(String uniqueIdStr) {
-    return UniqueId._(right(uniqueIdStr));
-  }
+  factory UniqueId.fromUniqueString(String uniqueIdStr) =>
+    UniqueId._(right(uniqueIdStr));
 
   const UniqueId._(this.value);
 }
@@ -65,11 +62,8 @@ class StringSingleLine extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;
 
-  factory StringSingleLine(String input) {
-    return StringSingleLine._(
-      validateSingleLine(input),
-    );
-  }
+  factory StringSingleLine(String input) =>
+    StringSingleLine._(validateSingleLine(input),);
 
   const StringSingleLine._(this.value);
 }

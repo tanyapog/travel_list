@@ -35,11 +35,9 @@ class FirebaseAuthFacade implements IAuthFacade {
       );
       return right(unit);
     } on FirebaseAuthException catch (e) {
-      if (e.code == 'email-already-in-use') {
-        return left(const AuthFailure.emailAlreadyInUse());
-      } else {
-        return left(AuthFailure.serverError("${e.code}: ${e.message}"));
-      }
+      return e.code == 'email-already-in-use'
+        ? left(const AuthFailure.emailAlreadyInUse())
+        : left(AuthFailure.serverError("${e.code}: ${e.message}"));
     } on Exception catch (e) {
       return left(AuthFailure.serverError("Unknown exception: $e"));
     }
@@ -59,12 +57,9 @@ class FirebaseAuthFacade implements IAuthFacade {
       );
       return right(unit);
     } on FirebaseAuthException catch (e) {
-      if (e.code == 'wrong-password' ||
-          e.code == 'user-not-found') {
-        return left(const AuthFailure.invalidEmailAndPasswordCombination());
-      } else {
-        return left(AuthFailure.serverError("${e.code}: ${e.message}"));
-      }
+      return (e.code == 'wrong-password' || e.code == 'user-not-found')
+        ? left(const AuthFailure.invalidEmailAndPasswordCombination())
+        : left(AuthFailure.serverError("${e.code}: ${e.message}"));
     } on Exception catch (e) {
       return left(AuthFailure.serverError(e.toString()));
     }

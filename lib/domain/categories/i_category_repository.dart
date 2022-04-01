@@ -1,6 +1,5 @@
+import 'package:travel_list/domain/categories/category.dart';
 import 'package:travel_list/domain/categories/category_result.dart';
-
-import 'category.dart';
 
 abstract class ICategoryRepository {
   Stream<CategoryResult> watchAll();

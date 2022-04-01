@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:travel_list/domain/trips/trip_failure.dart';
 
 class CriticalFailureDisplay extends StatelessWidget {
