@@ -42,19 +42,26 @@ class CategoriesOverviewPage extends StatelessWidget {
               initial: (_) => Container(),
               loadInProgress: (_) => const Center(child: CircularProgressIndicator()),
               loadSuccess: (state) => ImplicitlyAnimatedReorderableList<Category>(
-                itemBuilder: (context, itemAnimation, item, index) {
-                  return Reorderable(
-                    builder: (context, dragAnimation, inDrag) =>
-                      ScaleTransition(
-                        scale: Tween<double>(begin: 1, end: 0.95).animate(dragAnimation),
-                        child: CategoryCard(
-                          category: state.categories[index],
-                          elevation: dragAnimation.value * 4,
+                itemBuilder: (context, itemAnimation, item, index) =>
+                  // This check is a workaround made to solve RangeError on deleting category.
+                  // RangeError happens because ImplicitlyAnimatedReorderableList
+                  // rebuilds items with old list three times and only last time
+                  // with a new one (witch doesn't contain deleted item).
+                  // I didn't found out how to stop it doing that.
+                  index < state.categories.length
+                    ? Reorderable(
+                      builder: (context, dragAnimation, inDrag) =>
+                        ScaleTransition(
+                          scale: Tween<double>(begin: 1, end: 0.95).animate(dragAnimation),
+                          child: CategoryCard(
+                            category: state.categories[index],
+                            elevation: dragAnimation.value * 1,
+                          ),
                         ),
-                      ),
-                    key: ValueKey(item.id),
-                  );
-                },
+                      key: ValueKey(item.id),)
+                    : Reorderable(
+                      key: const ValueKey("ghost item"),
+                      child: Container(),),
                 items: state.categories,
                 areItemsTheSame: (oldItem, newItem) => oldItem.id == newItem.id,
                 onReorderFinished: (item, from, to, newItems) {
