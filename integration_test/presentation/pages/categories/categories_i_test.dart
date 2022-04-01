@@ -91,9 +91,9 @@ Future<void> categoriesTest() async {
           expect(find.text('Deleting a category'), findsOneWidget);
 
           final _categoryNameOnDeletionDialog = find.byWidgetPredicate(
-                (widget) => widget is Text &&
+            (widget) => widget is Text &&
                 widget.key == const Key('categoryName') &&
-                widget.data == _categoryName,
+                widget.data == _categoryEditedName,
             description: 'category name on deletion dialog',
           );
           expect(_categoryNameOnDeletionDialog, findsOneWidget);
