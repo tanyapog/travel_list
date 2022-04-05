@@ -25,7 +25,8 @@ class CategoryRepository implements ICategoryRepository {
   Stream<CategoryResult> watchAll() async* {
     final categoryCollection = getCategoryCollectionRef(await _firestore.userDocument());
     yield* categoryCollection
-      .orderBy('position').snapshots()
+      .orderBy('position')
+      .snapshots()
       .map((snapshot) => CategoryResult.success(
         categories: snapshot.docs.map((doc) =>
           doc.data().toDomain(),).toList(),),)
@@ -52,7 +53,8 @@ class CategoryRepository implements ICategoryRepository {
     try {
       final userDoc = await _firestore.userDocument();
       final categoryDto =  CategoryDto.fromDomain(category);
-      await userDoc.categoryCollection.doc(categoryDto.id).update(categoryDto.toJson());
+      await userDoc.categoryCollection.doc(categoryDto.id)
+        .update(categoryDto.toJson());
       return const CategoryResult.success();
     } catch (e) {
       return CategoryResult.failure(failure: CategoryFailure.fromError(e));
@@ -64,7 +66,8 @@ class CategoryRepository implements ICategoryRepository {
     try {
       final userDoc = await _firestore.userDocument();
       final categoryDto =  CategoryDto.fromDomain(category);
-      await userDoc.categoryCollection.doc(categoryDto.id).delete();
+      await userDoc.categoryCollection.doc(categoryDto.id)
+        .delete();
       return const CategoryResult.success();
     } catch (e) {
       return CategoryResult.failure(failure: CategoryFailure.fromError(e));
