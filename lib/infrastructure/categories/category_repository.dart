@@ -38,8 +38,9 @@ class CategoryRepository implements ICategoryRepository {
     try {
       final userDoc = await _firestore.userDocument();
       final newCategory = category.copyWith(position: await _spotThePosition());
-      getCategoryCollectionRef(userDoc)
-          .add(CategoryDto.fromDomain(newCategory));
+      final newCategoryDto = CategoryDto.fromDomain(newCategory);
+      await userDoc.categoryCollection.doc(newCategoryDto.id)
+          .set(newCategoryDto.toJson());
       return const CategoryResult.success();
     } catch (e) {
       return CategoryResult.failure(failure: CategoryFailure.fromError(e));
