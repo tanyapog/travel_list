@@ -4,7 +4,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:travel_list/domain/categories/category.dart';
 import 'package:travel_list/domain/categories/category_failure.dart';
-import 'package:travel_list/domain/categories/category_result.dart';
 import 'package:travel_list/domain/categories/i_category_repository.dart';
 
 part 'category_form_event.dart';
@@ -24,9 +23,8 @@ class CategoryFormBloc extends Bloc<CategoryFormEvent, CategoryFormState> {
         nameChanged: (event) =>
           emit(state.copyWith(category: state.category.copyWith(name: event.nameStr),),),
         saved: (event) async {
-          CategoryResult categoryResult;
           emit(state.copyWith(isSaving: true));
-          categoryResult = state.isEditing
+          final categoryResult = state.isEditing
             ? await categoryRepository.update(state.category)
             : await categoryRepository.create(state.category);
           emit(state.copyWith(
