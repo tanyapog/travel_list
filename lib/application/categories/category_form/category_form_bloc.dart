@@ -31,14 +31,8 @@ class CategoryFormBloc extends Bloc<CategoryFormEvent, CategoryFormState> {
             : await categoryRepository.create(state.category);
           emit(state.copyWith(
             isSaving: false,
-            categoryFailure: categoryResult.maybeWhen(
-              failure: (failure) => failure,
-              orElse: () => null,
-            ),
-            savedSuccessfully: categoryResult.maybeWhen(
-              success: (_) => true,
-              orElse: () => null,
-            ),
+            categoryFailure: categoryResult.whenOrNull(failure: (f) => f),
+            savedSuccessfully: categoryResult.whenOrNull(success: (_) => true),
           ),);
         },
       ),

@@ -85,10 +85,7 @@ class CategoryRepository implements ICategoryRepository {
 
           if (category.position != i) {
             final result = await update(category.copyWith(position: i));
-            result.maybeWhen(
-              failure: (failure) => failures.add(failure),
-              orElse: () {},
-            );
+            result.whenOrNull(failure: (failure) => failures.add(failure));
           }
         }),
       );
