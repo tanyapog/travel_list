@@ -1,10 +1,9 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:travel_list/domain/trips/trip.dart';
 import 'package:travel_list/presentation/core/custom_widgets/custom_delete_slide_action.dart';
-import 'package:travel_list/presentation/pages/trips/trip_form/widgets/trip_deletion_dialog.dart';
-import 'package:travel_list/presentation/routes/router.gr.dart' as app_router;
+import 'package:travel_list/presentation/pages/trips/trips_overview/widgets/trip_deletion_dialog.dart';
+import 'package:travel_list/presentation/pages/trips/trips_overview/widgets/trip_editing_dialog.dart';
 
 class TripCard extends StatelessWidget {
   final Trip trip;
@@ -14,7 +13,11 @@ class TripCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => AutoRouter.of(context).push(app_router.TripFormRoute(trip: trip)),
+      onTap: () => showDialog(
+        barrierDismissible: false,
+        context: context,
+        builder: (BuildContext context) => TripEditingDialog(trip: trip),
+      ),
       child: Slidable(
         endActionPane: ActionPane(
           motion: const DrawerMotion(),

@@ -2,14 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:travel_list/presentation/core/app_widget.dart';
-import 'package:travel_list/presentation/pages/trips/trip_form/trip_form_page.dart';
 import 'package:travel_list/presentation/pages/trips/trips_overview/trips_overview_page.dart';
 import 'package:travel_list/presentation/pages/trips/trips_overview/widgets/trip_card.dart';
+import 'package:travel_list/presentation/pages/trips/trips_overview/widgets/trip_editing_dialog.dart';
 
 // this test tests both tipsOverviewPage and TripFormPage
 Future<void> tripsTest() async {
   const _tripName = 'Norway 2021';
   const _tripEditedName = 'Norway jun, 2021';
+
+  Finder findTripNameField() => find.bySemanticsLabel('name');
+  Finder findTripDescriptionField() => find.bySemanticsLabel('description');
+  Finder findSaveButton() => find.text('SAVE');
 
   group('Overview trips, create, rename and delete trip tests', () {
     testWidgets(
@@ -32,22 +36,22 @@ Future<void> tripsTest() async {
 
           await tester.tap(find.byIcon(Icons.add));
           await tester.pumpAndSettle();
-          expect(find.byType(TripFormPage), findsOneWidget);
+          expect(find.byType(TripEditingDialog), findsOneWidget);
           expect(find.text('Create a trip'), findsOneWidget);
 
           final Form tripForm = tester.widget(find.byType(Form)) as Form;
           final GlobalKey<FormState> formKey = tripForm.key! as GlobalKey<FormState>;
 
-          await tester.tap(find.byIcon(Icons.check));
+          await tester.tap(findSaveButton());
           await tester.pumpAndSettle(const Duration(seconds: 1));
           expect(formKey.currentState?.validate(), isFalse);
           expect(find.text('Cannot be empty'), findsOneWidget);
 
-          await tester.enterText(find.bySemanticsLabel('name'), _tripName);
-          await tester.enterText(find.bySemanticsLabel('description'), 'hiking');
+          await tester.enterText(findTripNameField(), _tripName);
+          await tester.enterText(findTripDescriptionField(), 'hiking');
           await tester.pumpAndSettle();
 
-          await tester.tap(find.byIcon(Icons.check));
+          await tester.tap(findSaveButton());
           await tester.pumpAndSettle(const Duration(seconds: 1));
           expect(find.byType(TripsOverviewPage), findsOneWidget);
           expect(find.text(_tripName), findsOneWidget);
@@ -63,13 +67,13 @@ Future<void> tripsTest() async {
 
           await tester.tap(find.text(_tripName));
           await tester.pumpAndSettle();
-          expect(find.byType(TripFormPage), findsOneWidget);
+          expect(find.byType(TripEditingDialog), findsOneWidget);
           expect(find.text('Edit a trip'), findsOneWidget);
 
-          await tester.enterText(find.bySemanticsLabel('name'), _tripEditedName);
+          await tester.enterText(findTripNameField(), _tripEditedName);
           await tester.pumpAndSettle();
 
-          await tester.tap(find.byIcon(Icons.check));
+          await tester.tap(findSaveButton());
           await tester.pumpAndSettle(const Duration(seconds: 1));
           expect(find.byType(TripsOverviewPage), findsOneWidget);
           expect(find.text(_tripEditedName), findsOneWidget);
