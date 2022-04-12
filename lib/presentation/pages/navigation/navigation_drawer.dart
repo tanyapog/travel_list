@@ -28,9 +28,8 @@ class NavigationDrawer extends StatelessWidget {
                 case NavItem.currentTrip:
                   debugPrint("--- show Current trip");
                   break;
-                case NavItem.newTrip:
-                  // todo add trip generator here
-                  // AutoRouter.of(context).push(app_router.TripFormRoute(trip: null));
+                case NavItem.generator:
+                  AutoRouter.of(context).push(const app_router.GeneratorRoute());
                   break;
                 case NavItem.trips:
                   AutoRouter.of(context).replace(const app_router.TripsOverviewRoute());
@@ -63,7 +62,7 @@ class NavigationDrawer extends StatelessWidget {
                   children: <Widget>[
                     _createDrawerHeader(authState.user),
                     _createDrawerBodyItem(NavItem.currentTrip, 'Current trip', Icons.airplanemode_active, navContext, navState),
-                    _createDrawerBodyItem(NavItem.newTrip, 'New trip', Icons.add, navContext, navState),
+                    _createDrawerBodyItem(NavItem.generator, 'Generate new list', Icons.add, navContext, navState),
                     const Divider(height: 1, thickness: 1,),
                     _createDrawerBodyItem(NavItem.trips, 'Trips', Icons.menu, navContext, navState),
                     _createDrawerBodyItem(NavItem.catalog, 'Catalog', Icons.folder, navContext, navState),

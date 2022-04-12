@@ -218,6 +218,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.0.1"
+  cool_stepper:
+    dependency: "direct main"
+    description:
+      name: cool_stepper
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.2.1"
   coverage:
     dependency: transitive
     description:

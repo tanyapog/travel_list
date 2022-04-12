@@ -22,7 +22,7 @@ class NavBloc extends Bloc<NavEvent, NavState> {
 
 enum NavItem {
   currentTrip,
-  newTrip,
+  generator,
   trips,
   catalog,
   categories,
