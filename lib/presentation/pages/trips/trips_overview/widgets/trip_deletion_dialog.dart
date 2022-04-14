@@ -39,12 +39,12 @@ class TripDeletionDialog extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  greyButton(
+                  GreyButton(
                     onPressed: () => Navigator.of(context).pop(),
                     title: "CANCEL",),
                   const SizedBox(width: 10),
                   BlocBuilder<TripActorBloc, TripActorState>(
-                    builder: (context, state) => amberButton(
+                    builder: (context, state) => AmberButton(
                       onPressed: () {
                         context.read<TripActorBloc>().add(TripActorEvent.deleted(trip));
                         Navigator.of(context).pop();

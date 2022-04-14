@@ -95,12 +95,12 @@ class TripEditingDialogBody extends HookWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  greyButton(
+                  GreyButton(
                     onPressed: () => Navigator.of(context).pop(),
                     title: "CANCEL",
                   ),
                   const SizedBox(width: 10),
-                  amberButton(
+                  AmberButton(
                     onPressed: () {
                       if (_globalTripFormKey.currentState?.validate() ?? false) {
                         context.read<TripFormBloc>()

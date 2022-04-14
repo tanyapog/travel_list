@@ -69,12 +69,12 @@ class CategoryDialogBody extends HookWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    greyButton(
+                    GreyButton(
                       onPressed: () => Navigator.of(context).pop(),
                       title: "CANCEL",
                     ),
                     const SizedBox(width: 10),
-                    amberButton(
+                    AmberButton(
                       onPressed: () {
                         if (_globalCategoryFormKey.currentState?.validate() ?? false) {
                           context.read<CategoryFormBloc>()

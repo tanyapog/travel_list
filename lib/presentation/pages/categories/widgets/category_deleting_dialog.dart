@@ -36,12 +36,12 @@ class CategoryDeletionDialog extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  greyButton(
+                  GreyButton(
                     onPressed: () => Navigator.of(context).pop(),
                     title: "CANCEL",),
                   const SizedBox(width: 10),
                   BlocBuilder<CategoryActorBloc, CategoryActorState>(
-                    builder: (context, state) => amberButton(
+                    builder: (context, state) => AmberButton(
                       onPressed: () {
                         context.read<CategoryActorBloc>().add(CategoryActorEvent.deleted(category));
                         Navigator.of(context).pop();
