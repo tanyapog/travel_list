@@ -5,7 +5,7 @@ import 'package:travel_list/application/trips/trip_form/trip_form_bloc.dart';
 import 'package:travel_list/domain/trips/trip.dart';
 import 'package:travel_list/injection.dart';
 import 'package:travel_list/presentation/core/custom_widgets/saving_in_progress_overlay.dart';
-import 'package:travel_list/presentation/pages/trips/trips_overview/widgets/trip_editing_dialog_body.dart';
+import 'package:travel_list/presentation/pages/trips/widgets/trip_editing_dialog_body.dart';
 
 class TripEditingDialog extends StatelessWidget {
   final Trip? trip;

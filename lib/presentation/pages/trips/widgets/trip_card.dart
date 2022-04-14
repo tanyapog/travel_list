@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:travel_list/domain/trips/trip.dart';
 import 'package:travel_list/presentation/core/custom_widgets/custom_delete_slide_action.dart';
-import 'package:travel_list/presentation/pages/trips/trips_overview/widgets/trip_deletion_dialog.dart';
-import 'package:travel_list/presentation/pages/trips/trips_overview/widgets/trip_editing_dialog.dart';
+import 'package:travel_list/presentation/pages/trips/widgets/trip_deletion_dialog.dart';
+import 'package:travel_list/presentation/pages/trips/widgets/trip_editing_dialog.dart';
 
 class TripCard extends StatelessWidget {
   final Trip trip;

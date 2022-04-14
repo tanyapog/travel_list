@@ -17,7 +17,7 @@ import '../pages/categories/categories_overview_page.dart' as _i4;
 import '../pages/generator/generator_page.dart' as _i5;
 import '../pages/sign_in/sign_in_page.dart' as _i2;
 import '../pages/splash/splash_page.dart' as _i1;
-import '../pages/trips/trips_overview/trips_overview_page.dart' as _i3;
+import '../pages/trips/trips_overview_page.dart' as _i3;
 
 class Router extends _i6.RootStackRouter {
   Router([_i7.GlobalKey<_i7.NavigatorState>? navigatorKey])

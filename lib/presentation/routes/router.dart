@@ -3,7 +3,7 @@ import 'package:travel_list/presentation/pages/categories/categories_overview_pa
 import 'package:travel_list/presentation/pages/generator/generator_page.dart';
 import 'package:travel_list/presentation/pages/sign_in/sign_in_page.dart';
 import 'package:travel_list/presentation/pages/splash/splash_page.dart';
-import 'package:travel_list/presentation/pages/trips/trips_overview/trips_overview_page.dart';
+import 'package:travel_list/presentation/pages/trips/trips_overview_page.dart';
 
 @MaterialAutoRouter(
   // generateNavigationHelperExtension: true,

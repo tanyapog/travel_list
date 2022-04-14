@@ -3,9 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:travel_list/application/trips/trip_watcher/trip_watcher_bloc.dart';
 import 'package:travel_list/injection.dart';
 import 'package:travel_list/presentation/pages/navigation/navigation_drawer.dart';
-import 'package:travel_list/presentation/pages/trips/trips_overview/widgets/trip_editing_dialog.dart';
-import 'package:travel_list/presentation/pages/trips/trips_overview/widgets/trips_overview_body.dart';
-import 'package:travel_list/presentation/pages/trips/trips_overview/widgets/uncompleted_switch.dart';
+import 'package:travel_list/presentation/pages/trips/widgets/trip_editing_dialog.dart';
+import 'package:travel_list/presentation/pages/trips/widgets/trips_overview_body.dart';
+import 'package:travel_list/presentation/pages/trips/widgets/uncompleted_switch.dart';
 
 class TripsOverviewPage extends StatelessWidget {
 

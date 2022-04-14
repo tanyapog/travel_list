@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:travel_list/presentation/core/app_widget.dart';
-import 'package:travel_list/presentation/pages/trips/trips_overview/trips_overview_page.dart';
-import 'package:travel_list/presentation/pages/trips/trips_overview/widgets/trip_card.dart';
-import 'package:travel_list/presentation/pages/trips/trips_overview/widgets/trip_editing_dialog.dart';
+import 'package:travel_list/presentation/pages/trips/trips_overview_page.dart';
+import 'package:travel_list/presentation/pages/trips/widgets/trip_card.dart';
+import 'package:travel_list/presentation/pages/trips/widgets/trip_editing_dialog.dart';
 
 // this test tests both tipsOverviewPage and TripFormPage
 Future<void> tripsTest() async {

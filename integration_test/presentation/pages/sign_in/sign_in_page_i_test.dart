@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:travel_list/presentation/core/app_widget.dart';
 import 'package:travel_list/presentation/pages/sign_in/sign_in_page.dart';
-import 'package:travel_list/presentation/pages/trips/trips_overview/trips_overview_page.dart';
-import 'package:travel_list/presentation/pages/trips/trips_overview/widgets/trip_card.dart';
+import 'package:travel_list/presentation/pages/trips/trips_overview_page.dart';
+import 'package:travel_list/presentation/pages/trips/widgets/trip_card.dart';
 
 import '../../../test_globals.dart';
 

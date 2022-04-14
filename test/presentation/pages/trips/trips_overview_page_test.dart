@@ -11,10 +11,10 @@ import 'package:travel_list/domain/trips/trip.dart';
 import 'package:travel_list/domain/trips/value_objects.dart';
 import 'package:travel_list/injection.dart';
 import 'package:travel_list/presentation/pages/categories/widgets/critical_failure_display.dart';
-import 'package:travel_list/presentation/pages/trips/trips_overview/trips_overview_page.dart';
-import 'package:travel_list/presentation/pages/trips/trips_overview/widgets/error_trip_card.dart';
-import 'package:travel_list/presentation/pages/trips/trips_overview/widgets/trip_card.dart';
-import 'package:travel_list/presentation/pages/trips/trips_overview/widgets/trips_overview_body.dart';
+import 'package:travel_list/presentation/pages/trips/trips_overview_page.dart';
+import 'package:travel_list/presentation/pages/trips/widgets/error_trip_card.dart';
+import 'package:travel_list/presentation/pages/trips/widgets/trip_card.dart';
+import 'package:travel_list/presentation/pages/trips/widgets/trips_overview_body.dart';
 
 class MockTripWatcherBloc
     extends MockBloc<TripWatcherEvent, TripWatcherState>
