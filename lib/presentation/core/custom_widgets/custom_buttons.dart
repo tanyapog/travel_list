@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class GreyButton extends StatelessWidget {
-  final void Function() onPressed;
+  final void Function()? onPressed;
   final String title;
   final bool active;
 
@@ -23,7 +23,7 @@ class GreyButton extends StatelessWidget {
 }
 
 class AmberButton extends StatelessWidget {
-  final void Function() onPressed;
+  final void Function()? onPressed;
   final String title;
   final bool active;
 
