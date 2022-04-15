@@ -29,7 +29,7 @@ class NavigationDrawer extends StatelessWidget {
                   debugPrint("--- show Current trip");
                   break;
                 case NavItem.generator:
-                  AutoRouter.of(context).push(const app_router.GeneratorRoute());
+                  AutoRouter.of(context).replace(const app_router.GeneratorRoute());
                   break;
                 case NavItem.trips:
                   AutoRouter.of(context).replace(const app_router.TripsOverviewRoute());
