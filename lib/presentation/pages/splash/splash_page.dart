@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:travel_list/application/auth/auth_bloc.dart';
-import 'package:travel_list/presentation/routes/router.gr.dart' as app_router;
+import 'package:travel_list/presentation/routes/router.gr.dart';
 
 class SplashPage extends StatelessWidget {
   @override
@@ -12,9 +12,9 @@ class SplashPage extends StatelessWidget {
         state.map(
           initial: (_) => null,
           authenticated: (_) => AutoRouter.of(context)
-            .replace(const app_router.TripsOverviewRoute()),
+            .replace(const TripsOverviewRoute()),
           unauthenticated: (_) => AutoRouter.of(context)
-            .replace(const app_router.SignInRoute()),
+            .replace(const SignInRoute()),
         ),
       child: const Scaffold(
         body: Center(

@@ -6,7 +6,7 @@ import 'package:travel_list/application/auth/auth_bloc.dart';
 import 'package:travel_list/application/navigation/nav_bloc.dart';
 import 'package:travel_list/domain/auth/user.dart';
 import 'package:travel_list/injection.dart';
-import 'package:travel_list/presentation/routes/router.gr.dart' as app_router;
+import 'package:travel_list/presentation/routes/router.gr.dart';
 
 class NavigationDrawer extends StatelessWidget {
 
@@ -18,7 +18,7 @@ class NavigationDrawer extends StatelessWidget {
         listeners: [
           BlocListener<AuthBloc, AuthState>(
             listener: (authContext, authState) => authState.maybeMap(
-              unauthenticated: (_) => AutoRouter.of(authContext).replace(const app_router.SignInRoute()),
+              unauthenticated: (_) => AutoRouter.of(authContext).replace(const SignInRoute()),
               orElse: () => Container(),
             ),
           ),
@@ -32,13 +32,13 @@ class NavigationDrawer extends StatelessWidget {
                   AutoRouter.of(context).replace(const app_router.GeneratorRoute());
                   break;
                 case NavItem.trips:
-                  AutoRouter.of(context).replace(const app_router.TripsOverviewRoute());
+                  AutoRouter.of(context).replace(const TripsOverviewRoute());
                   break;
                 case NavItem.catalog:
                   debugPrint("--- show Catalog");
                   break;
                 case NavItem.categories:
-                  AutoRouter.of(context).replace(const app_router.CategoriesOverviewRoute());
+                  AutoRouter.of(context).replace(const CategoriesOverviewRoute());
                   break;
                 case NavItem.templates:
                   debugPrint("--- show Templates");

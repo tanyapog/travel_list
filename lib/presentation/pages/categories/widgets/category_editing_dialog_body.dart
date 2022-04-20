@@ -7,7 +7,7 @@ import 'package:travel_list/domain/categories/category.dart';
 import 'package:travel_list/presentation/core/custom_widgets/custom_buttons.dart';
 import 'package:travel_list/presentation/core/custom_widgets/custom_flushbar_helper.dart';
 import 'package:travel_list/presentation/core/custom_widgets/dialog_box_decoration.dart';
-import 'package:travel_list/presentation/routes/router.gr.dart' as app_router;
+import 'package:travel_list/presentation/routes/router.gr.dart';
 
 class CategoryEditingDialogBody extends HookWidget {
   const CategoryEditingDialogBody({Key? key,}) : super(key: key);
@@ -33,7 +33,7 @@ class CategoryEditingDialogBody extends HookWidget {
             (state.categoryFailure != null)
               ? customErrorFlushbar(message: state.categoryFailure!.message).show(context)
               : AutoRouter.of(context).popUntil((route) =>
-                route.settings.name == app_router.CategoriesOverviewRoute.name,),
+                route.settings.name == CategoriesOverviewRoute.name,),
         ),
       ],
       child: customDialog(

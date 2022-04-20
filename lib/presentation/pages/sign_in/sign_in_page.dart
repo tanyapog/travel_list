@@ -5,7 +5,7 @@ import 'package:travel_list/application/auth/auth_bloc.dart';
 import 'package:travel_list/application/auth/sign_in_form/sign_in_form_bloc.dart';
 import 'package:travel_list/injection.dart';
 import 'package:travel_list/presentation/core/custom_widgets/custom_flushbar_helper.dart';
-import 'package:travel_list/presentation/routes/router.gr.dart' as app_router;
+import 'package:travel_list/presentation/routes/router.gr.dart';
 
 class SignInPage extends StatelessWidget {
   @override
@@ -41,7 +41,7 @@ class SignInForm extends StatelessWidget {
                   'Invalid email and password combination',),).show(context),
             (_) { // Authorisation succeed, show to user the list of trips
               context.read<AuthBloc>().add(const AuthEvent.authCheckRequested());
-              AutoRouter.of(context).replace(const app_router.TripsOverviewRoute());
+              AutoRouter.of(context).replace(const TripsOverviewRoute());
             }
           ),
         ),
