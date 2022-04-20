@@ -74,7 +74,7 @@ class CategoriesOverviewPage extends StatelessWidget {
             onPressed: () => showDialog(
               barrierDismissible: false,
               context: context,
-              builder: (BuildContext context) => const CategoryEditDialog(),
+              builder: (BuildContext context) => const CategoryEditingDialog(),
             ),
             child: const Icon(Icons.add),
           ),

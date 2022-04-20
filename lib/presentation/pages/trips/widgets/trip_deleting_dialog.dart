@@ -7,10 +7,10 @@ import 'package:travel_list/presentation/core/custom_widgets/custom_buttons.dart
 import 'package:travel_list/presentation/core/custom_widgets/custom_flushbar_helper.dart';
 import 'package:travel_list/presentation/core/custom_widgets/dialog_box_decoration.dart';
 
-class TripDeletionDialog extends StatelessWidget {
+class TripDeletingDialog extends StatelessWidget {
   final Trip trip;
 
-  const TripDeletionDialog({Key? key, required this.trip}) : super(key: key);
+  const TripDeletingDialog({Key? key, required this.trip}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

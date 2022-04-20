@@ -22,7 +22,7 @@ class CategoryCard extends StatelessWidget {
       onTap: () => showDialog(
         barrierDismissible: false,
         context: context,
-        builder: (BuildContext context) => CategoryEditDialog(category: category),
+        builder: (BuildContext context) => CategoryEditingDialog(category: category),
       ),
       child: Slidable(
         endActionPane: ActionPane(

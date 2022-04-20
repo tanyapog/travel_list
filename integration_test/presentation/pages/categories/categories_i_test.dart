@@ -14,7 +14,7 @@ Future<void> categoriesTest() async {
 
   Finder findCategoryNameField() => find.bySemanticsLabel('category name');
   Finder findSaveButton() => find.text('SAVE');
-  Finder findCategoryEditDialog() => find.byType(CategoryEditDialog);
+  Finder findCategoryEditDialog() => find.byType(CategoryEditingDialog);
 
   group('Overview categories, create, rename, reorder and delete category tests', () {
     testWidgets(

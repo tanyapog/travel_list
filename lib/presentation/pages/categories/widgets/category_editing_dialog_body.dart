@@ -9,8 +9,8 @@ import 'package:travel_list/presentation/core/custom_widgets/custom_flushbar_hel
 import 'package:travel_list/presentation/core/custom_widgets/dialog_box_decoration.dart';
 import 'package:travel_list/presentation/routes/router.gr.dart' as app_router;
 
-class CategoryDialogBody extends HookWidget {
-  const CategoryDialogBody({Key? key,}) : super(key: key);
+class CategoryEditingDialogBody extends HookWidget {
+  const CategoryEditingDialogBody({Key? key,}) : super(key: key);
   static final GlobalKey<FormState> _globalCategoryFormKey = GlobalKey<FormState>();
 
   @override

@@ -6,10 +6,10 @@ import 'package:travel_list/injection.dart';
 import 'package:travel_list/presentation/core/custom_widgets/saving_in_progress_overlay.dart';
 import 'package:travel_list/presentation/pages/categories/widgets/category_editing_dialog_body.dart';
 
-class CategoryEditDialog extends StatelessWidget {
+class CategoryEditingDialog extends StatelessWidget {
   final Category? category;
 
-  const CategoryEditDialog({Key? key, this.category}) : super(key: key);
+  const CategoryEditingDialog({Key? key, this.category}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class CategoryEditDialog extends StatelessWidget {
         builder: (context, state) =>
           Stack(
             children: [
-              const CategoryDialogBody(),
+              const CategoryEditingDialogBody(),
               SavingInProgressOverlay(isSaving: state.isSaving),
             ],
           ),
