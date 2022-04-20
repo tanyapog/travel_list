@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:travel_list/domain/trips/trip.dart';
 import 'package:travel_list/presentation/core/custom_widgets/custom_delete_slide_action.dart';
-import 'package:travel_list/presentation/pages/trips/widgets/trip_deletion_dialog.dart';
+import 'package:travel_list/presentation/pages/trips/widgets/trip_deleting_dialog.dart';
 import 'package:travel_list/presentation/pages/trips/widgets/trip_editing_dialog.dart';
 
 class TripCard extends StatelessWidget {
@@ -26,7 +26,7 @@ class TripCard extends StatelessWidget {
               onPressed: (context) => showDialog(
                 barrierDismissible: false,
                 context: context,
-                builder: (context) => TripDeletionDialog(trip: trip,),
+                builder: (context) => TripDeletingDialog(trip: trip,),
               ),
             ),
           ],
