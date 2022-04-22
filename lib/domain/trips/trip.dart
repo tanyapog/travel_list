@@ -15,18 +15,16 @@ class Trip with _$Trip {
     required TripName name,
     required TripDescription description,
     @Default(false) bool complete,
-//    todo
-//    DateTime start,
-//    DateTime end,
-//    DateTime created,
-//    DateTime updated,
+    // DateTime? startDate,
+    // DateTime? endDate,
+    required  DateTime dateCreated,
   }) = _Trip;
 
   factory Trip.empty() => Trip(
     id: UniqueId(),
     name: TripName(''),
     description: TripDescription(''),
-//    created: DateTime.now(), // todo make sure every single trip will have date created
+    dateCreated: DateTime.now(),
   );
 
   Option<ValueFailure<dynamic>> get failureOption =>

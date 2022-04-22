@@ -26,13 +26,13 @@ class _$TripDtoTearOff {
       required String name,
       required String description,
       required bool complete,
-      @ServerTimestampConverter() required FieldValue serverTimeStamp}) {
+      required DateTime dateCreated}) {
     return _TripDto(
       id: id,
       name: name,
       description: description,
       complete: complete,
-      serverTimeStamp: serverTimeStamp,
+      dateCreated: dateCreated,
     );
   }
 
@@ -51,9 +51,10 @@ mixin _$TripDto {
   String? get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
-  bool get complete => throw _privateConstructorUsedError;
-  @ServerTimestampConverter()
-  FieldValue get serverTimeStamp => throw _privateConstructorUsedError;
+  bool get complete =>
+      throw _privateConstructorUsedError; // DateTime? startDate,
+// DateTime? endDate,
+  DateTime get dateCreated => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -69,7 +70,7 @@ abstract class $TripDtoCopyWith<$Res> {
       String name,
       String description,
       bool complete,
-      @ServerTimestampConverter() FieldValue serverTimeStamp});
+      DateTime dateCreated});
 }
 
 /// @nodoc
@@ -86,7 +87,7 @@ class _$TripDtoCopyWithImpl<$Res> implements $TripDtoCopyWith<$Res> {
     Object? name = freezed,
     Object? description = freezed,
     Object? complete = freezed,
-    Object? serverTimeStamp = freezed,
+    Object? dateCreated = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -105,10 +106,10 @@ class _$TripDtoCopyWithImpl<$Res> implements $TripDtoCopyWith<$Res> {
           ? _value.complete
           : complete // ignore: cast_nullable_to_non_nullable
               as bool,
-      serverTimeStamp: serverTimeStamp == freezed
-          ? _value.serverTimeStamp
-          : serverTimeStamp // ignore: cast_nullable_to_non_nullable
-              as FieldValue,
+      dateCreated: dateCreated == freezed
+          ? _value.dateCreated
+          : dateCreated // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
@@ -123,7 +124,7 @@ abstract class _$TripDtoCopyWith<$Res> implements $TripDtoCopyWith<$Res> {
       String name,
       String description,
       bool complete,
-      @ServerTimestampConverter() FieldValue serverTimeStamp});
+      DateTime dateCreated});
 }
 
 /// @nodoc
@@ -141,7 +142,7 @@ class __$TripDtoCopyWithImpl<$Res> extends _$TripDtoCopyWithImpl<$Res>
     Object? name = freezed,
     Object? description = freezed,
     Object? complete = freezed,
-    Object? serverTimeStamp = freezed,
+    Object? dateCreated = freezed,
   }) {
     return _then(_TripDto(
       id: id == freezed
@@ -160,10 +161,10 @@ class __$TripDtoCopyWithImpl<$Res> extends _$TripDtoCopyWithImpl<$Res>
           ? _value.complete
           : complete // ignore: cast_nullable_to_non_nullable
               as bool,
-      serverTimeStamp: serverTimeStamp == freezed
-          ? _value.serverTimeStamp
-          : serverTimeStamp // ignore: cast_nullable_to_non_nullable
-              as FieldValue,
+      dateCreated: dateCreated == freezed
+          ? _value.dateCreated
+          : dateCreated // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
@@ -176,7 +177,7 @@ class _$_TripDto extends _TripDto {
       required this.name,
       required this.description,
       required this.complete,
-      @ServerTimestampConverter() required this.serverTimeStamp})
+      required this.dateCreated})
       : super._();
 
   factory _$_TripDto.fromJson(Map<String, dynamic> json) =>
@@ -191,13 +192,13 @@ class _$_TripDto extends _TripDto {
   final String description;
   @override
   final bool complete;
-  @override
-  @ServerTimestampConverter()
-  final FieldValue serverTimeStamp;
+  @override // DateTime? startDate,
+// DateTime? endDate,
+  final DateTime dateCreated;
 
   @override
   String toString() {
-    return 'TripDto(id: $id, name: $name, description: $description, complete: $complete, serverTimeStamp: $serverTimeStamp)';
+    return 'TripDto(id: $id, name: $name, description: $description, complete: $complete, dateCreated: $dateCreated)';
   }
 
   @override
@@ -211,7 +212,7 @@ class _$_TripDto extends _TripDto {
                 .equals(other.description, description) &&
             const DeepCollectionEquality().equals(other.complete, complete) &&
             const DeepCollectionEquality()
-                .equals(other.serverTimeStamp, serverTimeStamp));
+                .equals(other.dateCreated, dateCreated));
   }
 
   @override
@@ -221,7 +222,7 @@ class _$_TripDto extends _TripDto {
       const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(description),
       const DeepCollectionEquality().hash(complete),
-      const DeepCollectionEquality().hash(serverTimeStamp));
+      const DeepCollectionEquality().hash(dateCreated));
 
   @JsonKey(ignore: true)
   @override
@@ -236,12 +237,11 @@ class _$_TripDto extends _TripDto {
 
 abstract class _TripDto extends TripDto {
   const factory _TripDto(
-          {@JsonKey(ignore: true) String? id,
-          required String name,
-          required String description,
-          required bool complete,
-          @ServerTimestampConverter() required FieldValue serverTimeStamp}) =
-      _$_TripDto;
+      {@JsonKey(ignore: true) String? id,
+      required String name,
+      required String description,
+      required bool complete,
+      required DateTime dateCreated}) = _$_TripDto;
   const _TripDto._() : super._();
 
   factory _TripDto.fromJson(Map<String, dynamic> json) = _$_TripDto.fromJson;
@@ -255,9 +255,9 @@ abstract class _TripDto extends TripDto {
   String get description;
   @override
   bool get complete;
-  @override
-  @ServerTimestampConverter()
-  FieldValue get serverTimeStamp;
+  @override // DateTime? startDate,
+// DateTime? endDate,
+  DateTime get dateCreated;
   @override
   @JsonKey(ignore: true)
   _$TripDtoCopyWith<_TripDto> get copyWith =>

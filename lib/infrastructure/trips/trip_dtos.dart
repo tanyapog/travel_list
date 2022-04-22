@@ -17,7 +17,9 @@ class TripDto with _$TripDto {
     required String name,
     required String description,
     required bool complete,
-    @ServerTimestampConverter() required FieldValue serverTimeStamp, // todo rename to dateUpdated
+    // DateTime? startDate,
+    // DateTime? endDate,
+    required DateTime dateCreated,
   }) = _TripDto;
 
   factory TripDto.fromDomain(Trip trip) => TripDto(
@@ -25,30 +27,24 @@ class TripDto with _$TripDto {
     name: trip.name.getOrCrash(),
     description: trip.description.getOrCrash(),
     complete: trip.complete,
-    serverTimeStamp: FieldValue.serverTimestamp(),
+    // startDate: trip.startDate,
+    // endDate: trip.endDate,
+    dateCreated: trip.dateCreated,
   );
 
   Trip toDomain() => Trip(
     id: UniqueId.fromUniqueString(id!), // I believe id is never null
-      name: TripName(name),
-      description: TripDescription(description),
-      complete: complete,
-    );
+    name: TripName(name),
+    description: TripDescription(description),
+    complete: complete,
+    // startDate: startDate,
+    // endDate: endDate,
+    dateCreated: dateCreated,
+  );
 
   factory TripDto.fromJson(Map<String, dynamic> json) =>
     _$TripDtoFromJson(json);
 
   factory TripDto.fromFirestore(DocumentSnapshot<Map<String, dynamic>> doc) =>
     TripDto.fromJson(doc.data()!).copyWith(id: doc.id);
-}
-
-class ServerTimestampConverter implements JsonConverter<FieldValue, Object> {
-  // need to class be an annotation
-  const ServerTimestampConverter();
-
-  @override
-  FieldValue fromJson(Object json) => FieldValue.serverTimestamp();
-
-  @override
-  Object toJson(FieldValue fieldValue) => fieldValue;
 }

@@ -21,12 +21,14 @@ class _$TripTearOff {
       {required UniqueId id,
       required TripName name,
       required TripDescription description,
-      bool complete = false}) {
+      bool complete = false,
+      required DateTime dateCreated}) {
     return _Trip(
       id: id,
       name: name,
       description: description,
       complete: complete,
+      dateCreated: dateCreated,
     );
   }
 }
@@ -39,7 +41,10 @@ mixin _$Trip {
   UniqueId get id => throw _privateConstructorUsedError;
   TripName get name => throw _privateConstructorUsedError;
   TripDescription get description => throw _privateConstructorUsedError;
-  bool get complete => throw _privateConstructorUsedError;
+  bool get complete =>
+      throw _privateConstructorUsedError; // DateTime? startDate,
+// DateTime? endDate,
+  DateTime get dateCreated => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $TripCopyWith<Trip> get copyWith => throw _privateConstructorUsedError;
@@ -50,7 +55,11 @@ abstract class $TripCopyWith<$Res> {
   factory $TripCopyWith(Trip value, $Res Function(Trip) then) =
       _$TripCopyWithImpl<$Res>;
   $Res call(
-      {UniqueId id, TripName name, TripDescription description, bool complete});
+      {UniqueId id,
+      TripName name,
+      TripDescription description,
+      bool complete,
+      DateTime dateCreated});
 }
 
 /// @nodoc
@@ -67,6 +76,7 @@ class _$TripCopyWithImpl<$Res> implements $TripCopyWith<$Res> {
     Object? name = freezed,
     Object? description = freezed,
     Object? complete = freezed,
+    Object? dateCreated = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -85,6 +95,10 @@ class _$TripCopyWithImpl<$Res> implements $TripCopyWith<$Res> {
           ? _value.complete
           : complete // ignore: cast_nullable_to_non_nullable
               as bool,
+      dateCreated: dateCreated == freezed
+          ? _value.dateCreated
+          : dateCreated // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
@@ -95,7 +109,11 @@ abstract class _$TripCopyWith<$Res> implements $TripCopyWith<$Res> {
       __$TripCopyWithImpl<$Res>;
   @override
   $Res call(
-      {UniqueId id, TripName name, TripDescription description, bool complete});
+      {UniqueId id,
+      TripName name,
+      TripDescription description,
+      bool complete,
+      DateTime dateCreated});
 }
 
 /// @nodoc
@@ -113,6 +131,7 @@ class __$TripCopyWithImpl<$Res> extends _$TripCopyWithImpl<$Res>
     Object? name = freezed,
     Object? description = freezed,
     Object? complete = freezed,
+    Object? dateCreated = freezed,
   }) {
     return _then(_Trip(
       id: id == freezed
@@ -131,6 +150,10 @@ class __$TripCopyWithImpl<$Res> extends _$TripCopyWithImpl<$Res>
           ? _value.complete
           : complete // ignore: cast_nullable_to_non_nullable
               as bool,
+      dateCreated: dateCreated == freezed
+          ? _value.dateCreated
+          : dateCreated // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
@@ -142,7 +165,8 @@ class _$_Trip extends _Trip {
       {required this.id,
       required this.name,
       required this.description,
-      this.complete = false})
+      this.complete = false,
+      required this.dateCreated})
       : super._();
 
   @override
@@ -154,10 +178,13 @@ class _$_Trip extends _Trip {
   @JsonKey()
   @override
   final bool complete;
+  @override // DateTime? startDate,
+// DateTime? endDate,
+  final DateTime dateCreated;
 
   @override
   String toString() {
-    return 'Trip(id: $id, name: $name, description: $description, complete: $complete)';
+    return 'Trip(id: $id, name: $name, description: $description, complete: $complete, dateCreated: $dateCreated)';
   }
 
   @override
@@ -169,7 +196,9 @@ class _$_Trip extends _Trip {
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality()
                 .equals(other.description, description) &&
-            const DeepCollectionEquality().equals(other.complete, complete));
+            const DeepCollectionEquality().equals(other.complete, complete) &&
+            const DeepCollectionEquality()
+                .equals(other.dateCreated, dateCreated));
   }
 
   @override
@@ -178,7 +207,8 @@ class _$_Trip extends _Trip {
       const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(description),
-      const DeepCollectionEquality().hash(complete));
+      const DeepCollectionEquality().hash(complete),
+      const DeepCollectionEquality().hash(dateCreated));
 
   @JsonKey(ignore: true)
   @override
@@ -191,7 +221,8 @@ abstract class _Trip extends Trip {
       {required UniqueId id,
       required TripName name,
       required TripDescription description,
-      bool complete}) = _$_Trip;
+      bool complete,
+      required DateTime dateCreated}) = _$_Trip;
   const _Trip._() : super._();
 
   @override
@@ -202,6 +233,9 @@ abstract class _Trip extends Trip {
   TripDescription get description;
   @override
   bool get complete;
+  @override // DateTime? startDate,
+// DateTime? endDate,
+  DateTime get dateCreated;
   @override
   @JsonKey(ignore: true)
   _$TripCopyWith<_Trip> get copyWith => throw _privateConstructorUsedError;

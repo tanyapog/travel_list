@@ -31,7 +31,7 @@ Future<void> main() async {
     'name': name,
     'description' : description,
     'complete' : isComplete,
-    'serverTimeStamp' : FieldValue.serverTimestamp(),
+    'dateCreating' : DateTime.now(),
   });
 
   // final tripWatcherBloc = MockTripWatcherBloc();

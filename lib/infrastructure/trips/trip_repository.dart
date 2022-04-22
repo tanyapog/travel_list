@@ -61,7 +61,7 @@ class TripRepository implements ITripRepository {
   Stream<Either<TripFailure, List<Trip>>> watchAll() async* {
     final tripCollection = getTripCollectionRef(await _firestore.userDocument());
     yield* tripCollection
-      .orderBy('serverTimeStamp', descending: true)
+      .orderBy('dateCreated', descending: true)
       .snapshots() // it's optimized and cheaper than .getDocuments which always loads all the documents
       .map((snapshot) => right<TripFailure, List<Trip>>(
         snapshot.docs.map((doc) =>
@@ -73,7 +73,7 @@ class TripRepository implements ITripRepository {
   Stream<Either<TripFailure, List<Trip>>> watchUncompleted() async* {
     final tripCollection = getTripCollectionRef(await _firestore.userDocument());
     yield* tripCollection
-      .orderBy('serverTimeStamp', descending: true)
+      .orderBy('dateCreated', descending: true)
       .snapshots() // it's optimized and cheaper than .getDocuments
       .map((snapshot) =>
         snapshot.docs.map((doc) =>
