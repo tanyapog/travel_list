@@ -17,8 +17,8 @@ class TripDto with _$TripDto {
     required String name,
     required String description,
     required bool complete,
-    // DateTime? startDate,
-    // DateTime? endDate,
+    DateTime? dateStart,
+    DateTime? dateEnd,
     required DateTime dateCreated,
   }) = _TripDto;
 
@@ -27,8 +27,8 @@ class TripDto with _$TripDto {
     name: trip.name.getOrCrash(),
     description: trip.description.getOrCrash(),
     complete: trip.complete,
-    // startDate: trip.startDate,
-    // endDate: trip.endDate,
+    dateStart: trip.dateStart,
+    dateEnd: trip.dateEnd,
     dateCreated: trip.dateCreated,
   );
 
@@ -37,8 +37,8 @@ class TripDto with _$TripDto {
     name: TripName(name),
     description: TripDescription(description),
     complete: complete,
-    // startDate: startDate,
-    // endDate: endDate,
+    dateStart: dateStart,
+    dateEnd: dateEnd,
     dateCreated: dateCreated,
   );
 

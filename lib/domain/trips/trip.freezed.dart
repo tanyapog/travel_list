@@ -22,12 +22,16 @@ class _$TripTearOff {
       required TripName name,
       required TripDescription description,
       bool complete = false,
+      DateTime? dateStart,
+      DateTime? dateEnd,
       required DateTime dateCreated}) {
     return _Trip(
       id: id,
       name: name,
       description: description,
       complete: complete,
+      dateStart: dateStart,
+      dateEnd: dateEnd,
       dateCreated: dateCreated,
     );
   }
@@ -41,9 +45,9 @@ mixin _$Trip {
   UniqueId get id => throw _privateConstructorUsedError;
   TripName get name => throw _privateConstructorUsedError;
   TripDescription get description => throw _privateConstructorUsedError;
-  bool get complete =>
-      throw _privateConstructorUsedError; // DateTime? startDate,
-// DateTime? endDate,
+  bool get complete => throw _privateConstructorUsedError;
+  DateTime? get dateStart => throw _privateConstructorUsedError;
+  DateTime? get dateEnd => throw _privateConstructorUsedError;
   DateTime get dateCreated => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -59,6 +63,8 @@ abstract class $TripCopyWith<$Res> {
       TripName name,
       TripDescription description,
       bool complete,
+      DateTime? dateStart,
+      DateTime? dateEnd,
       DateTime dateCreated});
 }
 
@@ -76,6 +82,8 @@ class _$TripCopyWithImpl<$Res> implements $TripCopyWith<$Res> {
     Object? name = freezed,
     Object? description = freezed,
     Object? complete = freezed,
+    Object? dateStart = freezed,
+    Object? dateEnd = freezed,
     Object? dateCreated = freezed,
   }) {
     return _then(_value.copyWith(
@@ -95,6 +103,14 @@ class _$TripCopyWithImpl<$Res> implements $TripCopyWith<$Res> {
           ? _value.complete
           : complete // ignore: cast_nullable_to_non_nullable
               as bool,
+      dateStart: dateStart == freezed
+          ? _value.dateStart
+          : dateStart // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      dateEnd: dateEnd == freezed
+          ? _value.dateEnd
+          : dateEnd // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
       dateCreated: dateCreated == freezed
           ? _value.dateCreated
           : dateCreated // ignore: cast_nullable_to_non_nullable
@@ -113,6 +129,8 @@ abstract class _$TripCopyWith<$Res> implements $TripCopyWith<$Res> {
       TripName name,
       TripDescription description,
       bool complete,
+      DateTime? dateStart,
+      DateTime? dateEnd,
       DateTime dateCreated});
 }
 
@@ -131,6 +149,8 @@ class __$TripCopyWithImpl<$Res> extends _$TripCopyWithImpl<$Res>
     Object? name = freezed,
     Object? description = freezed,
     Object? complete = freezed,
+    Object? dateStart = freezed,
+    Object? dateEnd = freezed,
     Object? dateCreated = freezed,
   }) {
     return _then(_Trip(
@@ -150,6 +170,14 @@ class __$TripCopyWithImpl<$Res> extends _$TripCopyWithImpl<$Res>
           ? _value.complete
           : complete // ignore: cast_nullable_to_non_nullable
               as bool,
+      dateStart: dateStart == freezed
+          ? _value.dateStart
+          : dateStart // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      dateEnd: dateEnd == freezed
+          ? _value.dateEnd
+          : dateEnd // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
       dateCreated: dateCreated == freezed
           ? _value.dateCreated
           : dateCreated // ignore: cast_nullable_to_non_nullable
@@ -166,6 +194,8 @@ class _$_Trip extends _Trip {
       required this.name,
       required this.description,
       this.complete = false,
+      this.dateStart,
+      this.dateEnd,
       required this.dateCreated})
       : super._();
 
@@ -178,13 +208,16 @@ class _$_Trip extends _Trip {
   @JsonKey()
   @override
   final bool complete;
-  @override // DateTime? startDate,
-// DateTime? endDate,
+  @override
+  final DateTime? dateStart;
+  @override
+  final DateTime? dateEnd;
+  @override
   final DateTime dateCreated;
 
   @override
   String toString() {
-    return 'Trip(id: $id, name: $name, description: $description, complete: $complete, dateCreated: $dateCreated)';
+    return 'Trip(id: $id, name: $name, description: $description, complete: $complete, dateStart: $dateStart, dateEnd: $dateEnd, dateCreated: $dateCreated)';
   }
 
   @override
@@ -197,6 +230,8 @@ class _$_Trip extends _Trip {
             const DeepCollectionEquality()
                 .equals(other.description, description) &&
             const DeepCollectionEquality().equals(other.complete, complete) &&
+            const DeepCollectionEquality().equals(other.dateStart, dateStart) &&
+            const DeepCollectionEquality().equals(other.dateEnd, dateEnd) &&
             const DeepCollectionEquality()
                 .equals(other.dateCreated, dateCreated));
   }
@@ -208,6 +243,8 @@ class _$_Trip extends _Trip {
       const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(description),
       const DeepCollectionEquality().hash(complete),
+      const DeepCollectionEquality().hash(dateStart),
+      const DeepCollectionEquality().hash(dateEnd),
       const DeepCollectionEquality().hash(dateCreated));
 
   @JsonKey(ignore: true)
@@ -222,6 +259,8 @@ abstract class _Trip extends Trip {
       required TripName name,
       required TripDescription description,
       bool complete,
+      DateTime? dateStart,
+      DateTime? dateEnd,
       required DateTime dateCreated}) = _$_Trip;
   const _Trip._() : super._();
 
@@ -233,8 +272,11 @@ abstract class _Trip extends Trip {
   TripDescription get description;
   @override
   bool get complete;
-  @override // DateTime? startDate,
-// DateTime? endDate,
+  @override
+  DateTime? get dateStart;
+  @override
+  DateTime? get dateEnd;
+  @override
   DateTime get dateCreated;
   @override
   @JsonKey(ignore: true)

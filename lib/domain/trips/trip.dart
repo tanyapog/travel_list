@@ -15,8 +15,8 @@ class Trip with _$Trip {
     required TripName name,
     required TripDescription description,
     @Default(false) bool complete,
-    // DateTime? startDate,
-    // DateTime? endDate,
+    DateTime? dateStart,
+    DateTime? dateEnd,
     required  DateTime dateCreated,
   }) = _Trip;
 
