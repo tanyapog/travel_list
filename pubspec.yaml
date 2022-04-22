@@ -10,13 +10,13 @@ dependencies:
   another_flushbar: ^1.10.28
   auto_route: ^3.2.4
   bloc_concurrency: ^0.2.0
-  cloud_firestore: ^3.1.12
+  cloud_firestore: ^3.1.13
   cool_stepper: ^1.2.1
   dartz: ^0.10.1
   fake_cloud_firestore: ^1.2.2
-  firebase_auth: ^3.3.14
+  firebase_auth: ^3.3.15
   firebase_auth_mocks: ^0.8.4
-  firebase_core: ^1.14.1
+  firebase_core: ^1.15.0
   flutter:
     sdk: flutter
   flutter_bloc: ^8.0.1
