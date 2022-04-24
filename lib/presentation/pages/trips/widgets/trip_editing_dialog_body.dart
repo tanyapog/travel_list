@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:travel_list/application/trips/trip_form/trip_form_bloc.dart';
+import 'package:travel_list/global/tl_date_formats.dart';
 import 'package:travel_list/presentation/core/custom_widgets/custom_buttons.dart';
 import 'package:travel_list/presentation/core/custom_widgets/custom_flushbar_helper.dart';
 import 'package:travel_list/presentation/core/custom_widgets/dialog_box_decoration.dart';
@@ -17,6 +18,8 @@ class TripEditingDialogBody extends HookWidget {
   Widget build(BuildContext context) {
     final nameController = useTextEditingController();
     final descriptionController = useTextEditingController();
+    final dateStartController = useTextEditingController();
+    final dateEndController = useTextEditingController();
 
     return MultiBlocListener(
       listeners: [
@@ -26,6 +29,14 @@ class TripEditingDialogBody extends HookWidget {
           listener: (context, state) {
             nameController.text = state.trip.name.getOrCrash();
             descriptionController.text = state.trip.description.getOrCrash();
+          },
+        ),
+        BlocListener<TripFormBloc, TripFormState> (
+          listener: (context, state) {
+            dateStartController.text = (state.trip.dateStart != null)
+              ? state.trip.dateStart!.fdMMMy() : '';
+            dateEndController.text = (state.trip.dateEnd != null)
+              ? state.trip.dateEnd!.fdMMMy() : '';
           },
         ),
         BlocListener<TripFormBloc, TripFormState> (
@@ -51,6 +62,8 @@ class TripEditingDialogBody extends HookWidget {
               TripFormBody(
                 nameController: nameController,
                 descriptionController: descriptionController,
+                dateStartController: dateStartController,
+                dateEndController: dateEndController,
               ),
               const SizedBox(height: 8),
               Row(

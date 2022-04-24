@@ -34,6 +34,14 @@ class TripFormBloc extends Bloc<TripFormEvent, TripFormState> {
             trip: state.trip.copyWith(description: TripDescription(event.descriptionStr)),
             saveFailureOrSuccessOption: none(),
           ),),
+        dateStartChanged: (event) =>
+          emit(state.copyWith(
+            trip: state.trip.copyWith(dateStart: event.dateStart),
+          ),),
+        dateEndChanged: (event) =>
+          emit(state.copyWith(
+            trip: state.trip.copyWith(dateEnd: event.dateEnd),
+          ),),
         completedPressed: (event) =>
           emit(state.copyWith(
             trip: state.trip.copyWith(complete: !state.trip.complete),
@@ -57,7 +65,7 @@ class TripFormBloc extends Bloc<TripFormEvent, TripFormState> {
             showErrorMessages: showErrorMessages,
             saveFailureOrSuccessOption: optionOf(failureOrSuccess),
           ),);
-       },
+        },
       ),
       transformer: sequential(),
     );

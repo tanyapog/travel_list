@@ -35,6 +35,18 @@ class _$TripFormEventTearOff {
     );
   }
 
+  _DateStartChanged dateStartChanged(DateTime dateStart) {
+    return _DateStartChanged(
+      dateStart,
+    );
+  }
+
+  _DateEndChanged dateEndChanged(DateTime dateEnd) {
+    return _DateEndChanged(
+      dateEnd,
+    );
+  }
+
   _CompletedPressed completedPressed() {
     return const _CompletedPressed();
   }
@@ -54,6 +66,8 @@ mixin _$TripFormEvent {
     required TResult Function(Option<Trip> initialTripOption) initialized,
     required TResult Function(String nameStr) nameChanged,
     required TResult Function(String descriptionStr) descriptionChanged,
+    required TResult Function(DateTime dateStart) dateStartChanged,
+    required TResult Function(DateTime dateEnd) dateEndChanged,
     required TResult Function() completedPressed,
     required TResult Function() saved,
   }) =>
@@ -63,6 +77,8 @@ mixin _$TripFormEvent {
     TResult Function(Option<Trip> initialTripOption)? initialized,
     TResult Function(String nameStr)? nameChanged,
     TResult Function(String descriptionStr)? descriptionChanged,
+    TResult Function(DateTime dateStart)? dateStartChanged,
+    TResult Function(DateTime dateEnd)? dateEndChanged,
     TResult Function()? completedPressed,
     TResult Function()? saved,
   }) =>
@@ -72,6 +88,8 @@ mixin _$TripFormEvent {
     TResult Function(Option<Trip> initialTripOption)? initialized,
     TResult Function(String nameStr)? nameChanged,
     TResult Function(String descriptionStr)? descriptionChanged,
+    TResult Function(DateTime dateStart)? dateStartChanged,
+    TResult Function(DateTime dateEnd)? dateEndChanged,
     TResult Function()? completedPressed,
     TResult Function()? saved,
     required TResult orElse(),
@@ -82,6 +100,8 @@ mixin _$TripFormEvent {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_NameChanged value) nameChanged,
     required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_DateStartChanged value) dateStartChanged,
+    required TResult Function(_DateEndChanged value) dateEndChanged,
     required TResult Function(_CompletedPressed value) completedPressed,
     required TResult Function(_Saved value) saved,
   }) =>
@@ -91,6 +111,8 @@ mixin _$TripFormEvent {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_DateStartChanged value)? dateStartChanged,
+    TResult Function(_DateEndChanged value)? dateEndChanged,
     TResult Function(_CompletedPressed value)? completedPressed,
     TResult Function(_Saved value)? saved,
   }) =>
@@ -100,6 +122,8 @@ mixin _$TripFormEvent {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_DateStartChanged value)? dateStartChanged,
+    TResult Function(_DateEndChanged value)? dateEndChanged,
     TResult Function(_CompletedPressed value)? completedPressed,
     TResult Function(_Saved value)? saved,
     required TResult orElse(),
@@ -192,6 +216,8 @@ class _$_Initialized implements _Initialized {
     required TResult Function(Option<Trip> initialTripOption) initialized,
     required TResult Function(String nameStr) nameChanged,
     required TResult Function(String descriptionStr) descriptionChanged,
+    required TResult Function(DateTime dateStart) dateStartChanged,
+    required TResult Function(DateTime dateEnd) dateEndChanged,
     required TResult Function() completedPressed,
     required TResult Function() saved,
   }) {
@@ -204,6 +230,8 @@ class _$_Initialized implements _Initialized {
     TResult Function(Option<Trip> initialTripOption)? initialized,
     TResult Function(String nameStr)? nameChanged,
     TResult Function(String descriptionStr)? descriptionChanged,
+    TResult Function(DateTime dateStart)? dateStartChanged,
+    TResult Function(DateTime dateEnd)? dateEndChanged,
     TResult Function()? completedPressed,
     TResult Function()? saved,
   }) {
@@ -216,6 +244,8 @@ class _$_Initialized implements _Initialized {
     TResult Function(Option<Trip> initialTripOption)? initialized,
     TResult Function(String nameStr)? nameChanged,
     TResult Function(String descriptionStr)? descriptionChanged,
+    TResult Function(DateTime dateStart)? dateStartChanged,
+    TResult Function(DateTime dateEnd)? dateEndChanged,
     TResult Function()? completedPressed,
     TResult Function()? saved,
     required TResult orElse(),
@@ -232,6 +262,8 @@ class _$_Initialized implements _Initialized {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_NameChanged value) nameChanged,
     required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_DateStartChanged value) dateStartChanged,
+    required TResult Function(_DateEndChanged value) dateEndChanged,
     required TResult Function(_CompletedPressed value) completedPressed,
     required TResult Function(_Saved value) saved,
   }) {
@@ -244,6 +276,8 @@ class _$_Initialized implements _Initialized {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_DateStartChanged value)? dateStartChanged,
+    TResult Function(_DateEndChanged value)? dateEndChanged,
     TResult Function(_CompletedPressed value)? completedPressed,
     TResult Function(_Saved value)? saved,
   }) {
@@ -256,6 +290,8 @@ class _$_Initialized implements _Initialized {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_DateStartChanged value)? dateStartChanged,
+    TResult Function(_DateEndChanged value)? dateEndChanged,
     TResult Function(_CompletedPressed value)? completedPressed,
     TResult Function(_Saved value)? saved,
     required TResult orElse(),
@@ -343,6 +379,8 @@ class _$_NameChanged implements _NameChanged {
     required TResult Function(Option<Trip> initialTripOption) initialized,
     required TResult Function(String nameStr) nameChanged,
     required TResult Function(String descriptionStr) descriptionChanged,
+    required TResult Function(DateTime dateStart) dateStartChanged,
+    required TResult Function(DateTime dateEnd) dateEndChanged,
     required TResult Function() completedPressed,
     required TResult Function() saved,
   }) {
@@ -355,6 +393,8 @@ class _$_NameChanged implements _NameChanged {
     TResult Function(Option<Trip> initialTripOption)? initialized,
     TResult Function(String nameStr)? nameChanged,
     TResult Function(String descriptionStr)? descriptionChanged,
+    TResult Function(DateTime dateStart)? dateStartChanged,
+    TResult Function(DateTime dateEnd)? dateEndChanged,
     TResult Function()? completedPressed,
     TResult Function()? saved,
   }) {
@@ -367,6 +407,8 @@ class _$_NameChanged implements _NameChanged {
     TResult Function(Option<Trip> initialTripOption)? initialized,
     TResult Function(String nameStr)? nameChanged,
     TResult Function(String descriptionStr)? descriptionChanged,
+    TResult Function(DateTime dateStart)? dateStartChanged,
+    TResult Function(DateTime dateEnd)? dateEndChanged,
     TResult Function()? completedPressed,
     TResult Function()? saved,
     required TResult orElse(),
@@ -383,6 +425,8 @@ class _$_NameChanged implements _NameChanged {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_NameChanged value) nameChanged,
     required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_DateStartChanged value) dateStartChanged,
+    required TResult Function(_DateEndChanged value) dateEndChanged,
     required TResult Function(_CompletedPressed value) completedPressed,
     required TResult Function(_Saved value) saved,
   }) {
@@ -395,6 +439,8 @@ class _$_NameChanged implements _NameChanged {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_DateStartChanged value)? dateStartChanged,
+    TResult Function(_DateEndChanged value)? dateEndChanged,
     TResult Function(_CompletedPressed value)? completedPressed,
     TResult Function(_Saved value)? saved,
   }) {
@@ -407,6 +453,8 @@ class _$_NameChanged implements _NameChanged {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_DateStartChanged value)? dateStartChanged,
+    TResult Function(_DateEndChanged value)? dateEndChanged,
     TResult Function(_CompletedPressed value)? completedPressed,
     TResult Function(_Saved value)? saved,
     required TResult orElse(),
@@ -496,6 +544,8 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     required TResult Function(Option<Trip> initialTripOption) initialized,
     required TResult Function(String nameStr) nameChanged,
     required TResult Function(String descriptionStr) descriptionChanged,
+    required TResult Function(DateTime dateStart) dateStartChanged,
+    required TResult Function(DateTime dateEnd) dateEndChanged,
     required TResult Function() completedPressed,
     required TResult Function() saved,
   }) {
@@ -508,6 +558,8 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     TResult Function(Option<Trip> initialTripOption)? initialized,
     TResult Function(String nameStr)? nameChanged,
     TResult Function(String descriptionStr)? descriptionChanged,
+    TResult Function(DateTime dateStart)? dateStartChanged,
+    TResult Function(DateTime dateEnd)? dateEndChanged,
     TResult Function()? completedPressed,
     TResult Function()? saved,
   }) {
@@ -520,6 +572,8 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     TResult Function(Option<Trip> initialTripOption)? initialized,
     TResult Function(String nameStr)? nameChanged,
     TResult Function(String descriptionStr)? descriptionChanged,
+    TResult Function(DateTime dateStart)? dateStartChanged,
+    TResult Function(DateTime dateEnd)? dateEndChanged,
     TResult Function()? completedPressed,
     TResult Function()? saved,
     required TResult orElse(),
@@ -536,6 +590,8 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_NameChanged value) nameChanged,
     required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_DateStartChanged value) dateStartChanged,
+    required TResult Function(_DateEndChanged value) dateEndChanged,
     required TResult Function(_CompletedPressed value) completedPressed,
     required TResult Function(_Saved value) saved,
   }) {
@@ -548,6 +604,8 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_DateStartChanged value)? dateStartChanged,
+    TResult Function(_DateEndChanged value)? dateEndChanged,
     TResult Function(_CompletedPressed value)? completedPressed,
     TResult Function(_Saved value)? saved,
   }) {
@@ -560,6 +618,8 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_DateStartChanged value)? dateStartChanged,
+    TResult Function(_DateEndChanged value)? dateEndChanged,
     TResult Function(_CompletedPressed value)? completedPressed,
     TResult Function(_Saved value)? saved,
     required TResult orElse(),
@@ -578,6 +638,334 @@ abstract class _DescriptionChanged implements TripFormEvent {
   String get descriptionStr;
   @JsonKey(ignore: true)
   _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$DateStartChangedCopyWith<$Res> {
+  factory _$DateStartChangedCopyWith(
+          _DateStartChanged value, $Res Function(_DateStartChanged) then) =
+      __$DateStartChangedCopyWithImpl<$Res>;
+  $Res call({DateTime dateStart});
+}
+
+/// @nodoc
+class __$DateStartChangedCopyWithImpl<$Res>
+    extends _$TripFormEventCopyWithImpl<$Res>
+    implements _$DateStartChangedCopyWith<$Res> {
+  __$DateStartChangedCopyWithImpl(
+      _DateStartChanged _value, $Res Function(_DateStartChanged) _then)
+      : super(_value, (v) => _then(v as _DateStartChanged));
+
+  @override
+  _DateStartChanged get _value => super._value as _DateStartChanged;
+
+  @override
+  $Res call({
+    Object? dateStart = freezed,
+  }) {
+    return _then(_DateStartChanged(
+      dateStart == freezed
+          ? _value.dateStart
+          : dateStart // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_DateStartChanged implements _DateStartChanged {
+  const _$_DateStartChanged(this.dateStart);
+
+  @override
+  final DateTime dateStart;
+
+  @override
+  String toString() {
+    return 'TripFormEvent.dateStartChanged(dateStart: $dateStart)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _DateStartChanged &&
+            const DeepCollectionEquality().equals(other.dateStart, dateStart));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(dateStart));
+
+  @JsonKey(ignore: true)
+  @override
+  _$DateStartChangedCopyWith<_DateStartChanged> get copyWith =>
+      __$DateStartChangedCopyWithImpl<_DateStartChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Trip> initialTripOption) initialized,
+    required TResult Function(String nameStr) nameChanged,
+    required TResult Function(String descriptionStr) descriptionChanged,
+    required TResult Function(DateTime dateStart) dateStartChanged,
+    required TResult Function(DateTime dateEnd) dateEndChanged,
+    required TResult Function() completedPressed,
+    required TResult Function() saved,
+  }) {
+    return dateStartChanged(dateStart);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<Trip> initialTripOption)? initialized,
+    TResult Function(String nameStr)? nameChanged,
+    TResult Function(String descriptionStr)? descriptionChanged,
+    TResult Function(DateTime dateStart)? dateStartChanged,
+    TResult Function(DateTime dateEnd)? dateEndChanged,
+    TResult Function()? completedPressed,
+    TResult Function()? saved,
+  }) {
+    return dateStartChanged?.call(dateStart);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Trip> initialTripOption)? initialized,
+    TResult Function(String nameStr)? nameChanged,
+    TResult Function(String descriptionStr)? descriptionChanged,
+    TResult Function(DateTime dateStart)? dateStartChanged,
+    TResult Function(DateTime dateEnd)? dateEndChanged,
+    TResult Function()? completedPressed,
+    TResult Function()? saved,
+    required TResult orElse(),
+  }) {
+    if (dateStartChanged != null) {
+      return dateStartChanged(dateStart);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_DateStartChanged value) dateStartChanged,
+    required TResult Function(_DateEndChanged value) dateEndChanged,
+    required TResult Function(_CompletedPressed value) completedPressed,
+    required TResult Function(_Saved value) saved,
+  }) {
+    return dateStartChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_DateStartChanged value)? dateStartChanged,
+    TResult Function(_DateEndChanged value)? dateEndChanged,
+    TResult Function(_CompletedPressed value)? completedPressed,
+    TResult Function(_Saved value)? saved,
+  }) {
+    return dateStartChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_DateStartChanged value)? dateStartChanged,
+    TResult Function(_DateEndChanged value)? dateEndChanged,
+    TResult Function(_CompletedPressed value)? completedPressed,
+    TResult Function(_Saved value)? saved,
+    required TResult orElse(),
+  }) {
+    if (dateStartChanged != null) {
+      return dateStartChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DateStartChanged implements TripFormEvent {
+  const factory _DateStartChanged(DateTime dateStart) = _$_DateStartChanged;
+
+  DateTime get dateStart;
+  @JsonKey(ignore: true)
+  _$DateStartChangedCopyWith<_DateStartChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$DateEndChangedCopyWith<$Res> {
+  factory _$DateEndChangedCopyWith(
+          _DateEndChanged value, $Res Function(_DateEndChanged) then) =
+      __$DateEndChangedCopyWithImpl<$Res>;
+  $Res call({DateTime dateEnd});
+}
+
+/// @nodoc
+class __$DateEndChangedCopyWithImpl<$Res>
+    extends _$TripFormEventCopyWithImpl<$Res>
+    implements _$DateEndChangedCopyWith<$Res> {
+  __$DateEndChangedCopyWithImpl(
+      _DateEndChanged _value, $Res Function(_DateEndChanged) _then)
+      : super(_value, (v) => _then(v as _DateEndChanged));
+
+  @override
+  _DateEndChanged get _value => super._value as _DateEndChanged;
+
+  @override
+  $Res call({
+    Object? dateEnd = freezed,
+  }) {
+    return _then(_DateEndChanged(
+      dateEnd == freezed
+          ? _value.dateEnd
+          : dateEnd // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_DateEndChanged implements _DateEndChanged {
+  const _$_DateEndChanged(this.dateEnd);
+
+  @override
+  final DateTime dateEnd;
+
+  @override
+  String toString() {
+    return 'TripFormEvent.dateEndChanged(dateEnd: $dateEnd)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _DateEndChanged &&
+            const DeepCollectionEquality().equals(other.dateEnd, dateEnd));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(dateEnd));
+
+  @JsonKey(ignore: true)
+  @override
+  _$DateEndChangedCopyWith<_DateEndChanged> get copyWith =>
+      __$DateEndChangedCopyWithImpl<_DateEndChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Trip> initialTripOption) initialized,
+    required TResult Function(String nameStr) nameChanged,
+    required TResult Function(String descriptionStr) descriptionChanged,
+    required TResult Function(DateTime dateStart) dateStartChanged,
+    required TResult Function(DateTime dateEnd) dateEndChanged,
+    required TResult Function() completedPressed,
+    required TResult Function() saved,
+  }) {
+    return dateEndChanged(dateEnd);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<Trip> initialTripOption)? initialized,
+    TResult Function(String nameStr)? nameChanged,
+    TResult Function(String descriptionStr)? descriptionChanged,
+    TResult Function(DateTime dateStart)? dateStartChanged,
+    TResult Function(DateTime dateEnd)? dateEndChanged,
+    TResult Function()? completedPressed,
+    TResult Function()? saved,
+  }) {
+    return dateEndChanged?.call(dateEnd);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Trip> initialTripOption)? initialized,
+    TResult Function(String nameStr)? nameChanged,
+    TResult Function(String descriptionStr)? descriptionChanged,
+    TResult Function(DateTime dateStart)? dateStartChanged,
+    TResult Function(DateTime dateEnd)? dateEndChanged,
+    TResult Function()? completedPressed,
+    TResult Function()? saved,
+    required TResult orElse(),
+  }) {
+    if (dateEndChanged != null) {
+      return dateEndChanged(dateEnd);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_DateStartChanged value) dateStartChanged,
+    required TResult Function(_DateEndChanged value) dateEndChanged,
+    required TResult Function(_CompletedPressed value) completedPressed,
+    required TResult Function(_Saved value) saved,
+  }) {
+    return dateEndChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_DateStartChanged value)? dateStartChanged,
+    TResult Function(_DateEndChanged value)? dateEndChanged,
+    TResult Function(_CompletedPressed value)? completedPressed,
+    TResult Function(_Saved value)? saved,
+  }) {
+    return dateEndChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_DateStartChanged value)? dateStartChanged,
+    TResult Function(_DateEndChanged value)? dateEndChanged,
+    TResult Function(_CompletedPressed value)? completedPressed,
+    TResult Function(_Saved value)? saved,
+    required TResult orElse(),
+  }) {
+    if (dateEndChanged != null) {
+      return dateEndChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DateEndChanged implements TripFormEvent {
+  const factory _DateEndChanged(DateTime dateEnd) = _$_DateEndChanged;
+
+  DateTime get dateEnd;
+  @JsonKey(ignore: true)
+  _$DateEndChangedCopyWith<_DateEndChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -625,6 +1013,8 @@ class _$_CompletedPressed implements _CompletedPressed {
     required TResult Function(Option<Trip> initialTripOption) initialized,
     required TResult Function(String nameStr) nameChanged,
     required TResult Function(String descriptionStr) descriptionChanged,
+    required TResult Function(DateTime dateStart) dateStartChanged,
+    required TResult Function(DateTime dateEnd) dateEndChanged,
     required TResult Function() completedPressed,
     required TResult Function() saved,
   }) {
@@ -637,6 +1027,8 @@ class _$_CompletedPressed implements _CompletedPressed {
     TResult Function(Option<Trip> initialTripOption)? initialized,
     TResult Function(String nameStr)? nameChanged,
     TResult Function(String descriptionStr)? descriptionChanged,
+    TResult Function(DateTime dateStart)? dateStartChanged,
+    TResult Function(DateTime dateEnd)? dateEndChanged,
     TResult Function()? completedPressed,
     TResult Function()? saved,
   }) {
@@ -649,6 +1041,8 @@ class _$_CompletedPressed implements _CompletedPressed {
     TResult Function(Option<Trip> initialTripOption)? initialized,
     TResult Function(String nameStr)? nameChanged,
     TResult Function(String descriptionStr)? descriptionChanged,
+    TResult Function(DateTime dateStart)? dateStartChanged,
+    TResult Function(DateTime dateEnd)? dateEndChanged,
     TResult Function()? completedPressed,
     TResult Function()? saved,
     required TResult orElse(),
@@ -665,6 +1059,8 @@ class _$_CompletedPressed implements _CompletedPressed {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_NameChanged value) nameChanged,
     required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_DateStartChanged value) dateStartChanged,
+    required TResult Function(_DateEndChanged value) dateEndChanged,
     required TResult Function(_CompletedPressed value) completedPressed,
     required TResult Function(_Saved value) saved,
   }) {
@@ -677,6 +1073,8 @@ class _$_CompletedPressed implements _CompletedPressed {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_DateStartChanged value)? dateStartChanged,
+    TResult Function(_DateEndChanged value)? dateEndChanged,
     TResult Function(_CompletedPressed value)? completedPressed,
     TResult Function(_Saved value)? saved,
   }) {
@@ -689,6 +1087,8 @@ class _$_CompletedPressed implements _CompletedPressed {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_DateStartChanged value)? dateStartChanged,
+    TResult Function(_DateEndChanged value)? dateEndChanged,
     TResult Function(_CompletedPressed value)? completedPressed,
     TResult Function(_Saved value)? saved,
     required TResult orElse(),
@@ -745,6 +1145,8 @@ class _$_Saved implements _Saved {
     required TResult Function(Option<Trip> initialTripOption) initialized,
     required TResult Function(String nameStr) nameChanged,
     required TResult Function(String descriptionStr) descriptionChanged,
+    required TResult Function(DateTime dateStart) dateStartChanged,
+    required TResult Function(DateTime dateEnd) dateEndChanged,
     required TResult Function() completedPressed,
     required TResult Function() saved,
   }) {
@@ -757,6 +1159,8 @@ class _$_Saved implements _Saved {
     TResult Function(Option<Trip> initialTripOption)? initialized,
     TResult Function(String nameStr)? nameChanged,
     TResult Function(String descriptionStr)? descriptionChanged,
+    TResult Function(DateTime dateStart)? dateStartChanged,
+    TResult Function(DateTime dateEnd)? dateEndChanged,
     TResult Function()? completedPressed,
     TResult Function()? saved,
   }) {
@@ -769,6 +1173,8 @@ class _$_Saved implements _Saved {
     TResult Function(Option<Trip> initialTripOption)? initialized,
     TResult Function(String nameStr)? nameChanged,
     TResult Function(String descriptionStr)? descriptionChanged,
+    TResult Function(DateTime dateStart)? dateStartChanged,
+    TResult Function(DateTime dateEnd)? dateEndChanged,
     TResult Function()? completedPressed,
     TResult Function()? saved,
     required TResult orElse(),
@@ -785,6 +1191,8 @@ class _$_Saved implements _Saved {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_NameChanged value) nameChanged,
     required TResult Function(_DescriptionChanged value) descriptionChanged,
+    required TResult Function(_DateStartChanged value) dateStartChanged,
+    required TResult Function(_DateEndChanged value) dateEndChanged,
     required TResult Function(_CompletedPressed value) completedPressed,
     required TResult Function(_Saved value) saved,
   }) {
@@ -797,6 +1205,8 @@ class _$_Saved implements _Saved {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_DateStartChanged value)? dateStartChanged,
+    TResult Function(_DateEndChanged value)? dateEndChanged,
     TResult Function(_CompletedPressed value)? completedPressed,
     TResult Function(_Saved value)? saved,
   }) {
@@ -809,6 +1219,8 @@ class _$_Saved implements _Saved {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_DescriptionChanged value)? descriptionChanged,
+    TResult Function(_DateStartChanged value)? dateStartChanged,
+    TResult Function(_DateEndChanged value)? dateEndChanged,
     TResult Function(_CompletedPressed value)? completedPressed,
     TResult Function(_Saved value)? saved,
     required TResult orElse(),
@@ -833,12 +1245,14 @@ class _$TripFormStateTearOff {
       required bool showErrorMessages,
       required bool isEditing,
       required bool isSaving,
+      DateTime? minDateEnd,
       required Option<Either<TripFailure, Unit>> saveFailureOrSuccessOption}) {
     return _TripFormState(
       trip: trip,
       showErrorMessages: showErrorMessages,
       isEditing: isEditing,
       isSaving: isSaving,
+      minDateEnd: minDateEnd,
       saveFailureOrSuccessOption: saveFailureOrSuccessOption,
     );
   }
@@ -853,6 +1267,7 @@ mixin _$TripFormState {
   bool get showErrorMessages => throw _privateConstructorUsedError;
   bool get isEditing => throw _privateConstructorUsedError;
   bool get isSaving => throw _privateConstructorUsedError;
+  DateTime? get minDateEnd => throw _privateConstructorUsedError;
   Option<Either<TripFailure, Unit>> get saveFailureOrSuccessOption =>
       throw _privateConstructorUsedError;
 
@@ -871,6 +1286,7 @@ abstract class $TripFormStateCopyWith<$Res> {
       bool showErrorMessages,
       bool isEditing,
       bool isSaving,
+      DateTime? minDateEnd,
       Option<Either<TripFailure, Unit>> saveFailureOrSuccessOption});
 
   $TripCopyWith<$Res> get trip;
@@ -891,6 +1307,7 @@ class _$TripFormStateCopyWithImpl<$Res>
     Object? showErrorMessages = freezed,
     Object? isEditing = freezed,
     Object? isSaving = freezed,
+    Object? minDateEnd = freezed,
     Object? saveFailureOrSuccessOption = freezed,
   }) {
     return _then(_value.copyWith(
@@ -910,6 +1327,10 @@ class _$TripFormStateCopyWithImpl<$Res>
           ? _value.isSaving
           : isSaving // ignore: cast_nullable_to_non_nullable
               as bool,
+      minDateEnd: minDateEnd == freezed
+          ? _value.minDateEnd
+          : minDateEnd // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
       saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
           ? _value.saveFailureOrSuccessOption
           : saveFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
@@ -937,6 +1358,7 @@ abstract class _$TripFormStateCopyWith<$Res>
       bool showErrorMessages,
       bool isEditing,
       bool isSaving,
+      DateTime? minDateEnd,
       Option<Either<TripFailure, Unit>> saveFailureOrSuccessOption});
 
   @override
@@ -960,6 +1382,7 @@ class __$TripFormStateCopyWithImpl<$Res>
     Object? showErrorMessages = freezed,
     Object? isEditing = freezed,
     Object? isSaving = freezed,
+    Object? minDateEnd = freezed,
     Object? saveFailureOrSuccessOption = freezed,
   }) {
     return _then(_TripFormState(
@@ -979,6 +1402,10 @@ class __$TripFormStateCopyWithImpl<$Res>
           ? _value.isSaving
           : isSaving // ignore: cast_nullable_to_non_nullable
               as bool,
+      minDateEnd: minDateEnd == freezed
+          ? _value.minDateEnd
+          : minDateEnd // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
       saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
           ? _value.saveFailureOrSuccessOption
           : saveFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
@@ -995,6 +1422,7 @@ class _$_TripFormState implements _TripFormState {
       required this.showErrorMessages,
       required this.isEditing,
       required this.isSaving,
+      this.minDateEnd,
       required this.saveFailureOrSuccessOption});
 
   @override
@@ -1006,11 +1434,13 @@ class _$_TripFormState implements _TripFormState {
   @override
   final bool isSaving;
   @override
+  final DateTime? minDateEnd;
+  @override
   final Option<Either<TripFailure, Unit>> saveFailureOrSuccessOption;
 
   @override
   String toString() {
-    return 'TripFormState(trip: $trip, showErrorMessages: $showErrorMessages, isEditing: $isEditing, isSaving: $isSaving, saveFailureOrSuccessOption: $saveFailureOrSuccessOption)';
+    return 'TripFormState(trip: $trip, showErrorMessages: $showErrorMessages, isEditing: $isEditing, isSaving: $isSaving, minDateEnd: $minDateEnd, saveFailureOrSuccessOption: $saveFailureOrSuccessOption)';
   }
 
   @override
@@ -1023,6 +1453,8 @@ class _$_TripFormState implements _TripFormState {
                 .equals(other.showErrorMessages, showErrorMessages) &&
             const DeepCollectionEquality().equals(other.isEditing, isEditing) &&
             const DeepCollectionEquality().equals(other.isSaving, isSaving) &&
+            const DeepCollectionEquality()
+                .equals(other.minDateEnd, minDateEnd) &&
             const DeepCollectionEquality().equals(
                 other.saveFailureOrSuccessOption, saveFailureOrSuccessOption));
   }
@@ -1034,6 +1466,7 @@ class _$_TripFormState implements _TripFormState {
       const DeepCollectionEquality().hash(showErrorMessages),
       const DeepCollectionEquality().hash(isEditing),
       const DeepCollectionEquality().hash(isSaving),
+      const DeepCollectionEquality().hash(minDateEnd),
       const DeepCollectionEquality().hash(saveFailureOrSuccessOption));
 
   @JsonKey(ignore: true)
@@ -1048,6 +1481,7 @@ abstract class _TripFormState implements TripFormState {
       required bool showErrorMessages,
       required bool isEditing,
       required bool isSaving,
+      DateTime? minDateEnd,
       required Option<Either<TripFailure, Unit>>
           saveFailureOrSuccessOption}) = _$_TripFormState;
 
@@ -1059,6 +1493,8 @@ abstract class _TripFormState implements TripFormState {
   bool get isEditing;
   @override
   bool get isSaving;
+  @override
+  DateTime? get minDateEnd;
   @override
   Option<Either<TripFailure, Unit>> get saveFailureOrSuccessOption;
   @override
