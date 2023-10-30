@@ -22,10 +22,10 @@ class UncompletedSwitch extends HookWidget {
             duration: const Duration(milliseconds: 100),
             transitionBuilder: (child, animation) => ScaleTransition(
               scale: animation,
-              child: child,),
+              child: child),
             child: toggleState.value
             // without keys flutter thinks that icons are identical and animation doesn't work
-              ? const Icon(Icons.check_box_outline_blank, key: Key('outline'),)
+              ? const Icon(Icons.check_box_outline_blank, key: Key('outline'))
               : const Icon(Icons.indeterminate_check_box, key: Key('indeterminate')),
         ),
       ),

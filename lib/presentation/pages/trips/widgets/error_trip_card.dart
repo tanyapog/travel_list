@@ -13,7 +13,7 @@ class ErrorTripCard extends StatelessWidget {
       child: ListTileTheme(
         textColor: Colors.white70,
         child: ListTile(
-          title: const Text('Invalid trip, please contact support',),
+          title: const Text('Invalid trip, please contact support'),
           subtitle: Text(trip.failureOption.fold(() => '', (failure) => failure.toString())),
         ),
       ),

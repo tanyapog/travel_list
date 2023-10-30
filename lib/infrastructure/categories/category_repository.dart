@@ -29,9 +29,9 @@ class CategoryRepository implements ICategoryRepository {
       .snapshots()
       .map((snapshot) => CategoryResult.success(
         categories: snapshot.docs.map((doc) =>
-          doc.data().toDomain(),).toList(),),)
+          doc.data().toDomain()).toList()))
       .onErrorReturnWith((e, stackTrace) => CategoryResult.failure(
-        failure: CategoryFailure.fromError(e),),);
+        failure: CategoryFailure.fromError(e)));
   }
 
   @override

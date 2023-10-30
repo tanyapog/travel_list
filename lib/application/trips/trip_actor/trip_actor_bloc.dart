@@ -22,7 +22,7 @@ class TripActorBloc extends Bloc<TripActorEvent, TripActorState> {
         emit(possibleFailure.fold(
           (failure) => TripActorState.deleteFailure(failure),
           (_) => const TripActorState.deleteSuccess(),
-        ),);
+        ));
       },
       transformer: concurrent(),
     );

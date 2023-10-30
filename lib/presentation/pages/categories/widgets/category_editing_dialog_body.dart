@@ -33,7 +33,7 @@ class CategoryEditingDialogBody extends HookWidget {
             (state.categoryFailure != null)
               ? customErrorFlushbar(message: state.categoryFailure!.message).show(context)
               : AutoRouter.of(context).popUntil((route) =>
-                route.settings.name == CategoriesOverviewRoute.name,),
+                route.settings.name == CategoriesOverviewRoute.name),
         ),
       ],
       child: customDialog(

@@ -12,7 +12,7 @@ class CriticalFailureDisplay extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          const Icon(Icons.report_problem, size: 76.0, color: Colors.red,),
+          const Icon(Icons.report_problem, size: 76.0, color: Colors.red),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(

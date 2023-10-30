@@ -15,7 +15,7 @@ class GreyButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      style: TextButton.styleFrom(backgroundColor: Colors.blueGrey.shade50,),
+      style: TextButton.styleFrom(backgroundColor: Colors.blueGrey.shade50),
       onPressed: onPressed,
       child: Text(title),
     );
@@ -37,7 +37,7 @@ class AmberButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      style: TextButton.styleFrom(backgroundColor: Colors.amber,),
+      style: TextButton.styleFrom(backgroundColor: Colors.amber),
       onPressed: onPressed,
       child: Text(title),
     );

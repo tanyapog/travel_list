@@ -23,37 +23,37 @@ class TripFormBloc extends Bloc<TripFormEvent, TripFormState> {
           emit(event.initialTripOption.fold(
             () => state, // case of none we should not change current state
             (initialTrip) => state.copyWith(trip: initialTrip, isEditing: true),
-          ),),
+          )),
         nameChanged: (event) =>
           emit(state.copyWith(
             trip: state.trip.copyWith(name: TripName(event.nameStr)),
             saveFailureOrSuccessOption: none(),
-          ),),
+          )),
         descriptionChanged: (event) =>
           emit(state.copyWith(
             trip: state.trip.copyWith(description: TripDescription(event.descriptionStr)),
             saveFailureOrSuccessOption: none(),
-          ),),
+          )),
         dateStartChanged: (event) =>
           emit(state.copyWith(
             trip: state.trip.copyWith(dateStart: event.dateStart),
-          ),),
+          )),
         dateEndChanged: (event) =>
           emit(state.copyWith(
             trip: state.trip.copyWith(dateEnd: event.dateEnd),
-          ),),
+          )),
         completedPressed: (event) =>
           emit(state.copyWith(
             trip: state.trip.copyWith(complete: !state.trip.complete),
             saveFailureOrSuccessOption: none(),
-          ),),
+          )),
         saved: (event) async {
           Either<TripFailure, Unit>? failureOrSuccess;
           bool showErrorMessages = true;
           emit(state.copyWith(
             isSaving: true,
             saveFailureOrSuccessOption: none(),
-          ),);
+          ));
           if (state.trip.failureOption.isNone()) {
             showErrorMessages = false;
             failureOrSuccess = state.isEditing
@@ -64,7 +64,7 @@ class TripFormBloc extends Bloc<TripFormEvent, TripFormState> {
             isSaving: false,
             showErrorMessages: showErrorMessages,
             saveFailureOrSuccessOption: optionOf(failureOrSuccess),
-          ),);
+          ));
         },
       ),
       transformer: sequential(),

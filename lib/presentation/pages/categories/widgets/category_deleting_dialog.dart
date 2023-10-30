@@ -21,13 +21,13 @@ class CategoryDeletionDialog extends StatelessWidget {
           listener: (context, state) =>
             state.maybeMap(
               deleteFailure: (state) => customErrorFlushbar(
-                  message: state.categoryFailure.message,).show(context),
-              orElse: () => null,),
+                  message: state.categoryFailure.message).show(context),
+              orElse: () => null),
           child: Column(
             mainAxisSize: MainAxisSize.min, // To make the card compact
             children: <Widget>[
               const Text("Deleting a category",
-                style: TextStyle(fontWeight: FontWeight.bold),),
+                style: TextStyle(fontWeight: FontWeight.bold)),
               const SizedBox(height: 10),
               ListTile(
                 title: Text(category.name, key: const Key('categoryName')),
@@ -38,7 +38,7 @@ class CategoryDeletionDialog extends StatelessWidget {
                 children: [
                   GreyButton(
                     onPressed: () => Navigator.of(context).pop(),
-                    title: "CANCEL",),
+                    title: "CANCEL"),
                   const SizedBox(width: 10),
                   BlocBuilder<CategoryActorBloc, CategoryActorState>(
                     builder: (context, state) => AmberButton(
@@ -46,7 +46,7 @@ class CategoryDeletionDialog extends StatelessWidget {
                         context.read<CategoryActorBloc>().add(CategoryActorEvent.deleted(category));
                         Navigator.of(context).pop();
                       },
-                      title: "DELETE",),),
+                      title: "DELETE")),
                 ],
               ),
             ],

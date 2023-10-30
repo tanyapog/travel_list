@@ -29,7 +29,7 @@ class TripFormBody extends StatelessWidget {
           builder: (context, state) => state.isEditing
             ? const Padding(
               padding: EdgeInsets.only(bottom: 16.0),
-              child: Text("Edit a trip", style: TextStyle(fontWeight: FontWeight.bold),),
+              child: Text("Edit a trip", style: TextStyle(fontWeight: FontWeight.bold)),
             )
             : Container(),
         ),
@@ -46,7 +46,7 @@ class TripFormBody extends StatelessWidget {
             ? "Cannot be empty"
             : null,
         ),
-        const SizedBox(height: 8,),
+        const SizedBox(height: 8),
         TextFormField(
           controller: descriptionController,
           decoration: const InputDecoration(
@@ -62,11 +62,11 @@ class TripFormBody extends StatelessWidget {
             .state.trip.name.value.fold(
               (failure) => failure.maybeMap(
                 exceedingLength: (f) => 'Exceeding length, max: ${f.max}',
-                orElse: () => null,),
+                orElse: () => null),
               (r) => null,
           ),
         ),
-        const SizedBox(height: 8,),
+        const SizedBox(height: 8),
         TextFormField(
           controller: dateStartController,
           readOnly: true,
@@ -78,7 +78,7 @@ class TripFormBody extends StatelessWidget {
             onConfirm: (date) => context.read<TripFormBloc>()
               .add(TripFormEvent.dateStartChanged(date)),),
         ),
-        const SizedBox(height: 8,),
+        const SizedBox(height: 8),
         TextFormField(
           controller: dateEndController,
           readOnly: true,

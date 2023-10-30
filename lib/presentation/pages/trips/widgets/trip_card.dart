@@ -27,7 +27,7 @@ class TripCard extends StatelessWidget {
               onPressed: (context) => showDialog(
                 barrierDismissible: false,
                 context: context,
-                builder: (context) => TripDeletingDialog(trip: trip,),
+                builder: (context) => TripDeletingDialog(trip: trip),
               ),
             ),
           ],

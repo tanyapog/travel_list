@@ -63,7 +63,7 @@ class StringSingleLine extends ValueObject<String> {
   final Either<ValueFailure<String>, String> value;
 
   factory StringSingleLine(String input) =>
-    StringSingleLine._(validateSingleLine(input),);
+    StringSingleLine._(validateSingleLine(input));
 
   const StringSingleLine._(this.value);
 }

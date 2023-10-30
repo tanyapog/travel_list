@@ -19,9 +19,9 @@ class CategoryFormBloc extends Bloc<CategoryFormEvent, CategoryFormState> {
     on<CategoryFormEvent>(
       (event, emit) => event.map(
         initialized: (event) =>
-          emit(state.copyWith(category: event.initialCategory, isEditing: true),),
+          emit(state.copyWith(category: event.initialCategory, isEditing: true)),
         nameChanged: (event) =>
-          emit(state.copyWith(category: state.category.copyWith(name: event.nameStr),),),
+          emit(state.copyWith(category: state.category.copyWith(name: event.nameStr))),
         saved: (event) async {
           emit(state.copyWith(isSaving: true));
           final categoryResult = state.isEditing

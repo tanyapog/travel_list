@@ -16,7 +16,7 @@ class _GeneratorPageState extends State<GeneratorPage> {
   final tripStep = CoolStep(
     title: "Trip information",
     subtitle: "A new trip will be created",
-    content: const Center(child: Text("Trip info"),),
+    content: const Center(child: Text("Trip info")),
     // TripFormBody(
     //   key: _tripFormKey,
     //   nameController: nameController,
@@ -28,8 +28,8 @@ class _GeneratorPageState extends State<GeneratorPage> {
   final generatorStep = CoolStep(
     title: "Trip features",
     subtitle: "The list of luggage will be formed according selected options",
-    content: const Center(child: Text("Trip features"),),
-    validation: null,);
+    content: const Center(child: Text("Trip features")),
+    validation: null);
 
   @override
   Widget build(BuildContext context) {

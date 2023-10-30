@@ -38,7 +38,7 @@ class SignInForm extends StatelessWidget {
                 serverError: (message) => 'Server Error: $message',
                 emailAlreadyInUse: (_) => 'Email already in use',
                 invalidEmailAndPasswordCombination: (_) =>
-                  'Invalid email and password combination',),).show(context),
+                  'Invalid email and password combination')).show(context),
             (_) { // Authorisation succeed, show to user the list of trips
               context.read<AuthBloc>().add(const AuthEvent.authCheckRequested());
               AutoRouter.of(context).replace(const TripsOverviewRoute());
@@ -52,9 +52,9 @@ class SignInForm extends StatelessWidget {
             padding: const EdgeInsets.all(10),
             child: ListView(
               children: <Widget>[
-                const SizedBox(height: 8,),
+                const SizedBox(height: 8),
                 const Text('Travel List', textAlign: TextAlign.center, style: TextStyle(fontSize: 30)),
-                const SizedBox(height: 8,),
+                const SizedBox(height: 8),
                 TextFormField(
                   decoration: const InputDecoration(
                     prefixIcon: Icon(Icons.email),
@@ -120,11 +120,11 @@ class SignInForm extends StatelessWidget {
                     .add(const SignInFormEvent.signInWithGooglePressed()),
                   style: ElevatedButton.styleFrom(
                     primary: Colors.amber,
-                    textStyle: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
-                  child: const Text('SIGN IN WITH GOOGLE',),
+                    textStyle: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                  child: const Text('SIGN IN WITH GOOGLE'),
                 ),
                 if (state.isSubmitting) ... [
-                  const SizedBox(height: 8,),
+                  const SizedBox(height: 8),
                   const LinearProgressIndicator(),
                 ]
               ],

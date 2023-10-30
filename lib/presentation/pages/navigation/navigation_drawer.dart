@@ -63,12 +63,12 @@ class NavigationDrawer extends StatelessWidget {
                     _createDrawerHeader(authState.user),
                     _createDrawerBodyItem(NavItem.currentTrip, 'Current trip', Icons.airplanemode_active, navContext, navState),
                     _createDrawerBodyItem(NavItem.generator, 'Generate new list', Icons.add, navContext, navState),
-                    const Divider(height: 1, thickness: 1,),
+                    const Divider(height: 1, thickness: 1),
                     _createDrawerBodyItem(NavItem.trips, 'Trips', Icons.menu, navContext, navState),
                     _createDrawerBodyItem(NavItem.catalog, 'Catalog', Icons.folder, navContext, navState),
                     _createDrawerBodyItem(NavItem.categories, 'Categories', Icons.category, navContext, navState),
                     _createDrawerBodyItem(NavItem.templates, 'Templates', Icons.account_balance, navContext, navState),
-                    const Divider(height: 1, thickness: 1,),
+                    const Divider(height: 1, thickness: 1),
                     _createDrawerBodyItem(NavItem.settings, 'Settings', Icons.settings, navContext, navState),
                     _createDrawerBodyItem(NavItem.signOut, 'Sign out', Icons.exit_to_app, navContext, navState),
                   ],
@@ -98,7 +98,7 @@ class NavigationDrawer extends StatelessWidget {
           backgroundColor: Colors.orangeAccent,
           foregroundColor: Colors.amber,
           radius: 25,
-          child: Icon(Icons.person, color: Colors.white, size: 50,),
+          child: Icon(Icons.person, color: Colors.white, size: 50),
         ),
       );
 
@@ -107,7 +107,7 @@ class NavigationDrawer extends StatelessWidget {
       String title,
       IconData icon,
       BuildContext navContext,
-      NavState navState,) {
+      NavState navState) {
 
     final bool isSelected = item == navState.selectedItem;
     return Card(
@@ -117,7 +117,7 @@ class NavigationDrawer extends StatelessWidget {
       margin: EdgeInsets.zero,
       child: Builder(
         builder: (BuildContext context) => ListTile(
-          title: Text(title, style: TextStyle(color: _getColor(isSelected)),),
+          title: Text(title, style: TextStyle(color: _getColor(isSelected))),
           leading: Icon(icon, color: _getColor(isSelected)),
           onTap: () {
             navContext.read<NavBloc>().add(NavigateTo(item));

@@ -20,7 +20,7 @@ class CategoryFailure with _$CategoryFailure {
             .insufficientPermission(e, "Insufficient Permission");
         } else if (eMessage.contains('NOT_FOUND')) {
           return CategoryFailure
-            .unableToUpdate(e, "Unable to update category. Was it deleted from another device?",);
+            .unableToUpdate(e, "Unable to update category. Was it deleted from another device?");
         } else {
           return CategoryFailure
             .unexpected(e, "Unexpected platform error: \n$eMessage");

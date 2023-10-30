@@ -42,7 +42,7 @@ Future<void> main() async {
   //     description: TripDescription(description),
   //     complete: isComplete,
   //   )],
-  // ),);
+  // ));
 
   final tripsOverviewPage = MediaQuery(
     data: const MediaQueryData(),

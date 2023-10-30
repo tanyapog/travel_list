@@ -28,7 +28,7 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
         emit(state.copyWith(
           email: Email(event.emailStr),
           authFailureOrSuccessOption: none(),
-        ),),
+        )),
       transformer: debounceRestartable(debounceDuration),
     );
 
@@ -37,7 +37,7 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
         emit(state.copyWith(
           password: Password(event.passwordStr),
           authFailureOrSuccessOption: none(),
-        ),),
+        )),
       transformer: debounceRestartable(debounceDuration),
     );
 
@@ -58,12 +58,12 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
         emit(state.copyWith(
           isSubmitting: true,
           authFailureOrSuccessOption: none(),
-        ),);
+        ));
         final failureOrSuccess = await _authFacade.signInWithGoogle();
         emit(state.copyWith(
           isSubmitting: false,
           authFailureOrSuccessOption: some(failureOrSuccess),
-        ),);
+        ));
       },
       transformer: sequential(),
     );
@@ -85,7 +85,7 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
       emit(state.copyWith(
         isSubmitting: true, // the form is in the process of being submitted
         authFailureOrSuccessOption: none(),
-      ),);
+      ));
       failureOrSuccess = await forwardedCall(
         email: state.email,
         password: state.password,
@@ -95,6 +95,6 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
       isSubmitting: false,
       showErrorMessages: true,
       authFailureOrSuccessOption: optionOf(failureOrSuccess), // the optionOf turns null into none()
-    ),);
+    ));
   }
 }

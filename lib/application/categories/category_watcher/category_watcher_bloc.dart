@@ -19,7 +19,7 @@ class CategoryWatcherBloc extends Bloc<CategoryWatcherEvent, CategoryWatcherStat
     on<CategoryWatcherEvent>(
       (event, emit) => event.map(
         watchAllStarted: (event) async {
-          emit(const CategoryWatcherState.loadInProgress(),);
+          emit(const CategoryWatcherState.loadInProgress());
           await emit.forEach<CategoryResult>(
             _categoryRepository.watchAll(),
             onData: (categoryResult) => categoryResult.when(

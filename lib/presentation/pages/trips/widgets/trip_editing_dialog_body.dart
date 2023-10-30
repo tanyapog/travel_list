@@ -48,7 +48,7 @@ class TripEditingDialogBody extends HookWidget {
               (either) => either.fold(
                 (failure) => customErrorFlushbar(message: failure.message).show(context),
                 (success) => AutoRouter.of(context).popUntil((route) =>
-                  route.settings.name == app_router.TripsOverviewRoute.name,),
+                  route.settings.name == app_router.TripsOverviewRoute.name),
               ),
             ),
         ),
@@ -71,13 +71,13 @@ class TripEditingDialogBody extends HookWidget {
                 children: [
                   GreyButton(
                     onPressed: () => Navigator.of(context).pop(),
-                    title: "CANCEL",),
+                    title: "CANCEL"),
                   const SizedBox(width: 10),
                   AmberButton(
                     onPressed: () => _globalTripFormKey.currentState!.validate()
                       ? context.read<TripFormBloc>().add(const TripFormEvent.saved())
                       : null,
-                    title: "SAVE",),
+                    title: "SAVE"),
                 ],
               ),
             ],

@@ -21,7 +21,7 @@ class CategoryActorBloc extends Bloc<CategoryActorEvent, CategoryActorState> {
         emit(categoryResult.when(
           success: (_) => const CategoryActorState.reorderSuccess(),
           failure: (failure) => CategoryActorState.reorderFailure(failure),
-        ),);
+        ));
       },
       transformer: sequential(),
     );
@@ -31,7 +31,7 @@ class CategoryActorBloc extends Bloc<CategoryActorEvent, CategoryActorState> {
         emit(categoryResult.when(
           success: (_) => const CategoryActorState.deleteSuccess(),
           failure: (failure) => CategoryActorState.deleteFailure(failure),
-        ),);
+        ));
       },
       transformer: concurrent(),
     );

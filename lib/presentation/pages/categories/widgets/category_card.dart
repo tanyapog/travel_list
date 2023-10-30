@@ -32,7 +32,7 @@ class CategoryCard extends StatelessWidget {
               onPressed: (context) => showDialog(
                 barrierDismissible: false,
                 context: context,
-                builder: (context) => CategoryDeletionDialog(category: category,),
+                builder: (context) => CategoryDeletionDialog(category: category),
               ),
             ),
           ],

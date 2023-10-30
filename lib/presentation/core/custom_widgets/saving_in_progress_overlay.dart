@@ -21,7 +21,7 @@ class SavingInProgressOverlay extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               const CircularProgressIndicator(),
-              const SizedBox(height: 8,),
+              const SizedBox(height: 8),
               Text(
                 'Saving',
                 style: Theme.of(context).textTheme.bodyText2?.copyWith(

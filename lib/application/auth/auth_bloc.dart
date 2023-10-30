@@ -21,11 +21,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           emit(userOption.fold(
             () => const AuthState.unauthenticated(),
             (user) => AuthState.authenticated(user),
-          ),);
+          ));
         },
         signedOut: (event) async {
           await _authFacade.signOut();
-          emit(const AuthState.unauthenticated(),);
+          emit(const AuthState.unauthenticated());
         },
       ),
       transformer: sequential(),

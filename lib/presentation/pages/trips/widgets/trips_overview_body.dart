@@ -17,12 +17,12 @@ class TripsOverviewBody extends StatelessWidget {
             itemBuilder: (context, index) {
               final trip = state.trips[index];
               return trip.failureOption.isSome()
-                ? ErrorTripCard(trip: trip,)
-                : TripCard(trip: trip,);
+                ? ErrorTripCard(trip: trip)
+                : TripCard(trip: trip);
             },
             itemCount: state.trips.length,
           ),
-        loadFailure: (state) => CriticalFailureDisplay(failure: state.tripFailure,),
+        loadFailure: (state) => CriticalFailureDisplay(failure: state.tripFailure),
       ),
     );
   }

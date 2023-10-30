@@ -30,10 +30,10 @@ class ControlPanel extends StatelessWidget {
             ),
             if (onFinish == null) AmberButton(
               onPressed: onNext,
-              title: 'NEXT',)
+              title: 'NEXT')
             else AmberButton(
               onPressed: onFinish,
-              title: 'FINISH',),
+              title: 'FINISH'),
           ],
         ),
       ),

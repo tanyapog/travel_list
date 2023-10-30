@@ -12,11 +12,11 @@ class CriticalFailureDisplay extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          const Icon(Icons.report_problem, size: 76.0, color: Colors.red,),
+          const Icon(Icons.report_problem, size: 76.0, color: Colors.red),
           Text(
             failure.maybeMap(
                 insufficientPermission: (_) => 'Insufficient permissions',
-                orElse: () => 'Unexpected error. \nPlease contact support',),
+                orElse: () => 'Unexpected error. \nPlease contact support'),
             style: const TextStyle(fontSize: 20),
             textAlign: TextAlign.center,
           ),

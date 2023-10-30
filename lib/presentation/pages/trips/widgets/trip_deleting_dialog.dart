@@ -21,17 +21,17 @@ class TripDeletingDialog extends StatelessWidget {
           listener: (context, state) =>
             state.maybeMap(
               deleteFailure: (state) => customErrorFlushbar(
-                message: state.tripFailure.message,).show(context),
+                message: state.tripFailure.message).show(context),
               orElse: () => null,
             ),
           child: Column(
             mainAxisSize: MainAxisSize.min, // To make the card compact
             children: <Widget>[
               const Text("Deleting a trip",
-                style: TextStyle(fontWeight: FontWeight.bold),),
+                style: TextStyle(fontWeight: FontWeight.bold)),
               const SizedBox(height: 10),
               ListTile(
-                title: Text(trip.name.getOrCrash(), key: const Key('tripName'),),
+                title: Text(trip.name.getOrCrash(), key: const Key('tripName')),
                 subtitle: Text('${trip.description.getOrCrash()} \nдек. 2020', key: const Key('tripDescription')),
                 isThreeLine: true,
               ),
@@ -41,7 +41,7 @@ class TripDeletingDialog extends StatelessWidget {
                 children: [
                   GreyButton(
                     onPressed: () => Navigator.of(context).pop(),
-                    title: "CANCEL",),
+                    title: "CANCEL"),
                   const SizedBox(width: 10),
                   BlocBuilder<TripActorBloc, TripActorState>(
                     builder: (context, state) => AmberButton(
@@ -49,7 +49,7 @@ class TripDeletingDialog extends StatelessWidget {
                         context.read<TripActorBloc>().add(TripActorEvent.deleted(trip));
                         Navigator.of(context).pop();
                       },
-                      title: "DELETE",),),
+                      title: "DELETE")),
                 ],
               ),
             ],

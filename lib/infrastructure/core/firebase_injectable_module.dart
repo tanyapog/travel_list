@@ -30,7 +30,7 @@ abstract class FirebaseTestInjectableModule {
   @lazySingleton
   FirebaseAuth get firebaseAuth => MockFirebaseAuth(
     signedIn: true,
-    mockUser: MockUser(uid: 'mockUid', email: 'mock@mockdomain.com', displayName: 'Mock',),
+    mockUser: MockUser(uid: 'mockUid', email: 'mock@mockdomain.com', displayName: 'Mock'),
   );
   @test
   @lazySingleton
