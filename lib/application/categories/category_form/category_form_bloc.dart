@@ -32,6 +32,7 @@ class CategoryFormBloc extends Bloc<CategoryFormEvent, CategoryFormState> {
             categoryFailure: categoryResult.whenOrNull(failure: (f) => f),
             savedSuccessfully: categoryResult.whenOrNull(success: (_) => true),
           ),);
+          return null;
         },
       ),
       transformer: sequential(),

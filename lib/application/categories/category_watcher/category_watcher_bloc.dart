@@ -27,6 +27,7 @@ class CategoryWatcherBloc extends Bloc<CategoryWatcherEvent, CategoryWatcherStat
               failure: (failure) => CategoryWatcherState.loadFailure(failure),
             ),
           );
+          return null;
         },
       ),
       transformer: restartable(),

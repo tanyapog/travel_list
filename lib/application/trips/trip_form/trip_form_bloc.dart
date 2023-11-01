@@ -65,6 +65,7 @@ class TripFormBloc extends Bloc<TripFormEvent, TripFormState> {
             showErrorMessages: showErrorMessages,
             saveFailureOrSuccessOption: optionOf(failureOrSuccess),
           ));
+          return null;
         },
       ),
       transformer: sequential(),

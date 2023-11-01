@@ -27,6 +27,7 @@ class TripWatcherBloc extends Bloc<TripWatcherEvent, TripWatcherState> {
                   (trips) => TripWatcherState.loadSuccess(trips),
             ),
           );
+          return null;
         },
         watchUncompletedStarted: (event) async {
           emit(const TripWatcherState.loadInProgress());
@@ -37,6 +38,7 @@ class TripWatcherBloc extends Bloc<TripWatcherEvent, TripWatcherState> {
                   (trips) => TripWatcherState.loadSuccess(trips),
             ),
           );
+          return null;
         },
       ),
       transformer: restartable(),
