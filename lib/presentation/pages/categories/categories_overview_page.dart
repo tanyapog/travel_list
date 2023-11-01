@@ -1,3 +1,4 @@
+import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:implicitly_animated_reorderable_list/implicitly_animated_reorderable_list.dart';
@@ -11,6 +12,7 @@ import 'package:travel_list/presentation/pages/categories/widgets/category_editi
 import 'package:travel_list/presentation/pages/categories/widgets/critical_failure_display.dart';
 import 'package:travel_list/presentation/pages/navigation/navigation_drawer.dart';
 
+@RoutePage()
 class CategoriesOverviewPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -28,11 +30,11 @@ class CategoriesOverviewPage extends StatelessWidget {
         listener: (context, state) =>
           state.maybeMap(
             reorderFailure: (state) => customErrorFlushbar(
-              message: state.categoryFailure.message,).show(context),
+              message: state.categoryFailure.message).show(context),
             orElse: () => null,
           ),
         child: Scaffold(
-          drawer: NavigationDrawer(),
+          // drawer: NavigationDrawer(),
           appBar: AppBar(
             title: const Text('Categories'),
           ),

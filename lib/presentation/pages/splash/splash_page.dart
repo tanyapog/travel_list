@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:travel_list/application/auth/auth_bloc.dart';
 import 'package:travel_list/presentation/routes/router.gr.dart';
 
+@RoutePage()
 class SplashPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

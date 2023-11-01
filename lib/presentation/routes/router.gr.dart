@@ -1,101 +1,128 @@
-// **************************************************************************
-// AutoRouteGenerator
-// **************************************************************************
-
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
-// AutoRouteGenerator
+// AutoRouterGenerator
 // **************************************************************************
-//
+
 // ignore_for_file: type=lint
+// coverage:ignore-file
 
+// ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i6;
-import 'package:flutter/material.dart' as _i7;
+import 'package:travel_list/presentation/pages/categories/categories_overview_page.dart'
+    as _i1;
+import 'package:travel_list/presentation/pages/generator/generator_page.dart'
+    as _i2;
+import 'package:travel_list/presentation/pages/sign_in/sign_in_page.dart'
+    as _i3;
+import 'package:travel_list/presentation/pages/splash/splash_page.dart' as _i4;
+import 'package:travel_list/presentation/pages/trips/trips_overview_page.dart'
+    as _i5;
 
-import '../pages/categories/categories_overview_page.dart' as _i4;
-import '../pages/generator/generator_page.dart' as _i5;
-import '../pages/sign_in/sign_in_page.dart' as _i2;
-import '../pages/splash/splash_page.dart' as _i1;
-import '../pages/trips/trips_overview_page.dart' as _i3;
-
-class Router extends _i6.RootStackRouter {
-  Router([_i7.GlobalKey<_i7.NavigatorState>? navigatorKey])
-      : super(navigatorKey);
+abstract class $Router extends _i6.RootStackRouter {
+  $Router({super.navigatorKey});
 
   @override
   final Map<String, _i6.PageFactory> pagesMap = {
-    SplashRoute.name: (routeData) {
-      return _i6.MaterialPageX<dynamic>(
-          routeData: routeData, child: _i1.SplashPage());
-    },
-    SignInRoute.name: (routeData) {
-      return _i6.MaterialPageX<dynamic>(
-          routeData: routeData, child: _i2.SignInPage());
-    },
-    TripsOverviewRoute.name: (routeData) {
-      return _i6.MaterialPageX<dynamic>(
-          routeData: routeData, child: _i3.TripsOverviewPage());
-    },
     CategoriesOverviewRoute.name: (routeData) {
-      return _i6.MaterialPageX<dynamic>(
-          routeData: routeData, child: _i4.CategoriesOverviewPage());
+      return _i6.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: _i1.CategoriesOverviewPage(),
+      );
     },
     GeneratorRoute.name: (routeData) {
-      return _i6.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i5.GeneratorPage());
-    }
+      return _i6.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i2.GeneratorPage(),
+      );
+    },
+    SignInRoute.name: (routeData) {
+      return _i6.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: _i3.SignInPage(),
+      );
+    },
+    SplashRoute.name: (routeData) {
+      return _i6.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: _i4.SplashPage(),
+      );
+    },
+    TripsOverviewRoute.name: (routeData) {
+      return _i6.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: _i5.TripsOverviewPage(),
+      );
+    },
   };
-
-  @override
-  List<_i6.RouteConfig> get routes => [
-        _i6.RouteConfig(SplashRoute.name, path: '/'),
-        _i6.RouteConfig(SignInRoute.name, path: '/sign-in-page'),
-        _i6.RouteConfig(TripsOverviewRoute.name, path: '/trips-overview-page'),
-        _i6.RouteConfig(CategoriesOverviewRoute.name,
-            path: '/categories-overview-page'),
-        _i6.RouteConfig(GeneratorRoute.name, path: '/generator-page')
-      ];
 }
 
 /// generated route for
-/// [_i1.SplashPage]
-class SplashRoute extends _i6.PageRouteInfo<void> {
-  const SplashRoute() : super(SplashRoute.name, path: '/');
-
-  static const String name = 'SplashRoute';
-}
-
-/// generated route for
-/// [_i2.SignInPage]
-class SignInRoute extends _i6.PageRouteInfo<void> {
-  const SignInRoute() : super(SignInRoute.name, path: '/sign-in-page');
-
-  static const String name = 'SignInRoute';
-}
-
-/// generated route for
-/// [_i3.TripsOverviewPage]
-class TripsOverviewRoute extends _i6.PageRouteInfo<void> {
-  const TripsOverviewRoute()
-      : super(TripsOverviewRoute.name, path: '/trips-overview-page');
-
-  static const String name = 'TripsOverviewRoute';
-}
-
-/// generated route for
-/// [_i4.CategoriesOverviewPage]
+/// [_i1.CategoriesOverviewPage]
 class CategoriesOverviewRoute extends _i6.PageRouteInfo<void> {
-  const CategoriesOverviewRoute()
-      : super(CategoriesOverviewRoute.name, path: '/categories-overview-page');
+  const CategoriesOverviewRoute({List<_i6.PageRouteInfo>? children})
+      : super(
+          CategoriesOverviewRoute.name,
+          initialChildren: children,
+        );
 
   static const String name = 'CategoriesOverviewRoute';
+
+  static const _i6.PageInfo<void> page = _i6.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i5.GeneratorPage]
+/// [_i2.GeneratorPage]
 class GeneratorRoute extends _i6.PageRouteInfo<void> {
-  const GeneratorRoute() : super(GeneratorRoute.name, path: '/generator-page');
+  const GeneratorRoute({List<_i6.PageRouteInfo>? children})
+      : super(
+          GeneratorRoute.name,
+          initialChildren: children,
+        );
 
   static const String name = 'GeneratorRoute';
+
+  static const _i6.PageInfo<void> page = _i6.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i3.SignInPage]
+class SignInRoute extends _i6.PageRouteInfo<void> {
+  const SignInRoute({List<_i6.PageRouteInfo>? children})
+      : super(
+          SignInRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SignInRoute';
+
+  static const _i6.PageInfo<void> page = _i6.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i4.SplashPage]
+class SplashRoute extends _i6.PageRouteInfo<void> {
+  const SplashRoute({List<_i6.PageRouteInfo>? children})
+      : super(
+          SplashRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SplashRoute';
+
+  static const _i6.PageInfo<void> page = _i6.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i5.TripsOverviewPage]
+class TripsOverviewRoute extends _i6.PageRouteInfo<void> {
+  const TripsOverviewRoute({List<_i6.PageRouteInfo>? children})
+      : super(
+          TripsOverviewRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'TripsOverviewRoute';
+
+  static const _i6.PageInfo<void> page = _i6.PageInfo<void>(name);
 }

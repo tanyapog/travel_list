@@ -7,6 +7,7 @@ import 'package:travel_list/injection.dart';
 import 'package:travel_list/presentation/core/custom_widgets/custom_flushbar_helper.dart';
 import 'package:travel_list/presentation/routes/router.gr.dart';
 
+@RoutePage()
 class SignInPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

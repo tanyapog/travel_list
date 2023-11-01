@@ -1,6 +1,8 @@
+import 'package:auto_route/annotations.dart';
 import 'package:cool_stepper/cool_stepper.dart';
 import 'package:flutter/material.dart';
 
+@RoutePage()
 class GeneratorPage extends StatefulWidget {
   const GeneratorPage({Key? key}) : super(key: key);
 
@@ -40,7 +42,7 @@ class _GeneratorPageState extends State<GeneratorPage> {
       body: CoolStepper(
         onCompleted: () => print('Your travel list created'),
         steps: [tripStep, generatorStep],
-        config: const CoolStepperConfig(backText: "BACK",),
+        config: const CoolStepperConfig(backText: "BACK"),
       ),
     );
   }

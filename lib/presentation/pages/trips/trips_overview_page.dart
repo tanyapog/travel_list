@@ -1,3 +1,4 @@
+import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:travel_list/application/trips/trip_watcher/trip_watcher_bloc.dart';
@@ -7,6 +8,7 @@ import 'package:travel_list/presentation/pages/trips/widgets/trip_editing_dialog
 import 'package:travel_list/presentation/pages/trips/widgets/trips_overview_body.dart';
 import 'package:travel_list/presentation/pages/trips/widgets/uncompleted_switch.dart';
 
+@RoutePage()
 class TripsOverviewPage extends StatelessWidget {
 
   @override
@@ -15,7 +17,7 @@ class TripsOverviewPage extends StatelessWidget {
       create: (context) => getIt<TripWatcherBloc>()
         ..add(const TripWatcherEvent.watchAllStarted()),
       child: Scaffold(
-        drawer: NavigationDrawer(),
+        // drawer: NavigationDrawer(),
         appBar: AppBar(
           title: const Text('My trips'),
           actions: <Widget>[
