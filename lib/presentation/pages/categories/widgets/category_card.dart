@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:implicitly_animated_reorderable_list/implicitly_animated_reorderable_list.dart';
 import 'package:travel_list/domain/categories/category.dart';
 import 'package:travel_list/presentation/core/custom_widgets/custom_delete_slide_action.dart';
 import 'package:travel_list/presentation/pages/categories/widgets/category_deleting_dialog.dart';
@@ -41,9 +40,10 @@ class CategoryCard extends StatelessWidget {
           elevation: elevation,
           child: ListTile(
             title: Text(category.name),
-            trailing: const Handle(
-              child: Icon(Icons.drag_handle, color: Colors.grey,),
-            ),
+            trailing: Icon(Icons.drag_handle, color: Colors.grey),
+            // trailing: const Handle(
+            //   child: Icon(Icons.drag_handle, color: Colors.grey),
+            // ),
           ),
         ),
       ),

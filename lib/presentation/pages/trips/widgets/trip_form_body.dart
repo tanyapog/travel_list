@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
+// import 'package:flutter_datetime_picker/flutter_datetime_picker.dart' as dtp;
 import 'package:provider/provider.dart';
 import 'package:travel_list/application/trips/trip_form/trip_form_bloc.dart';
 import 'package:travel_list/domain/trips/value_objects.dart';
@@ -74,9 +74,10 @@ class TripFormBody extends StatelessWidget {
             hintText: 'from',
             counterText: '',
           ),
-          onTap: () => DatePicker.showDatePicker(context,
-            onConfirm: (date) => context.read<TripFormBloc>()
-              .add(TripFormEvent.dateStartChanged(date)),),
+          onTap: () {}
+          // => dtp.DatePicker.showDatePicker(context,
+          //   onConfirm: (date) => context.read<TripFormBloc>()
+          //     .add(TripFormEvent.dateStartChanged(date))),
         ),
         const SizedBox(height: 8),
         TextFormField(
@@ -86,9 +87,10 @@ class TripFormBody extends StatelessWidget {
             hintText: 'to',
             counterText: '',
           ),
-          onTap: () => DatePicker.showDatePicker(context,
-            onConfirm: (date) => context.read<TripFormBloc>()
-              .add(TripFormEvent.dateEndChanged(date)),),
+          onTap: () {}
+          // => dtp.DatePicker.showDatePicker(context,
+          //   onConfirm: (date) => context.read<TripFormBloc>()
+          //     .add(TripFormEvent.dateEndChanged(date))),
         ),
       ],
     );

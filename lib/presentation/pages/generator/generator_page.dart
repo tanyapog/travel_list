@@ -11,9 +11,9 @@ class GeneratorPage extends StatefulWidget {
 }
 
 class _GeneratorPageState extends State<GeneratorPage> {
-  static final _tripFormKey = GlobalKey<FormState>();
-  static final nameController = TextEditingController();
-  static final descriptionController = TextEditingController();
+  // static final _tripFormKey = GlobalKey<FormState>();
+  // static final nameController = TextEditingController();
+  // static final descriptionController = TextEditingController();
 
   final tripStep = CoolStep(
     title: "Trip information",

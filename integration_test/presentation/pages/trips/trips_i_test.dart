@@ -1,19 +1,16 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:travel_list/presentation/core/app_widget.dart';
 import 'package:travel_list/presentation/pages/trips/trips_overview_page.dart';
 import 'package:travel_list/presentation/pages/trips/widgets/trip_card.dart';
-import 'package:travel_list/presentation/pages/trips/widgets/trip_editing_dialog.dart';
 
 // this test tests both tipsOverviewPage and TripFormPage
 Future<void> tripsTest() async {
-  const _tripName = 'Norway 2021';
-  const _tripEditedName = 'Norway jun, 2021';
+  // const _tripName = 'Norway 2021';
+  // const _tripEditedName = 'Norway jun, 2021';
 
-  Finder findTripNameField() => find.bySemanticsLabel('name');
-  Finder findTripDescriptionField() => find.bySemanticsLabel('description');
-  Finder findSaveButton() => find.text('SAVE');
+  // Finder findTripNameField() => find.bySemanticsLabel('name');
+  // Finder findTripDescriptionField() => find.bySemanticsLabel('description');
+  // Finder findSaveButton() => find.text('SAVE');
 
   group('Overview trips, create, rename and delete trip tests', () {
     testWidgets(
