@@ -1,6 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'category_actor_bloc.dart';
 
@@ -11,27 +12,7 @@ part of 'category_actor_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$CategoryActorEventTearOff {
-  const _$CategoryActorEventTearOff();
-
-  _ReorderFinished reorderFinished(List<Category> categories) {
-    return _ReorderFinished(
-      categories,
-    );
-  }
-
-  _Deleted deleted(Category category) {
-    return _Deleted(
-      category,
-    );
-  }
-}
-
-/// @nodoc
-const $CategoryActorEvent = _$CategoryActorEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$CategoryActorEvent {
@@ -43,8 +24,8 @@ mixin _$CategoryActorEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<Category> categories)? reorderFinished,
-    TResult Function(Category category)? deleted,
+    TResult? Function(List<Category> categories)? reorderFinished,
+    TResult? Function(Category category)? deleted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -62,8 +43,8 @@ mixin _$CategoryActorEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_ReorderFinished value)? reorderFinished,
-    TResult Function(_Deleted value)? deleted,
+    TResult? Function(_ReorderFinished value)? reorderFinished,
+    TResult? Function(_Deleted value)? deleted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -79,45 +60,45 @@ mixin _$CategoryActorEvent {
 abstract class $CategoryActorEventCopyWith<$Res> {
   factory $CategoryActorEventCopyWith(
           CategoryActorEvent value, $Res Function(CategoryActorEvent) then) =
-      _$CategoryActorEventCopyWithImpl<$Res>;
+      _$CategoryActorEventCopyWithImpl<$Res, CategoryActorEvent>;
 }
 
 /// @nodoc
-class _$CategoryActorEventCopyWithImpl<$Res>
+class _$CategoryActorEventCopyWithImpl<$Res, $Val extends CategoryActorEvent>
     implements $CategoryActorEventCopyWith<$Res> {
   _$CategoryActorEventCopyWithImpl(this._value, this._then);
 
-  final CategoryActorEvent _value;
   // ignore: unused_field
-  final $Res Function(CategoryActorEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$ReorderFinishedCopyWith<$Res> {
-  factory _$ReorderFinishedCopyWith(
-          _ReorderFinished value, $Res Function(_ReorderFinished) then) =
-      __$ReorderFinishedCopyWithImpl<$Res>;
+abstract class _$$ReorderFinishedImplCopyWith<$Res> {
+  factory _$$ReorderFinishedImplCopyWith(_$ReorderFinishedImpl value,
+          $Res Function(_$ReorderFinishedImpl) then) =
+      __$$ReorderFinishedImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<Category> categories});
 }
 
 /// @nodoc
-class __$ReorderFinishedCopyWithImpl<$Res>
-    extends _$CategoryActorEventCopyWithImpl<$Res>
-    implements _$ReorderFinishedCopyWith<$Res> {
-  __$ReorderFinishedCopyWithImpl(
-      _ReorderFinished _value, $Res Function(_ReorderFinished) _then)
-      : super(_value, (v) => _then(v as _ReorderFinished));
+class __$$ReorderFinishedImplCopyWithImpl<$Res>
+    extends _$CategoryActorEventCopyWithImpl<$Res, _$ReorderFinishedImpl>
+    implements _$$ReorderFinishedImplCopyWith<$Res> {
+  __$$ReorderFinishedImplCopyWithImpl(
+      _$ReorderFinishedImpl _value, $Res Function(_$ReorderFinishedImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _ReorderFinished get _value => super._value as _ReorderFinished;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? categories = freezed,
+    Object? categories = null,
   }) {
-    return _then(_ReorderFinished(
-      categories == freezed
-          ? _value.categories
+    return _then(_$ReorderFinishedImpl(
+      null == categories
+          ? _value._categories
           : categories // ignore: cast_nullable_to_non_nullable
               as List<Category>,
     ));
@@ -126,11 +107,17 @@ class __$ReorderFinishedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ReorderFinished implements _ReorderFinished {
-  const _$_ReorderFinished(this.categories);
+class _$ReorderFinishedImpl implements _ReorderFinished {
+  const _$ReorderFinishedImpl(final List<Category> categories)
+      : _categories = categories;
 
+  final List<Category> _categories;
   @override
-  final List<Category> categories;
+  List<Category> get categories {
+    if (_categories is EqualUnmodifiableListView) return _categories;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_categories);
+  }
 
   @override
   String toString() {
@@ -141,19 +128,21 @@ class _$_ReorderFinished implements _ReorderFinished {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _ReorderFinished &&
+            other is _$ReorderFinishedImpl &&
             const DeepCollectionEquality()
-                .equals(other.categories, categories));
+                .equals(other._categories, _categories));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(categories));
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_categories));
 
   @JsonKey(ignore: true)
   @override
-  _$ReorderFinishedCopyWith<_ReorderFinished> get copyWith =>
-      __$ReorderFinishedCopyWithImpl<_ReorderFinished>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$ReorderFinishedImplCopyWith<_$ReorderFinishedImpl> get copyWith =>
+      __$$ReorderFinishedImplCopyWithImpl<_$ReorderFinishedImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -167,8 +156,8 @@ class _$_ReorderFinished implements _ReorderFinished {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<Category> categories)? reorderFinished,
-    TResult Function(Category category)? deleted,
+    TResult? Function(List<Category> categories)? reorderFinished,
+    TResult? Function(Category category)? deleted,
   }) {
     return reorderFinished?.call(categories);
   }
@@ -198,8 +187,8 @@ class _$_ReorderFinished implements _ReorderFinished {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_ReorderFinished value)? reorderFinished,
-    TResult Function(_Deleted value)? deleted,
+    TResult? Function(_ReorderFinished value)? reorderFinished,
+    TResult? Function(_Deleted value)? deleted,
   }) {
     return reorderFinished?.call(this);
   }
@@ -219,40 +208,41 @@ class _$_ReorderFinished implements _ReorderFinished {
 }
 
 abstract class _ReorderFinished implements CategoryActorEvent {
-  const factory _ReorderFinished(List<Category> categories) =
-      _$_ReorderFinished;
+  const factory _ReorderFinished(final List<Category> categories) =
+      _$ReorderFinishedImpl;
 
   List<Category> get categories;
   @JsonKey(ignore: true)
-  _$ReorderFinishedCopyWith<_ReorderFinished> get copyWith =>
+  _$$ReorderFinishedImplCopyWith<_$ReorderFinishedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$DeletedCopyWith<$Res> {
-  factory _$DeletedCopyWith(_Deleted value, $Res Function(_Deleted) then) =
-      __$DeletedCopyWithImpl<$Res>;
+abstract class _$$DeletedImplCopyWith<$Res> {
+  factory _$$DeletedImplCopyWith(
+          _$DeletedImpl value, $Res Function(_$DeletedImpl) then) =
+      __$$DeletedImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({Category category});
 
   $CategoryCopyWith<$Res> get category;
 }
 
 /// @nodoc
-class __$DeletedCopyWithImpl<$Res>
-    extends _$CategoryActorEventCopyWithImpl<$Res>
-    implements _$DeletedCopyWith<$Res> {
-  __$DeletedCopyWithImpl(_Deleted _value, $Res Function(_Deleted) _then)
-      : super(_value, (v) => _then(v as _Deleted));
+class __$$DeletedImplCopyWithImpl<$Res>
+    extends _$CategoryActorEventCopyWithImpl<$Res, _$DeletedImpl>
+    implements _$$DeletedImplCopyWith<$Res> {
+  __$$DeletedImplCopyWithImpl(
+      _$DeletedImpl _value, $Res Function(_$DeletedImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _Deleted get _value => super._value as _Deleted;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? category = freezed,
+    Object? category = null,
   }) {
-    return _then(_Deleted(
-      category == freezed
+    return _then(_$DeletedImpl(
+      null == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
               as Category,
@@ -260,6 +250,7 @@ class __$DeletedCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $CategoryCopyWith<$Res> get category {
     return $CategoryCopyWith<$Res>(_value.category, (value) {
       return _then(_value.copyWith(category: value));
@@ -269,8 +260,8 @@ class __$DeletedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Deleted implements _Deleted {
-  const _$_Deleted(this.category);
+class _$DeletedImpl implements _Deleted {
+  const _$DeletedImpl(this.category);
 
   @override
   final Category category;
@@ -284,18 +275,19 @@ class _$_Deleted implements _Deleted {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Deleted &&
-            const DeepCollectionEquality().equals(other.category, category));
+            other is _$DeletedImpl &&
+            (identical(other.category, category) ||
+                other.category == category));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(category));
+  int get hashCode => Object.hash(runtimeType, category);
 
   @JsonKey(ignore: true)
   @override
-  _$DeletedCopyWith<_Deleted> get copyWith =>
-      __$DeletedCopyWithImpl<_Deleted>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$DeletedImplCopyWith<_$DeletedImpl> get copyWith =>
+      __$$DeletedImplCopyWithImpl<_$DeletedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -309,8 +301,8 @@ class _$_Deleted implements _Deleted {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<Category> categories)? reorderFinished,
-    TResult Function(Category category)? deleted,
+    TResult? Function(List<Category> categories)? reorderFinished,
+    TResult? Function(Category category)? deleted,
   }) {
     return deleted?.call(category);
   }
@@ -340,8 +332,8 @@ class _$_Deleted implements _Deleted {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_ReorderFinished value)? reorderFinished,
-    TResult Function(_Deleted value)? deleted,
+    TResult? Function(_ReorderFinished value)? reorderFinished,
+    TResult? Function(_Deleted value)? deleted,
   }) {
     return deleted?.call(this);
   }
@@ -361,49 +353,13 @@ class _$_Deleted implements _Deleted {
 }
 
 abstract class _Deleted implements CategoryActorEvent {
-  const factory _Deleted(Category category) = _$_Deleted;
+  const factory _Deleted(final Category category) = _$DeletedImpl;
 
   Category get category;
   @JsonKey(ignore: true)
-  _$DeletedCopyWith<_Deleted> get copyWith =>
+  _$$DeletedImplCopyWith<_$DeletedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$CategoryActorStateTearOff {
-  const _$CategoryActorStateTearOff();
-
-  _Initial initial() {
-    return const _Initial();
-  }
-
-  _ActionInProgress actionInProgress() {
-    return const _ActionInProgress();
-  }
-
-  _ReorderFailure reorderFailure(CategoryFailure categoryFailure) {
-    return _ReorderFailure(
-      categoryFailure,
-    );
-  }
-
-  _ReorderSuccess reorderSuccess() {
-    return const _ReorderSuccess();
-  }
-
-  _DeleteFailure deleteFailure(CategoryFailure categoryFailure) {
-    return _DeleteFailure(
-      categoryFailure,
-    );
-  }
-
-  _DeleteSuccess deleteSuccess() {
-    return const _DeleteSuccess();
-  }
-}
-
-/// @nodoc
-const $CategoryActorState = _$CategoryActorStateTearOff();
 
 /// @nodoc
 mixin _$CategoryActorState {
@@ -419,12 +375,12 @@ mixin _$CategoryActorState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function(CategoryFailure categoryFailure)? reorderFailure,
-    TResult Function()? reorderSuccess,
-    TResult Function(CategoryFailure categoryFailure)? deleteFailure,
-    TResult Function()? deleteSuccess,
+    TResult? Function()? initial,
+    TResult? Function()? actionInProgress,
+    TResult? Function(CategoryFailure categoryFailure)? reorderFailure,
+    TResult? Function()? reorderSuccess,
+    TResult? Function(CategoryFailure categoryFailure)? deleteFailure,
+    TResult? Function()? deleteSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -450,12 +406,12 @@ mixin _$CategoryActorState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_ReorderFailure value)? reorderFailure,
-    TResult Function(_ReorderSuccess value)? reorderSuccess,
-    TResult Function(_DeleteFailure value)? deleteFailure,
-    TResult Function(_DeleteSuccess value)? deleteSuccess,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ActionInProgress value)? actionInProgress,
+    TResult? Function(_ReorderFailure value)? reorderFailure,
+    TResult? Function(_ReorderSuccess value)? reorderSuccess,
+    TResult? Function(_DeleteFailure value)? deleteFailure,
+    TResult? Function(_DeleteSuccess value)? deleteSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -475,40 +431,40 @@ mixin _$CategoryActorState {
 abstract class $CategoryActorStateCopyWith<$Res> {
   factory $CategoryActorStateCopyWith(
           CategoryActorState value, $Res Function(CategoryActorState) then) =
-      _$CategoryActorStateCopyWithImpl<$Res>;
+      _$CategoryActorStateCopyWithImpl<$Res, CategoryActorState>;
 }
 
 /// @nodoc
-class _$CategoryActorStateCopyWithImpl<$Res>
+class _$CategoryActorStateCopyWithImpl<$Res, $Val extends CategoryActorState>
     implements $CategoryActorStateCopyWith<$Res> {
   _$CategoryActorStateCopyWithImpl(this._value, this._then);
 
-  final CategoryActorState _value;
   // ignore: unused_field
-  final $Res Function(CategoryActorState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+abstract class _$$InitialImplCopyWith<$Res> {
+  factory _$$InitialImplCopyWith(
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res>
-    extends _$CategoryActorStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
-
-  @override
-  _Initial get _value => super._value as _Initial;
+class __$$InitialImplCopyWithImpl<$Res>
+    extends _$CategoryActorStateCopyWithImpl<$Res, _$InitialImpl>
+    implements _$$InitialImplCopyWith<$Res> {
+  __$$InitialImplCopyWithImpl(
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Initial implements _Initial {
-  const _$_Initial();
+class _$InitialImpl implements _Initial {
+  const _$InitialImpl();
 
   @override
   String toString() {
@@ -518,7 +474,7 @@ class _$_Initial implements _Initial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Initial);
+        (other.runtimeType == runtimeType && other is _$InitialImpl);
   }
 
   @override
@@ -540,12 +496,12 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function(CategoryFailure categoryFailure)? reorderFailure,
-    TResult Function()? reorderSuccess,
-    TResult Function(CategoryFailure categoryFailure)? deleteFailure,
-    TResult Function()? deleteSuccess,
+    TResult? Function()? initial,
+    TResult? Function()? actionInProgress,
+    TResult? Function(CategoryFailure categoryFailure)? reorderFailure,
+    TResult? Function()? reorderSuccess,
+    TResult? Function(CategoryFailure categoryFailure)? deleteFailure,
+    TResult? Function()? deleteSuccess,
   }) {
     return initial?.call();
   }
@@ -583,12 +539,12 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_ReorderFailure value)? reorderFailure,
-    TResult Function(_ReorderSuccess value)? reorderSuccess,
-    TResult Function(_DeleteFailure value)? deleteFailure,
-    TResult Function(_DeleteSuccess value)? deleteSuccess,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ActionInProgress value)? actionInProgress,
+    TResult? Function(_ReorderFailure value)? reorderFailure,
+    TResult? Function(_ReorderSuccess value)? reorderSuccess,
+    TResult? Function(_DeleteFailure value)? deleteFailure,
+    TResult? Function(_DeleteSuccess value)? deleteSuccess,
   }) {
     return initial?.call(this);
   }
@@ -612,32 +568,29 @@ class _$_Initial implements _Initial {
 }
 
 abstract class _Initial implements CategoryActorState {
-  const factory _Initial() = _$_Initial;
+  const factory _Initial() = _$InitialImpl;
 }
 
 /// @nodoc
-abstract class _$ActionInProgressCopyWith<$Res> {
-  factory _$ActionInProgressCopyWith(
-          _ActionInProgress value, $Res Function(_ActionInProgress) then) =
-      __$ActionInProgressCopyWithImpl<$Res>;
+abstract class _$$ActionInProgressImplCopyWith<$Res> {
+  factory _$$ActionInProgressImplCopyWith(_$ActionInProgressImpl value,
+          $Res Function(_$ActionInProgressImpl) then) =
+      __$$ActionInProgressImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ActionInProgressCopyWithImpl<$Res>
-    extends _$CategoryActorStateCopyWithImpl<$Res>
-    implements _$ActionInProgressCopyWith<$Res> {
-  __$ActionInProgressCopyWithImpl(
-      _ActionInProgress _value, $Res Function(_ActionInProgress) _then)
-      : super(_value, (v) => _then(v as _ActionInProgress));
-
-  @override
-  _ActionInProgress get _value => super._value as _ActionInProgress;
+class __$$ActionInProgressImplCopyWithImpl<$Res>
+    extends _$CategoryActorStateCopyWithImpl<$Res, _$ActionInProgressImpl>
+    implements _$$ActionInProgressImplCopyWith<$Res> {
+  __$$ActionInProgressImplCopyWithImpl(_$ActionInProgressImpl _value,
+      $Res Function(_$ActionInProgressImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_ActionInProgress implements _ActionInProgress {
-  const _$_ActionInProgress();
+class _$ActionInProgressImpl implements _ActionInProgress {
+  const _$ActionInProgressImpl();
 
   @override
   String toString() {
@@ -647,7 +600,7 @@ class _$_ActionInProgress implements _ActionInProgress {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _ActionInProgress);
+        (other.runtimeType == runtimeType && other is _$ActionInProgressImpl);
   }
 
   @override
@@ -669,12 +622,12 @@ class _$_ActionInProgress implements _ActionInProgress {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function(CategoryFailure categoryFailure)? reorderFailure,
-    TResult Function()? reorderSuccess,
-    TResult Function(CategoryFailure categoryFailure)? deleteFailure,
-    TResult Function()? deleteSuccess,
+    TResult? Function()? initial,
+    TResult? Function()? actionInProgress,
+    TResult? Function(CategoryFailure categoryFailure)? reorderFailure,
+    TResult? Function()? reorderSuccess,
+    TResult? Function(CategoryFailure categoryFailure)? deleteFailure,
+    TResult? Function()? deleteSuccess,
   }) {
     return actionInProgress?.call();
   }
@@ -712,12 +665,12 @@ class _$_ActionInProgress implements _ActionInProgress {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_ReorderFailure value)? reorderFailure,
-    TResult Function(_ReorderSuccess value)? reorderSuccess,
-    TResult Function(_DeleteFailure value)? deleteFailure,
-    TResult Function(_DeleteSuccess value)? deleteSuccess,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ActionInProgress value)? actionInProgress,
+    TResult? Function(_ReorderFailure value)? reorderFailure,
+    TResult? Function(_ReorderSuccess value)? reorderSuccess,
+    TResult? Function(_DeleteFailure value)? deleteFailure,
+    TResult? Function(_DeleteSuccess value)? deleteSuccess,
   }) {
     return actionInProgress?.call(this);
   }
@@ -741,36 +694,35 @@ class _$_ActionInProgress implements _ActionInProgress {
 }
 
 abstract class _ActionInProgress implements CategoryActorState {
-  const factory _ActionInProgress() = _$_ActionInProgress;
+  const factory _ActionInProgress() = _$ActionInProgressImpl;
 }
 
 /// @nodoc
-abstract class _$ReorderFailureCopyWith<$Res> {
-  factory _$ReorderFailureCopyWith(
-          _ReorderFailure value, $Res Function(_ReorderFailure) then) =
-      __$ReorderFailureCopyWithImpl<$Res>;
+abstract class _$$ReorderFailureImplCopyWith<$Res> {
+  factory _$$ReorderFailureImplCopyWith(_$ReorderFailureImpl value,
+          $Res Function(_$ReorderFailureImpl) then) =
+      __$$ReorderFailureImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({CategoryFailure categoryFailure});
 
   $CategoryFailureCopyWith<$Res> get categoryFailure;
 }
 
 /// @nodoc
-class __$ReorderFailureCopyWithImpl<$Res>
-    extends _$CategoryActorStateCopyWithImpl<$Res>
-    implements _$ReorderFailureCopyWith<$Res> {
-  __$ReorderFailureCopyWithImpl(
-      _ReorderFailure _value, $Res Function(_ReorderFailure) _then)
-      : super(_value, (v) => _then(v as _ReorderFailure));
+class __$$ReorderFailureImplCopyWithImpl<$Res>
+    extends _$CategoryActorStateCopyWithImpl<$Res, _$ReorderFailureImpl>
+    implements _$$ReorderFailureImplCopyWith<$Res> {
+  __$$ReorderFailureImplCopyWithImpl(
+      _$ReorderFailureImpl _value, $Res Function(_$ReorderFailureImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _ReorderFailure get _value => super._value as _ReorderFailure;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? categoryFailure = freezed,
+    Object? categoryFailure = null,
   }) {
-    return _then(_ReorderFailure(
-      categoryFailure == freezed
+    return _then(_$ReorderFailureImpl(
+      null == categoryFailure
           ? _value.categoryFailure
           : categoryFailure // ignore: cast_nullable_to_non_nullable
               as CategoryFailure,
@@ -778,6 +730,7 @@ class __$ReorderFailureCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $CategoryFailureCopyWith<$Res> get categoryFailure {
     return $CategoryFailureCopyWith<$Res>(_value.categoryFailure, (value) {
       return _then(_value.copyWith(categoryFailure: value));
@@ -787,8 +740,8 @@ class __$ReorderFailureCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ReorderFailure implements _ReorderFailure {
-  const _$_ReorderFailure(this.categoryFailure);
+class _$ReorderFailureImpl implements _ReorderFailure {
+  const _$ReorderFailureImpl(this.categoryFailure);
 
   @override
   final CategoryFailure categoryFailure;
@@ -802,19 +755,20 @@ class _$_ReorderFailure implements _ReorderFailure {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _ReorderFailure &&
-            const DeepCollectionEquality()
-                .equals(other.categoryFailure, categoryFailure));
+            other is _$ReorderFailureImpl &&
+            (identical(other.categoryFailure, categoryFailure) ||
+                other.categoryFailure == categoryFailure));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(categoryFailure));
+  int get hashCode => Object.hash(runtimeType, categoryFailure);
 
   @JsonKey(ignore: true)
   @override
-  _$ReorderFailureCopyWith<_ReorderFailure> get copyWith =>
-      __$ReorderFailureCopyWithImpl<_ReorderFailure>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$ReorderFailureImplCopyWith<_$ReorderFailureImpl> get copyWith =>
+      __$$ReorderFailureImplCopyWithImpl<_$ReorderFailureImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -832,12 +786,12 @@ class _$_ReorderFailure implements _ReorderFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function(CategoryFailure categoryFailure)? reorderFailure,
-    TResult Function()? reorderSuccess,
-    TResult Function(CategoryFailure categoryFailure)? deleteFailure,
-    TResult Function()? deleteSuccess,
+    TResult? Function()? initial,
+    TResult? Function()? actionInProgress,
+    TResult? Function(CategoryFailure categoryFailure)? reorderFailure,
+    TResult? Function()? reorderSuccess,
+    TResult? Function(CategoryFailure categoryFailure)? deleteFailure,
+    TResult? Function()? deleteSuccess,
   }) {
     return reorderFailure?.call(categoryFailure);
   }
@@ -875,12 +829,12 @@ class _$_ReorderFailure implements _ReorderFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_ReorderFailure value)? reorderFailure,
-    TResult Function(_ReorderSuccess value)? reorderSuccess,
-    TResult Function(_DeleteFailure value)? deleteFailure,
-    TResult Function(_DeleteSuccess value)? deleteSuccess,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ActionInProgress value)? actionInProgress,
+    TResult? Function(_ReorderFailure value)? reorderFailure,
+    TResult? Function(_ReorderSuccess value)? reorderSuccess,
+    TResult? Function(_DeleteFailure value)? deleteFailure,
+    TResult? Function(_DeleteSuccess value)? deleteSuccess,
   }) {
     return reorderFailure?.call(this);
   }
@@ -904,38 +858,35 @@ class _$_ReorderFailure implements _ReorderFailure {
 }
 
 abstract class _ReorderFailure implements CategoryActorState {
-  const factory _ReorderFailure(CategoryFailure categoryFailure) =
-      _$_ReorderFailure;
+  const factory _ReorderFailure(final CategoryFailure categoryFailure) =
+      _$ReorderFailureImpl;
 
   CategoryFailure get categoryFailure;
   @JsonKey(ignore: true)
-  _$ReorderFailureCopyWith<_ReorderFailure> get copyWith =>
+  _$$ReorderFailureImplCopyWith<_$ReorderFailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$ReorderSuccessCopyWith<$Res> {
-  factory _$ReorderSuccessCopyWith(
-          _ReorderSuccess value, $Res Function(_ReorderSuccess) then) =
-      __$ReorderSuccessCopyWithImpl<$Res>;
+abstract class _$$ReorderSuccessImplCopyWith<$Res> {
+  factory _$$ReorderSuccessImplCopyWith(_$ReorderSuccessImpl value,
+          $Res Function(_$ReorderSuccessImpl) then) =
+      __$$ReorderSuccessImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ReorderSuccessCopyWithImpl<$Res>
-    extends _$CategoryActorStateCopyWithImpl<$Res>
-    implements _$ReorderSuccessCopyWith<$Res> {
-  __$ReorderSuccessCopyWithImpl(
-      _ReorderSuccess _value, $Res Function(_ReorderSuccess) _then)
-      : super(_value, (v) => _then(v as _ReorderSuccess));
-
-  @override
-  _ReorderSuccess get _value => super._value as _ReorderSuccess;
+class __$$ReorderSuccessImplCopyWithImpl<$Res>
+    extends _$CategoryActorStateCopyWithImpl<$Res, _$ReorderSuccessImpl>
+    implements _$$ReorderSuccessImplCopyWith<$Res> {
+  __$$ReorderSuccessImplCopyWithImpl(
+      _$ReorderSuccessImpl _value, $Res Function(_$ReorderSuccessImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_ReorderSuccess implements _ReorderSuccess {
-  const _$_ReorderSuccess();
+class _$ReorderSuccessImpl implements _ReorderSuccess {
+  const _$ReorderSuccessImpl();
 
   @override
   String toString() {
@@ -945,7 +896,7 @@ class _$_ReorderSuccess implements _ReorderSuccess {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _ReorderSuccess);
+        (other.runtimeType == runtimeType && other is _$ReorderSuccessImpl);
   }
 
   @override
@@ -967,12 +918,12 @@ class _$_ReorderSuccess implements _ReorderSuccess {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function(CategoryFailure categoryFailure)? reorderFailure,
-    TResult Function()? reorderSuccess,
-    TResult Function(CategoryFailure categoryFailure)? deleteFailure,
-    TResult Function()? deleteSuccess,
+    TResult? Function()? initial,
+    TResult? Function()? actionInProgress,
+    TResult? Function(CategoryFailure categoryFailure)? reorderFailure,
+    TResult? Function()? reorderSuccess,
+    TResult? Function(CategoryFailure categoryFailure)? deleteFailure,
+    TResult? Function()? deleteSuccess,
   }) {
     return reorderSuccess?.call();
   }
@@ -1010,12 +961,12 @@ class _$_ReorderSuccess implements _ReorderSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_ReorderFailure value)? reorderFailure,
-    TResult Function(_ReorderSuccess value)? reorderSuccess,
-    TResult Function(_DeleteFailure value)? deleteFailure,
-    TResult Function(_DeleteSuccess value)? deleteSuccess,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ActionInProgress value)? actionInProgress,
+    TResult? Function(_ReorderFailure value)? reorderFailure,
+    TResult? Function(_ReorderSuccess value)? reorderSuccess,
+    TResult? Function(_DeleteFailure value)? deleteFailure,
+    TResult? Function(_DeleteSuccess value)? deleteSuccess,
   }) {
     return reorderSuccess?.call(this);
   }
@@ -1039,36 +990,35 @@ class _$_ReorderSuccess implements _ReorderSuccess {
 }
 
 abstract class _ReorderSuccess implements CategoryActorState {
-  const factory _ReorderSuccess() = _$_ReorderSuccess;
+  const factory _ReorderSuccess() = _$ReorderSuccessImpl;
 }
 
 /// @nodoc
-abstract class _$DeleteFailureCopyWith<$Res> {
-  factory _$DeleteFailureCopyWith(
-          _DeleteFailure value, $Res Function(_DeleteFailure) then) =
-      __$DeleteFailureCopyWithImpl<$Res>;
+abstract class _$$DeleteFailureImplCopyWith<$Res> {
+  factory _$$DeleteFailureImplCopyWith(
+          _$DeleteFailureImpl value, $Res Function(_$DeleteFailureImpl) then) =
+      __$$DeleteFailureImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({CategoryFailure categoryFailure});
 
   $CategoryFailureCopyWith<$Res> get categoryFailure;
 }
 
 /// @nodoc
-class __$DeleteFailureCopyWithImpl<$Res>
-    extends _$CategoryActorStateCopyWithImpl<$Res>
-    implements _$DeleteFailureCopyWith<$Res> {
-  __$DeleteFailureCopyWithImpl(
-      _DeleteFailure _value, $Res Function(_DeleteFailure) _then)
-      : super(_value, (v) => _then(v as _DeleteFailure));
+class __$$DeleteFailureImplCopyWithImpl<$Res>
+    extends _$CategoryActorStateCopyWithImpl<$Res, _$DeleteFailureImpl>
+    implements _$$DeleteFailureImplCopyWith<$Res> {
+  __$$DeleteFailureImplCopyWithImpl(
+      _$DeleteFailureImpl _value, $Res Function(_$DeleteFailureImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _DeleteFailure get _value => super._value as _DeleteFailure;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? categoryFailure = freezed,
+    Object? categoryFailure = null,
   }) {
-    return _then(_DeleteFailure(
-      categoryFailure == freezed
+    return _then(_$DeleteFailureImpl(
+      null == categoryFailure
           ? _value.categoryFailure
           : categoryFailure // ignore: cast_nullable_to_non_nullable
               as CategoryFailure,
@@ -1076,6 +1026,7 @@ class __$DeleteFailureCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $CategoryFailureCopyWith<$Res> get categoryFailure {
     return $CategoryFailureCopyWith<$Res>(_value.categoryFailure, (value) {
       return _then(_value.copyWith(categoryFailure: value));
@@ -1085,8 +1036,8 @@ class __$DeleteFailureCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_DeleteFailure implements _DeleteFailure {
-  const _$_DeleteFailure(this.categoryFailure);
+class _$DeleteFailureImpl implements _DeleteFailure {
+  const _$DeleteFailureImpl(this.categoryFailure);
 
   @override
   final CategoryFailure categoryFailure;
@@ -1100,19 +1051,19 @@ class _$_DeleteFailure implements _DeleteFailure {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DeleteFailure &&
-            const DeepCollectionEquality()
-                .equals(other.categoryFailure, categoryFailure));
+            other is _$DeleteFailureImpl &&
+            (identical(other.categoryFailure, categoryFailure) ||
+                other.categoryFailure == categoryFailure));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(categoryFailure));
+  int get hashCode => Object.hash(runtimeType, categoryFailure);
 
   @JsonKey(ignore: true)
   @override
-  _$DeleteFailureCopyWith<_DeleteFailure> get copyWith =>
-      __$DeleteFailureCopyWithImpl<_DeleteFailure>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$DeleteFailureImplCopyWith<_$DeleteFailureImpl> get copyWith =>
+      __$$DeleteFailureImplCopyWithImpl<_$DeleteFailureImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1130,12 +1081,12 @@ class _$_DeleteFailure implements _DeleteFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function(CategoryFailure categoryFailure)? reorderFailure,
-    TResult Function()? reorderSuccess,
-    TResult Function(CategoryFailure categoryFailure)? deleteFailure,
-    TResult Function()? deleteSuccess,
+    TResult? Function()? initial,
+    TResult? Function()? actionInProgress,
+    TResult? Function(CategoryFailure categoryFailure)? reorderFailure,
+    TResult? Function()? reorderSuccess,
+    TResult? Function(CategoryFailure categoryFailure)? deleteFailure,
+    TResult? Function()? deleteSuccess,
   }) {
     return deleteFailure?.call(categoryFailure);
   }
@@ -1173,12 +1124,12 @@ class _$_DeleteFailure implements _DeleteFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_ReorderFailure value)? reorderFailure,
-    TResult Function(_ReorderSuccess value)? reorderSuccess,
-    TResult Function(_DeleteFailure value)? deleteFailure,
-    TResult Function(_DeleteSuccess value)? deleteSuccess,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ActionInProgress value)? actionInProgress,
+    TResult? Function(_ReorderFailure value)? reorderFailure,
+    TResult? Function(_ReorderSuccess value)? reorderSuccess,
+    TResult? Function(_DeleteFailure value)? deleteFailure,
+    TResult? Function(_DeleteSuccess value)? deleteSuccess,
   }) {
     return deleteFailure?.call(this);
   }
@@ -1202,38 +1153,35 @@ class _$_DeleteFailure implements _DeleteFailure {
 }
 
 abstract class _DeleteFailure implements CategoryActorState {
-  const factory _DeleteFailure(CategoryFailure categoryFailure) =
-      _$_DeleteFailure;
+  const factory _DeleteFailure(final CategoryFailure categoryFailure) =
+      _$DeleteFailureImpl;
 
   CategoryFailure get categoryFailure;
   @JsonKey(ignore: true)
-  _$DeleteFailureCopyWith<_DeleteFailure> get copyWith =>
+  _$$DeleteFailureImplCopyWith<_$DeleteFailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$DeleteSuccessCopyWith<$Res> {
-  factory _$DeleteSuccessCopyWith(
-          _DeleteSuccess value, $Res Function(_DeleteSuccess) then) =
-      __$DeleteSuccessCopyWithImpl<$Res>;
+abstract class _$$DeleteSuccessImplCopyWith<$Res> {
+  factory _$$DeleteSuccessImplCopyWith(
+          _$DeleteSuccessImpl value, $Res Function(_$DeleteSuccessImpl) then) =
+      __$$DeleteSuccessImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$DeleteSuccessCopyWithImpl<$Res>
-    extends _$CategoryActorStateCopyWithImpl<$Res>
-    implements _$DeleteSuccessCopyWith<$Res> {
-  __$DeleteSuccessCopyWithImpl(
-      _DeleteSuccess _value, $Res Function(_DeleteSuccess) _then)
-      : super(_value, (v) => _then(v as _DeleteSuccess));
-
-  @override
-  _DeleteSuccess get _value => super._value as _DeleteSuccess;
+class __$$DeleteSuccessImplCopyWithImpl<$Res>
+    extends _$CategoryActorStateCopyWithImpl<$Res, _$DeleteSuccessImpl>
+    implements _$$DeleteSuccessImplCopyWith<$Res> {
+  __$$DeleteSuccessImplCopyWithImpl(
+      _$DeleteSuccessImpl _value, $Res Function(_$DeleteSuccessImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_DeleteSuccess implements _DeleteSuccess {
-  const _$_DeleteSuccess();
+class _$DeleteSuccessImpl implements _DeleteSuccess {
+  const _$DeleteSuccessImpl();
 
   @override
   String toString() {
@@ -1243,7 +1191,7 @@ class _$_DeleteSuccess implements _DeleteSuccess {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _DeleteSuccess);
+        (other.runtimeType == runtimeType && other is _$DeleteSuccessImpl);
   }
 
   @override
@@ -1265,12 +1213,12 @@ class _$_DeleteSuccess implements _DeleteSuccess {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function(CategoryFailure categoryFailure)? reorderFailure,
-    TResult Function()? reorderSuccess,
-    TResult Function(CategoryFailure categoryFailure)? deleteFailure,
-    TResult Function()? deleteSuccess,
+    TResult? Function()? initial,
+    TResult? Function()? actionInProgress,
+    TResult? Function(CategoryFailure categoryFailure)? reorderFailure,
+    TResult? Function()? reorderSuccess,
+    TResult? Function(CategoryFailure categoryFailure)? deleteFailure,
+    TResult? Function()? deleteSuccess,
   }) {
     return deleteSuccess?.call();
   }
@@ -1308,12 +1256,12 @@ class _$_DeleteSuccess implements _DeleteSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_ReorderFailure value)? reorderFailure,
-    TResult Function(_ReorderSuccess value)? reorderSuccess,
-    TResult Function(_DeleteFailure value)? deleteFailure,
-    TResult Function(_DeleteSuccess value)? deleteSuccess,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ActionInProgress value)? actionInProgress,
+    TResult? Function(_ReorderFailure value)? reorderFailure,
+    TResult? Function(_ReorderSuccess value)? reorderSuccess,
+    TResult? Function(_DeleteFailure value)? deleteFailure,
+    TResult? Function(_DeleteSuccess value)? deleteSuccess,
   }) {
     return deleteSuccess?.call(this);
   }
@@ -1337,5 +1285,5 @@ class _$_DeleteSuccess implements _DeleteSuccess {
 }
 
 abstract class _DeleteSuccess implements CategoryActorState {
-  const factory _DeleteSuccess() = _$_DeleteSuccess;
+  const factory _DeleteSuccess() = _$DeleteSuccessImpl;
 }

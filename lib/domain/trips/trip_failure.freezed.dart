@@ -1,6 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'trip_failure.dart';
 
@@ -11,56 +12,11 @@ part of 'trip_failure.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$TripFailureTearOff {
-  const _$TripFailureTearOff();
-
-  _InsufficientPermission insufficientPermission(
-      PlatformException e, String message) {
-    return _InsufficientPermission(
-      e,
-      message,
-    );
-  }
-
-  _UnableToUpdate unableToUpdate(PlatformException e, String message) {
-    return _UnableToUpdate(
-      e,
-      message,
-    );
-  }
-
-  _PlatformSpecific platformSpecific(PlatformException e, String message) {
-    return _PlatformSpecific(
-      e,
-      message,
-    );
-  }
-
-  _Unexpected unexpected(Exception e, String message) {
-    return _Unexpected(
-      e,
-      message,
-    );
-  }
-
-  _UnableToProcess unableToProcess(dynamic obj, String message) {
-    return _UnableToProcess(
-      obj,
-      message,
-    );
-  }
-}
-
-/// @nodoc
-const $TripFailure = _$TripFailureTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$TripFailure {
   String get message => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(PlatformException e, String message)
@@ -75,12 +31,12 @@ mixin _$TripFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(PlatformException e, String message)?
+    TResult? Function(PlatformException e, String message)?
         insufficientPermission,
-    TResult Function(PlatformException e, String message)? unableToUpdate,
-    TResult Function(PlatformException e, String message)? platformSpecific,
-    TResult Function(Exception e, String message)? unexpected,
-    TResult Function(dynamic obj, String message)? unableToProcess,
+    TResult? Function(PlatformException e, String message)? unableToUpdate,
+    TResult? Function(PlatformException e, String message)? platformSpecific,
+    TResult? Function(Exception e, String message)? unexpected,
+    TResult? Function(dynamic obj, String message)? unableToProcess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -106,11 +62,11 @@ mixin _$TripFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_InsufficientPermission value)? insufficientPermission,
-    TResult Function(_UnableToUpdate value)? unableToUpdate,
-    TResult Function(_PlatformSpecific value)? platformSpecific,
-    TResult Function(_Unexpected value)? unexpected,
-    TResult Function(_UnableToProcess value)? unableToProcess,
+    TResult? Function(_InsufficientPermission value)? insufficientPermission,
+    TResult? Function(_UnableToUpdate value)? unableToUpdate,
+    TResult? Function(_PlatformSpecific value)? platformSpecific,
+    TResult? Function(_Unexpected value)? unexpected,
+    TResult? Function(_UnableToProcess value)? unableToProcess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -133,63 +89,68 @@ mixin _$TripFailure {
 abstract class $TripFailureCopyWith<$Res> {
   factory $TripFailureCopyWith(
           TripFailure value, $Res Function(TripFailure) then) =
-      _$TripFailureCopyWithImpl<$Res>;
+      _$TripFailureCopyWithImpl<$Res, TripFailure>;
+  @useResult
   $Res call({String message});
 }
 
 /// @nodoc
-class _$TripFailureCopyWithImpl<$Res> implements $TripFailureCopyWith<$Res> {
+class _$TripFailureCopyWithImpl<$Res, $Val extends TripFailure>
+    implements $TripFailureCopyWith<$Res> {
   _$TripFailureCopyWithImpl(this._value, this._then);
 
-  final TripFailure _value;
   // ignore: unused_field
-  final $Res Function(TripFailure) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? message = freezed,
+    Object? message = null,
   }) {
     return _then(_value.copyWith(
-      message: message == freezed
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$InsufficientPermissionCopyWith<$Res>
+abstract class _$$InsufficientPermissionImplCopyWith<$Res>
     implements $TripFailureCopyWith<$Res> {
-  factory _$InsufficientPermissionCopyWith(_InsufficientPermission value,
-          $Res Function(_InsufficientPermission) then) =
-      __$InsufficientPermissionCopyWithImpl<$Res>;
+  factory _$$InsufficientPermissionImplCopyWith(
+          _$InsufficientPermissionImpl value,
+          $Res Function(_$InsufficientPermissionImpl) then) =
+      __$$InsufficientPermissionImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({PlatformException e, String message});
 }
 
 /// @nodoc
-class __$InsufficientPermissionCopyWithImpl<$Res>
-    extends _$TripFailureCopyWithImpl<$Res>
-    implements _$InsufficientPermissionCopyWith<$Res> {
-  __$InsufficientPermissionCopyWithImpl(_InsufficientPermission _value,
-      $Res Function(_InsufficientPermission) _then)
-      : super(_value, (v) => _then(v as _InsufficientPermission));
+class __$$InsufficientPermissionImplCopyWithImpl<$Res>
+    extends _$TripFailureCopyWithImpl<$Res, _$InsufficientPermissionImpl>
+    implements _$$InsufficientPermissionImplCopyWith<$Res> {
+  __$$InsufficientPermissionImplCopyWithImpl(
+      _$InsufficientPermissionImpl _value,
+      $Res Function(_$InsufficientPermissionImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _InsufficientPermission get _value => super._value as _InsufficientPermission;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? e = freezed,
-    Object? message = freezed,
+    Object? e = null,
+    Object? message = null,
   }) {
-    return _then(_InsufficientPermission(
-      e == freezed
+    return _then(_$InsufficientPermissionImpl(
+      null == e
           ? _value.e
           : e // ignore: cast_nullable_to_non_nullable
               as PlatformException,
-      message == freezed
+      null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
@@ -199,8 +160,8 @@ class __$InsufficientPermissionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_InsufficientPermission implements _InsufficientPermission {
-  const _$_InsufficientPermission(this.e, this.message);
+class _$InsufficientPermissionImpl implements _InsufficientPermission {
+  const _$InsufficientPermissionImpl(this.e, this.message);
 
   @override
   final PlatformException e;
@@ -216,22 +177,20 @@ class _$_InsufficientPermission implements _InsufficientPermission {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _InsufficientPermission &&
-            const DeepCollectionEquality().equals(other.e, e) &&
-            const DeepCollectionEquality().equals(other.message, message));
+            other is _$InsufficientPermissionImpl &&
+            (identical(other.e, e) || other.e == e) &&
+            (identical(other.message, message) || other.message == message));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(e),
-      const DeepCollectionEquality().hash(message));
+  int get hashCode => Object.hash(runtimeType, e, message);
 
   @JsonKey(ignore: true)
   @override
-  _$InsufficientPermissionCopyWith<_InsufficientPermission> get copyWith =>
-      __$InsufficientPermissionCopyWithImpl<_InsufficientPermission>(
-          this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$InsufficientPermissionImplCopyWith<_$InsufficientPermissionImpl>
+      get copyWith => __$$InsufficientPermissionImplCopyWithImpl<
+          _$InsufficientPermissionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -251,12 +210,12 @@ class _$_InsufficientPermission implements _InsufficientPermission {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(PlatformException e, String message)?
+    TResult? Function(PlatformException e, String message)?
         insufficientPermission,
-    TResult Function(PlatformException e, String message)? unableToUpdate,
-    TResult Function(PlatformException e, String message)? platformSpecific,
-    TResult Function(Exception e, String message)? unexpected,
-    TResult Function(dynamic obj, String message)? unableToProcess,
+    TResult? Function(PlatformException e, String message)? unableToUpdate,
+    TResult? Function(PlatformException e, String message)? platformSpecific,
+    TResult? Function(Exception e, String message)? unexpected,
+    TResult? Function(dynamic obj, String message)? unableToProcess,
   }) {
     return insufficientPermission?.call(e, message);
   }
@@ -294,11 +253,11 @@ class _$_InsufficientPermission implements _InsufficientPermission {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_InsufficientPermission value)? insufficientPermission,
-    TResult Function(_UnableToUpdate value)? unableToUpdate,
-    TResult Function(_PlatformSpecific value)? platformSpecific,
-    TResult Function(_Unexpected value)? unexpected,
-    TResult Function(_UnableToProcess value)? unableToProcess,
+    TResult? Function(_InsufficientPermission value)? insufficientPermission,
+    TResult? Function(_UnableToUpdate value)? unableToUpdate,
+    TResult? Function(_PlatformSpecific value)? platformSpecific,
+    TResult? Function(_Unexpected value)? unexpected,
+    TResult? Function(_UnableToProcess value)? unableToProcess,
   }) {
     return insufficientPermission?.call(this);
   }
@@ -321,50 +280,50 @@ class _$_InsufficientPermission implements _InsufficientPermission {
 }
 
 abstract class _InsufficientPermission implements TripFailure {
-  const factory _InsufficientPermission(PlatformException e, String message) =
-      _$_InsufficientPermission;
+  const factory _InsufficientPermission(
+          final PlatformException e, final String message) =
+      _$InsufficientPermissionImpl;
 
   PlatformException get e;
   @override
   String get message;
   @override
   @JsonKey(ignore: true)
-  _$InsufficientPermissionCopyWith<_InsufficientPermission> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$InsufficientPermissionImplCopyWith<_$InsufficientPermissionImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$UnableToUpdateCopyWith<$Res>
+abstract class _$$UnableToUpdateImplCopyWith<$Res>
     implements $TripFailureCopyWith<$Res> {
-  factory _$UnableToUpdateCopyWith(
-          _UnableToUpdate value, $Res Function(_UnableToUpdate) then) =
-      __$UnableToUpdateCopyWithImpl<$Res>;
+  factory _$$UnableToUpdateImplCopyWith(_$UnableToUpdateImpl value,
+          $Res Function(_$UnableToUpdateImpl) then) =
+      __$$UnableToUpdateImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({PlatformException e, String message});
 }
 
 /// @nodoc
-class __$UnableToUpdateCopyWithImpl<$Res>
-    extends _$TripFailureCopyWithImpl<$Res>
-    implements _$UnableToUpdateCopyWith<$Res> {
-  __$UnableToUpdateCopyWithImpl(
-      _UnableToUpdate _value, $Res Function(_UnableToUpdate) _then)
-      : super(_value, (v) => _then(v as _UnableToUpdate));
+class __$$UnableToUpdateImplCopyWithImpl<$Res>
+    extends _$TripFailureCopyWithImpl<$Res, _$UnableToUpdateImpl>
+    implements _$$UnableToUpdateImplCopyWith<$Res> {
+  __$$UnableToUpdateImplCopyWithImpl(
+      _$UnableToUpdateImpl _value, $Res Function(_$UnableToUpdateImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _UnableToUpdate get _value => super._value as _UnableToUpdate;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? e = freezed,
-    Object? message = freezed,
+    Object? e = null,
+    Object? message = null,
   }) {
-    return _then(_UnableToUpdate(
-      e == freezed
+    return _then(_$UnableToUpdateImpl(
+      null == e
           ? _value.e
           : e // ignore: cast_nullable_to_non_nullable
               as PlatformException,
-      message == freezed
+      null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
@@ -374,8 +333,8 @@ class __$UnableToUpdateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_UnableToUpdate implements _UnableToUpdate {
-  const _$_UnableToUpdate(this.e, this.message);
+class _$UnableToUpdateImpl implements _UnableToUpdate {
+  const _$UnableToUpdateImpl(this.e, this.message);
 
   @override
   final PlatformException e;
@@ -391,21 +350,20 @@ class _$_UnableToUpdate implements _UnableToUpdate {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _UnableToUpdate &&
-            const DeepCollectionEquality().equals(other.e, e) &&
-            const DeepCollectionEquality().equals(other.message, message));
+            other is _$UnableToUpdateImpl &&
+            (identical(other.e, e) || other.e == e) &&
+            (identical(other.message, message) || other.message == message));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(e),
-      const DeepCollectionEquality().hash(message));
+  int get hashCode => Object.hash(runtimeType, e, message);
 
   @JsonKey(ignore: true)
   @override
-  _$UnableToUpdateCopyWith<_UnableToUpdate> get copyWith =>
-      __$UnableToUpdateCopyWithImpl<_UnableToUpdate>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$UnableToUpdateImplCopyWith<_$UnableToUpdateImpl> get copyWith =>
+      __$$UnableToUpdateImplCopyWithImpl<_$UnableToUpdateImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -425,12 +383,12 @@ class _$_UnableToUpdate implements _UnableToUpdate {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(PlatformException e, String message)?
+    TResult? Function(PlatformException e, String message)?
         insufficientPermission,
-    TResult Function(PlatformException e, String message)? unableToUpdate,
-    TResult Function(PlatformException e, String message)? platformSpecific,
-    TResult Function(Exception e, String message)? unexpected,
-    TResult Function(dynamic obj, String message)? unableToProcess,
+    TResult? Function(PlatformException e, String message)? unableToUpdate,
+    TResult? Function(PlatformException e, String message)? platformSpecific,
+    TResult? Function(Exception e, String message)? unexpected,
+    TResult? Function(dynamic obj, String message)? unableToProcess,
   }) {
     return unableToUpdate?.call(e, message);
   }
@@ -468,11 +426,11 @@ class _$_UnableToUpdate implements _UnableToUpdate {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_InsufficientPermission value)? insufficientPermission,
-    TResult Function(_UnableToUpdate value)? unableToUpdate,
-    TResult Function(_PlatformSpecific value)? platformSpecific,
-    TResult Function(_Unexpected value)? unexpected,
-    TResult Function(_UnableToProcess value)? unableToProcess,
+    TResult? Function(_InsufficientPermission value)? insufficientPermission,
+    TResult? Function(_UnableToUpdate value)? unableToUpdate,
+    TResult? Function(_PlatformSpecific value)? platformSpecific,
+    TResult? Function(_Unexpected value)? unexpected,
+    TResult? Function(_UnableToProcess value)? unableToProcess,
   }) {
     return unableToUpdate?.call(this);
   }
@@ -495,50 +453,49 @@ class _$_UnableToUpdate implements _UnableToUpdate {
 }
 
 abstract class _UnableToUpdate implements TripFailure {
-  const factory _UnableToUpdate(PlatformException e, String message) =
-      _$_UnableToUpdate;
+  const factory _UnableToUpdate(
+      final PlatformException e, final String message) = _$UnableToUpdateImpl;
 
   PlatformException get e;
   @override
   String get message;
   @override
   @JsonKey(ignore: true)
-  _$UnableToUpdateCopyWith<_UnableToUpdate> get copyWith =>
+  _$$UnableToUpdateImplCopyWith<_$UnableToUpdateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$PlatformSpecificCopyWith<$Res>
+abstract class _$$PlatformSpecificImplCopyWith<$Res>
     implements $TripFailureCopyWith<$Res> {
-  factory _$PlatformSpecificCopyWith(
-          _PlatformSpecific value, $Res Function(_PlatformSpecific) then) =
-      __$PlatformSpecificCopyWithImpl<$Res>;
+  factory _$$PlatformSpecificImplCopyWith(_$PlatformSpecificImpl value,
+          $Res Function(_$PlatformSpecificImpl) then) =
+      __$$PlatformSpecificImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({PlatformException e, String message});
 }
 
 /// @nodoc
-class __$PlatformSpecificCopyWithImpl<$Res>
-    extends _$TripFailureCopyWithImpl<$Res>
-    implements _$PlatformSpecificCopyWith<$Res> {
-  __$PlatformSpecificCopyWithImpl(
-      _PlatformSpecific _value, $Res Function(_PlatformSpecific) _then)
-      : super(_value, (v) => _then(v as _PlatformSpecific));
+class __$$PlatformSpecificImplCopyWithImpl<$Res>
+    extends _$TripFailureCopyWithImpl<$Res, _$PlatformSpecificImpl>
+    implements _$$PlatformSpecificImplCopyWith<$Res> {
+  __$$PlatformSpecificImplCopyWithImpl(_$PlatformSpecificImpl _value,
+      $Res Function(_$PlatformSpecificImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _PlatformSpecific get _value => super._value as _PlatformSpecific;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? e = freezed,
-    Object? message = freezed,
+    Object? e = null,
+    Object? message = null,
   }) {
-    return _then(_PlatformSpecific(
-      e == freezed
+    return _then(_$PlatformSpecificImpl(
+      null == e
           ? _value.e
           : e // ignore: cast_nullable_to_non_nullable
               as PlatformException,
-      message == freezed
+      null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
@@ -548,8 +505,8 @@ class __$PlatformSpecificCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_PlatformSpecific implements _PlatformSpecific {
-  const _$_PlatformSpecific(this.e, this.message);
+class _$PlatformSpecificImpl implements _PlatformSpecific {
+  const _$PlatformSpecificImpl(this.e, this.message);
 
   @override
   final PlatformException e;
@@ -565,21 +522,20 @@ class _$_PlatformSpecific implements _PlatformSpecific {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PlatformSpecific &&
-            const DeepCollectionEquality().equals(other.e, e) &&
-            const DeepCollectionEquality().equals(other.message, message));
+            other is _$PlatformSpecificImpl &&
+            (identical(other.e, e) || other.e == e) &&
+            (identical(other.message, message) || other.message == message));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(e),
-      const DeepCollectionEquality().hash(message));
+  int get hashCode => Object.hash(runtimeType, e, message);
 
   @JsonKey(ignore: true)
   @override
-  _$PlatformSpecificCopyWith<_PlatformSpecific> get copyWith =>
-      __$PlatformSpecificCopyWithImpl<_PlatformSpecific>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$PlatformSpecificImplCopyWith<_$PlatformSpecificImpl> get copyWith =>
+      __$$PlatformSpecificImplCopyWithImpl<_$PlatformSpecificImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -599,12 +555,12 @@ class _$_PlatformSpecific implements _PlatformSpecific {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(PlatformException e, String message)?
+    TResult? Function(PlatformException e, String message)?
         insufficientPermission,
-    TResult Function(PlatformException e, String message)? unableToUpdate,
-    TResult Function(PlatformException e, String message)? platformSpecific,
-    TResult Function(Exception e, String message)? unexpected,
-    TResult Function(dynamic obj, String message)? unableToProcess,
+    TResult? Function(PlatformException e, String message)? unableToUpdate,
+    TResult? Function(PlatformException e, String message)? platformSpecific,
+    TResult? Function(Exception e, String message)? unexpected,
+    TResult? Function(dynamic obj, String message)? unableToProcess,
   }) {
     return platformSpecific?.call(e, message);
   }
@@ -642,11 +598,11 @@ class _$_PlatformSpecific implements _PlatformSpecific {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_InsufficientPermission value)? insufficientPermission,
-    TResult Function(_UnableToUpdate value)? unableToUpdate,
-    TResult Function(_PlatformSpecific value)? platformSpecific,
-    TResult Function(_Unexpected value)? unexpected,
-    TResult Function(_UnableToProcess value)? unableToProcess,
+    TResult? Function(_InsufficientPermission value)? insufficientPermission,
+    TResult? Function(_UnableToUpdate value)? unableToUpdate,
+    TResult? Function(_PlatformSpecific value)? platformSpecific,
+    TResult? Function(_Unexpected value)? unexpected,
+    TResult? Function(_UnableToProcess value)? unableToProcess,
   }) {
     return platformSpecific?.call(this);
   }
@@ -669,49 +625,49 @@ class _$_PlatformSpecific implements _PlatformSpecific {
 }
 
 abstract class _PlatformSpecific implements TripFailure {
-  const factory _PlatformSpecific(PlatformException e, String message) =
-      _$_PlatformSpecific;
+  const factory _PlatformSpecific(
+      final PlatformException e, final String message) = _$PlatformSpecificImpl;
 
   PlatformException get e;
   @override
   String get message;
   @override
   @JsonKey(ignore: true)
-  _$PlatformSpecificCopyWith<_PlatformSpecific> get copyWith =>
+  _$$PlatformSpecificImplCopyWith<_$PlatformSpecificImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$UnexpectedCopyWith<$Res>
+abstract class _$$UnexpectedImplCopyWith<$Res>
     implements $TripFailureCopyWith<$Res> {
-  factory _$UnexpectedCopyWith(
-          _Unexpected value, $Res Function(_Unexpected) then) =
-      __$UnexpectedCopyWithImpl<$Res>;
+  factory _$$UnexpectedImplCopyWith(
+          _$UnexpectedImpl value, $Res Function(_$UnexpectedImpl) then) =
+      __$$UnexpectedImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({Exception e, String message});
 }
 
 /// @nodoc
-class __$UnexpectedCopyWithImpl<$Res> extends _$TripFailureCopyWithImpl<$Res>
-    implements _$UnexpectedCopyWith<$Res> {
-  __$UnexpectedCopyWithImpl(
-      _Unexpected _value, $Res Function(_Unexpected) _then)
-      : super(_value, (v) => _then(v as _Unexpected));
+class __$$UnexpectedImplCopyWithImpl<$Res>
+    extends _$TripFailureCopyWithImpl<$Res, _$UnexpectedImpl>
+    implements _$$UnexpectedImplCopyWith<$Res> {
+  __$$UnexpectedImplCopyWithImpl(
+      _$UnexpectedImpl _value, $Res Function(_$UnexpectedImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _Unexpected get _value => super._value as _Unexpected;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? e = freezed,
-    Object? message = freezed,
+    Object? e = null,
+    Object? message = null,
   }) {
-    return _then(_Unexpected(
-      e == freezed
+    return _then(_$UnexpectedImpl(
+      null == e
           ? _value.e
           : e // ignore: cast_nullable_to_non_nullable
               as Exception,
-      message == freezed
+      null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
@@ -721,8 +677,8 @@ class __$UnexpectedCopyWithImpl<$Res> extends _$TripFailureCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Unexpected implements _Unexpected {
-  const _$_Unexpected(this.e, this.message);
+class _$UnexpectedImpl implements _Unexpected {
+  const _$UnexpectedImpl(this.e, this.message);
 
   @override
   final Exception e;
@@ -738,21 +694,19 @@ class _$_Unexpected implements _Unexpected {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Unexpected &&
-            const DeepCollectionEquality().equals(other.e, e) &&
-            const DeepCollectionEquality().equals(other.message, message));
+            other is _$UnexpectedImpl &&
+            (identical(other.e, e) || other.e == e) &&
+            (identical(other.message, message) || other.message == message));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(e),
-      const DeepCollectionEquality().hash(message));
+  int get hashCode => Object.hash(runtimeType, e, message);
 
   @JsonKey(ignore: true)
   @override
-  _$UnexpectedCopyWith<_Unexpected> get copyWith =>
-      __$UnexpectedCopyWithImpl<_Unexpected>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$UnexpectedImplCopyWith<_$UnexpectedImpl> get copyWith =>
+      __$$UnexpectedImplCopyWithImpl<_$UnexpectedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -772,12 +726,12 @@ class _$_Unexpected implements _Unexpected {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(PlatformException e, String message)?
+    TResult? Function(PlatformException e, String message)?
         insufficientPermission,
-    TResult Function(PlatformException e, String message)? unableToUpdate,
-    TResult Function(PlatformException e, String message)? platformSpecific,
-    TResult Function(Exception e, String message)? unexpected,
-    TResult Function(dynamic obj, String message)? unableToProcess,
+    TResult? Function(PlatformException e, String message)? unableToUpdate,
+    TResult? Function(PlatformException e, String message)? platformSpecific,
+    TResult? Function(Exception e, String message)? unexpected,
+    TResult? Function(dynamic obj, String message)? unableToProcess,
   }) {
     return unexpected?.call(e, message);
   }
@@ -815,11 +769,11 @@ class _$_Unexpected implements _Unexpected {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_InsufficientPermission value)? insufficientPermission,
-    TResult Function(_UnableToUpdate value)? unableToUpdate,
-    TResult Function(_PlatformSpecific value)? platformSpecific,
-    TResult Function(_Unexpected value)? unexpected,
-    TResult Function(_UnableToProcess value)? unableToProcess,
+    TResult? Function(_InsufficientPermission value)? insufficientPermission,
+    TResult? Function(_UnableToUpdate value)? unableToUpdate,
+    TResult? Function(_PlatformSpecific value)? platformSpecific,
+    TResult? Function(_Unexpected value)? unexpected,
+    TResult? Function(_UnableToProcess value)? unableToProcess,
   }) {
     return unexpected?.call(this);
   }
@@ -842,49 +796,49 @@ class _$_Unexpected implements _Unexpected {
 }
 
 abstract class _Unexpected implements TripFailure {
-  const factory _Unexpected(Exception e, String message) = _$_Unexpected;
+  const factory _Unexpected(final Exception e, final String message) =
+      _$UnexpectedImpl;
 
   Exception get e;
   @override
   String get message;
   @override
   @JsonKey(ignore: true)
-  _$UnexpectedCopyWith<_Unexpected> get copyWith =>
+  _$$UnexpectedImplCopyWith<_$UnexpectedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$UnableToProcessCopyWith<$Res>
+abstract class _$$UnableToProcessImplCopyWith<$Res>
     implements $TripFailureCopyWith<$Res> {
-  factory _$UnableToProcessCopyWith(
-          _UnableToProcess value, $Res Function(_UnableToProcess) then) =
-      __$UnableToProcessCopyWithImpl<$Res>;
+  factory _$$UnableToProcessImplCopyWith(_$UnableToProcessImpl value,
+          $Res Function(_$UnableToProcessImpl) then) =
+      __$$UnableToProcessImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({dynamic obj, String message});
 }
 
 /// @nodoc
-class __$UnableToProcessCopyWithImpl<$Res>
-    extends _$TripFailureCopyWithImpl<$Res>
-    implements _$UnableToProcessCopyWith<$Res> {
-  __$UnableToProcessCopyWithImpl(
-      _UnableToProcess _value, $Res Function(_UnableToProcess) _then)
-      : super(_value, (v) => _then(v as _UnableToProcess));
+class __$$UnableToProcessImplCopyWithImpl<$Res>
+    extends _$TripFailureCopyWithImpl<$Res, _$UnableToProcessImpl>
+    implements _$$UnableToProcessImplCopyWith<$Res> {
+  __$$UnableToProcessImplCopyWithImpl(
+      _$UnableToProcessImpl _value, $Res Function(_$UnableToProcessImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _UnableToProcess get _value => super._value as _UnableToProcess;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? obj = freezed,
-    Object? message = freezed,
+    Object? message = null,
   }) {
-    return _then(_UnableToProcess(
-      obj == freezed
+    return _then(_$UnableToProcessImpl(
+      freezed == obj
           ? _value.obj
           : obj // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      message == freezed
+      null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
@@ -894,8 +848,8 @@ class __$UnableToProcessCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_UnableToProcess implements _UnableToProcess {
-  const _$_UnableToProcess(this.obj, this.message);
+class _$UnableToProcessImpl implements _UnableToProcess {
+  const _$UnableToProcessImpl(this.obj, this.message);
 
   @override
   final dynamic obj;
@@ -911,21 +865,21 @@ class _$_UnableToProcess implements _UnableToProcess {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _UnableToProcess &&
+            other is _$UnableToProcessImpl &&
             const DeepCollectionEquality().equals(other.obj, obj) &&
-            const DeepCollectionEquality().equals(other.message, message));
+            (identical(other.message, message) || other.message == message));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(obj),
-      const DeepCollectionEquality().hash(message));
+      runtimeType, const DeepCollectionEquality().hash(obj), message);
 
   @JsonKey(ignore: true)
   @override
-  _$UnableToProcessCopyWith<_UnableToProcess> get copyWith =>
-      __$UnableToProcessCopyWithImpl<_UnableToProcess>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$UnableToProcessImplCopyWith<_$UnableToProcessImpl> get copyWith =>
+      __$$UnableToProcessImplCopyWithImpl<_$UnableToProcessImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -945,12 +899,12 @@ class _$_UnableToProcess implements _UnableToProcess {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(PlatformException e, String message)?
+    TResult? Function(PlatformException e, String message)?
         insufficientPermission,
-    TResult Function(PlatformException e, String message)? unableToUpdate,
-    TResult Function(PlatformException e, String message)? platformSpecific,
-    TResult Function(Exception e, String message)? unexpected,
-    TResult Function(dynamic obj, String message)? unableToProcess,
+    TResult? Function(PlatformException e, String message)? unableToUpdate,
+    TResult? Function(PlatformException e, String message)? platformSpecific,
+    TResult? Function(Exception e, String message)? unexpected,
+    TResult? Function(dynamic obj, String message)? unableToProcess,
   }) {
     return unableToProcess?.call(obj, message);
   }
@@ -988,11 +942,11 @@ class _$_UnableToProcess implements _UnableToProcess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_InsufficientPermission value)? insufficientPermission,
-    TResult Function(_UnableToUpdate value)? unableToUpdate,
-    TResult Function(_PlatformSpecific value)? platformSpecific,
-    TResult Function(_Unexpected value)? unexpected,
-    TResult Function(_UnableToProcess value)? unableToProcess,
+    TResult? Function(_InsufficientPermission value)? insufficientPermission,
+    TResult? Function(_UnableToUpdate value)? unableToUpdate,
+    TResult? Function(_PlatformSpecific value)? platformSpecific,
+    TResult? Function(_Unexpected value)? unexpected,
+    TResult? Function(_UnableToProcess value)? unableToProcess,
   }) {
     return unableToProcess?.call(this);
   }
@@ -1015,14 +969,14 @@ class _$_UnableToProcess implements _UnableToProcess {
 }
 
 abstract class _UnableToProcess implements TripFailure {
-  const factory _UnableToProcess(dynamic obj, String message) =
-      _$_UnableToProcess;
+  const factory _UnableToProcess(final dynamic obj, final String message) =
+      _$UnableToProcessImpl;
 
   dynamic get obj;
   @override
   String get message;
   @override
   @JsonKey(ignore: true)
-  _$UnableToProcessCopyWith<_UnableToProcess> get copyWith =>
+  _$$UnableToProcessImplCopyWith<_$UnableToProcessImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

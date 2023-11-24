@@ -1,6 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'category_result.dart';
 
@@ -11,27 +12,7 @@ part of 'category_result.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$CategoryResultTearOff {
-  const _$CategoryResultTearOff();
-
-  _Success success({List<Category>? categories}) {
-    return _Success(
-      categories: categories,
-    );
-  }
-
-  _Failure failure({required CategoryFailure failure}) {
-    return _Failure(
-      failure: failure,
-    );
-  }
-}
-
-/// @nodoc
-const $CategoryResult = _$CategoryResultTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$CategoryResult {
@@ -43,8 +24,8 @@ mixin _$CategoryResult {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<Category>? categories)? success,
-    TResult Function(CategoryFailure failure)? failure,
+    TResult? Function(List<Category>? categories)? success,
+    TResult? Function(CategoryFailure failure)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -62,8 +43,8 @@ mixin _$CategoryResult {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Success value)? success,
-    TResult Function(_Failure value)? failure,
+    TResult? Function(_Success value)? success,
+    TResult? Function(_Failure value)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -79,42 +60,45 @@ mixin _$CategoryResult {
 abstract class $CategoryResultCopyWith<$Res> {
   factory $CategoryResultCopyWith(
           CategoryResult value, $Res Function(CategoryResult) then) =
-      _$CategoryResultCopyWithImpl<$Res>;
+      _$CategoryResultCopyWithImpl<$Res, CategoryResult>;
 }
 
 /// @nodoc
-class _$CategoryResultCopyWithImpl<$Res>
+class _$CategoryResultCopyWithImpl<$Res, $Val extends CategoryResult>
     implements $CategoryResultCopyWith<$Res> {
   _$CategoryResultCopyWithImpl(this._value, this._then);
 
-  final CategoryResult _value;
   // ignore: unused_field
-  final $Res Function(CategoryResult) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$SuccessCopyWith<$Res> {
-  factory _$SuccessCopyWith(_Success value, $Res Function(_Success) then) =
-      __$SuccessCopyWithImpl<$Res>;
+abstract class _$$SuccessImplCopyWith<$Res> {
+  factory _$$SuccessImplCopyWith(
+          _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
+      __$$SuccessImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<Category>? categories});
 }
 
 /// @nodoc
-class __$SuccessCopyWithImpl<$Res> extends _$CategoryResultCopyWithImpl<$Res>
-    implements _$SuccessCopyWith<$Res> {
-  __$SuccessCopyWithImpl(_Success _value, $Res Function(_Success) _then)
-      : super(_value, (v) => _then(v as _Success));
+class __$$SuccessImplCopyWithImpl<$Res>
+    extends _$CategoryResultCopyWithImpl<$Res, _$SuccessImpl>
+    implements _$$SuccessImplCopyWith<$Res> {
+  __$$SuccessImplCopyWithImpl(
+      _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _Success get _value => super._value as _Success;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? categories = freezed,
   }) {
-    return _then(_Success(
-      categories: categories == freezed
-          ? _value.categories
+    return _then(_$SuccessImpl(
+      categories: freezed == categories
+          ? _value._categories
           : categories // ignore: cast_nullable_to_non_nullable
               as List<Category>?,
     ));
@@ -123,11 +107,19 @@ class __$SuccessCopyWithImpl<$Res> extends _$CategoryResultCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Success implements _Success {
-  const _$_Success({this.categories});
+class _$SuccessImpl implements _Success {
+  const _$SuccessImpl({final List<Category>? categories})
+      : _categories = categories;
 
+  final List<Category>? _categories;
   @override
-  final List<Category>? categories;
+  List<Category>? get categories {
+    final value = _categories;
+    if (value == null) return null;
+    if (_categories is EqualUnmodifiableListView) return _categories;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
@@ -138,19 +130,20 @@ class _$_Success implements _Success {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Success &&
+            other is _$SuccessImpl &&
             const DeepCollectionEquality()
-                .equals(other.categories, categories));
+                .equals(other._categories, _categories));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(categories));
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_categories));
 
   @JsonKey(ignore: true)
   @override
-  _$SuccessCopyWith<_Success> get copyWith =>
-      __$SuccessCopyWithImpl<_Success>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
+      __$$SuccessImplCopyWithImpl<_$SuccessImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -164,8 +157,8 @@ class _$_Success implements _Success {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<Category>? categories)? success,
-    TResult Function(CategoryFailure failure)? failure,
+    TResult? Function(List<Category>? categories)? success,
+    TResult? Function(CategoryFailure failure)? failure,
   }) {
     return success?.call(categories);
   }
@@ -195,8 +188,8 @@ class _$_Success implements _Success {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Success value)? success,
-    TResult Function(_Failure value)? failure,
+    TResult? Function(_Success value)? success,
+    TResult? Function(_Failure value)? failure,
   }) {
     return success?.call(this);
   }
@@ -216,38 +209,40 @@ class _$_Success implements _Success {
 }
 
 abstract class _Success implements CategoryResult {
-  const factory _Success({List<Category>? categories}) = _$_Success;
+  const factory _Success({final List<Category>? categories}) = _$SuccessImpl;
 
   List<Category>? get categories;
   @JsonKey(ignore: true)
-  _$SuccessCopyWith<_Success> get copyWith =>
+  _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$FailureCopyWith<$Res> {
-  factory _$FailureCopyWith(_Failure value, $Res Function(_Failure) then) =
-      __$FailureCopyWithImpl<$Res>;
+abstract class _$$FailureImplCopyWith<$Res> {
+  factory _$$FailureImplCopyWith(
+          _$FailureImpl value, $Res Function(_$FailureImpl) then) =
+      __$$FailureImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({CategoryFailure failure});
 
   $CategoryFailureCopyWith<$Res> get failure;
 }
 
 /// @nodoc
-class __$FailureCopyWithImpl<$Res> extends _$CategoryResultCopyWithImpl<$Res>
-    implements _$FailureCopyWith<$Res> {
-  __$FailureCopyWithImpl(_Failure _value, $Res Function(_Failure) _then)
-      : super(_value, (v) => _then(v as _Failure));
+class __$$FailureImplCopyWithImpl<$Res>
+    extends _$CategoryResultCopyWithImpl<$Res, _$FailureImpl>
+    implements _$$FailureImplCopyWith<$Res> {
+  __$$FailureImplCopyWithImpl(
+      _$FailureImpl _value, $Res Function(_$FailureImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _Failure get _value => super._value as _Failure;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? failure = freezed,
+    Object? failure = null,
   }) {
-    return _then(_Failure(
-      failure: failure == freezed
+    return _then(_$FailureImpl(
+      failure: null == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
               as CategoryFailure,
@@ -255,6 +250,7 @@ class __$FailureCopyWithImpl<$Res> extends _$CategoryResultCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $CategoryFailureCopyWith<$Res> get failure {
     return $CategoryFailureCopyWith<$Res>(_value.failure, (value) {
       return _then(_value.copyWith(failure: value));
@@ -264,8 +260,8 @@ class __$FailureCopyWithImpl<$Res> extends _$CategoryResultCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Failure implements _Failure {
-  const _$_Failure({required this.failure});
+class _$FailureImpl implements _Failure {
+  const _$FailureImpl({required this.failure});
 
   @override
   final CategoryFailure failure;
@@ -279,18 +275,18 @@ class _$_Failure implements _Failure {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Failure &&
-            const DeepCollectionEquality().equals(other.failure, failure));
+            other is _$FailureImpl &&
+            (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(failure));
+  int get hashCode => Object.hash(runtimeType, failure);
 
   @JsonKey(ignore: true)
   @override
-  _$FailureCopyWith<_Failure> get copyWith =>
-      __$FailureCopyWithImpl<_Failure>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
+      __$$FailureImplCopyWithImpl<_$FailureImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -304,8 +300,8 @@ class _$_Failure implements _Failure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<Category>? categories)? success,
-    TResult Function(CategoryFailure failure)? failure,
+    TResult? Function(List<Category>? categories)? success,
+    TResult? Function(CategoryFailure failure)? failure,
   }) {
     return failure?.call(this.failure);
   }
@@ -335,8 +331,8 @@ class _$_Failure implements _Failure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Success value)? success,
-    TResult Function(_Failure value)? failure,
+    TResult? Function(_Success value)? success,
+    TResult? Function(_Failure value)? failure,
   }) {
     return failure?.call(this);
   }
@@ -356,10 +352,11 @@ class _$_Failure implements _Failure {
 }
 
 abstract class _Failure implements CategoryResult {
-  const factory _Failure({required CategoryFailure failure}) = _$_Failure;
+  const factory _Failure({required final CategoryFailure failure}) =
+      _$FailureImpl;
 
   CategoryFailure get failure;
   @JsonKey(ignore: true)
-  _$FailureCopyWith<_Failure> get copyWith =>
+  _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

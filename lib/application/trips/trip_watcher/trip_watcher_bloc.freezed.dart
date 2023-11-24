@@ -1,6 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'trip_watcher_bloc.dart';
 
@@ -11,23 +12,7 @@ part of 'trip_watcher_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$TripWatcherEventTearOff {
-  const _$TripWatcherEventTearOff();
-
-  _WatchAllStarted watchAllStarted() {
-    return const _WatchAllStarted();
-  }
-
-  _WatchUncompletedStarted watchUncompletedStarted() {
-    return const _WatchUncompletedStarted();
-  }
-}
-
-/// @nodoc
-const $TripWatcherEvent = _$TripWatcherEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$TripWatcherEvent {
@@ -39,8 +24,8 @@ mixin _$TripWatcherEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? watchAllStarted,
-    TResult Function()? watchUncompletedStarted,
+    TResult? Function()? watchAllStarted,
+    TResult? Function()? watchUncompletedStarted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -59,8 +44,8 @@ mixin _$TripWatcherEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_WatchAllStarted value)? watchAllStarted,
-    TResult Function(_WatchUncompletedStarted value)? watchUncompletedStarted,
+    TResult? Function(_WatchAllStarted value)? watchAllStarted,
+    TResult? Function(_WatchUncompletedStarted value)? watchUncompletedStarted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -76,42 +61,40 @@ mixin _$TripWatcherEvent {
 abstract class $TripWatcherEventCopyWith<$Res> {
   factory $TripWatcherEventCopyWith(
           TripWatcherEvent value, $Res Function(TripWatcherEvent) then) =
-      _$TripWatcherEventCopyWithImpl<$Res>;
+      _$TripWatcherEventCopyWithImpl<$Res, TripWatcherEvent>;
 }
 
 /// @nodoc
-class _$TripWatcherEventCopyWithImpl<$Res>
+class _$TripWatcherEventCopyWithImpl<$Res, $Val extends TripWatcherEvent>
     implements $TripWatcherEventCopyWith<$Res> {
   _$TripWatcherEventCopyWithImpl(this._value, this._then);
 
-  final TripWatcherEvent _value;
   // ignore: unused_field
-  final $Res Function(TripWatcherEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$WatchAllStartedCopyWith<$Res> {
-  factory _$WatchAllStartedCopyWith(
-          _WatchAllStarted value, $Res Function(_WatchAllStarted) then) =
-      __$WatchAllStartedCopyWithImpl<$Res>;
+abstract class _$$WatchAllStartedImplCopyWith<$Res> {
+  factory _$$WatchAllStartedImplCopyWith(_$WatchAllStartedImpl value,
+          $Res Function(_$WatchAllStartedImpl) then) =
+      __$$WatchAllStartedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$WatchAllStartedCopyWithImpl<$Res>
-    extends _$TripWatcherEventCopyWithImpl<$Res>
-    implements _$WatchAllStartedCopyWith<$Res> {
-  __$WatchAllStartedCopyWithImpl(
-      _WatchAllStarted _value, $Res Function(_WatchAllStarted) _then)
-      : super(_value, (v) => _then(v as _WatchAllStarted));
-
-  @override
-  _WatchAllStarted get _value => super._value as _WatchAllStarted;
+class __$$WatchAllStartedImplCopyWithImpl<$Res>
+    extends _$TripWatcherEventCopyWithImpl<$Res, _$WatchAllStartedImpl>
+    implements _$$WatchAllStartedImplCopyWith<$Res> {
+  __$$WatchAllStartedImplCopyWithImpl(
+      _$WatchAllStartedImpl _value, $Res Function(_$WatchAllStartedImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_WatchAllStarted implements _WatchAllStarted {
-  const _$_WatchAllStarted();
+class _$WatchAllStartedImpl implements _WatchAllStarted {
+  const _$WatchAllStartedImpl();
 
   @override
   String toString() {
@@ -121,7 +104,7 @@ class _$_WatchAllStarted implements _WatchAllStarted {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _WatchAllStarted);
+        (other.runtimeType == runtimeType && other is _$WatchAllStartedImpl);
   }
 
   @override
@@ -139,8 +122,8 @@ class _$_WatchAllStarted implements _WatchAllStarted {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? watchAllStarted,
-    TResult Function()? watchUncompletedStarted,
+    TResult? Function()? watchAllStarted,
+    TResult? Function()? watchUncompletedStarted,
   }) {
     return watchAllStarted?.call();
   }
@@ -171,8 +154,8 @@ class _$_WatchAllStarted implements _WatchAllStarted {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_WatchAllStarted value)? watchAllStarted,
-    TResult Function(_WatchUncompletedStarted value)? watchUncompletedStarted,
+    TResult? Function(_WatchAllStarted value)? watchAllStarted,
+    TResult? Function(_WatchUncompletedStarted value)? watchUncompletedStarted,
   }) {
     return watchAllStarted?.call(this);
   }
@@ -192,33 +175,31 @@ class _$_WatchAllStarted implements _WatchAllStarted {
 }
 
 abstract class _WatchAllStarted implements TripWatcherEvent {
-  const factory _WatchAllStarted() = _$_WatchAllStarted;
+  const factory _WatchAllStarted() = _$WatchAllStartedImpl;
 }
 
 /// @nodoc
-abstract class _$WatchUncompletedStartedCopyWith<$Res> {
-  factory _$WatchUncompletedStartedCopyWith(_WatchUncompletedStarted value,
-          $Res Function(_WatchUncompletedStarted) then) =
-      __$WatchUncompletedStartedCopyWithImpl<$Res>;
+abstract class _$$WatchUncompletedStartedImplCopyWith<$Res> {
+  factory _$$WatchUncompletedStartedImplCopyWith(
+          _$WatchUncompletedStartedImpl value,
+          $Res Function(_$WatchUncompletedStartedImpl) then) =
+      __$$WatchUncompletedStartedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$WatchUncompletedStartedCopyWithImpl<$Res>
-    extends _$TripWatcherEventCopyWithImpl<$Res>
-    implements _$WatchUncompletedStartedCopyWith<$Res> {
-  __$WatchUncompletedStartedCopyWithImpl(_WatchUncompletedStarted _value,
-      $Res Function(_WatchUncompletedStarted) _then)
-      : super(_value, (v) => _then(v as _WatchUncompletedStarted));
-
-  @override
-  _WatchUncompletedStarted get _value =>
-      super._value as _WatchUncompletedStarted;
+class __$$WatchUncompletedStartedImplCopyWithImpl<$Res>
+    extends _$TripWatcherEventCopyWithImpl<$Res, _$WatchUncompletedStartedImpl>
+    implements _$$WatchUncompletedStartedImplCopyWith<$Res> {
+  __$$WatchUncompletedStartedImplCopyWithImpl(
+      _$WatchUncompletedStartedImpl _value,
+      $Res Function(_$WatchUncompletedStartedImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_WatchUncompletedStarted implements _WatchUncompletedStarted {
-  const _$_WatchUncompletedStarted();
+class _$WatchUncompletedStartedImpl implements _WatchUncompletedStarted {
+  const _$WatchUncompletedStartedImpl();
 
   @override
   String toString() {
@@ -228,7 +209,8 @@ class _$_WatchUncompletedStarted implements _WatchUncompletedStarted {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _WatchUncompletedStarted);
+        (other.runtimeType == runtimeType &&
+            other is _$WatchUncompletedStartedImpl);
   }
 
   @override
@@ -246,8 +228,8 @@ class _$_WatchUncompletedStarted implements _WatchUncompletedStarted {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? watchAllStarted,
-    TResult Function()? watchUncompletedStarted,
+    TResult? Function()? watchAllStarted,
+    TResult? Function()? watchUncompletedStarted,
   }) {
     return watchUncompletedStarted?.call();
   }
@@ -278,8 +260,8 @@ class _$_WatchUncompletedStarted implements _WatchUncompletedStarted {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_WatchAllStarted value)? watchAllStarted,
-    TResult Function(_WatchUncompletedStarted value)? watchUncompletedStarted,
+    TResult? Function(_WatchAllStarted value)? watchAllStarted,
+    TResult? Function(_WatchUncompletedStarted value)? watchUncompletedStarted,
   }) {
     return watchUncompletedStarted?.call(this);
   }
@@ -299,36 +281,8 @@ class _$_WatchUncompletedStarted implements _WatchUncompletedStarted {
 }
 
 abstract class _WatchUncompletedStarted implements TripWatcherEvent {
-  const factory _WatchUncompletedStarted() = _$_WatchUncompletedStarted;
+  const factory _WatchUncompletedStarted() = _$WatchUncompletedStartedImpl;
 }
-
-/// @nodoc
-class _$TripWatcherStateTearOff {
-  const _$TripWatcherStateTearOff();
-
-  _Initial initial() {
-    return const _Initial();
-  }
-
-  _LoadInProgress loadInProgress() {
-    return const _LoadInProgress();
-  }
-
-  _LoadSuccess loadSuccess(List<Trip> trips) {
-    return _LoadSuccess(
-      trips,
-    );
-  }
-
-  _LoadFailure loadFailure(TripFailure tripFailure) {
-    return _LoadFailure(
-      tripFailure,
-    );
-  }
-}
-
-/// @nodoc
-const $TripWatcherState = _$TripWatcherStateTearOff();
 
 /// @nodoc
 mixin _$TripWatcherState {
@@ -342,10 +296,10 @@ mixin _$TripWatcherState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadInProgress,
-    TResult Function(List<Trip> trips)? loadSuccess,
-    TResult Function(TripFailure tripFailure)? loadFailure,
+    TResult? Function()? initial,
+    TResult? Function()? loadInProgress,
+    TResult? Function(List<Trip> trips)? loadSuccess,
+    TResult? Function(TripFailure tripFailure)? loadFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -367,10 +321,10 @@ mixin _$TripWatcherState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadInProgress value)? loadInProgress,
-    TResult Function(_LoadSuccess value)? loadSuccess,
-    TResult Function(_LoadFailure value)? loadFailure,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadInProgress value)? loadInProgress,
+    TResult? Function(_LoadSuccess value)? loadSuccess,
+    TResult? Function(_LoadFailure value)? loadFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -388,39 +342,40 @@ mixin _$TripWatcherState {
 abstract class $TripWatcherStateCopyWith<$Res> {
   factory $TripWatcherStateCopyWith(
           TripWatcherState value, $Res Function(TripWatcherState) then) =
-      _$TripWatcherStateCopyWithImpl<$Res>;
+      _$TripWatcherStateCopyWithImpl<$Res, TripWatcherState>;
 }
 
 /// @nodoc
-class _$TripWatcherStateCopyWithImpl<$Res>
+class _$TripWatcherStateCopyWithImpl<$Res, $Val extends TripWatcherState>
     implements $TripWatcherStateCopyWith<$Res> {
   _$TripWatcherStateCopyWithImpl(this._value, this._then);
 
-  final TripWatcherState _value;
   // ignore: unused_field
-  final $Res Function(TripWatcherState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+abstract class _$$InitialImplCopyWith<$Res> {
+  factory _$$InitialImplCopyWith(
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$TripWatcherStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
-
-  @override
-  _Initial get _value => super._value as _Initial;
+class __$$InitialImplCopyWithImpl<$Res>
+    extends _$TripWatcherStateCopyWithImpl<$Res, _$InitialImpl>
+    implements _$$InitialImplCopyWith<$Res> {
+  __$$InitialImplCopyWithImpl(
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Initial implements _Initial {
-  const _$_Initial();
+class _$InitialImpl implements _Initial {
+  const _$InitialImpl();
 
   @override
   String toString() {
@@ -430,7 +385,7 @@ class _$_Initial implements _Initial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Initial);
+        (other.runtimeType == runtimeType && other is _$InitialImpl);
   }
 
   @override
@@ -450,10 +405,10 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadInProgress,
-    TResult Function(List<Trip> trips)? loadSuccess,
-    TResult Function(TripFailure tripFailure)? loadFailure,
+    TResult? Function()? initial,
+    TResult? Function()? loadInProgress,
+    TResult? Function(List<Trip> trips)? loadSuccess,
+    TResult? Function(TripFailure tripFailure)? loadFailure,
   }) {
     return initial?.call();
   }
@@ -487,10 +442,10 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadInProgress value)? loadInProgress,
-    TResult Function(_LoadSuccess value)? loadSuccess,
-    TResult Function(_LoadFailure value)? loadFailure,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadInProgress value)? loadInProgress,
+    TResult? Function(_LoadSuccess value)? loadSuccess,
+    TResult? Function(_LoadFailure value)? loadFailure,
   }) {
     return initial?.call(this);
   }
@@ -512,32 +467,29 @@ class _$_Initial implements _Initial {
 }
 
 abstract class _Initial implements TripWatcherState {
-  const factory _Initial() = _$_Initial;
+  const factory _Initial() = _$InitialImpl;
 }
 
 /// @nodoc
-abstract class _$LoadInProgressCopyWith<$Res> {
-  factory _$LoadInProgressCopyWith(
-          _LoadInProgress value, $Res Function(_LoadInProgress) then) =
-      __$LoadInProgressCopyWithImpl<$Res>;
+abstract class _$$LoadInProgressImplCopyWith<$Res> {
+  factory _$$LoadInProgressImplCopyWith(_$LoadInProgressImpl value,
+          $Res Function(_$LoadInProgressImpl) then) =
+      __$$LoadInProgressImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LoadInProgressCopyWithImpl<$Res>
-    extends _$TripWatcherStateCopyWithImpl<$Res>
-    implements _$LoadInProgressCopyWith<$Res> {
-  __$LoadInProgressCopyWithImpl(
-      _LoadInProgress _value, $Res Function(_LoadInProgress) _then)
-      : super(_value, (v) => _then(v as _LoadInProgress));
-
-  @override
-  _LoadInProgress get _value => super._value as _LoadInProgress;
+class __$$LoadInProgressImplCopyWithImpl<$Res>
+    extends _$TripWatcherStateCopyWithImpl<$Res, _$LoadInProgressImpl>
+    implements _$$LoadInProgressImplCopyWith<$Res> {
+  __$$LoadInProgressImplCopyWithImpl(
+      _$LoadInProgressImpl _value, $Res Function(_$LoadInProgressImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_LoadInProgress implements _LoadInProgress {
-  const _$_LoadInProgress();
+class _$LoadInProgressImpl implements _LoadInProgress {
+  const _$LoadInProgressImpl();
 
   @override
   String toString() {
@@ -547,7 +499,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _LoadInProgress);
+        (other.runtimeType == runtimeType && other is _$LoadInProgressImpl);
   }
 
   @override
@@ -567,10 +519,10 @@ class _$_LoadInProgress implements _LoadInProgress {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadInProgress,
-    TResult Function(List<Trip> trips)? loadSuccess,
-    TResult Function(TripFailure tripFailure)? loadFailure,
+    TResult? Function()? initial,
+    TResult? Function()? loadInProgress,
+    TResult? Function(List<Trip> trips)? loadSuccess,
+    TResult? Function(TripFailure tripFailure)? loadFailure,
   }) {
     return loadInProgress?.call();
   }
@@ -604,10 +556,10 @@ class _$_LoadInProgress implements _LoadInProgress {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadInProgress value)? loadInProgress,
-    TResult Function(_LoadSuccess value)? loadSuccess,
-    TResult Function(_LoadFailure value)? loadFailure,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadInProgress value)? loadInProgress,
+    TResult? Function(_LoadSuccess value)? loadSuccess,
+    TResult? Function(_LoadFailure value)? loadFailure,
   }) {
     return loadInProgress?.call(this);
   }
@@ -629,35 +581,34 @@ class _$_LoadInProgress implements _LoadInProgress {
 }
 
 abstract class _LoadInProgress implements TripWatcherState {
-  const factory _LoadInProgress() = _$_LoadInProgress;
+  const factory _LoadInProgress() = _$LoadInProgressImpl;
 }
 
 /// @nodoc
-abstract class _$LoadSuccessCopyWith<$Res> {
-  factory _$LoadSuccessCopyWith(
-          _LoadSuccess value, $Res Function(_LoadSuccess) then) =
-      __$LoadSuccessCopyWithImpl<$Res>;
+abstract class _$$LoadSuccessImplCopyWith<$Res> {
+  factory _$$LoadSuccessImplCopyWith(
+          _$LoadSuccessImpl value, $Res Function(_$LoadSuccessImpl) then) =
+      __$$LoadSuccessImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<Trip> trips});
 }
 
 /// @nodoc
-class __$LoadSuccessCopyWithImpl<$Res>
-    extends _$TripWatcherStateCopyWithImpl<$Res>
-    implements _$LoadSuccessCopyWith<$Res> {
-  __$LoadSuccessCopyWithImpl(
-      _LoadSuccess _value, $Res Function(_LoadSuccess) _then)
-      : super(_value, (v) => _then(v as _LoadSuccess));
+class __$$LoadSuccessImplCopyWithImpl<$Res>
+    extends _$TripWatcherStateCopyWithImpl<$Res, _$LoadSuccessImpl>
+    implements _$$LoadSuccessImplCopyWith<$Res> {
+  __$$LoadSuccessImplCopyWithImpl(
+      _$LoadSuccessImpl _value, $Res Function(_$LoadSuccessImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _LoadSuccess get _value => super._value as _LoadSuccess;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? trips = freezed,
+    Object? trips = null,
   }) {
-    return _then(_LoadSuccess(
-      trips == freezed
-          ? _value.trips
+    return _then(_$LoadSuccessImpl(
+      null == trips
+          ? _value._trips
           : trips // ignore: cast_nullable_to_non_nullable
               as List<Trip>,
     ));
@@ -666,11 +617,16 @@ class __$LoadSuccessCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_LoadSuccess implements _LoadSuccess {
-  const _$_LoadSuccess(this.trips);
+class _$LoadSuccessImpl implements _LoadSuccess {
+  const _$LoadSuccessImpl(final List<Trip> trips) : _trips = trips;
 
+  final List<Trip> _trips;
   @override
-  final List<Trip> trips;
+  List<Trip> get trips {
+    if (_trips is EqualUnmodifiableListView) return _trips;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_trips);
+  }
 
   @override
   String toString() {
@@ -681,18 +637,19 @@ class _$_LoadSuccess implements _LoadSuccess {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _LoadSuccess &&
-            const DeepCollectionEquality().equals(other.trips, trips));
+            other is _$LoadSuccessImpl &&
+            const DeepCollectionEquality().equals(other._trips, _trips));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(trips));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_trips));
 
   @JsonKey(ignore: true)
   @override
-  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
-      __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$LoadSuccessImplCopyWith<_$LoadSuccessImpl> get copyWith =>
+      __$$LoadSuccessImplCopyWithImpl<_$LoadSuccessImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -708,10 +665,10 @@ class _$_LoadSuccess implements _LoadSuccess {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadInProgress,
-    TResult Function(List<Trip> trips)? loadSuccess,
-    TResult Function(TripFailure tripFailure)? loadFailure,
+    TResult? Function()? initial,
+    TResult? Function()? loadInProgress,
+    TResult? Function(List<Trip> trips)? loadSuccess,
+    TResult? Function(TripFailure tripFailure)? loadFailure,
   }) {
     return loadSuccess?.call(trips);
   }
@@ -745,10 +702,10 @@ class _$_LoadSuccess implements _LoadSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadInProgress value)? loadInProgress,
-    TResult Function(_LoadSuccess value)? loadSuccess,
-    TResult Function(_LoadFailure value)? loadFailure,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadInProgress value)? loadInProgress,
+    TResult? Function(_LoadSuccess value)? loadSuccess,
+    TResult? Function(_LoadFailure value)? loadFailure,
   }) {
     return loadSuccess?.call(this);
   }
@@ -770,41 +727,40 @@ class _$_LoadSuccess implements _LoadSuccess {
 }
 
 abstract class _LoadSuccess implements TripWatcherState {
-  const factory _LoadSuccess(List<Trip> trips) = _$_LoadSuccess;
+  const factory _LoadSuccess(final List<Trip> trips) = _$LoadSuccessImpl;
 
   List<Trip> get trips;
   @JsonKey(ignore: true)
-  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
+  _$$LoadSuccessImplCopyWith<_$LoadSuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$LoadFailureCopyWith<$Res> {
-  factory _$LoadFailureCopyWith(
-          _LoadFailure value, $Res Function(_LoadFailure) then) =
-      __$LoadFailureCopyWithImpl<$Res>;
+abstract class _$$LoadFailureImplCopyWith<$Res> {
+  factory _$$LoadFailureImplCopyWith(
+          _$LoadFailureImpl value, $Res Function(_$LoadFailureImpl) then) =
+      __$$LoadFailureImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({TripFailure tripFailure});
 
   $TripFailureCopyWith<$Res> get tripFailure;
 }
 
 /// @nodoc
-class __$LoadFailureCopyWithImpl<$Res>
-    extends _$TripWatcherStateCopyWithImpl<$Res>
-    implements _$LoadFailureCopyWith<$Res> {
-  __$LoadFailureCopyWithImpl(
-      _LoadFailure _value, $Res Function(_LoadFailure) _then)
-      : super(_value, (v) => _then(v as _LoadFailure));
+class __$$LoadFailureImplCopyWithImpl<$Res>
+    extends _$TripWatcherStateCopyWithImpl<$Res, _$LoadFailureImpl>
+    implements _$$LoadFailureImplCopyWith<$Res> {
+  __$$LoadFailureImplCopyWithImpl(
+      _$LoadFailureImpl _value, $Res Function(_$LoadFailureImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _LoadFailure get _value => super._value as _LoadFailure;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? tripFailure = freezed,
+    Object? tripFailure = null,
   }) {
-    return _then(_LoadFailure(
-      tripFailure == freezed
+    return _then(_$LoadFailureImpl(
+      null == tripFailure
           ? _value.tripFailure
           : tripFailure // ignore: cast_nullable_to_non_nullable
               as TripFailure,
@@ -812,6 +768,7 @@ class __$LoadFailureCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TripFailureCopyWith<$Res> get tripFailure {
     return $TripFailureCopyWith<$Res>(_value.tripFailure, (value) {
       return _then(_value.copyWith(tripFailure: value));
@@ -821,8 +778,8 @@ class __$LoadFailureCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_LoadFailure implements _LoadFailure {
-  const _$_LoadFailure(this.tripFailure);
+class _$LoadFailureImpl implements _LoadFailure {
+  const _$LoadFailureImpl(this.tripFailure);
 
   @override
   final TripFailure tripFailure;
@@ -836,19 +793,19 @@ class _$_LoadFailure implements _LoadFailure {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _LoadFailure &&
-            const DeepCollectionEquality()
-                .equals(other.tripFailure, tripFailure));
+            other is _$LoadFailureImpl &&
+            (identical(other.tripFailure, tripFailure) ||
+                other.tripFailure == tripFailure));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(tripFailure));
+  int get hashCode => Object.hash(runtimeType, tripFailure);
 
   @JsonKey(ignore: true)
   @override
-  _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
-      __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$LoadFailureImplCopyWith<_$LoadFailureImpl> get copyWith =>
+      __$$LoadFailureImplCopyWithImpl<_$LoadFailureImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -864,10 +821,10 @@ class _$_LoadFailure implements _LoadFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadInProgress,
-    TResult Function(List<Trip> trips)? loadSuccess,
-    TResult Function(TripFailure tripFailure)? loadFailure,
+    TResult? Function()? initial,
+    TResult? Function()? loadInProgress,
+    TResult? Function(List<Trip> trips)? loadSuccess,
+    TResult? Function(TripFailure tripFailure)? loadFailure,
   }) {
     return loadFailure?.call(tripFailure);
   }
@@ -901,10 +858,10 @@ class _$_LoadFailure implements _LoadFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadInProgress value)? loadInProgress,
-    TResult Function(_LoadSuccess value)? loadSuccess,
-    TResult Function(_LoadFailure value)? loadFailure,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadInProgress value)? loadInProgress,
+    TResult? Function(_LoadSuccess value)? loadSuccess,
+    TResult? Function(_LoadFailure value)? loadFailure,
   }) {
     return loadFailure?.call(this);
   }
@@ -926,10 +883,10 @@ class _$_LoadFailure implements _LoadFailure {
 }
 
 abstract class _LoadFailure implements TripWatcherState {
-  const factory _LoadFailure(TripFailure tripFailure) = _$_LoadFailure;
+  const factory _LoadFailure(final TripFailure tripFailure) = _$LoadFailureImpl;
 
   TripFailure get tripFailure;
   @JsonKey(ignore: true)
-  _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
+  _$$LoadFailureImplCopyWith<_$LoadFailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

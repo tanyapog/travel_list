@@ -1,6 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'trip_form_bloc.dart';
 
@@ -11,53 +12,7 @@ part of 'trip_form_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$TripFormEventTearOff {
-  const _$TripFormEventTearOff();
-
-  _Initialized initialized(Option<Trip> initialTripOption) {
-    return _Initialized(
-      initialTripOption,
-    );
-  }
-
-  _NameChanged nameChanged(String nameStr) {
-    return _NameChanged(
-      nameStr,
-    );
-  }
-
-  _DescriptionChanged descriptionChanged(String descriptionStr) {
-    return _DescriptionChanged(
-      descriptionStr,
-    );
-  }
-
-  _DateStartChanged dateStartChanged(DateTime dateStart) {
-    return _DateStartChanged(
-      dateStart,
-    );
-  }
-
-  _DateEndChanged dateEndChanged(DateTime dateEnd) {
-    return _DateEndChanged(
-      dateEnd,
-    );
-  }
-
-  _CompletedPressed completedPressed() {
-    return const _CompletedPressed();
-  }
-
-  _Saved saved() {
-    return const _Saved();
-  }
-}
-
-/// @nodoc
-const $TripFormEvent = _$TripFormEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$TripFormEvent {
@@ -74,13 +29,13 @@ mixin _$TripFormEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Option<Trip> initialTripOption)? initialized,
-    TResult Function(String nameStr)? nameChanged,
-    TResult Function(String descriptionStr)? descriptionChanged,
-    TResult Function(DateTime dateStart)? dateStartChanged,
-    TResult Function(DateTime dateEnd)? dateEndChanged,
-    TResult Function()? completedPressed,
-    TResult Function()? saved,
+    TResult? Function(Option<Trip> initialTripOption)? initialized,
+    TResult? Function(String nameStr)? nameChanged,
+    TResult? Function(String descriptionStr)? descriptionChanged,
+    TResult? Function(DateTime dateStart)? dateStartChanged,
+    TResult? Function(DateTime dateEnd)? dateEndChanged,
+    TResult? Function()? completedPressed,
+    TResult? Function()? saved,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -108,13 +63,13 @@ mixin _$TripFormEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_NameChanged value)? nameChanged,
-    TResult Function(_DescriptionChanged value)? descriptionChanged,
-    TResult Function(_DateStartChanged value)? dateStartChanged,
-    TResult Function(_DateEndChanged value)? dateEndChanged,
-    TResult Function(_CompletedPressed value)? completedPressed,
-    TResult Function(_Saved value)? saved,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_NameChanged value)? nameChanged,
+    TResult? Function(_DescriptionChanged value)? descriptionChanged,
+    TResult? Function(_DateStartChanged value)? dateStartChanged,
+    TResult? Function(_DateEndChanged value)? dateEndChanged,
+    TResult? Function(_CompletedPressed value)? completedPressed,
+    TResult? Function(_Saved value)? saved,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -135,43 +90,44 @@ mixin _$TripFormEvent {
 abstract class $TripFormEventCopyWith<$Res> {
   factory $TripFormEventCopyWith(
           TripFormEvent value, $Res Function(TripFormEvent) then) =
-      _$TripFormEventCopyWithImpl<$Res>;
+      _$TripFormEventCopyWithImpl<$Res, TripFormEvent>;
 }
 
 /// @nodoc
-class _$TripFormEventCopyWithImpl<$Res>
+class _$TripFormEventCopyWithImpl<$Res, $Val extends TripFormEvent>
     implements $TripFormEventCopyWith<$Res> {
   _$TripFormEventCopyWithImpl(this._value, this._then);
 
-  final TripFormEvent _value;
   // ignore: unused_field
-  final $Res Function(TripFormEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$InitializedCopyWith<$Res> {
-  factory _$InitializedCopyWith(
-          _Initialized value, $Res Function(_Initialized) then) =
-      __$InitializedCopyWithImpl<$Res>;
+abstract class _$$InitializedImplCopyWith<$Res> {
+  factory _$$InitializedImplCopyWith(
+          _$InitializedImpl value, $Res Function(_$InitializedImpl) then) =
+      __$$InitializedImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({Option<Trip> initialTripOption});
 }
 
 /// @nodoc
-class __$InitializedCopyWithImpl<$Res> extends _$TripFormEventCopyWithImpl<$Res>
-    implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(
-      _Initialized _value, $Res Function(_Initialized) _then)
-      : super(_value, (v) => _then(v as _Initialized));
+class __$$InitializedImplCopyWithImpl<$Res>
+    extends _$TripFormEventCopyWithImpl<$Res, _$InitializedImpl>
+    implements _$$InitializedImplCopyWith<$Res> {
+  __$$InitializedImplCopyWithImpl(
+      _$InitializedImpl _value, $Res Function(_$InitializedImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _Initialized get _value => super._value as _Initialized;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? initialTripOption = freezed,
+    Object? initialTripOption = null,
   }) {
-    return _then(_Initialized(
-      initialTripOption == freezed
+    return _then(_$InitializedImpl(
+      null == initialTripOption
           ? _value.initialTripOption
           : initialTripOption // ignore: cast_nullable_to_non_nullable
               as Option<Trip>,
@@ -181,8 +137,8 @@ class __$InitializedCopyWithImpl<$Res> extends _$TripFormEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Initialized implements _Initialized {
-  const _$_Initialized(this.initialTripOption);
+class _$InitializedImpl implements _Initialized {
+  const _$InitializedImpl(this.initialTripOption);
 
   @override
   final Option<Trip> initialTripOption;
@@ -196,19 +152,19 @@ class _$_Initialized implements _Initialized {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Initialized &&
-            const DeepCollectionEquality()
-                .equals(other.initialTripOption, initialTripOption));
+            other is _$InitializedImpl &&
+            (identical(other.initialTripOption, initialTripOption) ||
+                other.initialTripOption == initialTripOption));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(initialTripOption));
+  int get hashCode => Object.hash(runtimeType, initialTripOption);
 
   @JsonKey(ignore: true)
   @override
-  _$InitializedCopyWith<_Initialized> get copyWith =>
-      __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$InitializedImplCopyWith<_$InitializedImpl> get copyWith =>
+      __$$InitializedImplCopyWithImpl<_$InitializedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -227,13 +183,13 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Option<Trip> initialTripOption)? initialized,
-    TResult Function(String nameStr)? nameChanged,
-    TResult Function(String descriptionStr)? descriptionChanged,
-    TResult Function(DateTime dateStart)? dateStartChanged,
-    TResult Function(DateTime dateEnd)? dateEndChanged,
-    TResult Function()? completedPressed,
-    TResult Function()? saved,
+    TResult? Function(Option<Trip> initialTripOption)? initialized,
+    TResult? Function(String nameStr)? nameChanged,
+    TResult? Function(String descriptionStr)? descriptionChanged,
+    TResult? Function(DateTime dateStart)? dateStartChanged,
+    TResult? Function(DateTime dateEnd)? dateEndChanged,
+    TResult? Function()? completedPressed,
+    TResult? Function()? saved,
   }) {
     return initialized?.call(initialTripOption);
   }
@@ -273,13 +229,13 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_NameChanged value)? nameChanged,
-    TResult Function(_DescriptionChanged value)? descriptionChanged,
-    TResult Function(_DateStartChanged value)? dateStartChanged,
-    TResult Function(_DateEndChanged value)? dateEndChanged,
-    TResult Function(_CompletedPressed value)? completedPressed,
-    TResult Function(_Saved value)? saved,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_NameChanged value)? nameChanged,
+    TResult? Function(_DescriptionChanged value)? descriptionChanged,
+    TResult? Function(_DateStartChanged value)? dateStartChanged,
+    TResult? Function(_DateEndChanged value)? dateEndChanged,
+    TResult? Function(_CompletedPressed value)? completedPressed,
+    TResult? Function(_Saved value)? saved,
   }) {
     return initialized?.call(this);
   }
@@ -304,38 +260,39 @@ class _$_Initialized implements _Initialized {
 }
 
 abstract class _Initialized implements TripFormEvent {
-  const factory _Initialized(Option<Trip> initialTripOption) = _$_Initialized;
+  const factory _Initialized(final Option<Trip> initialTripOption) =
+      _$InitializedImpl;
 
   Option<Trip> get initialTripOption;
   @JsonKey(ignore: true)
-  _$InitializedCopyWith<_Initialized> get copyWith =>
+  _$$InitializedImplCopyWith<_$InitializedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$NameChangedCopyWith<$Res> {
-  factory _$NameChangedCopyWith(
-          _NameChanged value, $Res Function(_NameChanged) then) =
-      __$NameChangedCopyWithImpl<$Res>;
+abstract class _$$NameChangedImplCopyWith<$Res> {
+  factory _$$NameChangedImplCopyWith(
+          _$NameChangedImpl value, $Res Function(_$NameChangedImpl) then) =
+      __$$NameChangedImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({String nameStr});
 }
 
 /// @nodoc
-class __$NameChangedCopyWithImpl<$Res> extends _$TripFormEventCopyWithImpl<$Res>
-    implements _$NameChangedCopyWith<$Res> {
-  __$NameChangedCopyWithImpl(
-      _NameChanged _value, $Res Function(_NameChanged) _then)
-      : super(_value, (v) => _then(v as _NameChanged));
+class __$$NameChangedImplCopyWithImpl<$Res>
+    extends _$TripFormEventCopyWithImpl<$Res, _$NameChangedImpl>
+    implements _$$NameChangedImplCopyWith<$Res> {
+  __$$NameChangedImplCopyWithImpl(
+      _$NameChangedImpl _value, $Res Function(_$NameChangedImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _NameChanged get _value => super._value as _NameChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? nameStr = freezed,
+    Object? nameStr = null,
   }) {
-    return _then(_NameChanged(
-      nameStr == freezed
+    return _then(_$NameChangedImpl(
+      null == nameStr
           ? _value.nameStr
           : nameStr // ignore: cast_nullable_to_non_nullable
               as String,
@@ -345,8 +302,8 @@ class __$NameChangedCopyWithImpl<$Res> extends _$TripFormEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_NameChanged implements _NameChanged {
-  const _$_NameChanged(this.nameStr);
+class _$NameChangedImpl implements _NameChanged {
+  const _$NameChangedImpl(this.nameStr);
 
   @override
   final String nameStr;
@@ -360,18 +317,18 @@ class _$_NameChanged implements _NameChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _NameChanged &&
-            const DeepCollectionEquality().equals(other.nameStr, nameStr));
+            other is _$NameChangedImpl &&
+            (identical(other.nameStr, nameStr) || other.nameStr == nameStr));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(nameStr));
+  int get hashCode => Object.hash(runtimeType, nameStr);
 
   @JsonKey(ignore: true)
   @override
-  _$NameChangedCopyWith<_NameChanged> get copyWith =>
-      __$NameChangedCopyWithImpl<_NameChanged>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$NameChangedImplCopyWith<_$NameChangedImpl> get copyWith =>
+      __$$NameChangedImplCopyWithImpl<_$NameChangedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -390,13 +347,13 @@ class _$_NameChanged implements _NameChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Option<Trip> initialTripOption)? initialized,
-    TResult Function(String nameStr)? nameChanged,
-    TResult Function(String descriptionStr)? descriptionChanged,
-    TResult Function(DateTime dateStart)? dateStartChanged,
-    TResult Function(DateTime dateEnd)? dateEndChanged,
-    TResult Function()? completedPressed,
-    TResult Function()? saved,
+    TResult? Function(Option<Trip> initialTripOption)? initialized,
+    TResult? Function(String nameStr)? nameChanged,
+    TResult? Function(String descriptionStr)? descriptionChanged,
+    TResult? Function(DateTime dateStart)? dateStartChanged,
+    TResult? Function(DateTime dateEnd)? dateEndChanged,
+    TResult? Function()? completedPressed,
+    TResult? Function()? saved,
   }) {
     return nameChanged?.call(nameStr);
   }
@@ -436,13 +393,13 @@ class _$_NameChanged implements _NameChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_NameChanged value)? nameChanged,
-    TResult Function(_DescriptionChanged value)? descriptionChanged,
-    TResult Function(_DateStartChanged value)? dateStartChanged,
-    TResult Function(_DateEndChanged value)? dateEndChanged,
-    TResult Function(_CompletedPressed value)? completedPressed,
-    TResult Function(_Saved value)? saved,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_NameChanged value)? nameChanged,
+    TResult? Function(_DescriptionChanged value)? descriptionChanged,
+    TResult? Function(_DateStartChanged value)? dateStartChanged,
+    TResult? Function(_DateEndChanged value)? dateEndChanged,
+    TResult? Function(_CompletedPressed value)? completedPressed,
+    TResult? Function(_Saved value)? saved,
   }) {
     return nameChanged?.call(this);
   }
@@ -467,39 +424,38 @@ class _$_NameChanged implements _NameChanged {
 }
 
 abstract class _NameChanged implements TripFormEvent {
-  const factory _NameChanged(String nameStr) = _$_NameChanged;
+  const factory _NameChanged(final String nameStr) = _$NameChangedImpl;
 
   String get nameStr;
   @JsonKey(ignore: true)
-  _$NameChangedCopyWith<_NameChanged> get copyWith =>
+  _$$NameChangedImplCopyWith<_$NameChangedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$DescriptionChangedCopyWith<$Res> {
-  factory _$DescriptionChangedCopyWith(
-          _DescriptionChanged value, $Res Function(_DescriptionChanged) then) =
-      __$DescriptionChangedCopyWithImpl<$Res>;
+abstract class _$$DescriptionChangedImplCopyWith<$Res> {
+  factory _$$DescriptionChangedImplCopyWith(_$DescriptionChangedImpl value,
+          $Res Function(_$DescriptionChangedImpl) then) =
+      __$$DescriptionChangedImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({String descriptionStr});
 }
 
 /// @nodoc
-class __$DescriptionChangedCopyWithImpl<$Res>
-    extends _$TripFormEventCopyWithImpl<$Res>
-    implements _$DescriptionChangedCopyWith<$Res> {
-  __$DescriptionChangedCopyWithImpl(
-      _DescriptionChanged _value, $Res Function(_DescriptionChanged) _then)
-      : super(_value, (v) => _then(v as _DescriptionChanged));
+class __$$DescriptionChangedImplCopyWithImpl<$Res>
+    extends _$TripFormEventCopyWithImpl<$Res, _$DescriptionChangedImpl>
+    implements _$$DescriptionChangedImplCopyWith<$Res> {
+  __$$DescriptionChangedImplCopyWithImpl(_$DescriptionChangedImpl _value,
+      $Res Function(_$DescriptionChangedImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _DescriptionChanged get _value => super._value as _DescriptionChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? descriptionStr = freezed,
+    Object? descriptionStr = null,
   }) {
-    return _then(_DescriptionChanged(
-      descriptionStr == freezed
+    return _then(_$DescriptionChangedImpl(
+      null == descriptionStr
           ? _value.descriptionStr
           : descriptionStr // ignore: cast_nullable_to_non_nullable
               as String,
@@ -509,8 +465,8 @@ class __$DescriptionChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_DescriptionChanged implements _DescriptionChanged {
-  const _$_DescriptionChanged(this.descriptionStr);
+class _$DescriptionChangedImpl implements _DescriptionChanged {
+  const _$DescriptionChangedImpl(this.descriptionStr);
 
   @override
   final String descriptionStr;
@@ -524,19 +480,20 @@ class _$_DescriptionChanged implements _DescriptionChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DescriptionChanged &&
-            const DeepCollectionEquality()
-                .equals(other.descriptionStr, descriptionStr));
+            other is _$DescriptionChangedImpl &&
+            (identical(other.descriptionStr, descriptionStr) ||
+                other.descriptionStr == descriptionStr));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(descriptionStr));
+  int get hashCode => Object.hash(runtimeType, descriptionStr);
 
   @JsonKey(ignore: true)
   @override
-  _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith =>
-      __$DescriptionChangedCopyWithImpl<_DescriptionChanged>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$DescriptionChangedImplCopyWith<_$DescriptionChangedImpl> get copyWith =>
+      __$$DescriptionChangedImplCopyWithImpl<_$DescriptionChangedImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -555,13 +512,13 @@ class _$_DescriptionChanged implements _DescriptionChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Option<Trip> initialTripOption)? initialized,
-    TResult Function(String nameStr)? nameChanged,
-    TResult Function(String descriptionStr)? descriptionChanged,
-    TResult Function(DateTime dateStart)? dateStartChanged,
-    TResult Function(DateTime dateEnd)? dateEndChanged,
-    TResult Function()? completedPressed,
-    TResult Function()? saved,
+    TResult? Function(Option<Trip> initialTripOption)? initialized,
+    TResult? Function(String nameStr)? nameChanged,
+    TResult? Function(String descriptionStr)? descriptionChanged,
+    TResult? Function(DateTime dateStart)? dateStartChanged,
+    TResult? Function(DateTime dateEnd)? dateEndChanged,
+    TResult? Function()? completedPressed,
+    TResult? Function()? saved,
   }) {
     return descriptionChanged?.call(descriptionStr);
   }
@@ -601,13 +558,13 @@ class _$_DescriptionChanged implements _DescriptionChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_NameChanged value)? nameChanged,
-    TResult Function(_DescriptionChanged value)? descriptionChanged,
-    TResult Function(_DateStartChanged value)? dateStartChanged,
-    TResult Function(_DateEndChanged value)? dateEndChanged,
-    TResult Function(_CompletedPressed value)? completedPressed,
-    TResult Function(_Saved value)? saved,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_NameChanged value)? nameChanged,
+    TResult? Function(_DescriptionChanged value)? descriptionChanged,
+    TResult? Function(_DateStartChanged value)? dateStartChanged,
+    TResult? Function(_DateEndChanged value)? dateEndChanged,
+    TResult? Function(_CompletedPressed value)? completedPressed,
+    TResult? Function(_Saved value)? saved,
   }) {
     return descriptionChanged?.call(this);
   }
@@ -632,40 +589,39 @@ class _$_DescriptionChanged implements _DescriptionChanged {
 }
 
 abstract class _DescriptionChanged implements TripFormEvent {
-  const factory _DescriptionChanged(String descriptionStr) =
-      _$_DescriptionChanged;
+  const factory _DescriptionChanged(final String descriptionStr) =
+      _$DescriptionChangedImpl;
 
   String get descriptionStr;
   @JsonKey(ignore: true)
-  _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith =>
+  _$$DescriptionChangedImplCopyWith<_$DescriptionChangedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$DateStartChangedCopyWith<$Res> {
-  factory _$DateStartChangedCopyWith(
-          _DateStartChanged value, $Res Function(_DateStartChanged) then) =
-      __$DateStartChangedCopyWithImpl<$Res>;
+abstract class _$$DateStartChangedImplCopyWith<$Res> {
+  factory _$$DateStartChangedImplCopyWith(_$DateStartChangedImpl value,
+          $Res Function(_$DateStartChangedImpl) then) =
+      __$$DateStartChangedImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({DateTime dateStart});
 }
 
 /// @nodoc
-class __$DateStartChangedCopyWithImpl<$Res>
-    extends _$TripFormEventCopyWithImpl<$Res>
-    implements _$DateStartChangedCopyWith<$Res> {
-  __$DateStartChangedCopyWithImpl(
-      _DateStartChanged _value, $Res Function(_DateStartChanged) _then)
-      : super(_value, (v) => _then(v as _DateStartChanged));
+class __$$DateStartChangedImplCopyWithImpl<$Res>
+    extends _$TripFormEventCopyWithImpl<$Res, _$DateStartChangedImpl>
+    implements _$$DateStartChangedImplCopyWith<$Res> {
+  __$$DateStartChangedImplCopyWithImpl(_$DateStartChangedImpl _value,
+      $Res Function(_$DateStartChangedImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _DateStartChanged get _value => super._value as _DateStartChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? dateStart = freezed,
+    Object? dateStart = null,
   }) {
-    return _then(_DateStartChanged(
-      dateStart == freezed
+    return _then(_$DateStartChangedImpl(
+      null == dateStart
           ? _value.dateStart
           : dateStart // ignore: cast_nullable_to_non_nullable
               as DateTime,
@@ -675,8 +631,8 @@ class __$DateStartChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_DateStartChanged implements _DateStartChanged {
-  const _$_DateStartChanged(this.dateStart);
+class _$DateStartChangedImpl implements _DateStartChanged {
+  const _$DateStartChangedImpl(this.dateStart);
 
   @override
   final DateTime dateStart;
@@ -690,18 +646,20 @@ class _$_DateStartChanged implements _DateStartChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DateStartChanged &&
-            const DeepCollectionEquality().equals(other.dateStart, dateStart));
+            other is _$DateStartChangedImpl &&
+            (identical(other.dateStart, dateStart) ||
+                other.dateStart == dateStart));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(dateStart));
+  int get hashCode => Object.hash(runtimeType, dateStart);
 
   @JsonKey(ignore: true)
   @override
-  _$DateStartChangedCopyWith<_DateStartChanged> get copyWith =>
-      __$DateStartChangedCopyWithImpl<_DateStartChanged>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$DateStartChangedImplCopyWith<_$DateStartChangedImpl> get copyWith =>
+      __$$DateStartChangedImplCopyWithImpl<_$DateStartChangedImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -720,13 +678,13 @@ class _$_DateStartChanged implements _DateStartChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Option<Trip> initialTripOption)? initialized,
-    TResult Function(String nameStr)? nameChanged,
-    TResult Function(String descriptionStr)? descriptionChanged,
-    TResult Function(DateTime dateStart)? dateStartChanged,
-    TResult Function(DateTime dateEnd)? dateEndChanged,
-    TResult Function()? completedPressed,
-    TResult Function()? saved,
+    TResult? Function(Option<Trip> initialTripOption)? initialized,
+    TResult? Function(String nameStr)? nameChanged,
+    TResult? Function(String descriptionStr)? descriptionChanged,
+    TResult? Function(DateTime dateStart)? dateStartChanged,
+    TResult? Function(DateTime dateEnd)? dateEndChanged,
+    TResult? Function()? completedPressed,
+    TResult? Function()? saved,
   }) {
     return dateStartChanged?.call(dateStart);
   }
@@ -766,13 +724,13 @@ class _$_DateStartChanged implements _DateStartChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_NameChanged value)? nameChanged,
-    TResult Function(_DescriptionChanged value)? descriptionChanged,
-    TResult Function(_DateStartChanged value)? dateStartChanged,
-    TResult Function(_DateEndChanged value)? dateEndChanged,
-    TResult Function(_CompletedPressed value)? completedPressed,
-    TResult Function(_Saved value)? saved,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_NameChanged value)? nameChanged,
+    TResult? Function(_DescriptionChanged value)? descriptionChanged,
+    TResult? Function(_DateStartChanged value)? dateStartChanged,
+    TResult? Function(_DateEndChanged value)? dateEndChanged,
+    TResult? Function(_CompletedPressed value)? completedPressed,
+    TResult? Function(_Saved value)? saved,
   }) {
     return dateStartChanged?.call(this);
   }
@@ -797,39 +755,39 @@ class _$_DateStartChanged implements _DateStartChanged {
 }
 
 abstract class _DateStartChanged implements TripFormEvent {
-  const factory _DateStartChanged(DateTime dateStart) = _$_DateStartChanged;
+  const factory _DateStartChanged(final DateTime dateStart) =
+      _$DateStartChangedImpl;
 
   DateTime get dateStart;
   @JsonKey(ignore: true)
-  _$DateStartChangedCopyWith<_DateStartChanged> get copyWith =>
+  _$$DateStartChangedImplCopyWith<_$DateStartChangedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$DateEndChangedCopyWith<$Res> {
-  factory _$DateEndChangedCopyWith(
-          _DateEndChanged value, $Res Function(_DateEndChanged) then) =
-      __$DateEndChangedCopyWithImpl<$Res>;
+abstract class _$$DateEndChangedImplCopyWith<$Res> {
+  factory _$$DateEndChangedImplCopyWith(_$DateEndChangedImpl value,
+          $Res Function(_$DateEndChangedImpl) then) =
+      __$$DateEndChangedImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({DateTime dateEnd});
 }
 
 /// @nodoc
-class __$DateEndChangedCopyWithImpl<$Res>
-    extends _$TripFormEventCopyWithImpl<$Res>
-    implements _$DateEndChangedCopyWith<$Res> {
-  __$DateEndChangedCopyWithImpl(
-      _DateEndChanged _value, $Res Function(_DateEndChanged) _then)
-      : super(_value, (v) => _then(v as _DateEndChanged));
+class __$$DateEndChangedImplCopyWithImpl<$Res>
+    extends _$TripFormEventCopyWithImpl<$Res, _$DateEndChangedImpl>
+    implements _$$DateEndChangedImplCopyWith<$Res> {
+  __$$DateEndChangedImplCopyWithImpl(
+      _$DateEndChangedImpl _value, $Res Function(_$DateEndChangedImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _DateEndChanged get _value => super._value as _DateEndChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? dateEnd = freezed,
+    Object? dateEnd = null,
   }) {
-    return _then(_DateEndChanged(
-      dateEnd == freezed
+    return _then(_$DateEndChangedImpl(
+      null == dateEnd
           ? _value.dateEnd
           : dateEnd // ignore: cast_nullable_to_non_nullable
               as DateTime,
@@ -839,8 +797,8 @@ class __$DateEndChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_DateEndChanged implements _DateEndChanged {
-  const _$_DateEndChanged(this.dateEnd);
+class _$DateEndChangedImpl implements _DateEndChanged {
+  const _$DateEndChangedImpl(this.dateEnd);
 
   @override
   final DateTime dateEnd;
@@ -854,18 +812,19 @@ class _$_DateEndChanged implements _DateEndChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DateEndChanged &&
-            const DeepCollectionEquality().equals(other.dateEnd, dateEnd));
+            other is _$DateEndChangedImpl &&
+            (identical(other.dateEnd, dateEnd) || other.dateEnd == dateEnd));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(dateEnd));
+  int get hashCode => Object.hash(runtimeType, dateEnd);
 
   @JsonKey(ignore: true)
   @override
-  _$DateEndChangedCopyWith<_DateEndChanged> get copyWith =>
-      __$DateEndChangedCopyWithImpl<_DateEndChanged>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$DateEndChangedImplCopyWith<_$DateEndChangedImpl> get copyWith =>
+      __$$DateEndChangedImplCopyWithImpl<_$DateEndChangedImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -884,13 +843,13 @@ class _$_DateEndChanged implements _DateEndChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Option<Trip> initialTripOption)? initialized,
-    TResult Function(String nameStr)? nameChanged,
-    TResult Function(String descriptionStr)? descriptionChanged,
-    TResult Function(DateTime dateStart)? dateStartChanged,
-    TResult Function(DateTime dateEnd)? dateEndChanged,
-    TResult Function()? completedPressed,
-    TResult Function()? saved,
+    TResult? Function(Option<Trip> initialTripOption)? initialized,
+    TResult? Function(String nameStr)? nameChanged,
+    TResult? Function(String descriptionStr)? descriptionChanged,
+    TResult? Function(DateTime dateStart)? dateStartChanged,
+    TResult? Function(DateTime dateEnd)? dateEndChanged,
+    TResult? Function()? completedPressed,
+    TResult? Function()? saved,
   }) {
     return dateEndChanged?.call(dateEnd);
   }
@@ -930,13 +889,13 @@ class _$_DateEndChanged implements _DateEndChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_NameChanged value)? nameChanged,
-    TResult Function(_DescriptionChanged value)? descriptionChanged,
-    TResult Function(_DateStartChanged value)? dateStartChanged,
-    TResult Function(_DateEndChanged value)? dateEndChanged,
-    TResult Function(_CompletedPressed value)? completedPressed,
-    TResult Function(_Saved value)? saved,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_NameChanged value)? nameChanged,
+    TResult? Function(_DescriptionChanged value)? descriptionChanged,
+    TResult? Function(_DateStartChanged value)? dateStartChanged,
+    TResult? Function(_DateEndChanged value)? dateEndChanged,
+    TResult? Function(_CompletedPressed value)? completedPressed,
+    TResult? Function(_Saved value)? saved,
   }) {
     return dateEndChanged?.call(this);
   }
@@ -961,37 +920,34 @@ class _$_DateEndChanged implements _DateEndChanged {
 }
 
 abstract class _DateEndChanged implements TripFormEvent {
-  const factory _DateEndChanged(DateTime dateEnd) = _$_DateEndChanged;
+  const factory _DateEndChanged(final DateTime dateEnd) = _$DateEndChangedImpl;
 
   DateTime get dateEnd;
   @JsonKey(ignore: true)
-  _$DateEndChangedCopyWith<_DateEndChanged> get copyWith =>
+  _$$DateEndChangedImplCopyWith<_$DateEndChangedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$CompletedPressedCopyWith<$Res> {
-  factory _$CompletedPressedCopyWith(
-          _CompletedPressed value, $Res Function(_CompletedPressed) then) =
-      __$CompletedPressedCopyWithImpl<$Res>;
+abstract class _$$CompletedPressedImplCopyWith<$Res> {
+  factory _$$CompletedPressedImplCopyWith(_$CompletedPressedImpl value,
+          $Res Function(_$CompletedPressedImpl) then) =
+      __$$CompletedPressedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$CompletedPressedCopyWithImpl<$Res>
-    extends _$TripFormEventCopyWithImpl<$Res>
-    implements _$CompletedPressedCopyWith<$Res> {
-  __$CompletedPressedCopyWithImpl(
-      _CompletedPressed _value, $Res Function(_CompletedPressed) _then)
-      : super(_value, (v) => _then(v as _CompletedPressed));
-
-  @override
-  _CompletedPressed get _value => super._value as _CompletedPressed;
+class __$$CompletedPressedImplCopyWithImpl<$Res>
+    extends _$TripFormEventCopyWithImpl<$Res, _$CompletedPressedImpl>
+    implements _$$CompletedPressedImplCopyWith<$Res> {
+  __$$CompletedPressedImplCopyWithImpl(_$CompletedPressedImpl _value,
+      $Res Function(_$CompletedPressedImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_CompletedPressed implements _CompletedPressed {
-  const _$_CompletedPressed();
+class _$CompletedPressedImpl implements _CompletedPressed {
+  const _$CompletedPressedImpl();
 
   @override
   String toString() {
@@ -1001,7 +957,7 @@ class _$_CompletedPressed implements _CompletedPressed {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _CompletedPressed);
+        (other.runtimeType == runtimeType && other is _$CompletedPressedImpl);
   }
 
   @override
@@ -1024,13 +980,13 @@ class _$_CompletedPressed implements _CompletedPressed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Option<Trip> initialTripOption)? initialized,
-    TResult Function(String nameStr)? nameChanged,
-    TResult Function(String descriptionStr)? descriptionChanged,
-    TResult Function(DateTime dateStart)? dateStartChanged,
-    TResult Function(DateTime dateEnd)? dateEndChanged,
-    TResult Function()? completedPressed,
-    TResult Function()? saved,
+    TResult? Function(Option<Trip> initialTripOption)? initialized,
+    TResult? Function(String nameStr)? nameChanged,
+    TResult? Function(String descriptionStr)? descriptionChanged,
+    TResult? Function(DateTime dateStart)? dateStartChanged,
+    TResult? Function(DateTime dateEnd)? dateEndChanged,
+    TResult? Function()? completedPressed,
+    TResult? Function()? saved,
   }) {
     return completedPressed?.call();
   }
@@ -1070,13 +1026,13 @@ class _$_CompletedPressed implements _CompletedPressed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_NameChanged value)? nameChanged,
-    TResult Function(_DescriptionChanged value)? descriptionChanged,
-    TResult Function(_DateStartChanged value)? dateStartChanged,
-    TResult Function(_DateEndChanged value)? dateEndChanged,
-    TResult Function(_CompletedPressed value)? completedPressed,
-    TResult Function(_Saved value)? saved,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_NameChanged value)? nameChanged,
+    TResult? Function(_DescriptionChanged value)? descriptionChanged,
+    TResult? Function(_DateStartChanged value)? dateStartChanged,
+    TResult? Function(_DateEndChanged value)? dateEndChanged,
+    TResult? Function(_CompletedPressed value)? completedPressed,
+    TResult? Function(_Saved value)? saved,
   }) {
     return completedPressed?.call(this);
   }
@@ -1101,29 +1057,29 @@ class _$_CompletedPressed implements _CompletedPressed {
 }
 
 abstract class _CompletedPressed implements TripFormEvent {
-  const factory _CompletedPressed() = _$_CompletedPressed;
+  const factory _CompletedPressed() = _$CompletedPressedImpl;
 }
 
 /// @nodoc
-abstract class _$SavedCopyWith<$Res> {
-  factory _$SavedCopyWith(_Saved value, $Res Function(_Saved) then) =
-      __$SavedCopyWithImpl<$Res>;
+abstract class _$$SavedImplCopyWith<$Res> {
+  factory _$$SavedImplCopyWith(
+          _$SavedImpl value, $Res Function(_$SavedImpl) then) =
+      __$$SavedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SavedCopyWithImpl<$Res> extends _$TripFormEventCopyWithImpl<$Res>
-    implements _$SavedCopyWith<$Res> {
-  __$SavedCopyWithImpl(_Saved _value, $Res Function(_Saved) _then)
-      : super(_value, (v) => _then(v as _Saved));
-
-  @override
-  _Saved get _value => super._value as _Saved;
+class __$$SavedImplCopyWithImpl<$Res>
+    extends _$TripFormEventCopyWithImpl<$Res, _$SavedImpl>
+    implements _$$SavedImplCopyWith<$Res> {
+  __$$SavedImplCopyWithImpl(
+      _$SavedImpl _value, $Res Function(_$SavedImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Saved implements _Saved {
-  const _$_Saved();
+class _$SavedImpl implements _Saved {
+  const _$SavedImpl();
 
   @override
   String toString() {
@@ -1133,7 +1089,7 @@ class _$_Saved implements _Saved {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Saved);
+        (other.runtimeType == runtimeType && other is _$SavedImpl);
   }
 
   @override
@@ -1156,13 +1112,13 @@ class _$_Saved implements _Saved {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Option<Trip> initialTripOption)? initialized,
-    TResult Function(String nameStr)? nameChanged,
-    TResult Function(String descriptionStr)? descriptionChanged,
-    TResult Function(DateTime dateStart)? dateStartChanged,
-    TResult Function(DateTime dateEnd)? dateEndChanged,
-    TResult Function()? completedPressed,
-    TResult Function()? saved,
+    TResult? Function(Option<Trip> initialTripOption)? initialized,
+    TResult? Function(String nameStr)? nameChanged,
+    TResult? Function(String descriptionStr)? descriptionChanged,
+    TResult? Function(DateTime dateStart)? dateStartChanged,
+    TResult? Function(DateTime dateEnd)? dateEndChanged,
+    TResult? Function()? completedPressed,
+    TResult? Function()? saved,
   }) {
     return saved?.call();
   }
@@ -1202,13 +1158,13 @@ class _$_Saved implements _Saved {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_NameChanged value)? nameChanged,
-    TResult Function(_DescriptionChanged value)? descriptionChanged,
-    TResult Function(_DateStartChanged value)? dateStartChanged,
-    TResult Function(_DateEndChanged value)? dateEndChanged,
-    TResult Function(_CompletedPressed value)? completedPressed,
-    TResult Function(_Saved value)? saved,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_NameChanged value)? nameChanged,
+    TResult? Function(_DescriptionChanged value)? descriptionChanged,
+    TResult? Function(_DateStartChanged value)? dateStartChanged,
+    TResult? Function(_DateEndChanged value)? dateEndChanged,
+    TResult? Function(_CompletedPressed value)? completedPressed,
+    TResult? Function(_Saved value)? saved,
   }) {
     return saved?.call(this);
   }
@@ -1233,33 +1189,8 @@ class _$_Saved implements _Saved {
 }
 
 abstract class _Saved implements TripFormEvent {
-  const factory _Saved() = _$_Saved;
+  const factory _Saved() = _$SavedImpl;
 }
-
-/// @nodoc
-class _$TripFormStateTearOff {
-  const _$TripFormStateTearOff();
-
-  _TripFormState call(
-      {required Trip trip,
-      required bool showErrorMessages,
-      required bool isEditing,
-      required bool isSaving,
-      DateTime? minDateEnd,
-      required Option<Either<TripFailure, Unit>> saveFailureOrSuccessOption}) {
-    return _TripFormState(
-      trip: trip,
-      showErrorMessages: showErrorMessages,
-      isEditing: isEditing,
-      isSaving: isSaving,
-      minDateEnd: minDateEnd,
-      saveFailureOrSuccessOption: saveFailureOrSuccessOption,
-    );
-  }
-}
-
-/// @nodoc
-const $TripFormState = _$TripFormStateTearOff();
 
 /// @nodoc
 mixin _$TripFormState {
@@ -1267,7 +1198,6 @@ mixin _$TripFormState {
   bool get showErrorMessages => throw _privateConstructorUsedError;
   bool get isEditing => throw _privateConstructorUsedError;
   bool get isSaving => throw _privateConstructorUsedError;
-  DateTime? get minDateEnd => throw _privateConstructorUsedError;
   Option<Either<TripFailure, Unit>> get saveFailureOrSuccessOption =>
       throw _privateConstructorUsedError;
 
@@ -1280,85 +1210,83 @@ mixin _$TripFormState {
 abstract class $TripFormStateCopyWith<$Res> {
   factory $TripFormStateCopyWith(
           TripFormState value, $Res Function(TripFormState) then) =
-      _$TripFormStateCopyWithImpl<$Res>;
+      _$TripFormStateCopyWithImpl<$Res, TripFormState>;
+  @useResult
   $Res call(
       {Trip trip,
       bool showErrorMessages,
       bool isEditing,
       bool isSaving,
-      DateTime? minDateEnd,
       Option<Either<TripFailure, Unit>> saveFailureOrSuccessOption});
 
   $TripCopyWith<$Res> get trip;
 }
 
 /// @nodoc
-class _$TripFormStateCopyWithImpl<$Res>
+class _$TripFormStateCopyWithImpl<$Res, $Val extends TripFormState>
     implements $TripFormStateCopyWith<$Res> {
   _$TripFormStateCopyWithImpl(this._value, this._then);
 
-  final TripFormState _value;
   // ignore: unused_field
-  final $Res Function(TripFormState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? trip = freezed,
-    Object? showErrorMessages = freezed,
-    Object? isEditing = freezed,
-    Object? isSaving = freezed,
-    Object? minDateEnd = freezed,
-    Object? saveFailureOrSuccessOption = freezed,
+    Object? trip = null,
+    Object? showErrorMessages = null,
+    Object? isEditing = null,
+    Object? isSaving = null,
+    Object? saveFailureOrSuccessOption = null,
   }) {
     return _then(_value.copyWith(
-      trip: trip == freezed
+      trip: null == trip
           ? _value.trip
           : trip // ignore: cast_nullable_to_non_nullable
               as Trip,
-      showErrorMessages: showErrorMessages == freezed
+      showErrorMessages: null == showErrorMessages
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
               as bool,
-      isEditing: isEditing == freezed
+      isEditing: null == isEditing
           ? _value.isEditing
           : isEditing // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSaving: isSaving == freezed
+      isSaving: null == isSaving
           ? _value.isSaving
           : isSaving // ignore: cast_nullable_to_non_nullable
               as bool,
-      minDateEnd: minDateEnd == freezed
-          ? _value.minDateEnd
-          : minDateEnd // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
+      saveFailureOrSuccessOption: null == saveFailureOrSuccessOption
           ? _value.saveFailureOrSuccessOption
           : saveFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<TripFailure, Unit>>,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TripCopyWith<$Res> get trip {
     return $TripCopyWith<$Res>(_value.trip, (value) {
-      return _then(_value.copyWith(trip: value));
+      return _then(_value.copyWith(trip: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$TripFormStateCopyWith<$Res>
+abstract class _$$TripFormStateImplCopyWith<$Res>
     implements $TripFormStateCopyWith<$Res> {
-  factory _$TripFormStateCopyWith(
-          _TripFormState value, $Res Function(_TripFormState) then) =
-      __$TripFormStateCopyWithImpl<$Res>;
+  factory _$$TripFormStateImplCopyWith(
+          _$TripFormStateImpl value, $Res Function(_$TripFormStateImpl) then) =
+      __$$TripFormStateImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {Trip trip,
       bool showErrorMessages,
       bool isEditing,
       bool isSaving,
-      DateTime? minDateEnd,
       Option<Either<TripFailure, Unit>> saveFailureOrSuccessOption});
 
   @override
@@ -1366,47 +1294,40 @@ abstract class _$TripFormStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$TripFormStateCopyWithImpl<$Res>
-    extends _$TripFormStateCopyWithImpl<$Res>
-    implements _$TripFormStateCopyWith<$Res> {
-  __$TripFormStateCopyWithImpl(
-      _TripFormState _value, $Res Function(_TripFormState) _then)
-      : super(_value, (v) => _then(v as _TripFormState));
+class __$$TripFormStateImplCopyWithImpl<$Res>
+    extends _$TripFormStateCopyWithImpl<$Res, _$TripFormStateImpl>
+    implements _$$TripFormStateImplCopyWith<$Res> {
+  __$$TripFormStateImplCopyWithImpl(
+      _$TripFormStateImpl _value, $Res Function(_$TripFormStateImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _TripFormState get _value => super._value as _TripFormState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? trip = freezed,
-    Object? showErrorMessages = freezed,
-    Object? isEditing = freezed,
-    Object? isSaving = freezed,
-    Object? minDateEnd = freezed,
-    Object? saveFailureOrSuccessOption = freezed,
+    Object? trip = null,
+    Object? showErrorMessages = null,
+    Object? isEditing = null,
+    Object? isSaving = null,
+    Object? saveFailureOrSuccessOption = null,
   }) {
-    return _then(_TripFormState(
-      trip: trip == freezed
+    return _then(_$TripFormStateImpl(
+      trip: null == trip
           ? _value.trip
           : trip // ignore: cast_nullable_to_non_nullable
               as Trip,
-      showErrorMessages: showErrorMessages == freezed
+      showErrorMessages: null == showErrorMessages
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
               as bool,
-      isEditing: isEditing == freezed
+      isEditing: null == isEditing
           ? _value.isEditing
           : isEditing // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSaving: isSaving == freezed
+      isSaving: null == isSaving
           ? _value.isSaving
           : isSaving // ignore: cast_nullable_to_non_nullable
               as bool,
-      minDateEnd: minDateEnd == freezed
-          ? _value.minDateEnd
-          : minDateEnd // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
+      saveFailureOrSuccessOption: null == saveFailureOrSuccessOption
           ? _value.saveFailureOrSuccessOption
           : saveFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<TripFailure, Unit>>,
@@ -1416,13 +1337,12 @@ class __$TripFormStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_TripFormState implements _TripFormState {
-  const _$_TripFormState(
+class _$TripFormStateImpl implements _TripFormState {
+  const _$TripFormStateImpl(
       {required this.trip,
       required this.showErrorMessages,
       required this.isEditing,
       required this.isSaving,
-      this.minDateEnd,
       required this.saveFailureOrSuccessOption});
 
   @override
@@ -1434,56 +1354,50 @@ class _$_TripFormState implements _TripFormState {
   @override
   final bool isSaving;
   @override
-  final DateTime? minDateEnd;
-  @override
   final Option<Either<TripFailure, Unit>> saveFailureOrSuccessOption;
 
   @override
   String toString() {
-    return 'TripFormState(trip: $trip, showErrorMessages: $showErrorMessages, isEditing: $isEditing, isSaving: $isSaving, minDateEnd: $minDateEnd, saveFailureOrSuccessOption: $saveFailureOrSuccessOption)';
+    return 'TripFormState(trip: $trip, showErrorMessages: $showErrorMessages, isEditing: $isEditing, isSaving: $isSaving, saveFailureOrSuccessOption: $saveFailureOrSuccessOption)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _TripFormState &&
-            const DeepCollectionEquality().equals(other.trip, trip) &&
-            const DeepCollectionEquality()
-                .equals(other.showErrorMessages, showErrorMessages) &&
-            const DeepCollectionEquality().equals(other.isEditing, isEditing) &&
-            const DeepCollectionEquality().equals(other.isSaving, isSaving) &&
-            const DeepCollectionEquality()
-                .equals(other.minDateEnd, minDateEnd) &&
-            const DeepCollectionEquality().equals(
-                other.saveFailureOrSuccessOption, saveFailureOrSuccessOption));
+            other is _$TripFormStateImpl &&
+            (identical(other.trip, trip) || other.trip == trip) &&
+            (identical(other.showErrorMessages, showErrorMessages) ||
+                other.showErrorMessages == showErrorMessages) &&
+            (identical(other.isEditing, isEditing) ||
+                other.isEditing == isEditing) &&
+            (identical(other.isSaving, isSaving) ||
+                other.isSaving == isSaving) &&
+            (identical(other.saveFailureOrSuccessOption,
+                    saveFailureOrSuccessOption) ||
+                other.saveFailureOrSuccessOption ==
+                    saveFailureOrSuccessOption));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(trip),
-      const DeepCollectionEquality().hash(showErrorMessages),
-      const DeepCollectionEquality().hash(isEditing),
-      const DeepCollectionEquality().hash(isSaving),
-      const DeepCollectionEquality().hash(minDateEnd),
-      const DeepCollectionEquality().hash(saveFailureOrSuccessOption));
+  int get hashCode => Object.hash(runtimeType, trip, showErrorMessages,
+      isEditing, isSaving, saveFailureOrSuccessOption);
 
   @JsonKey(ignore: true)
   @override
-  _$TripFormStateCopyWith<_TripFormState> get copyWith =>
-      __$TripFormStateCopyWithImpl<_TripFormState>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$TripFormStateImplCopyWith<_$TripFormStateImpl> get copyWith =>
+      __$$TripFormStateImplCopyWithImpl<_$TripFormStateImpl>(this, _$identity);
 }
 
 abstract class _TripFormState implements TripFormState {
   const factory _TripFormState(
-      {required Trip trip,
-      required bool showErrorMessages,
-      required bool isEditing,
-      required bool isSaving,
-      DateTime? minDateEnd,
-      required Option<Either<TripFailure, Unit>>
-          saveFailureOrSuccessOption}) = _$_TripFormState;
+      {required final Trip trip,
+      required final bool showErrorMessages,
+      required final bool isEditing,
+      required final bool isSaving,
+      required final Option<Either<TripFailure, Unit>>
+          saveFailureOrSuccessOption}) = _$TripFormStateImpl;
 
   @override
   Trip get trip;
@@ -1494,11 +1408,9 @@ abstract class _TripFormState implements TripFormState {
   @override
   bool get isSaving;
   @override
-  DateTime? get minDateEnd;
-  @override
   Option<Either<TripFailure, Unit>> get saveFailureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
-  _$TripFormStateCopyWith<_TripFormState> get copyWith =>
+  _$$TripFormStateImplCopyWith<_$TripFormStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

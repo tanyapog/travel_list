@@ -1,6 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'trip_dtos.dart';
 
@@ -11,42 +12,11 @@ part of 'trip_dtos.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 TripDto _$TripDtoFromJson(Map<String, dynamic> json) {
   return _TripDto.fromJson(json);
 }
-
-/// @nodoc
-class _$TripDtoTearOff {
-  const _$TripDtoTearOff();
-
-  _TripDto call(
-      {@JsonKey(ignore: true) String? id,
-      required String name,
-      required String description,
-      required bool complete,
-      DateTime? dateStart,
-      DateTime? dateEnd,
-      required DateTime dateCreated}) {
-    return _TripDto(
-      id: id,
-      name: name,
-      description: description,
-      complete: complete,
-      dateStart: dateStart,
-      dateEnd: dateEnd,
-      dateCreated: dateCreated,
-    );
-  }
-
-  TripDto fromJson(Map<String, Object?> json) {
-    return TripDto.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $TripDto = _$TripDtoTearOff();
 
 /// @nodoc
 mixin _$TripDto {
@@ -68,7 +38,8 @@ mixin _$TripDto {
 /// @nodoc
 abstract class $TripDtoCopyWith<$Res> {
   factory $TripDtoCopyWith(TripDto value, $Res Function(TripDto) then) =
-      _$TripDtoCopyWithImpl<$Res>;
+      _$TripDtoCopyWithImpl<$Res, TripDto>;
+  @useResult
   $Res call(
       {@JsonKey(ignore: true) String? id,
       String name,
@@ -80,61 +51,66 @@ abstract class $TripDtoCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TripDtoCopyWithImpl<$Res> implements $TripDtoCopyWith<$Res> {
+class _$TripDtoCopyWithImpl<$Res, $Val extends TripDto>
+    implements $TripDtoCopyWith<$Res> {
   _$TripDtoCopyWithImpl(this._value, this._then);
 
-  final TripDto _value;
   // ignore: unused_field
-  final $Res Function(TripDto) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
-    Object? name = freezed,
-    Object? description = freezed,
-    Object? complete = freezed,
+    Object? name = null,
+    Object? description = null,
+    Object? complete = null,
     Object? dateStart = freezed,
     Object? dateEnd = freezed,
-    Object? dateCreated = freezed,
+    Object? dateCreated = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      description: description == freezed
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      complete: complete == freezed
+      complete: null == complete
           ? _value.complete
           : complete // ignore: cast_nullable_to_non_nullable
               as bool,
-      dateStart: dateStart == freezed
+      dateStart: freezed == dateStart
           ? _value.dateStart
           : dateStart // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      dateEnd: dateEnd == freezed
+      dateEnd: freezed == dateEnd
           ? _value.dateEnd
           : dateEnd // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      dateCreated: dateCreated == freezed
+      dateCreated: null == dateCreated
           ? _value.dateCreated
           : dateCreated // ignore: cast_nullable_to_non_nullable
               as DateTime,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$TripDtoCopyWith<$Res> implements $TripDtoCopyWith<$Res> {
-  factory _$TripDtoCopyWith(_TripDto value, $Res Function(_TripDto) then) =
-      __$TripDtoCopyWithImpl<$Res>;
+abstract class _$$TripDtoImplCopyWith<$Res> implements $TripDtoCopyWith<$Res> {
+  factory _$$TripDtoImplCopyWith(
+          _$TripDtoImpl value, $Res Function(_$TripDtoImpl) then) =
+      __$$TripDtoImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(ignore: true) String? id,
       String name,
@@ -146,50 +122,50 @@ abstract class _$TripDtoCopyWith<$Res> implements $TripDtoCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$TripDtoCopyWithImpl<$Res> extends _$TripDtoCopyWithImpl<$Res>
-    implements _$TripDtoCopyWith<$Res> {
-  __$TripDtoCopyWithImpl(_TripDto _value, $Res Function(_TripDto) _then)
-      : super(_value, (v) => _then(v as _TripDto));
+class __$$TripDtoImplCopyWithImpl<$Res>
+    extends _$TripDtoCopyWithImpl<$Res, _$TripDtoImpl>
+    implements _$$TripDtoImplCopyWith<$Res> {
+  __$$TripDtoImplCopyWithImpl(
+      _$TripDtoImpl _value, $Res Function(_$TripDtoImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _TripDto get _value => super._value as _TripDto;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
-    Object? name = freezed,
-    Object? description = freezed,
-    Object? complete = freezed,
+    Object? name = null,
+    Object? description = null,
+    Object? complete = null,
     Object? dateStart = freezed,
     Object? dateEnd = freezed,
-    Object? dateCreated = freezed,
+    Object? dateCreated = null,
   }) {
-    return _then(_TripDto(
-      id: id == freezed
+    return _then(_$TripDtoImpl(
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      description: description == freezed
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      complete: complete == freezed
+      complete: null == complete
           ? _value.complete
           : complete // ignore: cast_nullable_to_non_nullable
               as bool,
-      dateStart: dateStart == freezed
+      dateStart: freezed == dateStart
           ? _value.dateStart
           : dateStart // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      dateEnd: dateEnd == freezed
+      dateEnd: freezed == dateEnd
           ? _value.dateEnd
           : dateEnd // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      dateCreated: dateCreated == freezed
+      dateCreated: null == dateCreated
           ? _value.dateCreated
           : dateCreated // ignore: cast_nullable_to_non_nullable
               as DateTime,
@@ -199,8 +175,8 @@ class __$TripDtoCopyWithImpl<$Res> extends _$TripDtoCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_TripDto extends _TripDto {
-  const _$_TripDto(
+class _$TripDtoImpl extends _TripDto {
+  const _$TripDtoImpl(
       {@JsonKey(ignore: true) this.id,
       required this.name,
       required this.description,
@@ -210,10 +186,11 @@ class _$_TripDto extends _TripDto {
       required this.dateCreated})
       : super._();
 
-  factory _$_TripDto.fromJson(Map<String, dynamic> json) =>
-      _$$_TripDtoFromJson(json);
+  factory _$TripDtoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TripDtoImplFromJson(json);
 
-  @override // I ignore id because of firestore structure. And ignoring field in freezed class should be nullable.
+// I ignore id because of firestore structure. And ignoring field in freezed class should be nullable.
+  @override
   @JsonKey(ignore: true)
   final String? id;
   @override
@@ -238,52 +215,51 @@ class _$_TripDto extends _TripDto {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _TripDto &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality()
-                .equals(other.description, description) &&
-            const DeepCollectionEquality().equals(other.complete, complete) &&
-            const DeepCollectionEquality().equals(other.dateStart, dateStart) &&
-            const DeepCollectionEquality().equals(other.dateEnd, dateEnd) &&
-            const DeepCollectionEquality()
-                .equals(other.dateCreated, dateCreated));
+            other is _$TripDtoImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.complete, complete) ||
+                other.complete == complete) &&
+            (identical(other.dateStart, dateStart) ||
+                other.dateStart == dateStart) &&
+            (identical(other.dateEnd, dateEnd) || other.dateEnd == dateEnd) &&
+            (identical(other.dateCreated, dateCreated) ||
+                other.dateCreated == dateCreated));
   }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(description),
-      const DeepCollectionEquality().hash(complete),
-      const DeepCollectionEquality().hash(dateStart),
-      const DeepCollectionEquality().hash(dateEnd),
-      const DeepCollectionEquality().hash(dateCreated));
 
   @JsonKey(ignore: true)
   @override
-  _$TripDtoCopyWith<_TripDto> get copyWith =>
-      __$TripDtoCopyWithImpl<_TripDto>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, id, name, description, complete,
+      dateStart, dateEnd, dateCreated);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TripDtoImplCopyWith<_$TripDtoImpl> get copyWith =>
+      __$$TripDtoImplCopyWithImpl<_$TripDtoImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TripDtoToJson(this);
+    return _$$TripDtoImplToJson(
+      this,
+    );
   }
 }
 
 abstract class _TripDto extends TripDto {
   const factory _TripDto(
-      {@JsonKey(ignore: true) String? id,
-      required String name,
-      required String description,
-      required bool complete,
-      DateTime? dateStart,
-      DateTime? dateEnd,
-      required DateTime dateCreated}) = _$_TripDto;
+      {@JsonKey(ignore: true) final String? id,
+      required final String name,
+      required final String description,
+      required final bool complete,
+      final DateTime? dateStart,
+      final DateTime? dateEnd,
+      required final DateTime dateCreated}) = _$TripDtoImpl;
   const _TripDto._() : super._();
 
-  factory _TripDto.fromJson(Map<String, dynamic> json) = _$_TripDto.fromJson;
+  factory _TripDto.fromJson(Map<String, dynamic> json) = _$TripDtoImpl.fromJson;
 
   @override // I ignore id because of firestore structure. And ignoring field in freezed class should be nullable.
   @JsonKey(ignore: true)
@@ -302,6 +278,6 @@ abstract class _TripDto extends TripDto {
   DateTime get dateCreated;
   @override
   @JsonKey(ignore: true)
-  _$TripDtoCopyWith<_TripDto> get copyWith =>
+  _$$TripDtoImplCopyWith<_$TripDtoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

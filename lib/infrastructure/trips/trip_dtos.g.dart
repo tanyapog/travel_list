@@ -6,7 +6,8 @@ part of 'trip_dtos.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_TripDto _$$_TripDtoFromJson(Map<String, dynamic> json) => _$_TripDto(
+_$TripDtoImpl _$$TripDtoImplFromJson(Map<String, dynamic> json) =>
+    _$TripDtoImpl(
       name: json['name'] as String,
       description: json['description'] as String,
       complete: json['complete'] as bool,
@@ -19,7 +20,7 @@ _$_TripDto _$$_TripDtoFromJson(Map<String, dynamic> json) => _$_TripDto(
       dateCreated: DateTime.parse(json['dateCreated'] as String),
     );
 
-Map<String, dynamic> _$$_TripDtoToJson(_$_TripDto instance) =>
+Map<String, dynamic> _$$TripDtoImplToJson(_$TripDtoImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'description': instance.description,
