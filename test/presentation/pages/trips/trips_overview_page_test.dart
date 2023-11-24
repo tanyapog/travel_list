@@ -25,7 +25,7 @@ Future<void> main() async {
   const description = 'hiking';
   const isComplete = false;
 
-  configureInjection(Environment.test, NoEnvOrContains(Environment.test));
+  configureInjection(Environment.test);
   final _firestore = getIt<FirebaseFirestore>();
   final DocumentReference tripRef = await _firestore.collection('users').doc('mockUid').collection('trips').add({
     'name': name,

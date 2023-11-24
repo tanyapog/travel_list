@@ -5,5 +5,4 @@ import 'package:travel_list/injection.config.dart';
 final GetIt getIt = GetIt.instance;
 
 @injectableInit
-void configureInjection(String env, EnvironmentFilter environmentFilter) =>
-  $initGetIt(getIt, environment: env);
+void configureInjection(String env) => getIt.init(environment: env);

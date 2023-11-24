@@ -9,7 +9,7 @@ import 'package:travel_list/presentation/core/app_widget.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  configureInjection(Environment.prod, NoEnvOrContains(Environment.prod),);
+  configureInjection(Environment.prod);
   await Firebase.initializeApp();
   if (useFirebaseEmulator) {
     await connectToEmulator();

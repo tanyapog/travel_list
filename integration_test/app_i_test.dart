@@ -17,7 +17,7 @@ Future<void> main() async {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
   WidgetsFlutterBinding.ensureInitialized();
   setUpAll(() async {
-    configureInjection(Environment.prod, NoEnvOrContains(Environment.prod));
+    configureInjection(Environment.prod);
     await Firebase.initializeApp();
     if (useFirebaseEmulator) {
       await connectToEmulator();
