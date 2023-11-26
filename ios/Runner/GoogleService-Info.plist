@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>16023612489-6kcff5r5dl6q4gf86umnonfklhgv2els.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.16023612489-6kcff5r5dl6q4gf86umnonfklhgv2els</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>16023612489-5tjprkp152fcv82aca1msbg2n8hcf47t.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDXJsfXap0zUckp3yAvl1XdiqKRDcqbhQ4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>16023612489</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.travelList</string>
+	<key>PROJECT_ID</key>
+	<string>travel-list-dee6b</string>
+	<key>STORAGE_BUCKET</key>
+	<string>travel-list-dee6b.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:16023612489:ios:e2c8c392b4d27fc237e398</string>
+	<key>DATABASE_URL</key>
+	<string>https://travel-list-dee6b.firebaseio.com</string>
+</dict>
+</plist>
